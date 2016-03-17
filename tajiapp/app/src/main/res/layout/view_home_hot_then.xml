@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bgcolor_bar_first"
+    android:orientation="vertical">
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/home_hot_then_swipe_ly_then"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ListView
+            android:id="@+id/home_hot_then_listview"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="@color/bgcolor_bar_first"
+            android:divider="#513B66"
+            android:dividerHeight="10dp"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:scrollbars="none"></ListView>
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+</LinearLayout>

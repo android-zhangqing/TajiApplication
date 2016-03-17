@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E1DEE7"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/topbar_height"
+        android:background="@color/bgcolor_bar_first">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:onClick="finishThis"
+            android:padding="5dp"
+            android:src="@drawable/icon_register_second_back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="短信验证"
+            android:textColor="@color/textcolor_bar_first_unselect"
+            android:textSize="@dimen/textsize_bar_first" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/register_second_mobileshow_tv"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text=" 您的手机号："
+        android:textColor="#4D4250"
+        android:textSize="@dimen/textsize_bar_first" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="短信验证码已发送到您的手机，快看看吧"
+        android:textColor="#A767B1"
+        android:textSize="12sp" />
+
+    <EditText
+        android:id="@+id/register_second_smsverifycode_edttxt"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@drawable/corners_button_white"
+        android:hint="输入短信验证码"
+        android:numeric="integer"
+        android:padding="10dp"
+        android:textColor="#4D4250"
+        android:textCursorDrawable="@drawable/icon_register_cursor" />
+
+    <Button
+        android:id="@+id/register_second_send_again_btn"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/wait_button"
+        android:enabled="false"
+        android:onClick="onClickBtnReSms"
+        android:padding="10dp"
+        android:text="重新获取"
+        android:textColor="@color/bgcolor_bar_first"
+        android:textSize="@dimen/textsize_bar_first" />
+
+    <Button
+        android:id="@+id/register_second_verifysms_btn"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@drawable/corners_button"
+        android:enabled="false"
+        android:onClick="onClickBtnCheckSmsverify"
+        android:padding="10dp"
+        android:text="继续"
+        android:textColor="#A89DAE"
+        android:textSize="@dimen/textsize_bar_first" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:gravity="center_horizontal"
+        android:text="已有账号登录"
+        android:textColor="#A767B1" />
+
+</LinearLayout>

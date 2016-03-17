@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E1DEE7"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/topbar_height"
+
+        android:background="@color/bgcolor_bar_first">
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerVertical="true"
+            android:onClick="finishThis"
+            android:padding="5dp"
+            android:src="@drawable/icon_register_first_cha" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="你的手机号"
+            android:textColor="@color/textcolor_bar_first_unselect"
+            android:textSize="@dimen/textsize_bar_first" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="bottom|center_horizontal"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/corners_button_white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingBottom="7dp"
+                android:paddingTop="7dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:text="+86"
+                    android:textColor="#4D4250"
+                    android:textSize="@dimen/textsize_bar_first" />
+
+                <EditText
+                    android:id="@+id/register_first_mobile_edttxt"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:background="@android:color/white"
+                    android:gravity="center_vertical"
+                    android:numeric="integer"
+                    android:text="1520713125"
+                    android:textColor="#4D4250"
+                    android:textCursorDrawable="@drawable/icon_register_cursor"
+                    android:textSize="@dimen/textsize_bar_first" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/icon_register_first_inputcha"
+                    android:onClick="onClickButtonClearEdittext" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/register_first_submitmobile_btn"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/corners_button"
+            android:enabled="false"
+            android:onClick="onClickButtonSubmitMobile"
+            android:paddingBottom="8dp"
+            android:paddingTop="8dp"
+            android:text="继续"
+            android:textColor="@color/textcolor_bar_first_unselect"
+            android:textSize="@dimen/textsize_bar_first" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="已有账号登录"
+            android:textColor="@color/textcolor_bar_second_unselect"
+            android:textSize="@dimen/textsize_bar_second" />
+    </LinearLayout>
+
+</LinearLayout>

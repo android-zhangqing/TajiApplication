@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E1DEE7"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/topbar_height"
+        android:background="@color/bgcolor_bar_first">
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerVertical="true"
+            android:onClick="finishThis"
+            android:padding="5dp"
+            android:src="@drawable/icon_register_first_cha" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="找回密码"
+            android:textColor="@color/textcolor_bar_first_unselect"
+            android:textSize="@dimen/textsize_bar_first" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@drawable/corners_button_white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingBottom="7dp"
+        android:paddingTop="7dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:text="+86"
+            android:textColor="#4D4250"
+            android:textSize="@dimen/textsize_bar_first" />
+
+        <EditText
+            android:id="@+id/reset_pass_by_sms_mobile_edttxt"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:background="@android:color/white"
+            android:gravity="center_vertical"
+            android:numeric="integer"
+            android:text="1520713125"
+            android:textColor="#4D4250"
+            android:textCursorDrawable="@drawable/icon_register_cursor"
+            android:textSize="@dimen/textsize_bar_first" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/icon_register_first_inputcha"
+            android:onClick="onClickButtonClearEdittext" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/reset_pass_by_sms_verify_edttxt"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/corners_button_white"
+            android:gravity="center_vertical"
+            android:hint="填写验证码"
+            android:numeric="integer"
+            android:paddingLeft="10dp"
+            android:textColor="#4D4250"
+            android:textCursorDrawable="@drawable/icon_register_cursor"
+            android:textSize="@dimen/textsize_bar_first" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/corners_button"
+            android:padding="10dp"
+            android:onClick="onClickBtnSend"
+            android:text="发送验证码" />
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/reset_pass_by_sms_new_pass_edttxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@drawable/corners_button_white"
+        android:gravity="center_vertical"
+        android:hint="新密码"
+        android:padding="14dp"
+        android:paddingLeft="10dp"
+        android:password="true"
+        android:textColor="#4D4250"
+        android:textCursorDrawable="@drawable/icon_register_cursor"
+        android:textSize="@dimen/textsize_bar_first" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/corners_button"
+        android:padding="10dp"
+        android:onClick="onClickBtnReset"
+        android:text="找回" />
+</LinearLayout>

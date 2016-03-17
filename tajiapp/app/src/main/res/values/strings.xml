@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <item name="tagkey_type" type="id"></item>
+    <item name="tagkey_which" type="id"></item>
+    <item name="tagkey_describe" type="id"></item>
+
+    <string name="app_name">Taji</string>
+    <string name="hello">Hello World, TajiActivity!</string>
+
+
+    <dimen name="topbar_height">50dp</dimen>
+    <dimen name="bottombar_height">50dp</dimen>
+    <dimen name="margin_left">20dp</dimen>
+    <dimen name="main_bottom_bar_margin_normal">5dp</dimen>
+
+    <dimen name="main_bottom_bar_img_height">28dp</dimen>
+    <dimen name="textsize_bar_first">18sp</dimen>
+    <dimen name="textsize_bar_second">15sp</dimen>
+    <dimen name="textsize_my_board_number">18sp</dimen>
+    <dimen name="textsize_my_board_text">12sp</dimen>
+    <dimen name="home_hot_gridview_text_height">22dp</dimen>
+    <dimen name="home_hot_gridview_text_height_twice">44dp</dimen>
+
+
+    <color name="app_background">#FF18FBCD</color>
+    <color name="bgcolor_systembar">#5E3F73</color>
+    <color name="bgcolor_loading_pic">#F1F1F1</color>
+    <color name="textcolor_bar_first_select">#FF18FBCD</color>
+    <color name="textcolor_bar_first_unselect">#FFCCCCCA</color>
+    <color name="bgcolor_bar_first">#FF543C69</color>
+    <color name="textcolor_bar_second_select">#FF28D5B5</color>
+    <color name="textcolor_bar_second_unselect">#FFA666B0</color>
+    <color name="bgcolor_bar_second">#FF412F52</color>
+    <color name="bgcolor_bar_bottom">#FF453855</color>
+    <color name="bgcolor_bar_bottom_center">#FF915A99</color>
+    <color name="textcolor_normal_white">#FFC2BEC6</color>
+
+
+</resources>

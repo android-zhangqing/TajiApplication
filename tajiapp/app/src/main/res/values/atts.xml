@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="mybar">
+        <attr name="bottomposition" format="string" />
+        <attr name="topposition" format="string" />
+    </declare-styleable>
+
+
+    <declare-styleable name="ViewPagerIndicator">
+        <attr name="visible_item_count" format="integer" />
+        <attr name="shape">
+            <enum name="miui" value="0" />
+            <enum name="bar" value="1" />
+        </attr>
+        <attr name="text_color_select" format="color"/>
+        <attr name="text_color_unselect" format="color"/>
+
+
+    </declare-styleable>
+
+</resources>

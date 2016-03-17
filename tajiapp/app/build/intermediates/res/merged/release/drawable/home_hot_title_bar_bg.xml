@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+	<!-- 连框颜色值 -->
+	<item>
+		<shape>
+			<gradient android:startColor="#603F74" android:endColor="#543A69" android:angle="-90"
+				android:type="linear" />
+		</shape>
+	</item>
+</layer-list>

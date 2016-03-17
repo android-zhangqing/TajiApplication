@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\rc_ic_bubble_white.9.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\drawable-xxhdpi-v4\\rc_ic_bubble_white.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\rc_group_default_portrait.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\drawable-xxhdpi-v4\\rc_group_default_portrait.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\rc_default_portrait.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\drawable-xxhdpi-v4\\rc_default_portrait.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\rc_ic_warning.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\drawable-xxhdpi-v4\\rc_ic_warning.png"
+    }
+]

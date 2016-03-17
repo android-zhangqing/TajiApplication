@@ -1,0 +1,2802 @@
+[
+    {
+        "outputFile": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\values\\values.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endLine": 131,
+                    "endColumn": 24,
+                    "endOffset": 4322
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 132,
+                    "startColumn": 4,
+                    "startOffset": 4327,
+                    "endLine": 261,
+                    "endColumn": 12,
+                    "endOffset": 9213
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 262,
+                    "startColumn": 4,
+                    "startOffset": 9218,
+                    "endColumn": 60,
+                    "endOffset": 9274
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 263,
+                    "startColumn": 4,
+                    "startOffset": 9279,
+                    "endColumn": 53,
+                    "endOffset": 9328
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 264,
+                    "startColumn": 4,
+                    "startOffset": 9333,
+                    "endColumn": 44,
+                    "endOffset": 9373
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 265,
+                    "startColumn": 4,
+                    "startOffset": 9378,
+                    "endColumn": 45,
+                    "endOffset": 9419
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 266,
+                    "startColumn": 4,
+                    "startOffset": 9424,
+                    "endColumn": 50,
+                    "endOffset": 9470
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\values\\strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 267,
+                    "startColumn": 4,
+                    "startOffset": 9475,
+                    "endColumn": 54,
+                    "endOffset": 9525
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\values\\strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 268,
+                    "startColumn": 4,
+                    "startOffset": 9530,
+                    "endColumn": 61,
+                    "endOffset": 9587
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\values\\strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 269,
+                    "startColumn": 4,
+                    "startOffset": 9592,
+                    "endColumn": 53,
+                    "endOffset": 9641
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\values\\strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 270,
+                    "startColumn": 4,
+                    "startOffset": 9646,
+                    "endColumn": 54,
+                    "endOffset": 9696
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\values\\strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 271,
+                    "startColumn": 4,
+                    "startOffset": 9701,
+                    "endColumn": 53,
+                    "endOffset": 9750
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\values\\strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 272,
+                    "startColumn": 4,
+                    "startOffset": 9755,
+                    "endColumn": 51,
+                    "endOffset": 9802
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\values\\strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 273,
+                    "startColumn": 4,
+                    "startOffset": 9807,
+                    "endColumn": 52,
+                    "endOffset": 9855
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\emoji\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 274,
+                    "startColumn": 4,
+                    "startOffset": 9860,
+                    "endColumn": 53,
+                    "endOffset": 9909
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\emoji\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 275,
+                    "startColumn": 4,
+                    "startOffset": 9914,
+                    "endColumn": 56,
+                    "endOffset": 9966
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 276,
+                    "startColumn": 4,
+                    "startOffset": 9971,
+                    "endColumn": 48,
+                    "endOffset": 10015
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 277,
+                    "startColumn": 4,
+                    "startOffset": 10020,
+                    "endColumn": 45,
+                    "endOffset": 10061
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 278,
+                    "startColumn": 4,
+                    "startOffset": 10066,
+                    "endColumn": 54,
+                    "endOffset": 10116
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 279,
+                    "startColumn": 4,
+                    "startOffset": 10121,
+                    "endColumn": 46,
+                    "endOffset": 10163
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 280,
+                    "startColumn": 4,
+                    "startOffset": 10168,
+                    "endColumn": 52,
+                    "endOffset": 10216
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 281,
+                    "startColumn": 4,
+                    "startOffset": 10221,
+                    "endColumn": 48,
+                    "endOffset": 10265
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 282,
+                    "startColumn": 4,
+                    "startOffset": 10270,
+                    "endColumn": 53,
+                    "endOffset": 10319
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 283,
+                    "startColumn": 4,
+                    "startOffset": 10324,
+                    "endColumn": 52,
+                    "endOffset": 10372
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 284,
+                    "startColumn": 4,
+                    "startOffset": 10377,
+                    "endColumn": 47,
+                    "endOffset": 10420
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 285,
+                    "startColumn": 4,
+                    "startOffset": 10425,
+                    "endColumn": 55,
+                    "endOffset": 10476
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 286,
+                    "startColumn": 4,
+                    "startOffset": 10481,
+                    "endColumn": 63,
+                    "endOffset": 10540
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 287,
+                    "startColumn": 4,
+                    "startOffset": 10545,
+                    "endColumn": 57,
+                    "endOffset": 10598
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 288,
+                    "startColumn": 4,
+                    "startOffset": 10603,
+                    "endColumn": 56,
+                    "endOffset": 10655
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 289,
+                    "startColumn": 4,
+                    "startOffset": 10660,
+                    "endColumn": 47,
+                    "endOffset": 10703
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 290,
+                    "startColumn": 4,
+                    "startOffset": 10708,
+                    "endColumn": 48,
+                    "endOffset": 10752
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 291,
+                    "startColumn": 4,
+                    "startOffset": 10757,
+                    "endColumn": 62,
+                    "endOffset": 10815
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\values\\strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 292,
+                    "startColumn": 4,
+                    "startOffset": 10820,
+                    "endColumn": 64,
+                    "endOffset": 10880
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\values\\strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 293,
+                    "startColumn": 4,
+                    "startOffset": 10885,
+                    "endColumn": 63,
+                    "endOffset": 10944
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\values\\strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 294,
+                    "startColumn": 4,
+                    "startOffset": 10949,
+                    "endColumn": 65,
+                    "endOffset": 11010
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\values\\strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 295,
+                    "startColumn": 4,
+                    "startOffset": 11015,
+                    "endColumn": 58,
+                    "endOffset": 11069
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\values\\strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 303,
+                    "startColumn": 4,
+                    "startOffset": 13236,
+                    "endColumn": 47,
+                    "endOffset": 13279
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\values\\strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 304,
+                    "startColumn": 4,
+                    "startOffset": 13284,
+                    "endColumn": 60,
+                    "endOffset": 13340
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\values\\strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 305,
+                    "startColumn": 4,
+                    "startOffset": 13345,
+                    "endColumn": 66,
+                    "endOffset": 13407
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\values\\strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 306,
+                    "startColumn": 4,
+                    "startOffset": 13412,
+                    "endColumn": 57,
+                    "endOffset": 13465
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\values\\strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 307,
+                    "startColumn": 4,
+                    "startOffset": 13470,
+                    "endColumn": 59,
+                    "endOffset": 13525
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\values\\strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 308,
+                    "startColumn": 4,
+                    "startOffset": 13530,
+                    "endColumn": 42,
+                    "endOffset": 13568
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\values\\strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 309,
+                    "startColumn": 4,
+                    "startOffset": 13573,
+                    "endColumn": 61,
+                    "endOffset": 13630
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 310,
+                    "startColumn": 4,
+                    "startOffset": 13635,
+                    "endColumn": 61,
+                    "endOffset": 13692
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 311,
+                    "startColumn": 4,
+                    "startOffset": 13697,
+                    "endColumn": 64,
+                    "endOffset": 13757
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 312,
+                    "startColumn": 4,
+                    "startOffset": 13762,
+                    "endColumn": 49,
+                    "endOffset": 13807
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\values\\strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 313,
+                    "startColumn": 4,
+                    "startOffset": 13812,
+                    "endColumn": 50,
+                    "endOffset": 13858
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\values\\strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 314,
+                    "startColumn": 4,
+                    "startOffset": 13863,
+                    "endColumn": 55,
+                    "endOffset": 13914
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\values\\strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 315,
+                    "startColumn": 4,
+                    "startOffset": 13919,
+                    "endColumn": 53,
+                    "endOffset": 13968
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\values\\strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 316,
+                    "startColumn": 4,
+                    "startOffset": 13973,
+                    "endColumn": 44,
+                    "endOffset": 14013
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\values\\strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 317,
+                    "startColumn": 4,
+                    "startOffset": 14018,
+                    "endColumn": 41,
+                    "endOffset": 14055
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 318,
+                    "startColumn": 4,
+                    "startOffset": 14060,
+                    "endColumn": 36,
+                    "endOffset": 14092
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 319,
+                    "startColumn": 4,
+                    "startOffset": 14097,
+                    "endColumn": 42,
+                    "endOffset": 14135
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 320,
+                    "startColumn": 4,
+                    "startOffset": 14140,
+                    "endColumn": 38,
+                    "endOffset": 14174
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 321,
+                    "startColumn": 4,
+                    "startOffset": 14179,
+                    "endColumn": 40,
+                    "endOffset": 14215
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 322,
+                    "startColumn": 4,
+                    "startOffset": 14220,
+                    "endColumn": 39,
+                    "endOffset": 14255
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 323,
+                    "startColumn": 4,
+                    "startOffset": 14260,
+                    "endColumn": 52,
+                    "endOffset": 14308
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 324,
+                    "startColumn": 4,
+                    "startOffset": 14313,
+                    "endColumn": 54,
+                    "endOffset": 14363
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 325,
+                    "startColumn": 4,
+                    "startOffset": 14368,
+                    "endColumn": 51,
+                    "endOffset": 14415
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 326,
+                    "startColumn": 4,
+                    "startOffset": 14420,
+                    "endColumn": 49,
+                    "endOffset": 14465
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 327,
+                    "startColumn": 4,
+                    "startOffset": 14470,
+                    "endColumn": 50,
+                    "endOffset": 14516
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 328,
+                    "startColumn": 4,
+                    "startOffset": 14521,
+                    "endColumn": 40,
+                    "endOffset": 14557
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 329,
+                    "startColumn": 4,
+                    "startOffset": 14562,
+                    "endColumn": 37,
+                    "endOffset": 14595
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 330,
+                    "startColumn": 4,
+                    "startOffset": 14600,
+                    "endColumn": 36,
+                    "endOffset": 14632
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 331,
+                    "startColumn": 4,
+                    "startOffset": 14637,
+                    "endColumn": 35,
+                    "endOffset": 14668
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 332,
+                    "startColumn": 4,
+                    "startOffset": 14673,
+                    "endColumn": 47,
+                    "endOffset": 14716
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 333,
+                    "startColumn": 4,
+                    "startOffset": 14721,
+                    "endColumn": 42,
+                    "endOffset": 14759
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 334,
+                    "startColumn": 4,
+                    "startOffset": 14764,
+                    "endColumn": 44,
+                    "endOffset": 14804
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 335,
+                    "startColumn": 4,
+                    "startOffset": 14809,
+                    "endColumn": 37,
+                    "endOffset": 14842
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 336,
+                    "startColumn": 4,
+                    "startOffset": 14847,
+                    "endColumn": 37,
+                    "endOffset": 14880
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 337,
+                    "startColumn": 4,
+                    "startOffset": 14885,
+                    "endColumn": 37,
+                    "endOffset": 14918
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 338,
+                    "startColumn": 4,
+                    "startOffset": 14923,
+                    "endColumn": 37,
+                    "endOffset": 14956
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 339,
+                    "startColumn": 4,
+                    "startOffset": 14961,
+                    "endColumn": 37,
+                    "endOffset": 14994
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 340,
+                    "startColumn": 4,
+                    "startOffset": 14999,
+                    "endColumn": 37,
+                    "endOffset": 15032
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 341,
+                    "startColumn": 4,
+                    "startOffset": 15037,
+                    "endColumn": 37,
+                    "endOffset": 15070
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 342,
+                    "startColumn": 4,
+                    "startOffset": 15075,
+                    "endColumn": 37,
+                    "endOffset": 15108
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 343,
+                    "startColumn": 4,
+                    "startOffset": 15113,
+                    "endColumn": 37,
+                    "endOffset": 15146
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 344,
+                    "startColumn": 4,
+                    "startOffset": 15151,
+                    "endColumn": 37,
+                    "endOffset": 15184
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 345,
+                    "startColumn": 4,
+                    "startOffset": 15189,
+                    "endColumn": 49,
+                    "endOffset": 15234
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 346,
+                    "startColumn": 4,
+                    "startOffset": 15239,
+                    "endColumn": 38,
+                    "endOffset": 15273
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 347,
+                    "startColumn": 4,
+                    "startOffset": 15278,
+                    "endColumn": 36,
+                    "endOffset": 15310
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 348,
+                    "startColumn": 4,
+                    "startOffset": 15315,
+                    "endColumn": 36,
+                    "endOffset": 15347
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 349,
+                    "startColumn": 4,
+                    "startOffset": 15352,
+                    "endColumn": 36,
+                    "endOffset": 15384
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 350,
+                    "startColumn": 4,
+                    "startOffset": 15389,
+                    "endColumn": 51,
+                    "endOffset": 15436
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 351,
+                    "startColumn": 4,
+                    "startOffset": 15441,
+                    "endColumn": 35,
+                    "endOffset": 15472
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 352,
+                    "startColumn": 4,
+                    "startOffset": 15477,
+                    "endColumn": 35,
+                    "endOffset": 15508
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 353,
+                    "startColumn": 4,
+                    "startOffset": 15513,
+                    "endColumn": 37,
+                    "endOffset": 15546
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 354,
+                    "startColumn": 4,
+                    "startOffset": 15551,
+                    "endColumn": 40,
+                    "endOffset": 15587
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 355,
+                    "startColumn": 4,
+                    "startOffset": 15592,
+                    "endColumn": 46,
+                    "endOffset": 15634
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 356,
+                    "startColumn": 4,
+                    "startOffset": 15639,
+                    "endColumn": 40,
+                    "endOffset": 15675
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 357,
+                    "startColumn": 4,
+                    "startOffset": 15680,
+                    "endColumn": 44,
+                    "endOffset": 15720
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 358,
+                    "startColumn": 4,
+                    "startOffset": 15725,
+                    "endColumn": 37,
+                    "endOffset": 15758
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 359,
+                    "startColumn": 4,
+                    "startOffset": 15763,
+                    "endColumn": 36,
+                    "endOffset": 15795
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 360,
+                    "startColumn": 4,
+                    "startOffset": 15800,
+                    "endColumn": 43,
+                    "endOffset": 15839
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 361,
+                    "startColumn": 4,
+                    "startOffset": 15844,
+                    "endColumn": 36,
+                    "endOffset": 15876
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 362,
+                    "startColumn": 4,
+                    "startOffset": 15881,
+                    "endColumn": 37,
+                    "endOffset": 15914
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 363,
+                    "startColumn": 4,
+                    "startOffset": 15919,
+                    "endColumn": 44,
+                    "endOffset": 15959
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 364,
+                    "startColumn": 4,
+                    "startOffset": 15964,
+                    "endColumn": 35,
+                    "endOffset": 15995
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 365,
+                    "startColumn": 4,
+                    "startOffset": 16000,
+                    "endColumn": 46,
+                    "endOffset": 16042
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 366,
+                    "startColumn": 4,
+                    "startOffset": 16047,
+                    "endColumn": 52,
+                    "endOffset": 16095
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 367,
+                    "startColumn": 4,
+                    "startOffset": 16100,
+                    "endColumn": 39,
+                    "endOffset": 16135
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 368,
+                    "startColumn": 4,
+                    "startOffset": 16140,
+                    "endColumn": 44,
+                    "endOffset": 16180
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\values\\strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 369,
+                    "startColumn": 4,
+                    "startOffset": 16185,
+                    "endColumn": 40,
+                    "endOffset": 16221
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\values\\strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 370,
+                    "startColumn": 4,
+                    "startOffset": 16226,
+                    "endColumn": 41,
+                    "endOffset": 16263
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\values\\strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 371,
+                    "startColumn": 4,
+                    "startOffset": 16268,
+                    "endColumn": 61,
+                    "endOffset": 16325
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 372,
+                    "startColumn": 4,
+                    "startOffset": 16330,
+                    "endColumn": 69,
+                    "endOffset": 16395
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 373,
+                    "startColumn": 4,
+                    "startOffset": 16400,
+                    "endColumn": 49,
+                    "endOffset": 16445
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 374,
+                    "startColumn": 4,
+                    "startOffset": 16450,
+                    "endColumn": 47,
+                    "endOffset": 16493
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 375,
+                    "startColumn": 4,
+                    "startOffset": 16498,
+                    "endColumn": 41,
+                    "endOffset": 16535
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\values\\strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 376,
+                    "startColumn": 4,
+                    "startOffset": 16540,
+                    "endColumn": 60,
+                    "endOffset": 16596
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\values\\strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 377,
+                    "startColumn": 4,
+                    "startOffset": 16601,
+                    "endColumn": 54,
+                    "endOffset": 16651
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 378,
+                    "startColumn": 4,
+                    "startOffset": 16656,
+                    "endColumn": 56,
+                    "endOffset": 16708
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 379,
+                    "startColumn": 4,
+                    "startOffset": 16713,
+                    "endColumn": 54,
+                    "endOffset": 16763
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 380,
+                    "startColumn": 4,
+                    "startOffset": 16768,
+                    "endColumn": 51,
+                    "endOffset": 16815
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 381,
+                    "startColumn": 4,
+                    "startOffset": 16820,
+                    "endColumn": 71,
+                    "endOffset": 16887
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 382,
+                    "startColumn": 4,
+                    "startOffset": 16892,
+                    "endColumn": 74,
+                    "endOffset": 16962
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 383,
+                    "startColumn": 4,
+                    "startOffset": 16967,
+                    "endColumn": 78,
+                    "endOffset": 17041
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 384,
+                    "startColumn": 4,
+                    "startOffset": 17046,
+                    "endColumn": 71,
+                    "endOffset": 17113
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 385,
+                    "startColumn": 4,
+                    "startOffset": 17118,
+                    "endColumn": 71,
+                    "endOffset": 17185
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 386,
+                    "startColumn": 4,
+                    "startOffset": 17190,
+                    "endColumn": 69,
+                    "endOffset": 17255
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 387,
+                    "startColumn": 4,
+                    "startOffset": 17260,
+                    "endColumn": 70,
+                    "endOffset": 17326
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 388,
+                    "startColumn": 4,
+                    "startOffset": 17331,
+                    "endColumn": 66,
+                    "endOffset": 17393
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 389,
+                    "startColumn": 4,
+                    "startOffset": 17398,
+                    "endColumn": 73,
+                    "endOffset": 17467
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 390,
+                    "startColumn": 4,
+                    "startOffset": 17472,
+                    "endColumn": 68,
+                    "endOffset": 17536
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 391,
+                    "startColumn": 4,
+                    "startOffset": 17541,
+                    "endColumn": 62,
+                    "endOffset": 17599
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 392,
+                    "startColumn": 4,
+                    "startOffset": 17604,
+                    "endColumn": 79,
+                    "endOffset": 17679
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 393,
+                    "startColumn": 4,
+                    "startOffset": 17684,
+                    "endColumn": 70,
+                    "endOffset": 17750
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 394,
+                    "startColumn": 4,
+                    "startOffset": 17755,
+                    "endColumn": 70,
+                    "endOffset": 17821
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 395,
+                    "startColumn": 4,
+                    "startOffset": 17826,
+                    "endColumn": 66,
+                    "endOffset": 17888
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 396,
+                    "startColumn": 4,
+                    "startOffset": 17893,
+                    "endColumn": 68,
+                    "endOffset": 17957
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 397,
+                    "startColumn": 4,
+                    "startOffset": 17962,
+                    "endColumn": 73,
+                    "endOffset": 18031
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 398,
+                    "startColumn": 4,
+                    "startOffset": 18036,
+                    "endColumn": 47,
+                    "endOffset": 18079
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 399,
+                    "startColumn": 4,
+                    "startOffset": 18084,
+                    "endColumn": 60,
+                    "endOffset": 18140
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 400,
+                    "startColumn": 4,
+                    "startOffset": 18145,
+                    "endColumn": 62,
+                    "endOffset": 18203
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 401,
+                    "startColumn": 4,
+                    "startOffset": 18208,
+                    "endColumn": 43,
+                    "endOffset": 18247
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 402,
+                    "startColumn": 4,
+                    "startOffset": 18252,
+                    "endColumn": 80,
+                    "endOffset": 18328
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 403,
+                    "startColumn": 4,
+                    "startOffset": 18333,
+                    "endColumn": 80,
+                    "endOffset": 18409
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 404,
+                    "startColumn": 4,
+                    "startOffset": 18414,
+                    "endColumn": 71,
+                    "endOffset": 18481
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 405,
+                    "startColumn": 4,
+                    "startOffset": 18486,
+                    "endColumn": 88,
+                    "endOffset": 18570
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 406,
+                    "startColumn": 4,
+                    "startOffset": 18575,
+                    "endColumn": 87,
+                    "endOffset": 18658
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 407,
+                    "startColumn": 4,
+                    "startOffset": 18663,
+                    "endColumn": 77,
+                    "endOffset": 18736
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 408,
+                    "startColumn": 4,
+                    "startOffset": 18741,
+                    "endColumn": 80,
+                    "endOffset": 18817
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 409,
+                    "startColumn": 4,
+                    "startOffset": 18822,
+                    "endColumn": 85,
+                    "endOffset": 18903
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 410,
+                    "startColumn": 4,
+                    "startOffset": 18908,
+                    "endColumn": 60,
+                    "endOffset": 18964
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 411,
+                    "startColumn": 4,
+                    "startOffset": 18969,
+                    "endColumn": 53,
+                    "endOffset": 19018
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 412,
+                    "startColumn": 4,
+                    "startOffset": 19023,
+                    "endColumn": 51,
+                    "endOffset": 19070
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 413,
+                    "startColumn": 4,
+                    "startOffset": 19075,
+                    "endColumn": 65,
+                    "endOffset": 19136
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 414,
+                    "startColumn": 4,
+                    "startOffset": 19141,
+                    "endColumn": 64,
+                    "endOffset": 19201
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 415,
+                    "startColumn": 4,
+                    "startOffset": 19206,
+                    "endColumn": 59,
+                    "endOffset": 19261
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 416,
+                    "startColumn": 4,
+                    "startOffset": 19266,
+                    "endColumn": 61,
+                    "endOffset": 19323
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 417,
+                    "startColumn": 4,
+                    "startOffset": 19328,
+                    "endColumn": 54,
+                    "endOffset": 19378
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 418,
+                    "startColumn": 4,
+                    "startOffset": 19383,
+                    "endColumn": 44,
+                    "endOffset": 19423
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 419,
+                    "startColumn": 4,
+                    "startOffset": 19428,
+                    "endColumn": 48,
+                    "endOffset": 19472
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 420,
+                    "startColumn": 4,
+                    "startOffset": 19477,
+                    "endColumn": 60,
+                    "endOffset": 19533
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 421,
+                    "startColumn": 4,
+                    "startOffset": 19538,
+                    "endColumn": 57,
+                    "endOffset": 19591
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 422,
+                    "startColumn": 4,
+                    "startOffset": 19596,
+                    "endColumn": 57,
+                    "endOffset": 19649
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 423,
+                    "startColumn": 4,
+                    "startOffset": 19654,
+                    "endColumn": 60,
+                    "endOffset": 19710
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 424,
+                    "startColumn": 4,
+                    "startOffset": 19715,
+                    "endColumn": 61,
+                    "endOffset": 19772
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 425,
+                    "startColumn": 4,
+                    "startOffset": 19777,
+                    "endColumn": 57,
+                    "endOffset": 19830
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 426,
+                    "startColumn": 4,
+                    "startOffset": 19835,
+                    "endColumn": 60,
+                    "endOffset": 19891
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 427,
+                    "startColumn": 4,
+                    "startOffset": 19896,
+                    "endColumn": 57,
+                    "endOffset": 19949
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 428,
+                    "startColumn": 4,
+                    "startOffset": 19954,
+                    "endColumn": 38,
+                    "endOffset": 19988
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 429,
+                    "startColumn": 4,
+                    "startOffset": 19993,
+                    "endColumn": 51,
+                    "endOffset": 20040
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 430,
+                    "startColumn": 4,
+                    "startOffset": 20045,
+                    "endColumn": 58,
+                    "endOffset": 20099
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 431,
+                    "startColumn": 4,
+                    "startOffset": 20104,
+                    "endColumn": 51,
+                    "endOffset": 20151
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 432,
+                    "startColumn": 4,
+                    "startOffset": 20156,
+                    "endColumn": 56,
+                    "endOffset": 20208
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 433,
+                    "startColumn": 4,
+                    "startOffset": 20213,
+                    "endColumn": 63,
+                    "endOffset": 20272
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 434,
+                    "startColumn": 4,
+                    "startOffset": 20277,
+                    "endColumn": 68,
+                    "endOffset": 20341
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 435,
+                    "startColumn": 4,
+                    "startOffset": 20346,
+                    "endColumn": 59,
+                    "endOffset": 20401
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 436,
+                    "startColumn": 4,
+                    "startOffset": 20406,
+                    "endColumn": 57,
+                    "endOffset": 20459
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 437,
+                    "startColumn": 4,
+                    "startOffset": 20464,
+                    "endColumn": 57,
+                    "endOffset": 20517
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 438,
+                    "startColumn": 4,
+                    "startOffset": 20522,
+                    "endColumn": 58,
+                    "endOffset": 20576
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 439,
+                    "startColumn": 4,
+                    "startOffset": 20581,
+                    "endColumn": 69,
+                    "endOffset": 20646
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 440,
+                    "startColumn": 4,
+                    "startOffset": 20651,
+                    "endColumn": 59,
+                    "endOffset": 20706
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 441,
+                    "startColumn": 4,
+                    "startOffset": 20711,
+                    "endColumn": 65,
+                    "endOffset": 20772
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 442,
+                    "startColumn": 4,
+                    "startOffset": 20777,
+                    "endColumn": 74,
+                    "endOffset": 20847
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 443,
+                    "startColumn": 4,
+                    "startOffset": 20852,
+                    "endColumn": 55,
+                    "endOffset": 20903
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 444,
+                    "startColumn": 4,
+                    "startOffset": 20908,
+                    "endColumn": 66,
+                    "endOffset": 20970
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 445,
+                    "startColumn": 4,
+                    "startOffset": 20975,
+                    "endColumn": 77,
+                    "endOffset": 21048
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 446,
+                    "startColumn": 4,
+                    "startOffset": 21053,
+                    "endColumn": 64,
+                    "endOffset": 21113
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 447,
+                    "startColumn": 4,
+                    "startOffset": 21118,
+                    "endColumn": 48,
+                    "endOffset": 21162
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 448,
+                    "startColumn": 4,
+                    "startOffset": 21167,
+                    "endColumn": 47,
+                    "endOffset": 21210
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 449,
+                    "startColumn": 4,
+                    "startOffset": 21215,
+                    "endColumn": 50,
+                    "endOffset": 21261
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 450,
+                    "startColumn": 4,
+                    "startOffset": 21266,
+                    "endColumn": 48,
+                    "endOffset": 21310
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 451,
+                    "startColumn": 4,
+                    "startOffset": 21315,
+                    "endColumn": 64,
+                    "endOffset": 21375
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 452,
+                    "startColumn": 4,
+                    "startOffset": 21380,
+                    "endColumn": 64,
+                    "endOffset": 21440
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 453,
+                    "startColumn": 4,
+                    "startOffset": 21445,
+                    "endColumn": 59,
+                    "endOffset": 21500
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 454,
+                    "startColumn": 4,
+                    "startOffset": 21505,
+                    "endColumn": 57,
+                    "endOffset": 21558
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 455,
+                    "startColumn": 4,
+                    "startOffset": 21563,
+                    "endColumn": 61,
+                    "endOffset": 21620
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 456,
+                    "startColumn": 4,
+                    "startOffset": 21625,
+                    "endColumn": 44,
+                    "endOffset": 21665
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 457,
+                    "startColumn": 4,
+                    "startOffset": 21670,
+                    "endColumn": 75,
+                    "endOffset": 21741
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 458,
+                    "startColumn": 4,
+                    "startOffset": 21746,
+                    "endColumn": 51,
+                    "endOffset": 21793
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 459,
+                    "startColumn": 4,
+                    "startOffset": 21798,
+                    "endColumn": 60,
+                    "endOffset": 21854
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 460,
+                    "startColumn": 4,
+                    "startOffset": 21859,
+                    "endColumn": 60,
+                    "endOffset": 21915
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 461,
+                    "startColumn": 4,
+                    "startOffset": 21920,
+                    "endColumn": 68,
+                    "endOffset": 21984
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 462,
+                    "startColumn": 4,
+                    "startOffset": 21989,
+                    "endColumn": 63,
+                    "endOffset": 22048
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 463,
+                    "startColumn": 4,
+                    "startOffset": 22053,
+                    "endColumn": 64,
+                    "endOffset": 22113
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 464,
+                    "startColumn": 4,
+                    "startOffset": 22118,
+                    "endColumn": 73,
+                    "endOffset": 22187
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 465,
+                    "startColumn": 4,
+                    "startOffset": 22192,
+                    "endColumn": 77,
+                    "endOffset": 22265
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 466,
+                    "startColumn": 4,
+                    "startOffset": 22270,
+                    "endColumn": 46,
+                    "endOffset": 22312
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 467,
+                    "startColumn": 4,
+                    "startOffset": 22317,
+                    "endColumn": 49,
+                    "endOffset": 22362
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 468,
+                    "startColumn": 4,
+                    "startOffset": 22367,
+                    "endColumn": 58,
+                    "endOffset": 22421
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 469,
+                    "startColumn": 4,
+                    "startOffset": 22426,
+                    "endColumn": 53,
+                    "endOffset": 22475
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 470,
+                    "startColumn": 4,
+                    "startOffset": 22480,
+                    "endColumn": 65,
+                    "endOffset": 22541
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 471,
+                    "startColumn": 4,
+                    "startOffset": 22546,
+                    "endColumn": 59,
+                    "endOffset": 22601
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 472,
+                    "startColumn": 4,
+                    "startOffset": 22606,
+                    "endColumn": 61,
+                    "endOffset": 22663
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 473,
+                    "startColumn": 4,
+                    "startOffset": 22668,
+                    "endColumn": 50,
+                    "endOffset": 22714
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 474,
+                    "startColumn": 4,
+                    "startOffset": 22719,
+                    "endColumn": 50,
+                    "endOffset": 22765
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 475,
+                    "startColumn": 4,
+                    "startOffset": 22770,
+                    "endColumn": 49,
+                    "endOffset": 22815
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 476,
+                    "startColumn": 4,
+                    "startOffset": 22820,
+                    "endColumn": 62,
+                    "endOffset": 22878
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 477,
+                    "startColumn": 4,
+                    "startOffset": 22883,
+                    "endColumn": 42,
+                    "endOffset": 22921
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 478,
+                    "startColumn": 4,
+                    "startOffset": 22926,
+                    "endColumn": 36,
+                    "endOffset": 22958
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 479,
+                    "startColumn": 4,
+                    "startOffset": 22963,
+                    "endColumn": 55,
+                    "endOffset": 23014
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 480,
+                    "startColumn": 4,
+                    "startOffset": 23019,
+                    "endLine": 488,
+                    "endColumn": 12,
+                    "endOffset": 23581
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\values\\style.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 83,
+                        "endLine": 12,
+                        "endColumn": 12,
+                        "endOffset": 653
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 489,
+                    "startColumn": 4,
+                    "startOffset": 23586,
+                    "endLine": 497,
+                    "endColumn": 12,
+                    "endOffset": 24212
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 498,
+                    "startColumn": 4,
+                    "startOffset": 24217,
+                    "endLine": 501,
+                    "endColumn": 12,
+                    "endOffset": 24434
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 502,
+                    "startColumn": 4,
+                    "startOffset": 24439,
+                    "endLine": 505,
+                    "endColumn": 12,
+                    "endOffset": 24642
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 506,
+                    "startColumn": 4,
+                    "startOffset": 24647,
+                    "endLine": 510,
+                    "endColumn": 12,
+                    "endOffset": 24910
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 511,
+                    "startColumn": 4,
+                    "startOffset": 24915,
+                    "endLine": 519,
+                    "endColumn": 12,
+                    "endOffset": 25405
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 520,
+                    "startColumn": 4,
+                    "startOffset": 25410,
+                    "endLine": 522,
+                    "endColumn": 12,
+                    "endOffset": 25488
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 523,
+                    "startColumn": 4,
+                    "startOffset": 25493,
+                    "endLine": 525,
+                    "endColumn": 12,
+                    "endOffset": 25570
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 526,
+                    "startColumn": 4,
+                    "startOffset": 25575,
+                    "endLine": 528,
+                    "endColumn": 12,
+                    "endOffset": 25748
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 529,
+                    "startColumn": 4,
+                    "startOffset": 25753,
+                    "endLine": 531,
+                    "endColumn": 12,
+                    "endOffset": 25831
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 532,
+                    "startColumn": 4,
+                    "startOffset": 25836,
+                    "endLine": 536,
+                    "endColumn": 12,
+                    "endOffset": 26119
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 537,
+                    "startColumn": 4,
+                    "startOffset": 26124,
+                    "endLine": 539,
+                    "endColumn": 12,
+                    "endOffset": 26201
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 540,
+                    "startColumn": 4,
+                    "startOffset": 26206,
+                    "endLine": 547,
+                    "endColumn": 12,
+                    "endOffset": 26663
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 548,
+                    "startColumn": 4,
+                    "startOffset": 26668,
+                    "endLine": 550,
+                    "endColumn": 12,
+                    "endOffset": 26839
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\values\\style.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 551,
+                    "startColumn": 4,
+                    "startOffset": 26844,
+                    "endLine": 553,
+                    "endColumn": 12,
+                    "endOffset": 27017
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 554,
+                    "startColumn": 4,
+                    "startOffset": 27022,
+                    "endLine": 559,
+                    "endColumn": 12,
+                    "endOffset": 27354
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\values\\style.xml",
+                    "position": {
+                        "startLine": 14,
+                        "startColumn": 4,
+                        "startOffset": 661,
+                        "endLine": 19,
+                        "endColumn": 12,
+                        "endOffset": 998
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 560,
+                    "startColumn": 4,
+                    "startOffset": 27359,
+                    "endLine": 562,
+                    "endColumn": 12,
+                    "endOffset": 27531
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\values\\values.xml"
+                }
+            }
+        ]
+    }
+]

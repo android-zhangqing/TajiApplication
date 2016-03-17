@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/bgcolor_bar_bottom"
+    android:orientation="horizontal"
+
+    >
+
+    <RelativeLayout
+
+        android:id="@+id/main_tab_ry_home"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:paddingBottom="@dimen/main_bottom_bar_margin_normal"
+        android:paddingTop="@dimen/main_bottom_bar_margin_normal">
+
+        <LinearLayout
+            android:id="@+id/main_tab_ly_home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/main_tab_iv_home"
+                android:layout_width="@dimen/main_bottom_bar_img_height"
+                android:layout_height="@dimen/main_bottom_bar_img_height"
+                android:scaleType="fitXY"
+                android:src="@drawable/icon_tab_home_normal" />
+
+            <TextView
+                android:id="@+id/main_tab_tv_home"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="首页" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/main_tab_point_home"
+            android:layout_width="5dp"
+            android:layout_height="5dp"
+            android:layout_toRightOf="@id/main_tab_ly_home"
+            android:scaleType="fitXY"
+            android:src="@drawable/icon_tab_point_selected" />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/main_tab_ry_circle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@drawable/center_button_gradient"
+        android:paddingBottom="@dimen/main_bottom_bar_margin_normal"
+        android:paddingTop="@dimen/main_bottom_bar_margin_normal">
+
+        <LinearLayout
+            android:id="@+id/main_tab_ly_circle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/main_tab_iv_circle"
+                android:layout_width="@dimen/main_bottom_bar_img_height"
+                android:layout_height="@dimen/main_bottom_bar_img_height"
+
+                android:scaleType="fitXY"
+                android:src="@drawable/icon_tab_home_normal" />
+
+            <TextView
+                android:id="@+id/main_tab_tv_circle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="圈子" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/main_tab_point_circle"
+            android:layout_width="5dp"
+            android:layout_height="5dp"
+            android:layout_toRightOf="@id/main_tab_ly_circle"
+            android:scaleType="fitXY"
+            android:src="@drawable/icon_viewpager_point_selected" />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/main_tab_ly_center"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@color/bgcolor_bar_bottom_center"
+        android:paddingBottom="@dimen/main_bottom_bar_margin_normal"
+        android:paddingTop="@dimen/main_bottom_bar_margin_normal">
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerInParent="true"
+            android:scaleType="centerInside"
+            android:src="@drawable/icon_tab_center_normal" />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/main_tab_ry_message"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@drawable/center_button_gradient_rotation"
+        android:paddingBottom="@dimen/main_bottom_bar_margin_normal"
+        android:paddingTop="@dimen/main_bottom_bar_margin_normal">
+
+        <LinearLayout
+            android:id="@+id/main_tab_ly_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/main_tab_iv_message"
+                android:layout_width="@dimen/main_bottom_bar_img_height"
+                android:layout_height="@dimen/main_bottom_bar_img_height"
+                android:scaleType="fitXY"
+                android:src="@drawable/icon_tab_home_normal" />
+
+            <TextView
+                android:id="@+id/main_tab_tv_message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="消息" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/main_tab_point_message"
+            android:layout_width="5dp"
+            android:layout_height="5dp"
+            android:layout_toRightOf="@id/main_tab_ly_message"
+            android:scaleType="fitXY"
+            android:src="@drawable/icon_viewpager_point_selected" />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/main_tab_ry_my"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:paddingBottom="@dimen/main_bottom_bar_margin_normal"
+        android:paddingTop="@dimen/main_bottom_bar_margin_normal">
+
+        <LinearLayout
+            android:id="@+id/main_tab_ly_my"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/main_tab_iv_my"
+                android:layout_width="@dimen/main_bottom_bar_img_height"
+                android:layout_height="@dimen/main_bottom_bar_img_height"
+                android:scaleType="fitXY"
+                android:src="@drawable/icon_tab_home_normal" />
+
+            <TextView
+                android:id="@+id/main_tab_tv_my"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="我的" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/main_tab_point_my"
+            android:layout_width="5dp"
+            android:layout_height="5dp"
+            android:layout_toRightOf="@id/main_tab_ly_my"
+            android:scaleType="fitXY"
+            android:src="@drawable/icon_viewpager_point_selected" />
+
+
+    </RelativeLayout>
+</LinearLayout>
