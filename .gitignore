@@ -16,6 +16,7 @@ tajiapp/out/
 # Gradle files
 tajiapp/.gradle/
 tajiapp/build/
+tajiapp/app/build/
 tajiapp/emoji/build/
 tajiapp/IMKit/build/
 

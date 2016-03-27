@@ -152,14 +152,14 @@ public class FragmentMy extends Fragment implements View.OnClickListener {
 
 
         String interest = UserClass.getInstance().getStringByKey("interest");
-        if (!interest.equals("")) {
-            addViewToContainer(interest, mContainerInterest, R.drawable.my_interst_lable_bg);
-        }
+
+        addViewToContainer(interest, mContainerInterest, R.drawable.my_interst_lable_bg);
+
 
         String skill = UserClass.getInstance().getStringByKey("skill");
-        if (!skill.equals("")) {
-            addViewToContainer(skill, mContainerSkill, R.drawable.my_skill_lable_bg);
-        }
+
+        addViewToContainer(skill, mContainerSkill, R.drawable.my_skill_lable_bg);
+
 
         String avatar = UserClass.getInstance().getStringByKey("avatar");
         if (!avatar.equals("")) {
@@ -186,17 +186,29 @@ public class FragmentMy extends Fragment implements View.OnClickListener {
     private static final int MARGIN_LABLE_Top = 15;
     private static final int PADDING_LABLE = 22;
 
+    /**
+     * 将技能兴趣标签加入view，自动换行，两端对齐
+     *
+     * @param stringWaitToSplit  多个标签点号分隔
+     * @param layout             父容器
+     * @param backgroundResource 标签背景色
+     */
     private void addViewToContainer(String stringWaitToSplit, LinearLayout layout, int backgroundResource) {
+        layout.removeAllViews();
+        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        params.setMargins(MARGIN_LABLE, MARGIN_LABLE_Top, MARGIN_LABLE, MARGIN_LABLE_Top);
 
-        if (stringWaitToSplit.equals("") || stringWaitToSplit.equals("null")) return;
+        if (stringWaitToSplit.equals("") || stringWaitToSplit.equals("null")) {
+            TextView tv = new TextView(getActivity());
+            tv.setText("戳我立即添加标签");
+            layout.addView(tv, params);
+            return;
+        }
 
         String[] strings = stringWaitToSplit.split("\\.");
 
-        layout.removeAllViews();
         layout.setGravity(Gravity.CENTER_VERTICAL);
         Log.e("addViewToContainer", stringWaitToSplit + "|" + layout.getWidth() + "|" + layout.toString());
-        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-        params.setMargins(MARGIN_LABLE, MARGIN_LABLE_Top, MARGIN_LABLE, MARGIN_LABLE_Top);
 
         int restWidth = layout.getWidth();
         LinearLayout layoutSubContainer = new LinearLayout(getActivity());
@@ -210,6 +222,7 @@ public class FragmentMy extends Fragment implements View.OnClickListener {
             tv.setTextColor(Color.parseColor("#CDCDCD"));
             tv.setTextSize(13);
             tv.setGravity(Gravity.CENTER);
+            tv.setSingleLine(true);
 
             int w = View.MeasureSpec.makeMeasureSpec(0,
                     View.MeasureSpec.UNSPECIFIED);
@@ -222,6 +235,7 @@ public class FragmentMy extends Fragment implements View.OnClickListener {
             Log.e("measureResult", "|" + costWidth + "|" + restWidth);
 
             if (restWidth <= 0) {
+                //改变前一个标签的宽度，使之两端对齐
                 TextView lastTv = (TextView) layoutSubContainer.getChildAt(layoutSubContainer.getChildCount() - 1);
                 int lastTvWidth = lastTv.getMeasuredWidth() + costWidth + restWidth - 2 * MARGIN_LABLE;
                 Log.e("lastTvWidth", lastTvWidth + "|");
