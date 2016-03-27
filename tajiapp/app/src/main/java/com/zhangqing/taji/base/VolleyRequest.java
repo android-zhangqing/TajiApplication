@@ -1,6 +1,5 @@
 package com.zhangqing.taji.base;
 
-import android.app.Dialog;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.util.Log;

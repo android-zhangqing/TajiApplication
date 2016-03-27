@@ -79,30 +79,41 @@
         <activity
             android:name=".activities.login.LoginActivity"
             android:label="@string/app_name"
-            android:theme="@android:style/Theme.NoTitleBar" />
+            android:launchMode="singleTop"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-        android:name=".activities.ModifyInterestSkillActivity"
-        android:label="设置兴趣与技能" />
+            android:name=".activities.PersonDetailActivity"
+            android:label="@string/app_name"
+            android:launchMode="singleTop"
+            android:theme="@style/Theme.AppCompat.Light" />
+        <activity
+            android:name=".activities.ModifyInterestSkillActivity"
+            android:label="设置兴趣与技能"
+            android:launchMode="singleTop" />
         <activity
             android:name=".activities.TajiappActivity"
             android:label="@string/app_name"
+            android:launchMode="singleTask"
             android:theme="@android:style/Theme.NoTitleBar" />
         <activity
             android:name=".activities.PublishActivity"
             android:configChanges="orientation|keyboardHidden"
             android:label="@string/app_name"
+            android:launchMode="singleTop"
 
             android:theme="@android:style/Theme.Translucent.NoTitleBar"
             android:windowSoftInputMode="stateAlwaysHidden|adjustPan" />
         <activity
             android:name=".activities.login.RegisterFirstActivity"
             android:label="@string/app_name"
+            android:launchMode="singleTop"
             android:theme="@android:style/Theme.NoTitleBar"
             android:windowSoftInputMode="stateAlwaysVisible|adjustPan" />
         <activity
             android:name=".activities.login.RegisterSecondActivity"
             android:configChanges="keyboardHidden"
             android:label="@string/app_name"
+            android:launchMode="singleTop"
             android:theme="@android:style/Theme.NoTitleBar"
             android:windowSoftInputMode="stateAlwaysVisible|adjustPan" />
 
@@ -110,26 +121,31 @@
             android:name=".activities.login.ResetPassBySmsActivity"
             android:configChanges="keyboardHidden"
             android:label="@string/app_name"
+            android:launchMode="singleTop"
             android:theme="@android:style/Theme.NoTitleBar" />
         <activity
             android:name=".activities.login.RegisterThirdActivity"
             android:label="@string/app_name"
+            android:launchMode="singleTop"
             android:theme="@android:style/Theme.NoTitleBar"
             android:windowSoftInputMode="stateAlwaysVisible|adjustPan" />
         <activity
             android:name=".activities.SearchActivity"
             android:label="@string/app_name"
+            android:launchMode="singleTop"
 
             android:theme="@android:style/Theme.NoTitleBar" />
         <activity
             android:name=".activities.ListPersonsActivity"
             android:label="@string/app_name"
+            android:launchMode="singleTop"
 
             android:theme="@android:style/Theme.NoTitleBar"
             android:windowSoftInputMode="stateHidden|adjustPan" />
 
         <activity
             android:name=".activities.ConversationActivity"
+            android:launchMode="singleTop"
             android:screenOrientation="portrait"
 
             android:theme="@android:style/Theme.Holo.Light"

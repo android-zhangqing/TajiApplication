@@ -11,7 +11,6 @@ import java.io.PrintStream;
 import java.net.HttpURLConnection;
 import java.net.Socket;
 import java.net.URL;
-import java.util.HashMap;
 import java.util.Map;
 
 public class Test {

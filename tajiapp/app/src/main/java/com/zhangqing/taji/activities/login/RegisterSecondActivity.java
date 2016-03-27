@@ -33,7 +33,7 @@ public class RegisterSecondActivity extends Activity {
     private Runnable runnable;
 
     private Handler handler = new Handler() {
-        public void handleMessage(android.os.Message msg) {
+        public void handleMessage(Message msg) {
             if (msg.arg1 != 0) {
                 btnReSend.setText("重新获取(" + msg.arg1 + "s)");
             } else {

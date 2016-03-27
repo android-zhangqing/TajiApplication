@@ -1,6 +1,5 @@
 package com.zhangqing.taji.view;
 import android.content.Context;
-import android.content.res.TypedArray;
 import android.graphics.Bitmap;
 import android.graphics.BitmapShader;
 import android.graphics.Canvas;
@@ -15,6 +14,7 @@ import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.util.AttributeSet;
 import android.widget.ImageView;
+
 /**
  * Created by Administrator on 2016/2/22.
  */

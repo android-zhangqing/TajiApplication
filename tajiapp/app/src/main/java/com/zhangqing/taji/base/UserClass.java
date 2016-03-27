@@ -119,11 +119,11 @@ public class UserClass {
 
         //result = "{\"result\":\"ok\",\"msg\":\"操作成功\",\"data\":[],\"rescode\":200}";
 
-        org.json.JSONObject jsonObject2;
+        JSONObject jsonObject2;
         List<SchoolType> citySchoolsList = new ArrayList<SchoolType>();
 
         try {
-            jsonObject2 = new org.json.JSONObject(result);
+            jsonObject2 = new JSONObject(result);
             Log.e("getSchoolByJSONObject", jsonObject2.length() + "|" + jsonObject2.toString());
             JSONArray jsonArray = jsonObject2.getJSONArray("data");
             Log.e("getSchoolBygetJSONArray", jsonArray.length() + "|" + jsonArray.toString());
@@ -266,6 +266,13 @@ public class UserClass {
             e.printStackTrace();
         }
         VolleyRequest.RequestGet(url, "doRegisterSmsSend", vif);
+
+    }
+
+    public void doGetDongTai(VolleyInterface vif) {
+
+        String url = URLHEAD + "/DongTai?" + "userid=" + userId + "&openid=" + openId;
+        VolleyRequest.RequestGet(url, "doGetDongTai", vif);
 
     }
 

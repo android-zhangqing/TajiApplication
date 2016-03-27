@@ -3,7 +3,6 @@ package com.zhangqing.taji.view;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.util.Log;
-import android.widget.GridView;
 import android.widget.ListView;
 
 public class NoScrollListView extends ListView {

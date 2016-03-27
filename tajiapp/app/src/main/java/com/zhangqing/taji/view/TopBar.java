@@ -227,18 +227,18 @@ public class TopBar extends LinearLayout implements OnClickListener {
         v.setTag(R.id.tagkey_describe, describe);
     }
 
-    private LinearLayout.LayoutParams getMyLayoutParams(int width, int height,
+    private LayoutParams getMyLayoutParams(int width, int height,
                                                         int weight, int marginTop, int marginBottom) {
-        LinearLayout.LayoutParams layoutParams = new LayoutParams(width,
+        LayoutParams layoutParams = new LayoutParams(width,
                 height, weight);
         layoutParams.setMargins(0, marginTop, 0, marginBottom);
         layoutParams.gravity = Gravity.CENTER;
         return layoutParams;
     }
 
-    private LinearLayout.LayoutParams getMyLayoutParams(int width, int height,
+    private LayoutParams getMyLayoutParams(int width, int height,
                                                         int weight, int marginTop, int marginBottom, int marginLeft, int marginRight) {
-        LinearLayout.LayoutParams layoutParams = new LayoutParams(width,
+        LayoutParams layoutParams = new LayoutParams(width,
                 height, weight);
         layoutParams.setMargins(marginLeft, marginTop, marginRight, marginBottom);
         layoutParams.gravity = Gravity.CENTER;

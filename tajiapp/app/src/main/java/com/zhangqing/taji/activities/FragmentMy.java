@@ -32,7 +32,7 @@ import org.json.JSONObject;
 
 
 /**
- * Created by Administrator on 2016/2/14.
+ * 首页底部栏【我的】
  */
 public class FragmentMy extends Fragment implements View.OnClickListener {
     //声明AMapLocationClient类对象
@@ -175,24 +175,61 @@ public class FragmentMy extends Fragment implements View.OnClickListener {
         }
     }
 
+    private static final int MARGIN_LABLE = 15;
+    private static final int MARGIN_LABLE_Top = 15;
+    private static final int PADDING_LABLE = 22;
+
     private void addViewToContainer(String stringWaitToSplit, LinearLayout layout, int backgroundResource) {
+
         if (stringWaitToSplit.equals("") || stringWaitToSplit.equals("null")) return;
 
         String[] strings = stringWaitToSplit.split("\\.");
 
         layout.removeAllViews();
         layout.setGravity(Gravity.CENTER_VERTICAL);
-        Log.e("addViewToContainer", stringWaitToSplit + "|" + layout.toString());
+        Log.e("addViewToContainer", stringWaitToSplit + "|" + layout.getWidth() + "|" + layout.toString());
         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-        params.setMargins(12, 0, 12, 0);
+        params.setMargins(MARGIN_LABLE, MARGIN_LABLE_Top, MARGIN_LABLE, MARGIN_LABLE_Top);
+
+        int restWidth = layout.getWidth();
+        LinearLayout layoutSubContainer = new LinearLayout(getActivity());
+        layout.addView(layoutSubContainer, LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
         for (String i : strings) {
+
             TextView tv = new TextView(getActivity());
             tv.setText(i);
             tv.setBackgroundResource(backgroundResource);
-            tv.setPadding(22, 3, 22, 3);
+            tv.setPadding(PADDING_LABLE, 12, PADDING_LABLE, 12);
             tv.setTextColor(Color.parseColor("#CDCDCD"));
             tv.setTextSize(13);
-            layout.addView(tv, params);
+            tv.setGravity(Gravity.CENTER);
+
+            int w = View.MeasureSpec.makeMeasureSpec(0,
+                    View.MeasureSpec.UNSPECIFIED);
+            int h = View.MeasureSpec.makeMeasureSpec(0,
+                    View.MeasureSpec.UNSPECIFIED);
+            tv.measure(w, h);
+
+            int costWidth = tv.getMeasuredWidth() + MARGIN_LABLE * 2;
+            restWidth -= costWidth;
+            Log.e("measureResult", "|" + costWidth + "|" + restWidth);
+
+            if (restWidth <= 0) {
+                TextView lastTv = (TextView) layoutSubContainer.getChildAt(layoutSubContainer.getChildCount() - 1);
+                int lastTvWidth = lastTv.getMeasuredWidth() + costWidth + restWidth - 2 * MARGIN_LABLE;
+                Log.e("lastTvWidth", lastTvWidth + "|");
+
+                LinearLayout.LayoutParams tempParams = new LinearLayout.LayoutParams(lastTvWidth, LinearLayout.LayoutParams.WRAP_CONTENT);
+                tempParams.setMargins(MARGIN_LABLE, MARGIN_LABLE_Top, MARGIN_LABLE, MARGIN_LABLE_Top);
+                lastTv.setLayoutParams(tempParams);
+
+                restWidth = layout.getWidth() - costWidth;
+                layoutSubContainer = new LinearLayout(getActivity());
+                layout.addView(layoutSubContainer, LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+            }
+
+
+            layoutSubContainer.addView(tv, params);
         }
     }
 

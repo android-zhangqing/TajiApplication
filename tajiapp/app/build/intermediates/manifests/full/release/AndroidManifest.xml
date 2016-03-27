@@ -87,52 +87,68 @@
         <activity
             android:name="com.zhangqing.taji.activities.login.LoginActivity"
             android:label="@string/app_name"
-            android:theme="@android:style/Theme.NoTitleBar" />
+            android:launchMode="singleTop"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name="com.zhangqing.taji.activities.PersonDetailActivity"
+            android:label="@string/app_name"
+            android:launchMode="singleTop"
+            android:theme="@style/Theme.AppCompat.Light" />
         <activity
             android:name="com.zhangqing.taji.activities.ModifyInterestSkillActivity"
-            android:label="设置兴趣与技能" />
+            android:label="设置兴趣与技能"
+            android:launchMode="singleTop" />
         <activity
             android:name="com.zhangqing.taji.activities.TajiappActivity"
             android:label="@string/app_name"
+            android:launchMode="singleTask"
             android:theme="@android:style/Theme.NoTitleBar" />
         <activity
             android:name="com.zhangqing.taji.activities.PublishActivity"
             android:configChanges="orientation|keyboardHidden"
             android:label="@string/app_name"
+            android:launchMode="singleTop"
             android:theme="@android:style/Theme.Translucent.NoTitleBar"
             android:windowSoftInputMode="stateAlwaysHidden|adjustPan" />
         <activity
             android:name="com.zhangqing.taji.activities.login.RegisterFirstActivity"
             android:label="@string/app_name"
+            android:launchMode="singleTop"
             android:theme="@android:style/Theme.NoTitleBar"
             android:windowSoftInputMode="stateAlwaysVisible|adjustPan" />
         <activity
             android:name="com.zhangqing.taji.activities.login.RegisterSecondActivity"
             android:configChanges="keyboardHidden"
             android:label="@string/app_name"
+            android:launchMode="singleTop"
             android:theme="@android:style/Theme.NoTitleBar"
             android:windowSoftInputMode="stateAlwaysVisible|adjustPan" />
         <activity
             android:name="com.zhangqing.taji.activities.login.ResetPassBySmsActivity"
             android:configChanges="keyboardHidden"
             android:label="@string/app_name"
+            android:launchMode="singleTop"
             android:theme="@android:style/Theme.NoTitleBar" />
         <activity
             android:name="com.zhangqing.taji.activities.login.RegisterThirdActivity"
             android:label="@string/app_name"
+            android:launchMode="singleTop"
             android:theme="@android:style/Theme.NoTitleBar"
             android:windowSoftInputMode="stateAlwaysVisible|adjustPan" />
         <activity
             android:name="com.zhangqing.taji.activities.SearchActivity"
             android:label="@string/app_name"
+            android:launchMode="singleTop"
             android:theme="@android:style/Theme.NoTitleBar" />
         <activity
             android:name="com.zhangqing.taji.activities.ListPersonsActivity"
             android:label="@string/app_name"
+            android:launchMode="singleTop"
             android:theme="@android:style/Theme.NoTitleBar"
             android:windowSoftInputMode="stateHidden|adjustPan" />
         <activity
             android:name="com.zhangqing.taji.activities.ConversationActivity"
+            android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Holo.Light"
             android:windowSoftInputMode="stateHidden|adjustResize" >

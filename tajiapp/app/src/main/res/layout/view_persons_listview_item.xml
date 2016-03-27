@@ -38,10 +38,11 @@
 
         <TextView
             android:id="@+id/persons_item_sign"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginRight="2dp"
             android:text="25"
+            android:singleLine="true"
             android:textColor="#C6C6C6"
             android:textSize="15sp" />
 

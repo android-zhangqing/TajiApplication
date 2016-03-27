@@ -1,14 +1,13 @@
 package com.zhangqing.taji.view;
 
-import java.util.List;
-
 import android.content.Context;
 import android.graphics.PointF;
-import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.widget.ImageView;
+
+import java.util.List;
 
 public class ChildViewPager extends ViewPager {
 	

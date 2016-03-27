@@ -1,10 +1,9 @@
 package com.zhangqing.taji.activities.login;
 
-import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
@@ -14,14 +13,16 @@ import com.android.volley.VolleyError;
 import com.zhangqing.taji.MyApplication;
 import com.zhangqing.taji.R;
 import com.zhangqing.taji.activities.TajiappActivity;
-import com.zhangqing.taji.base.CustomProgress;
 import com.zhangqing.taji.base.UserClass;
 import com.zhangqing.taji.base.VolleyInterface;
 
 import org.json.JSONObject;
 
+/**
+ * 登录界面activity
+ */
 
-public class LoginActivity extends Activity {
+public class LoginActivity extends AppCompatActivity {
 
     private EditText mMobileEditText;
     private EditText mPasswordEditText;
@@ -37,6 +38,7 @@ public class LoginActivity extends Activity {
         // TODO Auto-generated method stub
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
 
         mMobileEditText = (EditText) findViewById(R.id.login_username);
         mPasswordEditText = (EditText) findViewById(R.id.login_userpass);
@@ -80,9 +82,24 @@ public class LoginActivity extends Activity {
                     return;
                 }
 
-                Intent intent = new Intent(LoginActivity.this, TajiappActivity.class);
-                startActivity(intent);
-                finish();
+
+                MyApplication.getUser().getUserInfo(new VolleyInterface(LoginActivity.this.getApplicationContext()) {
+                    @Override
+                    public void onMySuccess(JSONObject jsonObject) {
+                        if (!MyApplication.getUser().saveSharedPreference(jsonObject)) {
+                            MyApplication.getUser().clear();
+                            Toast.makeText(LoginActivity.this.getApplicationContext(), "账号异常", Toast.LENGTH_SHORT).show();
+                            return;
+                        }
+                        startTajiActivity();
+                    }
+
+                    @Override
+                    public void onMyError(VolleyError error) {
+
+                    }
+                });
+
                 ;
 
             }
@@ -99,6 +116,12 @@ public class LoginActivity extends Activity {
                 Log.e("onMyError", error.toString() + "|");
             }
         });
+    }
+
+    private void startTajiActivity() {
+        Intent intent = new Intent(LoginActivity.this, TajiappActivity.class);
+        startActivity(intent);
+        finish();
     }
 
     @Override

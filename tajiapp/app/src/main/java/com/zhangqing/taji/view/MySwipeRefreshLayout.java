@@ -7,10 +7,10 @@ import android.util.AttributeSet;
 import android.util.Log;
 
 /**
- * Created by Administrator on 2016/3/15.
+ * 优化的swipeRefreshLayout，刷新有最小时长，优化setRefreshing方法
  */
 public class MySwipeRefreshLayout extends SwipeRefreshLayout {
-    private static final int DELAY_MILLIS = 1200;
+    private static final int DELAY_MILLIS = 500;
 
     private OnRefreshListener mListener;
     private long mStartTimeMillis;

@@ -1,26 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/zhangqing/taji/MyApplication.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/zhangqing/taji/activities/FragmentHomeHot.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/zhangqing/taji/activities/TajiappActivity.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/zhangqing/taji/activities/login/LoginActivity.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/zhangqing/taji/activities/login/RegisterFirstActivity.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/zhangqing/taji/activities/login/RegisterSecondActivity.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/zhangqing/taji/activities/login/RegisterThirdActivity.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/zhangqing/taji/base/UserClass.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/zhangqing/taji/base/VolleyInterface.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/zhangqing/taji/base/VolleyRequest.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/zhangqing/taji/util/Md5Util.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/zhangqing/taji/view/BottomBar.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/zhangqing/taji/view/ChildViewPager.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/zhangqing/taji/view/CircleImageView.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/zhangqing/taji/view/FragmentHomeHotViewFirst.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/zhangqing/taji/view/FragmentHomeHotViewThen.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/zhangqing/taji/view/NoScrollGridView.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/zhangqing/taji/view/ObservableScrollView.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/zhangqing/taji/view/OnScrollViewListener.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/zhangqing/taji/view/TopBar.java" charset="UTF-8" />
     <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>

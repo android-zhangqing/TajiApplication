@@ -1,7 +1,27 @@
 [
     {
-        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_tab_publish_delete.png",
-        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_tab_publish_delete.png"
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\abc_btn_check_to_on_mtrl_015.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\drawable-hdpi\\abc_btn_check_to_on_mtrl_015.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\ic_emoji_people_light_activated.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\emoji\\unspecified\\res\\drawable-hdpi-v4\\ic_emoji_people_light_activated.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_tab_my_titlebar_setting.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_tab_my_titlebar_setting.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_dialog_loadding6.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_dialog_loadding6.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\abc_scrubber_control_off_mtrl_alpha.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\drawable-hdpi\\abc_scrubber_control_off_mtrl_alpha.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_login_qq.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_login_qq.png"
     },
     {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_tab_publish_weixin.png",
@@ -12,12 +32,12 @@
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\emoji\\unspecified\\res\\drawable-hdpi-v4\\orca_composer_top_divider.9.png"
     },
     {
-        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\orca_emoji_more_front_normal.png",
-        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\emoji\\unspecified\\res\\drawable-hdpi-v4\\orca_emoji_more_front_normal.png"
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_login_weixin.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_login_weixin.png"
     },
     {
-        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_tab_publish_imm.png",
-        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_tab_publish_imm.png"
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\abc_btn_radio_to_on_mtrl_015.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\drawable-hdpi\\abc_btn_radio_to_on_mtrl_015.png"
     },
     {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_tab_point_unselected.png",
@@ -28,68 +48,56 @@
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\emoji\\unspecified\\res\\drawable-hdpi-v4\\orca_emoji_category_nature.png"
     },
     {
-        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_tab_my_right_arrow.png",
-        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_tab_my_right_arrow.png"
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_tab_publish_shitu_select.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_tab_publish_shitu_select.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\abc_btn_check_to_on_mtrl_000.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\drawable-hdpi\\abc_btn_check_to_on_mtrl_000.png"
     },
     {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\orca_attach_location_pressed.png",
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\emoji\\unspecified\\res\\drawable-hdpi-v4\\orca_attach_location_pressed.png"
     },
     {
-        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_tab_home_normal.png",
-        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_tab_home_normal.png"
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\abc_ic_ab_back_mtrl_am_alpha.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\drawable-hdpi\\abc_ic_ab_back_mtrl_am_alpha.png"
     },
     {
-        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_blank_42.png",
-        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_blank_42.png"
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_tab_home_normal.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_tab_home_normal.png"
     },
     {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\ic_emoji_nature_light_activated.png",
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\emoji\\unspecified\\res\\drawable-hdpi-v4\\ic_emoji_nature_light_activated.png"
     },
     {
-        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\ic_emoji_symbols_light_activated.png",
-        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\emoji\\unspecified\\res\\drawable-hdpi-v4\\ic_emoji_symbols_light_activated.png"
-    },
-    {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_register_cursor.png",
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_register_cursor.png"
     },
     {
-        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\orca_emoji_backspace_front_pressed.png",
-        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\emoji\\unspecified\\res\\drawable-hdpi-v4\\orca_emoji_backspace_front_pressed.png"
-    },
-    {
-        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\orca_emoji_category_cars.png",
-        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\emoji\\unspecified\\res\\drawable-hdpi-v4\\orca_emoji_category_cars.png"
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_tab_publish_weixin_unselect.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_tab_publish_weixin_unselect.png"
     },
     {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_tab_publish_face.png",
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_tab_publish_face.png"
     },
     {
-        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_tab_point_selected.png",
-        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_tab_point_selected.png"
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_tab_my_lable_tu.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_tab_my_lable_tu.png"
     },
     {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\orca_composer_divider_vertical.9.png",
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\emoji\\unspecified\\res\\drawable-hdpi-v4\\orca_composer_divider_vertical.9.png"
     },
     {
-        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_tab_my_lable_tu.png",
-        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_tab_my_lable_tu.png"
-    },
-    {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_tab_publish_backstep.png",
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_tab_publish_backstep.png"
     },
     {
-        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_viewpager_point_unselected.png",
-        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_viewpager_point_unselected.png"
-    },
-    {
-        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\ic_emoji_objects_light_activated.png",
-        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\emoji\\unspecified\\res\\drawable-hdpi-v4\\ic_emoji_objects_light_activated.png"
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\orca_emoji_category_people.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\emoji\\unspecified\\res\\drawable-hdpi-v4\\orca_emoji_category_people.png"
     },
     {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_tab_center_normal.png",
@@ -100,6 +108,146 @@
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\emoji\\unspecified\\res\\drawable-hdpi-v4\\ic_emoji_symbols_light_normal.png"
     },
     {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\ic_emoji_symbols_light_activated.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\emoji\\unspecified\\res\\drawable-hdpi-v4\\ic_emoji_symbols_light_activated.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_register_first_cha.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_register_first_cha.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\abc_ic_menu_selectall_mtrl_alpha.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\drawable-hdpi\\abc_ic_menu_selectall_mtrl_alpha.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\abc_textfield_default_mtrl_alpha.9.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\drawable-hdpi\\abc_textfield_default_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_dialog_loadding4.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_dialog_loadding4.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\abc_ic_go_search_api_mtrl_alpha.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\drawable-hdpi\\abc_ic_go_search_api_mtrl_alpha.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_tab_publish_delete.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_tab_publish_delete.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_tab_point_unselected.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_tab_point_unselected.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\ic_emoji_nature_light_normal.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\emoji\\unspecified\\res\\drawable-hdpi-v4\\ic_emoji_nature_light_normal.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\abc_tab_indicator_mtrl_alpha.9.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\drawable-hdpi\\abc_tab_indicator_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\abc_ic_search_api_mtrl_alpha.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\drawable-hdpi\\abc_ic_search_api_mtrl_alpha.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\orca_emoji_more_front_normal.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\emoji\\unspecified\\res\\drawable-hdpi-v4\\orca_emoji_more_front_normal.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_tab_publish_imm.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_tab_publish_imm.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_tab_publish_shitu_unselect.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_tab_publish_shitu_unselect.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_dialog_loadding2.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_dialog_loadding2.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\orca_attach_photo_normal.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\emoji\\unspecified\\res\\drawable-hdpi-v4\\orca_attach_photo_normal.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\abc_menu_hardkey_panel_mtrl_mult.9.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\drawable-hdpi\\abc_menu_hardkey_panel_mtrl_mult.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_tab_my_right_arrow.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_tab_my_right_arrow.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\abc_ic_clear_mtrl_alpha.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\drawable-hdpi\\abc_ic_clear_mtrl_alpha.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_tab_publish_weixin.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_tab_publish_weixin.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_blank_42.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_blank_42.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_dialog_loadding5.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_dialog_loadding5.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\ic_emoji_symbols_light_activated.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\emoji\\unspecified\\res\\drawable-hdpi-v4\\ic_emoji_symbols_light_activated.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\orca_emoji_more_front_pressed.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\emoji\\unspecified\\res\\drawable-hdpi-v4\\orca_emoji_more_front_pressed.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\orca_emoji_category_cars.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\emoji\\unspecified\\res\\drawable-hdpi-v4\\orca_emoji_category_cars.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\orca_emoji_backspace_front_pressed.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\emoji\\unspecified\\res\\drawable-hdpi-v4\\orca_emoji_backspace_front_pressed.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_tab_my_lable_favor.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_tab_my_lable_favor.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_tab_point_selected.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_tab_point_selected.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\abc_list_focused_holo.9.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\drawable-hdpi\\abc_list_focused_holo.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\orca_composer_divider_vertical.9.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\emoji\\unspecified\\res\\drawable-hdpi-v4\\orca_composer_divider_vertical.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_tab_message_normal.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_tab_message_normal.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_viewpager_point_unselected.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_viewpager_point_unselected.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\ic_emoji_objects_light_activated.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\emoji\\unspecified\\res\\drawable-hdpi-v4\\ic_emoji_objects_light_activated.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\abc_ic_menu_share_mtrl_alpha.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\drawable-hdpi\\abc_ic_menu_share_mtrl_alpha.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\abc_list_pressed_holo_dark.9.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\drawable-hdpi\\abc_list_pressed_holo_dark.9.png"
+    },
+    {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_tab_publish_shitu_unselect.png",
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_tab_publish_shitu_unselect.png"
     },
@@ -108,16 +256,32 @@
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_tab_message_normal.png"
     },
     {
-        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_viewpager_point_selected.png",
-        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_viewpager_point_selected.png"
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\orca_emoji_category_nature.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\emoji\\unspecified\\res\\drawable-hdpi-v4\\orca_emoji_category_nature.png"
     },
     {
-        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\orca_composer_tab_dark.9.png",
-        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\emoji\\unspecified\\res\\drawable-hdpi-v4\\orca_composer_tab_dark.9.png"
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\ic_emoji_places_light_normal.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\emoji\\unspecified\\res\\drawable-hdpi-v4\\ic_emoji_places_light_normal.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\orca_composer_popup_pressed.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\emoji\\unspecified\\res\\drawable-hdpi-v4\\orca_composer_popup_pressed.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\ic_emoji_objects_light_activated.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\emoji\\unspecified\\res\\drawable-hdpi-v4\\ic_emoji_objects_light_activated.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\orca_composer_tab_pressed.9.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\emoji\\unspecified\\res\\drawable-hdpi-v4\\orca_composer_tab_pressed.9.png"
     },
     {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_tab_my_head_male.png",
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_tab_my_head_male.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\orca_composer_tab.9.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\emoji\\unspecified\\res\\drawable-hdpi-v4\\orca_composer_tab.9.png"
     },
     {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\orca_emoji_backspace_back_normal.png",
@@ -128,36 +292,32 @@
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_login_logo.png"
     },
     {
-        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\orca_composer_popup_pressed.png",
-        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\emoji\\unspecified\\res\\drawable-hdpi-v4\\orca_composer_popup_pressed.png"
-    },
-    {
-        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_register_second_back.png",
-        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_register_second_back.png"
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_tab_publish_backstep.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_tab_publish_backstep.png"
     },
     {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\orca_attach_location_normal.png",
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\emoji\\unspecified\\res\\drawable-hdpi-v4\\orca_attach_location_normal.png"
     },
     {
-        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_tab_home_hot_loading_avatar.png",
-        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_tab_home_hot_loading_avatar.png"
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\ic_emoji_recent_light_normal.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\emoji\\unspecified\\res\\drawable-hdpi-v4\\ic_emoji_recent_light_normal.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_tab_home_hot_loading2.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_tab_home_hot_loading2.png"
     },
     {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_tab_publish_camera.png",
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_tab_publish_camera.png"
     },
     {
-        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\ic_emoji_people_light_activated.png",
-        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\emoji\\unspecified\\res\\drawable-hdpi-v4\\ic_emoji_people_light_activated.png"
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\abc_list_selector_disabled_holo_dark.9.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\drawable-hdpi\\abc_list_selector_disabled_holo_dark.9.png"
     },
     {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_login_weibo.png",
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_login_weibo.png"
-    },
-    {
-        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\sym_keyboard_delete_holo_dark.png",
-        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\emoji\\unspecified\\res\\drawable-hdpi-v4\\sym_keyboard_delete_holo_dark.png"
     },
     {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_tab_my_head_bg.png",
@@ -168,6 +328,22 @@
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_tab_publish_weixin_select.png"
     },
     {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_tab_publish_setcover_bg.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_tab_publish_setcover_bg.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\orca_composer_tab_dark.9.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\emoji\\unspecified\\res\\drawable-hdpi-v4\\orca_composer_tab_dark.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\orca_composer_popup_active_normal.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\emoji\\unspecified\\res\\drawable-hdpi-v4\\orca_composer_popup_active_normal.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\defalt_avator.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\defalt_avator.png"
+    },
+    {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_tab_my_lable_recycler.png",
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_tab_my_lable_recycler.png"
     },
@@ -176,32 +352,172 @@
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\emoji\\unspecified\\res\\drawable-hdpi-v4\\orca_emoji_backspace_front_normal.png"
     },
     {
-        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\ic_emoji_objects_light_normal.png",
-        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\emoji\\unspecified\\res\\drawable-hdpi-v4\\ic_emoji_objects_light_normal.png"
-    },
-    {
-        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\orca_attachments_arrow.png",
-        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\emoji\\unspecified\\res\\drawable-hdpi-v4\\orca_attachments_arrow.png"
-    },
-    {
-        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\orca_emoji_category_punctuation.png",
-        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\emoji\\unspecified\\res\\drawable-hdpi-v4\\orca_emoji_category_punctuation.png"
-    },
-    {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_tab_publish_location.png",
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_tab_publish_location.png"
     },
     {
-        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\ic_launcher.png",
-        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\ic_launcher.png"
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_tab_my_right_arrow.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_tab_my_right_arrow.png"
     },
     {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_tab_publish_setcover_bg.png",
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_tab_publish_setcover_bg.png"
     },
     {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\orca_emoji_category_objects.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\emoji\\unspecified\\res\\drawable-hdpi-v4\\orca_emoji_category_objects.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\ic_launcher.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\ic_emoji_symbols_light_normal.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\emoji\\unspecified\\res\\drawable-hdpi-v4\\ic_emoji_symbols_light_normal.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_register_first_inputcha.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_register_first_inputcha.png"
+    },
+    {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_login_weixin.png",
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_login_weixin.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_tab_search_normal.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_tab_search_normal.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_tab_publish_sina_unselect.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_tab_publish_sina_unselect.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\abc_textfield_search_default_mtrl_alpha.9.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\drawable-hdpi\\abc_textfield_search_default_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\abc_list_selector_disabled_holo_light.9.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\drawable-hdpi\\abc_list_selector_disabled_holo_light.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_viewpager_point_selected.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_viewpager_point_selected.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\abc_list_pressed_holo_light.9.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\drawable-hdpi\\abc_list_pressed_holo_light.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\orca_composer_tab_dark.9.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\emoji\\unspecified\\res\\drawable-hdpi-v4\\orca_composer_tab_dark.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_tab_message_press.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_tab_message_press.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\abc_textfield_search_activated_mtrl_alpha.9.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\drawable-hdpi\\abc_textfield_search_activated_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\orca_composer_top_divider.9.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\emoji\\unspecified\\res\\drawable-hdpi-v4\\orca_composer_top_divider.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_login_logo.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_login_logo.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\orca_composer_popup_pressed.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\emoji\\unspecified\\res\\drawable-hdpi-v4\\orca_composer_popup_pressed.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_register_second_back.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_register_second_back.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_tab_home_hot_loading_avatar.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_tab_home_hot_loading_avatar.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_tab_home_press.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_tab_home_press.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\abc_switch_track_mtrl_alpha.9.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\drawable-hdpi\\abc_switch_track_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\ic_emoji_people_light_activated.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\emoji\\unspecified\\res\\drawable-hdpi-v4\\ic_emoji_people_light_activated.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_tab_my_lable_tu.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_tab_my_lable_tu.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\sym_keyboard_delete_holo_dark.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\emoji\\unspecified\\res\\drawable-hdpi-v4\\sym_keyboard_delete_holo_dark.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_tab_circle_press.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_tab_circle_press.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_tab_home_divider.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_tab_home_divider.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\abc_btn_radio_to_on_mtrl_000.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\drawable-hdpi\\abc_btn_radio_to_on_mtrl_000.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\orca_emoji_backspace_front_normal.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\emoji\\unspecified\\res\\drawable-hdpi-v4\\orca_emoji_backspace_front_normal.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\orca_attach_photo_pressed.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\emoji\\unspecified\\res\\drawable-hdpi-v4\\orca_attach_photo_pressed.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_tab_message_favor.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_tab_message_favor.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\orca_emoji_more_back_normal.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\emoji\\unspecified\\res\\drawable-hdpi-v4\\orca_emoji_more_back_normal.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_tab_my_head_male.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_tab_my_head_male.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\orca_attachments_arrow.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\emoji\\unspecified\\res\\drawable-hdpi-v4\\orca_attachments_arrow.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\ic_emoji_objects_light_normal.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\emoji\\unspecified\\res\\drawable-hdpi-v4\\ic_emoji_objects_light_normal.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\orca_emoji_category_punctuation.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\emoji\\unspecified\\res\\drawable-hdpi-v4\\orca_emoji_category_punctuation.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\ic_launcher.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_tab_circle_normal.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_tab_circle_normal.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\orca_attach_location_normal.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\emoji\\unspecified\\res\\drawable-hdpi-v4\\orca_attach_location_normal.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_blank_42.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_blank_42.png"
     },
     {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_tab_publish_sina_unselect.png",
@@ -212,6 +528,38 @@
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_tab_my_press.png"
     },
     {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\abc_ic_menu_copy_mtrl_am_alpha.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\drawable-hdpi\\abc_ic_menu_copy_mtrl_am_alpha.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_tab_my_press.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_tab_my_press.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\abc_cab_background_top_mtrl_alpha.9.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\drawable-hdpi\\abc_cab_background_top_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\orca_composer_divider_horizontal.9.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\emoji\\unspecified\\res\\drawable-hdpi-v4\\orca_composer_divider_horizontal.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\orca_emoji_category_punctuation.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\emoji\\unspecified\\res\\drawable-hdpi-v4\\orca_emoji_category_punctuation.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\ic_emoji_objects_light_normal.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\emoji\\unspecified\\res\\drawable-hdpi-v4\\ic_emoji_objects_light_normal.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\orca_attachments_arrow_reversed.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\emoji\\unspecified\\res\\drawable-hdpi-v4\\orca_attachments_arrow_reversed.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\orca_attachments_arrow.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\emoji\\unspecified\\res\\drawable-hdpi-v4\\orca_attachments_arrow.png"
+    },
+    {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\orca_composer_popup_active_pressed.png",
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\emoji\\unspecified\\res\\drawable-hdpi-v4\\orca_composer_popup_active_pressed.png"
     },
@@ -220,68 +568,52 @@
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_tab_publish_shitu_select.png"
     },
     {
-        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_tab_my_normal.png",
-        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_tab_my_normal.png"
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\ic_emoji_places_light_activated.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\emoji\\unspecified\\res\\drawable-hdpi-v4\\ic_emoji_places_light_activated.png"
     },
     {
-        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_tab_search_normal.png",
-        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_tab_search_normal.png"
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\abc_ic_commit_search_api_mtrl_alpha.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\drawable-hdpi\\abc_ic_commit_search_api_mtrl_alpha.png"
     },
     {
-        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_tab_home_hot_favor.png",
-        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_tab_home_hot_favor.png"
-    },
-    {
-        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\orca_attach_photo_pressed.png",
-        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\emoji\\unspecified\\res\\drawable-hdpi-v4\\orca_attach_photo_pressed.png"
-    },
-    {
-        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_tab_home_hot_loading2.png",
-        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_tab_home_hot_loading2.png"
-    },
-    {
-        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\orca_composer_tab_pressed.9.png",
-        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\emoji\\unspecified\\res\\drawable-hdpi-v4\\orca_composer_tab_pressed.9.png"
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\orca_emoji_backspace_front_pressed.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\emoji\\unspecified\\res\\drawable-hdpi-v4\\orca_emoji_backspace_front_pressed.png"
     },
     {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\orca_composer_popup_active_normal.png",
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\emoji\\unspecified\\res\\drawable-hdpi-v4\\orca_composer_popup_active_normal.png"
     },
     {
-        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_tab_home_hot_comment.png",
-        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_tab_home_hot_comment.png"
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\orca_composer_tab_pressed.9.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\emoji\\unspecified\\res\\drawable-hdpi-v4\\orca_composer_tab_pressed.9.png"
     },
     {
-        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_tab_my_lable_favor.png",
-        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_tab_my_lable_favor.png"
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\logo_start_page2.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\logo_start_page2.png"
     },
     {
-        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\ic_emoji_places_light_activated.png",
-        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\emoji\\unspecified\\res\\drawable-hdpi-v4\\ic_emoji_places_light_activated.png"
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\abc_scrubber_control_to_pressed_mtrl_005.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\drawable-hdpi\\abc_scrubber_control_to_pressed_mtrl_005.png"
     },
     {
-        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\orca_emoji_more_back_normal.png",
-        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\emoji\\unspecified\\res\\drawable-hdpi-v4\\orca_emoji_more_back_normal.png"
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\abc_scrubber_primary_mtrl_alpha.9.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\drawable-hdpi\\abc_scrubber_primary_mtrl_alpha.9.png"
     },
     {
-        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\orca_emoji_category_objects.png",
-        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\emoji\\unspecified\\res\\drawable-hdpi-v4\\orca_emoji_category_objects.png"
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\orca_emoji_more_front_normal.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\emoji\\unspecified\\res\\drawable-hdpi-v4\\orca_emoji_more_front_normal.png"
     },
     {
-        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\orca_composer_popup_normal.png",
-        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\emoji\\unspecified\\res\\drawable-hdpi-v4\\orca_composer_popup_normal.png"
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_tab_publish_imm.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_tab_publish_imm.png"
     },
     {
-        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\orca_composer_divider_horizontal.9.png",
-        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\emoji\\unspecified\\res\\drawable-hdpi-v4\\orca_composer_divider_horizontal.9.png"
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_login_weibo.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_login_weibo.png"
     },
     {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_dialog_loadding1.png",
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_dialog_loadding1.png"
-    },
-    {
-        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_dialog_loadding6.png",
-        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_dialog_loadding6.png"
     },
     {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_register_first_cha.png",
@@ -296,6 +628,66 @@
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_tab_my_lable_shi.png"
     },
     {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\ic_emoji_recent_light_activated.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\emoji\\unspecified\\res\\drawable-hdpi-v4\\ic_emoji_recent_light_activated.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_tab_point_selected.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_tab_point_selected.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_swipe_refresh.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_swipe_refresh.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\abc_scrubber_control_to_pressed_mtrl_000.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\drawable-hdpi\\abc_scrubber_control_to_pressed_mtrl_000.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_tab_message_comment.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_tab_message_comment.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_tab_my_normal.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_tab_my_normal.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_dialog_loadding1.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_dialog_loadding1.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_tab_home_hot_favor.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_tab_home_hot_favor.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\orca_attach_photo_pressed.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\emoji\\unspecified\\res\\drawable-hdpi-v4\\orca_attach_photo_pressed.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\abc_ic_voice_search_api_mtrl_alpha.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\drawable-hdpi\\abc_ic_voice_search_api_mtrl_alpha.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_tab_publish_sina_select.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_tab_publish_sina_select.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_tab_home_hot_loading2.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_tab_home_hot_loading2.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_tab_home_hot_comment.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_tab_home_hot_comment.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_tab_publish_setcover_btn.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_tab_publish_setcover_btn.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\orca_attach_camera_normal.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\emoji\\unspecified\\res\\drawable-hdpi-v4\\orca_attach_camera_normal.png"
+    },
+    {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_tab_my_titlebar_setting.png",
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_tab_my_titlebar_setting.png"
     },
@@ -304,24 +696,116 @@
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_register_first_inputcha.png"
     },
     {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_tab_my_lable_recycler.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_tab_my_lable_recycler.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\orca_composer_popup_normal.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\emoji\\unspecified\\res\\drawable-hdpi-v4\\orca_composer_popup_normal.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\abc_ic_menu_moreoverflow_mtrl_alpha.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\drawable-hdpi\\abc_ic_menu_moreoverflow_mtrl_alpha.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_tab_publish_camera.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_tab_publish_camera.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_tab_search_normal.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_tab_search_normal.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_viewpager_point_selected.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_viewpager_point_selected.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_tab_my_lable_favor.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_tab_my_lable_favor.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_tab_home_hot_comment.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_tab_home_hot_comment.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\ic_emoji_places_light_activated.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\emoji\\unspecified\\res\\drawable-hdpi-v4\\ic_emoji_places_light_activated.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\orca_composer_popup_normal.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\emoji\\unspecified\\res\\drawable-hdpi-v4\\orca_composer_popup_normal.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\orca_emoji_category_objects.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\emoji\\unspecified\\res\\drawable-hdpi-v4\\orca_emoji_category_objects.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\orca_emoji_more_back_normal.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\emoji\\unspecified\\res\\drawable-hdpi-v4\\orca_emoji_more_back_normal.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\abc_btn_rating_star_off_mtrl_alpha.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\drawable-hdpi\\abc_btn_rating_star_off_mtrl_alpha.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_dialog_loadding6.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_dialog_loadding6.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_register_second_back.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_register_second_back.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\abc_ic_menu_cut_mtrl_alpha.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\drawable-hdpi\\abc_ic_menu_cut_mtrl_alpha.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\ic_emoji_nature_light_activated.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\emoji\\unspecified\\res\\drawable-hdpi-v4\\ic_emoji_nature_light_activated.png"
+    },
+    {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\orca_emoji_more_front_pressed.png",
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\emoji\\unspecified\\res\\drawable-hdpi-v4\\orca_emoji_more_front_pressed.png"
     },
     {
-        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_tab_publish_sina_select.png",
-        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_tab_publish_sina_select.png"
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\abc_textfield_activated_mtrl_alpha.9.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\drawable-hdpi\\abc_textfield_activated_mtrl_alpha.9.png"
     },
     {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_dialog_loadding4.png",
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_dialog_loadding4.png"
     },
     {
-        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\orca_emoji_category_people.png",
-        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\emoji\\unspecified\\res\\drawable-hdpi-v4\\orca_emoji_category_people.png"
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_tab_message_at.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_tab_message_at.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_tab_publish_weixin_select.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_tab_publish_weixin_select.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\abc_ic_menu_paste_mtrl_am_alpha.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\drawable-hdpi\\abc_ic_menu_paste_mtrl_am_alpha.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\orca_emoji_backspace_back_normal.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\emoji\\unspecified\\res\\drawable-hdpi-v4\\orca_emoji_backspace_back_normal.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\ic_emoji_people_light_normal.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\emoji\\unspecified\\res\\drawable-hdpi-v4\\ic_emoji_people_light_normal.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_viewpager_point_unselected.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_viewpager_point_unselected.png"
     },
     {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\keyboard_background_holo.9.png",
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\emoji\\unspecified\\res\\drawable-hdpi-v4\\keyboard_background_holo.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_tab_my_normal.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_tab_my_normal.png"
     },
     {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\orca_attach_camera_normal.png",
@@ -332,24 +816,28 @@
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\emoji\\unspecified\\res\\drawable-hdpi-v4\\ic_emoji_recent_light_normal.png"
     },
     {
-        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\orca_attach_camera_pressed.png",
-        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\emoji\\unspecified\\res\\drawable-hdpi-v4\\orca_attach_camera_pressed.png"
-    },
-    {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_dialog_loadding3.png",
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_dialog_loadding3.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\orca_emoji_category_cars.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\emoji\\unspecified\\res\\drawable-hdpi-v4\\orca_emoji_category_cars.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_register_cursor.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_register_cursor.png"
     },
     {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_tab_message_press.png",
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_tab_message_press.png"
     },
     {
-        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_dialog_loadding2.png",
-        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_dialog_loadding2.png"
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_tab_publish_delete.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_tab_publish_delete.png"
     },
     {
-        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_tab_message_comment.png",
-        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_tab_message_comment.png"
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_dialog_loadding2.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_dialog_loadding2.png"
     },
     {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_dialog_loadding5.png",
@@ -360,8 +848,8 @@
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_tab_circle_press.png"
     },
     {
-        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_tab_message_favor.png",
-        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_tab_message_favor.png"
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_tab_my_lable_shi.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_tab_my_lable_shi.png"
     },
     {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\ic_emoji_recent_light_activated.png",
@@ -380,32 +868,12 @@
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_tab_circle_normal.png"
     },
     {
-        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_tab_publish_setcover_btn.png",
-        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_tab_publish_setcover_btn.png"
-    },
-    {
-        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\orca_attach_photo_normal.png",
-        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\emoji\\unspecified\\res\\drawable-hdpi-v4\\orca_attach_photo_normal.png"
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\orca_composer_divider_horizontal.9.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\emoji\\unspecified\\res\\drawable-hdpi-v4\\orca_composer_divider_horizontal.9.png"
     },
     {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_tab_publish_weixin_unselect.png",
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_tab_publish_weixin_unselect.png"
-    },
-    {
-        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_swipe_refresh.png",
-        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_swipe_refresh.png"
-    },
-    {
-        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_login_qq.png",
-        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_login_qq.png"
-    },
-    {
-        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\ic_emoji_people_light_normal.png",
-        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\emoji\\unspecified\\res\\drawable-hdpi-v4\\ic_emoji_people_light_normal.png"
-    },
-    {
-        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\orca_attachments_arrow_reversed.png",
-        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\emoji\\unspecified\\res\\drawable-hdpi-v4\\orca_attachments_arrow_reversed.png"
     },
     {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\orca_composer_tab.9.png",
@@ -420,8 +888,128 @@
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_tab_home_hot_zhuanfa.png"
     },
     {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\sym_keyboard_delete_holo_dark.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\emoji\\unspecified\\res\\drawable-hdpi-v4\\sym_keyboard_delete_holo_dark.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_tab_home_press.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_tab_home_press.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_tab_center_normal.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_tab_center_normal.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\abc_list_longpressed_holo.9.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\drawable-hdpi\\abc_list_longpressed_holo.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_dialog_loadding3.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_dialog_loadding3.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_tab_publish_sina_select.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_tab_publish_sina_select.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\orca_attach_camera_pressed.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\emoji\\unspecified\\res\\drawable-hdpi-v4\\orca_attach_camera_pressed.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\orca_emoji_category_people.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\emoji\\unspecified\\res\\drawable-hdpi-v4\\orca_emoji_category_people.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\abc_btn_switch_to_on_mtrl_00012.9.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\drawable-hdpi\\abc_btn_switch_to_on_mtrl_00012.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_tab_home_hot_loading_avatar.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_tab_home_hot_loading_avatar.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\orca_attach_camera_pressed.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\emoji\\unspecified\\res\\drawable-hdpi-v4\\orca_attach_camera_pressed.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_tab_publish_face.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_tab_publish_face.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\abc_list_divider_mtrl_alpha.9.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\drawable-hdpi\\abc_list_divider_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_tab_message_comment.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_tab_message_comment.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_tab_home_normal.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_tab_home_normal.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\abc_popup_background_mtrl_mult.9.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\drawable-hdpi\\abc_popup_background_mtrl_mult.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_tab_message_favor.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_tab_message_favor.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_tab_publish_setcover_btn.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_tab_publish_setcover_btn.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\orca_attach_photo_normal.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\emoji\\unspecified\\res\\drawable-hdpi-v4\\orca_attach_photo_normal.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\abc_btn_switch_to_on_mtrl_00001.9.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\drawable-hdpi\\abc_btn_switch_to_on_mtrl_00001.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_swipe_refresh.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_swipe_refresh.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_login_qq.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_login_qq.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\ic_emoji_people_light_normal.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\emoji\\unspecified\\res\\drawable-hdpi-v4\\ic_emoji_people_light_normal.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_tab_home_hot_favor.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_tab_home_hot_favor.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\orca_attach_location_pressed.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\emoji\\unspecified\\res\\drawable-hdpi-v4\\orca_attach_location_pressed.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\abc_spinner_mtrl_am_alpha.9.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\drawable-hdpi\\abc_spinner_mtrl_am_alpha.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\orca_attachments_arrow_reversed.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\emoji\\unspecified\\res\\drawable-hdpi-v4\\orca_attachments_arrow_reversed.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\orca_composer_popup_active_pressed.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\emoji\\unspecified\\res\\drawable-hdpi-v4\\orca_composer_popup_active_pressed.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\orca_composer_tab_active.9.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\emoji\\unspecified\\res\\drawable-hdpi-v4\\orca_composer_tab_active.9.png"
+    },
+    {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_tab_message_at.png",
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_tab_message_at.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_tab_publish_location.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_tab_publish_location.png"
     },
     {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\ic_emoji_places_light_normal.png",
@@ -432,7 +1020,27 @@
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\emoji\\unspecified\\res\\drawable-hdpi-v4\\orca_composer_tab_active.9.png"
     },
     {
-        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_tab_home_press.png",
-        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_tab_home_press.png"
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\abc_scrubber_track_mtrl_alpha.9.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\drawable-hdpi\\abc_scrubber_track_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_tab_home_hot_zhuanfa.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_tab_home_hot_zhuanfa.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\abc_btn_rating_star_on_mtrl_alpha.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\drawable-hdpi\\abc_btn_rating_star_on_mtrl_alpha.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\keyboard_background_holo.9.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\emoji\\unspecified\\res\\drawable-hdpi-v4\\keyboard_background_holo.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\abc_ab_share_pack_mtrl_alpha.9.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\drawable-hdpi\\abc_ab_share_pack_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_tab_my_head_bg.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\src\\main\\res\\drawable-hdpi\\icon_tab_my_head_bg.png"
     }
 ]

@@ -30,4 +30,7 @@ dependencies {
     compile project(':emoji')
     compile files('downloads/universal-image-loader-1.9.5.jar')
     compile project(':IMKit')
+
+    compile 'com.android.support:design:23.1.0'
+    compile 'com.android.support:appcompat-v7:23.1.0'
 }

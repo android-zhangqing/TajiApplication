@@ -110,7 +110,7 @@ public class RegisterFirstActivity extends Activity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if(requestCode!=UserClass.Request_Register_First){
+        if(requestCode!= UserClass.Request_Register_First){
             return;
         }
         if (resultCode == RESULT_OK) {

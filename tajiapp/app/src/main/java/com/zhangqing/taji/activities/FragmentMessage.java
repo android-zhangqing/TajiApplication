@@ -114,7 +114,7 @@ public class FragmentMessage extends Fragment {
 
             @Override
             public boolean onConversationClick(Context context, View view, UIConversation uiConversation) {
-                Log.e("***ConversationListBehavior***",RongIM.getInstance().getRongIMClient().getTotalUnreadCount()+"")
+                Log.e("***ConversationListBehavior***",RongIM.getInstance().getRongIMClient().getTotalUnreadCount()+"");
                 return false;
             }
 

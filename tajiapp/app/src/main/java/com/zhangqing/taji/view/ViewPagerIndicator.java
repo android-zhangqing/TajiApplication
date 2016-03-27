@@ -3,7 +3,6 @@ package com.zhangqing.taji.view;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
-import android.graphics.Color;
 import android.graphics.CornerPathEffect;
 import android.graphics.Paint;
 import android.graphics.Path;
@@ -146,7 +145,7 @@ public class ViewPagerIndicator extends LinearLayout {
 
         for (int i = 0; i < cCount; i++) {
             View view = getChildAt(i);
-            LinearLayout.LayoutParams lp = (LayoutParams) view
+            LayoutParams lp = (LayoutParams) view
                     .getLayoutParams();
             lp.weight = 0;
             lp.width = getScreenWidth(false) / mTabVisibleCount;

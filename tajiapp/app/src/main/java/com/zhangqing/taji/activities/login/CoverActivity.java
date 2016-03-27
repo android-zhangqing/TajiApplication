@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 
 import com.android.volley.VolleyError;
 import com.zhangqing.taji.MyApplication;
@@ -13,10 +14,10 @@ import com.zhangqing.taji.base.VolleyInterface;
 import org.json.JSONObject;
 
 /**
- * Created by Administrator on 2016/3/15.
+ * 启动封面Activity
  */
 public class CoverActivity extends Activity {
-    private static final int DELAY_MILLIS=1000;
+    private static final int DELAY_MILLIS = 1000;
 
     private long mStartTimeMillis;
 
@@ -40,6 +41,18 @@ public class CoverActivity extends Activity {
             @Override
             public void onMyError(VolleyError error) {
                 waitToStartActivity(false, null);
+            }
+        });
+
+        MyApplication.getUser().doGetDongTai(new VolleyInterface(getApplicationContext()) {
+            @Override
+            public void onMySuccess(JSONObject jsonObject) {
+                Log.e("sss", jsonObject.toString());
+            }
+
+            @Override
+            public void onMyError(VolleyError error) {
+
             }
         });
     }
