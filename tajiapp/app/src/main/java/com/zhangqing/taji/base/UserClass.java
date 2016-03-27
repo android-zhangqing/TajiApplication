@@ -29,6 +29,7 @@ import java.net.URL;
 import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.IllegalFormatException;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -57,7 +58,26 @@ public class UserClass {
     public String skill;
 
 
-    public UserClass(SharedPreferences sharedPreferences) {
+    private static UserClass userClass;
+
+    public static synchronized void init(SharedPreferences s) {
+        userClass = new UserClass(s);
+    }
+
+    public static UserClass getInstance(){
+//        if(userClass==null){
+//            synchronized (UserClass.class){
+//                if(userClass==null){
+//                    userClass=new UserClass();
+//                }
+//
+//            }
+//        }
+        return userClass;
+    }
+
+
+    private UserClass(SharedPreferences sharedPreferences) {
         this.sharedPreferences = sharedPreferences;
         reLoadSharedPreferences();
     }

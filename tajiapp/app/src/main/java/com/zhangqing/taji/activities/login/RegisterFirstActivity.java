@@ -81,7 +81,7 @@ public class RegisterFirstActivity extends Activity {
 //        dialog_.setCancelable(false);
 //        dialog_.show();
 
-        MyApplication.getUser().doRegisterSmsSend(mobile,
+        UserClass.getInstance().doRegisterSmsSend(mobile,
                 new VolleyInterface(context_) {
 
                     @Override

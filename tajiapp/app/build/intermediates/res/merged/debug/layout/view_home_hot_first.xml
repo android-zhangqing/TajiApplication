@@ -61,6 +61,7 @@
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/bgcolor_bar_first"
+                    android:listSelector="@android:color/transparent"
                     android:numColumns="2"
                     android:scrollbars="none"></com.zhangqing.taji.view.NoScrollGridView>
             </LinearLayout>

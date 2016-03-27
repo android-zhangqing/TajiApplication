@@ -9,6 +9,7 @@ import android.util.Log;
 import com.android.volley.VolleyError;
 import com.zhangqing.taji.MyApplication;
 import com.zhangqing.taji.activities.TajiappActivity;
+import com.zhangqing.taji.base.UserClass;
 import com.zhangqing.taji.base.VolleyInterface;
 
 import org.json.JSONObject;
@@ -27,11 +28,11 @@ public class CoverActivity extends Activity {
         mStartTimeMillis = System.currentTimeMillis();
 
 
-        MyApplication.getUser().getUserInfo(new VolleyInterface(this.getApplicationContext()) {
+        UserClass.getInstance().getUserInfo(new VolleyInterface(this.getApplicationContext()) {
             @Override
             public void onMySuccess(JSONObject jsonObject) {
-                if (!MyApplication.getUser().saveSharedPreference(jsonObject)) {
-                    MyApplication.getUser().clear();
+                if (!UserClass.getInstance().saveSharedPreference(jsonObject)) {
+                    UserClass.getInstance().clear();
                     waitToStartActivity(true, null);
                     return;
                 }
@@ -44,7 +45,7 @@ public class CoverActivity extends Activity {
             }
         });
 
-        MyApplication.getUser().doGetDongTai(new VolleyInterface(getApplicationContext()) {
+        UserClass.getInstance().doGetDongTai(new VolleyInterface(getApplicationContext()) {
             @Override
             public void onMySuccess(JSONObject jsonObject) {
                 Log.e("sss", jsonObject.toString());

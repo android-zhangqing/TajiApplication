@@ -19,6 +19,7 @@ import android.widget.TextView;
 import com.android.volley.VolleyError;
 import com.zhangqing.taji.MyApplication;
 import com.zhangqing.taji.R;
+import com.zhangqing.taji.base.UserClass;
 import com.zhangqing.taji.base.VolleyInterface;
 
 import org.json.JSONObject;
@@ -97,7 +98,7 @@ public class FragmentSearch extends Fragment implements TextView.OnEditorActionL
         mSwipeListener = new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                MyApplication.getUser().searchForPerson(mEditText.getText().toString(), new VolleyInterface(getActivity()) {
+                UserClass.getInstance().searchForPerson(mEditText.getText().toString(), new VolleyInterface(getActivity()) {
                     @Override
                     public void onMySuccess(JSONObject jsonObject) {
                         mSwipeRefreshLayout.setRefreshing(false);

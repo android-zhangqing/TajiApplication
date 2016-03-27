@@ -22,6 +22,7 @@ import com.android.volley.VolleyError;
 import com.zhangqing.taji.MyApplication;
 import com.zhangqing.taji.R;
 import com.zhangqing.taji.activities.login.LoginActivity;
+import com.zhangqing.taji.base.UserClass;
 import com.zhangqing.taji.base.VolleyInterface;
 import com.zhangqing.taji.view.BottomBar;
 import com.zhangqing.taji.view.BottomBar.OnTabClickListener;
@@ -70,7 +71,7 @@ public class TajiappActivity extends FragmentActivity implements OnTabClickListe
         setTranslucentStatus();
         setContentView(R.layout.activity_main);
 
-        if (MyApplication.getUser().reLoadSharedPreferences() == false) {
+        if (UserClass.getInstance().reLoadSharedPreferences() == false) {
             startLoginActivity();
             return;
         }
@@ -90,7 +91,7 @@ public class TajiappActivity extends FragmentActivity implements OnTabClickListe
                 if (map.containsKey(s)) {
                     return map.get(s);
                 } else {
-                    MyApplication.getUser().getOthersUserInfo(s, new VolleyInterface(TajiappActivity.this.getApplicationContext()) {
+                    UserClass.getInstance().getOthersUserInfo(s, new VolleyInterface(TajiappActivity.this.getApplicationContext()) {
                         @Override
                         public void onMySuccess(JSONObject jsonObject) {
                             Log.e("onMySuccess", jsonObject.toString());
@@ -153,7 +154,7 @@ public class TajiappActivity extends FragmentActivity implements OnTabClickListe
         Log.e("getMemmory", ((ActivityManager) getSystemService(Context.ACTIVITY_SERVICE)).getMemoryClass() + "|");
 
 
-//        MyApplication.getUser().isLogin(new Response.Listener<String>() {
+//        UserClass.getInstance().isLogin(new Response.Listener<String>() {
 //
 //            @Override
 //            public void onResponse(String arg0) {
@@ -168,7 +169,7 @@ public class TajiappActivity extends FragmentActivity implements OnTabClickListe
     }
 
     private void startLoginActivity() {
-        MyApplication.getUser().clear();
+        UserClass.getInstance().clear();
         Intent intent = new Intent(TajiappActivity.this,
                 LoginActivity.class);
         startActivity(intent);

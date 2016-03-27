@@ -20,6 +20,7 @@ import com.nostra13.universalimageloader.core.assist.ImageSize;
 import com.nostra13.universalimageloader.core.imageaware.ImageViewAware;
 import com.zhangqing.taji.MyApplication;
 import com.zhangqing.taji.R;
+import com.zhangqing.taji.base.UserClass;
 import com.zhangqing.taji.base.VolleyInterface;
 import com.zhangqing.taji.util.ImageDownloader;
 
@@ -75,7 +76,7 @@ public class ListPersonsActivity extends Activity {
         final SwipeRefreshLayout.OnRefreshListener swipeListener = new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                MyApplication.getUser().getPersonsList(mWhichType, new VolleyInterface(ListPersonsActivity.this.getApplicationContext()) {
+                UserClass.getInstance().getPersonsList(mWhichType, new VolleyInterface(ListPersonsActivity.this.getApplicationContext()) {
                     @Override
                     public void onMySuccess(JSONObject jsonObject) {
                         mSwipeRefreshLayout.setRefreshing(false);

@@ -9,6 +9,7 @@ import android.widget.Toast;
 import com.android.volley.VolleyError;
 import com.zhangqing.taji.MyApplication;
 import com.zhangqing.taji.R;
+import com.zhangqing.taji.base.UserClass;
 import com.zhangqing.taji.base.VolleyInterface;
 
 import org.json.JSONObject;
@@ -38,7 +39,7 @@ public class ResetPassBySmsActivity extends Activity {
     }
 
     public void onClickBtnSend(View v) {
-        MyApplication.getUser().doResetPassSmsSend(mMobileTextView.getText().toString(), new VolleyInterface(ResetPassBySmsActivity.this) {
+        UserClass.getInstance().doResetPassSmsSend(mMobileTextView.getText().toString(), new VolleyInterface(ResetPassBySmsActivity.this) {
             @Override
             public void onMySuccess(JSONObject jsonObject) {
                 Toast.makeText(ResetPassBySmsActivity.this, jsonObject.toString(), Toast.LENGTH_SHORT).show();
@@ -56,7 +57,7 @@ public class ResetPassBySmsActivity extends Activity {
     }
 
     public void onClickBtnReset(View v) {
-        MyApplication.getUser().doResetPasswordBySms(mMobileTextView.getText().toString(),
+        UserClass.getInstance().doResetPasswordBySms(mMobileTextView.getText().toString(),
                 mPasswordTextView.getText().toString(), mVerifyTextView.getText().toString(),
                 new VolleyInterface(ResetPassBySmsActivity.this) {
                     @Override

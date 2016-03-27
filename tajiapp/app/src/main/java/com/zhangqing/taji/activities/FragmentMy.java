@@ -60,8 +60,15 @@ public class FragmentMy extends Fragment implements View.OnClickListener {
 
 
     @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        Log.e("FragmentMy", "onCreate");
+    }
+
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        Log.e("FragmentMy", "onCreateView");
         View v = inflater.inflate(R.layout.fragment_my, container, false);
 
 
@@ -84,12 +91,12 @@ public class FragmentMy extends Fragment implements View.OnClickListener {
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                MyApplication.getUser().getUserInfo(new VolleyInterface(getActivity().getApplicationContext()) {
+                UserClass.getInstance().getUserInfo(new VolleyInterface(getActivity().getApplicationContext()) {
                     @Override
                     public void onMySuccess(JSONObject jsonObject) {
                         swipeRefreshLayout.setRefreshing(false);
-                        if (!MyApplication.getUser().saveSharedPreference(jsonObject)) {
-                            MyApplication.getUser().clear();
+                        if (!UserClass.getInstance().saveSharedPreference(jsonObject)) {
+                            UserClass.getInstance().clear();
                             Intent intent = new Intent(getActivity(),
                                     LoginActivity.class);
                             startActivity(intent);
@@ -128,46 +135,46 @@ public class FragmentMy extends Fragment implements View.OnClickListener {
     }
 
     private void initView() {
-        String name = MyApplication.getUser().getStringByKey("username");
-        String signature = MyApplication.getUser().getStringByKey("signature");
+        String name = UserClass.getInstance().getStringByKey("username");
+        String signature = UserClass.getInstance().getStringByKey("signature");
 
-        mCountDongtai.setText(MyApplication.getUser().getStringByKey("dongtai"));
-        mCountTudi.setText(MyApplication.getUser().getStringByKey("tudi"));
-        mCountFans.setText(MyApplication.getUser().getStringByKey("fans"));
-        mCountFollow.setText(MyApplication.getUser().getStringByKey("follow"));
+        mCountDongtai.setText(UserClass.getInstance().getStringByKey("dongtai"));
+        mCountTudi.setText(UserClass.getInstance().getStringByKey("tudi"));
+        mCountFans.setText(UserClass.getInstance().getStringByKey("fans"));
+        mCountFollow.setText(UserClass.getInstance().getStringByKey("follow"));
 
         if (name.equals("") || name.equals("null")) {
-            mNameTextView.setText("游客" + MyApplication.getUser().userId);
+            mNameTextView.setText("游客" + UserClass.getInstance().userId);
         } else {
             mNameTextView.setText(name);
         }
         mSignTextView.setText(signature);
 
 
-        String interest = MyApplication.getUser().getStringByKey("interest");
+        String interest = UserClass.getInstance().getStringByKey("interest");
         if (!interest.equals("")) {
             addViewToContainer(interest, mContainerInterest, R.drawable.my_interst_lable_bg);
         }
 
-        String skill = MyApplication.getUser().getStringByKey("skill");
+        String skill = UserClass.getInstance().getStringByKey("skill");
         if (!skill.equals("")) {
             addViewToContainer(skill, mContainerSkill, R.drawable.my_skill_lable_bg);
         }
 
-        String avatar = MyApplication.getUser().getStringByKey("avatar");
+        String avatar = UserClass.getInstance().getStringByKey("avatar");
         if (!avatar.equals("")) {
             Log.e("loadingavatar", "" + avatar);
             ImageLoader.getInstance().displayImage(avatar, mAvatarImageView, MyApplication.getDisplayImageOptions());
         }
 
-        String sex = MyApplication.getUser().getStringByKey("sex");
+        String sex = UserClass.getInstance().getStringByKey("sex");
         if (sex.equals("女")) {
             mSexImageView.setImageResource(R.drawable.ic_launcher);
         } else {
             mSexImageView.setImageResource(R.drawable.icon_tab_my_head_male);
         }
 
-        String school = MyApplication.getUser().getStringByKey("school");
+        String school = UserClass.getInstance().getStringByKey("school");
         if (school.equals("") || school.equals("null")) {
             getLocation();
         } else {
@@ -246,9 +253,9 @@ public class FragmentMy extends Fragment implements View.OnClickListener {
                         Log.e("amapLocation", amapLocation.getLatitude() + "|" + amapLocation.getLongitude());
                         //Toast.makeText(getActivity(), amapLocation.getLatitude() + "|" + amapLocation.getLongitude() + "|" + amapLocation.getCity(), Toast.LENGTH_LONG).show();
 
-                        if (MyApplication.getUser().getSchoolByLocation(getActivity(),
+                        if (UserClass.getInstance().getSchoolByLocation(getActivity(),
                                 amapLocation.getLatitude(), amapLocation.getLongitude(), amapLocation.getCity())) {
-                            mSchoolTextView.setText(MyApplication.getUser().schoolName + "(点击设置)");
+                            mSchoolTextView.setText(UserClass.getInstance().schoolName + "(点击设置)");
                         }
                         ;
 

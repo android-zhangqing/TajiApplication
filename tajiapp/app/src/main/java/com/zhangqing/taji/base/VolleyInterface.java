@@ -141,7 +141,7 @@ public abstract class VolleyInterface {
         Toast.makeText(mContext, "身份验证失败，请重新登录", Toast.LENGTH_SHORT).show();
         if (mContext instanceof Activity) {
 
-            MyApplication.getUser().clear();
+            UserClass.getInstance().clear();
             Intent intent = new Intent(mContext,
                     LoginActivity.class);
             mContext.startActivity(intent);

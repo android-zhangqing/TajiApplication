@@ -33,6 +33,7 @@ import com.rockerhieu.emojicon.EmojiconsFragment;
 import com.rockerhieu.emojicon.emoji.Emojicon;
 import com.zhangqing.taji.MyApplication;
 import com.zhangqing.taji.R;
+import com.zhangqing.taji.base.UserClass;
 import com.zhangqing.taji.util.UploadUtil;
 import com.zhangqing.taji.view.ResizeLayout;
 
@@ -207,8 +208,8 @@ public class PublishActivity extends FragmentActivity implements View.OnClickLis
             uploadUtil.setOnUploadProcessListener(this); //设置监听器监听上传状态
 
             Map<String, String> params = new HashMap<String, String>();
-            params.put("userid", MyApplication.getUser().userId);
-            params.put("openid", MyApplication.getUser().openId);
+            params.put("userid", UserClass.getInstance().userId);
+            params.put("openid", UserClass.getInstance().openId);
             uploadUtil.uploadFile(picPath,
                     "file", "http://taji.whutech.com/Upload/uploadImg", params);
             //"/storage/emulated/0/123.png",
@@ -223,7 +224,7 @@ public class PublishActivity extends FragmentActivity implements View.OnClickLis
 //
 //            @Override
 //            protected String doInBackground(Void... params) {
-//                String result = MyApplication.getUser().uploadFile("/storage/emulated/0/DCIM/Camera/1.jpg");
+//                String result = UserClass.getInstance().uploadFile("/storage/emulated/0/DCIM/Camera/1.jpg");
 //                return result;
 //            }
 //

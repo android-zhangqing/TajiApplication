@@ -17,6 +17,7 @@ import com.amap.api.location.AMapLocationListener;
 import com.android.volley.VolleyError;
 import com.zhangqing.taji.MyApplication;
 import com.zhangqing.taji.R;
+import com.zhangqing.taji.base.UserClass;
 import com.zhangqing.taji.base.VolleyInterface;
 import com.zhangqing.taji.base.VolleyRequest;
 
@@ -51,8 +52,8 @@ public class ModifyInterestSkillActivity extends Activity {
         mCustomTwo = (TextView) findViewById(R.id.modify_custom_two_tv);
         mCustomThree = (EditText) findViewById(R.id.modify_custom_three_et);
 
-        mCustomTwo.setText("?userid=" + MyApplication.getUser().userId +
-                "&openid=" + MyApplication.getUser().openId + "&");
+        mCustomTwo.setText("?userid=" + UserClass.getInstance().userId +
+                "&openid=" + UserClass.getInstance().openId + "&");
         mCustomThree.setText("uid=1000");
 
 
@@ -64,13 +65,13 @@ public class ModifyInterestSkillActivity extends Activity {
         mInterestEditText = (EditText) findViewById(R.id.modify_interest);
         mSkillEditText = (EditText) findViewById(R.id.modify_skill);
 
-        mInterestEditText.setText(MyApplication.getUser().getStringByKey("interest"));
-        mSkillEditText.setText(MyApplication.getUser().getStringByKey("skill"));
+        mInterestEditText.setText(UserClass.getInstance().getStringByKey("interest"));
+        mSkillEditText.setText(UserClass.getInstance().getStringByKey("skill"));
 
-        mNameEditText.setText(MyApplication.getUser().getStringByKey("username"));
-        mSchoolEditText.setText(MyApplication.getUser().getStringByKey("school"));
-        mSexEditText.setText(MyApplication.getUser().getStringByKey("sex"));
-        mSignEditText.setText(MyApplication.getUser().getStringByKey("signature"));
+        mNameEditText.setText(UserClass.getInstance().getStringByKey("username"));
+        mSchoolEditText.setText(UserClass.getInstance().getStringByKey("school"));
+        mSexEditText.setText(UserClass.getInstance().getStringByKey("sex"));
+        mSignEditText.setText(UserClass.getInstance().getStringByKey("signature"));
 
     }
 
@@ -100,7 +101,7 @@ public class ModifyInterestSkillActivity extends Activity {
         String newInterest = mInterestEditText.getText().toString();
         String newSkill = mSkillEditText.getText().toString();
 
-        MyApplication.getUser().doModifyInterestSkill(newInterest, newSkill, new VolleyInterface(this) {
+        UserClass.getInstance().doModifyInterestSkill(newInterest, newSkill, new VolleyInterface(this) {
             @Override
             public void onMySuccess(JSONObject jsonObject) {
                 Toast.makeText(ModifyInterestSkillActivity.this, jsonObject.toString(), Toast.LENGTH_SHORT).show();
@@ -115,7 +116,7 @@ public class ModifyInterestSkillActivity extends Activity {
     }
 
     public void OnClickButtonSubmitDetail(View v) {
-        MyApplication.getUser().doModifyMemberDetail(
+        UserClass.getInstance().doModifyMemberDetail(
                 mNameEditText.getText().toString(),
                 mSexEditText.getText().toString(),
                 mSchoolEditText.getText().toString(),
@@ -168,9 +169,9 @@ public class ModifyInterestSkillActivity extends Activity {
                         Log.e("amapLocation", amapLocation.getLatitude() + "|" + amapLocation.getLongitude());
                         //Toast.makeText(getActivity(), amapLocation.getLatitude() + "|" + amapLocation.getLongitude() + "|" + amapLocation.getCity(), Toast.LENGTH_LONG).show();
 
-                        if (MyApplication.getUser().getSchoolByLocation(ModifyInterestSkillActivity.this.getApplicationContext(),
+                        if (UserClass.getInstance().getSchoolByLocation(ModifyInterestSkillActivity.this.getApplicationContext(),
                                 amapLocation.getLatitude(), amapLocation.getLongitude(), amapLocation.getCity())) {
-                            mSchoolEditText.setText(MyApplication.getUser().schoolName);
+                            mSchoolEditText.setText(UserClass.getInstance().schoolName);
                         }
                         ;
 

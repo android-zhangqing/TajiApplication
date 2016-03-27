@@ -110,7 +110,7 @@ public class RegisterSecondActivity extends Activity {
 
         final Context context_ = getApplicationContext();
 
-        MyApplication.getUser().doRegisterSmsSend(mobile,
+        UserClass.getInstance().doRegisterSmsSend(mobile,
                 new VolleyInterface(context_) {
 
                     @Override
@@ -137,7 +137,7 @@ public class RegisterSecondActivity extends Activity {
         btnVerify.setEnabled(false);
 
         smsCode = editSmsCode.getText().toString();
-        MyApplication.getUser().doRegisterSmsCheck(mobile, smsCode, new VolleyInterface(getApplicationContext()) {
+        UserClass.getInstance().doRegisterSmsCheck(mobile, smsCode, new VolleyInterface(getApplicationContext()) {
             @Override
             public void onMySuccess(JSONObject jsonObject) {
                 // TODO Auto-generated method stub

@@ -9,8 +9,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.VolleyError;
-import com.zhangqing.taji.MyApplication;
 import com.zhangqing.taji.R;
+import com.zhangqing.taji.base.UserClass;
 import com.zhangqing.taji.base.VolleyInterface;
 
 import org.json.JSONObject;
@@ -29,7 +29,7 @@ public class RegisterThirdActivity extends Activity {
         setContentView(R.layout.activity_register_third);
 
         TextView tv = (TextView) findViewById(R.id.register_third_xieyi_tv);
-        btnRegister= (Button) findViewById(R.id.register_third_done_btn);
+        btnRegister = (Button) findViewById(R.id.register_third_done_btn);
         tv.getPaint().setFlags(Paint.UNDERLINE_TEXT_FLAG);
 
         passwordTextView = (TextView) findViewById(R.id.register_third_password_edttxt);
@@ -47,14 +47,14 @@ public class RegisterThirdActivity extends Activity {
 
     public void onClickButtonSubmitPassword(View v) {
         btnRegister.setEnabled(false);
-        MyApplication.getUser().doRegisterDone(mobile, passwordTextView.getText().toString(), smsCode,
+        UserClass.getInstance().doRegisterDone(mobile, passwordTextView.getText().toString(), smsCode,
                 new VolleyInterface(RegisterThirdActivity.this) {
 
                     @Override
                     public void onMySuccess(JSONObject jsonObject) {
                         btnRegister.setEnabled(true);
 
-                        if (!MyApplication.getUser().saveSharedPreference(jsonObject)) {
+                        if (!UserClass.getInstance().saveSharedPreference(jsonObject)) {
                             Toast.makeText(getApplicationContext(),
                                     "注册失败",
                                     Toast.LENGTH_SHORT).show();

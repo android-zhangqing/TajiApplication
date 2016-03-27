@@ -26,7 +26,7 @@ import io.rong.imlib.RongIMClient;
 
 public class MyApplication extends Application {
     private static RequestQueue requestQueue;
-    private static UserClass user;
+
     public static boolean rcHasConnect = false;
     private static DisplayImageOptions options;
 
@@ -39,27 +39,24 @@ public class MyApplication extends Application {
         return options;
     }
 
-    public static UserClass getUser() {
-        return user;
-    }
-
 
     @Override
     public void onCreate() {
         // TODO Auto-generated method stub
         super.onCreate();
+
+        //初始化Volley队列
         requestQueue = Volley.newRequestQueue(getApplicationContext());
-        user = new UserClass(getSharedPreferences("taji", MODE_PRIVATE));
 
+        //初始化UserClass单例
+        UserClass.init(getSharedPreferences("taji", MODE_PRIVATE));
 
+        //初始化UniversalImageLoader
         initImageLoader(getApplicationContext());
 
+        //初始化融云IM
         if (getApplicationInfo().packageName.equals(getCurProcessName(getApplicationContext())) ||
                 "io.rong.push".equals(getCurProcessName(getApplicationContext()))) {
-
-            /**
-             * IMKit SDK调用第一步 初始化
-             */
             RongIM.init(this);
         }
 
@@ -67,7 +64,6 @@ public class MyApplication extends Application {
 
 
     public static void initImageLoader(Context context) {
-        //缓存文件的目录
         File cacheDir = StorageUtils.getOwnCacheDirectory(context, "universalimageloader/Cache");
         ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(context)
                 .memoryCacheExtraOptions(480, 800) // max width, max height，即保存的每个缓存文件的最大长宽
@@ -105,7 +101,7 @@ public class MyApplication extends Application {
      * @param context
      * @return 进程号
      */
-    public static String getCurProcessName(Context context) {
+    private static String getCurProcessName(Context context) {
 
         int pid = android.os.Process.myPid();
 
@@ -125,7 +121,7 @@ public class MyApplication extends Application {
     public static boolean connect(Context context) {
 
 
-        String token = user.getStringByKey("rcToken");
+        String token = UserClass.getInstance().getStringByKey("rcToken");
         if (token.equals("")) return false;
 
         if (context.getApplicationInfo().packageName.equals(getCurProcessName(context.getApplicationContext()))) {

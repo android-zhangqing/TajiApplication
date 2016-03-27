@@ -60,7 +60,7 @@ public class LoginActivity extends AppCompatActivity {
         //_dialog=CustomProgress.show(this, "正在登录", true, null);
         mMobileString = mMobileEditText.getText().toString();
         mPasswordString = mPasswordEditText.getText().toString();
-        MyApplication.getUser().doLogin(mMobileString, mPasswordString, new VolleyInterface(this) {
+        UserClass.getInstance().doLogin(mMobileString, mPasswordString, new VolleyInterface(this) {
             @Override
             public void onMySuccess(JSONObject jsonObject) {
 //                new Handler().postDelayed(new Runnable() {
@@ -75,7 +75,7 @@ public class LoginActivity extends AppCompatActivity {
 
                 Log.e("onMySuccess", jsonObject.toString() + "|");
 
-                if (!MyApplication.getUser().saveSharedPreference(jsonObject)) {
+                if (!UserClass.getInstance().saveSharedPreference(jsonObject)) {
                     Toast.makeText(getApplicationContext(),
                             "登录失败",
                             Toast.LENGTH_SHORT).show();
@@ -83,11 +83,11 @@ public class LoginActivity extends AppCompatActivity {
                 }
 
 
-                MyApplication.getUser().getUserInfo(new VolleyInterface(LoginActivity.this.getApplicationContext()) {
+                UserClass.getInstance().getUserInfo(new VolleyInterface(LoginActivity.this.getApplicationContext()) {
                     @Override
                     public void onMySuccess(JSONObject jsonObject) {
-                        if (!MyApplication.getUser().saveSharedPreference(jsonObject)) {
-                            MyApplication.getUser().clear();
+                        if (!UserClass.getInstance().saveSharedPreference(jsonObject)) {
+                            UserClass.getInstance().clear();
                             Toast.makeText(LoginActivity.this.getApplicationContext(), "账号异常", Toast.LENGTH_SHORT).show();
                             return;
                         }
