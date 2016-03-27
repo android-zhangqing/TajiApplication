@@ -16,6 +16,8 @@ tajiapp/out/
 # Gradle files
 tajiapp/.gradle/
 tajiapp/build/
+tajiapp/emoji/build/
+tajiapp/IMKit/build/
 
 # Local configuration file (sdk path, etc)
 tajiapp/local.properties
