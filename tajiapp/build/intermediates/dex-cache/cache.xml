@@ -1,3 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" />
+<items version="2" >
 
+    <item
+        jar="C:\Users\zhangqing\AndroidStudioProjects\TajiApplication\tajiapp\app\build\intermediates\exploded-aar\tajiapp\IMKit\unspecified\jars\libs\Rong_IMKit_v2_4_8.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="1388acd7ba63b1f3afa631b109c092ab36e13c65">
+        <dex dex="C:\Users\zhangqing\AndroidStudioProjects\TajiApplication\tajiapp\app\build\intermediates\pre-dexed\release\Rong_IMKit_v2_4_8_153cc92415e9004906740dd496d427dd1dda6c86.jar" />
+    </item>
+    <item
+        jar="C:\Users\zhangqing\AndroidStudioProjects\TajiApplication\tajiapp\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.1.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="57ae0d750ff83f0c738d21720224ac7ea866a094">
+        <dex dex="C:\Users\zhangqing\AndroidStudioProjects\TajiApplication\tajiapp\app\build\intermediates\pre-dexed\release\com.android.support-appcompat-v7-23.1.0_8d2afc4de7a1b74c0ee91275b7052cde18b45ff1.jar" />
+    </item>
+    <item
+        jar="C:\Users\zhangqing\AndroidStudioProjects\TajiApplication\tajiapp\app\libs\volly-1.0.11.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="1c248dd8e8c23a3e77a29613a2872be50b680d39">
+        <dex dex="C:\Users\zhangqing\AndroidStudioProjects\TajiApplication\tajiapp\app\build\intermediates\pre-dexed\release\volly-1.0.11_71780c0f74879fbc1ec3013788d1077b30c63580.jar" />
+    </item>
+    <item
+        jar="C:\Users\zhangqing\AndroidStudioProjects\TajiApplication\tajiapp\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="6cbc7773921fcfedbe55657578f0cbfe614778dc">
+        <dex dex="C:\Users\zhangqing\AndroidStudioProjects\TajiApplication\tajiapp\app\build\intermediates\pre-dexed\release\com.android.support-support-v4-23.1.1_d5dda7e8605a3386833c1f8538f24947b69d4a9c.jar" />
+    </item>
+    <item
+        jar="C:\Users\zhangqing\AndroidStudioProjects\TajiApplication\tajiapp\app\build\intermediates\exploded-aar\tajiapp\emoji\unspecified\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="a8a8cbdd3c8c315b75ba27fc9b2395e210f2baa6">
+        <dex dex="C:\Users\zhangqing\AndroidStudioProjects\TajiApplication\tajiapp\app\build\intermediates\pre-dexed\release\tajiapp-emoji-unspecified_be38718a7dcfeafdd985756700d0b492dd507660.jar" />
+    </item>
+    <item
+        jar="C:\Users\zhangqing\AndroidStudioProjects\TajiApplication\tajiapp\app\downloads\universal-image-loader-1.9.5.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="442dbfb517b9ab5cb5c6da7ebf8cc28ec5bd0375">
+        <dex dex="C:\Users\zhangqing\AndroidStudioProjects\TajiApplication\tajiapp\app\build\intermediates\pre-dexed\release\universal-image-loader-1.9.5_c3f1f918d81e66961c8c3f278ed54434bf8f644b.jar" />
+    </item>
+    <item
+        jar="C:\Users\zhangqing\AndroidStudioProjects\TajiApplication\tajiapp\app\libs\AMap_Location_v2.3.0_20160112.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="bfe17aa93c71a6973a53fcbaf7bfe2f3a1859dcf">
+        <dex dex="C:\Users\zhangqing\AndroidStudioProjects\TajiApplication\tajiapp\app\build\intermediates\pre-dexed\release\AMap_Location_v2.3.0_20160112_28e032aee3a7acdde9f552e14fd29245620af8d0.jar" />
+    </item>
+    <item
+        jar="C:\android-sdk-windows\extras\android\m2repository\com\android\support\support-annotations\23.1.1\support-annotations-23.1.1.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="8d680ba5a623724d1fb0e81c36a790f023a6cede">
+        <dex dex="C:\Users\zhangqing\AndroidStudioProjects\TajiApplication\tajiapp\app\build\intermediates\pre-dexed\release\support-annotations-23.1.1_0c96fd5d424a8894774880d41bd003ce665532bf.jar" />
+    </item>
+    <item
+        jar="C:\Users\zhangqing\AndroidStudioProjects\TajiApplication\tajiapp\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\jars\libs\internal_impl-23.1.1.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="a4de9c81ae239414e1ed0f86441b02abaf29bca9">
+        <dex dex="C:\Users\zhangqing\AndroidStudioProjects\TajiApplication\tajiapp\app\build\intermediates\pre-dexed\release\internal_impl-23.1.1_ce8aff221776b87989d648773178ff169494dd0e.jar" />
+    </item>
+    <item
+        jar="C:\Users\zhangqing\AndroidStudioProjects\TajiApplication\tajiapp\app\build\intermediates\exploded-aar\tajiapp\IMKit\unspecified\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="bffa4c8a397768dda40274c698d7263bc6fff114">
+        <dex dex="C:\Users\zhangqing\AndroidStudioProjects\TajiApplication\tajiapp\app\build\intermediates\pre-dexed\release\tajiapp-IMKit-unspecified_ab60efc01e4294d8e1b9b9231294c03e0a9223ba.jar" />
+    </item>
+    <item
+        jar="C:\Users\zhangqing\AndroidStudioProjects\TajiApplication\tajiapp\app\build\intermediates\exploded-aar\com.android.support\design\23.1.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="19026d31f5d3ae868db81319671a642be5fbba08">
+        <dex dex="C:\Users\zhangqing\AndroidStudioProjects\TajiApplication\tajiapp\app\build\intermediates\pre-dexed\release\com.android.support-design-23.1.0_851bdaec6bcc4da139ad820e0a64f2cd7dd3cf96.jar" />
+    </item>
+    <item
+        jar="C:\Users\zhangqing\AndroidStudioProjects\TajiApplication\tajiapp\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\23.1.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="3f151e49c316a5ab2c065969a3b3b55ef9b393fc">
+        <dex dex="C:\Users\zhangqing\AndroidStudioProjects\TajiApplication\tajiapp\app\build\intermediates\pre-dexed\release\com.android.support-recyclerview-v7-23.1.0_03e00b9db84eb99dd4ba3fc42547e6437a198b7c.jar" />
+    </item>
+
+</items>

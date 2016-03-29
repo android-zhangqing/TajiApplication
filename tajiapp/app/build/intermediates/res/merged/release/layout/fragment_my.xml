@@ -129,8 +129,9 @@
 
                                     <TextView
                                         android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
+                                        android:layout_height="match_parent"
                                         android:text="想学技能"
+                                        android:gravity="center"
                                         android:textColor="#915A99" />
 
                                     <LinearLayout
@@ -153,8 +154,10 @@
 
                                     <TextView
                                         android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
+                                        android:layout_height="match_parent"
+                                        android:minHeight="40dp"
                                         android:text="拥有技能"
+                                        android:gravity="center"
                                         android:textColor="#03A8A6" />
 
                                     <LinearLayout

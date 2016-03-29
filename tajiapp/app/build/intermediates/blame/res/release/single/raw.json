@@ -6,5 +6,9 @@
     {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\raw\\school.txt",
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\raw\\school.txt"
+    },
+    {
+        "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\raw\\school.txt",
+        "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\src\\main\\res\\raw\\school.txt"
     }
 ]
