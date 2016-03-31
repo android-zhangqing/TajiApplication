@@ -23,6 +23,7 @@ import com.nostra13.universalimageloader.core.imageaware.ImageViewAware;
 import com.nostra13.universalimageloader.core.listener.PauseOnScrollListener;
 import com.zhangqing.taji.MyApplication;
 import com.zhangqing.taji.R;
+import com.zhangqing.taji.adapter.PersonsListAdapter;
 import com.zhangqing.taji.base.UserClass;
 import com.zhangqing.taji.base.VolleyInterface;
 import com.zhangqing.taji.util.ImageDownloader;
@@ -80,28 +81,28 @@ public class ListPersonsActivity extends Activity {
         mListView.addFooterView(t);
 
         //滑动ListView时暂停加载图片,只加载可视区域内图片
-        mListView.setOnScrollListener(new PauseOnScrollListener(ImageLoader.getInstance(), true, true, new AbsListView.OnScrollListener() {
-            @Override
-            public void onScrollStateChanged(AbsListView view, int scrollState) {
-//                isInit = true;
-//                switch (scrollState) {
-//                    case AbsListView.OnScrollListener.SCROLL_STATE_IDLE:// 滑动停止
-//                        for (; start_index < end_index; start_index++) {
-//                            ImageView img = (ImageView) mListView.findViewWithTag(start_index);
-//                            img.setImageResource(R.drawable.update_log);
-//                        }
-//                        break;
+//        mListView.setOnScrollListener(new PauseOnScrollListener(ImageLoader.getInstance(), true, true, new AbsListView.OnScrollListener() {
+//            @Override
+//            public void onScrollStateChanged(AbsListView view, int scrollState) {
+////                isInit = true;
+////                switch (scrollState) {
+////                    case AbsListView.OnScrollListener.SCROLL_STATE_IDLE:// 滑动停止
+////                        for (; start_index < end_index; start_index++) {
+////                            ImageView img = (ImageView) mListView.findViewWithTag(start_index);
+////                            img.setImageResource(R.drawable.update_log);
+////                        }
+////                        break;
+////
+////                    default:
+////                        break;
+////                }
+//            }
 //
-//                    default:
-//                        break;
-//                }
-            }
-
-            @Override
-            public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
-
-            }
-        }));
+//            @Override
+//            public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
+//
+//            }
+//        }));
 
         mAdapterListView = new PersonsListAdapter(ListPersonsActivity.this, mListView);
 
@@ -141,145 +142,3 @@ public class ListPersonsActivity extends Activity {
 
 }
 
-class PersonsListAdapter extends BaseAdapter {
-    private static final int USER_ID = 1;
-    private static final int USER_NAME = 2;
-    private static final int AVATAR = 3;
-    private static final int SIGN = 4;
-
-
-    List<Map<Integer, String>> mapList = new ArrayList<Map<Integer, String>>();
-
-    private Context mContext;
-
-    private ListView mListView;
-
-    /**
-     * @param context  必须Activity context
-     * @param listView 会自动setAdapter
-     */
-    public PersonsListAdapter(Context context, ListView listView) {
-        this.mContext = context;
-        mListView = listView;
-        if (listView.getAdapter() == null)
-            listView.setAdapter(this);
-
-
-        // 使用DisplayImageOptions.Builder()创建DisplayImageOptions
-
-    }
-
-
-    public void initData(JSONObject jsonObject) {
-        JSONArray jsonArray;
-
-        mapList.clear();
-
-        try {
-            jsonArray = jsonObject.getJSONArray("data");
-        } catch (JSONException e) {
-            Log.e("ListViewinitDataFail", "|");
-            return;
-        }
-
-        for (int i = 0; i < jsonArray.length(); i++) {
-            Map<Integer, String> map = new HashMap<Integer, String>();
-            JSONObject tempJsonObject;
-            try {
-                tempJsonObject = jsonArray.getJSONObject(i);
-                if (tempJsonObject.has("userid"))
-                    map.put(USER_ID, tempJsonObject.getString("userid"));
-                if (tempJsonObject.has("username"))
-                    map.put(USER_NAME, tempJsonObject.getString("username"));
-                if (tempJsonObject.has("avatar"))
-                    map.put(AVATAR, tempJsonObject.getString("avatar"));
-                if (tempJsonObject.has("signature"))
-                    map.put(SIGN, tempJsonObject.getString("signature"));
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-            mapList.add(map);
-        }
-        //notifyDataSetChanged();
-        //局部更新,更新可视区域,
-        notifyDataSetInvalidated();
-        // 整体更新,更新所有item对象,如果滑动过,更新后回到初始状态
-    }
-
-    @Override
-    public int getCount() {
-        return mapList.size();
-    }
-
-    @Override
-    public Object getItem(int position) {
-        return mapList.get(position);
-    }
-
-    @Override
-    public long getItemId(int position) {
-        return Integer.parseInt(mapList.get(position).get(USER_ID));
-    }
-
-    @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
-        Log.e("getView", position + "|" + mapList.size() + "|" + mapList.get(position).toString());
-        ViewHolder viewHolder;
-        ImageDownloader a;
-        if (convertView == null) {
-            convertView = LayoutInflater.from(mContext).inflate(R.layout.view_persons_listview_item, null, false);
-            viewHolder = new ViewHolder();
-            viewHolder.imgViewIcon = (ImageView) convertView.findViewById(R.id.persons_item_avatar);
-            viewHolder.textViewName = (TextView) convertView.findViewById(R.id.persons_item_name);
-            viewHolder.textViewSign = (TextView) convertView.findViewById(R.id.persons_item_sign);
-            convertView.setTag(viewHolder);
-            Log.e("getView", "viewHolder");
-        } else {
-            viewHolder = (ViewHolder) convertView.getTag();
-        }
-        String name = mapList.get(position).get(USER_NAME);
-        if (name.equals("null") || name.equals(""))
-            name = "游客" + mapList.get(position).get(USER_ID);
-        viewHolder.textViewName.setText(name);
-        viewHolder.textViewSign.setText(mapList.get(position).get(SIGN));
-
-        String url = mapList.get(position).get(AVATAR);
-
-        viewHolder.imgViewIcon.setTag(url);
-        //这句代码的作用是为了解决convertView被重用的时候，图片预设的问题
-        viewHolder.imgViewIcon.setImageResource(R.drawable.ic_launcher);
-
-        ImageLoader.getInstance().displayImage(url, new ImageViewAware(viewHolder.imgViewIcon), MyApplication.getDisplayImageOptions(),
-                new ImageSize(100, 100), null, null);
-
-
-        // viewHolder.imgViewIcon.post(new myRunable(url, viewHolder.imgViewIcon));
-
-//        if (mDownloader == null) {
-//            mDownloader = new ImageDownloader();
-//        }
-//        if (mDownloader != null) {
-//            //异步下载图片
-//            mDownloader.imageDownload(url, viewHolder.imgViewIcon, "/taji_temp", (Activity) mContext, new OnImageDownload() {
-//                @Override
-//                public void onDownloadSucc(Bitmap bitmap,
-//                                           String c_url, ImageView mimageView) {
-//                    ImageView imageView = (ImageView) mListView.findViewWithTag(c_url);
-//                    if (imageView != null) {
-//                        imageView.setImageBitmap(bitmap);
-//                        imageView.setTag("");
-//                    }
-//                }
-//            });
-//        }
-
-
-        return convertView;
-    }
-
-    static class ViewHolder {
-        ImageView imgViewIcon;
-        TextView textViewName;
-        TextView textViewSign;
-    }
-}
