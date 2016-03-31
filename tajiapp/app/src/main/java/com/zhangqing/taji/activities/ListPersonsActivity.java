@@ -4,10 +4,12 @@ import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AbsListView;
 import android.widget.BaseAdapter;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -18,6 +20,7 @@ import com.android.volley.VolleyError;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.assist.ImageSize;
 import com.nostra13.universalimageloader.core.imageaware.ImageViewAware;
+import com.nostra13.universalimageloader.core.listener.PauseOnScrollListener;
 import com.zhangqing.taji.MyApplication;
 import com.zhangqing.taji.R;
 import com.zhangqing.taji.base.UserClass;
@@ -48,6 +51,8 @@ public class ListPersonsActivity extends Activity {
     private SwipeRefreshLayout mSwipeRefreshLayout;
     private PersonsListAdapter mAdapterListView;
 
+    private int start_index,end_index;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,6 +74,34 @@ public class ListPersonsActivity extends Activity {
 
         mListView.setDivider(getResources().getDrawable(R.drawable.persons_list_divider));
         mListView.setDividerHeight(2);
+        TextView t=new TextView(this);
+        t.setText("正在加载...");
+        mListView.setFooterDividersEnabled(true);
+        mListView.addFooterView(t);
+
+        //滑动ListView时暂停加载图片,只加载可视区域内图片
+        mListView.setOnScrollListener(new PauseOnScrollListener(ImageLoader.getInstance(), true, true, new AbsListView.OnScrollListener() {
+            @Override
+            public void onScrollStateChanged(AbsListView view, int scrollState) {
+//                isInit = true;
+//                switch (scrollState) {
+//                    case AbsListView.OnScrollListener.SCROLL_STATE_IDLE:// 滑动停止
+//                        for (; start_index < end_index; start_index++) {
+//                            ImageView img = (ImageView) mListView.findViewWithTag(start_index);
+//                            img.setImageResource(R.drawable.update_log);
+//                        }
+//                        break;
+//
+//                    default:
+//                        break;
+//                }
+            }
+
+            @Override
+            public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
+
+            }
+        }));
 
         mAdapterListView = new PersonsListAdapter(ListPersonsActivity.this, mListView);
 
@@ -92,7 +125,7 @@ public class ListPersonsActivity extends Activity {
         };
         mSwipeRefreshLayout.setOnRefreshListener(swipeListener);
         mSwipeRefreshLayout.setRefreshing(true);
-//        mSwipeRefreshLayout.postDelayed(new Runnable() {
+       // mSwipeRefreshLayout.postDelayed(new Runnable() {
 //            @Override
 //            public void run() {
 //                swipeListener.onRefresh();
@@ -116,8 +149,6 @@ class PersonsListAdapter extends BaseAdapter {
 
 
     List<Map<Integer, String>> mapList = new ArrayList<Map<Integer, String>>();
-
-    private ImageDownloader mDownloader;
 
     private Context mContext;
 

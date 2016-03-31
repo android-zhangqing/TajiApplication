@@ -63,6 +63,7 @@ public class FragmentMy extends Fragment implements View.OnClickListener {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Log.e("FragmentMy", "onCreate");
+
     }
 
     @Override
