@@ -105,7 +105,7 @@ public class FragmentSearch extends Fragment implements TextView.OnEditorActionL
                         mSwipeRefreshLayout.setRefreshing(false);
                         mSwipeRefreshLayout.setEnabled(false);
                         Log.e("onMySuccess", jsonObject + "|");
-                        personsListAdapter.initData(jsonObject);
+                        personsListAdapter.addData(jsonObject);
                     }
 
                     @Override

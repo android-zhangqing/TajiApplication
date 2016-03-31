@@ -60,31 +60,19 @@ public class PersonsListAdapter extends BaseAdapter {
         if (listView.getAdapter() == null)
             listView.setAdapter(this);
 
-
-        //解决从滑动
+        //ListView滑动时暂停加载图片 特殊情况：由下滑变为下拉刷新然后松手
         listView.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 if (event.getAction() == 2) return false;
                 Log.e("onTouch", event.getAction() + "|");
                 switch (event.getAction()) {
-                    case 0: {
-
-                        break;
-                    }
-                    case 2: {
-
-                        break;
-                    }
                     case 1:
                     case 3: {
-
+                        onStopScroll(mListView);
                         break;
                     }
-
-
                 }
-
                 return false;
             }
         });
@@ -97,9 +85,6 @@ public class PersonsListAdapter extends BaseAdapter {
                 switch (scrollState) {
                     case AbsListView.OnScrollListener.SCROLL_STATE_IDLE:// 滑动停止
                         isScrolling = false;
-
-                        ;
-
                         onStopScroll(view);
                         //notifyDataSetChanged();
                         break;
@@ -114,7 +99,7 @@ public class PersonsListAdapter extends BaseAdapter {
 
             @Override
             public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
-// 设置当前屏幕显示的起始index和结束index
+                // 设置当前屏幕显示的起始index和结束index
                 // Log.e("onScroll", firstVisibleItem + "|" + visibleItemCount + "|" + totalItemCount);
                 if (!isScrolling) {
                     last_start_index = firstVisibleItem;
@@ -128,17 +113,19 @@ public class PersonsListAdapter extends BaseAdapter {
 
 
     /**
-     * 该函数停止滚动时触发 用于加载当前可视区域的网络图片
+     * 停止滚动ListView时触发 用于加载当前可视区域的网络图片
      *
      * @param listView 传入待操作的ListView
      */
     private void onStopScroll(AbsListView listView) {
-
-        //重点！！！该方法返回可视区域的item的View
+        //重点！！！该方法返回可视区域的item的View，不要使用ChildAt(position)方法得到View
         List<View> viewList = listView.getTouchables();
         for (int i = 0; i < viewList.size(); i++) {
             View v = viewList.get(i);
+
+            //只加载之前未加载的图片
             if (v.getTag() == null) continue;
+
             ViewHolder holder = (ViewHolder) v.getTag();
 
             final ImageView iv = holder.imgViewIcon;
@@ -159,10 +146,12 @@ public class PersonsListAdapter extends BaseAdapter {
 //        this.isScrolling = isScrolling;
 //    }
 
-    public void initData(JSONObject jsonObject) {
-        JSONArray jsonArray;
-
+    public void clearData() {
         mapList.clear();
+    }
+
+    public synchronized void addData(JSONObject jsonObject) {
+        JSONArray jsonArray;
 
         try {
             jsonArray = jsonObject.getJSONArray("data");

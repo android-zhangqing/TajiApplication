@@ -38,11 +38,14 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Created by Administrator on 2016/2/20.
+ * 列出用户列表Activity，包括关注列表界面、被关注列表界面、师傅界面、徒弟界面
  */
 
 public class ListPersonsActivity extends Activity {
+
+    //该成员变量指示该Activity为哪个界面：关注、被关注、师傅、徒弟
     private int mWhichType;
+
     private String mTitleString;
 
     private TextView mTitleTextView;
@@ -51,8 +54,6 @@ public class ListPersonsActivity extends Activity {
 
     private SwipeRefreshLayout mSwipeRefreshLayout;
     private PersonsListAdapter mAdapterListView;
-
-    private int start_index,end_index;
 
 
     @Override
@@ -75,35 +76,11 @@ public class ListPersonsActivity extends Activity {
 
         mListView.setDivider(getResources().getDrawable(R.drawable.persons_list_divider));
         mListView.setDividerHeight(2);
-        TextView t=new TextView(this);
+        TextView t = new TextView(this);
         t.setText("正在加载...");
+        t.setPadding(40,40,40,40);
         mListView.setFooterDividersEnabled(true);
         mListView.addFooterView(t);
-
-        //滑动ListView时暂停加载图片,只加载可视区域内图片
-//        mListView.setOnScrollListener(new PauseOnScrollListener(ImageLoader.getInstance(), true, true, new AbsListView.OnScrollListener() {
-//            @Override
-//            public void onScrollStateChanged(AbsListView view, int scrollState) {
-////                isInit = true;
-////                switch (scrollState) {
-////                    case AbsListView.OnScrollListener.SCROLL_STATE_IDLE:// 滑动停止
-////                        for (; start_index < end_index; start_index++) {
-////                            ImageView img = (ImageView) mListView.findViewWithTag(start_index);
-////                            img.setImageResource(R.drawable.update_log);
-////                        }
-////                        break;
-////
-////                    default:
-////                        break;
-////                }
-//            }
-//
-//            @Override
-//            public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
-//
-//            }
-//        }));
-
         mAdapterListView = new PersonsListAdapter(ListPersonsActivity.this, mListView);
 
 
@@ -114,7 +91,7 @@ public class ListPersonsActivity extends Activity {
                     @Override
                     public void onMySuccess(JSONObject jsonObject) {
                         mSwipeRefreshLayout.setRefreshing(false);
-                        mAdapterListView.initData(jsonObject);
+                        mAdapterListView.addData(jsonObject);
                     }
 
                     @Override
@@ -126,7 +103,7 @@ public class ListPersonsActivity extends Activity {
         };
         mSwipeRefreshLayout.setOnRefreshListener(swipeListener);
         mSwipeRefreshLayout.setRefreshing(true);
-       // mSwipeRefreshLayout.postDelayed(new Runnable() {
+        // mSwipeRefreshLayout.postDelayed(new Runnable() {
 //            @Override
 //            public void run() {
 //                swipeListener.onRefresh();
