@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
@@ -13,11 +14,9 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.nostra13.universalimageloader.core.ImageLoader;
-import com.nostra13.universalimageloader.core.assist.FailReason;
 import com.nostra13.universalimageloader.core.assist.ImageSize;
 import com.nostra13.universalimageloader.core.download.ImageDownloader;
 import com.nostra13.universalimageloader.core.imageaware.ImageViewAware;
-import com.nostra13.universalimageloader.core.listener.ImageLoadingListener;
 import com.nostra13.universalimageloader.core.listener.PauseOnScrollListener;
 import com.nostra13.universalimageloader.core.listener.SimpleImageLoadingListener;
 import com.zhangqing.taji.MyApplication;
@@ -48,6 +47,7 @@ public class PersonsListAdapter extends BaseAdapter {
     private boolean isScrolling = false;
 
     private int start_index, end_index;
+    private int last_start_index, last_end_index;
 
 
     /**
@@ -59,6 +59,36 @@ public class PersonsListAdapter extends BaseAdapter {
         mListView = listView;
         if (listView.getAdapter() == null)
             listView.setAdapter(this);
+
+
+        //解决从滑动
+        listView.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if (event.getAction() == 2) return false;
+                Log.e("onTouch", event.getAction() + "|");
+                switch (event.getAction()) {
+                    case 0: {
+
+                        break;
+                    }
+                    case 2: {
+
+                        break;
+                    }
+                    case 1:
+                    case 3: {
+
+                        break;
+                    }
+
+
+                }
+
+                return false;
+            }
+        });
+        //ListView滑动时暂停加载图片
         listView.setOnScrollListener(new PauseOnScrollListener(ImageLoader.getInstance(), true, true, new AbsListView.OnScrollListener() {
             @Override
             public void onScrollStateChanged(AbsListView view, int scrollState) {
@@ -67,9 +97,16 @@ public class PersonsListAdapter extends BaseAdapter {
                 switch (scrollState) {
                     case AbsListView.OnScrollListener.SCROLL_STATE_IDLE:// 滑动停止
                         isScrolling = false;
-                        notifyDataSetChanged();
-                        break;
 
+                        ;
+
+                        onStopScroll(view);
+                        //notifyDataSetChanged();
+                        break;
+                    case AbsListView.OnScrollListener.SCROLL_STATE_TOUCH_SCROLL:
+                    case AbsListView.OnScrollListener.SCROLL_STATE_FLING:
+                        isScrolling = true;
+                        break;
                     default:
                         break;
                 }
@@ -78,10 +115,43 @@ public class PersonsListAdapter extends BaseAdapter {
             @Override
             public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
 // 设置当前屏幕显示的起始index和结束index
+                // Log.e("onScroll", firstVisibleItem + "|" + visibleItemCount + "|" + totalItemCount);
+                if (!isScrolling) {
+                    last_start_index = firstVisibleItem;
+                    last_end_index = firstVisibleItem + visibleItemCount;
+                }
                 start_index = firstVisibleItem;
                 end_index = firstVisibleItem + visibleItemCount;
             }
         }));
+    }
+
+
+    /**
+     * 该函数停止滚动时触发 用于加载当前可视区域的网络图片
+     *
+     * @param listView 传入待操作的ListView
+     */
+    private void onStopScroll(AbsListView listView) {
+
+        //重点！！！该方法返回可视区域的item的View
+        List<View> viewList = listView.getTouchables();
+        for (int i = 0; i < viewList.size(); i++) {
+            View v = viewList.get(i);
+            if (v.getTag() == null) continue;
+            ViewHolder holder = (ViewHolder) v.getTag();
+
+            final ImageView iv = holder.imgViewIcon;
+            if (iv.getTag() != null) {
+                ImageLoader.getInstance().displayImage((String) iv.getTag(), new ImageViewAware(iv), MyApplication.getDisplayImageOptions(),
+                        new ImageSize(100, 100), new SimpleImageLoadingListener() {
+                            @Override
+                            public void onLoadingComplete(String imageUri, View view, Bitmap loadedImage) {
+                                iv.setTag(null);
+                            }
+                        }, null);
+            }
+        }
     }
 
 //
