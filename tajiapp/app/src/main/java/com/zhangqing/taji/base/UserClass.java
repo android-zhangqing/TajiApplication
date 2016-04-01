@@ -64,7 +64,7 @@ public class UserClass {
         userClass = new UserClass(s);
     }
 
-    public static UserClass getInstance(){
+    public static UserClass getInstance() {
 //        if(userClass==null){
 //            synchronized (UserClass.class){
 //                if(userClass==null){
@@ -371,20 +371,20 @@ public class UserClass {
         VolleyRequest.RequestGet(URLHEAD + "/skill", "getSkillListAll", vif);
     }
 
-    public void getPersonsList(int whichPersonsButton, VolleyInterface vif) {
+    public void getPersonsList(int whichPersonsButton, int page, VolleyInterface vif) {
         String url = "";
         switch (whichPersonsButton) {
             case Persons_Button_tudi:
-                url = URLHEAD + "/Master/tudiList?userid=" + userId + "&openid=" + openId;
+                url = URLHEAD + "/Master/tudiList?userid=" + userId + "&openid=" + openId + "&count=20&page=" + page;
                 break;
             case Persons_Button_shifu:
-                url = URLHEAD + "/Master/masterList?userid=" + userId + "&openid=" + openId;
+                url = URLHEAD + "/Master/masterList?userid=" + userId + "&openid=" + openId + "&count=20&page=" + page;
                 break;
             case Persons_Button_dingyue:
-                url = URLHEAD + "/Follow/followList?userid=" + userId + "&openid=" + openId;
+                url = URLHEAD + "/Follow/followList?userid=" + userId + "&openid=" + openId + "&count=20&page=" + page;
                 break;
             case Persons_Button_beidingyue:
-                url = URLHEAD + "/Follow/fansList?userid=" + userId + "&openid=" + openId;
+                url = URLHEAD + "/Follow/fansList?userid=" + userId + "&openid=" + openId + "&count=20&page=" + page;
                 break;
         }
         VolleyRequest.RequestGet(url, "getFollowList", vif);

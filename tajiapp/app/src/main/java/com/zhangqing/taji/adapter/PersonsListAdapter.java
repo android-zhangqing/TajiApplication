@@ -49,6 +49,19 @@ public class PersonsListAdapter extends BaseAdapter {
     private int start_index, end_index;
     private int last_start_index, last_end_index;
 
+    /**
+     * 分页加载时滚动到列表尾的监听器
+     */
+    public interface OnAddDataListener {
+        void addData(PersonsListAdapter personsListAdapter);
+    }
+
+    private OnAddDataListener onAddDataListener;
+
+    public void setOnAddDataListener(OnAddDataListener onAddDataListener) {
+        this.onAddDataListener = onAddDataListener;
+    }
+
 
     /**
      * @param context  必须Activity context
@@ -81,11 +94,16 @@ public class PersonsListAdapter extends BaseAdapter {
             @Override
             public void onScrollStateChanged(AbsListView view, int scrollState) {
                 isScrolling = true;
-                Log.e("onScrollStateChanged", scrollState + "|");
+                Log.e("onScrollStateChanged", scrollState + "##|"+view.getLastVisiblePosition()+"|"+view.getCount());
                 switch (scrollState) {
                     case AbsListView.OnScrollListener.SCROLL_STATE_IDLE:// 滑动停止
                         isScrolling = false;
-                        onStopScroll(view);
+                        onStopScroll(view);//停止滚动时加载数据
+
+
+                        if (view.getLastVisiblePosition()==view.getCount()-1&&onAddDataListener != null) {
+                            onAddDataListener.addData(PersonsListAdapter.this);
+                        }
                         //notifyDataSetChanged();
                         break;
                     case AbsListView.OnScrollListener.SCROLL_STATE_TOUCH_SCROLL:
@@ -146,10 +164,18 @@ public class PersonsListAdapter extends BaseAdapter {
 //        this.isScrolling = isScrolling;
 //    }
 
+    /**
+     * 清除所有数据
+     */
     public void clearData() {
         mapList.clear();
     }
 
+    /**
+     * 增加新数据
+     *
+     * @param jsonObject 网络获取得到的新数据
+     */
     public synchronized void addData(JSONObject jsonObject) {
         JSONArray jsonArray;
 
@@ -178,9 +204,9 @@ public class PersonsListAdapter extends BaseAdapter {
             }
             mapList.add(map);
         }
-        //notifyDataSetChanged();
+        notifyDataSetChanged();
         //局部更新,更新可视区域,
-        notifyDataSetInvalidated();
+        //notifyDataSetInvalidated();
         // 整体更新,更新所有item对象,如果滑动过,更新后回到初始状态
     }
 
