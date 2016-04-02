@@ -1,6 +1,7 @@
 package com.zhangqing.taji.activities;
 
 import android.animation.Animator;
+import android.content.Intent;
 import android.media.Image;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
@@ -17,6 +18,7 @@ import android.widget.GridLayout;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.VolleyError;
@@ -36,6 +38,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SkillSettingActivity extends AppCompatActivity implements View.OnClickListener {
+    public static final int ACTIVITY_SKILL = 1;
+    public static final int ACTIVITY_INTEREST = 2;
+
+    private static final String TITLE_SKILL_STRING = "第二步 设置你拥有的技能";
+    private static final String TITLE_INTEREST_STRING = "第一步 设置你感兴趣的标签";
+
+    private int mActivityType = ACTIVITY_INTEREST;
+
     private GridView mGridView;
     private SkillSelectAdapter mGridViewAdapter;
     private RelativeLayout mGridViewContainer;
@@ -49,9 +59,13 @@ public class SkillSettingActivity extends AppCompatActivity implements View.OnCl
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_skill_setting);
+
         mGridView = (GridView) findViewById(R.id.skill_setting_gridview);
         mGridViewContainer = (RelativeLayout) findViewById(R.id.skill_setting_gridview_container);
         mButton = (Button) findViewById(R.id.skill_setting_button);
+
+        ((TextView) findViewById(R.id.skill_setting_title)).
+                setText(mActivityType == ACTIVITY_SKILL ? TITLE_SKILL_STRING : TITLE_INTEREST_STRING);
 
         mButton.setOnClickListener(this);
 
@@ -165,7 +179,16 @@ public class SkillSettingActivity extends AppCompatActivity implements View.OnCl
     }
 
     private void updataButtonText() {
-        mButton.setText("选择你感兴趣的标签" + current_selected_num + "/" + mImageViewList.size());
+        if (current_selected_num == 0) {
+            mButton.setEnabled(false);
+        } else {
+            mButton.setEnabled(true);
+        }
+        if (mActivityType == ACTIVITY_SKILL) {
+            mButton.setText("设置拥有技能" + current_selected_num + "/" + mImageViewList.size());
+        } else {
+            mButton.setText("设置兴趣标签" + current_selected_num + "/" + mImageViewList.size());
+        }
     }
 
     public void initData() {
@@ -209,6 +232,12 @@ public class SkillSettingActivity extends AppCompatActivity implements View.OnCl
         }
         Toast.makeText(this, mGridViewAdapter.getSelector(), Toast.LENGTH_SHORT).show();
 
+        Intent intent = new Intent(this, SkillSettingActivity.class);
+        Bundle bundle = new Bundle();
+        bundle.putInt("activity_type", ACTIVITY_SKILL);
+        intent.putExtras(bundle);
+        startActivity(intent);
+        finish();
 
     }
 }

@@ -96,10 +96,10 @@ public class FragmentSearch extends Fragment implements TextView.OnEditorActionL
         mTempTextView = (TextView) v.findViewById(R.id.search_temptxt);
         mSwipeRefreshLayout.setEnabled(false);
 
-        mSwipeListener = new SwipeRefreshLayout.OnRefreshListener() {
+        mSwipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                UserClass.getInstance().searchForPerson(mEditText.getText().toString(), new VolleyInterface(getActivity()) {
+                UserClass.getInstance().searchForPerson(mEditText.getText().toString(), new VolleyInterface(getActivity().getApplicationContext()) {
                     @Override
                     public void onMySuccess(JSONObject jsonObject) {
                         mSwipeRefreshLayout.setRefreshing(false);
@@ -116,13 +116,14 @@ public class FragmentSearch extends Fragment implements TextView.OnEditorActionL
                     }
                 });
             }
-        };
+        });
 
 
         switch (mType) {
             case Pager_Person:
                 initEdit("Ta技用户昵称/手机号码", "找人", this);
-                //personsListAdapter = new PersonsListAdapter(getActivity(), mListView);
+                personsListAdapter = new PersonsListAdapter(getActivity());
+                mListView.setAdapter(personsListAdapter);
                 break;
             case Pager_Circle:
                 initEdit("圈子名称/圈子号", "找圈子", this);
@@ -150,13 +151,9 @@ public class FragmentSearch extends Fragment implements TextView.OnEditorActionL
             mTempTextView.requestFocus();
             InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
             imm.toggleSoftInput(0, InputMethodManager.HIDE_NOT_ALWAYS);
-            mSwipeListener.onRefresh();
-            mSwipeRefreshLayout.post(new Runnable() {
-                @Override
-                public void run() {
-                    mSwipeRefreshLayout.setRefreshing(true);
-                }
-            });
+
+            mSwipeRefreshLayout.setRefreshing(true);
+
             return true;
         }
         return false;
