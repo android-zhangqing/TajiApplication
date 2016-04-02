@@ -9,16 +9,17 @@
 *.class
 
 # Generated files
-tajiapp/bin/
-tajiapp/gen/
-tajiapp/out/
+tajiapp/bin
+tajiapp/gen
+tajiapp/out
 
 # Gradle files
-tajiapp/.gradle/
-tajiapp/build/
-tajiapp/app/build/
-tajiapp/emoji/build/
-tajiapp/IMKit/build/
+tajiapp/.gradle/*
+tajiapp/.idea/
+/tajiapp/build/
+/tajiapp/app/build/
+/tajiapp/emoji/build/
+/tajiapp/IMKit/build/
 
 # Local configuration file (sdk path, etc)
 tajiapp/local.properties
@@ -40,3 +41,8 @@ tajiapp/captures/
 
 # Keystore files
 *.jks
+*.lock
+tajiapp/app/app.iml
+tajiapp/.idea/workspace.xml
+tajiapp/app/app.iml
+tajiapp/.idea/workspace.xml

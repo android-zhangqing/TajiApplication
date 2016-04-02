@@ -10,7 +10,7 @@ import android.util.Log;
  * 优化的swipeRefreshLayout，刷新有最小时长，优化setRefreshing方法
  */
 public class MySwipeRefreshLayout extends SwipeRefreshLayout {
-    private static final int DELAY_MILLIS = 500;
+    private static final int DELAY_MILLIS = 1000;
 
     private OnRefreshListener mListener;
     private long mStartTimeMillis;
@@ -26,6 +26,8 @@ public class MySwipeRefreshLayout extends SwipeRefreshLayout {
                 , Color.parseColor("#27BDA7")
                 , Color.parseColor("#37A4C5")
                 , Color.parseColor("#D46F68"));
+
+
         //setProgressBackgroundColorSchemeColor(Color.parseColor("#FAFAFA"));
     }
 

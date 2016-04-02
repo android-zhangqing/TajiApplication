@@ -4,6 +4,7 @@ import android.app.ActivityManager;
 import android.app.Application;
 import android.content.Context;
 import android.util.Log;
+import android.view.ViewGroup;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.Volley;
@@ -21,6 +22,7 @@ import com.nostra13.universalimageloader.utils.StorageUtils;
 import com.zhangqing.taji.base.UserClass;
 
 import java.io.File;
+import java.lang.ref.WeakReference;
 
 import io.rong.imkit.RongIM;
 import io.rong.imlib.RongIMClient;
@@ -30,6 +32,9 @@ public class MyApplication extends Application {
 
     public static boolean rcHasConnect = false;
     private static DisplayImageOptions options;
+
+    //用于回收测试，该行可删
+    public static WeakReference<ViewGroup> viewGroupWeakReference;
 
 
     public static RequestQueue getRequestQeuee() {

@@ -40,12 +40,12 @@
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\layout\\select_dialog_item_material.xml"
     },
     {
-        "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\abc_action_mode_bar.xml",
-        "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\layout\\abc_action_mode_bar.xml"
-    },
-    {
         "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\conversation.xml",
         "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\src\\main\\res\\layout\\conversation.xml"
+    },
+    {
+        "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\abc_action_mode_bar.xml",
+        "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\layout\\abc_action_mode_bar.xml"
     },
     {
         "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_fr_messagelist.xml",
@@ -88,16 +88,16 @@
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_fr_public_service_search.xml"
     },
     {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_system_conversation.xml",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_item_system_conversation.xml"
+    },
+    {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_image_message.xml",
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_item_image_message.xml"
     },
     {
         "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\abc_search_view.xml",
         "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\layout\\abc_search_view.xml"
-    },
-    {
-        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_system_conversation.xml",
-        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_item_system_conversation.xml"
     },
     {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_fr_conversation.xml",
@@ -120,16 +120,16 @@
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_wi_input.xml"
     },
     {
-        "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\view_circle_second.xml",
-        "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\src\\main\\res\\layout\\view_circle_second.xml"
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_fr_public_service_inf.xml",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_fr_public_service_inf.xml"
     },
     {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_preview_fragment.xml",
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_item_preview_fragment.xml"
     },
     {
-        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_fr_public_service_inf.xml",
-        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_fr_public_service_inf.xml"
+        "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\view_circle_second.xml",
+        "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\src\\main\\res\\layout\\view_circle_second.xml"
     },
     {
         "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_message.xml",
@@ -176,12 +176,12 @@
         "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_wi_block_popup.xml"
     },
     {
-        "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\activity_search.xml",
-        "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\src\\main\\res\\layout\\activity_search.xml"
-    },
-    {
         "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_base_conversation.xml",
         "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_item_base_conversation.xml"
+    },
+    {
+        "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\activity_search.xml",
+        "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\src\\main\\res\\layout\\activity_search.xml"
     },
     {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_wi_txt_provider.xml",
@@ -196,12 +196,12 @@
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\layout\\notification_template_lines.xml"
     },
     {
-        "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\abc_expanded_menu_layout.xml",
-        "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\layout\\abc_expanded_menu_layout.xml"
-    },
-    {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_public_service_message.xml",
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_item_public_service_message.xml"
+    },
+    {
+        "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\abc_expanded_menu_layout.xml",
+        "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\layout\\abc_expanded_menu_layout.xml"
     },
     {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_public_service_input_menu_item.xml",
@@ -228,12 +228,12 @@
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_item_text_message.xml"
     },
     {
-        "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\abc_select_dialog_material.xml",
-        "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\layout\\abc_select_dialog_material.xml"
-    },
-    {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_fr_public_service_inf.xml",
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_fr_public_service_inf.xml"
+    },
+    {
+        "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\abc_select_dialog_material.xml",
+        "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\layout\\abc_select_dialog_material.xml"
     },
     {
         "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\abc_action_bar_view_list_nav_layout.xml",
@@ -328,36 +328,36 @@
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\layout\\abc_alert_dialog_material.xml"
     },
     {
-        "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_callside_layout.xml",
-        "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_callside_layout.xml"
-    },
-    {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_conversation_member.xml",
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_item_conversation_member.xml"
     },
     {
-        "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_public_service_search.xml",
-        "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_item_public_service_search.xml"
+        "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_callside_layout.xml",
+        "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_callside_layout.xml"
     },
     {
         "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_ac_webview.xml",
         "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_ac_webview.xml"
     },
     {
-        "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\select_dialog_item_material.xml",
-        "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\layout\\select_dialog_item_material.xml"
+        "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_public_service_search.xml",
+        "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_item_public_service_search.xml"
     },
     {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\design_layout_snackbar_include.xml",
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.0\\res\\layout\\design_layout_snackbar_include.xml"
     },
     {
-        "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_calledside_layout.xml",
-        "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_calledside_layout.xml"
+        "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\select_dialog_item_material.xml",
+        "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\layout\\select_dialog_item_material.xml"
     },
     {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_ui_voice_cover.xml",
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_ui_voice_cover.xml"
+    },
+    {
+        "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_calledside_layout.xml",
+        "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_calledside_layout.xml"
     },
     {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\view_home_hot_first.xml",
@@ -368,12 +368,12 @@
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\layout\\test.xml"
     },
     {
-        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_public_service_input_menus.xml",
-        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_item_public_service_input_menus.xml"
-    },
-    {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_wi_block.xml",
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_wi_block.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_public_service_input_menus.xml",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_item_public_service_input_menus.xml"
     },
     {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\merge_person_detail.xml",
@@ -408,16 +408,16 @@
         "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_wi_vo_popup.xml"
     },
     {
-        "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\activity_modify_skill.xml",
-        "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\src\\main\\res\\layout\\activity_modify_skill.xml"
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_message.xml",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_item_message.xml"
     },
     {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\abc_list_menu_item_icon.xml",
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\layout\\abc_list_menu_item_icon.xml"
     },
     {
-        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_message.xml",
-        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_item_message.xml"
+        "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\activity_modify_skill.xml",
+        "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\src\\main\\res\\layout\\activity_modify_skill.xml"
     },
     {
         "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_activity.xml",
@@ -476,12 +476,12 @@
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_activity.xml"
     },
     {
-        "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_voice_message.xml",
-        "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_item_voice_message.xml"
-    },
-    {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\activity_reset_pass_by_sms.xml",
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\src\\main\\res\\layout\\activity_reset_pass_by_sms.xml"
+    },
+    {
+        "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_voice_message.xml",
+        "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_item_voice_message.xml"
     },
     {
         "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\activity_register_first.xml",
@@ -516,12 +516,12 @@
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\layout\\abc_list_menu_item_radio.xml"
     },
     {
-        "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_public_service_list.xml",
-        "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_item_public_service_list.xml"
-    },
-    {
         "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\emojicons.xml",
         "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\emoji\\unspecified\\res\\layout\\emojicons.xml"
+    },
+    {
+        "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_public_service_list.xml",
+        "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_item_public_service_list.xml"
     },
     {
         "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\view_home_hot_first.xml",
@@ -532,12 +532,12 @@
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_fragment_base_setting.xml"
     },
     {
-        "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\activity_list_persons.xml",
-        "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\src\\main\\res\\layout\\activity_list_persons.xml"
-    },
-    {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\conversation.xml",
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\layout\\conversation.xml"
+    },
+    {
+        "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\activity_list_persons.xml",
+        "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\src\\main\\res\\layout\\activity_list_persons.xml"
     },
     {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\view_circle_first_listview_item.xml",
@@ -560,16 +560,16 @@
         "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_item_conversation.xml"
     },
     {
-        "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\test.xml",
-        "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\src\\main\\res\\layout\\test.xml"
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\activity_list_persons.xml",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\src\\main\\res\\layout\\activity_list_persons.xml"
     },
     {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_message.xml",
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_item_message.xml"
     },
     {
-        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\activity_list_persons.xml",
-        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\src\\main\\res\\layout\\activity_list_persons.xml"
+        "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\test.xml",
+        "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\src\\main\\res\\layout\\test.xml"
     },
     {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\activity_register_second.xml",
@@ -592,12 +592,12 @@
         "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.0\\res\\layout\\design_layout_tab_text.xml"
     },
     {
-        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\design_navigation_menu.xml",
-        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.0\\res\\layout\\design_navigation_menu.xml"
-    },
-    {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\conversation.xml",
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\src\\main\\res\\layout\\conversation.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\design_navigation_menu.xml",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.0\\res\\layout\\design_navigation_menu.xml"
     },
     {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_progress.xml",
@@ -652,12 +652,12 @@
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.0\\res\\layout\\design_layout_tab_icon.xml"
     },
     {
-        "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\activity_login.xml",
-        "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\src\\main\\res\\layout\\activity_login.xml"
-    },
-    {
         "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\abc_screen_simple_overlay_action_mode.xml",
         "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\layout\\abc_screen_simple_overlay_action_mode.xml"
+    },
+    {
+        "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\activity_login.xml",
+        "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\src\\main\\res\\layout\\activity_login.xml"
     },
     {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\view_persons_listview_item.xml",
@@ -676,12 +676,12 @@
         "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_fr_conversation.xml"
     },
     {
-        "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_information_notification_message.xml",
-        "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_item_information_notification_message.xml"
-    },
-    {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\fragment_message.xml",
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\layout\\fragment_message.xml"
+    },
+    {
+        "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_information_notification_message.xml",
+        "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_item_information_notification_message.xml"
     },
     {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\select_dialog_multichoice_material.xml",
@@ -692,12 +692,12 @@
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_fr_conversation_member_list.xml"
     },
     {
-        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_public_service_list.xml",
-        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_item_public_service_list.xml"
-    },
-    {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_fragment_base_setting.xml",
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_fragment_base_setting.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_public_service_list.xml",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_item_public_service_list.xml"
     },
     {
         "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\design_navigation_menu.xml",
@@ -716,24 +716,24 @@
         "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\layout\\abc_screen_toolbar.xml"
     },
     {
-        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\design_navigation_item_separator.xml",
-        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.0\\res\\layout\\design_navigation_item_separator.xml"
-    },
-    {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_wi_ext_pager.xml",
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_wi_ext_pager.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\design_navigation_item_separator.xml",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.0\\res\\layout\\design_navigation_item_separator.xml"
     },
     {
         "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_system_conversation.xml",
         "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_item_system_conversation.xml"
     },
     {
-        "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_fr_conversation_member_list.xml",
-        "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_fr_conversation_member_list.xml"
-    },
-    {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_app_service_conversation.xml",
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_item_app_service_conversation.xml"
+    },
+    {
+        "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_fr_conversation_member_list.xml",
+        "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_fr_conversation_member_list.xml"
     },
     {
         "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\support_simple_spinner_dropdown_item.xml",
@@ -756,12 +756,12 @@
         "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\src\\main\\res\\layout\\view_home_hot_then.xml"
     },
     {
-        "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_text_message.xml",
-        "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_item_text_message.xml"
-    },
-    {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\abc_search_view.xml",
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\layout\\abc_search_view.xml"
+    },
+    {
+        "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_text_message.xml",
+        "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_item_text_message.xml"
     },
     {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\abc_alert_dialog_button_bar_material.xml",
@@ -796,24 +796,24 @@
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_item_progress.xml"
     },
     {
-        "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\abc_action_menu_layout.xml",
-        "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\layout\\abc_action_menu_layout.xml"
-    },
-    {
         "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_fr_test.xml",
         "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_fr_test.xml"
+    },
+    {
+        "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\abc_action_menu_layout.xml",
+        "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\layout\\abc_action_menu_layout.xml"
     },
     {
         "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_public_service_input_menu_item.xml",
         "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_item_public_service_input_menu_item.xml"
     },
     {
-        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\abc_activity_chooser_view.xml",
-        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\layout\\abc_activity_chooser_view.xml"
-    },
-    {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\abc_screen_toolbar.xml",
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\layout\\abc_screen_toolbar.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\abc_activity_chooser_view.xml",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\layout\\abc_activity_chooser_view.xml"
     },
     {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_wi_plugins.xml",
@@ -828,40 +828,40 @@
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_item_location_message.xml"
     },
     {
-        "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_fragment_base_setting.xml",
-        "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_fragment_base_setting.xml"
-    },
-    {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_albums.xml",
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_item_albums.xml"
     },
     {
-        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\abc_screen_content_include.xml",
-        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\layout\\abc_screen_content_include.xml"
+        "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_fragment_base_setting.xml",
+        "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_fragment_base_setting.xml"
     },
     {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_fr_messageinput.xml",
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_fr_messageinput.xml"
     },
     {
-        "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\view_persons_listview_item.xml",
-        "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\src\\main\\res\\layout\\view_persons_listview_item.xml"
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\abc_screen_content_include.xml",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\layout\\abc_screen_content_include.xml"
     },
     {
-        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\view_bottom_bar.xml",
-        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\src\\main\\res\\layout\\view_bottom_bar.xml"
+        "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\view_persons_listview_item.xml",
+        "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\src\\main\\res\\layout\\view_persons_listview_item.xml"
     },
     {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_discussion_notification_message.xml",
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_item_discussion_notification_message.xml"
     },
     {
-        "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\abc_action_mode_close_item_material.xml",
-        "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\layout\\abc_action_mode_close_item_material.xml"
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\view_bottom_bar.xml",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\src\\main\\res\\layout\\view_bottom_bar.xml"
     },
     {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_image_message.xml",
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_item_image_message.xml"
+    },
+    {
+        "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\abc_action_mode_close_item_material.xml",
+        "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\layout\\abc_action_mode_close_item_material.xml"
     },
     {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\activity_search.xml",
@@ -872,24 +872,24 @@
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\layout\\activity_reset_pass_by_sms.xml"
     },
     {
-        "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\select_dialog_singlechoice_material.xml",
-        "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\layout\\select_dialog_singlechoice_material.xml"
-    },
-    {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_discussion_conversation.xml",
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_item_discussion_conversation.xml"
+    },
+    {
+        "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\select_dialog_singlechoice_material.xml",
+        "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\layout\\select_dialog_singlechoice_material.xml"
     },
     {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_public_service_search.xml",
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_item_public_service_search.xml"
     },
     {
-        "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\emojicon_item.xml",
-        "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\emoji\\unspecified\\res\\layout\\emojicon_item.xml"
-    },
-    {
         "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\abc_search_dropdown_item_icons_2line.xml",
         "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\layout\\abc_search_dropdown_item_icons_2line.xml"
+    },
+    {
+        "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\emojicon_item.xml",
+        "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\emoji\\unspecified\\res\\layout\\emojicon_item.xml"
     },
     {
         "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\abc_action_menu_item_layout.xml",
@@ -908,20 +908,20 @@
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_item_public_service_message.xml"
     },
     {
-        "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_wi_ext_pager.xml",
-        "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_wi_ext_pager.xml"
-    },
-    {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\emojicon_grid.xml",
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\emoji\\unspecified\\res\\layout\\emojicon_grid.xml"
     },
     {
-        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_fr_photo.xml",
-        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_fr_photo.xml"
+        "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_wi_ext_pager.xml",
+        "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_wi_ext_pager.xml"
     },
     {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_ac_webview.xml",
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_ac_webview.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_fr_photo.xml",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_fr_photo.xml"
     },
     {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\emojicon_item.xml",
@@ -952,20 +952,20 @@
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\src\\main\\res\\layout\\view_home_hot_first.xml"
     },
     {
-        "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_albums.xml",
-        "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_item_albums.xml"
-    },
-    {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_wi_ext_pager.xml",
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_wi_ext_pager.xml"
     },
     {
-        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\abc_list_menu_item_layout.xml",
-        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\layout\\abc_list_menu_item_layout.xml"
+        "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_albums.xml",
+        "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_item_albums.xml"
     },
     {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_fr_photo2.xml",
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_fr_photo2.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\abc_list_menu_item_layout.xml",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\layout\\abc_list_menu_item_layout.xml"
     },
     {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\abc_expanded_menu_layout.xml",
@@ -996,24 +996,24 @@
         "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_item_public_service_conversation.xml"
     },
     {
-        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\notification_media_action.xml",
-        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\layout\\notification_media_action.xml"
-    },
-    {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\activity_publish.xml",
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\layout\\activity_publish.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\notification_media_action.xml",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\layout\\notification_media_action.xml"
     },
     {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_rich_content_message.xml",
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_item_rich_content_message.xml"
     },
     {
-        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\activity_modify_skill.xml",
-        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\layout\\activity_modify_skill.xml"
-    },
-    {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_fr_conversationlist.xml",
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_fr_conversationlist.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\activity_modify_skill.xml",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\layout\\activity_modify_skill.xml"
     },
     {
         "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_wi_text_btn.xml",
@@ -1036,12 +1036,12 @@
         "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\src\\main\\res\\layout\\activity_publish.xml"
     },
     {
-        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_callside_layout.xml",
-        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_callside_layout.xml"
-    },
-    {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_public_service_multi_rich_content_message.xml",
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_item_public_service_multi_rich_content_message.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_callside_layout.xml",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_callside_layout.xml"
     },
     {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\view_home_hot_first_gridview_item.xml",
@@ -1076,36 +1076,36 @@
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\src\\main\\res\\layout\\view_circle_second.xml"
     },
     {
-        "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_image_message.xml",
-        "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_item_image_message.xml"
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_wi_emoji_grid.xml",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_wi_emoji_grid.xml"
     },
     {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\design_navigation_item.xml",
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.0\\res\\layout\\design_navigation_item.xml"
     },
     {
-        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_wi_emoji_grid.xml",
-        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_wi_emoji_grid.xml"
-    },
-    {
-        "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_preview_fragment.xml",
-        "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_item_preview_fragment.xml"
-    },
-    {
-        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_group_conversation.xml",
-        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_item_group_conversation.xml"
+        "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_image_message.xml",
+        "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_item_image_message.xml"
     },
     {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_ac_webview.xml",
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_ac_webview.xml"
     },
     {
-        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_fr_messagelist.xml",
-        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_fr_messagelist.xml"
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_group_conversation.xml",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_item_group_conversation.xml"
+    },
+    {
+        "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_preview_fragment.xml",
+        "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_item_preview_fragment.xml"
     },
     {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\layout_progressbar.xml",
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\src\\main\\res\\layout\\layout_progressbar.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_fr_messagelist.xml",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_fr_messagelist.xml"
     },
     {
         "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\merge_person_detail.xml",
@@ -1120,40 +1120,40 @@
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_wi_block_popup.xml"
     },
     {
-        "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\design_navigation_menu_item.xml",
-        "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.0\\res\\layout\\design_navigation_menu_item.xml"
-    },
-    {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_public_service_conversation.xml",
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_item_public_service_conversation.xml"
     },
     {
-        "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\fragment_home.xml",
-        "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\src\\main\\res\\layout\\fragment_home.xml"
+        "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\design_navigation_menu_item.xml",
+        "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.0\\res\\layout\\design_navigation_menu_item.xml"
     },
     {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_group_conversation.xml",
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_item_group_conversation.xml"
     },
     {
-        "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\design_layout_snackbar.xml",
-        "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.0\\res\\layout\\design_layout_snackbar.xml"
+        "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\fragment_home.xml",
+        "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\src\\main\\res\\layout\\fragment_home.xml"
     },
     {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\design_navigation_menu_item.xml",
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.0\\res\\layout\\design_navigation_menu_item.xml"
     },
     {
+        "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\design_layout_snackbar.xml",
+        "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.0\\res\\layout\\design_layout_snackbar.xml"
+    },
+    {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_public_service_search.xml",
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_item_public_service_search.xml"
     },
     {
-        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\emojicon_grid.xml",
-        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\emoji\\unspecified\\res\\layout\\emojicon_grid.xml"
-    },
-    {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\view_search.xml",
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\layout\\view_search.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\emojicon_grid.xml",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\emoji\\unspecified\\res\\layout\\emojicon_grid.xml"
     },
     {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\abc_activity_chooser_view_list_item.xml",
@@ -1164,68 +1164,68 @@
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\layout\\notification_template_part_chronometer.xml"
     },
     {
-        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_wi_text_btn.xml",
-        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_wi_text_btn.xml"
-    },
-    {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\activity_main.xml",
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\src\\main\\res\\layout\\activity_main.xml"
     },
     {
-        "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_wi_input.xml",
-        "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_wi_input.xml"
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_wi_text_btn.xml",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_wi_text_btn.xml"
     },
     {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_public_service_multi_rich_content_message.xml",
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_item_public_service_multi_rich_content_message.xml"
     },
     {
-        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\emojicon_item.xml",
-        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\emoji\\unspecified\\res\\layout\\emojicon_item.xml"
+        "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_wi_input.xml",
+        "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_wi_input.xml"
     },
     {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\activity_login.xml",
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\src\\main\\res\\layout\\activity_login.xml"
     },
     {
-        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_discussion_notification_message.xml",
-        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_item_discussion_notification_message.xml"
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\emojicon_item.xml",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\emoji\\unspecified\\res\\layout\\emojicon_item.xml"
     },
     {
-        "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\abc_list_menu_item_icon.xml",
-        "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\layout\\abc_list_menu_item_icon.xml"
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_discussion_notification_message.xml",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_item_discussion_notification_message.xml"
     },
     {
         "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_public_service_input_menu.xml",
         "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_item_public_service_input_menu.xml"
     },
     {
-        "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\design_navigation_item_header.xml",
-        "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.0\\res\\layout\\design_navigation_item_header.xml"
-    },
-    {
-        "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_wi_block.xml",
-        "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_wi_block.xml"
+        "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\abc_list_menu_item_icon.xml",
+        "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\layout\\abc_list_menu_item_icon.xml"
     },
     {
         "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\activity_reset_pass_by_sms.xml",
         "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\src\\main\\res\\layout\\activity_reset_pass_by_sms.xml"
     },
     {
+        "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_wi_block.xml",
+        "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_wi_block.xml"
+    },
+    {
+        "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\design_navigation_item_header.xml",
+        "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.0\\res\\layout\\design_navigation_item_header.xml"
+    },
+    {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_public_service_rich_content_message.xml",
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_item_public_service_rich_content_message.xml"
     },
     {
-        "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\abc_screen_simple.xml",
-        "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\layout\\abc_screen_simple.xml"
+        "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_fr_photo.xml",
+        "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_fr_photo.xml"
     },
     {
         "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\notification_template_media.xml",
         "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\layout\\notification_template_media.xml"
     },
     {
-        "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_fr_photo.xml",
-        "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_fr_photo.xml"
+        "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\abc_screen_simple.xml",
+        "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\layout\\abc_screen_simple.xml"
     },
     {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\fragment_circle.xml",
@@ -1244,44 +1244,44 @@
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_item_app_service_conversation.xml"
     },
     {
-        "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_fr_public_service_search.xml",
-        "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_fr_public_service_search.xml"
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\abc_list_menu_item_checkbox.xml",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\layout\\abc_list_menu_item_checkbox.xml"
     },
     {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\notification_template_part_time.xml",
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\layout\\notification_template_part_time.xml"
     },
     {
-        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\abc_list_menu_item_checkbox.xml",
-        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\layout\\abc_list_menu_item_checkbox.xml"
-    },
-    {
-        "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_group_conversation.xml",
-        "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_item_group_conversation.xml"
-    },
-    {
-        "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\fragment_my.xml",
-        "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\src\\main\\res\\layout\\fragment_my.xml"
+        "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_fr_public_service_search.xml",
+        "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_fr_public_service_search.xml"
     },
     {
         "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_app_service_conversation.xml",
         "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_item_app_service_conversation.xml"
     },
     {
+        "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\fragment_my.xml",
+        "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\src\\main\\res\\layout\\fragment_my.xml"
+    },
+    {
+        "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_group_conversation.xml",
+        "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_item_group_conversation.xml"
+    },
+    {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\design_menu_item_action_area.xml",
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.0\\res\\layout\\design_menu_item_action_area.xml"
     },
     {
-        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\design_layout_snackbar.xml",
-        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.0\\res\\layout\\design_layout_snackbar.xml"
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_wi_emoji_grid.xml",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_wi_emoji_grid.xml"
     },
     {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\activity_register_third.xml",
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\layout\\activity_register_third.xml"
     },
     {
-        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_wi_emoji_grid.xml",
-        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_wi_emoji_grid.xml"
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\design_layout_snackbar.xml",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.0\\res\\layout\\design_layout_snackbar.xml"
     },
     {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_public_service_list.xml",
@@ -1292,12 +1292,12 @@
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\layout\\view_bottom_bar.xml"
     },
     {
-        "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_ac_selected_pictrue.xml",
-        "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_ac_selected_pictrue.xml"
-    },
-    {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\activity_modify_skill.xml",
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\src\\main\\res\\layout\\activity_modify_skill.xml"
+    },
+    {
+        "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_ac_selected_pictrue.xml",
+        "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_ac_selected_pictrue.xml"
     },
     {
         "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_wi_emoji_grid.xml",
@@ -1320,12 +1320,12 @@
         "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_fr_photo2.xml"
     },
     {
-        "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\design_layout_snackbar_include.xml",
-        "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.0\\res\\layout\\design_layout_snackbar_include.xml"
-    },
-    {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\design_navigation_item_subheader.xml",
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.0\\res\\layout\\design_navigation_item_subheader.xml"
+    },
+    {
+        "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\design_layout_snackbar_include.xml",
+        "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.0\\res\\layout\\design_layout_snackbar_include.xml"
     },
     {
         "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\design_layout_tab_icon.xml",
@@ -1340,52 +1340,52 @@
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_item_voice_message.xml"
     },
     {
-        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_base_conversation.xml",
-        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_item_base_conversation.xml"
-    },
-    {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\activity_search.xml",
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\src\\main\\res\\layout\\activity_search.xml"
     },
     {
-        "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\notification_media_action.xml",
-        "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\layout\\notification_media_action.xml"
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_base_conversation.xml",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_item_base_conversation.xml"
     },
     {
         "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_public_service_multi_rich_content_message.xml",
         "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_item_public_service_multi_rich_content_message.xml"
     },
     {
-        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_voice_message.xml",
-        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_item_voice_message.xml"
+        "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\notification_media_action.xml",
+        "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\layout\\notification_media_action.xml"
     },
     {
-        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\view_home_hot_then.xml",
-        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\layout\\view_home_hot_then.xml"
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_voice_message.xml",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_item_voice_message.xml"
     },
     {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_system_conversation.xml",
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_item_system_conversation.xml"
     },
     {
-        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\abc_dialog_title_material.xml",
-        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\layout\\abc_dialog_title_material.xml"
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\view_home_hot_then.xml",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\layout\\view_home_hot_then.xml"
     },
     {
-        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\select_dialog_singlechoice_material.xml",
-        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\layout\\select_dialog_singlechoice_material.xml"
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\abc_dialog_title_material.xml",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\layout\\abc_dialog_title_material.xml"
     },
     {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_preview_fragment.xml",
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_item_preview_fragment.xml"
     },
     {
-        "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_fr_dialog_alter.xml",
-        "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_fr_dialog_alter.xml"
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\select_dialog_singlechoice_material.xml",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\layout\\select_dialog_singlechoice_material.xml"
     },
     {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_fr_messagelist.xml",
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_fr_messagelist.xml"
+    },
+    {
+        "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_fr_dialog_alter.xml",
+        "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_fr_dialog_alter.xml"
     },
     {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\activity_register_first.xml",
@@ -1404,16 +1404,16 @@
         "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\layout\\abc_dialog_title_material.xml"
     },
     {
-        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\fragment_circle.xml",
-        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\layout\\fragment_circle.xml"
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\fragment_my.xml",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\src\\main\\res\\layout\\fragment_my.xml"
     },
     {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_wi_notification_loading.xml",
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_wi_notification_loading.xml"
     },
     {
-        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\fragment_my.xml",
-        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\src\\main\\res\\layout\\fragment_my.xml"
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\fragment_circle.xml",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\src\\main\\res\\layout\\fragment_circle.xml"
     },
     {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_text_message.xml",
@@ -1432,24 +1432,24 @@
         "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_wi_plugins.xml"
     },
     {
-        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_public_service_input_menu_item.xml",
-        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_item_public_service_input_menu_item.xml"
-    },
-    {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\activity_register_third.xml",
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\src\\main\\res\\layout\\activity_register_third.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_public_service_input_menu_item.xml",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_item_public_service_input_menu_item.xml"
     },
     {
         "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\notification_template_part_chronometer.xml",
         "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\layout\\notification_template_part_chronometer.xml"
     },
     {
-        "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\design_navigation_item.xml",
-        "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.0\\res\\layout\\design_navigation_item.xml"
-    },
-    {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_conversation_member.xml",
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_item_conversation_member.xml"
+    },
+    {
+        "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\design_navigation_item.xml",
+        "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.0\\res\\layout\\design_navigation_item.xml"
     },
     {
         "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\view_circle_first_listview_item.xml",
@@ -1480,16 +1480,16 @@
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\emoji\\unspecified\\res\\layout\\emojicons.xml"
     },
     {
-        "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\abc_action_bar_up_container.xml",
-        "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\layout\\abc_action_bar_up_container.xml"
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_fr_test.xml",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_fr_test.xml"
     },
     {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\abc_screen_simple.xml",
         "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\layout\\abc_screen_simple.xml"
     },
     {
-        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_fr_test.xml",
-        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\exploded-aar\\tajiapp\\IMKit\\unspecified\\res\\layout\\rc_fr_test.xml"
+        "merged": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\abc_action_bar_up_container.xml",
+        "source": "C:\\Users\\zhangqing\\AndroidStudioProjects\\TajiApplication\\tajiapp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\layout\\abc_action_bar_up_container.xml"
     },
     {
         "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\tajiapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_albums.xml",

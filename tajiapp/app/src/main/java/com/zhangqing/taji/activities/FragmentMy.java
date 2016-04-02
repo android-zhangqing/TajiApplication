@@ -345,7 +345,7 @@ public class FragmentMy extends Fragment implements View.OnClickListener {
                 startListPersonsActivity(UserClass.Persons_Button_shifu, "我的师傅");
                 break;
             case R.id.my_click_modify_intadskill:
-                Intent intent = new Intent(getActivity(), ModifyInterestSkillActivity.class);
+                Intent intent = new Intent(getActivity(), SkillSettingActivity.class);
                 startActivity(intent);
                 break;
             case R.id.my_click_modify_member_detail:

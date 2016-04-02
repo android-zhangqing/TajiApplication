@@ -1,19 +1,23 @@
 package com.zhangqing.taji.activities;
 
 import android.app.Activity;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
+import android.widget.AbsListView;
 import android.widget.EditText;
-import android.widget.ListView;
 import android.widget.TextView;
 
 import com.android.volley.VolleyError;
 import com.zhangqing.taji.R;
 import com.zhangqing.taji.adapter.PersonsListAdapter;
+import com.zhangqing.taji.adapter.PullableBaseAdapter;
 import com.zhangqing.taji.base.UserClass;
 import com.zhangqing.taji.base.VolleyInterface;
+import com.zhangqing.taji.view.PullableListView;
 
 import org.json.JSONObject;
 
@@ -30,13 +34,13 @@ public class ListPersonsActivity extends Activity {
 
     private TextView mTitleTextView;
     private EditText mSearchEditText;
-    private ListView mListView;
+    private PullableListView mListView;
 
     private SwipeRefreshLayout mSwipeRefreshLayout;
-    private PersonsListAdapter mAdapterListView;
+    private PersonsListAdapter mListAdapter;
 
     private int current_page;
-    private TextView footTv;
+
 
 
     @Override
@@ -46,7 +50,7 @@ public class ListPersonsActivity extends Activity {
 
         mTitleTextView = (TextView) findViewById(R.id.persons_title_tv);
         mSearchEditText = (EditText) findViewById(R.id.persons_search_edit);
-        mListView = (ListView) findViewById(R.id.persons_list_view);
+        mListView = (PullableListView) findViewById(R.id.persons_list_view);
         mSwipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.persons_swipe_refresh);
 
         Bundle bundleDatas = getIntent().getExtras();
@@ -55,30 +59,47 @@ public class ListPersonsActivity extends Activity {
         mTitleTextView.setText(mTitleString);
         mSearchEditText.setHint("搜索" + mTitleString);
 
-        mListView.setDivider(getResources().getDrawable(R.drawable.persons_list_divider));
-        mListView.setDividerHeight(2);
-        footTv = new TextView(this);
-        footTv.setText("正在加载...");
-        footTv.setPadding(40, 40, 40, 40);
-        //mListView.setFooterDividersEnabled(true);
-        mListView.addFooterView(footTv);
-        mAdapterListView = new PersonsListAdapter(ListPersonsActivity.this, mListView);
-        mAdapterListView.setOnAddDataListener(new PersonsListAdapter.OnAddDataListener() {
+
+        mListAdapter = new PersonsListAdapter(ListPersonsActivity.this);
+        mListView.setAdapter(mListAdapter);
+        mListView.setOnAddDataListener(new PullableListView.OnAddDataListener() {
             @Override
-            public void addData(PersonsListAdapter personsListAdapter) {
+            public void addData(PullableBaseAdapter pullableBaseAdapter) {
                 addDataToList(current_page + 1);
             }
         });
-
 
         SwipeRefreshLayout.OnRefreshListener swipeListener = new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
                 addDataToList(1);
+
             }
         };
         mSwipeRefreshLayout.setOnRefreshListener(swipeListener);
         mSwipeRefreshLayout.setRefreshing(true);
+
+//
+//        /**
+//         * 测试GC回收ImageView的情况
+//         */
+//        new Thread(new Runnable() {
+//            @Override
+//            public void run() {
+//                while (true) {
+//                    ViewGroup v = null;
+//                    if (MyApplication.viewGroupWeakReference != null) {
+//                        v = MyApplication.viewGroupWeakReference.get();
+//                    }
+//                    Log.e("WeakReference", v == null ? "null" : v.toString());
+//                    try {
+//                        Thread.sleep(3000);
+//                    } catch (InterruptedException e) {
+//                        break;
+//                    }
+//                }
+//            }
+//        }).start();
     }
 
     public void finishThis(View v) {
@@ -92,17 +113,20 @@ public class ListPersonsActivity extends Activity {
 
                 current_page = loading_page;
                 if (loading_page == 1) {
-                    mAdapterListView.clearData();
+                    mListAdapter.onClearData();
                 }
                 mSwipeRefreshLayout.setRefreshing(false);
 
                 Log.e("getPersonsList", jsonObject.toString() + "@@" + loading_page);
                 if (jsonObject.toString().contains("\"data\":[]")) {
-                    footTv.setText("没有了呢~~");
+                    mListView.getFootView().setText("没有了呢~~");
                     Log.e("getPersonsList", "null data");
                 } else {
-                    footTv.setText("正在加载...");
-                    mAdapterListView.addData(jsonObject);
+                    if (mListAdapter.onAddData(jsonObject) < 20) {
+                        mListView.getFootView().setText("没有了呢~~");
+                    } else {
+                        mListView.getFootView().setText("正在加载...");
+                    }
                 }
 
 
@@ -111,8 +135,9 @@ public class ListPersonsActivity extends Activity {
             @Override
             public void onMyError(VolleyError error) {
                 mSwipeRefreshLayout.setRefreshing(false);
-                footTv.setText("网络错误");
+                mListView.getFootView().setText("网络错误");
             }
+
         });
     }
 

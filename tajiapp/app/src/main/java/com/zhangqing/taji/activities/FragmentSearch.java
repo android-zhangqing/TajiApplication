@@ -105,7 +105,8 @@ public class FragmentSearch extends Fragment implements TextView.OnEditorActionL
                         mSwipeRefreshLayout.setRefreshing(false);
                         mSwipeRefreshLayout.setEnabled(false);
                         Log.e("onMySuccess", jsonObject + "|");
-                        personsListAdapter.addData(jsonObject);
+                        personsListAdapter.onClearData();
+                        personsListAdapter.onAddData(jsonObject);
                     }
 
                     @Override
@@ -121,7 +122,7 @@ public class FragmentSearch extends Fragment implements TextView.OnEditorActionL
         switch (mType) {
             case Pager_Person:
                 initEdit("Ta技用户昵称/手机号码", "找人", this);
-                personsListAdapter = new PersonsListAdapter(getActivity(), mListView);
+                //personsListAdapter = new PersonsListAdapter(getActivity(), mListView);
                 break;
             case Pager_Circle:
                 initEdit("圈子名称/圈子号", "找圈子", this);

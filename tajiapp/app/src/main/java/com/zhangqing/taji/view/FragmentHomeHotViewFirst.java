@@ -31,6 +31,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * 首页-热门-广场
+ */
 public class FragmentHomeHotViewFirst extends LinearLayout {
     private final int MESSAGE_SCALE_ANIMATION = 131;
 
