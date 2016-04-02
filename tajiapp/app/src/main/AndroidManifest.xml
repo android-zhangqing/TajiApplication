@@ -96,6 +96,7 @@
             android:name=".activities.TajiappActivity"
             android:label="@string/app_name"
             android:launchMode="singleTask"
+            android:screenOrientation="portrait"
             android:theme="@android:style/Theme.NoTitleBar" />
         <activity
             android:name=".activities.PublishActivity"
