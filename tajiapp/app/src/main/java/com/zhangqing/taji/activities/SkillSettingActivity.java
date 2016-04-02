@@ -2,20 +2,13 @@ package com.zhangqing.taji.activities;
 
 import android.animation.Animator;
 import android.app.Activity;
-import android.content.Intent;
-import android.media.Image;
-import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.view.ViewAnimationUtils;
-import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 import android.widget.AdapterView;
-import android.widget.BaseAdapter;
 import android.widget.Button;
-import android.widget.GridLayout;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
@@ -30,7 +23,6 @@ import com.zhangqing.taji.base.VolleyInterface;
 import com.zhangqing.taji.util.AnimationUtil;
 import com.zhangqing.taji.util.DensityUtils;
 import com.zhangqing.taji.util.ScreenUtil;
-import com.zhangqing.taji.view.AdvancedGridView;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -72,10 +64,14 @@ public class SkillSettingActivity extends AppCompatActivity implements View.OnCl
 
     }
 
+    private void updateSelector() {
+        current_selected_num = mGridViewAdapter.setSelector(
+                mActivityType == ACTIVITY_SKILL ? UserClass.getInstance().skill : UserClass.getInstance().interest);
+    }
+
     private void updateTitleView() {
         ((TextView) findViewById(R.id.skill_setting_title)).
                 setText(mActivityType == ACTIVITY_SKILL ? TITLE_SKILL_STRING : TITLE_INTEREST_STRING);
-
     }
 
     @Override
@@ -93,6 +89,7 @@ public class SkillSettingActivity extends AppCompatActivity implements View.OnCl
                 mGridView.setAdapter(mGridViewAdapter = new SkillSelectAdapter(SkillSettingActivity.this, mGridView.getMeasuredWidth(), mGridView.getMeasuredHeight()));
 
                 initData();
+
 
             }
         });
@@ -203,7 +200,11 @@ public class SkillSettingActivity extends AppCompatActivity implements View.OnCl
             @Override
             public void onMySuccess(JSONObject jsonObject) {
                 mGridViewAdapter.initData(jsonObject);
+                updateSelector();
 
+                /**
+                 * 用于实现动画特效的length个ImageView
+                 */
                 try {
                     for (int i = 0; i < (jsonObject.getJSONArray("data").length()); i++) {
                         ImageView test_iv = new ImageView(SkillSettingActivity.this);
@@ -241,10 +242,10 @@ public class SkillSettingActivity extends AppCompatActivity implements View.OnCl
             mActivityType = ACTIVITY_SKILL;
             //选中数归零
             current_selected_num = 0;
-            mGridViewAdapter.resetSelector();
             //初始化View
             updataButtonText();
             updateTitleView();
+            updateSelector();
 
         } else {
             UserClass.getInstance().doModifyInterestSkill(mInterestResult, mGridViewAdapter.getSelector(), new VolleyInterface(this) {

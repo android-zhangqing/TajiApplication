@@ -50,6 +50,7 @@ public class SkillSelectAdapter extends BaseAdapter {
 
     /**
      * 切换表项选择
+     *
      * @param position 位置
      * @return 切换后的选中状态，选中为true
      */
@@ -62,9 +63,9 @@ public class SkillSelectAdapter extends BaseAdapter {
     /**
      * 重置多选器，当前选中记录会被清除
      */
-    public void resetSelector(){
-        for(int i=0;i<selectedArray.length;i++){
-            selectedArray[i]=false;
+    public void resetSelector() {
+        for (int i = 0; i < selectedArray.length; i++) {
+            selectedArray[i] = false;
         }
 
         notifyDataSetInvalidated();
@@ -90,6 +91,40 @@ public class SkillSelectAdapter extends BaseAdapter {
         return result;
     }
 
+    /**
+     * 设置当前选中
+     * @param selector 点号分割
+     * @return 选中条数
+     */
+    public int setSelector(String selector) {
+        int count=0;
+        if (selector == null || selector.equals("")) return count;
+        Log.e("setSelector", selector);
+        String[] selecArr = selector.contains(".") ? selector.split("\\.") : new String[]{selector};
+        for (int i = 0; i < hashMapList.size(); i++) {
+            String lable = hashMapList.get(i).get(SKILL_NAME);
+
+            selectedArray[i] = false;
+            for (int j = 0; j < selecArr.length; j++) {
+                if (lable.equals(selecArr[j])) {
+                    selectedArray[i] = true;
+                    count++;
+                    break;
+                }
+            }
+        }
+
+        String log = "";
+        for (boolean i : selectedArray) {
+            log = log + i + "|";
+        }
+        Log.e("setSelector", log + "|");
+
+        notifyDataSetChanged();
+
+        return count;
+    }
+
 
     public SkillSelectAdapter(Context context, int totalWidth, int totalHeight) {
         this.mContext = context;
@@ -97,8 +132,15 @@ public class SkillSelectAdapter extends BaseAdapter {
         this.mTotalWidth = totalWidth;
     }
 
+    /**
+     * 初始化其中的数据
+     *
+     * @param jsonObject 获取的网络数据
+     * @return
+     */
     public int initData(JSONObject jsonObject) {
         JSONArray jsonArray;
+
 
         try {
             jsonArray = jsonObject.getJSONArray("data");
@@ -129,7 +171,7 @@ public class SkillSelectAdapter extends BaseAdapter {
 
         selectedArray = new boolean[count];
 
-        notifyDataSetChanged();
+        //notifyDataSetChanged();
         //局部更新,更新可视区域,
         //notifyDataSetInvalidated();
         // 整体更新,更新所有item对象,如果滑动过,更新后回到初始状态
@@ -193,9 +235,9 @@ public class SkillSelectAdapter extends BaseAdapter {
 
 
         viewHolder.tv_lable.setText(hashMapList.get(position).get(SKILL_NAME));
-        if(selectedArray[position]){
+        if (selectedArray[position]) {
             viewHolder.iv_selector.setImageResource(R.drawable.icon_intskill_table_select);
-        }else{
+        } else {
             viewHolder.iv_selector.setImageResource(R.drawable.icon_intskill_table_unselect);
         }
 
