@@ -368,7 +368,7 @@ public class UserClass {
     }
 
     public void getSkillListAll(VolleyInterface vif) {
-        VolleyRequest.RequestGet(URLHEAD + "/skill", "getSkillListAll", vif);
+        VolleyRequest.RequestGet(URLHEAD + "/Skill/skill?userid=" + userId + "&openid=" + openId, "getSkillListAll", vif);
     }
 
     public void getPersonsList(int whichPersonsButton, int page, VolleyInterface vif) {

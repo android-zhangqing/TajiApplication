@@ -170,7 +170,7 @@ public class PersonsListAdapter extends PullableBaseAdapter {
 //
 //            final ImageView iv = holder.imgViewIcon;
 //            if (iv.getTag() != null) {
-//                ImageLoader.getInstance().displayImage((String) iv.getTag(), new ImageViewAware(iv), MyApplication.getDisplayImageOptions(),
+//                ImageLoader.getInstance().displayImage((String) iv.getTag(), new ImageViewAware(iv), MyApplication.getCircleDisplayImageOptions(),
 //                        new ImageSize(100, 100), new SimpleImageLoadingListener() {
 //                            @Override
 //                            public void onLoadingComplete(String imageUri, View view, Bitmap loadedImage) {
@@ -300,7 +300,7 @@ public class PersonsListAdapter extends PullableBaseAdapter {
             viewHolder.imgViewIcon.setImageBitmap(null);
         } else {
             //convertView.setTag(position);
-            ImageLoader.getInstance().displayImage(url, new ImageViewAware(viewHolder.imgViewIcon), MyApplication.getDisplayImageOptions(),
+            ImageLoader.getInstance().displayImage(url, new ImageViewAware(viewHolder.imgViewIcon), MyApplication.getCircleDisplayImageOptions(),
                     new ImageSize(100, 100), new SimpleImageLoadingListener() {
                         @Override
                         public void onLoadingComplete(String imageUri, View view, Bitmap loadedImage) {

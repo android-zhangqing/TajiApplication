@@ -6,6 +6,11 @@
         <attr name="topposition" format="string" />
     </declare-styleable>
 
+    <declare-styleable name="gridview">
+        <attr name="count_columns" format="integer" />
+        <attr name="count_rows" format="integer" />
+    </declare-styleable>
+
 
     <declare-styleable name="ViewPagerIndicator">
         <attr name="visible_item_count" format="integer" />

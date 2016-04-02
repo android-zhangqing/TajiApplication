@@ -10,13 +10,13 @@ import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.Volley;
 import com.nostra13.universalimageloader.cache.disc.impl.UnlimitedDiskCache;
 import com.nostra13.universalimageloader.cache.disc.naming.Md5FileNameGenerator;
-import com.nostra13.universalimageloader.cache.memory.impl.UsingFreqLimitedMemoryCache;
 import com.nostra13.universalimageloader.cache.memory.impl.WeakMemoryCache;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
 import com.nostra13.universalimageloader.core.display.CircleBitmapDisplayer;
+import com.nostra13.universalimageloader.core.display.RoundedBitmapDisplayer;
 import com.nostra13.universalimageloader.core.download.BaseImageDownloader;
 import com.nostra13.universalimageloader.utils.StorageUtils;
 import com.zhangqing.taji.base.UserClass;
@@ -31,7 +31,8 @@ public class MyApplication extends Application {
     private static RequestQueue requestQueue;
 
     public static boolean rcHasConnect = false;
-    private static DisplayImageOptions options;
+    private static DisplayImageOptions circleOptions;
+    private static DisplayImageOptions cornerOptions;
 
     //用于回收测试，该行可删
     public static WeakReference<ViewGroup> viewGroupWeakReference;
@@ -41,8 +42,12 @@ public class MyApplication extends Application {
         return requestQueue;
     }
 
-    public static DisplayImageOptions getDisplayImageOptions() {
-        return options;
+    public static DisplayImageOptions getCircleDisplayImageOptions() {
+        return circleOptions;
+    }
+
+    public static DisplayImageOptions getCornerDisplayImageOptions() {
+        return cornerOptions;
     }
 
 
@@ -90,13 +95,22 @@ public class MyApplication extends Application {
         //全局初始化此配置
         ImageLoader.getInstance().init(config);
 
-        options = new DisplayImageOptions.Builder()
+        circleOptions = new DisplayImageOptions.Builder()
                 .showImageOnLoading(R.drawable.ic_launcher) // 设置图片下载期间显示的图片
                 .showImageForEmptyUri(R.drawable.icon_tab_my_head_male) // 设置图片Uri为空或是错误的时候显示的图片
                 .showImageOnFail(R.drawable.ic_launcher) // 设置图片加载或解码过程中发生错误显示的图片
                 .cacheInMemory(true) // 设置下载的图片是否缓存在内存中
                 .cacheOnDisk(true) // 设置下载的图片是否缓存在SD卡中
                 .displayer(new CircleBitmapDisplayer()) // 设置成圆角图片
+                .build(); // 构建完成
+
+        cornerOptions = new DisplayImageOptions.Builder()
+                .showImageOnLoading(R.drawable.ic_launcher) // 设置图片下载期间显示的图片
+                .showImageForEmptyUri(R.drawable.icon_tab_my_head_male) // 设置图片Uri为空或是错误的时候显示的图片
+                .showImageOnFail(R.drawable.ic_launcher) // 设置图片加载或解码过程中发生错误显示的图片
+                .cacheInMemory(true) // 设置下载的图片是否缓存在内存中
+                .cacheOnDisk(true) // 设置下载的图片是否缓存在SD卡中
+                .displayer(new RoundedBitmapDisplayer(20,5)) // 设置成圆角图片
                 .build(); // 构建完成
 
     }

@@ -165,7 +165,7 @@ public class FragmentMy extends Fragment implements View.OnClickListener {
         String avatar = UserClass.getInstance().getStringByKey("avatar");
         if (!avatar.equals("")) {
             Log.e("loadingavatar", "" + avatar);
-            ImageLoader.getInstance().displayImage(avatar, mAvatarImageView, MyApplication.getDisplayImageOptions());
+            ImageLoader.getInstance().displayImage(avatar, mAvatarImageView, MyApplication.getCircleDisplayImageOptions());
         }
 
         String sex = UserClass.getInstance().getStringByKey("sex");

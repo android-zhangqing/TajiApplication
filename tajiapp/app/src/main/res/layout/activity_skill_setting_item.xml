@@ -2,31 +2,36 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center"
     android:orientation="vertical">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
+        android:layout_height="wrap_content">
 
         <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scaleType="center"
+            android:id="@+id/skill_setting_iv_icon"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_centerInParent="true"
             android:layout_margin="10dp"
-            android:src="@drawable/icon_tab_message_favor" />
+            android:scaleType="fitXY" />
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/skill_setting_iv_selector"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:layout_alignParentRight="true"
             android:scaleType="centerInside"
             android:src="@drawable/icon_intskill_table_unselect" />
     </RelativeLayout>
 
     <TextView
+        android:id="@+id/skill_setting_tv_lable"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="DESC" />
+        android:gravity="center"
+        android:text="DESC"
+        android:textColor="@color/bgcolor_bar_first" />
 
 </LinearLayout>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -35,25 +36,30 @@
 
     </RelativeLayout>
 
-    <ScrollView
+    <RelativeLayout
+        android:id="@+id/skill_setting_gridview_container"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1">
 
-        <com.zhangqing.taji.view.NoScrollGridView
+        <GridView
             android:id="@+id/skill_setting_gridview"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"></com.zhangqing.taji.view.NoScrollGridView>
-    </ScrollView>
+            android:layout_height="match_parent"
+            android:listSelector="@android:color/transparent"></GridView>
+
+
+    </RelativeLayout>
+
 
     <Button
+        android:id="@+id/skill_setting_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
         android:background="@drawable/corners_button"
-        android:text="下一步"
+        android:text="选择你感兴趣的标签"
         android:textColor="@android:color/darker_gray"
         android:textSize="@dimen/textsize_bar_first" />
-
 
 </LinearLayout>

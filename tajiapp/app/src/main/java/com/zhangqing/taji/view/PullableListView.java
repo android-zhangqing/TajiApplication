@@ -157,7 +157,7 @@ public class PullableListView extends ListView {
 
             final ImageView iv = mPullableBaseAdapter.getImageViewFromItemView(viewList.get(i));
             if (iv != null && iv.getTag() != null) {
-                ImageLoader.getInstance().displayImage((String) iv.getTag(), new ImageViewAware(iv), MyApplication.getDisplayImageOptions(),
+                ImageLoader.getInstance().displayImage((String) iv.getTag(), new ImageViewAware(iv), MyApplication.getCircleDisplayImageOptions(),
                         new ImageSize(100, 100), new SimpleImageLoadingListener() {
                             @Override
                             public void onLoadingComplete(String imageUri, View view, Bitmap loadedImage) {
