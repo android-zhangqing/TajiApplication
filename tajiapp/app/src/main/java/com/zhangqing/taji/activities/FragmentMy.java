@@ -1,6 +1,7 @@
 package com.zhangqing.taji.activities;
 
 
+import android.app.Activity;
 import android.app.Fragment;
 import android.content.Intent;
 import android.graphics.Color;
@@ -346,7 +347,7 @@ public class FragmentMy extends Fragment implements View.OnClickListener {
                 break;
             case R.id.my_click_modify_intadskill:
                 Intent intent = new Intent(getActivity(), SkillSettingActivity.class);
-                startActivity(intent);
+                startActivityForResult(intent, UserClass.Request_Setting_Lable);
                 break;
             case R.id.my_click_modify_member_detail:
                 Intent intent2 = new Intent(getActivity(), ModifyInterestSkillActivity.class);
@@ -376,5 +377,13 @@ public class FragmentMy extends Fragment implements View.OnClickListener {
 
     }
 
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode != UserClass.Request_Setting_Lable) return;
+        if (resultCode == Activity.RESULT_OK) {
+            swipeRefreshLayout.setRefreshing(true);
+        }
 
+    }
 }

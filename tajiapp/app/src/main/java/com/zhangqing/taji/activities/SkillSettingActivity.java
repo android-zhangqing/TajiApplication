@@ -1,6 +1,7 @@
 package com.zhangqing.taji.activities;
 
 import android.animation.Animator;
+import android.app.Activity;
 import android.content.Intent;
 import android.media.Image;
 import android.os.Handler;
@@ -55,6 +56,8 @@ public class SkillSettingActivity extends AppCompatActivity implements View.OnCl
 
     private List<ImageView> mImageViewList = new ArrayList<>();
 
+    private String mInterestResult = "";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,10 +67,14 @@ public class SkillSettingActivity extends AppCompatActivity implements View.OnCl
         mGridViewContainer = (RelativeLayout) findViewById(R.id.skill_setting_gridview_container);
         mButton = (Button) findViewById(R.id.skill_setting_button);
 
+        updateTitleView();
+        mButton.setOnClickListener(this);
+
+    }
+
+    private void updateTitleView() {
         ((TextView) findViewById(R.id.skill_setting_title)).
                 setText(mActivityType == ACTIVITY_SKILL ? TITLE_SKILL_STRING : TITLE_INTEREST_STRING);
-
-        mButton.setOnClickListener(this);
 
     }
 
@@ -226,18 +233,40 @@ public class SkillSettingActivity extends AppCompatActivity implements View.OnCl
 
     @Override
     public void onClick(View v) {
-        if (current_selected_num == 0) {
-            Toast.makeText(this, "请至少选择一项标签", Toast.LENGTH_SHORT).show();
-            return;
-        }
-        Toast.makeText(this, mGridViewAdapter.getSelector(), Toast.LENGTH_SHORT).show();
 
-        Intent intent = new Intent(this, SkillSettingActivity.class);
-        Bundle bundle = new Bundle();
-        bundle.putInt("activity_type", ACTIVITY_SKILL);
-        intent.putExtras(bundle);
-        startActivity(intent);
-        finish();
+
+        if (mActivityType == ACTIVITY_INTEREST) {
+            mInterestResult = mGridViewAdapter.getSelector();
+            //设置当前为设置技能
+            mActivityType = ACTIVITY_SKILL;
+            //选中数归零
+            current_selected_num = 0;
+            mGridViewAdapter.resetSelector();
+            //初始化View
+            updataButtonText();
+            updateTitleView();
+
+        } else {
+            UserClass.getInstance().doModifyInterestSkill(mInterestResult, mGridViewAdapter.getSelector(), new VolleyInterface(this) {
+                @Override
+                public void onMySuccess(JSONObject jsonObject) {
+                    try {
+                        Toast.makeText(SkillSettingActivity.this, jsonObject.getString("msg"), Toast.LENGTH_SHORT).show();
+                        setResult(Activity.RESULT_OK);
+                        finish();
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                        Toast.makeText(SkillSettingActivity.this, "设置失败", Toast.LENGTH_SHORT).show();
+                    }
+
+                }
+
+                @Override
+                public void onMyError(VolleyError error) {
+                }
+            });
+        }
+
 
     }
 }

@@ -48,10 +48,27 @@ public class SkillSelectAdapter extends BaseAdapter {
     private boolean[] selectedArray = new boolean[0];
 
 
+    /**
+     * 切换表项选择
+     * @param position 位置
+     * @return 切换后的选中状态，选中为true
+     */
     public boolean toggleSelector(int position) {
         if (position < 0 || position >= selectedArray.length) return false;
         selectedArray[position] = selectedArray[position] ? false : true;
         return selectedArray[position];
+    }
+
+    /**
+     * 重置多选器，当前选中记录会被清除
+     */
+    public void resetSelector(){
+        for(int i=0;i<selectedArray.length;i++){
+            selectedArray[i]=false;
+        }
+
+        notifyDataSetInvalidated();
+
     }
 
     /**
@@ -176,6 +193,11 @@ public class SkillSelectAdapter extends BaseAdapter {
 
 
         viewHolder.tv_lable.setText(hashMapList.get(position).get(SKILL_NAME));
+        if(selectedArray[position]){
+            viewHolder.iv_selector.setImageResource(R.drawable.icon_intskill_table_select);
+        }else{
+            viewHolder.iv_selector.setImageResource(R.drawable.icon_intskill_table_unselect);
+        }
 
         ImageLoader.getInstance().displayImage(hashMapList.get(position).get(SKILL_URL),
                 new ImageViewAware(viewHolder.iv_icon),

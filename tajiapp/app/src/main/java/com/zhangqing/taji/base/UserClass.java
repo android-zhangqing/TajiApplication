@@ -39,6 +39,7 @@ public class UserClass {
     public static final int Request_Register_First = 102;
     public static final int Request_Register_Second = 103;
     public static final int Request_Register_Third = 104;
+    public static final int Request_Setting_Lable = 105;
 
     public static final int Persons_Button_tudi = 1;
     public static final int Persons_Button_shifu = 2;
