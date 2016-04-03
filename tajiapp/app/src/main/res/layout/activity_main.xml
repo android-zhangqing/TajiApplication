@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:myview="http://schemas.android.com/apk/res-auto"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:myview="http://schemas.android.com/apk/res-auto"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:background="#503B66"
@@ -12,47 +12,106 @@
     >
 
     <!--<android.support.design.widget.CoordinatorLayout-->
-        <!--android:id="@+id/main_content"-->
-        <!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent">-->
+    <!--android:id="@+id/main_content"-->
+    <!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent">-->
 
-        <!--<android.support.design.widget.AppBarLayout-->
-            <!--android:id="@+id/app_bar_layout"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!-->-->
-            <!--<android.support.v7.widget.Toolbar-->
-                <!--android:id="@+id/tool_bar"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="50dp"-->
-                <!--app:layout_scrollFlags="scroll|enterAlways" />-->
+    <!--<android.support.design.widget.AppBarLayout-->
+    <!--android:id="@+id/app_bar_layout"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!-->-->
+    <!--<android.support.v7.widget.Toolbar-->
+    <!--android:id="@+id/tool_bar"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="50dp"-->
+    <!--app:layout_scrollFlags="scroll|enterAlways" />-->
 
-            <com.zhangqing.taji.view.TopBar
-                android:id="@+id/topbar"
-                android:layout_width="fill_parent"
-                android:layout_height="@dimen/topbar_height"
-                myview:topposition="0"></com.zhangqing.taji.view.TopBar>
-
-
-        <!--</android.support.design.widget.AppBarLayout>-->
+    <com.zhangqing.taji.view.TopBar
+        android:id="@+id/topbar"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/topbar_height"
+        myview:topposition="0"></com.zhangqing.taji.view.TopBar>
 
 
-        <LinearLayout
+    <!--</android.support.design.widget.AppBarLayout>-->
+
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+
+        <FrameLayout
+            android:id="@+id/contentframe"
             android:layout_width="fill_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1">
+            android:layout_height="fill_parent"></FrameLayout>
+
+        <RelativeLayout
+            android:id="@+id/main_publish_bg_bg"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:layout_alignParentBottom="true">
+
+            <View
+                android:id="@+id/main_publish_bg"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#503B66"
+                android:visibility="gone" />
 
             <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content">
+                android:id="@+id/main_publish_left"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:alpha="0"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
 
-                <FrameLayout
-                    android:id="@+id/contentframe"
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"></FrameLayout>
+                <ImageView
+
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:src="@drawable/icon_publish_left" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:gravity="center"
+                    android:text="上传照片/视频" />
             </LinearLayout>
-        </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/main_publish_right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:alpha="0"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:src="@drawable/icon_publish_right" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:text="拍摄照片/视频" />
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
     <!--</android.support.design.widget.CoordinatorLayout>-->
 
     <com.zhangqing.taji.view.BottomBar

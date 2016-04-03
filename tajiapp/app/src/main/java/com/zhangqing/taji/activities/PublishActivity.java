@@ -18,6 +18,8 @@ import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
+import android.view.animation.BounceInterpolator;
+import android.view.animation.Interpolator;
 import android.view.animation.TranslateAnimation;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
@@ -180,7 +182,7 @@ public class PublishActivity extends FragmentActivity implements View.OnClickLis
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        doPhoto(requestCode,data);
+        doPhoto(requestCode, data);
     }
 
     /**
@@ -200,7 +202,7 @@ public class PublishActivity extends FragmentActivity implements View.OnClickLis
             picPath = cursor.getString(columnIndex);
             cursor.close();
         }
-        Log.i("doPhoto", "imagePath = "+picPath);
+        Log.i("doPhoto", "imagePath = " + picPath);
         if(picPath != null && ( picPath.endsWith(".png") || picPath.endsWith(".PNG") ||picPath.endsWith(".jpg") ||picPath.endsWith(".JPG") ))
         {
             UploadUtil uploadUtil = UploadUtil.getInstance();
@@ -436,6 +438,7 @@ public class PublishActivity extends FragmentActivity implements View.OnClickLis
             mShowAction = new TranslateAnimation(Animation.RELATIVE_TO_SELF, 0.0f,
                     Animation.RELATIVE_TO_SELF, 0.0f, Animation.RELATIVE_TO_SELF,
                     1.0f, Animation.RELATIVE_TO_SELF, 0.0f);
+            //mShowAction.setInterpolator(new BounceInterpolator());
             mShowAction.setDuration(500);
             if (postDelay) {
                 parentViewFaceGrid.postDelayed(new Runnable() {

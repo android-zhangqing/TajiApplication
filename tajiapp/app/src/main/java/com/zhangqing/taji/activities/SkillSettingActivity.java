@@ -131,7 +131,7 @@ public class SkillSettingActivity extends AppCompatActivity implements View.OnCl
                                 test_real_top + test_iv.getMeasuredHeight());
                         int moveX = mGridView.getMeasuredWidth() / 2 - test_real_left;
                         int moveY = mGridView.getMeasuredHeight() - test_real_top + 20;
-                        AnimationUtil.startAnimation2(test_iv, moveX, moveY, new Animator.AnimatorListener() {
+                        AnimationUtil.startAnimationByMyself(test_iv, moveX, moveY, new Animator.AnimatorListener() {
                             @Override
                             public void onAnimationStart(Animator animation) {
 

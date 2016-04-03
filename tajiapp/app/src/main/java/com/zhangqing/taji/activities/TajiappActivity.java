@@ -1,5 +1,6 @@
 package com.zhangqing.taji.activities;
 
+import android.animation.Animator;
 import android.app.ActivityManager;
 import android.app.AlertDialog;
 import android.app.Fragment;
@@ -15,7 +16,13 @@ import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.view.animation.AccelerateInterpolator;
+import android.view.animation.AlphaAnimation;
+import android.view.animation.Animation;
+import android.view.animation.BounceInterpolator;
+import android.view.animation.TranslateAnimation;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.android.volley.VolleyError;
@@ -24,6 +31,7 @@ import com.zhangqing.taji.R;
 import com.zhangqing.taji.activities.login.LoginActivity;
 import com.zhangqing.taji.base.UserClass;
 import com.zhangqing.taji.base.VolleyInterface;
+import com.zhangqing.taji.util.AnimationUtil;
 import com.zhangqing.taji.view.BottomBar;
 import com.zhangqing.taji.view.BottomBar.OnTabClickListener;
 import com.zhangqing.taji.view.TopBar;
@@ -36,8 +44,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 import io.rong.imkit.RongIM;
-import io.rong.imlib.RongIMClient;
-import io.rong.imlib.model.Message;
 import io.rong.imlib.model.UserInfo;
 
 public class TajiappActivity extends FragmentActivity implements OnTabClickListener,
@@ -46,6 +52,12 @@ public class TajiappActivity extends FragmentActivity implements OnTabClickListe
     private TopBar topBar;
     public BottomBar bottomBar;
     private int currentFragment = -1;
+
+    private LinearLayout mPublishLeft;
+    private LinearLayout mPublishRight;
+    private View mPublishBg;
+    private View mPublishBgBg;
+    private boolean isShowingPublish = false;
 
 
     /**
@@ -71,13 +83,17 @@ public class TajiappActivity extends FragmentActivity implements OnTabClickListe
         setTranslucentStatus();
         setContentView(R.layout.activity_main);
 
+        mPublishLeft = (LinearLayout) findViewById(R.id.main_publish_left);
+        mPublishRight = (LinearLayout) findViewById(R.id.main_publish_right);
+
+        mPublishBg = (View) findViewById(R.id.main_publish_bg);
+        mPublishBgBg = (View) findViewById(R.id.main_publish_bg_bg);
+
+
         if (UserClass.getInstance().reLoadSharedPreferences() == false) {
             startLoginActivity();
             return;
         }
-
-
-
 
 
         MyApplication.connect(TajiappActivity.this);
@@ -127,10 +143,10 @@ public class TajiappActivity extends FragmentActivity implements OnTabClickListe
             }
         }, true);
 
-       // if (MyApplication.rcHasConnect == false) {
+        // if (MyApplication.rcHasConnect == false) {
 
 
-      //  }
+        //  }
 
 
 //        FragmentTransaction ft = getFragmentManager().beginTransaction();
@@ -225,10 +241,66 @@ public class TajiappActivity extends FragmentActivity implements OnTabClickListe
 
     @Override
     public void tabClickPublishBtn() {
-        Intent intent = new Intent(TajiappActivity.this, PublishActivity.class);
 
-        startActivity(intent);
-        overridePendingTransition(R.anim.activity_open_bottom_in, 0);
+        if (!isShowingPublish) {
+            isShowingPublish = true;
+
+            // mPublishBgBg.setAlpha(1f);
+            //AnimationUtil.startAnimationByMyself(mPublishLeft, -200, -100, null);
+            AnimationUtil.startAnimationJumpIn(mPublishLeft, -200, -100, null);
+            AnimationUtil.startAnimationJumpIn(mPublishRight, 200, -100, null);
+            // AnimationUtil.startAnimationJumpIn(mPublishBg, 200, -100, null);
+
+            Animation a = new TranslateAnimation(Animation.RELATIVE_TO_SELF, 0.0f,
+                    Animation.RELATIVE_TO_SELF, 0.0f, Animation.RELATIVE_TO_SELF,
+                    1.0f, Animation.RELATIVE_TO_SELF, 0.0f);
+            a.setInterpolator(new BounceInterpolator());
+            a.setDuration(1000);
+            mPublishBg.setAnimation(a);
+            mPublishBg.setVisibility(View.VISIBLE);
+        } else {
+            isShowingPublish = false;
+
+//            AnimationUtil.startAnimationFadeOut(mPublishLeft, null);
+//            AnimationUtil.startAnimationFadeOut(mPublishRight, null);
+//
+//            Animation a = new TranslateAnimation(Animation.RELATIVE_TO_SELF, 0.0f,
+//                    Animation.RELATIVE_TO_SELF, 0.0f, Animation.RELATIVE_TO_SELF,
+//                    0.0f, Animation.RELATIVE_TO_SELF, 1.0f);
+//            a.setInterpolator(new AccelerateInterpolator());
+//            a.setDuration(500);
+//            mPublishBg.setAnimation(a);
+//            mPublishBg.setVisibility(View.GONE);
+            Animation a = new AlphaAnimation(1, 0);
+            a.setDuration(400);
+            a.setFillAfter(false);
+            a.setAnimationListener(new Animation.AnimationListener() {
+                @Override
+                public void onAnimationStart(Animation animation) {
+
+                }
+
+                @Override
+                public void onAnimationEnd(Animation animation) {
+                    mPublishLeft.setAlpha(0);
+                    mPublishRight.setAlpha(0);
+                    mPublishBg.setVisibility(View.GONE);
+                }
+
+                @Override
+                public void onAnimationRepeat(Animation animation) {
+
+                }
+            });
+            mPublishBgBg.startAnimation(a);
+            //  AnimationUtil.startAnimationFadeOut(mPublishRight, null);
+            // mPublishBg.setVisibility(View.INVISIBLE);
+
+        }
+
+//        Intent intent = new Intent(TajiappActivity.this, PublishActivity.class);
+//        startActivity(intent);
+//        overridePendingTransition(R.anim.activity_open_bottom_in, 0);
     }
 
 
