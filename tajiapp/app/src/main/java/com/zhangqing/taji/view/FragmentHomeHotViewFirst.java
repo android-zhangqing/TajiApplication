@@ -50,51 +50,6 @@ public class FragmentHomeHotViewFirst extends LinearLayout {
 
     int newHeight = 0;
     ;
-
-    Handler handler = new Handler() {
-
-        @Override
-        public void handleMessage(Message msg) {
-            // TODO Auto-generated method stub
-            // super.handleMessage(msg);
-            if (msg.what == MESSAGE_SCALE_ANIMATION) {
-                // if(newHeight==0) newHeight=swipeRefreshLayout.getHeight();
-                // RelativeLayout.LayoutParams lastParams =
-                // (RelativeLayout.LayoutParams)swipeRefreshLayout.getLayoutParams();
-                // //testview.setText(" "+swipeRefreshLayout.getWidth());
-//				 newHeight=newHeight+10;
-//				 RelativeLayout.LayoutParams newParams =new
-//				 RelativeLayout.LayoutParams(LayoutParams.FILL_PARENT,
-//				 newHeight) ;
-//				 newParams.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
-//				 swipeRefreshLayout.setLayoutParams(newParams); //使layout更新
-//				 swipeRefreshLayout.setTop(swipeRefreshLayout.getTop()-10);
-//				 swipeRefreshLayout.setLayoutParams(newParams);
-//
-            }
-
-        }
-
-    };
-
-    Runnable runnable = new Runnable() {
-
-        @Override
-        public void run() {
-            // TODO Auto-generated method stub
-            for (int i = 0; i < 200; i++) {
-                handler.sendEmptyMessage(MESSAGE_SCALE_ANIMATION);
-                try {
-                    Thread.sleep(50);
-                } catch (InterruptedException e) {
-                    // TODO Auto-generated catch block
-                    e.printStackTrace();
-                }
-
-            }
-        }
-    };
-
     public FragmentHomeHotViewFirst(final Context context) {
         super(context);
         this.context = context;
@@ -111,13 +66,6 @@ public class FragmentHomeHotViewFirst extends LinearLayout {
         gridView = (GridView) containerView
                 .findViewById(R.id.home_hot_first_gridview);
 
-
-//        List<Map<String, Object>> listItems = new ArrayList<Map<String, Object>>();
-//        for (int j = 0; j < 4; j++) {
-//            Map<String, Object> listitem = new HashMap<String, Object>();
-//            listitem.put("pic", R.drawable.icon_tab_home_hot_loading);
-//            listItems.add(listitem);
-//        }
         gridView.setAdapter(new MyGridViewAdapter());
 //		
 

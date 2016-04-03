@@ -3,22 +3,22 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
 
-    android:padding="2dp" >
+    android:padding="2dp">
 
     <ImageView
         android:id="@+id/home_hot_page_first_gridview_imgview"
         android:layout_width="match_parent"
-        android:background="@color/bgcolor_loading_pic"
         android:layout_height="150dp"
+        android:background="@color/bgcolor_loading_pic"
         android:scaleType="center"
 
-         />
+        />
 
     <LinearLayout
         android:id="@+id/home_hot_first_temp_layoutbottom"
         android:layout_width="match_parent"
         android:layout_height="@dimen/home_hot_gridview_text_height"
-        android:layout_below="@id/home_hot_page_first_gridview_imgview" >
+        android:layout_below="@id/home_hot_page_first_gridview_imgview">
 
         <TextView
             android:layout_width="match_parent"
@@ -31,7 +31,7 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/home_hot_gridview_text_height"
         android:layout_alignBottom="@id/home_hot_page_first_gridview_imgview"
-        android:background="#88000000" >
+        android:background="#88000000">
 
         <TextView
             android:layout_width="match_parent"
@@ -39,7 +39,7 @@
             android:text="  " />
     </LinearLayout>
 
-    <com.zhangqing.taji.view.CircleImageView
+    <ImageView
         android:id="@+id/home_hot_page_gridview_circle_img"
         android:layout_width="@dimen/home_hot_gridview_text_height_twice"
         android:layout_height="@dimen/home_hot_gridview_text_height_twice"
@@ -47,8 +47,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignTop="@id/temp_layouttop"
         android:layout_margin="3dp"
-        android:scaleType="fitCenter"
-        />
+        android:scaleType="centerInside" />
 
     <TextView
         android:id="@+id/home_hot_page_gridview_title"

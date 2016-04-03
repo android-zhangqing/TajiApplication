@@ -62,21 +62,6 @@ public class SkillSettingActivity extends AppCompatActivity implements View.OnCl
         updateTitleView();
         mButton.setOnClickListener(this);
 
-    }
-
-    private void updateSelector() {
-        current_selected_num = mGridViewAdapter.setSelector(
-                mActivityType == ACTIVITY_SKILL ? UserClass.getInstance().skill : UserClass.getInstance().interest);
-    }
-
-    private void updateTitleView() {
-        ((TextView) findViewById(R.id.skill_setting_title)).
-                setText(mActivityType == ACTIVITY_SKILL ? TITLE_SKILL_STRING : TITLE_INTEREST_STRING);
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
 
         mGridView.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
             @Override
@@ -180,6 +165,24 @@ public class SkillSettingActivity extends AppCompatActivity implements View.OnCl
             }
 
         });
+
+    }
+
+    private void updateSelector() {
+        current_selected_num = mGridViewAdapter.setSelector(
+                mActivityType == ACTIVITY_SKILL ? UserClass.getInstance().skill : UserClass.getInstance().interest);
+    }
+
+    private void updateTitleView() {
+        ((TextView) findViewById(R.id.skill_setting_title)).
+                setText(mActivityType == ACTIVITY_SKILL ? TITLE_SKILL_STRING : TITLE_INTEREST_STRING);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+
     }
 
     private void updataButtonText() {
