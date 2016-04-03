@@ -35,7 +35,7 @@ public class VolleyRequest {
         } catch (PackageManager.NameNotFoundException e) {
             e.printStackTrace();
         }
-        url = url + "&version=" + versionName;
+        url = url + "&version=AD_" + versionName;
 
         Log.e("VolleyRequest", url);
         MyApplication.getRequestQeuee().cancelAll(tag);

@@ -246,9 +246,9 @@ public class SkillSettingActivity extends AppCompatActivity implements View.OnCl
             //选中数归零
             current_selected_num = 0;
             //初始化View
-            updataButtonText();
             updateTitleView();
             updateSelector();
+            updataButtonText();
 
         } else {
             UserClass.getInstance().doModifyInterestSkill(mInterestResult, mGridViewAdapter.getSelector(), new VolleyInterface(this) {

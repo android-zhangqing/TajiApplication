@@ -14,9 +14,11 @@ import com.nostra13.universalimageloader.cache.memory.impl.WeakMemoryCache;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
+import com.nostra13.universalimageloader.core.assist.ImageScaleType;
 import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
 import com.nostra13.universalimageloader.core.display.CircleBitmapDisplayer;
 import com.nostra13.universalimageloader.core.display.RoundedBitmapDisplayer;
+import com.nostra13.universalimageloader.core.display.SimpleBitmapDisplayer;
 import com.nostra13.universalimageloader.core.download.BaseImageDownloader;
 import com.nostra13.universalimageloader.utils.StorageUtils;
 import com.zhangqing.taji.base.UserClass;
@@ -36,6 +38,7 @@ public class MyApplication extends Application {
 
     //用于回收测试，该行可删
     public static WeakReference<ViewGroup> viewGroupWeakReference;
+    private static DisplayImageOptions normalOptions;
 
 
     public static RequestQueue getRequestQeuee() {
@@ -44,6 +47,10 @@ public class MyApplication extends Application {
 
     public static DisplayImageOptions getCircleDisplayImageOptions() {
         return circleOptions;
+    }
+
+    public static DisplayImageOptions getNormalDisplayImageOptions() {
+        return normalOptions;
     }
 
     public static DisplayImageOptions getCornerDisplayImageOptions() {
@@ -110,8 +117,26 @@ public class MyApplication extends Application {
                 .showImageOnFail(R.drawable.ic_launcher) // 设置图片加载或解码过程中发生错误显示的图片
                 .cacheInMemory(true) // 设置下载的图片是否缓存在内存中
                 .cacheOnDisk(true) // 设置下载的图片是否缓存在SD卡中
-                .displayer(new RoundedBitmapDisplayer(20,5)) // 设置成圆角图片
+                .displayer(new RoundedBitmapDisplayer(20, 0)) // 设置成圆角图片
                 .build(); // 构建完成
+
+        /**
+         EXACTLY :图像将完全按比例缩小的目标大小
+         EXACTLY_STRETCHED:图片会缩放到目标大小完全
+         IN_SAMPLE_INT:图像将被二次采样的整数倍
+         IN_SAMPLE_POWER_OF_2:图片将降低2倍，直到下一减少步骤，使图像更小的目标大小
+         NONE:图片不会调整
+         */
+        normalOptions = new DisplayImageOptions.Builder()
+                .showImageOnLoading(R.drawable.pic_loading_bg) // 设置图片下载期间显示的图片
+                .showImageForEmptyUri(R.drawable.icon_tab_my_head_male) // 设置图片Uri为空或是错误的时候显示的图片
+                .showImageOnFail(R.drawable.ic_launcher) // 设置图片加载或解码过程中发生错误显示的图片
+                .cacheInMemory(true) // 设置下载的图片是否缓存在内存中
+                .cacheOnDisk(true) // 设置下载的图片是否缓存在SD卡中
+                .displayer(new SimpleBitmapDisplayer())
+                .imageScaleType(ImageScaleType.EXACTLY_STRETCHED)
+                .build(); // 构建完成
+
 
     }
 

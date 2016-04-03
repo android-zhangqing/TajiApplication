@@ -47,7 +47,11 @@
             android:id="@+id/skill_setting_gridview"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:listSelector="@android:color/transparent"></GridView>
+            android:listSelector="@android:color/transparent">
+
+
+
+        </GridView>
 
 
     </RelativeLayout>

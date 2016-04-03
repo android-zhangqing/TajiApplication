@@ -45,17 +45,17 @@ public class CoverActivity extends Activity {
             }
         });
 
-        UserClass.getInstance().doGetDongTai(new VolleyInterface(getApplicationContext()) {
-            @Override
-            public void onMySuccess(JSONObject jsonObject) {
-                Log.e("sss", jsonObject.toString());
-            }
-
-            @Override
-            public void onMyError(VolleyError error) {
-
-            }
-        });
+//        UserClass.getInstance().doGetDongTai(1, new VolleyInterface(getApplicationContext()) {
+//            @Override
+//            public void onMySuccess(JSONObject jsonObject) {
+//                Log.e("sss", jsonObject.toString());
+//            }
+//
+//            @Override
+//            public void onMyError(VolleyError error) {
+//
+//            }
+//        });
     }
 
     private void waitToStartActivity(final boolean isToLogin, final Bundle bundle) {

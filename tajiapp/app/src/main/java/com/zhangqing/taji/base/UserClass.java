@@ -290,9 +290,9 @@ public class UserClass {
 
     }
 
-    public void doGetDongTai(VolleyInterface vif) {
+    public void doGetDongTai(int page, VolleyInterface vif) {
 
-        String url = URLHEAD + "/DongTai?" + "userid=" + userId + "&openid=" + openId;
+        String url = URLHEAD + "/DongTai?" + "userid=" + userId + "&openid=" + openId + "&page=" + page + "&count=20";
         VolleyRequest.RequestGet(url, "doGetDongTai", vif);
 
     }
