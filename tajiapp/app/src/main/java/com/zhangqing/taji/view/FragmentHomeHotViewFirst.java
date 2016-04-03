@@ -22,15 +22,20 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.imageaware.ImageAware;
 import com.nostra13.universalimageloader.core.imageaware.ImageViewAware;
 import com.nostra13.universalimageloader.core.listener.PauseOnScrollListener;
+import com.zhangqing.taji.MyApplication;
 import com.zhangqing.taji.R;
 import com.zhangqing.taji.adapter.HomeHotGridAdapter;
 import com.zhangqing.taji.adapter.PullableBaseAdapter;
 import com.zhangqing.taji.base.UserClass;
 import com.zhangqing.taji.base.VolleyInterface;
 
+import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.sql.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -52,7 +57,6 @@ public class FragmentHomeHotViewFirst extends LinearLayout {
 
     private int current_page = 1;
 
-    TextView testview;
     private TextView mFootTextView;
 
     /**
@@ -64,29 +68,42 @@ public class FragmentHomeHotViewFirst extends LinearLayout {
         mPagerInside = (ViewPager) ll.findViewById(R.id.home_hot_first_viewpagerinside);
         mPagerInsideContainer = (LinearLayout) ll.findViewById(R.id.home_hot_first_pager_point_container);
 
-        mPagerInsideAdapter = new ChildViewPagerAdapter(context, mPagerInsideContainer, 5);
+        mPagerInsideAdapter = new ChildViewPagerAdapter(context, mPagerInsideContainer, 6);
         mPagerInside.setAdapter(mPagerInsideAdapter);
+
+        UserClass.getInstance().doGetDongTaiBanner(new VolleyInterface(getContext().getApplicationContext()) {
+            @Override
+            public void onMySuccess(JSONObject jsonObject) {
+                try {
+                    mPagerInsideAdapter.updateUrl(jsonObject.getJSONArray("data"));
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            @Override
+            public void onMyError(VolleyError error) {
+
+            }
+        });
         mPagerInside.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
 
             @Override
             public void onPageSelected(int arg0) {
                 mPagerInsideAdapter.updatePointContainer(arg0);
-                testview.setText("PageSelected " + arg0 + " " + Math.random());
-                Log.e("mPagerInside", "onPageSelected " + arg0);
-//                Toast.makeText(context, Md5Util.getMd5("12311d"), Toast.LENGTH_SHORT).show();
+
+                //Log.e("mPagerInside", "onPageSelected " + arg0);
+
             }
 
             @Override
             public void onPageScrolled(int arg0, float arg1, int arg2) {
-                testview.setText("pagerscroll " + arg0 + " " + arg1 + " " + arg2 + " " + Math.random());
 
-                //mSwipeRefreshLayout.setEnabled(false);
             }
 
             @Override
             public void onPageScrollStateChanged(int arg0) {
                 Log.e("mPagerInside", "onPageScrollStateChanged " + arg0);
-                testview.setText("PageScrollStateChanged " + arg0 + " " + Math.random());
 
                 if (arg0 == 1) {
                     mSwipeRefreshLayout.setEnabled(false);
@@ -150,7 +167,6 @@ public class FragmentHomeHotViewFirst extends LinearLayout {
         LayoutInflater flater = (LayoutInflater) context
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         containerView = flater.inflate(R.layout.view_home_hot_first, null);
-        testview = (TextView) containerView.findViewById(R.id.home_hot_first_temptest);
 
         mGridView = (GridViewWithHeaderAndFooter) containerView.findViewById(R.id.home_hot_first_gridview);
         addHeaderView();
@@ -177,7 +193,6 @@ public class FragmentHomeHotViewFirst extends LinearLayout {
                             mFootTextView.setText("正在加载...");
                             addDataToAdapter();
                         }
-
                         break;
                     }
                     case SCROLL_STATE_TOUCH_SCROLL: {
@@ -276,6 +291,32 @@ public class FragmentHomeHotViewFirst extends LinearLayout {
          */
         public void updateUrl(String[] urls) {
             this.urls = urls;
+            notifyDataSetChanged();
+            updatePointContainer(0);
+            Log.e("updateUrl", urls[0] + "||" + urls.length);
+        }
+
+        public void updateUrl(JSONArray jsonArray) {
+            List<String> stringList = new ArrayList<String>();
+            try {
+                for (int i = 0; i < jsonArray.length(); i++) {
+                    JSONObject jsonObject = jsonArray.getJSONObject(i);
+                    String temp = jsonObject.optString("pic", "");
+                    if (temp.contains("http")) {
+                        stringList.add(temp);
+                    }
+                }
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+            if (stringList.size() == 0) return;
+
+            String[] urls = new String[stringList.size()];
+            for (int i = 0; i < stringList.size(); i++) {
+                urls[i] = stringList.get(i);
+            }
+            Log.e("urls", urls.length + "|" + urls[0]);
+            updateUrl(urls);
         }
 
         /**
@@ -311,15 +352,32 @@ public class FragmentHomeHotViewFirst extends LinearLayout {
             return arg0 == arg1;
         }
 
+        /**
+         * 用于notifyDataSetChange
+         * 这不是PagerAdapter中的Bug，通常情况下，调用 notifyDataSetChanged方法会让ViewPager
+         * 通过Adapter的getItemPosition方法查询一遍所有child view，这种情况下，所有child view
+         * 位置均为POSITION_NONE，表示所有的child view都不存在，ViewPager会调用destroyItem方法销毁
+         * ，并且重新生成，加大系统开销，并在一些复杂情况下导致逻辑问题。特别是对于 只是希望更新
+         * child view内容的时候，造成了完全不必要的开销。
+         *
+         * @param object
+         * @return
+         */
+        @Override
+        public int getItemPosition(Object object) {
+            return POSITION_NONE;
+        }
+
         @Override
         public Object instantiateItem(ViewGroup container, int position) {
             Log.e("PagerAdapterTest", "instantiateItem|" + position + "|" + container);
 
             ImageView iv = new ImageView(context);
-            container.addView(iv);
+            iv.setScaleType(ScaleType.FIT_XY);
+            container.addView(iv, ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
 
             if (urls[position] != null && urls[position].contains("http")) {
-                ImageLoader.getInstance().displayImage(urls[position], new ImageViewAware(iv));
+                ImageLoader.getInstance().displayImage(urls[position], new ImageViewAware(iv), MyApplication.getCornerDisplayImageOptions());
             } else {
                 iv.setImageResource(R.drawable.pic_loading_bg);
                 iv.setBackgroundColor(Color.parseColor("#F1F1F1"));

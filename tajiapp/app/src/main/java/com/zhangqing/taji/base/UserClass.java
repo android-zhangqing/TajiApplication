@@ -297,6 +297,13 @@ public class UserClass {
 
     }
 
+    public void doGetDongTaiBanner(VolleyInterface vif) {
+
+        String url = URLHEAD + "/DongTai/banner?" + "userid=" + userId + "&openid=" + openId;
+        VolleyRequest.RequestGet(url, "doGetDongTaiBanner", vif);
+
+    }
+
     public void doModifyMemberDetail(String name, String sex, String school, String sign,
                                      VolleyInterface vif) {
         String url = "http://www.baidu.com/?";

@@ -134,7 +134,7 @@ public class MyApplication extends Application {
                 .cacheInMemory(true) // 设置下载的图片是否缓存在内存中
                 .cacheOnDisk(true) // 设置下载的图片是否缓存在SD卡中
                 .displayer(new SimpleBitmapDisplayer())
-                .imageScaleType(ImageScaleType.EXACTLY_STRETCHED)
+                .imageScaleType(ImageScaleType.EXACTLY)
                 .build(); // 构建完成
 
 

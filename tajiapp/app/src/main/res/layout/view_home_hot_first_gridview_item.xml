@@ -1,17 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:padding="2dp">
+    android:layout_height="wrap_content">
 
     <ImageView
         android:id="@+id/home_hot_page_first_gridview_imgview"
         android:layout_width="match_parent"
         android:layout_height="150dp"
         android:background="@color/bgcolor_loading_pic"
-        android:scaleType="center"
+        android:foreground="@android:color/black"
+        android:scaleType="center" />
 
-        />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:background="@drawable/press_bg" />
 
     <LinearLayout
         android:id="@+id/home_hot_first_temp_layoutbottom"

@@ -68,7 +68,7 @@ public class PersonsListAdapter extends PullableBaseAdapter {
 
 
     /**
-     * @param context  必须Activity context
+     * @param context 必须Activity context
      */
     public PersonsListAdapter(Context context) {
         this.mContext = context;
@@ -186,9 +186,9 @@ public class PersonsListAdapter extends PullableBaseAdapter {
 //        this.isScrolling = isScrolling;
 //    }
 
-        /**
-         * 清除所有数据
-         */
+    /**
+     * 清除所有数据
+     */
 
     public void onClearData() {
         mapList.clear();
@@ -312,9 +312,9 @@ public class PersonsListAdapter extends PullableBaseAdapter {
     }
 
 
-static class ViewHolder {
-    ImageView imgViewIcon;
-    TextView textViewName;
-    TextView textViewSign;
-}
+    static class ViewHolder {
+        ImageView imgViewIcon;
+        TextView textViewName;
+        TextView textViewSign;
+    }
 }
