@@ -39,9 +39,7 @@ public class ListPersonsActivity extends Activity {
     private SwipeRefreshLayout mSwipeRefreshLayout;
     private PersonsListAdapter mListAdapter;
 
-    private int current_page;
-
-
+    private int current_page = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,7 +57,6 @@ public class ListPersonsActivity extends Activity {
         mTitleTextView.setText(mTitleString);
         mSearchEditText.setHint("搜索" + mTitleString);
 
-
         mListAdapter = new PersonsListAdapter(ListPersonsActivity.this);
         mListView.setAdapter(mListAdapter);
         mListView.setOnAddDataListener(new PullableListView.OnAddDataListener() {
@@ -72,8 +69,8 @@ public class ListPersonsActivity extends Activity {
         SwipeRefreshLayout.OnRefreshListener swipeListener = new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
+                mListView.isNoMoreData = false;
                 addDataToList(1);
-
             }
         };
         mSwipeRefreshLayout.setOnRefreshListener(swipeListener);
@@ -120,10 +117,12 @@ public class ListPersonsActivity extends Activity {
                 Log.e("getPersonsList", jsonObject.toString() + "@@" + loading_page);
                 if (jsonObject.toString().contains("\"data\":[]")) {
                     mListView.getFootView().setText("没有了呢~~");
+                    mListView.isNoMoreData = true;
                     Log.e("getPersonsList", "null data");
                 } else {
-                    if (mListAdapter.onAddData(jsonObject) < 20) {
+                    if (mListAdapter.onAddData(jsonObject) != 20) {
                         mListView.getFootView().setText("没有了呢~~");
+                        mListView.isNoMoreData = true;
                     } else {
                         mListView.getFootView().setText("正在加载...");
                     }

@@ -47,6 +47,9 @@ public class PullableListView extends ListView {
 
     private TextView mFootView;
 
+
+    public boolean isNoMoreData = false;
+
     public interface OnAddDataListener {
         void addData(PullableBaseAdapter pullableBaseAdapter);
     }
@@ -115,7 +118,8 @@ public class PullableListView extends ListView {
                         mPullableBaseAdapter.isScrolling = false;
                         onStopScroll();//停止滚动时加载数据
 
-                        if (view.getLastVisiblePosition() == view.getCount() - 1 && mOnAddDataListener != null) {
+                        if (view.getLastVisiblePosition() == view.getCount() - 1 &&
+                                mOnAddDataListener != null && !isNoMoreData) {
                             mOnAddDataListener.addData(mPullableBaseAdapter);
                         }
                         //notifyDataSetChanged();
