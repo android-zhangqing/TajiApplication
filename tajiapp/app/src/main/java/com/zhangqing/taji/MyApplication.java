@@ -103,7 +103,7 @@ public class MyApplication extends Application {
         ImageLoader.getInstance().init(config);
 
         circleOptions = new DisplayImageOptions.Builder()
-                .showImageOnLoading(R.drawable.ic_launcher) // 设置图片下载期间显示的图片
+                .showImageOnLoading(0) // 设置图片下载期间显示的图片
                 .showImageForEmptyUri(R.drawable.icon_tab_my_head_male) // 设置图片Uri为空或是错误的时候显示的图片
                 .showImageOnFail(R.drawable.ic_launcher) // 设置图片加载或解码过程中发生错误显示的图片
                 .cacheInMemory(true) // 设置下载的图片是否缓存在内存中
@@ -112,7 +112,7 @@ public class MyApplication extends Application {
                 .build(); // 构建完成
 
         cornerOptions = new DisplayImageOptions.Builder()
-                .showImageOnLoading(R.drawable.ic_launcher) // 设置图片下载期间显示的图片
+                .showImageOnLoading(0) // 设置图片下载期间显示的图片
                 .showImageForEmptyUri(R.drawable.icon_tab_my_head_male) // 设置图片Uri为空或是错误的时候显示的图片
                 .showImageOnFail(R.drawable.ic_launcher) // 设置图片加载或解码过程中发生错误显示的图片
                 .cacheInMemory(true) // 设置下载的图片是否缓存在内存中
@@ -136,6 +136,9 @@ public class MyApplication extends Application {
                 .displayer(new SimpleBitmapDisplayer())
                 .imageScaleType(ImageScaleType.EXACTLY)
                 .build(); // 构建完成
+
+//        ImageLoader.getInstance().clearDiskCache();
+//        ImageLoader.getInstance().clearMemoryCache();
 
 
     }

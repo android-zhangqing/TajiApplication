@@ -2,6 +2,7 @@ package com.zhangqing.taji.view;
 
 import android.content.Context;
 import android.graphics.Color;
+import android.os.Handler;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -44,6 +45,10 @@ import java.util.List;
 public class FragmentHomeHotViewFirst extends LinearLayout {
     private final int MESSAGE_SCALE_ANIMATION = 131;
 
+    private static final int STATUS_NORMAL = 1;//分页加载空闲状态
+    private static final int STATUS_LOADING = 2;//分页加载中
+    private static final int STATUS_END = 3;//分页加载已尾页
+
     private GridViewWithHeaderAndFooter mGridView;
     private PullableBaseAdapter mGridViewAdapter;
 
@@ -55,7 +60,8 @@ public class FragmentHomeHotViewFirst extends LinearLayout {
     private ViewPager mPagerInside;
     private LinearLayout mPagerInsideContainer;
 
-    private int current_page = 1;
+    private int current_page = 0;
+    private int current_loading_status = STATUS_NORMAL;
 
     private TextView mFootTextView;
 
@@ -71,29 +77,32 @@ public class FragmentHomeHotViewFirst extends LinearLayout {
         mPagerInsideAdapter = new ChildViewPagerAdapter(context, mPagerInsideContainer, 6);
         mPagerInside.setAdapter(mPagerInsideAdapter);
 
-        UserClass.getInstance().doGetDongTaiBanner(new VolleyInterface(getContext().getApplicationContext()) {
+        new Handler().postDelayed(new Runnable() {
             @Override
-            public void onMySuccess(JSONObject jsonObject) {
-                try {
-                    mPagerInsideAdapter.updateUrl(jsonObject.getJSONArray("data"));
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-            }
+            public void run() {
+                UserClass.getInstance().doGetDongTaiBanner(new VolleyInterface(getContext().getApplicationContext()) {
+                    @Override
+                    public void onMySuccess(JSONObject jsonObject) {
+                        try {
+                            mPagerInsideAdapter.updateUrl(jsonObject.getJSONArray("data"));
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
 
-            @Override
-            public void onMyError(VolleyError error) {
+                    @Override
+                    public void onMyError(VolleyError error) {
 
+                    }
+                });
             }
-        });
+        }, 2000);
+
         mPagerInside.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
 
             @Override
             public void onPageSelected(int arg0) {
                 mPagerInsideAdapter.updatePointContainer(arg0);
-
-                //Log.e("mPagerInside", "onPageSelected " + arg0);
-
             }
 
             @Override
@@ -135,7 +144,15 @@ public class FragmentHomeHotViewFirst extends LinearLayout {
      * 上拉加载数据
      */
     private void addDataToAdapter() {
-        UserClass.getInstance().doGetDongTai(current_page, new VolleyInterface(getContext().getApplicationContext()) {
+        /**
+         * 判断当前加载状态，normal空闲时才加载。正在加载下一页或已加载到尾页时不再请求
+         */
+        if (current_loading_status != STATUS_NORMAL) return;
+        current_loading_status = STATUS_LOADING;
+        /**
+         * current_page初始化时为0  为1时表示获取第一页
+         */
+        UserClass.getInstance().doGetDongTai(++current_page, new VolleyInterface(getContext().getApplicationContext()) {
             @Override
             public void onMySuccess(JSONObject jsonObject) {
                 if (current_page == 1) {
@@ -145,14 +162,18 @@ public class FragmentHomeHotViewFirst extends LinearLayout {
 
                 if (mGridViewAdapter.onAddData(jsonObject) != 20) {
                     mFootTextView.setText("没有了呢~~");
+                    current_loading_status = STATUS_END;
+                } else {
+                    mFootTextView.setText("正在加载...");
+                    current_loading_status = STATUS_NORMAL;
                 }
-                ;
             }
 
             @Override
             public void onMyError(VolleyError error) {
                 if (current_page == 1)
                     mSwipeRefreshLayout.setRefreshing(false);
+                current_loading_status = STATUS_NORMAL;
                 mFootTextView.setText("网络错误");
             }
         });
@@ -188,9 +209,7 @@ public class FragmentHomeHotViewFirst extends LinearLayout {
 
                 switch (scrollState) {
                     case SCROLL_STATE_IDLE: {//停止滑动
-                        if (mGridView.getLastVisiblePosition() == totalItemCount - 1 && !mFootTextView.getText().toString().equals("没有了呢~~")) {
-                            current_page++;
-                            mFootTextView.setText("正在加载...");
+                        if (mGridView.getLastVisiblePosition() == totalItemCount - 1) {
                             addDataToAdapter();
                         }
                         break;
@@ -249,7 +268,8 @@ public class FragmentHomeHotViewFirst extends LinearLayout {
 
                     @Override
                     public void onRefresh() {
-                        current_page = 1;
+                        current_page = 0;
+                        current_loading_status = STATUS_NORMAL;
                         mFootTextView.setText("");
                         addDataToAdapter();
                     }
