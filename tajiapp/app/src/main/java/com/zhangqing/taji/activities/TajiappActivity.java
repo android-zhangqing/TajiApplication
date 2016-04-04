@@ -1,6 +1,5 @@
 package com.zhangqing.taji.activities;
 
-import android.animation.Animator;
 import android.app.ActivityManager;
 import android.app.AlertDialog;
 import android.app.Fragment;
@@ -16,11 +15,8 @@ import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.view.animation.AccelerateInterpolator;
-import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
-import android.view.animation.BounceInterpolator;
-import android.view.animation.TranslateAnimation;
+import android.view.animation.AnimationUtils;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Toast;
@@ -31,7 +27,6 @@ import com.zhangqing.taji.R;
 import com.zhangqing.taji.activities.login.LoginActivity;
 import com.zhangqing.taji.base.UserClass;
 import com.zhangqing.taji.base.VolleyInterface;
-import com.zhangqing.taji.util.AnimationUtil;
 import com.zhangqing.taji.view.BottomBar;
 import com.zhangqing.taji.view.BottomBar.OnTabClickListener;
 import com.zhangqing.taji.view.TopBar;
@@ -56,7 +51,7 @@ public class TajiappActivity extends FragmentActivity implements OnTabClickListe
     private LinearLayout mPublishLeft;
     private LinearLayout mPublishRight;
     private View mPublishBg;
-    private View mPublishBgBg;
+    private View mPublishClickableBg;
     private boolean isShowingPublish = false;
 
 
@@ -87,7 +82,7 @@ public class TajiappActivity extends FragmentActivity implements OnTabClickListe
         mPublishRight = (LinearLayout) findViewById(R.id.main_publish_right);
 
         mPublishBg = (View) findViewById(R.id.main_publish_bg);
-        mPublishBgBg = (View) findViewById(R.id.main_publish_bg_bg);
+        mPublishClickableBg = (View) findViewById(R.id.main_publish_clickable_bg);
 
 
         if (UserClass.getInstance().reLoadSharedPreferences() == false) {
@@ -239,30 +234,62 @@ public class TajiappActivity extends FragmentActivity implements OnTabClickListe
         topBar.switchToParent(TajiappActivity.this, whichParent);
     }
 
+    public void tabClickPublishBtn(View v) {
+        tabClickPublishBtn();
+    }
+
     @Override
     public void tabClickPublishBtn() {
 
         if (!isShowingPublish) {
+            mPublishClickableBg.setVisibility(View.VISIBLE);
             isShowingPublish = true;
 
             // mPublishBgBg.setAlpha(1f);
             //AnimationUtil.startAnimationByMyself(mPublishLeft, -200, -100, null);
-            AnimationUtil.startAnimationJumpIn(mPublishLeft, -200, -100, null);
-            AnimationUtil.startAnimationJumpIn(mPublishRight, 200, -100, null);
+//            AnimationUtil.startAnimationJumpIn(mPublishLeft, -200, -100, null);
+//            AnimationUtil.startAnimationJumpIn(mPublishRight, 200, -100, null);
             // AnimationUtil.startAnimationJumpIn(mPublishBg, 200, -100, null);
 
-            Animation a = new TranslateAnimation(Animation.RELATIVE_TO_SELF, 0.0f,
-                    Animation.RELATIVE_TO_SELF, 0.0f, Animation.RELATIVE_TO_SELF,
-                    1.0f, Animation.RELATIVE_TO_SELF, 0.0f);
-            a.setInterpolator(new BounceInterpolator());
-            a.setDuration(1000);
-            mPublishBg.setAnimation(a);
+            Animation a = AnimationUtils.loadAnimation(this, R.anim.publish_btn_left_show);
+            Animation b = AnimationUtils.loadAnimation(this, R.anim.publish_btn_right_show);
+            Animation c = AnimationUtils.loadAnimation(this, R.anim.publish_btn_bg_show2);
+//            Animation a = new TranslateAnimation(Animation.RELATIVE_TO_SELF, 0.0f,
+//                    Animation.RELATIVE_TO_SELF, 0.0f, Animation.RELATIVE_TO_SELF,
+//                    1.0f, Animation.RELATIVE_TO_SELF, 0.0f);
+
+//            a.setInterpolator(new BounceInterpolator());
+//            a.setDuration(1000);
+            a.setFillAfter(false);
+            b.setFillAfter(false);
+            mPublishLeft.setAnimation(a);
+            mPublishRight.setAnimation(b);
+            mPublishBg.setAnimation(c);
+            mPublishLeft.setVisibility(View.VISIBLE);
+            mPublishRight.setVisibility(View.VISIBLE);
             mPublishBg.setVisibility(View.VISIBLE);
+
+
+            //mPublishLeft.setVisibility(View.VISIBLE);
         } else {
+            mPublishClickableBg.setVisibility(View.GONE);
             isShowingPublish = false;
 
 //            AnimationUtil.startAnimationFadeOut(mPublishLeft, null);
 //            AnimationUtil.startAnimationFadeOut(mPublishRight, null);
+
+            Animation a = AnimationUtils.loadAnimation(this, R.anim.publish_btn_left_hide);
+            Animation b = AnimationUtils.loadAnimation(this, R.anim.publish_btn_right_hide);
+            Animation c = AnimationUtils.loadAnimation(this, R.anim.publish_btn_bg_hide2);
+            a.setFillAfter(false);
+            b.setFillAfter(false);
+
+            mPublishLeft.setAnimation(a);
+            mPublishRight.setAnimation(b);
+            mPublishBg.setAnimation(c);
+            mPublishLeft.setVisibility(View.GONE);
+            mPublishRight.setVisibility(View.GONE);
+            mPublishBg.setVisibility(View.GONE);
 //
 //            Animation a = new TranslateAnimation(Animation.RELATIVE_TO_SELF, 0.0f,
 //                    Animation.RELATIVE_TO_SELF, 0.0f, Animation.RELATIVE_TO_SELF,
@@ -271,28 +298,28 @@ public class TajiappActivity extends FragmentActivity implements OnTabClickListe
 //            a.setDuration(500);
 //            mPublishBg.setAnimation(a);
 //            mPublishBg.setVisibility(View.GONE);
-            Animation a = new AlphaAnimation(1, 0);
-            a.setDuration(400);
-            a.setFillAfter(false);
-            a.setAnimationListener(new Animation.AnimationListener() {
-                @Override
-                public void onAnimationStart(Animation animation) {
-
-                }
-
-                @Override
-                public void onAnimationEnd(Animation animation) {
-                    mPublishLeft.setAlpha(0);
-                    mPublishRight.setAlpha(0);
-                    mPublishBg.setVisibility(View.GONE);
-                }
-
-                @Override
-                public void onAnimationRepeat(Animation animation) {
-
-                }
-            });
-            mPublishBgBg.startAnimation(a);
+            // Animation a = new AlphaAnimation(1, 0);
+//            a.setDuration(400);
+//            a.setFillAfter(false);
+//            a.setAnimationListener(new Animation.AnimationListener() {
+//                @Override
+//                public void onAnimationStart(Animation animation) {
+//
+//                }
+//
+//                @Override
+//                public void onAnimationEnd(Animation animation) {
+//                    mPublishLeft.setAlpha(0);
+//                    mPublishRight.setAlpha(0);
+//                    mPublishBg.setVisibility(View.GONE);
+//                }
+//
+//                @Override
+//                public void onAnimationRepeat(Animation animation) {
+//
+//                }
+//            });
+//            mPublishBgBg.startAnimation(a);
             //  AnimationUtil.startAnimationFadeOut(mPublishRight, null);
             // mPublishBg.setVisibility(View.INVISIBLE);
 

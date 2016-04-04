@@ -28,90 +28,129 @@
     <!--android:layout_height="50dp"-->
     <!--app:layout_scrollFlags="scroll|enterAlways" />-->
 
-    <com.zhangqing.taji.view.TopBar
-        android:id="@+id/topbar"
-        android:layout_width="fill_parent"
-        android:layout_height="@dimen/topbar_height"
-        myview:topposition="0"></com.zhangqing.taji.view.TopBar>
-
-
-    <!--</android.support.design.widget.AppBarLayout>-->
-
 
     <RelativeLayout
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-        <FrameLayout
-            android:id="@+id/contentframe"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"></FrameLayout>
+            <com.zhangqing.taji.view.TopBar
+                android:id="@+id/topbar"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/topbar_height"
+                myview:topposition="0"></com.zhangqing.taji.view.TopBar>
+
+
+            <!--</android.support.design.widget.AppBarLayout>-->
+
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+
+                <FrameLayout
+                    android:id="@+id/contentframe"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"></FrameLayout>
+
+
+            </RelativeLayout>
+
+        </LinearLayout>
 
         <RelativeLayout
-            android:id="@+id/main_publish_bg_bg"
             android:layout_width="match_parent"
-            android:layout_height="180dp"
+            android:layout_height="match_parent"
             android:layout_alignParentBottom="true">
 
             <View
                 android:id="@+id/main_publish_bg"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="#503B66"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/publish_center_bg2"
                 android:visibility="gone" />
 
+            <View
+                android:id="@+id/main_publish_clickable_bg"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clickable="true"
+                android:onClick="tabClickPublishBtn"
+                android:visibility="gone" />
+            <!--android:background="#503B66"-->
             <LinearLayout
-                android:id="@+id/main_publish_left"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
                 android:layout_alignParentBottom="true"
-                android:layout_centerHorizontal="true"
-                android:alpha="0"
-                android:gravity="center_horizontal"
-                android:orientation="vertical">
+                android:orientation="horizontal">
 
-                <ImageView
 
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:src="@drawable/icon_publish_left" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="2dp"
+                <LinearLayout
+                    android:id="@+id/main_publish_left"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/press_bg"
+                    android:clickable="true"
                     android:gravity="center"
-                    android:text="上传照片/视频" />
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <ImageView
+
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:src="@drawable/icon_publish_left" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:gravity="center"
+                        android:text="上传照片/视频"
+                        android:textColor="@android:color/darker_gray" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/main_publish_right"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/press_bg"
+                    android:clickable="true"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:src="@drawable/icon_publish_right" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="拍摄照片/视频"
+                        android:textColor="@android:color/darker_gray" />
+                </LinearLayout>
             </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/main_publish_right"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_centerHorizontal="true"
-                android:alpha="0"
-                android:gravity="center_horizontal"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:src="@drawable/icon_publish_right" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="2dp"
-                    android:text="拍摄照片/视频" />
-            </LinearLayout>
-
 
         </RelativeLayout>
 
+
     </RelativeLayout>
+
+
     <!--</android.support.design.widget.CoordinatorLayout>-->
 
     <com.zhangqing.taji.view.BottomBar

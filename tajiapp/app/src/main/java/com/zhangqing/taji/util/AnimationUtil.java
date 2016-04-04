@@ -148,7 +148,9 @@ public class AnimationUtil {
         PropertyValuesHolder pvhScaleY = PropertyValuesHolder.ofKeyframe("scaleY", keyframes);
 
         ObjectAnimator yxBouncer = ObjectAnimator.ofPropertyValuesHolder(imageView, pvhY, pvhX, pvhAlpha, pvhScaleX, pvhScaleY).setDuration(1000);
-        yxBouncer.setInterpolator(new BounceInterpolator());//弹跳多次
+        yxBouncer.setInterpolator(new AccelerateInterpolator());//弹跳多次
+//        yxBouncer.setRepeatMode(ObjectAnimator.REVERSE);
+//        yxBouncer.setRepeatCount(1);
         //yxBouncer.setInterpolator(new AccelerateDecelerateInterpolator());
         //yxBouncer.setInterpolator(new AccelerateDecelerateInterpolator());
         if (l != null)
