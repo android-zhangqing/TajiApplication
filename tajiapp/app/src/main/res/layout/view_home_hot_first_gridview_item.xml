@@ -58,6 +58,8 @@
         android:layout_alignBottom="@id/home_hot_page_first_gridview_imgview"
         android:layout_toRightOf="@id/home_hot_page_gridview_circle_img"
         android:gravity="bottom"
+        android:singleLine="true"
+        android:textSize="12sp"
         android:text="第一次画彩铅"
         android:textColor="#E3E1E1" />
 
