@@ -2,10 +2,14 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_marginTop="5dp"
     android:background="#402F52"
-    android:orientation="vertical"
+    android:orientation="vertical">
 
-    >
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#362239" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,21 +18,18 @@
         android:orientation="horizontal">
 
         <ImageView
-            android:id="@+id/home_hot_then_icon_iv"
+            android:id="@+id/home_hot_then_avatar"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_margin="15dp"
-            android:scaleType="centerInside"
-            android:src="@drawable/icon_tab_home_hot_loading_avatar"
-
-            />
+            android:scaleType="centerInside" />
 
         <TextView
+            android:id="@+id/home_hot_then_name"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-
-            android:text="清风无恒"
+            android:text=""
             android:textColor="#A766B1"
             android:textSize="@dimen/textsize_bar_first" />
 
@@ -37,6 +38,7 @@
             android:layout_height="wrap_content"
             android:layout_marginRight="20dp"
             android:background="@drawable/home_hot_btn_concern_bg"
+            android:clickable="true"
             android:paddingBottom="5dp"
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
@@ -46,22 +48,24 @@
 
     </LinearLayout>
 
-    <LinearLayout
+    <com.zhangqing.taji.view.ComplicatedMediaView
+        android:id="@+id/home_hot_then_media"
         android:layout_width="match_parent"
-        android:layout_height="220dp"
-        android:background="@android:color/black"
+        android:layout_height="200dp"
+        android:background="@android:color/darker_gray"
         android:orientation="vertical">
 
 
-    </LinearLayout>
+    </com.zhangqing.taji.view.ComplicatedMediaView>
 
     <TextView
+        android:id="@+id/home_hot_then_content"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
         android:layout_marginLeft="@dimen/margin_left"
         android:layout_marginRight="@dimen/margin_left"
         android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
         android:text="就是喜欢这样淡淡的水彩！"
         android:textColor="@color/textcolor_normal_white" />
 
@@ -69,34 +73,44 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
-        android:layout_marginLeft="@dimen/margin_left">
+        android:layout_marginLeft="@dimen/margin_left"
+        android:orientation="horizontal">
 
         <TextView
+            android:id="@+id/home_hot_then_label_parent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
             android:background="@drawable/lable_bg"
             android:paddingBottom="2dp"
             android:paddingLeft="12dp"
             android:paddingRight="12dp"
             android:paddingTop="2dp"
-            android:text="绘画"
-            android:textColor="@color/textcolor_normal_white"
+            android:text=""
+            android:textColor="@color/textcolor_normal_white" />
 
-            />
+        <LinearLayout
+            android:id="@+id/home_hot_then_label_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+        </LinearLayout>
 
     </LinearLayout>
 
-    <View
+    <ImageView
         android:layout_width="match_parent"
-        android:layout_height="2px"
+        android:layout_height="1dp"
         android:layout_marginLeft="@dimen/margin_left"
         android:layout_marginRight="@dimen/margin_left"
-        android:background="#808080" />
+        android:scaleType="fitXY"
+        android:src="@drawable/icon_tab_home_divider" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#402F53"
         android:orientation="horizontal">
 
         <LinearLayout
@@ -119,6 +133,7 @@
                 />
 
             <TextView
+                android:id="@+id/home_hot_then_count_forward"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
@@ -140,7 +155,7 @@
 
         <LinearLayout
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@drawable/press_bg"
             android:clickable="true"
@@ -158,6 +173,7 @@
                 />
 
             <TextView
+                android:id="@+id/home_hot_then_count_comment"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:gravity="center"
@@ -178,7 +194,7 @@
 
         <LinearLayout
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@drawable/press_bg"
             android:clickable="true"
@@ -194,6 +210,7 @@
                 android:src="@drawable/icon_tab_home_hot_favor" />
 
             <TextView
+                android:id="@+id/home_hot_then_count_like"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:gravity="center"
@@ -205,5 +222,9 @@
         </LinearLayout>
     </LinearLayout>
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#362239" />
 
 </LinearLayout>

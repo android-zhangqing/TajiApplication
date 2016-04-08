@@ -10,6 +10,7 @@ import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.Volley;
 import com.nostra13.universalimageloader.cache.disc.impl.UnlimitedDiskCache;
 import com.nostra13.universalimageloader.cache.disc.naming.Md5FileNameGenerator;
+import com.nostra13.universalimageloader.cache.memory.impl.UsingFreqLimitedMemoryCache;
 import com.nostra13.universalimageloader.cache.memory.impl.WeakMemoryCache;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
@@ -89,8 +90,8 @@ public class MyApplication extends Application {
                 .threadPriority(Thread.NORM_PRIORITY - 2)
                 .denyCacheImageMultipleSizesInMemory()
                 .diskCacheFileNameGenerator(new Md5FileNameGenerator()) //将保存的时候的URI名称用MD5 加密
-                .memoryCache(new WeakMemoryCache())
-                        //.memoryCache(new UsingFreqLimitedMemoryCache(2 * 1024 * 1024))
+                //.memoryCache(new WeakMemoryCache())
+                        .memoryCache(new UsingFreqLimitedMemoryCache(2 * 1024 * 1024))
                         //.memoryCacheSize(2 * 1024 * 1024) // 内存缓存的最大值
                 .diskCacheSize(50 * 1024 * 1024)  // SD卡缓存的最大值
                 .tasksProcessingOrder(QueueProcessingType.LIFO)

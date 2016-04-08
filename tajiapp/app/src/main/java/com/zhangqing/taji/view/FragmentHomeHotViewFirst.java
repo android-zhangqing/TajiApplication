@@ -43,11 +43,13 @@ import java.util.List;
  * 首页-热门-广场
  */
 public class FragmentHomeHotViewFirst extends LinearLayout {
-    private final int MESSAGE_SCALE_ANIMATION = 131;
 
     private static final int STATUS_NORMAL = 1;//分页加载空闲状态
     private static final int STATUS_LOADING = 2;//分页加载中
     private static final int STATUS_END = 3;//分页加载已尾页
+
+    private int current_page = 0;
+    private int current_loading_status = STATUS_NORMAL;
 
     private GridViewWithHeaderAndFooter mGridView;
     private PullableBaseAdapter mGridViewAdapter;
@@ -60,8 +62,6 @@ public class FragmentHomeHotViewFirst extends LinearLayout {
     private ViewPager mPagerInside;
     private LinearLayout mPagerInsideContainer;
 
-    private int current_page = 0;
-    private int current_loading_status = STATUS_NORMAL;
 
     private TextView mFootTextView;
 
@@ -96,7 +96,7 @@ public class FragmentHomeHotViewFirst extends LinearLayout {
                     }
                 });
             }
-        }, 2000);
+        }, 500);
 
         mPagerInside.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
 
@@ -152,7 +152,7 @@ public class FragmentHomeHotViewFirst extends LinearLayout {
         /**
          * current_page初始化时为0  为1时表示获取第一页
          */
-        UserClass.getInstance().doGetDongTai(++current_page, new VolleyInterface(getContext().getApplicationContext()) {
+        UserClass.getInstance().doGetDongTai("", ++current_page, new VolleyInterface(getContext().getApplicationContext()) {
             @Override
             public void onMySuccess(JSONObject jsonObject) {
                 if (current_page == 1) {

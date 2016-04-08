@@ -382,6 +382,10 @@ public class TajiappActivity extends FragmentActivity implements OnTabClickListe
 
     @Override
     public void onBackPressed() {
+        if(isShowingPublish){
+            tabClickPublishBtn();
+            return;
+        }
         long current = System.currentTimeMillis();
         //Log.e("onBackPressed", current + "|" + lastPressTime + "|" + (current - lastPressTime));
         if (current - lastPressTime > 2000) {

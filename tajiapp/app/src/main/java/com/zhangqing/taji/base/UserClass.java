@@ -290,9 +290,14 @@ public class UserClass {
 
     }
 
-    public void doGetDongTai(int page, VolleyInterface vif) {
-
-        String url = URLHEAD + "/DongTai?" + "userid=" + userId + "&openid=" + openId + "&page=" + page + "&count=20";
+    public void doGetDongTai(String tag, int page, VolleyInterface vif) {
+        String _tag = "";
+        try {
+            _tag = URLEncoder.encode(tag, "utf-8");
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+        String url = URLHEAD + "/DongTai?" + "userid=" + userId + "&openid=" + openId + "&tag=" + _tag + "&page=" + page + "&count=20";
         VolleyRequest.RequestGet(url, "doGetDongTai", vif);
 
     }

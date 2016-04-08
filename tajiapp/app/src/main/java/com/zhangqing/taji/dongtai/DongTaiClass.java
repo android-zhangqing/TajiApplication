@@ -11,15 +11,19 @@ public class DongTaiClass {
     public String mId = "";
     //发布人ID
     public String mUserId = "";
+    //发布人昵称
+    public String mUserName = "";
     //作者ID
     public String mAutherId = "";
     //@人的ID
     public String mAtId = "";
 
+    //所属大类，如绘画
+    public String mTag = "";
     //类别
     public String mType = "";
-    //标题
-    public String mTitle = "";
+    //内容
+    public String mContent = "";
     //发布时间
     public String mTime = "";
 
@@ -34,16 +38,26 @@ public class DongTaiClass {
     public String mCountForward = "";
     //浏览
     public String mCountViews = "";
+    //评论
+    public String mCountComment = "";
 
     //是否师徒圈
     public boolean isMasterCircle = false;
 
 
+    /**
+     * 构造一条动态
+     *
+     * @param jsonObject 传入json数据
+     * @throws JSONException 仅当无动态id时才抛出异常
+     */
     public DongTaiClass(JSONObject jsonObject) throws JSONException {
         //Log.e("DongTaiClass", "start|" + jsonObject.toString());
 
         //动态ID
-        mId = jsonObject.getString("id");
+        mId = jsonObject.getString("tid");
+        //发布人昵称
+        mUserName = jsonObject.optString("username", "");
         //发布人ID
         mUserId = jsonObject.optString("userid", "");
         //作者ID
@@ -52,9 +66,11 @@ public class DongTaiClass {
         mAtId = jsonObject.optString("at", "");
 
         //类别
+        mTag = jsonObject.optString("tag", "");
+        //类别
         mType = jsonObject.optString("type", "");
         //标题
-        mTitle = jsonObject.optString("content", "");
+        mContent = jsonObject.optString("content", "");
         //发布时间
         mTime = jsonObject.optString("time", "");
 
@@ -77,6 +93,6 @@ public class DongTaiClass {
 
     @Override
     public String toString() {
-        return mId + "|" + mTitle + "|" + mTime + "|" + mUserId+"|"+ mCoverUrl;
+        return mId + "|" + mContent + "|" + mTime + "|" + mUserId + "|" + mCoverUrl;
     }
 }

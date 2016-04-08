@@ -73,7 +73,6 @@ public class FragmentMy extends Fragment implements View.OnClickListener {
         Log.e("FragmentMy", "onCreateView");
         View v = inflater.inflate(R.layout.fragment_my, container, false);
 
-
         mNameTextView = (TextView) v.findViewById(R.id.my_head_name);
         mSchoolTextView = (TextView) v.findViewById(R.id.my_head_school);
         mSignTextView = (TextView) v.findViewById(R.id.my_head_sign);

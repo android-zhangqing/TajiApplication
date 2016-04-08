@@ -46,6 +46,9 @@ public class SkillSettingActivity extends AppCompatActivity implements View.OnCl
 
     private int current_selected_num = 0;
 
+    /**
+     * 用于展示动画效果的悬浮imageview
+     */
     private List<ImageView> mImageViewList = new ArrayList<>();
 
     private String mInterestResult = "";

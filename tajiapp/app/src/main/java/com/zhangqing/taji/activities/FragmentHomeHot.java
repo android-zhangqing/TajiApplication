@@ -59,7 +59,7 @@ public class FragmentHomeHot extends Fragment implements OnClickListener {
         for (int i = 0; i < categoryList.size(); i++) {
             TextView tempTextView = new TextView(getActivity());
             tempTextView.setTag(categoryList.get(i));
-            tempTextView.setText(categoryList.get(i).getCategoryName());
+            tempTextView.setText(categoryList.get(i).categoryName);
             LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
                     LinearLayout.LayoutParams.WRAP_CONTENT,
                     LinearLayout.LayoutParams.FILL_PARENT);
@@ -96,7 +96,8 @@ public class FragmentHomeHot extends Fragment implements OnClickListener {
             if (i == 0) {
                 view1 = new FragmentHomeHotViewFirst(getActivity());
             } else {
-                view1 = new FragmentHomeHotViewThen(getActivity());
+
+                view1 = new FragmentHomeHotViewThen(getActivity(),categoryList.get(i).categoryName);
             }
 
             //Log.e("aaaaaaaaaaaa", "2");
@@ -155,7 +156,6 @@ public class FragmentHomeHot extends Fragment implements OnClickListener {
                 textViewList.get(i).setTextColor(
                         getActivity().getResources().getColor(
                                 R.color.textcolor_bar_second_select));
-
             } else {
                 textViewList.get(i).setBackgroundResource(0);
                 textViewList.get(i).setTextColor(
@@ -178,7 +178,13 @@ public class FragmentHomeHot extends Fragment implements OnClickListener {
         if (currenCategory == 0) {
             ((FragmentHomeHotViewFirst) (viewList.get(currenCategory)))
                     .perfromOnPageSelected();
-        }// Toast.makeText(getActivity(), textViewLeft +
+        }else{
+            ((FragmentHomeHotViewThen) (viewList.get(currenCategory)))
+                    .perfromOnPageSelected();
+
+        }
+
+        // Toast.makeText(getActivity(), textViewLeft +
         // "q"+scrollView.getScrollX()+"a"+scrollView.getWidth()+"b"+textViewWidth,
         // 1000).show();
 
@@ -188,8 +194,9 @@ public class FragmentHomeHot extends Fragment implements OnClickListener {
     public void onClick(View v) {
         if (v.getTag().equals(categoryList.get(currenCategory)))
             return;
-        currenCategory = ((Category) v.getTag()).getCategoryNum();
+        currenCategory = ((Category) v.getTag()).categoryNum;
         viewPager.setCurrentItem(currenCategory, true);
+
 
         // updateCategoryView();
 
@@ -283,38 +290,14 @@ class AdsType {
 }
 
 class Category {
-    private int categoryNum;
-    private String categoryId;
-    private String categoryName;
-
-    public int getCategoryNum() {
-        return categoryNum;
-    }
-
-    public void setCategoryNum(int categoryNum) {
-        this.categoryNum = categoryNum;
-    }
+    int categoryNum;
+    String categoryId;
+    String categoryName;
 
     public Category(int categoryNum, String categoryId, String categoryName) {
         super();
         this.categoryNum = categoryNum;
         this.categoryId = categoryId;
-        this.categoryName = categoryName;
-    }
-
-    public String getCategoryId() {
-        return categoryId;
-    }
-
-    public void setCategoryId(String categoryId) {
-        this.categoryId = categoryId;
-    }
-
-    public String getCategoryName() {
-        return categoryName;
-    }
-
-    public void setCategoryName(String categoryName) {
         this.categoryName = categoryName;
     }
 

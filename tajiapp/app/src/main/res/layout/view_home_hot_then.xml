@@ -5,13 +5,13 @@
     android:background="@color/bgcolor_bar_first"
     android:orientation="vertical">
 
-    <android.support.v4.widget.SwipeRefreshLayout
+    <com.zhangqing.taji.view.MySwipeRefreshLayout
         android:id="@+id/home_hot_then_swipe_ly_then"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <ListView
-            android:id="@+id/home_hot_then_listview"
+        <com.zhangqing.taji.adapter.LoadMoreRecyclerView
+            android:id="@+id/home_hot_then_recyclerview"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:background="@color/bgcolor_bar_first"
@@ -19,7 +19,7 @@
             android:dividerHeight="10dp"
             android:focusable="true"
             android:focusableInTouchMode="true"
-            android:scrollbars="none"></ListView>
-    </android.support.v4.widget.SwipeRefreshLayout>
+            android:scrollbars="none"></com.zhangqing.taji.adapter.LoadMoreRecyclerView>
+    </com.zhangqing.taji.view.MySwipeRefreshLayout>
 
 </LinearLayout>

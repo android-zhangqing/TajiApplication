@@ -100,7 +100,7 @@ public class HomeHotGridAdapter extends PullableBaseAdapter {
         } else {
             viewHolder = (ViewHolder) convertView.getTag();
         }
-        viewHolder.tv_title.setText(mItemsList.get(position).mTitle);
+        viewHolder.tv_title.setText(mItemsList.get(position).mContent);
         viewHolder.tv_like.setText("❤" + mItemsList.get(position).mCountLike);
 
         viewHolder.iv_avatar.setImageBitmap(null);

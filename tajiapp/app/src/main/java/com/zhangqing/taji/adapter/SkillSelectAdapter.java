@@ -98,7 +98,10 @@ public class SkillSelectAdapter extends BaseAdapter {
      */
     public int setSelector(String selector) {
         int count=0;
-        if (selector == null || selector.equals("")) return count;
+        if (selector == null || selector.equals("")) {
+            notifyDataSetChanged();
+            return count;
+        }
         Log.e("setSelector", selector);
         String[] selecArr = selector.contains(".") ? selector.split("\\.") : new String[]{selector};
         for (int i = 0; i < hashMapList.size(); i++) {
@@ -140,7 +143,6 @@ public class SkillSelectAdapter extends BaseAdapter {
      */
     public int initData(JSONObject jsonObject) {
         JSONArray jsonArray;
-
 
         try {
             jsonArray = jsonObject.getJSONArray("data");
