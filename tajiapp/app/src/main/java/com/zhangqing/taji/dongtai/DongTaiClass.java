@@ -85,6 +85,8 @@ public class DongTaiClass {
         mCountForward = jsonObject.optString("forward", "");
         //浏览
         mCountViews = jsonObject.optString("views", "");
+        //评论
+        mCountComment = jsonObject.optString("comment", "");
 
         //是否师徒圈
         isMasterCircle = jsonObject.optString("mastercircle", "").equals("1");

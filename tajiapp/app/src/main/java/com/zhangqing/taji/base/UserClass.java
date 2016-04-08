@@ -8,6 +8,7 @@ import android.util.Log;
 import com.zhangqing.taji.R;
 import com.zhangqing.taji.activities.login.Test;
 import com.zhangqing.taji.util.Md5Util;
+import com.zhangqing.taji.util.UploadUtil;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -306,6 +307,24 @@ public class UserClass {
 
         String url = URLHEAD + "/DongTai/banner?" + "userid=" + userId + "&openid=" + openId;
         VolleyRequest.RequestGet(url, "doGetDongTaiBanner", vif);
+
+    }
+
+    /**
+     * 上传图片
+     *
+     * @param picPath 待上传图片的路径
+     * @param l       上传监听
+     */
+    public void doUploadPhoto(String picPath, UploadUtil.OnUploadProcessListener l) {
+
+        if (null != l)
+            UploadUtil.getInstance().setOnUploadProcessListener(l); //设置监听器监听上传状态
+
+        Map<String, String> params = new HashMap<String, String>();
+        params.put("userid", userId);
+        params.put("openid", openId);
+        UploadUtil.getInstance().uploadFile(picPath, "file", "http://taji.whutech.com/Upload/uploadImg", params);
 
     }
 

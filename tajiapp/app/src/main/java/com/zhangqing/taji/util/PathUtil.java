@@ -7,17 +7,17 @@ import android.os.Environment;
  * Created by Administrator on 2016/2/23.
  */
 
-public class Util {
-    private static Util util;
+public class PathUtil {
+    private static PathUtil util;
     public static int flag = 0;
 
-    private Util() {
+    private PathUtil() {
 
     }
 
-    public static Util getInstance() {
+    public static PathUtil getInstance() {
         if (util == null) {
-            util = new Util();
+            util = new PathUtil();
         }
         return util;
     }

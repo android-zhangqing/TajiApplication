@@ -1,6 +1,5 @@
 package com.zhangqing.taji.activities;
 
-import android.app.Activity;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
@@ -18,8 +17,6 @@ import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
-import android.view.animation.BounceInterpolator;
-import android.view.animation.Interpolator;
 import android.view.animation.TranslateAnimation;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
@@ -27,13 +24,13 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.rockerhieu.emojicon.EmojiconEditText;
 import com.rockerhieu.emojicon.EmojiconGridFragment;
 import com.rockerhieu.emojicon.EmojiconsFragment;
 import com.rockerhieu.emojicon.emoji.Emojicon;
-import com.zhangqing.taji.MyApplication;
 import com.zhangqing.taji.R;
 import com.zhangqing.taji.base.UserClass;
 import com.zhangqing.taji.util.UploadUtil;
@@ -67,7 +64,7 @@ public class PublishActivity extends FragmentActivity implements View.OnClickLis
 
     private LinearLayout parentViewEdittext;
     private FrameLayout parentViewFaceGrid;
-    private LinearLayout parentViewPublishBtn;
+    private TextView PublishBtn;
 
     // private ViewPager viewPagerFace;
     private EmojiconEditText editText;
@@ -84,13 +81,13 @@ public class PublishActivity extends FragmentActivity implements View.OnClickLis
                 case MSG_RESIZE: {
                     if (msg.arg1 == BIGGER) {
                         // findViewById(R.id.publish_parentview_cover).setVisibility(View.VISIBLE);
-                        parentViewPublishBtn.setVisibility(View.VISIBLE);
+                        PublishBtn.setVisibility(View.VISIBLE);
                         isImmShowing = false;
                         //parentViewFaceGrid.setVisibility(View.VISIBLE);
                     } else {
                         // findViewById(R.id.publish_parentview_cover).setVisibility(View.GONE);
                         isImmShowing = true;
-                        parentViewPublishBtn.setVisibility(View.GONE);
+                        PublishBtn.setVisibility(View.GONE);
 
                         hideFaceGrid();
 
@@ -187,35 +184,25 @@ public class PublishActivity extends FragmentActivity implements View.OnClickLis
 
     /**
      * 选择图片后，获取图片的路径
+     *
      * @param requestCode
      * @param data
      */
-    private void doPhoto(int requestCode,Intent data)
-    {
+    private void doPhoto(int requestCode, Intent data) {
 
         String[] pojo = {MediaStore.Images.Media.DATA};
-        Cursor cursor = managedQuery(photoUri, pojo, null, null,null);
-        if(cursor != null )
-        {
+        Cursor cursor = managedQuery(photoUri, pojo, null, null, null);
+        if (cursor != null) {
             int columnIndex = cursor.getColumnIndexOrThrow(pojo[0]);
             cursor.moveToFirst();
             picPath = cursor.getString(columnIndex);
             cursor.close();
         }
         Log.i("doPhoto", "imagePath = " + picPath);
-        if(picPath != null && ( picPath.endsWith(".png") || picPath.endsWith(".PNG") ||picPath.endsWith(".jpg") ||picPath.endsWith(".JPG") ))
-        {
-            UploadUtil uploadUtil = UploadUtil.getInstance();
-            ;
-            uploadUtil.setOnUploadProcessListener(this); //设置监听器监听上传状态
-
-            Map<String, String> params = new HashMap<String, String>();
-            params.put("userid", UserClass.getInstance().userId);
-            params.put("openid", UserClass.getInstance().openId);
-            uploadUtil.uploadFile(picPath,
-                    "file", "http://taji.whutech.com/Upload/uploadImg", params);
+        if (picPath != null && (picPath.endsWith(".png") || picPath.endsWith(".PNG") || picPath.endsWith(".jpg") || picPath.endsWith(".JPG"))) {
+            UserClass.getInstance().doUploadPhoto(picPath, this);
             //"/storage/emulated/0/123.png",
-        }else{
+        } else {
             Toast.makeText(this, "选择图片文件不正确", Toast.LENGTH_LONG).show();
         }
     }
@@ -265,7 +252,7 @@ public class PublishActivity extends FragmentActivity implements View.OnClickLis
 
         parentViewEdittext = (LinearLayout) findViewById(R.id.publish_parentview_edittext);
         parentViewFaceGrid = (FrameLayout) findViewById(R.id.publish_container_facegrid);
-        parentViewPublishBtn = (LinearLayout) findViewById(R.id.publish_parentview_publish_btn);
+        PublishBtn = (TextView) findViewById(R.id.publish_publish_btn);
 
 
 //        pointList = new ArrayList<ImageView>();
@@ -374,9 +361,9 @@ public class PublishActivity extends FragmentActivity implements View.OnClickLis
         boolean ifWait = false;
 
 //        if (isShowFaceGrid | isShowImm) {
-//            parentViewPublishBtn.setVisibility(View.GONE);
+//            PublishBtn.setVisibility(View.GONE);
 //        } else {
-//            parentViewPublishBtn.setVisibility(View.VISIBLE);
+//            PublishBtn.setVisibility(View.VISIBLE);
 //        }
 
 

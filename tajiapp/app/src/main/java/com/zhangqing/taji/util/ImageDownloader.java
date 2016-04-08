@@ -40,7 +40,7 @@ public class ImageDownloader {
         }
         String imageName = "";
         if(url != null){
-            imageName = Util.getInstance().getImageName(url);
+            imageName = PathUtil.getInstance().getImageName(url);
         }
         Bitmap bitmap = getBitmapFromFile(mActivity,imageName,path);
         //先从软引用中拿数据
@@ -56,8 +56,8 @@ public class ImageDownloader {
             Log.e("needCreateNewTask",url);
             MyAsyncTask task = new MyAsyncTask(url, mImageView, path,mActivity,download);
             if(mImageView != null){
-                Log.e(TAG, "执行MyAsyncTask --> " + Util.flag);
-                Util.flag ++;
+                Log.e(TAG, "执行MyAsyncTask --> " + PathUtil.flag);
+                PathUtil.flag ++;
                 task.execute();
                 //将对应的url对应的任务存起来
                 map.put(url, task);
@@ -129,10 +129,10 @@ public class ImageDownloader {
             File file = null;
             String real_path = "";
             try {
-                if(Util.getInstance().hasSDCard()){
-                    real_path = Util.getInstance().getExtPath() + (path != null && path.startsWith("/") ? path : "/" + path);
+                if(PathUtil.getInstance().hasSDCard()){
+                    real_path = PathUtil.getInstance().getExtPath() + (path != null && path.startsWith("/") ? path : "/" + path);
                 }else{
-                    real_path = Util.getInstance().getPackagePath(mActivity) + (path != null && path.startsWith("/") ? path : "/" + path);
+                    real_path = PathUtil.getInstance().getPackagePath(mActivity) + (path != null && path.startsWith("/") ? path : "/" + path);
                 }
                 file = new File(real_path, imageName);
                 if(file.exists())
@@ -157,10 +157,10 @@ public class ImageDownloader {
         File file = null;
         String real_path = "";
         try {
-            if(Util.getInstance().hasSDCard()){
-                real_path = Util.getInstance().getExtPath() + (path != null && path.startsWith("/") ? path : "/" + path);
+            if(PathUtil.getInstance().hasSDCard()){
+                real_path = PathUtil.getInstance().getExtPath() + (path != null && path.startsWith("/") ? path : "/" + path);
             }else{
-                real_path = Util.getInstance().getPackagePath(mActivity) + (path != null && path.startsWith("/") ? path : "/" + path);
+                real_path = PathUtil.getInstance().getPackagePath(mActivity) + (path != null && path.startsWith("/") ? path : "/" + path);
             }
             file = new File(real_path, imageName);
             if(!file.exists()){
@@ -169,7 +169,7 @@ public class ImageDownloader {
             }
             file.createNewFile();
             FileOutputStream fos = null;
-            if(Util.getInstance().hasSDCard()){
+            if(PathUtil.getInstance().hasSDCard()){
                 fos = new FileOutputStream(file);
             }else{
                 fos = mActivity.openFileOutput(imageName, Context.MODE_PRIVATE);
@@ -202,10 +202,10 @@ public class ImageDownloader {
         File file = null;
         String real_path = "";
         try {
-            if(Util.getInstance().hasSDCard()){
-                real_path = Util.getInstance().getExtPath() + (path != null && path.startsWith("/") ? path : "/" + path);
+            if(PathUtil.getInstance().hasSDCard()){
+                real_path = PathUtil.getInstance().getExtPath() + (path != null && path.startsWith("/") ? path : "/" + path);
             }else{
-                real_path = Util.getInstance().getPackagePath(mActivity) + (path != null && path.startsWith("/") ? path : "/" + path);
+                real_path = PathUtil.getInstance().getPackagePath(mActivity) + (path != null && path.startsWith("/") ? path : "/" + path);
             }
             file = new File(real_path, imageName);
             if(file != null)
@@ -243,7 +243,7 @@ public class ImageDownloader {
                     URL c_url = new URL(url);
                     InputStream bitmap_data = c_url.openStream();
                     data = BitmapFactory.decodeStream(bitmap_data);
-                    String imageName = Util.getInstance().getImageName(url);
+                    String imageName = PathUtil.getInstance().getImageName(url);
                     if(!setBitmapToFile(path,mActivity,imageName, data)){
                         removeBitmapFromFile(path,mActivity,imageName);
                     }

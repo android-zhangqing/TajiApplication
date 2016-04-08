@@ -382,7 +382,7 @@ public class TajiappActivity extends FragmentActivity implements OnTabClickListe
 
     @Override
     public void onBackPressed() {
-        if(isShowingPublish){
+        if (isShowingPublish) {
             tabClickPublishBtn();
             return;
         }
@@ -404,4 +404,11 @@ public class TajiappActivity extends FragmentActivity implements OnTabClickListe
     public void onTrimMemory(int level) {
         super.onTrimMemory(level);
     }
+
+    public void onClickUpload(View v) {
+        tabClickPublishBtn();
+        startActivity(new Intent(this, PublishActivity.class));
+        overridePendingTransition(R.anim.activity_open_bottom_in,0);
+    }
+
 }

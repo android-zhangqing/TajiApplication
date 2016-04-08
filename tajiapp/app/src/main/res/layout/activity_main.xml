@@ -101,6 +101,7 @@
                     android:layout_weight="1"
                     android:background="@drawable/press_bg"
                     android:clickable="true"
+                    android:onClick="onClickUpload"
                     android:gravity="center"
                     android:orientation="vertical"
                     android:visibility="gone">
@@ -116,7 +117,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="2dp"
                         android:gravity="center"
-                        android:text="上传照片/视频"
+                        android:text="上传"
                         android:textColor="@android:color/darker_gray" />
                 </LinearLayout>
 
@@ -140,7 +141,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="2dp"
-                        android:text="拍摄照片/视频"
+                        android:text="拍摄"
                         android:textColor="@android:color/darker_gray" />
                 </LinearLayout>
             </LinearLayout>
