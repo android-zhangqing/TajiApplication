@@ -5,12 +5,15 @@ import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
+import android.os.Parcelable;
 import android.provider.MediaStore;
 import android.support.v4.app.FragmentActivity;
+import android.support.v4.content.CursorLoader;
 import android.support.v4.view.PagerAdapter;
 import android.text.InputType;
 import android.util.Log;
@@ -33,12 +36,18 @@ import com.rockerhieu.emojicon.EmojiconsFragment;
 import com.rockerhieu.emojicon.emoji.Emojicon;
 import com.zhangqing.taji.R;
 import com.zhangqing.taji.base.UserClass;
+import com.zhangqing.taji.util.CameraUtil;
+import com.zhangqing.taji.util.ImageUtil;
 import com.zhangqing.taji.util.UploadUtil;
 import com.zhangqing.taji.view.ResizeLayout;
 
+import java.io.File;
+import java.io.IOException;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.net.NetworkInterface;
+import java.net.SocketException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -150,58 +159,71 @@ public class PublishActivity extends FragmentActivity implements View.OnClickLis
             }
         }
     }
+    @Override
+    public void onUploadDone(int responseCode, String message) {
+        Log.e("onUploadDone", message);
+        //Toast.makeText(PublishActivity.this,message,Toast.LENGTH_LONG).show();
+    }
 
+    @Override
+    public void onUploadProcess(int uploadSize) {
+        Log.e("onUploadProcess", uploadSize + "|");
+    }
 
-    /**
-     * 拍照获取图片
-     */
-    private void takePhoto() {
-//执行拍照前，应该先判断SD卡是否存在
-        String SDState = Environment.getExternalStorageState();
-        if (SDState.equals(Environment.MEDIA_MOUNTED)) {
-
-            Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);//"android.media.action.IMAGE_CAPTURE"
-/***
- * 需要说明一下，以下操作使用照相机拍照，拍照后的图片会存放在相册中的
- * 这里使用的这种方式有一个好处就是获取的图片是拍照后的原图
- * 如果不实用ContentValues存放照片路径的话，拍照后获取的图片为缩略图不清晰
- */
-            ContentValues values = new ContentValues();
-            photoUri = this.getContentResolver().insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, values);
-            intent.putExtra(android.provider.MediaStore.EXTRA_OUTPUT, photoUri);
-/**-----------------*/
-            startActivityForResult(intent, SELECT_PIC_BY_TACK_PHOTO);
-        } else {
-            Toast.makeText(this, "内存卡不存在", Toast.LENGTH_LONG).show();
-        }
+    @Override
+    public void initUpload(int fileSize) {
+        Log.e("initUpload", fileSize + "|");
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        doPhoto(requestCode, data);
+        //super.onActivityResult(requestCode, resultCode, data);
+        Log.e("onActivityResult", requestCode + "|" + resultCode + "|" + (data == null ? "null" : (data)));
+
+        if (data == null || data.getData() == null) return;
+        Uri uri=data.getData();
+        Log.e("uri",uri.getPath());
+
+       // UserClass.getInstance().doUploadPhoto(uri.getPath(), this);
+        doPhoto(uri);
+        //doPhoto(requestCode, data);
     }
 
     /**
      * 选择图片后，获取图片的路径
      *
-     * @param requestCode
-     * @param data
+     * @param uri
      */
-    private void doPhoto(int requestCode, Intent data) {
-
-        String[] pojo = {MediaStore.Images.Media.DATA};
-        Cursor cursor = managedQuery(photoUri, pojo, null, null, null);
-        if (cursor != null) {
-            int columnIndex = cursor.getColumnIndexOrThrow(pojo[0]);
-            cursor.moveToFirst();
-            picPath = cursor.getString(columnIndex);
-            cursor.close();
+    private void doPhoto(Uri uri) {
+        File uploadFile=null;
+        String path=uri.getPath();
+        if (path == null || !((path.endsWith(".png") || path.endsWith(".PNG") || path.endsWith(".jpg") || path.endsWith(".JPG")))) {
+            String[] pojo = {MediaStore.Images.Media.DATA};
+            Cursor cursor = new CursorLoader(this, uri, pojo, null, null, null).loadInBackground();
+            //Cursor cursor = managedQuery(uri, pojo, null, null, null);
+            if (cursor != null) {
+                int columnIndex = cursor.getColumnIndexOrThrow(pojo[0]);
+                cursor.moveToFirst();
+                path = cursor.getString(columnIndex);
+                cursor.close();
+            }
         }
-        Log.i("doPhoto", "imagePath = " + picPath);
-        if (picPath != null && (picPath.endsWith(".png") || picPath.endsWith(".PNG") || picPath.endsWith(".jpg") || picPath.endsWith(".JPG"))) {
-            UserClass.getInstance().doUploadPhoto(picPath, this);
-            //"/storage/emulated/0/123.png",
+
+        Log.e("doPhoto", "imagePath = " + path);
+        if (path != null && (path.endsWith(".png") || path.endsWith(".PNG") || path.endsWith(".jpg") || path.endsWith(".JPG"))) {
+            String newname=path.substring(0,path.lastIndexOf("/")+1)+"DCIM"+System.currentTimeMillis()+path.substring(path.lastIndexOf("."),path.length());
+            Log.e("newname",newname+"|");
+            try {
+                ImageUtil.ratioAndGenThumb(path,newname,600,800,false);
+                UserClass.getInstance().doUploadPhoto(newname, this);
+            } catch (IOException e) {
+                e.printStackTrace();
+                Log.e("compressAndGenImage","OnError");
+                UserClass.getInstance().doUploadPhoto(path, this);
+            }
+
+
+            // /storage/emulated/0/DCIM/Camera/IMG_20160303_140435.jpg
         } else {
             Toast.makeText(this, "选择图片文件不正确", Toast.LENGTH_LONG).show();
         }
@@ -224,7 +246,11 @@ public class PublishActivity extends FragmentActivity implements View.OnClickLis
 //            }
 //        }.execute(new Void[]{});
 
-        takePhoto();
+        Intent intent = CameraUtil.selectPhoto();
+        if (null != intent) {
+
+            startActivityForResult(intent, SELECT_PIC_BY_TACK_PHOTO);
+        }
 
     }
 
@@ -288,33 +314,6 @@ public class PublishActivity extends FragmentActivity implements View.OnClickLis
 
         parentViewFaceGrid.setVisibility(View.GONE);
         faceToggle.setTag(R.drawable.icon_tab_publish_face);
-//        viewPagerFace.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-//            @Override
-//            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-//
-//            }
-//
-//            @Override
-//            public void onPageSelected(int position) {
-//                for (int i = 0; i < pointList.size(); i++) {
-//                    if (i == position) {
-//                        pointList.get(i).setImageResource(R.drawable.icon_viewpager_point_selected);
-//                    } else {
-//                        pointList.get(i).setImageResource(R.drawable.icon_viewpager_point_unselected);
-//                    }
-//                }
-//
-//            }
-//
-//            @Override
-//            public void onPageScrollStateChanged(int state) {
-//
-//            }
-//        });
-//
-//        MyFacePagerAdapter myFacePagerAdapter=new MyFacePagerAdapter(this);
-//        //myFacePagerAdapter.setOnClickListener(this);
-//        viewPagerFace.setAdapter(myFacePagerAdapter);
 
     }
 
@@ -495,20 +494,7 @@ public class PublishActivity extends FragmentActivity implements View.OnClickLis
         EmojiconsFragment.input(editText, emojicon);
     }
 
-    @Override
-    public void onUploadDone(int responseCode, String message) {
-        Log.e("onUploadDone", message);
-    }
 
-    @Override
-    public void onUploadProcess(int uploadSize) {
-        Log.e("onUploadProcess", uploadSize + "|");
-    }
-
-    @Override
-    public void initUpload(int fileSize) {
-        Log.e("initUpload", fileSize + "|");
-    }
 
 
     class MyFacePagerAdapter extends PagerAdapter {

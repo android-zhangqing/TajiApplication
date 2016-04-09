@@ -1,8 +1,10 @@
 package com.zhangqing.taji.util;
 
 
+import android.support.annotation.NonNull;
 import android.util.Log;
 
+import java.io.ByteArrayOutputStream;
 import java.io.DataOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
@@ -11,6 +13,8 @@ import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.nio.Buffer;
+import java.nio.charset.Charset;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.UUID;
@@ -216,13 +220,23 @@ public class UploadUtil {
             if (res == 200) {
                 Log.e(TAG, "request success");
                 InputStream input = conn.getInputStream();
-                StringBuffer sb1 = new StringBuffer();
-                int ss;
-                while ((ss = input.read()) != -1) {
-                    sb1.append((char) ss);
+
+                ByteArrayOutputStream baos = new ByteArrayOutputStream();
+                int length = 0;
+                byte[] buffer = new byte[1024];
+                while ((length = input.read(buffer)) != -1)
+                {
+                    baos.write(buffer, 0, length);
                 }
-                result = sb1.toString();
-                Log.e(TAG, "result : " + result);
+                input.close();
+                baos.close();
+
+//                while ((ss = input.read()) != -1) {
+//                    sb1.append((char) ss);
+//                }
+                result=new String(baos.toByteArray(),"utf-8");
+                //result = sb1.toString();
+                Log.e(TAG, "result : " +result);
                 sendMessage(UPLOAD_SUCCESS_CODE, "上传结果："
                         + result);
                 return;
@@ -313,8 +327,5 @@ public class UploadUtil {
         return requestTime;
     }
 
-    public static interface uploadProcessListener {
-
-    }
 
 }

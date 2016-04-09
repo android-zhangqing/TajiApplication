@@ -4,10 +4,8 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.util.Log;
 
 import com.android.volley.VolleyError;
-import com.zhangqing.taji.MyApplication;
 import com.zhangqing.taji.activities.TajiappActivity;
 import com.zhangqing.taji.base.UserClass;
 import com.zhangqing.taji.base.VolleyInterface;
@@ -28,7 +26,7 @@ public class CoverActivity extends Activity {
         mStartTimeMillis = System.currentTimeMillis();
 
 
-        UserClass.getInstance().getUserInfo(new VolleyInterface(this.getApplicationContext()) {
+        UserClass.getInstance().getMyUserInfo(new VolleyInterface(this.getApplicationContext()) {
             @Override
             public void onMySuccess(JSONObject jsonObject) {
                 if (!UserClass.getInstance().saveSharedPreference(jsonObject)) {

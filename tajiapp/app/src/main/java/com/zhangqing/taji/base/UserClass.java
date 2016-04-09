@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.util.Log;
 
+import com.zhangqing.taji.MyApplication;
 import com.zhangqing.taji.R;
 import com.zhangqing.taji.activities.login.Test;
 import com.zhangqing.taji.util.Md5Util;
@@ -324,7 +325,7 @@ public class UserClass {
         Map<String, String> params = new HashMap<String, String>();
         params.put("userid", userId);
         params.put("openid", openId);
-        UploadUtil.getInstance().uploadFile(picPath, "file", "http://taji.whutech.com/Upload/uploadImg", params);
+        UploadUtil.getInstance().uploadFile(picPath, "file", "http://taji.whutech.com/Upload", params);
 
     }
 
@@ -394,9 +395,14 @@ public class UserClass {
     }
 
 
-    public void getUserInfo(VolleyInterface vif) {
+    public void getMyUserInfo(VolleyInterface vif) {
         VolleyRequest.RequestGet(URLHEAD + "/User/userInfo?userid=" + userId + "&openid=" + openId,
-                "getUserInfo", vif);
+                "getMyUserInfo", vif);
+    }
+
+    public void getOthersInfo(String uid, VolleyInterface vif) {
+        VolleyRequest.RequestGet(URLHEAD + "/User/getUserInfo?userid=" + userId + "&openid=" + openId + "&uid=" + uid,
+                "getOthersInfo", vif);
     }
 
     public void getSkillListAll(VolleyInterface vif) {
@@ -422,9 +428,9 @@ public class UserClass {
         VolleyRequest.RequestGet(url, "getFollowList", vif);
     }
 
-    public void getOthersUserInfo(String userid, VolleyInterface vif) {
+    public void getOthersAvatar(String userid, VolleyInterface vif) {
         String url = URLHEAD + "/User/getAvatar?uid=" + userid + "&userid=" + userId + "&openid=" + openId;
-        VolleyRequest.RequestGet(url, "getOthersUserInfo" + userid, vif);
+        VolleyRequest.RequestGet(url, "getOthersAvatar" + userid, vif);
     }
 
     public void searchForPerson(String word, VolleyInterface vif) {
@@ -437,84 +443,6 @@ public class UserClass {
         VolleyRequest.RequestGet(url, "searchForPerson", vif);
     }
 
-
-    public String uploadFile3(String fileName) {
-        String result = "";
-        String BOUNDARY = "---------------------------7db1c523809b2";//数据分割线
-        File file = new File(fileName);   // 要上传的文件
-        String host = "http://taji.whutech.com/Upload/uploadImg?userid=" + userId + "&openid=" + openId; // 这个字符串就是要上传的带参数的服务器地址
-
-        try {
-            byte[] after = ("--" + BOUNDARY + "--\r\n").getBytes("UTF-8");
-
-            // 构造URL和Connection
-            URL url = new URL(host);
-            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-
-            // 设置HTTP协议的头属性
-            conn.setRequestMethod("POST");
-            conn.setRequestProperty("Content-Type", "multipart/form-data; boundary=" + BOUNDARY);
-            conn.setRequestProperty("Content-Length", String.valueOf(file.length()));
-            conn.setRequestProperty("HOST", url.getHost());
-            conn.setDoOutput(true);
-
-            // 得到Connection的OutputStream流，准备写数据
-            OutputStream out = conn.getOutputStream();
-            InputStream in = new FileInputStream(file);
-
-
-            // 写文件数据。因为服务器地址已经带有参数了，所以这里只要直接写入文件部分就可以了。
-            byte[] buf = new byte[1024];
-            int len;
-            while ((len = in.read(buf)) != -1) {
-                out.write(buf, 0, len);
-            }
-
-            // 数据结束标志，整个HTTP报文就构造结束了。
-            //out.write(after);
-
-            in.close();
-            out.close();
-
-            Log.e("carter", "queryParam 返回码为: " + conn.getResponseCode());
-            Log.e("carter", "queryParam 返回信息为: " + conn.getResponseMessage());
-
-            InputStream is = conn.getInputStream();
-            int ch;
-            StringBuffer b = new StringBuffer();
-            Log.e("uploadFile", "3");
-            while ((ch = is.read()) != -1) {
-                b.append((char) ch);
-            }
-
-            result = b.toString();
-            Log.e("re", b + "|");
-        } catch (MalformedURLException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        } catch (IOException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-
-        return result;
-    }
-
-    public String uploadFile2(String uploadFile) {
-        Map<String, String> map = new HashMap<String, String>();
-        map.put("userid", userId);
-        map.put("openid", openId);
-
-        try {
-            new Test().uploadForm(map, "files", new File(uploadFile), "1rwrs1.jpg", "http://taji.whutech.com/Upload/uploadImg");
-        } catch (IOException e) {
-            e.printStackTrace();
-            Log.e("IOException", "1");
-        }
-
-        return "a";
-
-    }
 
     public static byte[] File2byte(String filePath) {
         byte[] buffer = null;
@@ -536,150 +464,6 @@ public class UserClass {
             e.printStackTrace();
         }
         return buffer;
-    }
-
-    public String uploadFile(String uploadFile) {
-        Log.e("uploadFile", "start");
-        String end = "\r\n";
-        String twoHyphens = "--";
-        String boundary = "WebKitFormBoundaryNXRvAQmIgK6GYVKS";
-        String actionUrl = "http://taji.whutech.com/Upload/uploadImg";
-
-        String props[] = {"userid", "openid", "submit"};
-        String values[] = new String[3];
-        values[0] = userId;
-        values[1] = openId;
-        values[2] = "上传文件";
-
-        byte[] file = File2byte(uploadFile);
-        Log.e("file", file.length + "|");
-
-
-        StringBuffer sb = new StringBuffer();
-// 发送每个字段:
-        sb.append("\r\n");
-        for (int i = 0; i < 3; i++) {
-            sb = sb.append(twoHyphens);
-            sb = sb.append(boundary);
-            sb = sb.append("\r\n");
-            sb = sb.append("Content-Disposition: form-data; name=\"" + props[i] + "\"\r\n\r\n");
-            try {
-                sb = sb.append(URLEncoder.encode(values[i], "utf-8"));
-            } catch (UnsupportedEncodingException e) {
-                e.printStackTrace();
-            }
-            sb = sb.append("\r\n");
-        }
-        sb = sb.append(twoHyphens);
-        sb = sb.append(boundary);
-        sb = sb.append("\r\n");
-        sb = sb.append("Content-Disposition: form-data; name=\"file\"; filename=\"1.jpg\"");
-        sb = sb.append("Content-Type: image/jpeg\r\n\r\n");
-        byte[] data = sb.toString().getBytes();
-        byte[] end_data = ("\r\n" + twoHyphens + boundary + "--\r\n").getBytes();
-
-
-        try
-
-        {
-            Log.e("uploadFile", "1");
-            URL url = new URL(actionUrl);
-            HttpURLConnection con = (HttpURLConnection) url.openConnection();
-          /* 允许Input、Output，不使用Cache */
-            con.setDoInput(true);
-            con.setDoOutput(true);
-            con.setUseCaches(false);
-          /* 设置传送的method=POST */
-            con.setRequestMethod("POST");
-          /* setRequestProperty */
-            con.setRequestProperty("Connection", "Keep-Alive");
-            con.setRequestProperty("Charset", "UTF-8");
-            con.setRequestProperty("User-Agent", "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.101 Safari/537.36");
-            con.setRequestProperty("Content-Length", String.valueOf(data.length + file.length + end_data.length));
-            con.setRequestProperty("Content-Type",
-                    "multipart/form-data;boundary=" + boundary);
-          /* 设置DataOutputStream */
-            OutputStream os = con.getOutputStream();
-            os.write(data);
-            os.write(file);
-            os.write(end_data);
-            Log.e("data", new String(data, "utf-8") + "|");
-            Log.e("file", "mm");
-            Log.e("end_data", new String(end_data, "utf-8") + "|");
-            os.flush();
-            os.close();
-
-//            DataOutputStream ds =
-//                    new DataOutputStream(con.getOutputStream());
-////                        ds.write(data);
-////            os.write(file);
-//
-//
-//            ds.writeBytes(twoHyphens + boundary + end);
-//            ds.writeBytes("Content-Disposition: form-data; " +
-//                    "name=\"userid\"" + end + end + userId + end);
-//
-//            ds.writeBytes(twoHyphens + boundary + end);
-//            ds.writeBytes("Content-Disposition: form-data; " +
-//                    "name=\"openid\"" + end + end + openId + end);
-//
-//            ds.writeBytes(twoHyphens + boundary + end);
-//            ds.writeBytes("Content-Disposition: form-data; name=\"file\"; filename=\"1.jpg\"\r\n" +
-//                    "Content-Type: image/jpeg" + end + end);
-//
-
-//            ds.writeBytes("userid=" + userId + "&openid=" +
-//                    openId );
-//          /* 取得文件的FileInputStream */
-//            FileInputStream fStream = new FileInputStream(uploadFile);
-//          /* 设置每次写入1024bytes */
-//            int bufferSize = 1024;
-//            byte[] buffer = new byte[bufferSize];
-//            int length = -1;
-//          /* 从文件读取数据至缓冲区 */
-//            Log.e("uploadFile", "2");
-//            while ((length = fStream.read(buffer)) != -1) {
-//            /* 将资料写入DataOutputStream中 */
-//                ds.write(buffer, 0, length);
-//            }
-//
-//            ds.writeBytes(end + twoHyphens + boundary + end);
-//            ds.writeBytes("Content-Disposition: form-data; " +
-//                    "name=\"submit\"" + end + end + URLEncoder.encode("上传文件", "utf-8"));
-//
-//            ds.writeBytes(end);
-//            ds.writeBytes(twoHyphens + boundary + "--" + end);
-//          /* close streams */
-//            fStream.close();
-//            ds.flush();
-          /* 取得Response内容 */
-            InputStream is = con.getInputStream();
-
-            String result = "";
-            BufferedReader br = new BufferedReader(new InputStreamReader(is, "utf8"));
-            try {
-
-                result = result + br.readLine();
-                Log.e("uploadFile", "3" + "|" + result + "|" + userId + "|" + openId);
-            } catch (IOException io) {
-
-            }
-            int ch;
-
-            Log.e("uploadFile", "3" + "|" + result);
-
-          /* 将Response显示于Dialog */
-            //   showDialog("上传成功" + b.toString().trim());
-          /* 关闭DataOutputStream */
-            //         ds.close();
-            //os.close();
-            return result;
-        } catch (Exception e) {
-            Log.e("uploadFile", "failupload");
-            return "failupload";
-            // showDialog("上传失败" + e);
-        }
-
     }
 
 

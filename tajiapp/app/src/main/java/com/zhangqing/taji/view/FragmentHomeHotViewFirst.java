@@ -96,7 +96,7 @@ public class FragmentHomeHotViewFirst extends LinearLayout {
                     }
                 });
             }
-        }, 500);
+        }, 1500);
 
         mPagerInside.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
 

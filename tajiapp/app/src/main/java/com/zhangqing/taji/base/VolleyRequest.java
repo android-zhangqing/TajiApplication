@@ -43,7 +43,7 @@ public class VolleyRequest {
         stringRequest.setTag(tag);
 
         MyApplication.getRequestQeuee().add(stringRequest);
-        MyApplication.getRequestQeuee().start();
+        //MyApplication.getRequestQeuee().start();
     }
 
 

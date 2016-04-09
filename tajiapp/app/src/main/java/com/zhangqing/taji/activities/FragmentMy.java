@@ -92,7 +92,7 @@ public class FragmentMy extends Fragment implements View.OnClickListener {
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                UserClass.getInstance().getUserInfo(new VolleyInterface(getActivity().getApplicationContext()) {
+                UserClass.getInstance().getMyUserInfo(new VolleyInterface(getActivity().getApplicationContext()) {
                     @Override
                     public void onMySuccess(JSONObject jsonObject) {
                         swipeRefreshLayout.setRefreshing(false);

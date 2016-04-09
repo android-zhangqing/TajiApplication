@@ -86,7 +86,7 @@ public class MyApplication extends Application {
         File cacheDir = StorageUtils.getOwnCacheDirectory(context, "universalimageloader/Cache");
         ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(context)
                 .memoryCacheExtraOptions(480, 800) // max width, max height，即保存的每个缓存文件的最大长宽
-                .threadPoolSize(3) //线程池内线程的数量
+                .threadPoolSize(2) //线程池内线程的数量
                 .threadPriority(Thread.NORM_PRIORITY - 2)
                 .denyCacheImageMultipleSizesInMemory()
                 .diskCacheFileNameGenerator(new Md5FileNameGenerator()) //将保存的时候的URI名称用MD5 加密
@@ -135,7 +135,7 @@ public class MyApplication extends Application {
                 .cacheInMemory(true) // 设置下载的图片是否缓存在内存中
                 .cacheOnDisk(true) // 设置下载的图片是否缓存在SD卡中
                 .displayer(new SimpleBitmapDisplayer())
-                .imageScaleType(ImageScaleType.EXACTLY)
+                //.imageScaleType(ImageScaleType.EXACTLY)
                 .build(); // 构建完成
 
 //        ImageLoader.getInstance().clearDiskCache();

@@ -35,6 +35,9 @@ import com.zhangqing.taji.view.TopBar.OnTopBarClickListener;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.LineNumberReader;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -71,6 +74,38 @@ public class TajiappActivity extends FragmentActivity implements OnTabClickListe
         tintManager.setStatusBarTintResource(R.color.bgcolor_systembar);//状态栏无背景
     }
 
+    private String getMac() {
+        String macSerial = null;
+        String str = "";
+
+        /* 1 cpu号：
+          文件在： /proc/cpuinfo
+            通过Adb shell 查看：
+            adb shell cat /proc/cpuinfo
+            2 mac 地址
+            文件路径 /sys/class/net/wlan0/address
+            adb shell  cat /sys/class/net/wlan0/address
+            xx:xx:xx:xx:xx:aa
+         */
+        try {
+            Process pp = Runtime.getRuntime().exec("cat /sys/class/net/wlan0/address ");
+            InputStreamReader ir = new InputStreamReader(pp.getInputStream());
+            LineNumberReader input = new LineNumberReader(ir);
+
+            for (; null != str; ) {
+                str = input.readLine();
+                if (str != null) {
+                    macSerial = str.trim();
+                    break;
+                }
+            }
+        } catch (IOException ex) {
+            // 赋予默认值
+            macSerial="MAC获取失败";
+            ex.printStackTrace();
+        }
+        return macSerial;
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -78,6 +113,18 @@ public class TajiappActivity extends FragmentActivity implements OnTabClickListe
         setTranslucentStatus();
         setContentView(R.layout.activity_main);
 
+        UserClass.getInstance().getOthersInfo("1002", new VolleyInterface(this.getApplicationContext()) {
+            @Override
+            public void onMySuccess(JSONObject jsonObject) {
+
+            }
+
+            @Override
+            public void onMyError(VolleyError error) {
+
+            }
+        });
+        //Toast.makeText(this,getMac(),Toast.LENGTH_LONG).show();
         mPublishLeft = (LinearLayout) findViewById(R.id.main_publish_left);
         mPublishRight = (LinearLayout) findViewById(R.id.main_publish_right);
 
@@ -98,11 +145,11 @@ public class TajiappActivity extends FragmentActivity implements OnTabClickListe
             @Override
             public UserInfo getUserInfo(String s) {
 
-                Log.e("getUserInfo", s + "|");
+                Log.e("getMyUserInfo", s + "|");
                 if (map.containsKey(s)) {
                     return map.get(s);
                 } else {
-                    UserClass.getInstance().getOthersUserInfo(s, new VolleyInterface(TajiappActivity.this.getApplicationContext()) {
+                    UserClass.getInstance().getOthersAvatar(s, new VolleyInterface(TajiappActivity.this.getApplicationContext()) {
                         @Override
                         public void onMySuccess(JSONObject jsonObject) {
                             Log.e("onMySuccess", jsonObject.toString());
@@ -408,7 +455,7 @@ public class TajiappActivity extends FragmentActivity implements OnTabClickListe
     public void onClickUpload(View v) {
         tabClickPublishBtn();
         startActivity(new Intent(this, PublishActivity.class));
-        overridePendingTransition(R.anim.activity_open_bottom_in,0);
+        overridePendingTransition(R.anim.activity_open_bottom_in, 0);
     }
 
 }

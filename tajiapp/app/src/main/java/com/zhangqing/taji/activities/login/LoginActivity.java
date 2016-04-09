@@ -10,7 +10,6 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.android.volley.VolleyError;
-import com.zhangqing.taji.MyApplication;
 import com.zhangqing.taji.R;
 import com.zhangqing.taji.activities.TajiappActivity;
 import com.zhangqing.taji.base.UserClass;
@@ -83,7 +82,7 @@ public class LoginActivity extends AppCompatActivity {
                 }
 
 
-                UserClass.getInstance().getUserInfo(new VolleyInterface(LoginActivity.this.getApplicationContext()) {
+                UserClass.getInstance().getMyUserInfo(new VolleyInterface(LoginActivity.this.getApplicationContext()) {
                     @Override
                     public void onMySuccess(JSONObject jsonObject) {
                         if (!UserClass.getInstance().saveSharedPreference(jsonObject)) {
