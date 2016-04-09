@@ -50,6 +50,8 @@ public class DongTaiAdapter extends RecyclerView.Adapter<DongTaiAdapter.MyViewHo
         holder.tv_count_comment.setText(dongTaiClass.mCountComment);
         holder.tv_count_like.setText(dongTaiClass.mCountLike);
 
+        holder.iv_avatar.setOnClickListener(new AvatarClickListener(mContext,dongTaiClass.mUserId,dongTaiClass.mUserName));
+
         holder.cmv_media.picSingleImageView.setImageResource(0);
         ImageLoader.getInstance().displayImage(dongTaiClass.mAvatarUrl, holder.iv_avatar);
         ImageLoader.getInstance().displayImage(dongTaiClass.mCoverUrl, holder.cmv_media.picSingleImageView);

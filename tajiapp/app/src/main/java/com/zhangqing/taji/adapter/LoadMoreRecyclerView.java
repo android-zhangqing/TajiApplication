@@ -54,6 +54,8 @@ public class LoadMoreRecyclerView extends RecyclerView {
      * 加载更多的监听-业务需要实现加载数据
      */
     private LoadMoreListener mListener;
+    private View mHeaderView;
+    private View mFooterView;
 
     public LoadMoreRecyclerView(Context context) {
         super(context);
@@ -175,13 +177,15 @@ public class LoadMoreRecyclerView extends RecyclerView {
         @Override
         public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
             if (viewType == TYPE_HEADER) {
-                return new HeaderViewHolder(LayoutInflater.from(parent.getContext()).inflate(
-                        mHeaderResId, parent, false));
+                return new HeaderViewHolder(mHeaderView);
+//                return new HeaderViewHolder(LayoutInflater.from(parent.getContext()).inflate(
+//                        mHeaderResId, parent, false));
             }
             if (viewType == TYPE_FOOTER) {
-                TextView tv=new TextView(parent.getContext());
-                tv.setText("正在加载");
-                return new FooterViewHolder(tv);
+//                TextView tv=new TextView(parent.getContext());
+//                tv.setText("正在加载");
+//                return new FooterViewHolder(tv);
+                return new FooterViewHolder(mFooterView);
             } else { // type normal
                 return mInternalAdapter.onCreateViewHolder(parent, viewType);
             }
@@ -228,6 +232,18 @@ public class LoadMoreRecyclerView extends RecyclerView {
 
         public void addHeaderView(int resId) {
             mHeaderResId = resId;
+        }
+        public void setHeaderView(View headerView){
+            mHeaderView=headerView;
+        }
+        public View getHeaderView(){
+            return mHeaderView;
+        }
+        public void setFooterView(View footerView){
+            mFooterView=footerView;
+        }
+        public View getFooterView(){
+            return mFooterView;
         }
     }
 

@@ -22,8 +22,8 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-
                 <include layout="@layout/merge_person_detail" />
+
 
                 <View
                     android:layout_width="match_parent"

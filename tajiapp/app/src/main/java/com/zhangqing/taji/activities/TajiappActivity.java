@@ -113,17 +113,6 @@ public class TajiappActivity extends FragmentActivity implements OnTabClickListe
         setTranslucentStatus();
         setContentView(R.layout.activity_main);
 
-        UserClass.getInstance().getOthersInfo("1002", new VolleyInterface(this.getApplicationContext()) {
-            @Override
-            public void onMySuccess(JSONObject jsonObject) {
-
-            }
-
-            @Override
-            public void onMyError(VolleyError error) {
-
-            }
-        });
         //Toast.makeText(this,getMac(),Toast.LENGTH_LONG).show();
         mPublishLeft = (LinearLayout) findViewById(R.id.main_publish_left);
         mPublishRight = (LinearLayout) findViewById(R.id.main_publish_right);
