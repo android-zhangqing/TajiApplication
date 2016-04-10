@@ -25,13 +25,16 @@ import io.rong.imlib.model.UserInfo;
  * Created by Administrator on 2016/2/22.
  */
 public class FragmentMessage extends Fragment {
-    Handler mHandler = new Handler() {
-        @Override
-        public void handleMessage(android.os.Message msg) {
-            ((TajiappActivity) getActivity()).bottomBar.setPoints(2, true);
-        }
-    };
 
+    @Override
+    public void onResume() {
+        super.onResume();
+
+        ((TajiappActivity) getActivity()).bottomBar.
+                setPoints(2, RongIM.getInstance().getRongIMClient().getTotalUnreadCount()!=0);
+
+
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -58,68 +61,68 @@ public class FragmentMessage extends Fragment {
         fragment.setUri(uri);
 
         //set Listener
-        RongIM.setOnReceiveMessageListener(new RongIMClient.OnReceiveMessageListener() {
-            @Override
-            public boolean onReceived(Message message, int i) {
-                Log.e("****onReceived****", i + "|" + new String(message.getContent().encode()) + "|" + message.getConversationType().getName() + "|" + message.getReceivedStatus().isRead());
-                if (!message.getReceivedStatus().isRead()) {
-                    mHandler.sendEmptyMessage(0);
-                }
-                return false;
-            }
-        });
+//        RongIM.setOnReceiveMessageListener(new RongIMClient.OnReceiveMessageListener() {
+//            @Override
+//            public boolean onReceived(Message message, int i) {
+//                Log.e("****onReceived****", i + "|" + new String(message.getContent().encode()) + "|" + message.getConversationType().getName() + "|" + message.getReceivedStatus().isRead());
+//                if (!message.getReceivedStatus().isRead()) {
+//                    mHandler.sendEmptyMessage(0);
+//                }
+//                return false;
+//            }
+//        });
 
-        RongIM.setConversationBehaviorListener(new RongIM.ConversationBehaviorListener() {
-            @Override
-            public boolean onUserPortraitClick(Context context, Conversation.ConversationType conversationType, UserInfo userInfo) {
-                return false;
-            }
-
-            @Override
-            public boolean onUserPortraitLongClick(Context context, Conversation.ConversationType conversationType, UserInfo userInfo) {
-                return false;
-            }
-
-            @Override
-            public boolean onMessageClick(Context context, View view, Message message) {
-                return false;
-            }
-
-            @Override
-            public boolean onMessageLinkClick(Context context, String s) {
-                return false;
-            }
-
-            @Override
-            public boolean onMessageLongClick(Context context, View view, Message message) {
-                return false;
-            }
-        });
-
-        RongIM.setConversationListBehaviorListener(new RongIM.ConversationListBehaviorListener() {
-            @Override
-            public boolean onConversationPortraitClick(Context context, Conversation.ConversationType conversationType, String s) {
-                return false;
-            }
-
-            @Override
-            public boolean onConversationPortraitLongClick(Context context, Conversation.ConversationType conversationType, String s) {
-                return false;
-            }
-
-            @Override
-            public boolean onConversationLongClick(Context context, View view, UIConversation uiConversation) {
-                return false;
-            }
-
-            @Override
-            public boolean onConversationClick(Context context, View view, UIConversation uiConversation) {
-                Log.e("ConversationListBeh",RongIM.getInstance().getRongIMClient().getTotalUnreadCount()+"");
-                return false;
-            }
-
-
-        });
+//        RongIM.setConversationBehaviorListener(new RongIM.ConversationBehaviorListener() {
+//            @Override
+//            public boolean onUserPortraitClick(Context context, Conversation.ConversationType conversationType, UserInfo userInfo) {
+//                return false;
+//            }
+//
+//            @Override
+//            public boolean onUserPortraitLongClick(Context context, Conversation.ConversationType conversationType, UserInfo userInfo) {
+//                return false;
+//            }
+//
+//            @Override
+//            public boolean onMessageClick(Context context, View view, Message message) {
+//                return false;
+//            }
+//
+//            @Override
+//            public boolean onMessageLinkClick(Context context, String s) {
+//                return false;
+//            }
+//
+//            @Override
+//            public boolean onMessageLongClick(Context context, View view, Message message) {
+//                return false;
+//            }
+//        });
+//
+//        RongIM.setConversationListBehaviorListener(new RongIM.ConversationListBehaviorListener() {
+//            @Override
+//            public boolean onConversationPortraitClick(Context context, Conversation.ConversationType conversationType, String s) {
+//                return false;
+//            }
+//
+//            @Override
+//            public boolean onConversationPortraitLongClick(Context context, Conversation.ConversationType conversationType, String s) {
+//                return false;
+//            }
+//
+//            @Override
+//            public boolean onConversationLongClick(Context context, View view, UIConversation uiConversation) {
+//                return false;
+//            }
+//
+//            @Override
+//            public boolean onConversationClick(Context context, View view, UIConversation uiConversation) {
+//                Log.e("ConversationListBeh",RongIM.getInstance().getRongIMClient().getTotalUnreadCount()+"");
+//                return false;
+//            }
+//
+//
+//        });
 
     }
 
