@@ -104,6 +104,8 @@ public class HomeHotGridAdapter extends PullableBaseAdapter {
         viewHolder.tv_like.setText("❤" + mItemsList.get(position).mCountLike);
 
         viewHolder.iv_avatar.setImageBitmap(null);
+        viewHolder.iv_avatar.setOnClickListener(new AvatarClickListener(mContext,
+                mItemsList.get(position).mUserId, mItemsList.get(position).mPersonInfo.username));
         viewHolder.iv_cover.setImageBitmap(null);
 
         ImageLoader.getInstance().displayImage(mItemsList.get(position).mAvatarUrl,

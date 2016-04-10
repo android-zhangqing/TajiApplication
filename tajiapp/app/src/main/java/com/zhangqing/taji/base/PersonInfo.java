@@ -12,23 +12,23 @@ public class PersonInfo {
     // "avatar":"http:\/\/taji.whutech.com\/uploads\/4.jpg","signature":"这个人很懒，什么都没说！",
     // "fans":"26","follow":"9","dongtai":"3","tudi":"0","interest":"搭配.滑板","skill":"游戏.摄影.手工",
     // "is_master":false,"is_follow":true}
-    String userid = "";
-    String username = "";
-    String sex = "";
-    String school = "";
-    String avatar = "";
-    String signature = "";
+    public String userid = "";
+    public String username = "";
+    public String sex = "";
+    public String school = "";
+    public String avatar = "";
+    public String signature = "";
 
-    String fans = "";
-    String follow = "";
-    String dongtai = "";
-    String tudi = "";
+    public String fans = "";
+    public String follow = "";
+    public String dongtai = "";
+    public String tudi = "";
 
-    String interest = "";
-    String skill = "";
+    public String interest = "";
+    public String skill = "";
 
-    boolean is_master;
-    boolean is_follow;
+    public boolean is_master;
+    public boolean is_follow;
 
     public PersonInfo(String userid, JSONObject jsonObject) throws JSONException {
         this.userid = userid;

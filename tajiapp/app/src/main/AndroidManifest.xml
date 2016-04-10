@@ -84,9 +84,8 @@
             android:launchMode="singleTop"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name=".activities.PersonDetailActivity"
+            android:name=".activities.OthersDetailActivity"
             android:label="@string/app_name"
-            android:launchMode="singleTop"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".activities.ModifyInterestSkillActivity"

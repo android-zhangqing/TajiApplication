@@ -1,21 +1,29 @@
 package com.zhangqing.taji.adapter;
 
 import android.content.Context;
+import android.os.Handler;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.android.volley.VolleyError;
 import com.nostra13.universalimageloader.core.ImageLoader;
+import com.zhangqing.taji.MyApplication;
 import com.zhangqing.taji.R;
+import com.zhangqing.taji.base.UserClass;
+import com.zhangqing.taji.base.VolleyInterface;
 import com.zhangqing.taji.dongtai.DongTaiClass;
 import com.zhangqing.taji.view.ComplicatedMediaView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,6 +32,16 @@ import java.util.List;
  * Created by zhangqing on 2016/4/8.
  */
 public class DongTaiAdapter extends RecyclerView.Adapter<DongTaiAdapter.MyViewHolder> {
+
+    private OnItemClickListener mOnItemClickListener = null;
+
+    public interface OnItemClickListener {
+        public void onItemClick();
+    }
+
+    public void setOnItemClickListener(OnItemClickListener l) {
+        this.mOnItemClickListener = l;
+    }
 
     private Context mContext;
 
@@ -41,21 +59,69 @@ public class DongTaiAdapter extends RecyclerView.Adapter<DongTaiAdapter.MyViewHo
     }
 
     @Override
-    public void onBindViewHolder(MyViewHolder holder, int position) {
-        DongTaiClass dongTaiClass = mDongTaiClassList.get(position);
-        holder.tv_name.setText(dongTaiClass.mUserName);
+    public void onBindViewHolder(final MyViewHolder holder, int position) {
+        final DongTaiClass dongTaiClass = mDongTaiClassList.get(position);
+
+        holder.tv_name.setText(dongTaiClass.mPersonInfo.username);
         holder.tv_content.setText(dongTaiClass.mContent);
         holder.tv_label_parent.setText(dongTaiClass.mTag);
+
         holder.tv_count_forward.setText(dongTaiClass.mCountForward);
         holder.tv_count_comment.setText(dongTaiClass.mCountComment);
         holder.tv_count_like.setText(dongTaiClass.mCountLike);
 
-        holder.iv_avatar.setOnClickListener(new AvatarClickListener(mContext,dongTaiClass.mUserId,dongTaiClass.mUserName));
+        holder.tv_follow.setText(dongTaiClass.mPersonInfo.is_follow ? "已订阅" : "+订阅");
+
+        holder.iv_avatar.setOnClickListener(new AvatarClickListener(mContext, dongTaiClass.mUserId, dongTaiClass.mPersonInfo.username));
+
+        holder.tv_follow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                UserClass.getInstance().doFollow(dongTaiClass.mUserId,
+                        !dongTaiClass.mPersonInfo.is_follow, new VolleyInterface(mContext.getApplicationContext()) {
+                    @Override
+                    public void onMySuccess(JSONObject jsonObject) {
+                        Log.e("json",jsonObject.toString());
+
+                    }
+
+                    @Override
+                    public void onMyError(VolleyError error) {
+
+                    }
+                });
+
+            }
+        });
+
+        holder.ll_count_forward_container.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final int last_count = Integer.valueOf(dongTaiClass.mCountForward);
+                holder.tv_count_forward.setText(last_count + 1 + "");
+
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        Toast.makeText(mContext, "转发失败", Toast.LENGTH_SHORT).show();
+                        holder.tv_count_forward.setText(last_count + "");
+                    }
+                }, 500);
+            }
+        });
+        holder.ll_count_like_container.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
 
         holder.cmv_media.picSingleImageView.setImageResource(0);
-        ImageLoader.getInstance().displayImage(dongTaiClass.mAvatarUrl, holder.iv_avatar);
+        ImageLoader.getInstance().displayImage(dongTaiClass.mAvatarUrl, holder.iv_avatar, MyApplication.getCircleDisplayImageOptions());
         ImageLoader.getInstance().displayImage(dongTaiClass.mCoverUrl, holder.cmv_media.picSingleImageView);
     }
+
 
     @Override
     public int getItemCount() {
@@ -77,15 +143,20 @@ public class DongTaiAdapter extends RecyclerView.Adapter<DongTaiAdapter.MyViewHo
      */
     public int addData(JSONArray jsonArray) {
         int count = 0;
+        int lastCount = getItemCount();
+        Log.e("lastCount", lastCount + "|");
         for (int i = 0; i < jsonArray.length(); i++) {
             try {
+                //notifyItemInserted(lastCount+i);
                 mDongTaiClassList.add(new DongTaiClass(jsonArray.getJSONObject(i)));
+                //notifyItemInserted(lastCount+i);
+                //notifyItemRangeChanged(lastCount+i, getItemCount());
                 count++;
             } catch (JSONException e) {
                 e.printStackTrace();
             }
         }
-        notifyDataSetChanged();
+        //notifyDataSetChanged();
         return count;
     }
 
@@ -101,6 +172,12 @@ public class DongTaiAdapter extends RecyclerView.Adapter<DongTaiAdapter.MyViewHo
         TextView tv_count_forward;
         TextView tv_count_comment;
         TextView tv_count_like;
+
+        LinearLayout ll_count_forward_container;
+        LinearLayout ll_count_comment_container;
+        LinearLayout ll_count_like_container;
+
+        TextView tv_follow;
 
 
         public MyViewHolder(View itemView) {
@@ -118,6 +195,11 @@ public class DongTaiAdapter extends RecyclerView.Adapter<DongTaiAdapter.MyViewHo
             tv_count_comment = (TextView) itemView.findViewById(R.id.home_hot_then_count_comment);
             tv_count_like = (TextView) itemView.findViewById(R.id.home_hot_then_count_like);
 
+            ll_count_forward_container = (LinearLayout) itemView.findViewById(R.id.home_hot_then_count_forward_container);
+            ll_count_comment_container = (LinearLayout) itemView.findViewById(R.id.home_hot_then_count_comment_container);
+            ll_count_like_container = (LinearLayout) itemView.findViewById(R.id.home_hot_then_count_like_container);
+
+            tv_follow = (TextView) itemView.findViewById(R.id.home_hot_then_follow);
         }
     }
 }

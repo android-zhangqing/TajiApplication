@@ -3,7 +3,7 @@ package com.zhangqing.taji.adapter;
 import android.content.Context;
 import android.view.View;
 
-import com.zhangqing.taji.activities.PersonDetailActivity;
+import com.zhangqing.taji.activities.OthersDetailActivity;
 
 /**
  * Created by zhangqing on 2016/4/9.
@@ -21,6 +21,6 @@ public class AvatarClickListener implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-        PersonDetailActivity.start(context,id,name);
+        OthersDetailActivity.start(context,id,name);
     }
 }

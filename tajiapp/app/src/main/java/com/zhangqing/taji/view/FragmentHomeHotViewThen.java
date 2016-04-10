@@ -3,10 +3,13 @@ package com.zhangqing.taji.view;
 import android.content.Context;
 import android.os.Handler;
 import android.support.v4.widget.SwipeRefreshLayout;
+import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.SimpleItemAnimator;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.LinearLayout;
 
@@ -56,6 +59,7 @@ public class FragmentHomeHotViewThen extends LinearLayout implements LoadMoreRec
                 .findViewById(R.id.home_hot_then_recyclerview);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         mRecyclerView.setAdapter(mRecyclerViewAdapter = new DongTaiAdapter(getContext()));
+        mRecyclerView.setItemAnimator(new DefaultItemAnimator());
 
 
         mRecyclerView.setLoadMoreListener(this);
@@ -96,17 +100,19 @@ public class FragmentHomeHotViewThen extends LinearLayout implements LoadMoreRec
                 if (current_page == 1) {
                     mSwipeRefreshLayout.setRefreshing(false);
                     mRecyclerViewAdapter.clearData();
+                    //mRecyclerViewAdapter.notifyDataSetChanged();
                 }
 
                 try {
                     if (mRecyclerViewAdapter.addData(jsonObject.getJSONArray("data")) != 20) {
                         //mFootTextView.setText("没有了呢~~");
                         current_loading_status = STATUS_END;
-                        mRecyclerView.notifyMoreFinish(false);
+                        mRecyclerView.getAdapter().notifyDataSetChanged();
+                        //mRecyclerView.notifyMoreFinish(false);
                     } else {
                         //mFootTextView.setText("正在加载...");
                         current_loading_status = STATUS_NORMAL;
-                        mRecyclerView.notifyMoreFinish(true);
+                        mRecyclerView.getAdapter().notifyDataSetChanged();
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();

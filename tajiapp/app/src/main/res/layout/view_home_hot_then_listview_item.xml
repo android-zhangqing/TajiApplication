@@ -19,9 +19,10 @@
 
         <ImageView
             android:id="@+id/home_hot_then_avatar"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_margin="15dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
             android:scaleType="centerInside" />
 
         <TextView
@@ -34,6 +35,7 @@
             android:textSize="@dimen/textsize_bar_first" />
 
         <TextView
+            android:id="@+id/home_hot_then_follow"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="20dp"
@@ -114,6 +116,7 @@
         android:orientation="horizontal">
 
         <LinearLayout
+            android:id="@+id/home_hot_then_count_forward_container"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -154,6 +157,7 @@
             android:src="@drawable/icon_tab_home_divider" />
 
         <LinearLayout
+            android:id="@+id/home_hot_then_count_comment_container"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -193,6 +197,7 @@
             android:src="@drawable/icon_tab_home_divider" />
 
         <LinearLayout
+            android:id="@+id/home_hot_then_count_like_container"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"

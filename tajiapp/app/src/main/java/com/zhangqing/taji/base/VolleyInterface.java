@@ -42,12 +42,12 @@ public abstract class VolleyInterface {
     private void dismissDialog(){
         if (mDialog != null) {
             if (mDialog.isShowing()) {
-                new Handler().post(new Runnable() {
+                new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
                         mDialog.dismiss();
                     }
-                });
+                },200);
             }
         }
     }

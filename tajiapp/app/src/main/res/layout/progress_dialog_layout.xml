@@ -1,28 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_gravity="center"
     android:background="@drawable/progress_dialog_bg"
-    android:gravity="center_horizontal"
-    android:orientation="vertical"
-    android:paddingBottom="20dp"
-    android:paddingLeft="30dp"
-    android:paddingRight="30dp"
-    android:paddingTop="20dp">
+    >
 
     <ImageView
         android:id="@+id/spinnerImageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@anim/progress_dialog_spinner" />
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_centerInParent="true"
+        android:padding="40dp"
+        android:visibility="gone"
+        android:src="@drawable/icon_mascot" />
 
-    <TextView
-        android:id="@+id/message"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:text="Message"
-        android:textColor="#FFFFFF" />
+    <!--<TextView-->
+    <!--android:id="@+id/message"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginTop="15dp"-->
+    <!--android:text="Message"-->
+    <!--android:textColor="#FFFFFF" />-->
 
-</LinearLayout>
+</RelativeLayout>

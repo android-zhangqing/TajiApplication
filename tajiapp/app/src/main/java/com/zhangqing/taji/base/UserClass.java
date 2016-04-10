@@ -398,6 +398,37 @@ public class UserClass {
     }
 
 
+    public void doFollow(String uid, boolean isToFollow, VolleyInterface vif) {
+        String url;
+        String tag;
+        if (isToFollow) {
+            url = URLHEAD + "/Follow/follow?uid=" + uid
+                    + "&userid=" + userId + "&openid=" + openId;
+            tag = "follow";
+        } else {
+            url = URLHEAD + "/Follow/unfollow?uid=" + uid
+                    + "&userid=" + userId + "&openid=" + openId;
+            tag = "unfollow";
+        }
+        VolleyRequest.RequestGet(url, tag, vif);
+    }
+
+    public void doLike(String uid, boolean isToLike, VolleyInterface vif) {
+        String url;
+        String tag;
+        if (isToLike) {
+            url = URLHEAD + "/Follow/follow?uid=" + uid
+                    + "&userid=" + userId + "&openid=" + openId;
+            tag = "like";
+        } else {
+            url = URLHEAD + "/Follow/unfollow?uid=" + uid
+                    + "&userid=" + userId + "&openid=" + openId;
+            tag = "dislike";
+        }
+        VolleyRequest.RequestGet(url, tag, vif);
+    }
+
+
     public void getMyUserInfo(VolleyInterface vif) {
         VolleyRequest.RequestGet(URLHEAD + "/User/userInfo?userid=" + userId + "&openid=" + openId,
                 "getMyUserInfo", vif);

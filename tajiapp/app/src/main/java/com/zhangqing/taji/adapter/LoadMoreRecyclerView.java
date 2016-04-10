@@ -10,6 +10,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -85,24 +86,24 @@ public class LoadMoreRecyclerView extends RecyclerView {
         super.addOnScrollListener(
                 new OnScrollListener() {
 
-            @Override
-            public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
-                super.onScrollStateChanged(recyclerView, newState);
-            }
-
-            @Override
-            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
-                super.onScrolled(recyclerView, dx, dy);
-                if (null != mListener && mIsFooterEnable && !mIsLoadingMore && dy > 0) {
-                    int lastVisiblePosition = getLastVisiblePosition();
-                    if (lastVisiblePosition + 1 == mAutoLoadAdapter.getItemCount()) {
-                        setLoadingMore(true);
-                        mLoadMorePosition = lastVisiblePosition;
-                        mListener.onLoadMore();
+                    @Override
+                    public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
+                        super.onScrollStateChanged(recyclerView, newState);
                     }
-                }
-            }
-        });
+
+                    @Override
+                    public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+                        super.onScrolled(recyclerView, dx, dy);
+                        if (null != mListener && mIsFooterEnable && !mIsLoadingMore && dy > 0) {
+                            int lastVisiblePosition = getLastVisiblePosition();
+                            if (lastVisiblePosition + 1 == mAutoLoadAdapter.getItemCount()) {
+                                setLoadingMore(true);
+                                mLoadMorePosition = lastVisiblePosition;
+                                mListener.onLoadMore();
+                            }
+                        }
+                    }
+                });
     }
 
     /**
@@ -144,7 +145,7 @@ public class LoadMoreRecyclerView extends RecyclerView {
         private RecyclerView.Adapter mInternalAdapter;
 
         private boolean mIsHeaderEnable;
-        private int mHeaderResId;
+
 
         public AutoLoadAdapter(RecyclerView.Adapter adapter) {
             mInternalAdapter = adapter;
@@ -156,10 +157,10 @@ public class LoadMoreRecyclerView extends RecyclerView {
             int headerPosition = 0;
             int footerPosition = getItemCount() - 1;
 
-            if (headerPosition == position && mIsHeaderEnable && mHeaderResId > 0) {
+            if (headerPosition == position && mIsHeaderEnable && mHeaderView != null) {
                 return TYPE_HEADER;
             }
-            if (footerPosition == position && mIsFooterEnable) {
+            if (footerPosition == position && mIsFooterEnable && mFooterView != null) {
                 return TYPE_FOOTER;
             }
             /**
@@ -177,7 +178,9 @@ public class LoadMoreRecyclerView extends RecyclerView {
         @Override
         public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
             if (viewType == TYPE_HEADER) {
+                Log.e("onCreateViewHolder","mHeaderView");
                 return new HeaderViewHolder(mHeaderView);
+
 //                return new HeaderViewHolder(LayoutInflater.from(parent.getContext()).inflate(
 //                        mHeaderResId, parent, false));
             }
@@ -212,6 +215,7 @@ public class LoadMoreRecyclerView extends RecyclerView {
             }
         }
 
+
         /**
          * 需要计算上加载更多和添加的头部俩个
          *
@@ -230,19 +234,23 @@ public class LoadMoreRecyclerView extends RecyclerView {
             mIsHeaderEnable = enable;
         }
 
-        public void addHeaderView(int resId) {
-            mHeaderResId = resId;
+
+        public void setHeaderView(View headerView) {
+            Log.e("setHeaderView",headerView==null?"null":"notnull");
+            if (headerView != null) mIsHeaderEnable = true;
+            mHeaderView = headerView;
+            notifyItemInserted(0);
         }
-        public void setHeaderView(View headerView){
-            mHeaderView=headerView;
-        }
-        public View getHeaderView(){
+
+        public View getHeaderView() {
             return mHeaderView;
         }
-        public void setFooterView(View footerView){
-            mFooterView=footerView;
+
+        public void setFooterView(View footerView) {
+            mFooterView = footerView;
         }
-        public View getFooterView(){
+
+        public View getFooterView() {
             return mFooterView;
         }
     }
@@ -257,7 +265,7 @@ public class LoadMoreRecyclerView extends RecyclerView {
 
     /**
      * 切换layoutManager
-     *
+     * <p/>
      * 为了保证切换之后页面上还是停留在当前展示的位置，记录下切换之前的第一条展示位置，切换完成之后滚动到该位置
      * 另外切换之后必须要重新刷新下当前已经缓存的itemView，否则会出现布局错乱（俩种模式下的item布局不同），
      * RecyclerView提供了swapAdapter来进行切换adapter并清理老的itemView cache
@@ -347,18 +355,28 @@ public class LoadMoreRecyclerView extends RecyclerView {
     /**
      * 添加头部view
      *
-     * @param resId
+     * @param view
      */
-    public void addHeaderView(int resId) {
-        mAutoLoadAdapter.addHeaderView(resId);
+    public void setHeaderView(View view) {
+        mAutoLoadAdapter.setHeaderView(view);
     }
 
     /**
      * 设置头部view是否展示
+     *
      * @param enable
      */
     public void setHeaderEnable(boolean enable) {
         mAutoLoadAdapter.setHeaderEnable(enable);
+    }
+
+    /**
+     * 添加尾部view
+     *
+     * @param view
+     */
+    public void setFooterView(View view) {
+        mAutoLoadAdapter.setFooterView(view);
     }
 
     /**
@@ -372,7 +390,7 @@ public class LoadMoreRecyclerView extends RecyclerView {
 
     /**
      * 通知更多的数据已经加载
-     *
+     * <p/>
      * 每次加载完成之后添加了Data数据，用notifyItemRemoved来刷新列表展示，
      * 而不是用notifyDataSetChanged来刷新列表
      *
@@ -382,5 +400,9 @@ public class LoadMoreRecyclerView extends RecyclerView {
         setAutoLoadMoreEnable(hasMore);
         getAdapter().notifyItemRemoved(mLoadMorePosition);
         mIsLoadingMore = false;
+    }
+
+    public void notifyDateSetChange(){
+        getAdapter().notifyDataSetChanged();
     }
 }

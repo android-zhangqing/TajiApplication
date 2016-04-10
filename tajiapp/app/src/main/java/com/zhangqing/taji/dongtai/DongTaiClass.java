@@ -1,5 +1,7 @@
 package com.zhangqing.taji.dongtai;
 
+import com.zhangqing.taji.base.PersonInfo;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -11,12 +13,14 @@ public class DongTaiClass {
     public String mId = "";
     //发布人ID
     public String mUserId = "";
-    //发布人昵称
-    public String mUserName = "";
+//    //发布人昵称
+//    public String mUserName = "";
     //作者ID
     public String mAutherId = "";
     //@人的ID
     public String mAtId = "";
+
+    public PersonInfo mPersonInfo;
 
     //所属大类，如绘画
     public String mTag = "";
@@ -43,6 +47,8 @@ public class DongTaiClass {
 
     //是否师徒圈
     public boolean isMasterCircle = false;
+    //是否已订阅
+    public boolean isFollow = false;
 
 
     /**
@@ -54,16 +60,19 @@ public class DongTaiClass {
     public DongTaiClass(JSONObject jsonObject) throws JSONException {
         //Log.e("DongTaiClass", "start|" + jsonObject.toString());
 
+
         //动态ID
         mId = jsonObject.getString("tid");
         //发布人昵称
-        mUserName = jsonObject.optString("username", "");
+//        mUserName = jsonObject.optString("username", "");
         //发布人ID
         mUserId = jsonObject.optString("userid", "");
         //作者ID
         mAutherId = jsonObject.optString("author", "");
         //@人的ID
         mAtId = jsonObject.optString("at", "");
+
+        mPersonInfo = new PersonInfo(mUserId, jsonObject);
 
         //类别
         mTag = jsonObject.optString("tag", "");
@@ -80,7 +89,7 @@ public class DongTaiClass {
         mAvatarUrl = jsonObject.optString("avatar", "");
 
         //赞
-        mCountLike = jsonObject.optString("like", "");
+        mCountLike = jsonObject.optString("likes", "");
         //转发
         mCountForward = jsonObject.optString("forward", "");
         //浏览
@@ -90,6 +99,8 @@ public class DongTaiClass {
 
         //是否师徒圈
         isMasterCircle = jsonObject.optString("mastercircle", "").equals("1");
+        //是否已订阅
+        isFollow = jsonObject.optBoolean("is_follow", false);
         //Log.e("DongTaiClass", "end" + jsonObject.toString());
     }
 
