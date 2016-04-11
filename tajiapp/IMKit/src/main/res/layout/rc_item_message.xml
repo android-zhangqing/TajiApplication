@@ -25,6 +25,7 @@
         android:layout_marginRight="4dp"
         android:background="@android:color/transparent"
         app:RCCornerRadius="3dp"
+        app:RCShape="circle"
         app:RCDefDrawable="@drawable/rc_ic_def_msg_portrait" />
 
     <io.rong.imkit.widget.AsyncImageView
@@ -36,6 +37,7 @@
         android:layout_marginLeft="4dp"
         android:background="@android:color/transparent"
         app:RCCornerRadius="3dp"
+        app:RCShape="circle"
         app:RCDefDrawable="@drawable/rc_ic_def_msg_portrait" />
 
 
