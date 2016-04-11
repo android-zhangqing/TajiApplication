@@ -5,6 +5,8 @@ import com.zhangqing.taji.base.PersonInfo;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.WeakHashMap;
+
 /**
  * Created by zhangqing on 2016/4/2.
  */
@@ -13,13 +15,14 @@ public class DongTaiClass {
     public String mId = "";
     //发布人ID
     public String mUserId = "";
-//    //发布人昵称
+    //    //发布人昵称
 //    public String mUserName = "";
     //作者ID
     public String mAutherId = "";
     //@人的ID
     public String mAtId = "";
 
+    public static WeakHashMap<String, PersonInfo> mPersonInfoMap = new WeakHashMap<String, PersonInfo>();
     public PersonInfo mPersonInfo;
 
     //所属大类，如绘画
@@ -72,7 +75,13 @@ public class DongTaiClass {
         //@人的ID
         mAtId = jsonObject.optString("at", "");
 
-        mPersonInfo = new PersonInfo(mUserId, jsonObject);
+        synchronized (this) {
+            mPersonInfo = mPersonInfoMap.get(mUserId);
+            if (mPersonInfo == null) {
+                mPersonInfo = new PersonInfo(mUserId, jsonObject);
+                mPersonInfoMap.put(mUserId, mPersonInfo);
+            }
+        }
 
         //类别
         mTag = jsonObject.optString("tag", "");

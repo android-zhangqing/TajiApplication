@@ -61,10 +61,10 @@ public class FragmentHomeHotViewThen extends LinearLayout implements LoadMoreRec
         mRecyclerView.setAdapter(mRecyclerViewAdapter = new DongTaiAdapter(getContext()));
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
 
+        mRecyclerViewAdapter.setParentAdapter(mRecyclerView.getAdapter());
 
         mRecyclerView.setLoadMoreListener(this);
         mRecyclerView.setLoadingMore(true);
-
 
         mSwipeRefreshLayout = (SwipeRefreshLayout) containerView
                 .findViewById(R.id.home_hot_then_swipe_ly_then);
@@ -87,6 +87,8 @@ public class FragmentHomeHotViewThen extends LinearLayout implements LoadMoreRec
     public void perfromOnPageSelected() {
         if (current_page == 0)
             mSwipeRefreshLayout.setRefreshing(true);
+        else
+            mRecyclerView.getAdapter().notifyDataSetChanged();
     }
 
     @Override

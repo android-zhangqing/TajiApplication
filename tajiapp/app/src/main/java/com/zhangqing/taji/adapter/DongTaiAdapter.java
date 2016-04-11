@@ -1,6 +1,7 @@
 package com.zhangqing.taji.adapter;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.os.Handler;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -34,6 +35,11 @@ import java.util.List;
 public class DongTaiAdapter extends RecyclerView.Adapter<DongTaiAdapter.MyViewHolder> {
 
     private OnItemClickListener mOnItemClickListener = null;
+
+    /**
+     * 由于自定义RecyclerView采用代理模式传入Adapter，该ParentAdapter为实际Adapter
+     */
+    private RecyclerView.Adapter mParentAdapter = null;
 
     public interface OnItemClickListener {
         public void onItemClick();
@@ -70,7 +76,7 @@ public class DongTaiAdapter extends RecyclerView.Adapter<DongTaiAdapter.MyViewHo
         holder.tv_count_comment.setText(dongTaiClass.mCountComment);
         holder.tv_count_like.setText(dongTaiClass.mCountLike);
 
-        holder.tv_follow.setText(dongTaiClass.mPersonInfo.is_follow ? "已订阅" : "+订阅");
+        updateFollowButton(holder.tv_follow, dongTaiClass.mPersonInfo.is_follow);
 
         holder.iv_avatar.setOnClickListener(new AvatarClickListener(mContext, dongTaiClass.mUserId, dongTaiClass.mPersonInfo.username));
 
@@ -79,17 +85,26 @@ public class DongTaiAdapter extends RecyclerView.Adapter<DongTaiAdapter.MyViewHo
             public void onClick(View v) {
                 UserClass.getInstance().doFollow(dongTaiClass.mUserId,
                         !dongTaiClass.mPersonInfo.is_follow, new VolleyInterface(mContext.getApplicationContext()) {
-                    @Override
-                    public void onMySuccess(JSONObject jsonObject) {
-                        Log.e("json",jsonObject.toString());
+                            @Override
+                            public void onMySuccess(JSONObject jsonObject) {
+                                Log.e("json", jsonObject.toString());
+                                if (jsonObject.has("msg"))
+                                    dongTaiClass.mPersonInfo.is_follow = !dongTaiClass.mPersonInfo.is_follow;
+                                Toast.makeText(mContext, jsonObject.optString("msg", "操作失败"), Toast.LENGTH_SHORT).show();
 
-                    }
+                                if (mParentAdapter != null) {
+                                    mParentAdapter.notifyDataSetChanged();
+                                } else {
+                                    notifyDataSetChanged();
+                                }
+                                //updateFollowButton(holder.tv_follow, dongTaiClass.mPersonInfo.is_follow);
+                            }
 
-                    @Override
-                    public void onMyError(VolleyError error) {
+                            @Override
+                            public void onMyError(VolleyError error) {
 
-                    }
-                });
+                            }
+                        });
 
             }
         });
@@ -116,10 +131,19 @@ public class DongTaiAdapter extends RecyclerView.Adapter<DongTaiAdapter.MyViewHo
             }
         });
 
-
         holder.cmv_media.picSingleImageView.setImageResource(0);
         ImageLoader.getInstance().displayImage(dongTaiClass.mAvatarUrl, holder.iv_avatar, MyApplication.getCircleDisplayImageOptions());
         ImageLoader.getInstance().displayImage(dongTaiClass.mCoverUrl, holder.cmv_media.picSingleImageView);
+    }
+
+    public void setParentAdapter(RecyclerView.Adapter adapter) {
+        mParentAdapter = adapter;
+    }
+
+    private static void updateFollowButton(TextView tv_follow, boolean isToFollow) {
+        tv_follow.setText(isToFollow ? "√ 已订阅" : "+订阅");
+        tv_follow.setTextColor(isToFollow ? Color.parseColor("#9F61AA") : Color.parseColor("#16FBCC"));
+        tv_follow.setBackgroundResource(isToFollow ? R.drawable.home_hot_btn_concern_bg_reverse : R.drawable.home_hot_btn_concern_bg);
     }
 
 
