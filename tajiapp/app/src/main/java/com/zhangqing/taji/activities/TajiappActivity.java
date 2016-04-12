@@ -59,42 +59,6 @@ public class TajiappActivity extends BaseActivity implements OnTabClickListener,
     private View mPublishClickableBg;
     private boolean isShowingPublish = false;
 
-
-
-
-    private String getMac() {
-        String macSerial = null;
-        String str = "";
-
-        /* 1 cpu号：
-          文件在： /proc/cpuinfo
-            通过Adb shell 查看：
-            adb shell cat /proc/cpuinfo
-            2 mac 地址
-            文件路径 /sys/class/net/wlan0/address
-            adb shell  cat /sys/class/net/wlan0/address
-            xx:xx:xx:xx:xx:aa
-         */
-        try {
-            Process pp = Runtime.getRuntime().exec("cat /sys/class/net/wlan0/address ");
-            InputStreamReader ir = new InputStreamReader(pp.getInputStream());
-            LineNumberReader input = new LineNumberReader(ir);
-
-            for (; null != str; ) {
-                str = input.readLine();
-                if (str != null) {
-                    macSerial = str.trim();
-                    break;
-                }
-            }
-        } catch (IOException ex) {
-            // 赋予默认值
-            macSerial="MAC获取失败";
-            ex.printStackTrace();
-        }
-        return macSerial;
-    }
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -122,14 +86,14 @@ public class TajiappActivity extends BaseActivity implements OnTabClickListener,
             @Override
             public UserInfo getUserInfo(String s) {
 
-                Log.e("getMyUserInfo", s + "|");
+                //Log.e("getMyUserInfo", s + "|");
                 if (map.containsKey(s)) {
                     return map.get(s);
                 } else {
                     UserClass.getInstance().getOthersAvatar(s, new VolleyInterface(TajiappActivity.this.getApplicationContext()) {
                         @Override
                         public void onMySuccess(JSONObject jsonObject) {
-                            Log.e("onMySuccess", jsonObject.toString());
+                            //Log.e("onMySuccess", jsonObject.toString());
                             try {
                                 String name = jsonObject.getString("username");
                                 String avatar = jsonObject.getString("avatar");
@@ -186,21 +150,7 @@ public class TajiappActivity extends BaseActivity implements OnTabClickListener,
         topBar.setOnTopBarClickListener(this);
 
         showFragment(0);
-        Log.e("getMemmory", ((ActivityManager) getSystemService(Context.ACTIVITY_SERVICE)).getMemoryClass() + "|");
-
-
-//        UserClass.getInstance().isLogin(new Response.Listener<String>() {
-//
-//            @Override
-//            public void onResponse(String arg0) {
-//                // TODO Auto-generated method stub
-////                Intent intent = new Intent(TajiappActivity.this,
-////                        RegisterFirstActivity.class);
-////                startActivityForResult(intent, UserClass.Request_Main);
-//
-//            }
-//
-//        }, TajiappActivity.this);
+        //Log.e("getMemmory", ((ActivityManager) getSystemService(Context.ACTIVITY_SERVICE)).getMemoryClass() + "|");
     }
 
     private void startLoginActivity() {
@@ -212,29 +162,46 @@ public class TajiappActivity extends BaseActivity implements OnTabClickListener,
     }
 
     private void showFragment(int whichFragment) {
+        log(whichFragment + "");
         if (currentFragment == whichFragment) return;
+        int lastFragment = currentFragment;
         currentFragment = whichFragment;
         FragmentTransaction ft = getFragmentManager().beginTransaction();
-        for (int i = 0; i < fragments.length; i++) {
-            if (i == currentFragment) {
-                if (fragments[i] == null) {
-                    fragments[i] = initNewFragment(whichFragment);
-                    if (fragments[i] != null) {
-                        ft.add(R.id.contentframe, fragments[i]);
-                    }
-                } else {
-                    ft.show(fragments[i]);
-                }
 
-            } else {
-                if (fragments[i] != null) {
-                    ft.hide(fragments[i]);
 
-                }
-
+        if (fragments[currentFragment] == null) {
+            fragments[currentFragment] = initNewFragment(whichFragment);
+            if (fragments[currentFragment] != null) {
+                ft.add(R.id.contentframe, fragments[currentFragment]);
             }
+        } else {
+            ft.show(fragments[currentFragment]);
+        }
+        if (lastFragment != -1 && fragments[lastFragment] != null) {
+            ft.hide(fragments[lastFragment]);
         }
         ft.commit();
+
+//        for (int i = 0; i < fragments.length; i++) {
+//            if (i == currentFragment) {
+//                if (fragments[i] == null) {
+//                    fragments[i] = initNewFragment(whichFragment);
+//                    if (fragments[i] != null) {
+//                        ft.add(R.id.contentframe, fragments[i]);
+//                    }
+//                } else {
+//                    ft.show(fragments[i]);
+//                }
+//
+//            } else {
+//                if (fragments[i] != null) {
+//                    ft.hide(fragments[i]);
+//
+//                }
+//
+//            }
+//        }
+
     }
 
     private Fragment initNewFragment(int whichFragment) {

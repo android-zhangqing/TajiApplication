@@ -23,6 +23,7 @@ import com.amap.api.location.AMapLocationClientOption;
 import com.amap.api.location.AMapLocationListener;
 import com.android.volley.VolleyError;
 import com.nostra13.universalimageloader.core.ImageLoader;
+import com.zhangqing.taji.BaseFragment;
 import com.zhangqing.taji.MyApplication;
 import com.zhangqing.taji.R;
 import com.zhangqing.taji.activities.login.LoginActivity;
@@ -35,7 +36,7 @@ import org.json.JSONObject;
 /**
  * 首页底部栏【我的】
  */
-public class FragmentMy extends Fragment implements View.OnClickListener {
+public class FragmentMy extends BaseFragment implements View.OnClickListener {
     //声明AMapLocationClient类对象
     public AMapLocationClient mlocationClient = null;
     //声明定位回调监听器

@@ -16,6 +16,7 @@ import android.widget.HorizontalScrollView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.zhangqing.taji.BaseFragment;
 import com.zhangqing.taji.R;
 import com.zhangqing.taji.view.FragmentHomeHotViewFirst;
 import com.zhangqing.taji.view.FragmentHomeHotViewThen;
@@ -23,7 +24,7 @@ import com.zhangqing.taji.view.FragmentHomeHotViewThen;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FragmentHomeHot extends Fragment implements OnClickListener {
+public class FragmentHomeHot extends BaseFragment implements OnClickListener {
     ViewPager viewPager;
     HorizontalScrollView horizontalScrollView;
 

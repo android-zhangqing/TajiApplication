@@ -43,6 +43,7 @@ tajiapp/captures/
 # Keystore files
 *.jks
 *.lock
+*.keystore
 tajiapp/app/app.iml
 tajiapp/.idea/workspace.xml
 tajiapp/app/app.iml

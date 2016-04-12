@@ -1,56 +1,101 @@
 package com.zhangqing.taji.activities;
 
-import android.app.Fragment;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 
+import com.zhangqing.taji.BaseFragment;
 import com.zhangqing.taji.R;
+import com.zhangqing.taji.base.UserClass;
 
 import io.rong.imkit.RongIM;
 import io.rong.imkit.fragment.ConversationListFragment;
+import io.rong.imkit.model.Event;
 import io.rong.imkit.model.UIConversation;
 import io.rong.imlib.RongIMClient;
 import io.rong.imlib.model.Conversation;
 import io.rong.imlib.model.Message;
-import io.rong.imlib.model.UserInfo;
+import io.rong.message.TextMessage;
 
 /**
  * Created by Administrator on 2016/2/22.
  */
-public class FragmentMessage extends Fragment {
+public class FragmentMessage extends BaseFragment {
+    ConversationListFragment fragment;
+    Uri uri;
+
+    LinearLayout ll_at;
 
     @Override
     public void onResume() {
         super.onResume();
 
         ((TajiappActivity) getActivity()).bottomBar.
-                setPoints(2, RongIM.getInstance().getRongIMClient().getTotalUnreadCount()!=0);
+                setPoints(2, RongIM.getInstance().getRongIMClient().getTotalUnreadCount() != 0);
 
 
     }
 
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        log("oncreate");
         View v = inflater.inflate(R.layout.fragment_message, container, false);
+
+        ll_at = (LinearLayout) v.findViewById(R.id.message_btn_at);
+
 
         initFragment();
 
         return v;
     }
 
+    @Override
+    public void onHiddenChanged(boolean hidden) {
+        super.onHiddenChanged(hidden);
+        log("onHiddenChanged", hidden + "");
+        if (!hidden) {
+
+            ll_at.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    //fragment.getAdapter()
+                    log("ll_at");
+                    //RongIM.getInstance().refreshUserInfoCache(new UserInfo("1010","system",Uri.parse("http://taji.whutech.com/uploads/8.jpg")));
+                    fragment.onEventMainThread(new Event.OnReceiveMessageEvent(Message.obtain("1010", Conversation.ConversationType.PRIVATE, new TextMessage("kk")), 5));
+                }
+            });
+        }
+    }
+
     private void initFragment() {
+        RongIMClient.getInstance().insertMessage(Conversation.ConversationType.SYSTEM,
+                "1010", UserClass.getInstance().userId, TextMessage.obtain("h" + System.currentTimeMillis()), new RongIMClient.ResultCallback<Message>() {
+                    @Override
+                    public void onSuccess(Message message) {
+                        log("insertMessage");
 
-        ConversationListFragment fragment = (ConversationListFragment) ((FragmentActivity) getActivity()).getSupportFragmentManager().findFragmentById(R.id.conversationlist);
+                        RongIMClient.getInstance().setMessageSentStatus(message.getMessageId(), Message.SentStatus.SENT, null);
 
-        Uri uri = Uri.parse("rong://" + getActivity().getApplicationInfo().packageName).buildUpon()
+                    }
+
+                    @Override
+                    public void onError(RongIMClient.ErrorCode errorCode) {
+
+                        log("insertMessage");
+                    }
+                });
+
+        fragment = (ConversationListFragment) ((FragmentActivity) getActivity()).getSupportFragmentManager().findFragmentById(R.id.conversationlist);
+
+        uri = Uri.parse("rong://" + getActivity().getApplicationInfo().packageName).buildUpon()
                 .appendPath("conversationlist")
                 .appendQueryParameter(Conversation.ConversationType.PRIVATE.getName(), "false") //设置私聊会话非聚合显示
                 .appendQueryParameter(Conversation.ConversationType.GROUP.getName(), "true")//设置群组会话聚合显示
@@ -60,17 +105,32 @@ public class FragmentMessage extends Fragment {
 
         fragment.setUri(uri);
 
+
+        //RongIMClient.getInstance().getConversationList()
+
+
+        RongIM.getInstance().setSendMessageListener(new RongIM.OnSendMessageListener() {
+            @Override
+            public Message onSend(Message message) {
+                log("setSendMessageListener", message.getTargetId() + "|");
+                return null;
+            }
+
+            @Override
+            public boolean onSent(Message message, RongIM.SentMessageErrorCode sentMessageErrorCode) {
+                log("onSent", message.getTargetId() + "|");
+                return false;
+            }
+        });
+
         //set Listener
-//        RongIM.setOnReceiveMessageListener(new RongIMClient.OnReceiveMessageListener() {
-//            @Override
-//            public boolean onReceived(Message message, int i) {
-//                Log.e("****onReceived****", i + "|" + new String(message.getContent().encode()) + "|" + message.getConversationType().getName() + "|" + message.getReceivedStatus().isRead());
-//                if (!message.getReceivedStatus().isRead()) {
-//                    mHandler.sendEmptyMessage(0);
-//                }
-//                return false;
-//            }
-//        });
+        RongIM.setOnReceiveMessageListener(new RongIMClient.OnReceiveMessageListener() {
+            @Override
+            public boolean onReceived(Message message, int i) {
+                log("****onReceived****", i + "|" + new String(message.getContent().encode()) + "|" + message.getConversationType().getName() + "|" + message.getReceivedStatus().isRead());
+                return false;
+            }
+        });
 
 //        RongIM.setConversationBehaviorListener(new RongIM.ConversationBehaviorListener() {
 //            @Override
@@ -99,30 +159,31 @@ public class FragmentMessage extends Fragment {
 //            }
 //        });
 //
-//        RongIM.setConversationListBehaviorListener(new RongIM.ConversationListBehaviorListener() {
-//            @Override
-//            public boolean onConversationPortraitClick(Context context, Conversation.ConversationType conversationType, String s) {
-//                return false;
-//            }
-//
-//            @Override
-//            public boolean onConversationPortraitLongClick(Context context, Conversation.ConversationType conversationType, String s) {
-//                return false;
-//            }
-//
-//            @Override
-//            public boolean onConversationLongClick(Context context, View view, UIConversation uiConversation) {
-//                return false;
-//            }
-//
-//            @Override
-//            public boolean onConversationClick(Context context, View view, UIConversation uiConversation) {
-//                Log.e("ConversationListBeh",RongIM.getInstance().getRongIMClient().getTotalUnreadCount()+"");
-//                return false;
-//            }
-//
-//
-//        });
+        RongIM.setConversationListBehaviorListener(new RongIM.ConversationListBehaviorListener() {
+            @Override
+            public boolean onConversationPortraitClick(Context context, Conversation.ConversationType conversationType, String s) {
+                OthersDetailActivity.start(getActivity(), s, "User " + s);
+                return true;
+            }
+
+            @Override
+            public boolean onConversationPortraitLongClick(Context context, Conversation.ConversationType conversationType, String s) {
+                return false;
+            }
+
+            @Override
+            public boolean onConversationLongClick(Context context, View view, UIConversation uiConversation) {
+                return false;
+            }
+
+            @Override
+            public boolean onConversationClick(Context context, View view, UIConversation uiConversation) {
+                log("ConversationListBeh", RongIM.getInstance().getRongIMClient().getTotalUnreadCount() + "");
+                return false;
+            }
+
+
+        });
 
     }
 

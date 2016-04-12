@@ -17,6 +17,7 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.zhangqing.taji.BaseFragment;
 import com.zhangqing.taji.R;
 import com.zhangqing.taji.view.FlexiListView;
 import com.zhangqing.taji.view.ViewPagerIndicator;
@@ -32,7 +33,7 @@ import io.rong.imlib.model.Conversation;
 /**
  * Created by Administrator on 2016/2/7.
  */
-public class FragmentCircle extends Fragment {
+public class FragmentCircle extends BaseFragment {
     private ViewPager mViewPager;
     private ViewPagerIndicator mIndicator;
 
