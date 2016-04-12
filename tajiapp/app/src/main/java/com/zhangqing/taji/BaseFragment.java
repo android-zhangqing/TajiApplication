@@ -70,13 +70,12 @@ public class BaseFragment extends Fragment {
             }
         }
         //">>" + this.getActivity().getClass().getSimpleName() +
-        String method="??", classname="??";
+        String method = "??", classname = "??";
         try {
-            //method = Thread.currentThread().getStackTrace()[3].getMethodName();
-            //classname = this.getClass().getSimpleName();
+            method = Thread.currentThread().getStackTrace()[3].getMethodName();
+            classname = this.getClass().getSimpleName();
         } catch (Exception e) {
         }
-        Log.e(">>" + classname + ">>" + method
-                , result);
+        Log.e(">>" + classname + ">>" + method, result);
     }
 }
