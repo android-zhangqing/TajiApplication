@@ -44,11 +44,11 @@ public class HomeHotGridAdapter extends PullableBaseAdapter {
             for (int i = 0; i < jsonArray.length(); i++) {
                 try {
                     DongTaiClass d = new DongTaiClass(jsonArray.getJSONObject(i));
-                    Log.e("onAddData", d.toString());
+                    //Log.e("onAddData", d.toString());
                     mItemsList.add(d);
                     count++;
                 } catch (JSONException e) {
-                    Log.e("onAddDataError", jsonArray.toString());
+                    Log.e("AddError", jsonArray.toString());
                     e.printStackTrace();
                 }
             }

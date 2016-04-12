@@ -64,14 +64,11 @@ public class FragmentMy extends BaseFragment implements View.OnClickListener {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Log.e("FragmentMy", "onCreate");
-
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        Log.e("FragmentMy", "onCreateView");
         View v = inflater.inflate(R.layout.fragment_my, container, false);
 
         mNameTextView = (TextView) v.findViewById(R.id.my_head_name);
@@ -165,7 +162,7 @@ public class FragmentMy extends BaseFragment implements View.OnClickListener {
 
         String avatar = UserClass.getInstance().getStringByKey("avatar");
         if (!avatar.equals("")) {
-            Log.e("loadingavatar", "" + avatar);
+            //Log.e("loadingavatar", "" + avatar);
             ImageLoader.getInstance().displayImage(avatar, mAvatarImageView, MyApplication.getCircleDisplayImageOptions());
         }
 
@@ -234,13 +231,13 @@ public class FragmentMy extends BaseFragment implements View.OnClickListener {
 
             int costWidth = tv.getMeasuredWidth() + MARGIN_LABLE * 2;
             restWidth -= costWidth;
-            Log.e("measureResult", "|" + costWidth + "|" + restWidth);
+            //Log.e("measureResult", "|" + costWidth + "|" + restWidth);
 
             if (restWidth <= 0) {
                 //改变前一个标签的宽度，使之两端对齐
                 TextView lastTv = (TextView) layoutSubContainer.getChildAt(layoutSubContainer.getChildCount() - 1);
                 int lastTvWidth = lastTv.getMeasuredWidth() + costWidth + restWidth - 2 * MARGIN_LABLE;
-                Log.e("lastTvWidth", lastTvWidth + "|");
+                //Log.e("lastTvWidth", lastTvWidth + "|");
 
                 LinearLayout.LayoutParams tempParams = new LinearLayout.LayoutParams(lastTvWidth, LinearLayout.LayoutParams.WRAP_CONTENT);
                 tempParams.setMargins(MARGIN_LABLE, MARGIN_LABLE_Top, MARGIN_LABLE, MARGIN_LABLE_Top);

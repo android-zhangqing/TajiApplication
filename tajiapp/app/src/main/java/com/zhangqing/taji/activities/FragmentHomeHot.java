@@ -37,7 +37,7 @@ public class FragmentHomeHot extends BaseFragment implements OnClickListener {
 
 
     public FragmentHomeHot(){
-        Log.e("FragmentHomeHot","###构造 ");
+       // Log.e("FragmentHomeHot","###构造 ");
         categoryList = getCategoryList();
     }
 
@@ -45,7 +45,7 @@ public class FragmentHomeHot extends BaseFragment implements OnClickListener {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        Log.e("FragmentHomeHot","onCreateView ");
+        //Log.e("FragmentHomeHot","onCreateView ");
         View v = inflater.inflate(R.layout.fragment_home, container, false);
         viewPager = (ViewPager) v.findViewById(R.id.home_viewpager);
         horizontalScrollView = (HorizontalScrollView) v
@@ -148,7 +148,7 @@ public class FragmentHomeHot extends BaseFragment implements OnClickListener {
     }
 
     private void updateCategoryView() {
-        Log.e("HomeHot","updateCategoryView size="+textViewList.size()+" currenCategory="+currenCategory);
+        //Log.e("HomeHot","updateCategoryView size="+textViewList.size()+" currenCategory="+currenCategory);
         for (int i = 0; i < textViewList.size(); i++) {
 
             if (i == currenCategory) {

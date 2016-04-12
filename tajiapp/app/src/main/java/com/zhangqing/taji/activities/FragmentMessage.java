@@ -46,15 +46,18 @@ public class FragmentMessage extends BaseFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        log("oncreate");
         View v = inflater.inflate(R.layout.fragment_message, container, false);
 
         ll_at = (LinearLayout) v.findViewById(R.id.message_btn_at);
 
 
-        initFragment();
-
         return v;
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        initFragment();
     }
 
     @Override
@@ -76,25 +79,9 @@ public class FragmentMessage extends BaseFragment {
     }
 
     private void initFragment() {
-        RongIMClient.getInstance().insertMessage(Conversation.ConversationType.SYSTEM,
-                "1010", UserClass.getInstance().userId, TextMessage.obtain("h" + System.currentTimeMillis()), new RongIMClient.ResultCallback<Message>() {
-                    @Override
-                    public void onSuccess(Message message) {
-                        log("insertMessage");
-
-                        RongIMClient.getInstance().setMessageSentStatus(message.getMessageId(), Message.SentStatus.SENT, null);
-
-                    }
-
-                    @Override
-                    public void onError(RongIMClient.ErrorCode errorCode) {
-
-                        log("insertMessage");
-                    }
-                });
-
-        fragment = (ConversationListFragment) ((FragmentActivity) getActivity()).getSupportFragmentManager().findFragmentById(R.id.conversationlist);
-
+        log("1");
+        fragment = (ConversationListFragment) getChildFragmentManager().findFragmentById(R.id.conversationlist);
+        log("2");
         uri = Uri.parse("rong://" + getActivity().getApplicationInfo().packageName).buildUpon()
                 .appendPath("conversationlist")
                 .appendQueryParameter(Conversation.ConversationType.PRIVATE.getName(), "false") //设置私聊会话非聚合显示
@@ -102,9 +89,9 @@ public class FragmentMessage extends BaseFragment {
                 .appendQueryParameter(Conversation.ConversationType.DISCUSSION.getName(), "false")//设置讨论组会话非聚合显示
                 .appendQueryParameter(Conversation.ConversationType.SYSTEM.getName(), "false")//设置系统会话非聚合显示
                 .build();
-
+        log("3" + (fragment == null ? "null" : "n") + "|" + (uri == null ? "a" : "b"));
         fragment.setUri(uri);
-
+        log("4");
 
         //RongIMClient.getInstance().getConversationList()
 

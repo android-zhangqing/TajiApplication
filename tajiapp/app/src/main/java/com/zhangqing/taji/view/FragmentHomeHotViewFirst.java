@@ -112,8 +112,6 @@ public class FragmentHomeHotViewFirst extends LinearLayout {
 
             @Override
             public void onPageScrollStateChanged(int arg0) {
-                Log.e("mPagerInside", "onPageScrollStateChanged " + arg0);
-
                 if (arg0 == 1) {
                     mSwipeRefreshLayout.setEnabled(false);
                 } else if (arg0 == 0) {
@@ -204,8 +202,8 @@ public class FragmentHomeHotViewFirst extends LinearLayout {
 
             @Override
             public void onScrollStateChanged(AbsListView view, int scrollState) {
-                Log.e("onScrollStateChanged", scrollState + "|" + firstVisibleItem + "|"
-                        + visibleItemCount + "|" + totalItemCount + "|" + mGridView.getLastVisiblePosition());
+//                Log.e("onScrollStateChanged", scrollState + "|" + firstVisibleItem + "|"
+//                        + visibleItemCount + "|" + totalItemCount + "|" + mGridView.getLastVisiblePosition());
 
                 switch (scrollState) {
                     case SCROLL_STATE_IDLE: {//停止滑动
@@ -313,7 +311,7 @@ public class FragmentHomeHotViewFirst extends LinearLayout {
             this.urls = urls;
             notifyDataSetChanged();
             updatePointContainer(0);
-            Log.e("updateUrl", urls[0] + "||" + urls.length);
+            //           Log.e("updateUrl", urls[0] + "||" + urls.length);
         }
 
         public void updateUrl(JSONArray jsonArray) {
@@ -335,7 +333,7 @@ public class FragmentHomeHotViewFirst extends LinearLayout {
             for (int i = 0; i < stringList.size(); i++) {
                 urls[i] = stringList.get(i);
             }
-            Log.e("urls", urls.length + "|" + urls[0]);
+            //           Log.e("urls", urls.length + "|" + urls[0]);
             updateUrl(urls);
         }
 
@@ -390,7 +388,7 @@ public class FragmentHomeHotViewFirst extends LinearLayout {
 
         @Override
         public Object instantiateItem(ViewGroup container, int position) {
-            Log.e("PagerAdapterTest", "instantiateItem|" + position + "|" + container);
+            //        Log.e("PagerAdapterTest", "instantiateItem|" + position + "|" + container);
 
             ImageView iv = new ImageView(context);
             iv.setScaleType(ScaleType.FIT_XY);
@@ -409,7 +407,7 @@ public class FragmentHomeHotViewFirst extends LinearLayout {
         @Override
         public void destroyItem(ViewGroup container, int position, Object object) {
             // TODO Auto-generated method stub
-            Log.e("PagerAdapterTest", "destroyItem|" + position + "|" + container);
+            //           Log.e("PagerAdapterTest", "destroyItem|" + position + "|" + container);
             container.removeView((View) object);
         }
 
