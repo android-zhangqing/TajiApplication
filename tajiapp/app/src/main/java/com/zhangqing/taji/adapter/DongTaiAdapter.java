@@ -131,7 +131,7 @@ public class DongTaiAdapter extends RecyclerView.Adapter<DongTaiAdapter.MyViewHo
             }
         });
 
-        holder.cmv_media.picSingleImageView.setImageResource(0);
+        holder.cmv_media.picSingleImageView.setImageBitmap(null);
         ImageLoader.getInstance().displayImage(dongTaiClass.mAvatarUrl, holder.iv_avatar, MyApplication.getCircleDisplayImageOptions());
         ImageLoader.getInstance().displayImage(dongTaiClass.mCoverUrl, holder.cmv_media.picSingleImageView);
     }

@@ -3,6 +3,7 @@ package com.zhangqing.taji;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 
 import com.zhangqing.taji.activities.SystemStatusManager;
 
@@ -14,6 +15,7 @@ public class BaseActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Log.e("**BaseActivity**","onCreate");
         SystemStatusManager.setTranslucentStatus(this);
     }
 }

@@ -49,9 +49,6 @@ public class ComplicatedMediaView extends LinearLayout {
         layoutPicSingle = LayoutInflater.from(getContext()).inflate(R.layout.view_media_pic_single, this, false);
         picSingleImageView= (ImageView) layoutPicSingle.findViewById(R.id.image);
 
-
-
-
         setCurrentMode(currentMode);
     }
 

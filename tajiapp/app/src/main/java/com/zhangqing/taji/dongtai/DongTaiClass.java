@@ -1,5 +1,7 @@
 package com.zhangqing.taji.dongtai;
 
+import android.util.Log;
+
 import com.zhangqing.taji.base.PersonInfo;
 
 import org.json.JSONException;
@@ -61,7 +63,6 @@ public class DongTaiClass {
      * @throws JSONException 仅当无动态id时才抛出异常
      */
     public DongTaiClass(JSONObject jsonObject) throws JSONException {
-        //Log.e("DongTaiClass", "start|" + jsonObject.toString());
 
 
         //动态ID
@@ -110,7 +111,7 @@ public class DongTaiClass {
         isMasterCircle = jsonObject.optString("mastercircle", "").equals("1");
         //是否已订阅
         isFollow = jsonObject.optBoolean("is_follow", false);
-        //Log.e("DongTaiClass", "end" + jsonObject.toString());
+        Log.e("DongTaiClass", "end|" + toString());
     }
 
     @Override
