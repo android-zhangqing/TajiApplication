@@ -34,6 +34,7 @@ import com.rockerhieu.emojicon.EmojiconEditText;
 import com.rockerhieu.emojicon.EmojiconGridFragment;
 import com.rockerhieu.emojicon.EmojiconsFragment;
 import com.rockerhieu.emojicon.emoji.Emojicon;
+import com.zhangqing.taji.BaseActivity;
 import com.zhangqing.taji.R;
 import com.zhangqing.taji.base.UserClass;
 import com.zhangqing.taji.util.CameraUtil;
@@ -56,7 +57,7 @@ import java.util.Map;
 /**
  * Created by Administrator on 2016/2/10.
  */
-public class PublishActivity extends FragmentActivity implements View.OnClickListener, EmojiconGridFragment.OnEmojiconClickedListener, EmojiconsFragment.OnEmojiconBackspaceClickedListener, UploadUtil.OnUploadProcessListener {
+public class PublishActivity extends BaseActivity implements View.OnClickListener, EmojiconGridFragment.OnEmojiconClickedListener, EmojiconsFragment.OnEmojiconBackspaceClickedListener, UploadUtil.OnUploadProcessListener {
     private static final int BIGGER = 1;
     private static final int SMALLER = 2;
     private static final int MSG_RESIZE = 1;

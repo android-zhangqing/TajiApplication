@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.android.volley.VolleyError;
+import com.zhangqing.taji.BaseActivity;
 import com.zhangqing.taji.R;
 import com.zhangqing.taji.adapter.DongTaiAdapter;
 import com.zhangqing.taji.adapter.LoadMoreRecyclerView;
@@ -25,7 +26,7 @@ import org.json.JSONObject;
 /**
  * Created by Administrator on 2016/3/19.
  */
-public class OthersDetailActivity extends AppCompatActivity {
+public class OthersDetailActivity extends BaseActivity {
 
     public static void start(Context context, String id, String name) {
         Intent intent = new Intent(context, OthersDetailActivity.class);
@@ -56,7 +57,6 @@ public class OthersDetailActivity extends AppCompatActivity {
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
 
-
         Bundle bundle = getIntent().getExtras();
         mId = bundle.getString("id");
         mName = bundle.getString("name");
@@ -72,14 +72,21 @@ public class OthersDetailActivity extends AppCompatActivity {
                     mPersonInfoView=new PersonInfoView(OthersDetailActivity.this,mPersonInfo);
 
                     mRecyclerView.setHeaderView(mPersonInfoView);
+
+                    mRecyclerView.setLoadMoreListener(new LoadMoreRecyclerView.LoadMoreListener() {
+                        @Override
+                        public void onLoadMore() {
+                            Log.e("onLoadMore","a");
+                        }
+                    });
+                    mRecyclerView.setLoadingMore(true);
+
+
                     //mRecyclerViewAdapter.notifyItemRangeChanged(-1,3);
-
-
                 } catch (JSONException e) {
                     e.printStackTrace();
                     Log.e("JSONException","getOthersInfo");
                 }
-
             }
 
             @Override
@@ -90,6 +97,10 @@ public class OthersDetailActivity extends AppCompatActivity {
 //        actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
 //        actionBar.setDisplayShowCustomEnabled(true);
 //        RelativeLayout relativeLayout=new RelativeLayout(this);
+    }
+
+    private void addDataToAdapter(){
+
 
     }
 

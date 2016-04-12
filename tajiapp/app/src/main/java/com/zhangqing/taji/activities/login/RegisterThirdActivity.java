@@ -9,6 +9,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.VolleyError;
+import com.zhangqing.taji.BaseActivity;
 import com.zhangqing.taji.R;
 import com.zhangqing.taji.base.UserClass;
 import com.zhangqing.taji.base.VolleyInterface;
@@ -16,7 +17,7 @@ import com.zhangqing.taji.base.VolleyInterface;
 import org.json.JSONObject;
 
 
-public class RegisterThirdActivity extends Activity {
+public class RegisterThirdActivity extends BaseActivity {
     private TextView passwordTextView;
     private Button btnRegister;
     private String mobile;

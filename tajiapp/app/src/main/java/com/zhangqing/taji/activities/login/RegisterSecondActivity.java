@@ -15,6 +15,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.VolleyError;
+import com.zhangqing.taji.BaseActivity;
 import com.zhangqing.taji.MyApplication;
 import com.zhangqing.taji.R;
 import com.zhangqing.taji.base.UserClass;
@@ -23,7 +24,7 @@ import com.zhangqing.taji.base.VolleyInterface;
 import org.json.JSONObject;
 
 
-public class RegisterSecondActivity extends Activity {
+public class RegisterSecondActivity extends BaseActivity {
     private String mobile;
     private Button btnReSend;
     private Button btnVerify;

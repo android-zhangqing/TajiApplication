@@ -3,12 +3,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#E1DEE7"
+    android:clipToPadding="false"
+    android:fitsSystemWindows="true"
     android:orientation="vertical">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/topbar_height"
-        android:background="@color/bgcolor_bar_first">
+        android:background="@drawable/home_hot_title_bar_bg">
 
         <ImageView
             android:layout_width="40dp"

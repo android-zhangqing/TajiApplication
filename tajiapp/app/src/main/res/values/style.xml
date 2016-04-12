@@ -19,7 +19,20 @@
         <item name="android:windowBackground">@android:color/transparent</item>
     </style>
 
-    <style name="Theme.Default.NoActionBar" parent="@android:style/Theme.NoTitleBar">
+    <style name="Theme.AppCompat.Cover" parent="AppBaseTheme">
         <item name="android:windowBackground">@drawable/logo_drawable</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <style name="Theme.AppCompat.Transparent" parent="AppBaseTheme">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation</item>
+    </style>
+
+    <style name="AppBaseTheme" parent="@style/Theme.AppCompat.NoActionBar">
+        <item name="colorPrimary">@android:color/holo_red_dark</item>
+        <item name="colorPrimaryDark">@android:color/holo_green_dark</item>
     </style>
 </resources>

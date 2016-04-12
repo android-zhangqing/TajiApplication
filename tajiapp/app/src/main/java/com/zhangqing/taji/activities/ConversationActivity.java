@@ -5,7 +5,9 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.util.Log;
+import android.widget.TextView;
 
+import com.zhangqing.taji.BaseActivity;
 import com.zhangqing.taji.R;
 
 import java.util.Locale;
@@ -16,7 +18,7 @@ import io.rong.imlib.model.Conversation;
 /**
  * Created by Administrator on 2016/2/23.
  */
-public class ConversationActivity extends FragmentActivity {
+public class ConversationActivity extends BaseActivity {
 
     /**
      * 目标 Id
@@ -37,6 +39,7 @@ public class ConversationActivity extends FragmentActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.conversation);
+
         Intent intent = getIntent();
 
         getIntentDate(intent);
@@ -46,7 +49,7 @@ public class ConversationActivity extends FragmentActivity {
      * 展示如何从 Intent 中得到 融云会话页面传递的 Uri
      */
     private void getIntentDate(Intent intent) {
-        setTitle("正在与["+intent.getData().getQueryParameter("title")+"]对话");
+        ((TextView)findViewById(R.id.title)).setText("正在与["+intent.getData().getQueryParameter("title")+"]对话");
 
         //Log.e("RM.getIntentDate", intent.getData().getQueryParameter("title") + "|||" + ((intent.getData() == null) ? "null" : intent.getData().toString() + "|"));
         mTargetId = intent.getData().getQueryParameter("targetId");

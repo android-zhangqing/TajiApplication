@@ -101,8 +101,8 @@
                     android:layout_weight="1"
                     android:background="@drawable/press_bg"
                     android:clickable="true"
-                    android:onClick="onClickUpload"
                     android:gravity="center"
+                    android:onClick="onClickUpload"
                     android:orientation="vertical"
                     android:visibility="gone">
 

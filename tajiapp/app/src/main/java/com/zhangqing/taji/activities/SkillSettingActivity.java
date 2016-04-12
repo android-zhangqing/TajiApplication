@@ -16,6 +16,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.VolleyError;
+import com.zhangqing.taji.BaseActivity;
 import com.zhangqing.taji.R;
 import com.zhangqing.taji.adapter.SkillSelectAdapter;
 import com.zhangqing.taji.base.UserClass;
@@ -30,7 +31,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SkillSettingActivity extends AppCompatActivity implements View.OnClickListener {
+public class SkillSettingActivity extends BaseActivity implements View.OnClickListener {
     public static final int ACTIVITY_SKILL = 1;
     public static final int ACTIVITY_INTEREST = 2;
 

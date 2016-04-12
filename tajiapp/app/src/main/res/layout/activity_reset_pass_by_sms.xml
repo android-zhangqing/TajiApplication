@@ -8,7 +8,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/topbar_height"
-        android:background="@color/bgcolor_bar_first">
+        android:background="@drawable/home_hot_title_bar_bg">
 
         <ImageView
             android:layout_width="40dp"
@@ -92,8 +92,8 @@
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:background="@drawable/corners_button"
-            android:padding="10dp"
             android:onClick="onClickBtnSend"
+            android:padding="10dp"
             android:text="发送验证码" />
     </LinearLayout>
 
@@ -118,7 +118,7 @@
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:background="@drawable/corners_button"
-        android:padding="10dp"
         android:onClick="onClickBtnReset"
+        android:padding="10dp"
         android:text="找回" />
 </LinearLayout>

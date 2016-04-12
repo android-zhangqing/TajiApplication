@@ -51,7 +51,7 @@
 
         android:label="@string/app_name"
 
-        android:theme="@style/Theme.AppCompat.NoActionBar">
+        android:theme="@style/AppBaseTheme">
         <service android:name="com.amap.api.location.APSService" />
 
         <meta-data
@@ -60,8 +60,8 @@
 
         <activity
             android:name=".activities.login.CoverActivity"
-            android:label="@string/app_name"
-            android:theme="@style/Theme.Default.NoActionBar">
+            android:theme="@style/Theme.AppCompat.Cover"
+            android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -81,12 +81,10 @@
         <activity
             android:name=".activities.login.LoginActivity"
             android:label="@string/app_name"
-            android:launchMode="singleTop"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+            android:launchMode="singleTop" />
         <activity
             android:name=".activities.OthersDetailActivity"
-            android:label="@string/app_name"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+            android:label="@string/app_name" />
         <activity
             android:name=".activities.ModifyInterestSkillActivity"
             android:label="设置兴趣与技能"
@@ -95,56 +93,48 @@
             android:name=".activities.TajiappActivity"
             android:label="@string/app_name"
             android:launchMode="singleTask"
-            android:screenOrientation="portrait"
-            android:theme="@android:style/Theme.NoTitleBar" />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activities.PublishActivity"
             android:configChanges="orientation|keyboardHidden"
             android:label="@string/app_name"
             android:launchMode="singleTop"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:theme="@style/Theme.AppCompat.Transparent"
             android:windowSoftInputMode="stateAlwaysHidden|adjustPan" />
         <activity
             android:name=".activities.login.RegisterFirstActivity"
             android:label="@string/app_name"
             android:launchMode="singleTop"
-            android:theme="@android:style/Theme.NoTitleBar"
             android:windowSoftInputMode="stateAlwaysVisible|adjustPan" />
         <activity
             android:name=".activities.login.RegisterSecondActivity"
             android:configChanges="keyboardHidden"
             android:label="@string/app_name"
             android:launchMode="singleTop"
-            android:theme="@android:style/Theme.NoTitleBar"
             android:windowSoftInputMode="stateAlwaysVisible|adjustPan" />
         <activity
             android:name=".activities.login.ResetPassBySmsActivity"
             android:configChanges="keyboardHidden"
             android:label="@string/app_name"
-            android:launchMode="singleTop"
-            android:theme="@android:style/Theme.NoTitleBar" />
+            android:launchMode="singleTop" />
         <activity
             android:name=".activities.login.RegisterThirdActivity"
             android:label="@string/app_name"
             android:launchMode="singleTop"
-            android:theme="@android:style/Theme.NoTitleBar"
             android:windowSoftInputMode="stateAlwaysVisible|adjustPan" />
         <activity
             android:name=".activities.SearchActivity"
             android:label="@string/app_name"
-            android:launchMode="singleTop"
-            android:theme="@android:style/Theme.NoTitleBar" />
+            android:launchMode="singleTop" />
         <activity
             android:name=".activities.ListPersonsActivity"
             android:label="@string/app_name"
             android:launchMode="singleTop"
-            android:theme="@android:style/Theme.NoTitleBar"
             android:windowSoftInputMode="stateHidden|adjustPan" />
         <activity
             android:name=".activities.ConversationActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
-            android:theme="@android:style/Theme.Holo.Light"
             android:windowSoftInputMode="stateHidden|adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />

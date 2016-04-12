@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.android.volley.VolleyError;
+import com.zhangqing.taji.BaseActivity;
 import com.zhangqing.taji.R;
 import com.zhangqing.taji.activities.TajiappActivity;
 import com.zhangqing.taji.base.UserClass;
@@ -21,7 +22,7 @@ import org.json.JSONObject;
  * 登录界面activity
  */
 
-public class LoginActivity extends AppCompatActivity {
+public class LoginActivity extends BaseActivity {
 
     private EditText mMobileEditText;
     private EditText mPasswordEditText;

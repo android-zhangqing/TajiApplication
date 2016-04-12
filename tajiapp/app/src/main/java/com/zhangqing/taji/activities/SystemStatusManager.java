@@ -19,6 +19,8 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.FrameLayout.LayoutParams;
 
+import com.zhangqing.taji.R;
+
 import java.lang.reflect.Method;
 
 /**
@@ -29,6 +31,23 @@ import java.lang.reflect.Method;
 @SuppressWarnings({ "unchecked", "rawtypes" })
 public class SystemStatusManager
 {
+    /**
+     * 设置状态栏背景状态
+     */
+    public static void setTranslucentStatus(Activity context) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            Window win = context.getWindow();
+            WindowManager.LayoutParams winParams = win.getAttributes();
+            final int bits = WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS;
+            winParams.flags |= bits;
+            win.setAttributes(winParams);
+        }
+        SystemStatusManager tintManager = new SystemStatusManager(context);
+        tintManager.setStatusBarTintEnabled(true);
+        tintManager.setStatusBarTintResource(R.color.bgcolor_systembar);//状态栏无背景
+    }
+
+
     static
     {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {

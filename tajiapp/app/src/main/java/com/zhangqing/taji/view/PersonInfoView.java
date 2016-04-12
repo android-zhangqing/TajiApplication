@@ -165,6 +165,7 @@ public class PersonInfoView extends LinearLayout {
         Log.e("addViewToContainer", stringWaitToSplit + "|" + layout.getWidth() + "|" + layout.toString());
         for (String i : strings) {
 
+            if (i.equals("")) continue;
             TextView tv = new TextView(getContext());
             tv.setText(i);
             tv.setBackgroundResource(backgroundResource);

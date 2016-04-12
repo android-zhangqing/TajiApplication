@@ -9,6 +9,7 @@ import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.View;
 
+import com.zhangqing.taji.BaseActivity;
 import com.zhangqing.taji.R;
 import com.zhangqing.taji.view.ViewPagerIndicator;
 
@@ -18,7 +19,7 @@ import java.util.List;
 /**
  * Created by Administrator on 2016/2/20.
  */
-public class SearchActivity extends FragmentActivity {
+public class SearchActivity extends BaseActivity {
     ViewPager pager;
     ViewPagerIndicator indicator;
 

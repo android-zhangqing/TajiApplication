@@ -137,7 +137,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="10dp"
-                                android:layout_marginRight="10dp"
+                                android:paddingRight="10dp"
                                 android:orientation="horizontal">
 
                             </LinearLayout>
@@ -171,7 +171,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="10dp"
-                                android:layout_marginRight="10dp"
+                                android:paddingRight="10dp"
                                 android:orientation="horizontal"></LinearLayout>
 
                         </HorizontalScrollView>

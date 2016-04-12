@@ -12,6 +12,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.android.volley.VolleyError;
+import com.zhangqing.taji.BaseActivity;
 import com.zhangqing.taji.R;
 import com.zhangqing.taji.adapter.PersonsListAdapter;
 import com.zhangqing.taji.adapter.PullableBaseAdapter;
@@ -25,7 +26,7 @@ import org.json.JSONObject;
  * 列出用户列表Activity，包括关注列表界面、被关注列表界面、师傅界面、徒弟界面
  */
 
-public class ListPersonsActivity extends Activity {
+public class ListPersonsActivity extends BaseActivity {
 
     //该成员变量指示该Activity为哪个界面：关注、被关注、师傅、徒弟
     private int mWhichType;

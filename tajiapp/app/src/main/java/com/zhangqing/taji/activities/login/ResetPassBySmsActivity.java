@@ -7,6 +7,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.VolleyError;
+import com.zhangqing.taji.BaseActivity;
 import com.zhangqing.taji.MyApplication;
 import com.zhangqing.taji.R;
 import com.zhangqing.taji.base.UserClass;
@@ -17,7 +18,7 @@ import org.json.JSONObject;
 /**
  * Created by Administrator on 2016/2/26.
  */
-public class ResetPassBySmsActivity extends Activity {
+public class ResetPassBySmsActivity extends BaseActivity {
     private TextView mMobileTextView;
     private TextView mVerifyTextView;
     private TextView mPasswordTextView;

@@ -12,6 +12,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.android.volley.VolleyError;
+import com.zhangqing.taji.BaseActivity;
 import com.zhangqing.taji.MyApplication;
 import com.zhangqing.taji.R;
 import com.zhangqing.taji.base.UserClass;
@@ -20,7 +21,7 @@ import com.zhangqing.taji.base.VolleyInterface;
 import org.json.JSONObject;
 
 
-public class RegisterFirstActivity extends Activity {
+public class RegisterFirstActivity extends BaseActivity {
     private EditText mobileEditText;
     private Button submitButton;
     private String mobile;

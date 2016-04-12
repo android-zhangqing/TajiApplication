@@ -5,6 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#402D52"
+    android:clipToPadding="false"
+    android:fitsSystemWindows="true"
     android:orientation="vertical">
 
     <View
@@ -25,7 +27,7 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/topbar_height"
-                android:background="@color/bgcolor_bar_first"
+                android:background="@drawable/home_hot_title_bar_bg"
                 android:gravity="center_vertical">
 
                 <ImageView
@@ -289,11 +291,11 @@
                 android:layout_height="wrap_content"
                 android:background="#16FBCC"
                 android:gravity="center"
-                android:text="分享技能"
-                android:paddingTop="12dp"
                 android:paddingBottom="12dp"
-                android:textSize="22sp"
-                android:textColor="#402D52" />
+                android:paddingTop="12dp"
+                android:text="分享技能"
+                android:textColor="#402D52"
+                android:textSize="22sp" />
 
 
         </LinearLayout>

@@ -11,6 +11,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
@@ -22,6 +23,7 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.android.volley.VolleyError;
+import com.zhangqing.taji.BaseActivity;
 import com.zhangqing.taji.MyApplication;
 import com.zhangqing.taji.R;
 import com.zhangqing.taji.activities.login.LoginActivity;
@@ -44,7 +46,7 @@ import java.util.Map;
 import io.rong.imkit.RongIM;
 import io.rong.imlib.model.UserInfo;
 
-public class TajiappActivity extends FragmentActivity implements OnTabClickListener,
+public class TajiappActivity extends BaseActivity implements OnTabClickListener,
         OnTopBarClickListener {
     private Fragment[] fragments = new Fragment[7];
     private TopBar topBar;
@@ -58,21 +60,7 @@ public class TajiappActivity extends FragmentActivity implements OnTabClickListe
     private boolean isShowingPublish = false;
 
 
-    /**
-     * 设置状态栏背景状态
-     */
-    private void setTranslucentStatus() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            Window win = getWindow();
-            WindowManager.LayoutParams winParams = win.getAttributes();
-            final int bits = WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS;
-            winParams.flags |= bits;
-            win.setAttributes(winParams);
-        }
-        SystemStatusManager tintManager = new SystemStatusManager(this);
-        tintManager.setStatusBarTintEnabled(true);
-        tintManager.setStatusBarTintResource(R.color.bgcolor_systembar);//状态栏无背景
-    }
+
 
     private String getMac() {
         String macSerial = null;
@@ -110,7 +98,7 @@ public class TajiappActivity extends FragmentActivity implements OnTabClickListe
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setTranslucentStatus();
+
         setContentView(R.layout.activity_main);
 
         //Toast.makeText(this,getMac(),Toast.LENGTH_LONG).show();

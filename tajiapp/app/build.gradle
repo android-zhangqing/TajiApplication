@@ -12,12 +12,13 @@ android {
     defaultConfig {
         applicationId "com.zhangqing.taji"
         minSdkVersion 14
-        targetSdkVersion 21
+        targetSdkVersion 23
     }
 
     buildTypes {
         release {
             minifyEnabled false
+            shrinkResources false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
         }
     }

@@ -4,8 +4,10 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.v7.app.AppCompatActivity;
 
 import com.android.volley.VolleyError;
+import com.zhangqing.taji.BaseActivity;
 import com.zhangqing.taji.activities.TajiappActivity;
 import com.zhangqing.taji.base.UserClass;
 import com.zhangqing.taji.base.VolleyInterface;
@@ -15,7 +17,7 @@ import org.json.JSONObject;
 /**
  * 启动封面Activity
  */
-public class CoverActivity extends Activity {
+public class CoverActivity extends AppCompatActivity {
     private static final int DELAY_MILLIS = 1000;
 
     private long mStartTimeMillis;
