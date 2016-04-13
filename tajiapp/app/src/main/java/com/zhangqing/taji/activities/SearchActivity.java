@@ -18,6 +18,7 @@ import java.util.List;
 
 /**
  * Created by Administrator on 2016/2/20.
+ * 右上角搜索
  */
 public class SearchActivity extends BaseActivity {
     ViewPager pager;

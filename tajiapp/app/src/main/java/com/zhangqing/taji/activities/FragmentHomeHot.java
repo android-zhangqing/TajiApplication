@@ -24,6 +24,9 @@ import com.zhangqing.taji.view.FragmentHomeHotViewThen;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 首页下的热门板块
+ */
 public class FragmentHomeHot extends BaseFragment implements OnClickListener {
     ViewPager viewPager;
     HorizontalScrollView horizontalScrollView;

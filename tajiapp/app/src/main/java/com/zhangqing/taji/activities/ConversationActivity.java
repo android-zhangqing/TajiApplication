@@ -17,6 +17,7 @@ import io.rong.imlib.model.Conversation;
 
 /**
  * Created by Administrator on 2016/2/23.
+ * 融云私聊对话框Activity
  */
 public class ConversationActivity extends BaseActivity {
 

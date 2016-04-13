@@ -30,6 +30,9 @@ import java.lang.ref.WeakReference;
 import io.rong.imkit.RongIM;
 import io.rong.imlib.RongIMClient;
 
+/**
+ * Application
+ */
 public class MyApplication extends Application {
     private static RequestQueue requestQueue;
 

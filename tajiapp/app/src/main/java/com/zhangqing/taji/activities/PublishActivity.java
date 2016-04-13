@@ -56,6 +56,7 @@ import java.util.Map;
 
 /**
  * Created by Administrator on 2016/2/10.
+ * 底部中间图标点进来的分享技能秀Activity
  */
 public class PublishActivity extends BaseActivity implements View.OnClickListener, EmojiconGridFragment.OnEmojiconClickedListener, EmojiconsFragment.OnEmojiconBackspaceClickedListener, UploadUtil.OnUploadProcessListener {
     private static final int BIGGER = 1;

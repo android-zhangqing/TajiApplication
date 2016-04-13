@@ -27,6 +27,7 @@ import org.json.JSONObject;
 
 /**
  * Created by Administrator on 2016/2/23.
+ * 右上角搜索图标点进去来这里
  */
 public class FragmentSearch extends Fragment implements TextView.OnEditorActionListener {
     public static final int Pager_Person = 0;

@@ -25,6 +25,7 @@ import org.json.JSONObject;
 
 /**
  * Created by Administrator on 2016/3/19.
+ * 查看其他人的个人信息
  */
 public class OthersDetailActivity extends BaseActivity {
 

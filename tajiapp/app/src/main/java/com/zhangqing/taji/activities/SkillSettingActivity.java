@@ -31,6 +31,9 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 设置技能标签Activity
+ */
 public class SkillSettingActivity extends BaseActivity implements View.OnClickListener {
     public static final int ACTIVITY_SKILL = 1;
     public static final int ACTIVITY_INTEREST = 2;

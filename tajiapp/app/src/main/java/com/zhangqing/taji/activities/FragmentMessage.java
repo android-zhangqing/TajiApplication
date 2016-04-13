@@ -25,6 +25,7 @@ import io.rong.message.TextMessage;
 
 /**
  * Created by Administrator on 2016/2/22.
+ * 消息板块
  */
 public class FragmentMessage extends BaseFragment {
     ConversationListFragment fragment;
@@ -58,6 +59,7 @@ public class FragmentMessage extends BaseFragment {
     public void onStart() {
         super.onStart();
         initFragment();
+        onHiddenChanged(false);
     }
 
     @Override
@@ -72,7 +74,23 @@ public class FragmentMessage extends BaseFragment {
                     //fragment.getAdapter()
                     log("ll_at");
                     //RongIM.getInstance().refreshUserInfoCache(new UserInfo("1010","system",Uri.parse("http://taji.whutech.com/uploads/8.jpg")));
-                    fragment.onEventMainThread(new Event.OnReceiveMessageEvent(Message.obtain("1010", Conversation.ConversationType.PRIVATE, new TextMessage("kk")), 5));
+//                    Message message = Message.obtain("1010", Conversation.ConversationType.SYSTEM, new TextMessage("test"));
+//                    message.setReceivedTime(System.currentTimeMillis());
+//                    message.setSentTime(System.currentTimeMillis());
+                    RongIMClient.getInstance().insertMessage(Conversation.ConversationType.SYSTEM, "1010", "1003", new TextMessage("testrws"), new RongIMClient.ResultCallback<Message>() {
+                        @Override
+                        public void onSuccess(Message message) {
+                            RongIMClient.getInstance().setMessageSentStatus(message.getMessageId(), Message.SentStatus.SENT);
+                            fragment.onEventMainThread(new Event.OnReceiveMessageEvent(message, 5));
+
+                        }
+
+                        @Override
+                        public void onError(RongIMClient.ErrorCode errorCode) {
+
+                        }
+                    });
+
                 }
             });
         }
@@ -147,6 +165,7 @@ public class FragmentMessage extends BaseFragment {
 //        });
 //
         RongIM.setConversationListBehaviorListener(new RongIM.ConversationListBehaviorListener() {
+
             @Override
             public boolean onConversationPortraitClick(Context context, Conversation.ConversationType conversationType, String s) {
                 OthersDetailActivity.start(getActivity(), s, "User " + s);
@@ -166,6 +185,9 @@ public class FragmentMessage extends BaseFragment {
             @Override
             public boolean onConversationClick(Context context, View view, UIConversation uiConversation) {
                 log("ConversationListBeh", RongIM.getInstance().getRongIMClient().getTotalUnreadCount() + "");
+                if(uiConversation.getConversationType()== Conversation.ConversationType.SYSTEM){
+                    return true;
+                }
                 return false;
             }
 

@@ -25,6 +25,7 @@ import org.json.JSONObject;
 
 /**
  * Created by Administrator on 2016/3/15.
+ * 临时使用的activity，正式版将删除
  */
 public class ModifyInterestSkillActivity extends Activity {
     //声明AMapLocationClient类对象

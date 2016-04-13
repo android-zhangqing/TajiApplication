@@ -32,6 +32,7 @@ import io.rong.imlib.model.Conversation;
 
 /**
  * Created by Administrator on 2016/2/7.
+ * 圈子
  */
 public class FragmentCircle extends BaseFragment {
     private ViewPager mViewPager;

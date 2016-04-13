@@ -9,6 +9,7 @@ import com.zhangqing.taji.activities.SystemStatusManager;
 
 /**
  * Created by zhangqing on 2016/4/12.
+ * 自定义的Activity基类
  */
 public class BaseActivity extends AppCompatActivity {
 

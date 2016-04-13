@@ -47,6 +47,9 @@ import java.util.Map;
 import io.rong.imkit.RongIM;
 import io.rong.imlib.model.UserInfo;
 
+/**
+ * 主界面Activity
+ */
 public class TajiappActivity extends BaseActivity implements OnTabClickListener,
         OnTopBarClickListener {
     private Fragment[] fragments = new Fragment[7];
