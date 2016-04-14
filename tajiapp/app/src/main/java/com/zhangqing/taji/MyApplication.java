@@ -23,6 +23,7 @@ import com.nostra13.universalimageloader.core.display.SimpleBitmapDisplayer;
 import com.nostra13.universalimageloader.core.download.BaseImageDownloader;
 import com.nostra13.universalimageloader.utils.StorageUtils;
 import com.zhangqing.taji.base.UserClass;
+import com.zhangqing.taji.database.DatabaseManager;
 
 import java.io.File;
 import java.lang.ref.WeakReference;
@@ -81,6 +82,9 @@ public class MyApplication extends Application {
                 "io.rong.push".equals(getCurProcessName(getApplicationContext()))) {
             RongIM.init(this);
         }
+
+        //初始化用户表数据库
+        DatabaseManager.init(getApplicationContext());
 
     }
 

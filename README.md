@@ -1,10 +1,13 @@
-﻿# Ta技
+# Ta技
 【Commit开头含义】
 最近有个想法，一大堆commit放在一起，里面有Bug修复、有原创部分、有新增功能、有结构优化，看着太乱了。所以从2016-04-14开始，commit标题的开头字母表明该commit的更改属性。
+
+【C】代表原创亮点(Creative)
+【I】代表新增功能或界面或结构(Increase)
+
 【B】代表Bug修复(Bug)
-【O】代表原创部分(original)
-【I】代表新增功能或界面(increase)
 【N】代表小细节优化(not important)
+
 
 【代码结构】
 ├─app

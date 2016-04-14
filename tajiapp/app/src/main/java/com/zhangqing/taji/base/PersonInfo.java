@@ -30,6 +30,12 @@ public class PersonInfo {
     public boolean is_master;
     public boolean is_follow;
 
+    public boolean hasMatching=false;
+
+    public PersonInfo(){
+
+    }
+
     public PersonInfo(String userid, JSONObject jsonObject) throws JSONException {
         this.userid = userid;
 

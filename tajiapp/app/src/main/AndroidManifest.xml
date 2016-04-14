@@ -150,6 +150,7 @@
         <activity android:name=".activities.SkillSettingActivity"
 
             ></activity>
+        <activity android:name=".activities.SkillMatchingActivity"/>
     </application>
 
 </manifest>

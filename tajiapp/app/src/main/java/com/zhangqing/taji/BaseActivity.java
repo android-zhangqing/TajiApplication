@@ -16,7 +16,7 @@ public class BaseActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Log.e("**BaseActivity**", "onCreate");
+        Log.e("**"+this.getClass().getSimpleName()+"**", "onCreate");
         SystemStatusManager.setTranslucentStatus(this);
     }
 

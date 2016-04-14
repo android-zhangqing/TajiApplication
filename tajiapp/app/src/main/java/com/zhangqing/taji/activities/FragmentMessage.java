@@ -1,6 +1,7 @@
 package com.zhangqing.taji.activities;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
@@ -47,10 +48,13 @@ public class FragmentMessage extends BaseFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        super.onCreateView(inflater,container,savedInstanceState);
         View v = inflater.inflate(R.layout.fragment_message, container, false);
 
         ll_at = (LinearLayout) v.findViewById(R.id.message_btn_at);
 
+        initFragment();
+        initListener();
 
         return v;
     }
@@ -58,8 +62,7 @@ public class FragmentMessage extends BaseFragment {
     @Override
     public void onStart() {
         super.onStart();
-        initFragment();
-        onHiddenChanged(false);
+
     }
 
     @Override
@@ -68,51 +71,11 @@ public class FragmentMessage extends BaseFragment {
         log("onHiddenChanged", hidden + "");
         if (!hidden) {
 
-            ll_at.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    //fragment.getAdapter()
-                    log("ll_at");
-                    //RongIM.getInstance().refreshUserInfoCache(new UserInfo("1010","system",Uri.parse("http://taji.whutech.com/uploads/8.jpg")));
-//                    Message message = Message.obtain("1010", Conversation.ConversationType.SYSTEM, new TextMessage("test"));
-//                    message.setReceivedTime(System.currentTimeMillis());
-//                    message.setSentTime(System.currentTimeMillis());
-                    RongIMClient.getInstance().insertMessage(Conversation.ConversationType.SYSTEM, "1010", "1003", new TextMessage("testrws"), new RongIMClient.ResultCallback<Message>() {
-                        @Override
-                        public void onSuccess(Message message) {
-                            RongIMClient.getInstance().setMessageSentStatus(message.getMessageId(), Message.SentStatus.SENT);
-                            fragment.onEventMainThread(new Event.OnReceiveMessageEvent(message, 5));
 
-                        }
-
-                        @Override
-                        public void onError(RongIMClient.ErrorCode errorCode) {
-
-                        }
-                    });
-
-                }
-            });
         }
     }
 
-    private void initFragment() {
-        log("1");
-        fragment = (ConversationListFragment) getChildFragmentManager().findFragmentById(R.id.conversationlist);
-        log("2");
-        uri = Uri.parse("rong://" + getActivity().getApplicationInfo().packageName).buildUpon()
-                .appendPath("conversationlist")
-                .appendQueryParameter(Conversation.ConversationType.PRIVATE.getName(), "false") //设置私聊会话非聚合显示
-                .appendQueryParameter(Conversation.ConversationType.GROUP.getName(), "true")//设置群组会话聚合显示
-                .appendQueryParameter(Conversation.ConversationType.DISCUSSION.getName(), "false")//设置讨论组会话非聚合显示
-                .appendQueryParameter(Conversation.ConversationType.SYSTEM.getName(), "false")//设置系统会话非聚合显示
-                .build();
-        log("3" + (fragment == null ? "null" : "n") + "|" + (uri == null ? "a" : "b"));
-        fragment.setUri(uri);
-        log("4");
-
-        //RongIMClient.getInstance().getConversationList()
-
+    private void initListener(){
 
         RongIM.getInstance().setSendMessageListener(new RongIM.OnSendMessageListener() {
             @Override
@@ -184,8 +147,13 @@ public class FragmentMessage extends BaseFragment {
 
             @Override
             public boolean onConversationClick(Context context, View view, UIConversation uiConversation) {
-                log("ConversationListBeh", RongIM.getInstance().getRongIMClient().getTotalUnreadCount() + "");
-                if(uiConversation.getConversationType()== Conversation.ConversationType.SYSTEM){
+                log("ConversationListBeh",uiConversation.getConversationSenderId()+"|"+ RongIM.getInstance().getRongIMClient().getTotalUnreadCount() + "");
+                if (uiConversation.getConversationType() == Conversation.ConversationType.SYSTEM) {
+                    switch (uiConversation.getConversationSenderId()) {
+                        case "1010":
+                            startActivity(new Intent(getActivity(), SkillMatchingActivity.class));
+                            break;
+                    }
                     return true;
                 }
                 return false;
@@ -193,6 +161,51 @@ public class FragmentMessage extends BaseFragment {
 
 
         });
+
+
+        ll_at.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //fragment.getAdapter()
+                log("ll_at");
+                //RongIM.getInstance().refreshUserInfoCache(new UserInfo("1010","system",Uri.parse("http://taji.whutech.com/uploads/8.jpg")));
+//                    Message message = Message.obtain("1010", Conversation.ConversationType.SYSTEM, new TextMessage("test"));
+//                    message.setReceivedTime(System.currentTimeMillis());
+//                    message.setSentTime(System.currentTimeMillis());
+                RongIMClient.getInstance().insertMessage(Conversation.ConversationType.SYSTEM, "1010", "1010", new TextMessage("又有人跟你匹配了呦！"), new RongIMClient.ResultCallback<Message>() {
+                    @Override
+                    public void onSuccess(Message message) {
+                        RongIMClient.getInstance().setMessageSentStatus(message.getMessageId(), Message.SentStatus.SENT,null);
+                        fragment.onEventMainThread(new Event.OnReceiveMessageEvent(message, 0));
+
+                    }
+
+                    @Override
+                    public void onError(RongIMClient.ErrorCode errorCode) {
+
+                    }
+                });
+
+            }
+        });
+    }
+
+    private void initFragment() {
+        log("1");
+        fragment = (ConversationListFragment) getChildFragmentManager().findFragmentById(R.id.conversationlist);
+        log("2");
+        uri = Uri.parse("rong://" + getActivity().getApplicationInfo().packageName).buildUpon()
+                .appendPath("conversationlist")
+                .appendQueryParameter(Conversation.ConversationType.PRIVATE.getName(), "false") //设置私聊会话非聚合显示
+                .appendQueryParameter(Conversation.ConversationType.GROUP.getName(), "true")//设置群组会话聚合显示
+                .appendQueryParameter(Conversation.ConversationType.DISCUSSION.getName(), "false")//设置讨论组会话非聚合显示
+                .appendQueryParameter(Conversation.ConversationType.SYSTEM.getName(), "false")//设置系统会话非聚合显示
+                .build();
+        log("3" + (fragment == null ? "null" : "n") + "|" + (uri == null ? "a" : "b"));
+        fragment.setUri(uri);
+        log("4");
+
+        //RongIMClient.getInstance().getConversationList()
 
     }
 

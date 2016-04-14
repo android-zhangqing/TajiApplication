@@ -17,7 +17,7 @@ public class SkillMatchingActivity extends BaseActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.layout_progressbar);
+        setContentView(R.layout.activity_skill_matching);
 
     }
 }
