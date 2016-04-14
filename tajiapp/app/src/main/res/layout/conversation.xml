@@ -12,11 +12,14 @@
         android:background="@drawable/home_hot_title_bar_bg">
 
         <ImageView
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_centerVertical="true"
-            android:padding="5dp"
-            android:src="@drawable/icon_register_first_cha" />
+            android:layout_width="@dimen/topbar_height"
+            android:layout_height="@dimen/topbar_height"
+            android:background="@drawable/press_bg"
+            android:onClick="onClickBtnFinish"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:scaleType="center"
+            android:src="@drawable/icon_tab_publish_backstep" />
 
         <TextView
             android:id="@+id/title"

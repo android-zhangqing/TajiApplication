@@ -3,11 +3,21 @@ package com.zhangqing.taji.database;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.net.Uri;
 import android.util.Log;
 
+import com.android.volley.VolleyError;
 import com.zhangqing.taji.base.PersonInfo;
+import com.zhangqing.taji.base.UserClass;
+import com.zhangqing.taji.base.VolleyInterface;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
+
+import io.rong.imkit.RongIM;
+import io.rong.imlib.model.UserInfo;
 
 /**
  * 数据库管理类
@@ -35,6 +45,43 @@ public class DatabaseManager {
         dbHelper = new MySQLiteOpenHelper(context);
     }
 
+
+    private boolean isLoading = false;
+
+    public void insert(String userid, Context context) {
+        //if (isLoading) return;
+        Log.e("insertById", "start" + userid);
+        isLoading = true;
+        UserClass.getInstance().getOthersAvatar(userid, new VolleyInterface(context.getApplicationContext()) {
+            @Override
+            public void onMySuccess(JSONObject jsonObject) {
+                Log.e("insertById", "onMySuccess");
+                try {
+                    String name = jsonObject.getString("username");
+                    String avatar = jsonObject.getString("avatar");
+                    String uid = jsonObject.getString("uid");
+
+                    if (name.equals("") || name.equals("null"))
+                        name = "游客" + uid;
+                    if (avatar.indexOf("http") == -1) return;
+                    UserInfo userInfo = new UserInfo(uid, name, Uri.parse(avatar));
+                    RongIM.getInstance().refreshUserInfoCache(userInfo);
+                    insert(uid, name, avatar);
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+
+                }
+                isLoading = false;
+                return;
+            }
+
+            @Override
+            public void onMyError(VolleyError error) {
+                isLoading = false;
+            }
+        });
+    }
 
     /**
      * 插入一条数据
@@ -109,8 +156,17 @@ public class DatabaseManager {
 //        return 1;
 //    }
 
+    public UserInfo queryUserInfoById(String userid) {
+        PersonInfo p = queryPersonInfoById(userid);
+        if (p != null) {
+            UserInfo u = new UserInfo(p.userid, p.username, Uri.parse(p.avatar));
+            return u;
+        }
+        return null;
+    }
 
-    public PersonInfo queryById(String userid) {
+
+    public PersonInfo queryPersonInfoById(String userid) {
         Log.e("SQLite", "----query----");
         SQLiteDatabase db = dbHelper.getReadableDatabase();
         Cursor cursor;

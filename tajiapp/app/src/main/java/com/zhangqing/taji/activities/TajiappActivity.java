@@ -30,6 +30,7 @@ import com.zhangqing.taji.R;
 import com.zhangqing.taji.activities.login.LoginActivity;
 import com.zhangqing.taji.base.UserClass;
 import com.zhangqing.taji.base.VolleyInterface;
+import com.zhangqing.taji.database.DatabaseManager;
 import com.zhangqing.taji.view.BottomBar;
 import com.zhangqing.taji.view.BottomBar.OnTabClickListener;
 import com.zhangqing.taji.view.TopBar;
@@ -85,48 +86,56 @@ public class TajiappActivity extends BaseActivity implements OnTabClickListener,
 
         MyApplication.connect(TajiappActivity.this);
         RongIM.setUserInfoProvider(new RongIM.UserInfoProvider() {
-            Map<String, UserInfo> map = new HashMap<String, UserInfo>();
+
 
             @Override
             public UserInfo getUserInfo(String s) {
 
-                //Log.e("getMyUserInfo", s + "|");
-                if (map.containsKey(s)) {
-                    return map.get(s);
-                } else {
-                    UserClass.getInstance().getOthersAvatar(s, new VolleyInterface(TajiappActivity.this.getApplicationContext()) {
-                        @Override
-                        public void onMySuccess(JSONObject jsonObject) {
-                            //Log.e("onMySuccess", jsonObject.toString());
-                            try {
-                                String name = jsonObject.getString("username");
-                                String avatar = jsonObject.getString("avatar");
-                                String uid = jsonObject.getString("uid");
-
-                                if (name.equals("") || name.equals("null"))
-                                    name = "游客" + uid;
-                                if (avatar.indexOf("http") == -1) return;
-                                UserInfo userInfo = new UserInfo(uid, name, Uri.parse(avatar));
-                                RongIM.getInstance().refreshUserInfoCache(userInfo);
-                                map.put(uid, userInfo);
-
-                            } catch (JSONException e) {
-                                e.printStackTrace();
-                                return;
-                            }
-
-                        }
-
-                        @Override
-                        public void onMyError(VolleyError error) {
-
-                        }
-                    });
-
-
+                UserInfo userInfo = DatabaseManager.getInstance().queryUserInfoById(s);
+                if (userInfo != null) {
+                    log("success" + s);
+                    return userInfo;
                 }
-
+                DatabaseManager.getInstance().insert(s, TajiappActivity.this);
+                log("null" + s);
+                //Log.e("getMyUserInfo", s + "|");
+//                if (map.containsKey(s)) {
+//                    return map.get(s);
+//                } else {
+//                    UserClass.getInstance().getOthersAvatar(s, new VolleyInterface(TajiappActivity.this.getApplicationContext()) {
+//                        @Override
+//                        public void onMySuccess(JSONObject jsonObject) {
+//                            //Log.e("onMySuccess", jsonObject.toString());
+//                            try {
+//                                String name = jsonObject.getString("username");
+//                                String avatar = jsonObject.getString("avatar");
+//                                String uid = jsonObject.getString("uid");
+//
+//                                if (name.equals("") || name.equals("null"))
+//                                    name = "游客" + uid;
+//                                if (avatar.indexOf("http") == -1) return;
+//                                UserInfo userInfo = new UserInfo(uid, name, Uri.parse(avatar));
+//                                RongIM.getInstance().refreshUserInfoCache(userInfo);
+//                                map.put(uid, userInfo);
+//
+//                            } catch (JSONException e) {
+//                                e.printStackTrace();
+//                                return;
+//                            }
+//
+//                        }
+//
+//                        @Override
+//                        public void onMyError(VolleyError error) {
+//
+//                        }
+//                    });
+//
+//
+//                }
+//
                 return null;
+
             }
         }, true);
 
@@ -360,16 +369,13 @@ public class TajiappActivity extends BaseActivity implements OnTabClickListener,
         inputServer.setFocusable(true);
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Chat With Whom?").setView(inputServer).setNegativeButton(
-                "取消", null);
-        builder.setPositiveButton("开始聊天",
-                new DialogInterface.OnClickListener() {
-
-                    public void onClick(DialogInterface dialog, int which) {
-                        String inputName = inputServer.getText().toString();
-                        RongIM.getInstance().startPrivateChat(TajiappActivity.this, inputName, "");
-                    }
-                });
+        builder.setTitle("Chat With Whom?").setView(inputServer).setNegativeButton("取消", null);
+        builder.setPositiveButton("开始聊天", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which) {
+                String inputName = inputServer.getText().toString();
+                RongIM.getInstance().startPrivateChat(TajiappActivity.this, inputName, "zz");
+            }
+        });
         builder.show();
     }
 

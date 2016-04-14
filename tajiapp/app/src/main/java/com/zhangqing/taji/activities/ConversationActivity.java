@@ -5,6 +5,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
 
 import com.zhangqing.taji.BaseActivity;
@@ -50,7 +51,7 @@ public class ConversationActivity extends BaseActivity {
      * 展示如何从 Intent 中得到 融云会话页面传递的 Uri
      */
     private void getIntentDate(Intent intent) {
-        ((TextView)findViewById(R.id.title)).setText("正在与["+intent.getData().getQueryParameter("title")+"]对话");
+        ((TextView) findViewById(R.id.title)).setText("正在与[" + intent.getData().getQueryParameter("title") + "]对话");
 
         //Log.e("RM.getIntentDate", intent.getData().getQueryParameter("title") + "|||" + ((intent.getData() == null) ? "null" : intent.getData().toString() + "|"));
         mTargetId = intent.getData().getQueryParameter("targetId");
@@ -76,6 +77,10 @@ public class ConversationActivity extends BaseActivity {
                 .appendQueryParameter("targetId", mTargetId).build();
 
         fragment.setUri(uri);
+    }
+
+    public void onClickBtnFinish(View v) {
+        finish();
     }
 
 }

@@ -8,8 +8,7 @@
         android:layout_width="match_parent"
         android:layout_height="150dp"
         android:background="@color/bgcolor_loading_pic"
-        android:foreground="@android:color/black"
-        android:scaleType="center" />
+        android:scaleType="centerCrop" />
 
     <View
         android:layout_width="match_parent"
