@@ -91,6 +91,7 @@ public class FragmentMessage extends BaseFragment {
             }
         });
 
+
         //set Listener
         RongIM.setOnReceiveMessageListener(new RongIMClient.OnReceiveMessageListener() {
             @Override
@@ -151,6 +152,7 @@ public class FragmentMessage extends BaseFragment {
                 if (uiConversation.getConversationType() == Conversation.ConversationType.SYSTEM) {
                     switch (uiConversation.getConversationTargetId()) {
                         case "1010":
+                            uiConversation.setUnReadMessageCount(0);
                             startActivity(new Intent(getActivity(), SkillMatchingActivity.class));
                             break;
                         case "1011":
@@ -172,15 +174,20 @@ public class FragmentMessage extends BaseFragment {
                 insertMessage("1010", "又有人跟你匹配了呦！");
             }
         });
+
+
+
+
     }
 
 
     /**
      * 插入一条虚拟System类型消息
+     *
      * @param targetId 头像userid
-     * @param content 显示内容
+     * @param content  显示内容
      */
-    private void insertMessage(String targetId, String content) {
+    private void insertMessage(final String targetId, final String content) {
 
         RongIMClient.getInstance().insertMessage(Conversation.ConversationType.SYSTEM, targetId, UserClass.getInstance().userId, new TextMessage(content), new RongIMClient.ResultCallback<Message>() {
             @Override
@@ -189,6 +196,19 @@ public class FragmentMessage extends BaseFragment {
                     @Override
                     public void onSuccess(Boolean aBoolean) {
                         fragment.onEventMainThread(new Event.OnReceiveMessageEvent(message, 0));
+                        RongIMClient.getInstance().getConversation(Conversation.ConversationType.SYSTEM, targetId, new RongIMClient.ResultCallback<Conversation>() {
+                            @Override
+                            public void onSuccess(Conversation conversation) {
+                                Log.e("getConversation","onSuccess");
+                                conversation.setUnreadMessageCount(2);
+                            }
+
+                            @Override
+                            public void onError(RongIMClient.ErrorCode errorCode) {
+                                Log.e("getConversation","onError");
+
+                            }
+                        });
                     }
 
                     @Override

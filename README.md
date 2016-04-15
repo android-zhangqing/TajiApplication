@@ -1,34 +1,57 @@
 # Ta技
 【Commit开头含义】
+
 最近有个想法，一大堆commit放在一起，里面有Bug修复、有原创部分、有新增功能、有结构优化，看着太乱了。所以从2016-04-14开始，commit标题的开头字母表明该commit的更改属性。
 
 【C】代表原创亮点(Creative)
+
 【I】代表新增功能或界面或结构(Increase)
 
 【B】代表Bug修复(Bug)
+
 【N】代表小细节优化(not important)
 
 
 【代码结构】
+
 ├─app
+
 │  ├─downloads
+
 │  ├─libs
+
 │  └─src
+
 │      └─main
+
 │          ├─java
+
 │          │  └─com
+
 │          │      └─zhangqing
+
 │          │          └─taji
+
 │          │              ├─activities //所有的Activity在这里，7个主Fragment也在这里
+
 │          │              │  └─login 
+
 │          │              ├─adapter //适配器
+
 │          │              ├─base //包含用户数据bean、Volloy封装、网络操作Model
+
 │          │              ├─database //用户表SQLite数据库
+
 │          │              ├─dongtai //[动态]功能相关类
+
 │          │              ├─util //工具类
+
 │          │              └─view //自定义组件
+
 ├─emoji //emoji完美兼容开源框架，Android自带的内置emoji太难看了~
+
 └─IMKit //融云sdk，用于聊天功能。
+
 
 
 【项目介绍】

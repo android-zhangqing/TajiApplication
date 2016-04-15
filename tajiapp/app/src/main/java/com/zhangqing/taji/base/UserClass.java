@@ -467,6 +467,11 @@ public class UserClass {
         VolleyRequest.RequestGet(url, "getOthersAvatar" + userid, vif);
     }
 
+    public void getSkillMatching(VolleyInterface vif) {
+        String url = URLHEAD + "/Skill/match?" + "&userid=" + userId + "&openid=" + openId;
+        VolleyRequest.RequestGet(url, "getSkillMatching", vif);
+    }
+
     public void searchForPerson(String word, VolleyInterface vif) {
         String url = "http://www.baidu.com";
         try {

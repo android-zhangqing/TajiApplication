@@ -70,7 +70,6 @@ public class DatabaseManager {
 
                 } catch (JSONException e) {
                     e.printStackTrace();
-
                 }
                 isLoading = false;
                 return;

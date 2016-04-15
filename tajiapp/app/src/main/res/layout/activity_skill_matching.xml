@@ -31,4 +31,11 @@
             android:textSize="@dimen/textsize_bar_first" />
 
     </RelativeLayout>
+
+
+    <com.zhangqing.taji.view.pullable.RecyclerViewPullable
+        android:id="@+id/skill_matching_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </com.zhangqing.taji.view.pullable.RecyclerViewPullable>
 </LinearLayout>

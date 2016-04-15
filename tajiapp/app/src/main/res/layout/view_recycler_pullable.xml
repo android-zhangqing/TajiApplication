@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.zhangqing.taji.view.MySwipeRefreshLayout
+        android:id="@+id/swipe_refresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="0dp"
+        android:padding="0dp">
+
+
+        <com.zhangqing.taji.view.pullable.RecyclerViewWithHeaderAndFooter
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/bgcolor_bar_first"></com.zhangqing.taji.view.pullable.RecyclerViewWithHeaderAndFooter>
+
+
+    </com.zhangqing.taji.view.MySwipeRefreshLayout>
+</LinearLayout>
