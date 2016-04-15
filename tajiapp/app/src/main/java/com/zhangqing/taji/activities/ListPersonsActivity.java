@@ -121,7 +121,7 @@ public class ListPersonsActivity extends BaseActivity {
                     mListView.isNoMoreData = true;
                     Log.e("getPersonsList", "null data");
                 } else {
-                    if (mListAdapter.onAddData(jsonObject) != 20) {
+                    if (mListAdapter.onAddData(jsonObject) != UserClass.Page_Per_Count) {
                         mListView.getFootView().setText("没有了呢~~");
                         mListView.isNoMoreData = true;
                     } else {
