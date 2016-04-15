@@ -11,6 +11,7 @@ import java.util.WeakHashMap;
 
 /**
  * Created by zhangqing on 2016/4/2.
+ * 动态bean
  */
 public class DongTaiClass {
     //动态ID

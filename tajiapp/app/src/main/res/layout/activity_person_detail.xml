@@ -36,24 +36,25 @@
 
     </RelativeLayout>
 
-    <com.zhangqing.taji.adapter.LoadMoreRecyclerView
+    <com.zhangqing.taji.view.pullable.RecyclerViewPullable
         android:id="@+id/recycler_view"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1">
 
 
-    </com.zhangqing.taji.adapter.LoadMoreRecyclerView>
+    </com.zhangqing.taji.view.pullable.RecyclerViewPullable>
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#382747"
+        android:background="@drawable/person_detail_chat_btn"
         android:gravity="center"
         android:paddingBottom="5dp"
         android:paddingTop="5dp"
         android:text="聊天"
         android:textColor="#918B97"
+        android:onClick="onClickBtnChat"
         android:textSize="16sp" />
 
 

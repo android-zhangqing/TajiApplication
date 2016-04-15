@@ -9,6 +9,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.VolleyError;
 import com.zhangqing.taji.BaseActivity;
@@ -19,9 +20,12 @@ import com.zhangqing.taji.base.PersonInfo;
 import com.zhangqing.taji.base.UserClass;
 import com.zhangqing.taji.base.VolleyInterface;
 import com.zhangqing.taji.view.PersonInfoView;
+import com.zhangqing.taji.view.pullable.RecyclerViewPullable;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import io.rong.imkit.RongIM;
 
 /**
  * Created by Administrator on 2016/3/19.
@@ -44,7 +48,7 @@ public class OthersDetailActivity extends BaseActivity {
     private PersonInfo mPersonInfo;
     private PersonInfoView mPersonInfoView;
 
-    private LoadMoreRecyclerView mRecyclerView;
+    private RecyclerViewPullable mRecyclerView;
     private DongTaiAdapter mRecyclerViewAdapter;
 
     @Override
@@ -52,10 +56,9 @@ public class OthersDetailActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_person_detail);
 
-        mRecyclerView= (LoadMoreRecyclerView) findViewById(R.id.recycler_view);
-        mRecyclerView.setHasFixedSize(true);
-        mRecyclerView.setAdapter(mRecyclerViewAdapter=new DongTaiAdapter(this));
+        mRecyclerView = (RecyclerViewPullable) findViewById(R.id.recycler_view);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        mRecyclerView.setAdapter(mRecyclerViewAdapter = new DongTaiAdapter(this));
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
 
         Bundle bundle = getIntent().getExtras();
@@ -69,24 +72,49 @@ public class OthersDetailActivity extends BaseActivity {
             public void onMySuccess(JSONObject jsonObject) {
 
                 try {
-                    mPersonInfo=new PersonInfo(mId,jsonObject);
-                    mPersonInfoView=new PersonInfoView(OthersDetailActivity.this,mPersonInfo);
+                    mPersonInfo = new PersonInfo(mId, jsonObject);
+                    mPersonInfoView = new PersonInfoView(OthersDetailActivity.this, mPersonInfo);
 
                     mRecyclerView.setHeaderView(mPersonInfoView);
 
-                    mRecyclerView.setLoadMoreListener(new LoadMoreRecyclerView.LoadMoreListener() {
+                    mRecyclerView.setOnLoadListener(new RecyclerViewPullable.OnLoadListener() {
+
                         @Override
-                        public void onLoadMore() {
-                            Log.e("onLoadMore","a");
+                        public void onLoadMore(final int loadingPage) {
+                            UserClass.getInstance().getOthersDongTai(mId, loadingPage, new VolleyInterface(getApplicationContext()) {
+                                @Override
+                                public void onMySuccess(JSONObject jsonObject) {
+
+                                    if (loadingPage == 1) {
+                                        mRecyclerViewAdapter.clearData();
+                                        mRecyclerView.setRefreshing(false);
+                                    }
+                                    try {
+                                        if (mRecyclerViewAdapter.addData(jsonObject.getJSONArray("data")) != UserClass.Page_Per_Count) {
+                                            mRecyclerView.setLoadingMoreStatus(RecyclerViewPullable.LoadingMoreStatus_End);
+                                        } else {
+                                            mRecyclerView.setLoadingMoreStatus(RecyclerViewPullable.LoadingMoreStatus_Normal);
+                                        }
+                                        mRecyclerView.notifyDataSetChanged();
+                                    } catch (JSONException e) {
+                                        e.printStackTrace();
+                                        Toast.makeText(OthersDetailActivity.this, "解析异常", Toast.LENGTH_LONG).show();
+                                    }
+                                }
+
+                                @Override
+                                public void onMyError(VolleyError error) {
+                                    mRecyclerView.setRefreshing(false);
+                                    mRecyclerView.setLoadingMoreStatus(RecyclerViewPullable.LoadingMoreStatus_Normal);
+                                }
+                            });
                         }
                     });
-                    mRecyclerView.setLoadingMore(true);
-
-
+                    mRecyclerView.setRefreshing(true);
                     //mRecyclerViewAdapter.notifyItemRangeChanged(-1,3);
                 } catch (JSONException e) {
                     e.printStackTrace();
-                    Log.e("JSONException","getOthersInfo");
+                    Log.e("JSONException", "getOthersInfo");
                 }
             }
 
@@ -100,12 +128,13 @@ public class OthersDetailActivity extends BaseActivity {
 //        RelativeLayout relativeLayout=new RelativeLayout(this);
     }
 
-    private void addDataToAdapter(){
-
-
-    }
-
     public void onClickBtnFinish(View v) {
         finish();
     }
+
+    public void onClickBtnChat(View v) {
+        RongIM.getInstance().startPrivateChat(this, mId, mName);
+    }
+
+
 }

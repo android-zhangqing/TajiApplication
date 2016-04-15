@@ -84,8 +84,8 @@ public class PersonInfoView extends LinearLayout {
         mContainerInterest = (LinearLayout) mMainContainer.findViewById(R.id.my_container_interest);
         mContainerSkill = (LinearLayout) mMainContainer.findViewById(R.id.my_container_skill);
 
-        mFollowButton = (TextView) findViewById(R.id.my_follow_button);
-        mIsMaster = (ImageView) findViewById(R.id.my_head_ismaster);
+        mFollowButton = (TextView) mMainContainer.findViewById(R.id.my_follow_button);
+        mIsMaster = (ImageView) mMainContainer.findViewById(R.id.my_head_ismaster);
 
 
         addView(mMainContainer);
@@ -132,13 +132,28 @@ public class PersonInfoView extends LinearLayout {
 
         mSchoolTextView.setText(mPersonInfo.school);
 
+        /**
+         * 师傅关系的话，就显示出图标【师】
+         */
         if (mPersonInfo.is_master) mIsMaster.setVisibility(View.VISIBLE);
-        ;
+
+        /**
+         * 处理查看的个人主页是自己的主页的情况
+         */
+        Log.e("mPersonInfo", mPersonInfo.userid + "|");
+        if (mPersonInfo.userid.equals(UserClass.getInstance().userId)) {
+            mFollowButton.setVisibility(View.GONE);
+        } else {
+            mFollowButton.setText(mPersonInfo.is_follow ? "√ 已订阅" : "+ 订阅");
+            mFollowButton.setTextColor(mPersonInfo.is_follow ? Color.parseColor("#9F61AA") : Color.parseColor("#16FBCC"));
+            mFollowButton.setBackgroundResource(mPersonInfo.is_follow ? R.drawable.home_hot_btn_concern_bg_reverse : R.drawable.home_hot_btn_concern_bg);
+        }
+        
     }
 
-    private static final int MARGIN_LABLE = 15;
-    private static final int MARGIN_LABLE_Top = 15;
-    private static final int PADDING_LABLE = 22;
+    private static final int MARGIN_LABLE = 10;
+    private static final int MARGIN_LABLE_Top = 0;
+    private static final int PADDING_LABLE = 15;
 
     /**
      * 将技能兴趣标签加入view，自动换行，两端对齐

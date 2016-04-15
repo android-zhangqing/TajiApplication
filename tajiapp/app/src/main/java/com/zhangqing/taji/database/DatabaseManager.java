@@ -93,6 +93,7 @@ public class DatabaseManager {
     }
 
     public int insert(String userid, String username, String avatar) {
+        int count=0;
         Log.e("SQLite", "----insert----");
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         db.beginTransaction();
@@ -101,13 +102,13 @@ public class DatabaseManager {
                             + " (userid,username, avatar) values (?,?,?)",
                     new Object[]{userid, username, avatar});
             db.setTransactionSuccessful();
+            count++;
         } catch (Exception e) {
-            return 0;
         } finally {
             db.endTransaction();
         }
         db.close();
-        return 1;
+        return count;
     }
 
 
@@ -118,6 +119,7 @@ public class DatabaseManager {
      * @return 变化条数
      */
     public int delete(int id) {
+        int count = 0;
         Log.e("SQLite", "----delete----");
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         db.beginTransaction();
@@ -125,13 +127,13 @@ public class DatabaseManager {
             db.execSQL("delete from " + MySQLiteOpenHelper.TABLE_NAME +
                     " where id = ?", new Object[]{id});
             db.setTransactionSuccessful();
+            count++;
         } catch (Exception e) {
-            return 0;
         } finally {
             db.endTransaction();
-            db.close();
         }
-        return 1;
+        db.close();
+        return count;
     }
 
 //    // 更新记录
@@ -157,15 +159,15 @@ public class DatabaseManager {
 
     public UserInfo queryUserInfoById(String userid) {
         PersonInfo p = queryPersonInfoById(userid);
+        UserInfo userInfo = null;
         if (p != null) {
-            UserInfo u = new UserInfo(p.userid, p.username, Uri.parse(p.avatar));
-            return u;
+            userInfo = new UserInfo(p.userid, p.username, Uri.parse(p.avatar));
         }
-        return null;
+        return userInfo;
     }
 
 
-    public PersonInfo queryPersonInfoById(String userid) {
+    public synchronized PersonInfo queryPersonInfoById(String userid) {
         Log.e("SQLite", "----query----");
         SQLiteDatabase db = dbHelper.getReadableDatabase();
         Cursor cursor;
@@ -173,8 +175,9 @@ public class DatabaseManager {
                 " where userid=" + userid;
         cursor = db.rawQuery(sql, null);
 
-        while (cursor.moveToNext()) {
-            PersonInfo personInfo = new PersonInfo();
+        PersonInfo personInfo = null;
+        if (cursor.moveToNext()) {
+            personInfo = new PersonInfo();
             personInfo.userid = cursor.getString(cursor.getColumnIndex("userid"));
             personInfo.username = cursor.getString(cursor.getColumnIndex("username"));
             personInfo.avatar = cursor.getString(cursor.getColumnIndex("avatar"));
@@ -182,14 +185,12 @@ public class DatabaseManager {
             personInfo.hasMatching = (matching == 1);
 
             Log.e("SQLite", personInfo.toString());
-            cursor.close();
-            db.close();
-            return personInfo;
+        } else {
+            Log.e("SQLite", "****表中无数据****");
         }
         cursor.close();
         db.close();
-        Log.e("SQLite", "****表中无数据****");
-        return null;
+        return personInfo;
 
     }
 }  

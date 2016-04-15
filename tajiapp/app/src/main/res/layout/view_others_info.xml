@@ -192,7 +192,7 @@
                     android:paddingLeft="10dp"
                     android:paddingRight="10dp"
                     android:paddingTop="5dp"
-                    android:text="关注"
+                    android:text="+ 订阅"
                     android:textColor="#16FBCC" />
 
 

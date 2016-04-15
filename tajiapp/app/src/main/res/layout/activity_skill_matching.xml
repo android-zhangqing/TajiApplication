@@ -6,6 +6,7 @@
     android:clipToPadding="false"
     android:fitsSystemWindows="true"
     android:orientation="vertical">
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/topbar_height"
@@ -36,6 +37,5 @@
     <com.zhangqing.taji.view.pullable.RecyclerViewPullable
         android:id="@+id/skill_matching_recycler"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-    </com.zhangqing.taji.view.pullable.RecyclerViewPullable>
+        android:layout_height="match_parent"></com.zhangqing.taji.view.pullable.RecyclerViewPullable>
 </LinearLayout>

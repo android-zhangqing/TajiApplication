@@ -27,12 +27,12 @@ public class PersonInfo {
     public String interest = "";
     public String skill = "";
 
-    public boolean is_master;
-    public boolean is_follow;
+    public boolean is_master = false;
+    public boolean is_follow = false;
 
-    public boolean hasMatching=false;
+    public boolean hasMatching = false;
 
-    public PersonInfo(){
+    public PersonInfo() {
 
     }
 

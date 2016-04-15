@@ -40,6 +40,8 @@ import java.util.Map;
  * 所有网络获取操作都在这里面，采用单例模式，为当前用户对象。
  */
 public class UserClass {
+    public static final int Page_Per_Count = 10;
+
     public static final int Request_Main = 101;
     public static final int Request_Register_First = 102;
     public static final int Request_Register_Second = 103;
@@ -302,7 +304,7 @@ public class UserClass {
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }
-        String url = URLHEAD + "/DongTai?" + "userid=" + userId + "&openid=" + openId + "&tag=" + _tag + "&page=" + page + "&count=20";
+        String url = URLHEAD + "/DongTai?" + "userid=" + userId + "&openid=" + openId + "&tag=" + _tag + "&page=" + page + "&count=" + Page_Per_Count;
         VolleyRequest.RequestGet(url, "doGetDongTai", vif);
 
     }
@@ -447,16 +449,16 @@ public class UserClass {
         String url = "";
         switch (whichPersonsButton) {
             case Persons_Button_tudi:
-                url = URLHEAD + "/Master/tudiList?userid=" + userId + "&openid=" + openId + "&count=20&page=" + page;
+                url = URLHEAD + "/Master/tudiList?userid=" + userId + "&openid=" + openId + "&count=" + Page_Per_Count + "&page=" + page;
                 break;
             case Persons_Button_shifu:
-                url = URLHEAD + "/Master/masterList?userid=" + userId + "&openid=" + openId + "&count=20&page=" + page;
+                url = URLHEAD + "/Master/masterList?userid=" + userId + "&openid=" + openId + "&count=" + Page_Per_Count + "&page=" + page;
                 break;
             case Persons_Button_dingyue:
-                url = URLHEAD + "/Follow/followList?userid=" + userId + "&openid=" + openId + "&count=20&page=" + page;
+                url = URLHEAD + "/Follow/followList?userid=" + userId + "&openid=" + openId + "&count=" + Page_Per_Count + "&page=" + page;
                 break;
             case Persons_Button_beidingyue:
-                url = URLHEAD + "/Follow/fansList?userid=" + userId + "&openid=" + openId + "&count=20&page=" + page;
+                url = URLHEAD + "/Follow/fansList?userid=" + userId + "&openid=" + openId + "&count=" + Page_Per_Count + "&page=" + page;
                 break;
         }
         VolleyRequest.RequestGet(url, "getFollowList", vif);
@@ -465,6 +467,12 @@ public class UserClass {
     public void getOthersAvatar(String userid, VolleyInterface vif) {
         String url = URLHEAD + "/User/getAvatar?uid=" + userid + "&userid=" + userId + "&openid=" + openId;
         VolleyRequest.RequestGet(url, "getOthersAvatar" + userid, vif);
+    }
+
+    public void getOthersDongTai(String uid, int page, VolleyInterface vif) {
+        String url = URLHEAD + "/DongTai/userDynamic?uid=" + uid +
+                "&userid=" + userId + "&openid=" + openId + "&page=" + page + "&count=" + Page_Per_Count;
+        VolleyRequest.RequestGet(url, "getOthersDongTai" + uid, vif);
     }
 
     public void getSkillMatching(VolleyInterface vif) {

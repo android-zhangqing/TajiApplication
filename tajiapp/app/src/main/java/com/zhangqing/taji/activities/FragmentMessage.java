@@ -14,6 +14,7 @@ import android.widget.LinearLayout;
 import com.zhangqing.taji.BaseFragment;
 import com.zhangqing.taji.R;
 import com.zhangqing.taji.base.UserClass;
+import com.zhangqing.taji.database.DatabaseManager;
 
 import io.rong.imkit.RongIM;
 import io.rong.imkit.fragment.ConversationListFragment;
@@ -132,7 +133,7 @@ public class FragmentMessage extends BaseFragment {
 
             @Override
             public boolean onConversationPortraitClick(Context context, Conversation.ConversationType conversationType, String s) {
-                OthersDetailActivity.start(getActivity(), s, "User " + s);
+                OthersDetailActivity.start(getActivity(), s, DatabaseManager.getInstance().queryUserInfoById(s).getName());
                 return true;
             }
 
@@ -176,8 +177,6 @@ public class FragmentMessage extends BaseFragment {
         });
 
 
-
-
     }
 
 
@@ -199,13 +198,13 @@ public class FragmentMessage extends BaseFragment {
                         RongIMClient.getInstance().getConversation(Conversation.ConversationType.SYSTEM, targetId, new RongIMClient.ResultCallback<Conversation>() {
                             @Override
                             public void onSuccess(Conversation conversation) {
-                                Log.e("getConversation","onSuccess");
+                                Log.e("getConversation", "onSuccess");
                                 conversation.setUnreadMessageCount(2);
                             }
 
                             @Override
                             public void onError(RongIMClient.ErrorCode errorCode) {
-                                Log.e("getConversation","onError");
+                                Log.e("getConversation", "onError");
 
                             }
                         });

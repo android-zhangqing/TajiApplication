@@ -126,7 +126,7 @@ public class RecyclerViewWithHeaderAndFooter extends RecyclerView {
         public void onBindViewHolder(ViewHolder holder, int position) {
             int type = getItemViewType(position);
             if (type != TYPE_FOOTER && type != TYPE_HEADER) {
-                mInternalAdapter.onBindViewHolder(holder, position);
+                mInternalAdapter.onBindViewHolder(holder, mHeaderView == null ? position : position - 1);
             }
         }
 

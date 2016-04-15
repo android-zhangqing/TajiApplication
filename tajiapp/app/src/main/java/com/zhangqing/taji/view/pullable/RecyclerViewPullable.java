@@ -127,6 +127,9 @@ public class RecyclerViewPullable extends LinearLayout {
     public void setLayoutManager(RecyclerView.LayoutManager l) {
         mRecyclerView.setLayoutManager(l);
     }
+    public void setItemAnimator(RecyclerView.ItemAnimator i){
+        mRecyclerView.setItemAnimator(i);
+    }
 
     public void notifyDataSetChanged() {
         mRecyclerView.getAdapter().notifyDataSetChanged();
