@@ -30,7 +30,7 @@ import io.rong.message.TextMessage;
  * 消息板块
  */
 public class FragmentMessage extends BaseFragment {
-    ConversationListFragment fragment;
+    static ConversationListFragment fragment;
     Uri uri;
 
     LinearLayout ll_at;
@@ -41,7 +41,6 @@ public class FragmentMessage extends BaseFragment {
 
         ((TajiappActivity) getActivity()).bottomBar.
                 setPoints(2, RongIM.getInstance().getRongIMClient().getTotalUnreadCount() != 0);
-
 
     }
 
@@ -56,7 +55,7 @@ public class FragmentMessage extends BaseFragment {
 
         initFragment();
         initListener();
-
+        onHiddenChanged(false);
         return v;
     }
 
@@ -71,8 +70,9 @@ public class FragmentMessage extends BaseFragment {
         super.onHiddenChanged(hidden);
         log("onHiddenChanged", hidden + "");
         if (!hidden) {
-
-
+//            if(is_to_insert_matching){
+//                insertMessage("1010", "又有人跟你匹配了呦！");
+//            }
         }
     }
 
@@ -168,13 +168,13 @@ public class FragmentMessage extends BaseFragment {
         });
 
 
-        ll_at.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                log("ll_at");
-                insertMessage("1010", "又有人跟你匹配了呦！");
-            }
-        });
+//        ll_at.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                log("ll_at");
+//                insertMessage("1010", "又有人跟你匹配了呦！");
+//            }
+//        });
 
 
     }
@@ -186,7 +186,7 @@ public class FragmentMessage extends BaseFragment {
      * @param targetId 头像userid
      * @param content  显示内容
      */
-    private void insertMessage(final String targetId, final String content) {
+    public static void insertMessage(final String targetId, final String content) {
 
         RongIMClient.getInstance().insertMessage(Conversation.ConversationType.SYSTEM, targetId, UserClass.getInstance().userId, new TextMessage(content), new RongIMClient.ResultCallback<Message>() {
             @Override
@@ -212,7 +212,7 @@ public class FragmentMessage extends BaseFragment {
 
                     @Override
                     public void onError(RongIMClient.ErrorCode errorCode) {
-                        log("              setMessageSentStatus ERROR");
+                        Log.e("insertMessage","              setMessageSentStatus ERROR");
                     }
                 });
 
@@ -220,7 +220,7 @@ public class FragmentMessage extends BaseFragment {
 
             @Override
             public void onError(RongIMClient.ErrorCode errorCode) {
-                log("              insertMessage ERROR");
+                Log.e("insertMessage","              insertMessage ERROR");
             }
         });
 

@@ -32,6 +32,10 @@ public class PersonInfo {
 
     public boolean hasMatching = false;
 
+    //技能匹配时会用到
+    public String i_want="";
+    public String ta_want="";
+
     public PersonInfo() {
 
     }
@@ -56,6 +60,10 @@ public class PersonInfo {
 
         is_master = jsonObject.optBoolean("is_master", false);
         is_follow = jsonObject.optBoolean("is_follow", false);
+
+        i_want = jsonObject.optString("i_want", "");
+        ta_want = jsonObject.optString("ta_want", "");
+
     }
 
 }

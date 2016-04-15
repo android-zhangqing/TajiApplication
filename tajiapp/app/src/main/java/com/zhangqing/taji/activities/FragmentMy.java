@@ -380,6 +380,7 @@ public class FragmentMy extends BaseFragment implements View.OnClickListener {
         if (requestCode != UserClass.Request_Setting_Lable) return;
         if (resultCode == Activity.RESULT_OK) {
             swipeRefreshLayout.setRefreshing(true);
+            FragmentMessage.insertMessage("1010", "又有人跟你匹配了呦！");
         }
 
     }

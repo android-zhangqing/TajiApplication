@@ -67,7 +67,7 @@ public class OthersDetailActivity extends BaseActivity {
 
         ((TextView) findViewById(R.id.title)).setText(mName);
 
-        UserClass.getInstance().getOthersInfo(mId, new VolleyInterface(this) {
+        UserClass.getInstance().getOthersInfo(mId, new VolleyInterface(getApplicationContext()) {
             @Override
             public void onMySuccess(JSONObject jsonObject) {
 

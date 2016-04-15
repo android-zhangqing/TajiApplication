@@ -119,6 +119,10 @@ public class RecyclerViewPullable extends LinearLayout {
     }
 
     //-----------------RecyclerView方法暴露开始------------------------------------------
+    public RecyclerView getRecyclerView(){
+        return mRecyclerView;
+    }
+
     public void setAdapter(RecyclerView.Adapter a) {
         mInsideAdapter = a;
         mRecyclerView.setAdapter(a);
