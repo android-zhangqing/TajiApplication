@@ -32,7 +32,7 @@ import java.util.List;
 /**
  * Created by zhangqing on 2016/4/8.
  */
-public class DongTaiAdapter extends RecyclerView.Adapter<DongTaiAdapter.MyViewHolder> {
+public class DongTaiListAdapter extends RecyclerView.Adapter<DongTaiListAdapter.MyViewHolder> {
 
     private OnItemClickListener mOnItemClickListener = null;
 
@@ -53,7 +53,7 @@ public class DongTaiAdapter extends RecyclerView.Adapter<DongTaiAdapter.MyViewHo
 
     private List<DongTaiClass> mDongTaiClassList = new ArrayList<DongTaiClass>();
 
-    public DongTaiAdapter(Context context) {
+    public DongTaiListAdapter(Context context) {
         mContext = context;
     }
 

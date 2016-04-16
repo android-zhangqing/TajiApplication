@@ -3,7 +3,6 @@ package com.zhangqing.taji.activities;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.util.Log;
@@ -14,8 +13,7 @@ import android.widget.Toast;
 import com.android.volley.VolleyError;
 import com.zhangqing.taji.BaseActivity;
 import com.zhangqing.taji.R;
-import com.zhangqing.taji.adapter.DongTaiAdapter;
-import com.zhangqing.taji.adapter.LoadMoreRecyclerView;
+import com.zhangqing.taji.adapter.DongTaiListAdapter;
 import com.zhangqing.taji.base.PersonInfo;
 import com.zhangqing.taji.base.UserClass;
 import com.zhangqing.taji.base.VolleyInterface;
@@ -49,7 +47,7 @@ public class OthersDetailActivity extends BaseActivity {
     private PersonInfoView mPersonInfoView;
 
     private RecyclerViewPullable mRecyclerView;
-    private DongTaiAdapter mRecyclerViewAdapter;
+    private DongTaiListAdapter mRecyclerViewAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,7 +56,7 @@ public class OthersDetailActivity extends BaseActivity {
 
         mRecyclerView = (RecyclerViewPullable) findViewById(R.id.recycler_view);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        mRecyclerView.setAdapter(mRecyclerViewAdapter = new DongTaiAdapter(this));
+        mRecyclerView.setAdapter(mRecyclerViewAdapter = new DongTaiListAdapter(this));
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
 
         Bundle bundle = getIntent().getExtras();

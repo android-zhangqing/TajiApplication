@@ -27,7 +27,10 @@ public class MySwipeRefreshLayout extends SwipeRefreshLayout {
                 , Color.parseColor("#37A4C5")
                 , Color.parseColor("#D46F68"));
 
-
+//        setColorSchemeColors(getResources().getColor(android.R.color.holo_blue_light),
+//                getResources().getColor(android.R.color.holo_red_light),
+//                getResources().getColor(android.R.color.holo_orange_light),
+//                getResources().getColor(android.R.color.holo_green_light));
         //setProgressBackgroundColorSchemeColor(Color.parseColor("#FAFAFA"));
     }
 

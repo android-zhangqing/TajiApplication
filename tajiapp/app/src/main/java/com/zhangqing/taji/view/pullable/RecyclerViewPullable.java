@@ -212,6 +212,7 @@ public class RecyclerViewPullable extends LinearLayout {
     //------------------RecyclerView方法暴露结束-----------------------------------------
 
     //------------------SwipeRefreshLayout方法暴露开始-----------------------------------
+    public SwipeRefreshLayout getSwipeRefreshLayout(){return mSwipeRefreshLayout;}
     public void setRefreshing(boolean refreshing) {
         mSwipeRefreshLayout.setRefreshing(refreshing);
     }

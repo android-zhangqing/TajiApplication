@@ -1,18 +1,14 @@
 package com.zhangqing.taji.activities;
 
-import android.graphics.Canvas;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.View;
 
 import com.android.volley.VolleyError;
 import com.zhangqing.taji.BaseActivity;
 import com.zhangqing.taji.R;
-import com.zhangqing.taji.adapter.DongTaiAdapter;
 import com.zhangqing.taji.adapter.SkillMatchingAdapter;
 import com.zhangqing.taji.base.UserClass;
 import com.zhangqing.taji.base.VolleyInterface;

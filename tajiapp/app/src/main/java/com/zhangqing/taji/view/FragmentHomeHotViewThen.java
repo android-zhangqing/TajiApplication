@@ -1,24 +1,16 @@
 package com.zhangqing.taji.view;
 
 import android.content.Context;
-import android.os.Handler;
-import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.SimpleItemAnimator;
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.LinearLayout;
 
 import com.android.volley.VolleyError;
-import com.nostra13.universalimageloader.core.ImageLoader;
-import com.nostra13.universalimageloader.core.listener.PauseOnScrollListener;
 import com.zhangqing.taji.R;
-import com.zhangqing.taji.adapter.DongTaiAdapter;
-import com.zhangqing.taji.adapter.LoadMoreRecyclerView;
+import com.zhangqing.taji.adapter.DongTaiListAdapter;
 import com.zhangqing.taji.base.UserClass;
 import com.zhangqing.taji.base.VolleyInterface;
 import com.zhangqing.taji.view.pullable.RecyclerViewPullable;
@@ -37,7 +29,7 @@ public class FragmentHomeHotViewThen extends LinearLayout {
     private View containerView;
 
     private RecyclerViewPullable mRecyclerView;
-    private DongTaiAdapter mRecyclerViewAdapter;
+    private DongTaiListAdapter mRecyclerViewAdapter;
 
     public FragmentHomeHotViewThen(Context context, String name) {
         super(context);
@@ -51,7 +43,7 @@ public class FragmentHomeHotViewThen extends LinearLayout {
         mRecyclerView = (RecyclerViewPullable) containerView
                 .findViewById(R.id.home_hot_then_recyclerview);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        mRecyclerView.setAdapter(mRecyclerViewAdapter = new DongTaiAdapter(getContext()));
+        mRecyclerView.setAdapter(mRecyclerViewAdapter = new DongTaiListAdapter(getContext()));
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
         mRecyclerView.setOnLoadListener(new RecyclerViewPullable.OnLoadListener() {
             @Override

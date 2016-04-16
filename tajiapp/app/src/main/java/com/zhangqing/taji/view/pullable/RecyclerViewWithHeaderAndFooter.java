@@ -57,6 +57,26 @@ public class RecyclerViewWithHeaderAndFooter extends RecyclerView {
      */
     class AutoLoadAdapter extends Adapter<ViewHolder> {
 
+        @Override
+        public void onAttachedToRecyclerView(RecyclerView recyclerView) {
+            super.onAttachedToRecyclerView(recyclerView);
+            RecyclerView.LayoutManager manager = recyclerView.getLayoutManager();
+            if (manager instanceof GridLayoutManager) {
+                final GridLayoutManager gridManager = ((GridLayoutManager) manager);
+                gridManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
+                    @Override
+                    public int getSpanSize(int position) {
+                        int type = getItemViewType(position);
+                        if (type == TYPE_HEADER || type == TYPE_FOOTER) {
+                            return gridManager.getSpanCount();
+                        } else {
+                            return 1;
+                        }
+                    }
+                });
+            }
+        }
+
         /**
          * 数据adapter
          */
@@ -154,7 +174,7 @@ public class RecyclerViewWithHeaderAndFooter extends RecyclerView {
 
         public void setFooterView(View footerView) {
             mFooterView = footerView;
-            notifyItemInserted(getItemCount()-1);
+            notifyItemInserted(getItemCount() - 1);
         }
 
         public View getFooterView() {
