@@ -1,4 +1,4 @@
-package com.zhangqing.taji.base;
+package com.zhangqing.taji.bean;
 
 import org.json.JSONException;
 import org.json.JSONObject;

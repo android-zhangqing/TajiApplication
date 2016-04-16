@@ -19,7 +19,7 @@ import com.zhangqing.taji.MyApplication;
 import com.zhangqing.taji.R;
 import com.zhangqing.taji.base.UserClass;
 import com.zhangqing.taji.base.VolleyInterface;
-import com.zhangqing.taji.dongtai.DongTaiClass;
+import com.zhangqing.taji.bean.DongTaiClass;
 import com.zhangqing.taji.view.ComplicatedMediaView;
 import com.zhangqing.taji.view.pullable.RecyclerViewPullable;
 

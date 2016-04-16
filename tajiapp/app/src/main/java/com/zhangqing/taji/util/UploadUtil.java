@@ -237,8 +237,7 @@ public class UploadUtil {
                 result=new String(baos.toByteArray(),"utf-8");
                 //result = sb1.toString();
                 Log.e(TAG, "result : " +result);
-                sendMessage(UPLOAD_SUCCESS_CODE, "上传结果："
-                        + result);
+                sendMessage(UPLOAD_SUCCESS_CODE, result);
                 return;
             } else {
                 Log.e(TAG, "request error");

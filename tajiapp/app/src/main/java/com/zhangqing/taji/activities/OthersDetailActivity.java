@@ -14,7 +14,7 @@ import com.android.volley.VolleyError;
 import com.zhangqing.taji.BaseActivity;
 import com.zhangqing.taji.R;
 import com.zhangqing.taji.adapter.DongTaiListAdapter;
-import com.zhangqing.taji.base.PersonInfo;
+import com.zhangqing.taji.bean.PersonInfo;
 import com.zhangqing.taji.base.UserClass;
 import com.zhangqing.taji.base.VolleyInterface;
 import com.zhangqing.taji.view.PersonInfoView;

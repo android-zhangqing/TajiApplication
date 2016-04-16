@@ -11,7 +11,7 @@ import android.widget.TextView;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.zhangqing.taji.MyApplication;
 import com.zhangqing.taji.R;
-import com.zhangqing.taji.base.PersonInfo;
+import com.zhangqing.taji.bean.PersonInfo;
 import com.zhangqing.taji.base.UserClass;
 
 import org.json.JSONArray;

@@ -31,8 +31,8 @@ import io.rong.imkit.RongIM;
 import io.rong.imlib.model.Conversation;
 
 /**
- * Created by Administrator on 2016/2/7.
- * 圈子
+ * Created by zhangqing on 2016/2/7.
+ * 圈子(聊天室)
  */
 public class FragmentCircle extends BaseFragment {
     private ViewPager mViewPager;
@@ -48,6 +48,7 @@ public class FragmentCircle extends BaseFragment {
         ListView listView3;
         ListView listView2;
         List<View> viewList;
+
         @Override
         public Object instantiateItem(ViewGroup container, int position) {
             container.addView(viewList.get(position));
@@ -109,8 +110,8 @@ public class FragmentCircle extends BaseFragment {
         View v = inflater.inflate(R.layout.fragment_circle, container, false);
         mViewPager = (ViewPager) v.findViewById(R.id.circle_viewpager);
 
-        mIndicator= (ViewPagerIndicator) v.findViewById(R.id.circle_indicator);
-        mIndicator.setViewPager(mViewPager,0);
+        mIndicator = (ViewPagerIndicator) v.findViewById(R.id.circle_indicator);
+        mIndicator.setViewPager(mViewPager, 0);
 
         //RongIM.getInstance().getRongIMClient().getConversationList(Conversation.ConversationType.CHATROOM);
 
@@ -163,7 +164,7 @@ public class FragmentCircle extends BaseFragment {
         @Override
         public int getCount() {
 
-           // Log.e("CircleListViewAdapter", "###getCount");
+            // Log.e("CircleListViewAdapter", "###getCount");
             return itemMapList.size();
         }
 
@@ -193,7 +194,7 @@ public class FragmentCircle extends BaseFragment {
             ViewHolder viewHolder;
 
             if (convertView == null) {
-              //  Log.e("CircleListViewAdapter", "**nullconvertView " + position + " " + parent.toString());
+                //  Log.e("CircleListViewAdapter", "**nullconvertView " + position + " " + parent.toString());
                 convertView = LayoutInflater.from(getActivity()).inflate(R.layout.view_circle_first_listview_item, parent, false);
                 viewHolder = new ViewHolder();
                 viewHolder.textViewTitle = (TextView) convertView.findViewById(R.id.circle_first_title);

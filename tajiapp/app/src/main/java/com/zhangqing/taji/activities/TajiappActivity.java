@@ -1,49 +1,29 @@
 package com.zhangqing.taji.activities;
 
-import android.app.ActivityManager;
 import android.app.AlertDialog;
 
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
-import com.android.volley.VolleyError;
 import com.zhangqing.taji.BaseActivity;
 import com.zhangqing.taji.MyApplication;
 import com.zhangqing.taji.R;
 import com.zhangqing.taji.activities.login.LoginActivity;
 import com.zhangqing.taji.base.UserClass;
-import com.zhangqing.taji.base.VolleyInterface;
 import com.zhangqing.taji.database.DatabaseManager;
 import com.zhangqing.taji.view.BottomBar;
 import com.zhangqing.taji.view.BottomBar.OnTabClickListener;
 import com.zhangqing.taji.view.TopBar;
 import com.zhangqing.taji.view.TopBar.OnTopBarClickListener;
-
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.LineNumberReader;
-import java.util.HashMap;
-import java.util.Map;
 
 import io.rong.imkit.RongIM;
 import io.rong.imlib.model.UserInfo;

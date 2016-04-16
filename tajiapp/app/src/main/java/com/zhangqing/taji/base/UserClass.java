@@ -5,6 +5,10 @@ import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.util.Log;
 
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
 import com.zhangqing.taji.MyApplication;
 import com.zhangqing.taji.R;
 import com.zhangqing.taji.activities.login.Test;
@@ -95,6 +99,9 @@ public class UserClass {
         String string = sharedPreferences.getString(key, "");
         if (string.equals("null")) string = "";
         return string;
+    }
+    public void setStringByKey(String key,String value){
+        sharedPreferences.edit().putString(key,value).commit();
     }
 
     class SchoolType {
@@ -331,6 +338,56 @@ public class UserClass {
         params.put("userid", userId);
         params.put("openid", openId);
         UploadUtil.getInstance().uploadFile(picPath, "file", "http://taji.whutech.com/Upload", params);
+
+    }
+
+    public void doUploadDongTai(final String media, final String content, final String location, final boolean isMasterCircle, VolleyInterface vif) {
+
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, "http://taji.whutech.com/DongTai/publish",
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        Log.e("doUploadDongTai", "response -> " + response);
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.e("doUploadDongTai", error.getMessage(), error);
+            }
+        }) {
+            @Override
+            protected Map<String, String> getParams() {
+                //在这里设置需要post的参数
+                Map<String, String> map = new HashMap<String, String>();
+                map.put("userid", userId);
+                map.put("openid", openId);
+                try {
+                    map.put("media", media);
+                    map.put("content", URLEncoder.encode(content, "utf-8"));
+                    map.put("loc", URLEncoder.encode(location, "utf-8"));
+                    map.put("mastercircle", (isMasterCircle ? "1" : "0"));
+                } catch (UnsupportedEncodingException e) {
+                    e.printStackTrace();
+                }
+                return map;
+            }
+        };
+        MyApplication.getRequestQeuee().add(stringRequest);
+
+//        String url = null;
+//        try {
+//            url = URLHEAD + "/DongTai/publish?userid=" + userId + "&openid=" + openId
+//                    + "&media=" + URLEncoder.encode(media, "gb2312") +
+//                    "&content=" + URLEncoder.encode(content, "utf-8") +
+//                    "&tag=" +
+//                    "&at=" +
+//                    "&loc=" + URLEncoder.encode(location, "utf-8") +
+//                    "&mastercircle=" + (isMasterCircle ? "1" : "0") +
+//                    "&status=";
+//            VolleyRequest.RequestGet(url, "doUploadDongTai", vif);
+//        } catch (UnsupportedEncodingException e) {
+//            e.printStackTrace();
+//        }
 
     }
 

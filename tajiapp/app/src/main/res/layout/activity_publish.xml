@@ -97,6 +97,7 @@
                         android:layout_marginTop="10dp">
 
                         <ImageView
+                            android:id="@+id/publish_cover"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_centerHorizontal="true"
@@ -218,6 +219,15 @@
                                 android:layout_height="wrap_content"
                                 android:gravity="right|center_vertical">
 
+                                <TextView
+                                    android:id="@+id/publish_location_text"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:singleLine="true"
+
+                                    />
+
                                 <ImageView
                                     android:layout_width="30dp"
                                     android:layout_height="30dp"
@@ -234,25 +244,30 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="5dp"
-                        android:text="仅发布到:" />
+                        android:text="仅发布到:"
+                        android:textColor="#6C5E7A" />
 
                     <ImageView
+                        android:id="@+id/publish_master_circle"
                         android:layout_width="match_parent"
                         android:layout_height="40dp"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
-                        android:focusable="true"
+                        android:clickable="true"
                         android:scaleType="fitXY"
-                        android:src="@drawable/icon_tab_publish_shitu_select" />
+                        android:src="@drawable/icon_tab_publish_shitu_unselect" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="5dp"
-                        android:text="分享到:" />
+                        android:text="分享到:"
+                        android:textColor="#6C5E7A" />
 
 
                     <LinearLayout
@@ -289,7 +304,7 @@
                 android:id="@+id/publish_publish_btn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#16FBCC"
+                android:background="@drawable/publish_btn"
                 android:gravity="center"
                 android:paddingBottom="12dp"
                 android:paddingTop="12dp"

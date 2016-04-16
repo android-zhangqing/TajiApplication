@@ -7,14 +7,12 @@ import android.net.Uri;
 import android.util.Log;
 
 import com.android.volley.VolleyError;
-import com.zhangqing.taji.base.PersonInfo;
+import com.zhangqing.taji.bean.PersonInfo;
 import com.zhangqing.taji.base.UserClass;
 import com.zhangqing.taji.base.VolleyInterface;
 
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import java.util.ArrayList;
 
 import io.rong.imkit.RongIM;
 import io.rong.imlib.model.UserInfo;

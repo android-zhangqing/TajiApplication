@@ -1,8 +1,6 @@
-package com.zhangqing.taji.dongtai;
+package com.zhangqing.taji.bean;
 
 import android.util.Log;
-
-import com.zhangqing.taji.base.PersonInfo;
 
 import org.json.JSONException;
 import org.json.JSONObject;

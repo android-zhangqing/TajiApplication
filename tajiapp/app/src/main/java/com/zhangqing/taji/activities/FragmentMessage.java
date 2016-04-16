@@ -30,7 +30,7 @@ import io.rong.message.TextMessage;
  * 消息板块
  */
 public class FragmentMessage extends BaseFragment {
-    static ConversationListFragment fragment;
+    ConversationListFragment fragment;
     Uri uri;
 
     LinearLayout ll_at;
@@ -55,6 +55,13 @@ public class FragmentMessage extends BaseFragment {
 
         initFragment();
         initListener();
+
+
+        if (UserClass.getInstance().getStringByKey("is_to_insert").equals("1")) {
+            UserClass.getInstance().setStringByKey("is_to_insert", "0");
+            insertMessage("1010", "又有人跟你匹配了呦！");
+        }
+
         onHiddenChanged(false);
         return v;
     }
@@ -70,9 +77,7 @@ public class FragmentMessage extends BaseFragment {
         super.onHiddenChanged(hidden);
         log("onHiddenChanged", hidden + "");
         if (!hidden) {
-//            if(is_to_insert_matching){
-//                insertMessage("1010", "又有人跟你匹配了呦！");
-//            }
+
         }
     }
 
@@ -186,7 +191,8 @@ public class FragmentMessage extends BaseFragment {
      * @param targetId 头像userid
      * @param content  显示内容
      */
-    public static void insertMessage(final String targetId, final String content) {
+    public void insertMessage(final String targetId, final String content) {
+        if (fragment == null) return;
 
         RongIMClient.getInstance().insertMessage(Conversation.ConversationType.SYSTEM, targetId, UserClass.getInstance().userId, new TextMessage(content), new RongIMClient.ResultCallback<Message>() {
             @Override
@@ -212,7 +218,7 @@ public class FragmentMessage extends BaseFragment {
 
                     @Override
                     public void onError(RongIMClient.ErrorCode errorCode) {
-                        Log.e("insertMessage","              setMessageSentStatus ERROR");
+                        Log.e("insertMessage", "              setMessageSentStatus ERROR");
                     }
                 });
 
@@ -220,7 +226,7 @@ public class FragmentMessage extends BaseFragment {
 
             @Override
             public void onError(RongIMClient.ErrorCode errorCode) {
-                Log.e("insertMessage","              insertMessage ERROR");
+                Log.e("insertMessage", "              insertMessage ERROR");
             }
         });
 

@@ -4,6 +4,9 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.ClipDrawable;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -17,6 +20,7 @@ import android.support.v4.content.CursorLoader;
 import android.support.v4.view.PagerAdapter;
 import android.text.InputType;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
@@ -30,6 +34,7 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.VolleyError;
 import com.rockerhieu.emojicon.EmojiconEditText;
 import com.rockerhieu.emojicon.EmojiconGridFragment;
 import com.rockerhieu.emojicon.EmojiconsFragment;
@@ -37,18 +42,25 @@ import com.rockerhieu.emojicon.emoji.Emojicon;
 import com.zhangqing.taji.BaseActivity;
 import com.zhangqing.taji.R;
 import com.zhangqing.taji.base.UserClass;
+import com.zhangqing.taji.base.VolleyInterface;
 import com.zhangqing.taji.util.CameraUtil;
 import com.zhangqing.taji.util.ImageUtil;
+import com.zhangqing.taji.util.LocationUtil;
 import com.zhangqing.taji.util.UploadUtil;
 import com.zhangqing.taji.view.ResizeLayout;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.File;
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.net.NetworkInterface;
 import java.net.SocketException;
+import java.net.URLDecoder;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -61,7 +73,11 @@ import java.util.Map;
 public class PublishActivity extends BaseActivity implements View.OnClickListener, EmojiconGridFragment.OnEmojiconClickedListener, EmojiconsFragment.OnEmojiconBackspaceClickedListener, UploadUtil.OnUploadProcessListener {
     private static final int BIGGER = 1;
     private static final int SMALLER = 2;
+
     private static final int MSG_RESIZE = 1;
+    private static final int MSG_UPLOAD_ING = 2;
+    private static final int MSG_UPLOAD_INIT = 3;
+    private static final int MSG_UPLOAD_DONE = 4;
 
     /***
      * 使用照相机拍照获取图片
@@ -84,8 +100,21 @@ public class PublishActivity extends BaseActivity implements View.OnClickListene
 
     private List<ImageView> pointList;
 
+    private String real_path_scaled;
+    private ImageView mCoverView;
+
+    private String mCoverUrl = null;
+
+    private TextView mLocationTextView;
+
+    private ImageView mMasterCircleImageView;
+    private boolean isMasterCircle = false;
+
 
     Handler mHandler = new Handler() {
+        private int MAX_UPLOAD_SIZE;
+        private ClipDrawable clipDrawable;
+
         @Override
         public void handleMessage(Message msg) {
             switch (msg.what) {
@@ -110,9 +139,23 @@ public class PublishActivity extends BaseActivity implements View.OnClickListene
                             }
                         });
                     }
+                    break;
                 }
-                break;
-
+                case MSG_UPLOAD_ING: {
+                    clipDrawable.setLevel(10000 * msg.arg1 / MAX_UPLOAD_SIZE);
+                    break;
+                }
+                case MSG_UPLOAD_INIT: {
+                    clipDrawable = new ClipDrawable(new BitmapDrawable(getResources(), BitmapFactory.decodeFile(real_path_scaled)), Gravity.LEFT, ClipDrawable.HORIZONTAL);
+                    mCoverView.setImageDrawable(clipDrawable);
+                    clipDrawable.setLevel(0);
+                    MAX_UPLOAD_SIZE = msg.arg1;
+                    break;
+                }
+                case MSG_UPLOAD_DONE: {
+                    clipDrawable.setLevel(10000);
+                    Toast.makeText(PublishActivity.this, "上传成功\r\n" + mCoverUrl, Toast.LENGTH_LONG).show();
+                }
                 default:
                     break;
             }
@@ -161,20 +204,39 @@ public class PublishActivity extends BaseActivity implements View.OnClickListene
             }
         }
     }
+
     @Override
     public void onUploadDone(int responseCode, String message) {
         Log.e("onUploadDone", message);
+        try {
+            JSONObject jsonObject = new JSONObject(message);
+            mCoverUrl = jsonObject.getJSONObject("data").getString("url");
+        } catch (JSONException e) {
+            mCoverUrl = null;
+        }
+        sendMessage(MSG_UPLOAD_DONE, 0);
         //Toast.makeText(PublishActivity.this,message,Toast.LENGTH_LONG).show();
     }
 
     @Override
     public void onUploadProcess(int uploadSize) {
+
         Log.e("onUploadProcess", uploadSize + "|");
+        sendMessage(MSG_UPLOAD_ING, uploadSize);
     }
 
     @Override
     public void initUpload(int fileSize) {
         Log.e("initUpload", fileSize + "|");
+        sendMessage(MSG_UPLOAD_INIT, fileSize);
+
+    }
+
+    private void sendMessage(int what, int arg1) {
+        Message msg = new Message();
+        msg.what = what;
+        msg.arg1 = arg1;
+        mHandler.sendMessage(msg);
     }
 
     @Override
@@ -183,10 +245,10 @@ public class PublishActivity extends BaseActivity implements View.OnClickListene
         Log.e("onActivityResult", requestCode + "|" + resultCode + "|" + (data == null ? "null" : (data)));
 
         if (data == null || data.getData() == null) return;
-        Uri uri=data.getData();
-        Log.e("uri",uri.getPath());
+        Uri uri = data.getData();
+        Log.e("uri", uri.getPath());
 
-       // UserClass.getInstance().doUploadPhoto(uri.getPath(), this);
+        // UserClass.getInstance().doUploadPhoto(uri.getPath(), this);
         doPhoto(uri);
         //doPhoto(requestCode, data);
     }
@@ -197,32 +259,32 @@ public class PublishActivity extends BaseActivity implements View.OnClickListene
      * @param uri
      */
     private void doPhoto(Uri uri) {
-        File uploadFile=null;
-        String path=uri.getPath();
-        if (path == null || !((path.endsWith(".png") || path.endsWith(".PNG") || path.endsWith(".jpg") || path.endsWith(".JPG")))) {
+        File uploadFile = null;
+        String real_path = uri.getPath();
+        if (real_path == null || !((real_path.endsWith(".png") || real_path.endsWith(".PNG") || real_path.endsWith(".jpg") || real_path.endsWith(".JPG")))) {
             String[] pojo = {MediaStore.Images.Media.DATA};
             Cursor cursor = new CursorLoader(this, uri, pojo, null, null, null).loadInBackground();
             //Cursor cursor = managedQuery(uri, pojo, null, null, null);
             if (cursor != null) {
                 int columnIndex = cursor.getColumnIndexOrThrow(pojo[0]);
                 cursor.moveToFirst();
-                path = cursor.getString(columnIndex);
+                real_path = cursor.getString(columnIndex);
                 cursor.close();
             }
         }
 
-        Log.e("doPhoto", "imagePath = " + path);
-        if (path != null && (path.endsWith(".png") || path.endsWith(".PNG") || path.endsWith(".jpg") || path.endsWith(".JPG"))) {
-            String newname=path.substring(0,path.lastIndexOf("/")+1)+"DCIM"+System.currentTimeMillis()+path.substring(path.lastIndexOf("."),path.length());
-            Log.e("newname",newname+"|");
+        Log.e("doPhoto", "imagePath = " + real_path);
+        if (real_path != null && (real_path.endsWith(".png") || real_path.endsWith(".PNG") || real_path.endsWith(".jpg") || real_path.endsWith(".JPG"))) {
+            real_path_scaled = real_path.substring(0, real_path.lastIndexOf("/") + 1) + "DCIM" + System.currentTimeMillis() + real_path.substring(real_path.lastIndexOf("."), real_path.length());
+            Log.e("newname", real_path_scaled + "|");
             try {
-                ImageUtil.ratioAndGenThumb(path,newname,600,800,false);
-                UserClass.getInstance().doUploadPhoto(newname, this);
+                ImageUtil.ratioAndGenThumb(real_path, real_path_scaled, 600, 800, false);
             } catch (IOException e) {
                 e.printStackTrace();
-                Log.e("compressAndGenImage","OnError");
-                UserClass.getInstance().doUploadPhoto(path, this);
+                Log.e("compressAndGenImage", "OnError");
+                real_path_scaled = real_path;
             }
+            UserClass.getInstance().doUploadPhoto(real_path_scaled, this);
 
 
             // /storage/emulated/0/DCIM/Camera/IMG_20160303_140435.jpg
@@ -268,6 +330,23 @@ public class PublishActivity extends BaseActivity implements View.OnClickListene
         editText = (EmojiconEditText) findViewById(R.id.publish_edittext);
         faceToggle = (ImageView) findViewById(R.id.publish_face_toggle_btn);
 
+        mCoverView = (ImageView) findViewById(R.id.publish_cover);
+        mLocationTextView = (TextView) findViewById(R.id.publish_location_text);
+
+        mMasterCircleImageView = (ImageView) findViewById(R.id.publish_master_circle);
+        mMasterCircleImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (isMasterCircle) {
+                    isMasterCircle = false;
+                    mMasterCircleImageView.setImageResource(R.drawable.icon_tab_publish_shitu_unselect);
+                } else {
+                    isMasterCircle = true;
+                    mMasterCircleImageView.setImageResource(R.drawable.icon_tab_publish_shitu_select);
+                }
+            }
+        });
+
         disableSoftInputMethod(editText);
 
         editText.setOnFocusChangeListener(new View.OnFocusChangeListener() {
@@ -282,15 +361,26 @@ public class PublishActivity extends BaseActivity implements View.OnClickListene
         parentViewFaceGrid = (FrameLayout) findViewById(R.id.publish_container_facegrid);
         PublishBtn = (TextView) findViewById(R.id.publish_publish_btn);
 
+        PublishBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                UserClass.getInstance().doUploadDongTai(mCoverUrl,
+                        editText.getText().toString(),
+                        mLocationTextView.getText().toString(),
+                        isMasterCircle,
+                        new VolleyInterface(getApplicationContext()) {
+                            @Override
+                            public void onMySuccess(JSONObject jsonObject) {
 
-//        pointList = new ArrayList<ImageView>();
-//        ImageView iv1 = (ImageView) findViewById(R.id.publish_face_point1);
-//        pointList.add(iv1);
-//        ImageView iv2 = (ImageView) findViewById(R.id.publish_face_point2);
-//        pointList.add(iv2);
-//        ImageView iv3 = (ImageView) findViewById(R.id.publish_face_point3);
-//        pointList.add(iv3);
+                            }
 
+                            @Override
+                            public void onMyError(VolleyError error) {
+
+                            }
+                        });
+            }
+        });
 
         ResizeLayout resizeLayout = (ResizeLayout) findViewById(R.id.publish_rootview);
         resizeLayout.setOnResizeListener(new ResizeLayout.OnResizeListener() {
@@ -317,6 +407,12 @@ public class PublishActivity extends BaseActivity implements View.OnClickListene
         parentViewFaceGrid.setVisibility(View.GONE);
         faceToggle.setTag(R.drawable.icon_tab_publish_face);
 
+        LocationUtil.getLocation(this, new LocationUtil.OnLocatedListener() {
+            @Override
+            public void onLocatedSuccess(String location) {
+                mLocationTextView.setText(location);
+            }
+        });
     }
 
 
@@ -496,98 +592,13 @@ public class PublishActivity extends BaseActivity implements View.OnClickListene
         EmojiconsFragment.input(editText, emojicon);
     }
 
-
-
-
-    class MyFacePagerAdapter extends PagerAdapter {
-        private final int ROW_NUM = 3;
-        private final int COLUMN_NUM = 7;
-        List<View> mviewList;
-        Context mContext;
-
-        View.OnClickListener clickListener = null;
-
-
-        public MyFacePagerAdapter(View.OnClickListener listener) {
-            this.mContext = PublishActivity.this;
-            this.clickListener = listener;
-
-            mviewList = new ArrayList<View>();
-
-
-            int i = 1;
-
-            while (i <= 56) {
-                LinearLayout rootLayout = new LinearLayout(mContext);
-                rootLayout.setOrientation(LinearLayout.VERTICAL);
-
-                for (int row = 0; row < ROW_NUM; row++) {
-                    LinearLayout rowLayout = new LinearLayout(mContext);
-                    rowLayout.setOrientation(LinearLayout.HORIZONTAL);
-                    outer:
-                    for (int column = 0; column < COLUMN_NUM; column++) {
-                        if (column == COLUMN_NUM - 1 && row == ROW_NUM - 1) {
-                            ImageView iv = new ImageView(mContext);
-                            iv.setScaleType(ImageView.ScaleType.CENTER);
-                            iv.setImageResource(R.drawable.icon_register_first_inputcha);
-                            rowLayout.addView(iv, new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.MATCH_PARENT, 1));
-
-
-                        } else {
-
-                            int resourceId = R.drawable.ic_launcher;
-                            try {
-                                Field field = R.drawable.class.getDeclaredField("emoji_" + i);
-                                resourceId = Integer.parseInt(field.get(null).toString());
-                            } catch (NoSuchFieldException e) {
-                                e.printStackTrace();
-                            } catch (IllegalAccessException e) {
-                                e.printStackTrace();
-                            }
-                            ImageView iv = new ImageView(mContext);
-                            iv.setScaleType(ImageView.ScaleType.CENTER);
-                            iv.setImageResource(resourceId);
-                            iv.setTag(R.id.tagkey_which, i + "");
-                            iv.setOnClickListener(clickListener);
-
-                            rowLayout.addView(iv, new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.MATCH_PARENT, 1));
-                            i++;
-                        }
-
-                    }
-
-                    rootLayout.addView(rowLayout, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 0, 1));
-
-                }
-                mviewList.add(rootLayout);
-
-
-            }
-
-
+    @Override
+    public void onPause() {
+        if (LocationUtil.mlocationClient != null) {
+            LocationUtil.mlocationClient.stopLocation();//停止定位
+            LocationUtil.mlocationClient.onDestroy();
         }
+        super.onPause();
 
-
-        @Override
-        public Object instantiateItem(ViewGroup container, int position) {
-            container.addView(mviewList.get(position), new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
-            return mviewList.get(position);
-        }
-
-        @Override
-        public int getCount() {
-            return mviewList.size();
-        }
-
-        @Override
-        public void destroyItem(ViewGroup container, int position, Object object) {
-            container.removeView(mviewList.get(position));
-        }
-
-        @Override
-        public boolean isViewFromObject(View view, Object object) {
-            return view == object;
-        }
     }
-
 }

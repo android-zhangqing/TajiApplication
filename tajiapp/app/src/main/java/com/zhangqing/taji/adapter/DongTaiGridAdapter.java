@@ -14,7 +14,7 @@ import com.nostra13.universalimageloader.core.assist.ImageSize;
 import com.nostra13.universalimageloader.core.imageaware.ImageViewAware;
 import com.zhangqing.taji.MyApplication;
 import com.zhangqing.taji.R;
-import com.zhangqing.taji.dongtai.DongTaiClass;
+import com.zhangqing.taji.bean.DongTaiClass;
 import com.zhangqing.taji.view.pullable.RecyclerViewPullable;
 
 import org.json.JSONArray;
