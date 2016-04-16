@@ -95,9 +95,6 @@ public class RecyclerViewWithHeaderAndFooter extends RecyclerView {
             if (viewType == TYPE_HEADER) {
                 Log.e("onCreateViewHolder", "mHeaderView");
                 return new HeaderViewHolder(mHeaderView);
-
-//                return new HeaderViewHolder(LayoutInflater.from(parent.getContext()).inflate(
-//                        mHeaderResId, parent, false));
             }
             if (viewType == TYPE_FOOTER) {
 //                TextView tv=new TextView(parent.getContext());
@@ -110,7 +107,6 @@ public class RecyclerViewWithHeaderAndFooter extends RecyclerView {
         }
 
         public class FooterViewHolder extends ViewHolder {
-
             public FooterViewHolder(View itemView) {
                 super(itemView);
             }
@@ -158,6 +154,7 @@ public class RecyclerViewWithHeaderAndFooter extends RecyclerView {
 
         public void setFooterView(View footerView) {
             mFooterView = footerView;
+            notifyItemInserted(getItemCount()-1);
         }
 
         public View getFooterView() {

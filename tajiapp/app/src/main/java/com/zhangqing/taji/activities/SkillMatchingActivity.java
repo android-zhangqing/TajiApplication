@@ -74,43 +74,6 @@ public class SkillMatchingActivity extends BaseActivity {
                         mPullRecyclerView.setLoadingMoreStatus(RecyclerViewPullable.LoadingMoreStatus_Normal);
                     }
                 });
-
-//                UserClass.getInstance().doGetDongTai("", loadingPage, new VolleyInterface(getApplicationContext()) {
-//                    @Override
-//                    public void onMySuccess(JSONObject jsonObject) {
-//                        if (loadingPage == 1) {
-//                            mPullRecyclerView.setRefreshing(false);
-//                            mAdapter.clearData();
-//                            //mRecyclerViewAdapter.notifyDataSetChanged();
-//                        }
-//
-//                        try {
-//                            if (mAdapter.addData(jsonObject.getJSONArray("data")) != 20) {
-//                                //mFootTextView.setText("没有了呢~~");
-//                                mPullRecyclerView.setLoadingMoreStatus(RecyclerViewPullable.LoadingMoreStatus_End);
-//                                mPullRecyclerView.notifyDataSetChanged();
-//                                //mRecyclerView.notifyMoreFinish(false);
-//                            } else {
-//                                //mFootTextView.setText("正在加载...");
-//                                mPullRecyclerView.setLoadingMoreStatus(RecyclerViewPullable.LoadingMoreStatus_Normal);
-//                                mPullRecyclerView.notifyDataSetChanged();
-//                            }
-//                        } catch (JSONException e) {
-//                            e.printStackTrace();
-//                            Log.e("未捕获", "|");
-//                        }
-//
-//                    }
-//
-//                    @Override
-//                    public void onMyError(VolleyError error) {
-//                        if (loadingPage == 1)
-//                            mPullRecyclerView.setRefreshing(false);
-//                        mPullRecyclerView.setLoadingMoreStatus(RecyclerViewPullable.LoadingMoreStatus_Normal);
-//
-//                        //mFootTextView.setText("网络错误");
-//                    }
-//                });
             }
         });
         mPullRecyclerView.setRefreshing(true);

@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="#402D52"
     android:clipToPadding="false"
     android:fitsSystemWindows="true"
@@ -32,13 +33,12 @@
             android:text="个人信息"
             android:textColor="@color/textcolor_bar_first_unselect"
             android:textSize="@dimen/textsize_bar_first" />
-
-
     </RelativeLayout>
 
     <com.zhangqing.taji.view.pullable.RecyclerViewPullable
         android:id="@+id/recycler_view"
         android:layout_width="match_parent"
+        app:footer_text_color="@android:color/white"
         android:layout_height="0dp"
         android:layout_weight="1">
 

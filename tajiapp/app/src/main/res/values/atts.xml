@@ -11,6 +11,9 @@
         <attr name="count_rows" format="integer" />
     </declare-styleable>
 
+    <declare-styleable name="recycler">
+        <attr name="footer_text_color" format="color" />
+    </declare-styleable>
 
     <declare-styleable name="ViewPagerIndicator">
         <attr name="visible_item_count" format="integer" />

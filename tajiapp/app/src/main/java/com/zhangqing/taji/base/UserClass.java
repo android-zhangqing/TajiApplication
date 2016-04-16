@@ -40,7 +40,7 @@ import java.util.Map;
  * 所有网络获取操作都在这里面，采用单例模式，为当前用户对象。
  */
 public class UserClass {
-    public static final int Page_Per_Count = 10;
+    public static final int Page_Per_Count = 6;
 
     public static final int Request_Main = 101;
     public static final int Request_Register_First = 102;
