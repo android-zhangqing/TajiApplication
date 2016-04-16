@@ -174,12 +174,15 @@ public class RecyclerViewWithHeaderAndFooter extends RecyclerView {
 
         public void setFooterView(View footerView) {
             mFooterView = footerView;
-            notifyItemInserted(getItemCount() - 1);
+            //notifyDataSetChanged();
+            notifyItemChanged(getItemCount() - 1);
         }
 
         public View getFooterView() {
             return mFooterView;
         }
+
+
     }
 
     @Override
@@ -296,6 +299,10 @@ public class RecyclerViewWithHeaderAndFooter extends RecyclerView {
      */
     public void setFooterView(View view) {
         mAutoLoadAdapter.setFooterView(view);
+    }
+
+    public View getHeaderView() {
+        return mAutoLoadAdapter.getHeaderView();
     }
 
 //    /**

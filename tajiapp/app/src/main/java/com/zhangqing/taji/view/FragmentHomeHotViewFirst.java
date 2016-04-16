@@ -5,31 +5,20 @@ import android.graphics.Color;
 import android.os.Handler;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.util.Log;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AbsListView;
-import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ImageView.ScaleType;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 
 import com.android.volley.VolleyError;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.imageaware.ImageViewAware;
-import com.nostra13.universalimageloader.core.listener.PauseOnScrollListener;
 import com.zhangqing.taji.MyApplication;
 import com.zhangqing.taji.R;
 import com.zhangqing.taji.adapter.DongTaiGridAdapter;
-import com.zhangqing.taji.adapter.HomeHotGridAdapter;
-import com.zhangqing.taji.adapter.PullableBaseAdapter;
 import com.zhangqing.taji.base.UserClass;
 import com.zhangqing.taji.base.VolleyInterface;
 import com.zhangqing.taji.view.pullable.RecyclerViewPullable;
@@ -128,7 +117,7 @@ public class FragmentHomeHotViewFirst extends LinearLayout {
 
         mGridView = (RecyclerViewPullable) containerView.findViewById(R.id.home_hot_first_gridview);
 
-        mGridView.setLayoutManager(new GridLayoutManager(getContext(),2));
+        mGridView.setLayoutManager(new GridLayoutManager(getContext(), 2));
         mGridView.setAdapter(mGridViewAdapter = new DongTaiGridAdapter(getContext()));
 
         mGridView.setOnLoadListener(new RecyclerViewPullable.OnLoadListener() {
@@ -142,12 +131,12 @@ public class FragmentHomeHotViewFirst extends LinearLayout {
                             mGridViewAdapter.clearData();
                         }
 
-                        if (mGridViewAdapter.addData(jsonObject) != UserClass.Page_Per_Count) {
+                        if (mGridViewAdapter.addData(jsonObject, mGridView) != UserClass.Page_Per_Count) {
                             mGridView.setLoadingMoreStatus(RecyclerViewPullable.LoadingMoreStatus_End);
                         } else {
                             mGridView.setLoadingMoreStatus(RecyclerViewPullable.LoadingMoreStatus_Normal);
                         }
-                        mGridView.notifyDataSetChanged();
+                        //mGridView.notifyDataSetChanged();
                     }
 
                     @Override

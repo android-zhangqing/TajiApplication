@@ -250,7 +250,6 @@ public class PersonsListAdapter extends PullableBaseAdapter {
         //局部更新,更新可视区域,
         //notifyDataSetInvalidated();
         // 整体更新,更新所有item对象,如果滑动过,更新后回到初始状态
-
         return count;
     }
 

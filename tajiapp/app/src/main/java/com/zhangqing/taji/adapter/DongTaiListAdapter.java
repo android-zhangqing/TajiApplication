@@ -21,6 +21,7 @@ import com.zhangqing.taji.base.UserClass;
 import com.zhangqing.taji.base.VolleyInterface;
 import com.zhangqing.taji.dongtai.DongTaiClass;
 import com.zhangqing.taji.view.ComplicatedMediaView;
+import com.zhangqing.taji.view.pullable.RecyclerViewPullable;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -159,20 +160,17 @@ public class DongTaiListAdapter extends RecyclerView.Adapter<DongTaiListAdapter.
         mDongTaiClassList.clear();
     }
 
-    /**
-     * 增加新数据
-     *
-     * @param jsonArray
-     * @return 增加条数
-     */
-    public int addData(JSONArray jsonArray) {
+
+    public int addData(JSONArray jsonArray, RecyclerViewPullable recyclerViewPullable) {
         int count = 0;
-        int lastCount = getItemCount();
-        Log.e("lastCount", lastCount + "|");
+        int insert_position = mDongTaiClassList.size() - 1;
         for (int i = 0; i < jsonArray.length(); i++) {
             try {
                 //notifyItemInserted(lastCount+i);
                 mDongTaiClassList.add(new DongTaiClass(jsonArray.getJSONObject(i)));
+                insert_position++;
+                if (recyclerViewPullable != null)
+                    recyclerViewPullable.notifyItemInserted(insert_position);
                 //notifyItemInserted(lastCount+i);
                 //notifyItemRangeChanged(lastCount+i, getItemCount());
                 count++;
@@ -182,6 +180,16 @@ public class DongTaiListAdapter extends RecyclerView.Adapter<DongTaiListAdapter.
         }
         //notifyDataSetChanged();
         return count;
+    }
+
+    /**
+     * 增加新数据
+     *
+     * @param jsonArray
+     * @return 增加条数
+     */
+    public int addData(JSONArray jsonArray) {
+        return addData(jsonArray, null);
     }
 
     static class MyViewHolder extends RecyclerView.ViewHolder {

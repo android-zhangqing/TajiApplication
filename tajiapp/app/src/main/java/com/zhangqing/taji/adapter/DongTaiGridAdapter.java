@@ -15,6 +15,7 @@ import com.nostra13.universalimageloader.core.imageaware.ImageViewAware;
 import com.zhangqing.taji.MyApplication;
 import com.zhangqing.taji.R;
 import com.zhangqing.taji.dongtai.DongTaiClass;
+import com.zhangqing.taji.view.pullable.RecyclerViewPullable;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -35,9 +36,18 @@ public class DongTaiGridAdapter extends RecyclerView.Adapter<DongTaiGridAdapter.
         mContext = context;
     }
 
-    public int addData(JSONObject jsonObject) {
+
+    /**
+     * insertItem的方式添加数据(推荐！！)
+     *
+     * @param jsonObject
+     * @param recyclerViewPullable 传入是为了 调用真实的Adapter的notifyItemInsert
+     * @return
+     */
+    public int addData(JSONObject jsonObject, RecyclerViewPullable recyclerViewPullable) {
         int count = 0;
         JSONArray jsonArray;
+        int insert_position = mItemsList.size() - 1;
         try {
             jsonArray = jsonObject.getJSONArray("data");
             for (int i = 0; i < jsonArray.length(); i++) {
@@ -45,6 +55,11 @@ public class DongTaiGridAdapter extends RecyclerView.Adapter<DongTaiGridAdapter.
                     DongTaiClass d = new DongTaiClass(jsonArray.getJSONObject(i));
                     //Log.e("onAddData", d.toString());
                     mItemsList.add(d);
+                    insert_position++;
+                    if (recyclerViewPullable != null) {
+                        recyclerViewPullable.notifyItemInserted(insert_position);
+                    }
+
                     count++;
                 } catch (JSONException e) {
                     Log.e("AddError", jsonArray.toString());
@@ -55,6 +70,16 @@ public class DongTaiGridAdapter extends RecyclerView.Adapter<DongTaiGridAdapter.
             e.printStackTrace();
         }
         return count;
+    }
+
+    /**
+     * 普通的notifyDataSetChange方式更新视图
+     *
+     * @param jsonObject
+     * @return
+     */
+    public int addData(JSONObject jsonObject) {
+        return addData(jsonObject, null);
     }
 
     public void clearData() {

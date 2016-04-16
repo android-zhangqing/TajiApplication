@@ -1,6 +1,5 @@
 package com.zhangqing.taji.activities;
 
-import android.app.Fragment;
 import android.os.Bundle;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
@@ -39,8 +38,8 @@ public class FragmentHomeHot extends BaseFragment implements OnClickListener {
     private SwipeRefreshLayout swipeRefreshLayout;
 
 
-    public FragmentHomeHot(){
-       // Log.e("FragmentHomeHot","###构造 ");
+    public FragmentHomeHot() {
+        // Log.e("FragmentHomeHot","###构造 ");
         categoryList = getCategoryList();
     }
 
@@ -101,7 +100,7 @@ public class FragmentHomeHot extends BaseFragment implements OnClickListener {
                 view1 = new FragmentHomeHotViewFirst(getActivity());
             } else {
 
-                view1 = new FragmentHomeHotViewThen(getActivity(),categoryList.get(i).categoryName);
+                view1 = new FragmentHomeHotViewThen(getActivity(), categoryList.get(i).categoryName);
             }
 
             //Log.e("aaaaaaaaaaaa", "2");
@@ -118,7 +117,7 @@ public class FragmentHomeHot extends BaseFragment implements OnClickListener {
 
             @Override
             public void onPageSelected(int arg0) {
-                Log.e("HomeHot","onPageSelected "+arg0);
+                Log.e("HomeHot", "onPageSelected " + arg0);
                 currenCategory = arg0;
 //                Toast.makeText(getActivity(),
 //                        arg0 + "|||" + getActivity().toString(), Toast.LENGTH_SHORT).show();
@@ -182,7 +181,7 @@ public class FragmentHomeHot extends BaseFragment implements OnClickListener {
         if (currenCategory == 0) {
             ((FragmentHomeHotViewFirst) (viewList.get(currenCategory)))
                     .perfromOnPageSelected();
-        }else{
+        } else {
             ((FragmentHomeHotViewThen) (viewList.get(currenCategory)))
                     .perfromOnPageSelected();
 

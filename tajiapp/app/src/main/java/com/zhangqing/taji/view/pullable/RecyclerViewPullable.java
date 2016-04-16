@@ -3,7 +3,6 @@ package com.zhangqing.taji.view.pullable;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Color;
-import android.os.Handler;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.RecyclerView.OnScrollListener;
@@ -94,6 +93,7 @@ public class RecyclerViewPullable extends LinearLayout {
         mSwipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
+
                 current_page = 1;
                 if (mOnLoadListener != null)
                     mOnLoadListener.onLoadMore(current_page);
@@ -104,17 +104,12 @@ public class RecyclerViewPullable extends LinearLayout {
 //         * 加入FootView用于分页加载提示
 //         */
 
-        new Handler().post(new Runnable() {
-            @Override
-            public void run() {
-                mFootView = new TextView(getContext());
-                mFootView.setPadding(0, 40, 0, 40);
-                mFootView.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
-                mFootView.setGravity(Gravity.CENTER);
-                mFootView.setTextColor(mFootColor);
-                mRecyclerView.setFooterView(mFootView);
-            }
-        });
+//        new Handler().post(new Runnable() {
+//            @Override
+//            public void run() {
+
+//            }
+//        });
 
 
         mRecyclerView.addOnScrollListener(new OnScrollListener() {
@@ -147,19 +142,21 @@ public class RecyclerViewPullable extends LinearLayout {
         mLoadingMoreStatus = loadingMoreStatus;
         switch (loadingMoreStatus) {
             case LoadingMoreStatus_Normal: {
+                addFoot();
                 Log.e("加载结果：", "还有下一页");
                 if (mFootView != null)
                     mFootView.setText("");
                 break;
             }
             case LoadingMoreStatus_Loading: {
+                addFoot();
                 Log.e("加载结果：", "正在加载");
                 if (mFootView != null)
                     mFootView.setText("正在加载");
                 break;
             }
             case LoadingMoreStatus_End: {
-
+                addFoot();
                 if (mFootView != null) {
                     Log.e("加载结果：", "没有了呢");
                     mFootView.setText("没有了呢~");
@@ -169,6 +166,21 @@ public class RecyclerViewPullable extends LinearLayout {
 
         }
         //mRecyclerView.getAdapter().notifyItemChanged(mRecyclerView.getAdapter().getItemCount()-1);
+    }
+
+    private void addFoot() {
+        if (mFootView == null) {
+            synchronized (this) {
+                if (mFootView == null) {
+                    mFootView = new TextView(getContext());
+                    mFootView.setPadding(0, 40, 0, 40);
+                    mFootView.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+                    mFootView.setGravity(Gravity.CENTER);
+                    mFootView.setTextColor(mFootColor);
+                    mRecyclerView.setFooterView(mFootView);
+                }
+            }
+        }
     }
 
     public void setOnLoadListener(OnLoadListener l) {
@@ -197,6 +209,14 @@ public class RecyclerViewPullable extends LinearLayout {
         mRecyclerView.getAdapter().notifyDataSetChanged();
     }
 
+    public void notifyItemInserted(int position) {
+        final int real_position = mRecyclerView.getHeaderView() == null ? position : position + 1;
+        Log.e("notifyItemChanged", "position=" + real_position);
+        mRecyclerView.getAdapter().notifyItemChanged(real_position);
+
+
+    }
+
     public void setFooterView(View v) {
         mRecyclerView.setFooterView(v);
     }
@@ -212,7 +232,10 @@ public class RecyclerViewPullable extends LinearLayout {
     //------------------RecyclerView方法暴露结束-----------------------------------------
 
     //------------------SwipeRefreshLayout方法暴露开始-----------------------------------
-    public SwipeRefreshLayout getSwipeRefreshLayout(){return mSwipeRefreshLayout;}
+    public SwipeRefreshLayout getSwipeRefreshLayout() {
+        return mSwipeRefreshLayout;
+    }
+
     public void setRefreshing(boolean refreshing) {
         mSwipeRefreshLayout.setRefreshing(refreshing);
     }
