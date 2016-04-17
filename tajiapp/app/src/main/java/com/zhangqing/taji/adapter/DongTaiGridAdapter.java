@@ -14,7 +14,7 @@ import com.nostra13.universalimageloader.core.assist.ImageSize;
 import com.nostra13.universalimageloader.core.imageaware.ImageViewAware;
 import com.zhangqing.taji.MyApplication;
 import com.zhangqing.taji.R;
-import com.zhangqing.taji.bean.DongTaiClass;
+import com.zhangqing.taji.bean.DongTaiBean;
 import com.zhangqing.taji.view.pullable.RecyclerViewPullable;
 
 import org.json.JSONArray;
@@ -30,7 +30,7 @@ import java.util.List;
 public class DongTaiGridAdapter extends RecyclerView.Adapter<DongTaiGridAdapter.MyHolder> {
 
     private Context mContext;
-    List<DongTaiClass> mItemsList = new ArrayList<DongTaiClass>();
+    List<DongTaiBean> mItemsList = new ArrayList<DongTaiBean>();
 
     public DongTaiGridAdapter(Context context) {
         mContext = context;
@@ -52,12 +52,12 @@ public class DongTaiGridAdapter extends RecyclerView.Adapter<DongTaiGridAdapter.
             jsonArray = jsonObject.getJSONArray("data");
             for (int i = 0; i < jsonArray.length(); i++) {
                 try {
-                    DongTaiClass d = new DongTaiClass(jsonArray.getJSONObject(i));
+                    DongTaiBean d = new DongTaiBean(jsonArray.getJSONObject(i));
                     //Log.e("onAddData", d.toString());
                     mItemsList.add(d);
                     insert_position++;
                     if (recyclerViewPullable != null) {
-                        recyclerViewPullable.notifyItemInserted(insert_position);
+                        recyclerViewPullable.notifyItemChanged(insert_position);
                     }
 
                     count++;

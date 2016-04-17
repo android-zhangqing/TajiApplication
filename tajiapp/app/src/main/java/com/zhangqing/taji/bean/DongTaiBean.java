@@ -11,7 +11,7 @@ import java.util.WeakHashMap;
  * Created by zhangqing on 2016/4/2.
  * 动态bean
  */
-public class DongTaiClass {
+public class DongTaiBean {
     //动态ID
     public String mId = "";
     //发布人ID
@@ -23,8 +23,8 @@ public class DongTaiClass {
     //@人的ID
     public String mAtId = "";
 
-    public static WeakHashMap<String, PersonInfo> mPersonInfoMap = new WeakHashMap<String, PersonInfo>();
-    public PersonInfo mPersonInfo;
+    public static WeakHashMap<String, PersonInfoBean> mPersonInfoMap = new WeakHashMap<String, PersonInfoBean>();
+    public PersonInfoBean mPersonInfo;
 
     //所属大类，如绘画
     public String mTag = "";
@@ -61,7 +61,7 @@ public class DongTaiClass {
      * @param jsonObject 传入json数据
      * @throws JSONException 仅当无动态id时才抛出异常
      */
-    public DongTaiClass(JSONObject jsonObject) throws JSONException {
+    public DongTaiBean(JSONObject jsonObject) throws JSONException {
 
 
         //动态ID
@@ -78,7 +78,7 @@ public class DongTaiClass {
         synchronized (this) {
             mPersonInfo = mPersonInfoMap.get(mUserId);
             if (mPersonInfo == null) {
-                mPersonInfo = new PersonInfo(mUserId, jsonObject);
+                mPersonInfo = new PersonInfoBean(mUserId, jsonObject);
                 mPersonInfoMap.put(mUserId, mPersonInfo);
             }
         }
@@ -110,7 +110,7 @@ public class DongTaiClass {
         isMasterCircle = jsonObject.optString("mastercircle", "").equals("1");
         //是否已订阅
         isFollow = jsonObject.optBoolean("is_follow", false);
-        Log.e("DongTaiClass", "end|" + toString());
+        Log.e("DongTaiBean", "end|" + toString());
     }
 
     @Override

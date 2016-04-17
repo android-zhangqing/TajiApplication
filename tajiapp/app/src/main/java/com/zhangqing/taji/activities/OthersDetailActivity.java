@@ -14,7 +14,7 @@ import com.android.volley.VolleyError;
 import com.zhangqing.taji.BaseActivity;
 import com.zhangqing.taji.R;
 import com.zhangqing.taji.adapter.DongTaiListAdapter;
-import com.zhangqing.taji.bean.PersonInfo;
+import com.zhangqing.taji.bean.PersonInfoBean;
 import com.zhangqing.taji.base.UserClass;
 import com.zhangqing.taji.base.VolleyInterface;
 import com.zhangqing.taji.view.PersonInfoView;
@@ -43,7 +43,7 @@ public class OthersDetailActivity extends BaseActivity {
     private String mId = "";
     private String mName = "";
 
-    private PersonInfo mPersonInfo;
+    private PersonInfoBean mPersonInfo;
     private PersonInfoView mPersonInfoView;
 
     private RecyclerViewPullable mRecyclerView;
@@ -70,7 +70,7 @@ public class OthersDetailActivity extends BaseActivity {
             public void onMySuccess(JSONObject jsonObject) {
 
                 try {
-                    mPersonInfo = new PersonInfo(mId, jsonObject);
+                    mPersonInfo = new PersonInfoBean(mId, jsonObject);
                     mPersonInfoView = new PersonInfoView(OthersDetailActivity.this, mPersonInfo);
 
                     mRecyclerView.setHeaderView(mPersonInfoView);
@@ -103,7 +103,7 @@ public class OthersDetailActivity extends BaseActivity {
                                 @Override
                                 public void onMyError(VolleyError error) {
                                     mRecyclerView.setRefreshing(false);
-                                    mRecyclerView.setLoadingMoreStatus(RecyclerViewPullable.LoadingMoreStatus_Normal);
+                                    mRecyclerView.setLoadingMoreStatus(RecyclerViewPullable.LoadingMoreStatus_ERROR);
                                 }
                             });
                         }

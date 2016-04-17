@@ -371,7 +371,7 @@ public class PublishActivity extends BaseActivity implements View.OnClickListene
                         new VolleyInterface(getApplicationContext()) {
                             @Override
                             public void onMySuccess(JSONObject jsonObject) {
-
+                                Toast.makeText(getApplicationContext(), jsonObject.toString(), Toast.LENGTH_LONG).show();
                             }
 
                             @Override

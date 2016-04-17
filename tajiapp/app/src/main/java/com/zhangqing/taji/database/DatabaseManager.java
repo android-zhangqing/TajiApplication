@@ -7,7 +7,7 @@ import android.net.Uri;
 import android.util.Log;
 
 import com.android.volley.VolleyError;
-import com.zhangqing.taji.bean.PersonInfo;
+import com.zhangqing.taji.bean.PersonInfoBean;
 import com.zhangqing.taji.base.UserClass;
 import com.zhangqing.taji.base.VolleyInterface;
 
@@ -86,7 +86,7 @@ public class DatabaseManager {
      * @param person 插入的人
      * @return 变化条数
      */
-    public int insert(PersonInfo person) {
+    public int insert(PersonInfoBean person) {
         return insert(person.userid, person.username, person.avatar);
     }
 
@@ -156,7 +156,7 @@ public class DatabaseManager {
 //    }
 
     public UserInfo queryUserInfoById(String userid) {
-        PersonInfo p = queryPersonInfoById(userid);
+        PersonInfoBean p = queryPersonInfoById(userid);
         UserInfo userInfo = null;
         if (p != null) {
             userInfo = new UserInfo(p.userid, p.username, Uri.parse(p.avatar));
@@ -165,7 +165,7 @@ public class DatabaseManager {
     }
 
 
-    public synchronized PersonInfo queryPersonInfoById(String userid) {
+    public synchronized PersonInfoBean queryPersonInfoById(String userid) {
         Log.e("SQLite", "----query----");
         SQLiteDatabase db = dbHelper.getReadableDatabase();
         Cursor cursor;
@@ -173,9 +173,9 @@ public class DatabaseManager {
                 " where userid=" + userid;
         cursor = db.rawQuery(sql, null);
 
-        PersonInfo personInfo = null;
+        PersonInfoBean personInfo = null;
         if (cursor.moveToNext()) {
-            personInfo = new PersonInfo();
+            personInfo = new PersonInfoBean();
             personInfo.userid = cursor.getString(cursor.getColumnIndex("userid"));
             personInfo.username = cursor.getString(cursor.getColumnIndex("username"));
             personInfo.avatar = cursor.getString(cursor.getColumnIndex("avatar"));

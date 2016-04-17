@@ -11,7 +11,7 @@ import android.widget.TextView;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.zhangqing.taji.MyApplication;
 import com.zhangqing.taji.R;
-import com.zhangqing.taji.bean.PersonInfo;
+import com.zhangqing.taji.bean.PersonInfoBean;
 import com.zhangqing.taji.base.UserClass;
 
 import org.json.JSONArray;
@@ -26,7 +26,7 @@ import java.util.List;
  * 技能匹配适配器
  */
 public class SkillMatchingAdapter extends RecyclerView.Adapter<SkillMatchingAdapter.MyViewHolder> {
-    private List<PersonInfo> mPersonInfoList = new ArrayList<PersonInfo>();
+    private List<PersonInfoBean> mPersonInfoList = new ArrayList<PersonInfoBean>();
 
     private static String MY_NAME = null;
     private static String MY_AVATAR = null;
@@ -71,7 +71,7 @@ public class SkillMatchingAdapter extends RecyclerView.Adapter<SkillMatchingAdap
             JSONObject jsonObject = null;
             try {
                 jsonObject = jsonArray.getJSONObject(i);
-                PersonInfo personInfo = new PersonInfo(jsonObject.getString("userid"), jsonObject);
+                PersonInfoBean personInfo = new PersonInfoBean(jsonObject.getString("userid"), jsonObject);
                 mPersonInfoList.add(personInfo);
                 count++;
             } catch (JSONException e) {

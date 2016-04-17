@@ -8,6 +8,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.support.v7.widget.LinearLayoutManager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,10 +18,18 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.android.volley.VolleyError;
 import com.zhangqing.taji.BaseFragment;
 import com.zhangqing.taji.R;
+import com.zhangqing.taji.adapter.CircleAdapter;
+import com.zhangqing.taji.base.UserClass;
+import com.zhangqing.taji.base.VolleyInterface;
 import com.zhangqing.taji.view.FlexiListView;
+import com.zhangqing.taji.view.FragmentCircleAll;
 import com.zhangqing.taji.view.ViewPagerIndicator;
+import com.zhangqing.taji.view.pullable.RecyclerViewPullable;
+
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -44,36 +53,34 @@ public class FragmentCircle extends BaseFragment {
         Log.e("FragmentCircle", "###构造");
     }
 
-    class CirclePagerAdapter extends PagerAdapter {
+    static class CirclePagerAdapter extends PagerAdapter {
         ListView listView3;
         ListView listView2;
-        List<View> viewList;
+
+        View[] views = new View[2];
 
         @Override
         public Object instantiateItem(ViewGroup container, int position) {
-            container.addView(viewList.get(position));
-            return viewList.get(position);
+            container.addView(views[position]);
+            return views[position];
         }
 
-        ListView listView1;
-
-        public CirclePagerAdapter(Context context) {
+        public CirclePagerAdapter(final Context context) {
             Log.e("CirclePagerAdapter", "###构造");
 
-            viewList = new ArrayList<View>();
-            listView1 = new FlexiListView(context);
-            listView1.setDividerHeight(0);
-            listView1.setAdapter(new CircleListViewAdapter(8));
-            viewList.add(listView1);
 
-            View v = LayoutInflater.from(getActivity()).inflate(R.layout.view_circle_second, null, false);
+
+            views[0] = new FragmentCircleAll(context);
+
+
+            View v = LayoutInflater.from(context).inflate(R.layout.view_circle_second, null, false);
 
             listView2 = (ListView) v.findViewById(R.id.circle_second_listview1);
             listView3 = (ListView) v.findViewById(R.id.circle_second_listview2);
 
-            listView2.setAdapter(new CircleListViewAdapter(4));
-            listView3.setAdapter(new CircleListViewAdapter(3));
-            viewList.add(v);
+            listView2.setAdapter(new CircleListViewAdapter(context, 4));
+            listView3.setAdapter(new CircleListViewAdapter(context, 3));
+            views[1] = v;
 
 
             // listView1.setAdapter();
@@ -81,7 +88,7 @@ public class FragmentCircle extends BaseFragment {
 
         @Override
         public int getCount() {
-            return viewList.size();
+            return views.length;
         }
 
         @Override
@@ -91,7 +98,7 @@ public class FragmentCircle extends BaseFragment {
 
         @Override
         public void destroyItem(ViewGroup container, int position, Object object) {
-            container.removeView(viewList.get(position));
+            container.removeView(views[position]);
         }
 
     }
@@ -100,7 +107,7 @@ public class FragmentCircle extends BaseFragment {
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         Log.e("FragmentCircle", "###onActivityCreated");
-        mViewPager.setAdapter(new CirclePagerAdapter(getActivity()));
+
     }
 
     @Override
@@ -109,46 +116,25 @@ public class FragmentCircle extends BaseFragment {
         Log.e("FragmentCircle", "###onCreateView");
         View v = inflater.inflate(R.layout.fragment_circle, container, false);
         mViewPager = (ViewPager) v.findViewById(R.id.circle_viewpager);
+        mViewPager.setAdapter(new CirclePagerAdapter(getActivity()));
 
         mIndicator = (ViewPagerIndicator) v.findViewById(R.id.circle_indicator);
         mIndicator.setViewPager(mViewPager, 0);
 
         //RongIM.getInstance().getRongIMClient().getConversationList(Conversation.ConversationType.CHATROOM);
-
-
-//        indicator1 = (TextView) v.findViewById(R.id.circle_indicator1_tv);
-//        indicator2 = (TextView) v.findViewById(R.id.circle_indicator2_tv);
-//
-//
-//        indicator1.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                if (currentPager == 0) return;
-//                updateIndicator(0);
-//                mViewPager.setCurrentItem(0, true);
-//            }
-//        });
-//        indicator2.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                if (currentPager == 1) return;
-//                updateIndicator(1);
-//                mViewPager.setCurrentItem(1, true);
-//            }
-//        });
-
-
         return v;
     }
 
 
-    class CircleListViewAdapter extends BaseAdapter {
+    static class CircleListViewAdapter extends BaseAdapter {
         List<Map<String, Object>> itemMapList;
+        Context context;
 
-        public CircleListViewAdapter(int initCount) {
+        public CircleListViewAdapter(Context context, int initCount) {
+            this.context = context;
             Log.e("CircleListViewAdapter", "###构造");
             itemMapList = new ArrayList<Map<String, Object>>();
-            Bitmap bm = BitmapFactory.decodeResource(getResources(), R.drawable.pic_loading_bg);
+            Bitmap bm = BitmapFactory.decodeResource(context.getResources(), R.drawable.pic_loading_bg);
             for (int i = 0; i < initCount; i++) {
                 Map<String, Object> map = new HashMap<String, Object>();
                 map.put("icon", bm);
@@ -195,7 +181,7 @@ public class FragmentCircle extends BaseFragment {
 
             if (convertView == null) {
                 //  Log.e("CircleListViewAdapter", "**nullconvertView " + position + " " + parent.toString());
-                convertView = LayoutInflater.from(getActivity()).inflate(R.layout.view_circle_first_listview_item, parent, false);
+                convertView = LayoutInflater.from(context).inflate(R.layout.view_circle_first_listview_item, parent, false);
                 viewHolder = new ViewHolder();
                 viewHolder.textViewTitle = (TextView) convertView.findViewById(R.id.circle_first_title);
                 viewHolder.textViewCountOnline = (TextView) convertView.findViewById(R.id.circle_first_count_online_tv);

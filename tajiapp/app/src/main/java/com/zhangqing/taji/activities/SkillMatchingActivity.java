@@ -67,7 +67,7 @@ public class SkillMatchingActivity extends BaseActivity {
                     @Override
                     public void onMyError(VolleyError error) {
                         mPullRecyclerView.setRefreshing(false);
-                        mPullRecyclerView.setLoadingMoreStatus(RecyclerViewPullable.LoadingMoreStatus_Normal);
+                        mPullRecyclerView.setLoadingMoreStatus(RecyclerViewPullable.LoadingMoreStatus_ERROR);
                     }
                 });
             }

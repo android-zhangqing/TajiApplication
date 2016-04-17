@@ -100,8 +100,9 @@ public class UserClass {
         if (string.equals("null")) string = "";
         return string;
     }
-    public void setStringByKey(String key,String value){
-        sharedPreferences.edit().putString(key,value).commit();
+
+    public void setStringByKey(String key, String value) {
+        sharedPreferences.edit().putString(key, value).commit();
     }
 
     class SchoolType {
@@ -519,6 +520,12 @@ public class UserClass {
                 break;
         }
         VolleyRequest.RequestGet(url, "getFollowList", vif);
+    }
+
+    public void chatRoomGetRoomList(int page, VolleyInterface vif) {
+        String url = URLHEAD + "/Chatroom/getRoomList?userid=" + userId + "&openid=" + openId +
+                "&page=" + page + "&count=" + Page_Per_Count;
+        VolleyRequest.RequestGet(url, "chatRoomGetRoomList", vif);
     }
 
     public void getOthersAvatar(String userid, VolleyInterface vif) {

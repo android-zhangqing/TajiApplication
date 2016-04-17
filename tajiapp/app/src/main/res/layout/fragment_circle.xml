@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/home_circle_category_bar_bg"
         android:orientation="horizontal"
-        android:padding="1dp"
+        android:padding="4dp"
         indicator:shape="bar"
         indicator:text_color_select="#443854"
         indicator:text_color_unselect="#99999B"

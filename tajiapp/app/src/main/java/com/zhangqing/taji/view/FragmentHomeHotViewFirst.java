@@ -143,7 +143,7 @@ public class FragmentHomeHotViewFirst extends LinearLayout {
                     public void onMyError(VolleyError error) {
                         if (current_page == 1)
                             mGridView.setRefreshing(false);
-                        mGridView.setLoadingMoreStatus(RecyclerViewPullable.LoadingMoreStatus_Normal);
+                        mGridView.setLoadingMoreStatus(RecyclerViewPullable.LoadingMoreStatus_ERROR);
                     }
                 });
             }

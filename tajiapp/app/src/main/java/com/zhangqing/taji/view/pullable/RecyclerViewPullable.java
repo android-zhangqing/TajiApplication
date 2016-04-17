@@ -23,9 +23,14 @@ import com.zhangqing.taji.R;
  * 带 分页加载、下拉刷新 功能的RecyclerView
  */
 public class RecyclerViewPullable extends LinearLayout {
+
     public static final int LoadingMoreStatus_Normal = 1;
     public static final int LoadingMoreStatus_Loading = 2;
     public static final int LoadingMoreStatus_End = 3;
+
+    //表示网络错误,处理完FootView后被视为normal处理
+    public static final int LoadingMoreStatus_ERROR = 4;
+
 
     private SwipeRefreshLayout mSwipeRefreshLayout;
     private RecyclerViewWithHeaderAndFooter mRecyclerView;
@@ -161,7 +166,16 @@ public class RecyclerViewPullable extends LinearLayout {
                     Log.e("加载结果：", "没有了呢");
                     mFootView.setText("没有了呢~");
                 }
-
+                break;
+            }
+            case LoadingMoreStatus_ERROR: {
+                addFoot();
+                if (mFootView != null) {
+                    Log.e("加载结果：", "网络错误");
+                    mFootView.setText("网络有点问题呦~");
+                }
+                mLoadingMoreStatus = LoadingMoreStatus_Normal;
+                break;
             }
 
         }
@@ -209,12 +223,10 @@ public class RecyclerViewPullable extends LinearLayout {
         mRecyclerView.getAdapter().notifyDataSetChanged();
     }
 
-    public void notifyItemInserted(int position) {
+    public void notifyItemChanged(int position) {
         final int real_position = mRecyclerView.getHeaderView() == null ? position : position + 1;
         Log.e("notifyItemChanged", "position=" + real_position);
         mRecyclerView.getAdapter().notifyItemChanged(real_position);
-
-
     }
 
     public void setFooterView(View v) {

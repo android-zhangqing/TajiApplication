@@ -7,7 +7,7 @@ import org.json.JSONObject;
  * Created by zhangqing on 2016/3/31.
  * 用户信息封装类
  */
-public class PersonInfo {
+public class PersonInfoBean {
     //"data":{"username":"GOSICFLY","sex":"男","school":"点击设置学校","mobile":"18015243501",
     // "avatar":"http:\/\/taji.whutech.com\/uploads\/4.jpg","signature":"这个人很懒，什么都没说！",
     // "fans":"26","follow":"9","dongtai":"3","tudi":"0","interest":"搭配.滑板","skill":"游戏.摄影.手工",
@@ -36,11 +36,11 @@ public class PersonInfo {
     public String i_want="";
     public String ta_want="";
 
-    public PersonInfo() {
+    public PersonInfoBean() {
 
     }
 
-    public PersonInfo(String userid, JSONObject jsonObject) throws JSONException {
+    public PersonInfoBean(String userid, JSONObject jsonObject) throws JSONException {
         this.userid = userid;
 
         username = jsonObject.getString("username");

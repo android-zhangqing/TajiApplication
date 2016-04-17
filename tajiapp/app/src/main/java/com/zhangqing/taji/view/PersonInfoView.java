@@ -15,14 +15,14 @@ import android.widget.TextView;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.zhangqing.taji.MyApplication;
 import com.zhangqing.taji.R;
-import com.zhangqing.taji.bean.PersonInfo;
+import com.zhangqing.taji.bean.PersonInfoBean;
 import com.zhangqing.taji.base.UserClass;
 
 /**
  * Created by zhangqing on 2016/4/9.
  */
 public class PersonInfoView extends LinearLayout {
-    PersonInfo mPersonInfo;
+    PersonInfoBean mPersonInfo;
     ViewGroup mMainContainer;
 
     private TextView mNameTextView;
@@ -47,7 +47,7 @@ public class PersonInfoView extends LinearLayout {
         initView();
     }
 
-    public PersonInfoView(Context context, PersonInfo personInfo) {
+    public PersonInfoView(Context context, PersonInfoBean personInfo) {
         super(context);
         this.mPersonInfo = personInfo;
         initView();
@@ -192,7 +192,7 @@ public class PersonInfoView extends LinearLayout {
         }
     }
 
-    public void setPersonInfo(PersonInfo personInfo) {
+    public void setPersonInfo(PersonInfoBean personInfo) {
         mPersonInfo = personInfo;
 
     }

@@ -78,7 +78,7 @@ public class FragmentHomeHotViewThen extends LinearLayout {
                     public void onMyError(VolleyError error) {
                         if (current_page == 1)
                             mRecyclerView.setRefreshing(false);
-                        mRecyclerView.setLoadingMoreStatus(RecyclerViewPullable.LoadingMoreStatus_Normal);
+                        mRecyclerView.setLoadingMoreStatus(RecyclerViewPullable.LoadingMoreStatus_ERROR);
 
                         //mFootTextView.setText("网络错误");
                     }

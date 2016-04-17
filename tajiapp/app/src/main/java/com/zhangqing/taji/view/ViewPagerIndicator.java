@@ -227,8 +227,8 @@ public class ViewPagerIndicator extends LinearLayout {
             case SHAPE_BAR:
                 mPath.moveTo(0, 0);
                 mPath.lineTo(mScreenWidth / mTabVisibleCount, 0);
-                mPath.lineTo(mScreenWidth / mTabVisibleCount, -8);
-                mPath.lineTo(0, -8);
+                mPath.lineTo(mScreenWidth / mTabVisibleCount, -4);
+                mPath.lineTo(0, -4);
                 mPath.close();
 
                 // 初始时的偏移量

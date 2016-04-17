@@ -19,7 +19,7 @@ import com.zhangqing.taji.MyApplication;
 import com.zhangqing.taji.R;
 import com.zhangqing.taji.base.UserClass;
 import com.zhangqing.taji.base.VolleyInterface;
-import com.zhangqing.taji.bean.DongTaiClass;
+import com.zhangqing.taji.bean.DongTaiBean;
 import com.zhangqing.taji.view.ComplicatedMediaView;
 import com.zhangqing.taji.view.pullable.RecyclerViewPullable;
 
@@ -52,7 +52,7 @@ public class DongTaiListAdapter extends RecyclerView.Adapter<DongTaiListAdapter.
 
     private Context mContext;
 
-    private List<DongTaiClass> mDongTaiClassList = new ArrayList<DongTaiClass>();
+    private List<DongTaiBean> mDongTaiClassList = new ArrayList<DongTaiBean>();
 
     public DongTaiListAdapter(Context context) {
         mContext = context;
@@ -67,7 +67,7 @@ public class DongTaiListAdapter extends RecyclerView.Adapter<DongTaiListAdapter.
 
     @Override
     public void onBindViewHolder(final MyViewHolder holder, int position) {
-        final DongTaiClass dongTaiClass = mDongTaiClassList.get(position);
+        final DongTaiBean dongTaiClass = mDongTaiClassList.get(position);
 
         holder.tv_name.setText(dongTaiClass.mPersonInfo.username);
         holder.tv_content.setText(dongTaiClass.mContent);
@@ -166,12 +166,12 @@ public class DongTaiListAdapter extends RecyclerView.Adapter<DongTaiListAdapter.
         int insert_position = mDongTaiClassList.size() - 1;
         for (int i = 0; i < jsonArray.length(); i++) {
             try {
-                //notifyItemInserted(lastCount+i);
-                mDongTaiClassList.add(new DongTaiClass(jsonArray.getJSONObject(i)));
+                //notifyItemChanged(lastCount+i);
+                mDongTaiClassList.add(new DongTaiBean(jsonArray.getJSONObject(i)));
                 insert_position++;
                 if (recyclerViewPullable != null)
-                    recyclerViewPullable.notifyItemInserted(insert_position);
-                //notifyItemInserted(lastCount+i);
+                    recyclerViewPullable.notifyItemChanged(insert_position);
+                //notifyItemChanged(lastCount+i);
                 //notifyItemRangeChanged(lastCount+i, getItemCount());
                 count++;
             } catch (JSONException e) {
