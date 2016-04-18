@@ -15,6 +15,7 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.nostra13.universalimageloader.core.ImageLoader;
 import com.zhangqing.taji.R;
 
 /**
@@ -31,6 +32,25 @@ public class RecyclerViewPullable extends LinearLayout {
     //表示网络错误,处理完FootView后被视为normal处理
     public static final int LoadingMoreStatus_ERROR = 4;
 
+    /**
+     * 2016-04-18新增 设置滑动时是否暂停图片加载
+     */
+    private boolean isPauseScroll = false;
+    private boolean isPauseFling = false;
+    private ImageLoader mImageLoader = null;
+
+    /**
+     * 设置滑动时是否加载图片
+     *
+     * @param imageLoader
+     * @param isPauseScroll 手指拖拽滑动时是否加载图片
+     * @param isPauseFling  手指离开，依靠惯性滑动时是否加载
+     */
+    public void setPauseLoaderWhenScroll(ImageLoader imageLoader, boolean isPauseScroll, boolean isPauseFling) {
+        this.mImageLoader = imageLoader;
+        this.isPauseScroll = isPauseScroll;
+        this.isPauseFling = isPauseFling;
+    }
 
     private SwipeRefreshLayout mSwipeRefreshLayout;
     private RecyclerViewWithHeaderAndFooter mRecyclerView;
@@ -89,6 +109,10 @@ public class RecyclerViewPullable extends LinearLayout {
     }
 
     private void initView() {
+        /**
+         * 2016-04-18 默认设置惯性滑动时不加载图片
+         */
+        setPauseLoaderWhenScroll(ImageLoader.getInstance(),false,true);
         View v = LayoutInflater.from(getContext()).inflate(R.layout.view_recycler_pullable, this, false);
         addView(v);
 
@@ -98,7 +122,6 @@ public class RecyclerViewPullable extends LinearLayout {
         mSwipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-
                 current_page = 1;
                 if (mOnLoadListener != null)
                     mOnLoadListener.onLoadMore(current_page);
@@ -120,7 +143,37 @@ public class RecyclerViewPullable extends LinearLayout {
         mRecyclerView.addOnScrollListener(new OnScrollListener() {
             @Override
             public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
+                Log.e("onScrollStateChanged", newState + "|");
                 super.onScrollStateChanged(recyclerView, newState);
+
+                /**
+                 * 2016-04-18新增 可以设置滑动时是否暂停图片加载
+                 */
+                if (mImageLoader == null) return;
+                switch (newState) {
+                    case RecyclerView.SCROLL_STATE_IDLE: {
+                        mImageLoader.resume();
+                        break;
+                    }
+                    case RecyclerView.SCROLL_STATE_DRAGGING: {
+                        if (isPauseScroll) {
+                            mImageLoader.pause();
+                        } else {
+                            //mImageLoader.resume();
+                        }
+                        break;
+                    }
+                    case RecyclerView.SCROLL_STATE_SETTLING: {
+                        if (isPauseFling) {
+                            mImageLoader.pause();
+                        } else {
+                            //mImageLoader.resume();
+                        }
+                        break;
+                    }
+
+                }
+
             }
 
             @Override

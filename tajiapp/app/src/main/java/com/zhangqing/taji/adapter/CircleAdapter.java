@@ -87,6 +87,7 @@ public class CircleAdapter extends RecyclerView.Adapter<CircleAdapter.MyHolder> 
                         mChatRoomList.get(position).rid,
                         mChatRoomList.get(position).name);
             }
+
         });
 
         ImageLoader.getInstance().displayImage(mChatRoomList.get(position).avatar, new ImageViewAware(holder.imgViewIcon), MyApplication.getCornerDisplayImageOptions());
