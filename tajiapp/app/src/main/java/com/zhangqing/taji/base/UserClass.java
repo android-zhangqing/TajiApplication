@@ -324,6 +324,12 @@ public class UserClass {
 
     }
 
+
+    public void getDongTaiComment(String tid, VolleyInterface vif) {
+        String url = URLHEAD + "/DongTai/commentList?tid=" + tid + "userid=" + userId + "&openid=" + openId;
+        VolleyRequest.RequestGet(url, "getDongTaiComment", vif);
+    }
+
     /**
      * 上传图片
      *

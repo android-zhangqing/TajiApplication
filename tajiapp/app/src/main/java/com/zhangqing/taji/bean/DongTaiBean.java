@@ -1,17 +1,20 @@
 package com.zhangqing.taji.bean;
 
+import android.os.Parcel;
+import android.os.Parcelable;
 import android.util.Log;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.Serializable;
 import java.util.WeakHashMap;
 
 /**
  * Created by zhangqing on 2016/4/2.
  * 动态bean
  */
-public class DongTaiBean {
+public class DongTaiBean{
     //动态ID
     public String mId = "";
     //发布人ID

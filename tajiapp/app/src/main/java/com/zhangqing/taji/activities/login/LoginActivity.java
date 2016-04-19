@@ -10,7 +10,9 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.android.volley.VolleyError;
+import com.umeng.analytics.MobclickAgent;
 import com.zhangqing.taji.BaseActivity;
+import com.zhangqing.taji.MyApplication;
 import com.zhangqing.taji.R;
 import com.zhangqing.taji.activities.TajiappActivity;
 import com.zhangqing.taji.base.UserClass;
@@ -83,6 +85,9 @@ public class LoginActivity extends BaseActivity {
                 }
 
 
+                //友盟统计登录
+                MobclickAgent.onProfileSignIn(UserClass.getInstance().userId);
+
                 UserClass.getInstance().getMyUserInfo(new VolleyInterface(LoginActivity.this.getApplicationContext()) {
                     @Override
                     public void onMySuccess(JSONObject jsonObject) {
@@ -91,6 +96,7 @@ public class LoginActivity extends BaseActivity {
                             Toast.makeText(LoginActivity.this.getApplicationContext(), "账号异常", Toast.LENGTH_SHORT).show();
                             return;
                         }
+
                         startTajiActivity();
                     }
 

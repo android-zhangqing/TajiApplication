@@ -1,6 +1,8 @@
 package com.zhangqing.taji.adapter;
 
 import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -14,6 +16,7 @@ import com.nostra13.universalimageloader.core.assist.ImageSize;
 import com.nostra13.universalimageloader.core.imageaware.ImageViewAware;
 import com.zhangqing.taji.MyApplication;
 import com.zhangqing.taji.R;
+import com.zhangqing.taji.activities.DongTaiDetailActivity;
 import com.zhangqing.taji.bean.DongTaiBean;
 import com.zhangqing.taji.view.pullable.RecyclerViewPullable;
 
@@ -94,13 +97,24 @@ public class DongTaiGridAdapter extends RecyclerView.Adapter<DongTaiGridAdapter.
     }
 
     @Override
-    public void onBindViewHolder(MyHolder viewHolder, int position) {
+    public void onBindViewHolder(MyHolder viewHolder, final int position) {
         viewHolder.tv_title.setText(mItemsList.get(position).mContent);
         viewHolder.tv_like.setText("❤" + mItemsList.get(position).mCountLike);
 
         viewHolder.iv_avatar.setImageBitmap(null);
         viewHolder.iv_avatar.setOnClickListener(new AvatarClickListener(mContext,
                 mItemsList.get(position).mUserId, mItemsList.get(position).mPersonInfo.username));
+
+        viewHolder.iv_cover.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(mContext, DongTaiDetailActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putString("dongtai", mItemsList.get(position).mId);
+                intent.putExtras(bundle);
+                mContext.startActivity(intent);
+            }
+        });
         viewHolder.iv_cover.setImageBitmap(null);
 
         ImageLoader.getInstance().displayImage(mItemsList.get(position).mAvatarUrl,

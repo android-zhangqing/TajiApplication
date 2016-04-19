@@ -13,7 +13,9 @@ import com.zhangqing.taji.R;
 
 import java.util.Locale;
 
+import io.rong.imkit.RongIM;
 import io.rong.imkit.fragment.ConversationFragment;
+import io.rong.imlib.NativeObject;
 import io.rong.imlib.model.Conversation;
 
 /**
@@ -83,4 +85,9 @@ public class ConversationActivity extends BaseActivity {
         finish();
     }
 
+    @Override
+    public void onDetachedFromWindow() {
+        //super.onDetachedFromWindow();
+        Log.e("onDetachedFromWindow", "isDetached");
+    }
 }

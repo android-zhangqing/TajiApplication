@@ -13,6 +13,7 @@ import android.view.ViewGroup;
  * 自定义的Fragment基类
  */
 public class BaseFragment extends Fragment {
+    private static final String START_WITH = "--------------------------------";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -58,7 +59,7 @@ public class BaseFragment extends Fragment {
     }
 
     private void simpleLog(String s) {
-        Log.e("|****" + this.getClass().getSimpleName() + "****|", "##" + s);
+        Log.e( "|****" + this.getClass().getSimpleName() + "****|", START_WITH +"##" + s);
     }
 
     public void log(String... log) {

@@ -22,6 +22,8 @@ import com.nostra13.universalimageloader.core.display.RoundedBitmapDisplayer;
 import com.nostra13.universalimageloader.core.display.SimpleBitmapDisplayer;
 import com.nostra13.universalimageloader.core.download.BaseImageDownloader;
 import com.nostra13.universalimageloader.utils.StorageUtils;
+import com.umeng.analytics.AnalyticsConfig;
+import com.umeng.analytics.MobclickAgent;
 import com.zhangqing.taji.base.UserClass;
 import com.zhangqing.taji.database.DatabaseManager;
 
@@ -86,6 +88,11 @@ public class MyApplication extends Application {
         //初始化用户表数据库
         DatabaseManager.init(getApplicationContext());
 
+
+        /** 友盟 设置是否对日志信息进行加密, 默认false(不加密). */
+        AnalyticsConfig.enableEncrypt(true);
+
+
     }
 
 
@@ -98,11 +105,11 @@ public class MyApplication extends Application {
                 .denyCacheImageMultipleSizesInMemory()
                 .diskCacheFileNameGenerator(new Md5FileNameGenerator()) //将保存的时候的URI名称用MD5 加密
                 .memoryCache(new WeakMemoryCache())
-                       // .memoryCache(new UsingFreqLimitedMemoryCache(2 * 1024 * 1024))
-                        //.memoryCacheSize(2 * 1024 * 1024) // 内存缓存的最大值
+                // .memoryCache(new UsingFreqLimitedMemoryCache(2 * 1024 * 1024))
+                //.memoryCacheSize(2 * 1024 * 1024) // 内存缓存的最大值
                 .diskCacheSize(50 * 1024 * 1024)  // SD卡缓存的最大值
                 .tasksProcessingOrder(QueueProcessingType.LIFO)
-                        // 由原先的discCache -> diskCache
+                // 由原先的discCache -> diskCache
                 .diskCache(new UnlimitedDiskCache(cacheDir))//自定义缓存路径
                 .imageDownloader(new BaseImageDownloader(context, 5 * 1000, 30 * 1000)) // connectTimeout (5 s), readTimeout (30 s)超时时间
                 .writeDebugLogs() // Remove for release app

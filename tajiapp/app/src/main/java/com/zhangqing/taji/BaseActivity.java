@@ -5,6 +5,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
+import com.umeng.analytics.MobclickAgent;
 import com.zhangqing.taji.activities.SystemStatusManager;
 
 /**
@@ -16,7 +17,7 @@ public class BaseActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Log.e("**"+this.getClass().getSimpleName()+"**", "onCreate");
+        Log.e("**" + this.getClass().getSimpleName() + "**", "onCreate");
         SystemStatusManager.setTranslucentStatus(this);
     }
 
@@ -31,6 +32,16 @@ public class BaseActivity extends AppCompatActivity {
         }
         Log.e(">>" + this.getClass().getSimpleName() + ">>" +
                 Thread.currentThread().getStackTrace()[3].getMethodName(), result);
+    }
+
+    public void onResume() {
+        super.onResume();
+        MobclickAgent.onResume(this);
+    }
+
+    public void onPause() {
+        super.onPause();
+        MobclickAgent.onPause(this);
     }
 
 }

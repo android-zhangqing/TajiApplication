@@ -14,6 +14,7 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import com.umeng.analytics.MobclickAgent;
 import com.zhangqing.taji.BaseActivity;
 import com.zhangqing.taji.MyApplication;
 import com.zhangqing.taji.R;
@@ -377,7 +378,11 @@ public class TajiappActivity extends BaseActivity implements OnTabClickListener,
         super.onBackPressed();
     }
 
+    //退出登录
     public void onClickBtnClearUserInfo(View v) {
+        //友盟统计 退出登录
+        MobclickAgent.onProfileSignOff();
+
         startLoginActivity();
     }
 

@@ -54,9 +54,18 @@
         android:theme="@style/AppBaseTheme">
         <service android:name="com.amap.api.location.APSService" />
 
+        <!--高德地图-->
         <meta-data
             android:name="com.amap.api.v2.apikey"
             android:value="80ee6b03d44af2c39390adac3afa9173" />
+
+        <!--有盟统计-->
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="5714e78c67e58e375e0004ea"></meta-data>
+        <meta-data
+            android:name="UMENG_CHANNEL"
+            android:value="TajiApplication" />
 
         <activity
             android:name=".activities.login.CoverActivity"
@@ -150,6 +159,7 @@
         <activity android:name=".activities.SkillSettingActivity" />
         <activity android:name=".activities.SkillMatchingActivity" />
         <activity android:name=".activities.ChatRoomActivity" />
+        <activity android:name=".activities.DongTaiDetailActivity" />
     </application>
 
 </manifest>

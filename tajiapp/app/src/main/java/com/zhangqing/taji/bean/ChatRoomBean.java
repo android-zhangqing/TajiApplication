@@ -22,8 +22,8 @@ public class ChatRoomBean {
         description = jsonObject.optString("description", "");
         avatar = jsonObject.optString("avatar", "");
         if (!avatar.contains("http")) avatar = "";
-        count_all = jsonObject.optString("count_all", "");
-        count_online = jsonObject.optString("count_online", "");
+        count_all = jsonObject.optString("total", "");
+        count_online = jsonObject.optString("user", "");
 
     }
 

@@ -143,7 +143,7 @@ public class RecyclerViewPullable extends LinearLayout {
         mRecyclerView.addOnScrollListener(new OnScrollListener() {
             @Override
             public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
-                Log.e("onScrollStateChanged", newState + "|");
+                //Log.e("onScrollStateChanged", newState + "|");
                 super.onScrollStateChanged(recyclerView, newState);
 
                 /**
