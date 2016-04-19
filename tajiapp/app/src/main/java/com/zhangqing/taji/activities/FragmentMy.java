@@ -23,6 +23,7 @@ import com.amap.api.location.AMapLocationClientOption;
 import com.amap.api.location.AMapLocationListener;
 import com.android.volley.VolleyError;
 import com.nostra13.universalimageloader.core.ImageLoader;
+import com.nostra13.universalimageloader.core.imageaware.ImageViewAware;
 import com.zhangqing.taji.BaseFragment;
 import com.zhangqing.taji.MyApplication;
 import com.zhangqing.taji.R;
@@ -159,7 +160,7 @@ public class FragmentMy extends BaseFragment implements View.OnClickListener {
         String avatar = UserClass.getInstance().getStringByKey("avatar");
         if (!avatar.equals("")) {
             //Log.e("loadingavatar", "" + avatar);
-            ImageLoader.getInstance().displayImage(avatar, mAvatarImageView, MyApplication.getCircleDisplayImageOptions());
+            ImageLoader.getInstance().displayImage(avatar, new ImageViewAware(mAvatarImageView), MyApplication.getCircleDisplayImageOptions());
         }
 
         String sex = UserClass.getInstance().getStringByKey("sex");

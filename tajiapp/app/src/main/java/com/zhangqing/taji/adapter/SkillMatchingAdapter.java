@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.nostra13.universalimageloader.core.ImageLoader;
+import com.nostra13.universalimageloader.core.imageaware.ImageViewAware;
 import com.zhangqing.taji.MyApplication;
 import com.zhangqing.taji.R;
 import com.zhangqing.taji.bean.PersonInfoBean;
@@ -51,12 +52,13 @@ public class SkillMatchingAdapter extends RecyclerView.Adapter<SkillMatchingAdap
     public void onBindViewHolder(MyViewHolder holder, int position) {
         holder.my_name.setText(MY_NAME);
         holder.my_label.setText(mPersonInfoList.get(position).i_want);
-        ImageLoader.getInstance().displayImage(MY_AVATAR, holder.my_avatar,
+        ImageLoader.getInstance().displayImage(MY_AVATAR, new ImageViewAware(holder.my_avatar),
                 MyApplication.getCircleDisplayImageOptions());
 
         holder.to_name.setText(mPersonInfoList.get(position).username);
         holder.to_label.setText(mPersonInfoList.get(position).ta_want);
-        ImageLoader.getInstance().displayImage(mPersonInfoList.get(position).avatar, holder.to_avatar,
+        ImageLoader.getInstance().displayImage(mPersonInfoList.get(position).avatar,
+                new ImageViewAware(holder.to_avatar),
                 MyApplication.getCircleDisplayImageOptions());
     }
 

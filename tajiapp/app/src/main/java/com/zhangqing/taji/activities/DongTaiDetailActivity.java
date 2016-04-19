@@ -12,6 +12,7 @@ import com.android.volley.VolleyError;
 import com.zhangqing.taji.BaseActivity;
 import com.zhangqing.taji.R;
 import com.zhangqing.taji.adapter.CommentAdapter;
+import com.zhangqing.taji.adapter.DongTaiListAdapter;
 import com.zhangqing.taji.base.UserClass;
 import com.zhangqing.taji.base.VolleyInterface;
 import com.zhangqing.taji.bean.DongTaiBean;
@@ -25,6 +26,7 @@ import org.json.JSONObject;
  */
 public class DongTaiDetailActivity extends BaseActivity {
     private String mTid;
+    private DongTaiBean mDongTai;
 
     private RecyclerViewPullable mRecyclerView;
     private CommentAdapter mRecyclerViewAdapter;
@@ -42,7 +44,8 @@ public class DongTaiDetailActivity extends BaseActivity {
 
         mRecyclerView.setAdapter(mRecyclerViewAdapter = new CommentAdapter(this));
 
-        //mTid = getIntent().getExtras().getString("dongtai");
+        mTid = getIntent().getExtras().getString("dongtai");
+        mDongTai = DongTaiBean.getInstance(mTid);
 
         addHeaderView();
 
@@ -50,7 +53,7 @@ public class DongTaiDetailActivity extends BaseActivity {
         mRecyclerView.setOnLoadListener(new RecyclerViewPullable.OnLoadListener() {
             @Override
             public void onLoadMore(final int loadingPage) {
-                UserClass.getInstance().getDongTaiComment(mTid, new VolleyInterface(getApplicationContext()) {
+                UserClass.getInstance().getDongTaiComment(mTid, loadingPage, new VolleyInterface(getApplicationContext()) {
                     @Override
                     public void onMySuccess(JSONObject jsonObject) {
                         if (loadingPage == 1) {
@@ -73,14 +76,23 @@ public class DongTaiDetailActivity extends BaseActivity {
                 });
             }
         });
+        mRecyclerView.setRefreshing(true);
 
     }
 
+    /**
+     * 构造动态详情HeaderView
+     */
     private void addHeaderView() {
         mHeaderView = (LinearLayout) LayoutInflater.from(this).inflate(R.layout.view_home_hot_then_listview_item, null);
-
         Log.e("mHead", mHeaderView instanceof LinearLayout ? "null" : "not");
         mRecyclerView.setHeaderView(mHeaderView);
+
+        if (mDongTai == null) return;
+
+        DongTaiListAdapter.MyViewHolder myViewHolder = new DongTaiListAdapter.MyViewHolder(mHeaderView);
+
+        DongTaiListAdapter.updateViewHolder(this, myViewHolder, mDongTai, null);
 
     }
 

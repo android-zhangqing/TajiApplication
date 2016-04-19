@@ -15,8 +15,11 @@ import android.widget.Toast;
 
 import com.android.volley.VolleyError;
 import com.nostra13.universalimageloader.core.ImageLoader;
+import com.nostra13.universalimageloader.core.imageaware.ImageViewAware;
 import com.zhangqing.taji.MyApplication;
 import com.zhangqing.taji.R;
+import com.zhangqing.taji.adapter.listener.AvatarClickListener;
+import com.zhangqing.taji.adapter.listener.DongTaiClickListener;
 import com.zhangqing.taji.base.UserClass;
 import com.zhangqing.taji.base.VolleyInterface;
 import com.zhangqing.taji.bean.DongTaiBean;
@@ -39,6 +42,7 @@ public class DongTaiListAdapter extends RecyclerView.Adapter<DongTaiListAdapter.
 
     /**
      * 由于自定义RecyclerView采用代理模式传入Adapter，该ParentAdapter为实际Adapter
+     * 目的是为了在点击订阅按钮时notifyDataSetChange以发生联动
      */
     private RecyclerView.Adapter mParentAdapter = null;
 
@@ -52,7 +56,7 @@ public class DongTaiListAdapter extends RecyclerView.Adapter<DongTaiListAdapter.
 
     private Context mContext;
 
-    private List<DongTaiBean> mDongTaiClassList = new ArrayList<DongTaiBean>();
+    private List<DongTaiBean> mDongTaiList = new ArrayList<DongTaiBean>();
 
     public DongTaiListAdapter(Context context) {
         mContext = context;
@@ -65,10 +69,15 @@ public class DongTaiListAdapter extends RecyclerView.Adapter<DongTaiListAdapter.
         return myViewHolder;
     }
 
-    @Override
-    public void onBindViewHolder(final MyViewHolder holder, int position) {
-        final DongTaiBean dongTaiClass = mDongTaiClassList.get(position);
-
+    /**
+     * 该静态方法同时还供【动态详情】页面进行代码复用
+     *
+     * @param mContext
+     * @param holder
+     * @param dongTaiClass
+     * @param realAdapter  可以为null，为null时不需要实现联动
+     */
+    public static void updateViewHolder(final Context mContext, final MyViewHolder holder, final DongTaiBean dongTaiClass, final RecyclerView.Adapter realAdapter) {
         holder.tv_name.setText(dongTaiClass.mPersonInfo.username);
         holder.tv_content.setText(dongTaiClass.mContent);
         holder.tv_label_parent.setText(dongTaiClass.mTag);
@@ -80,6 +89,9 @@ public class DongTaiListAdapter extends RecyclerView.Adapter<DongTaiListAdapter.
         updateFollowButton(holder.tv_follow, dongTaiClass.mPersonInfo.is_follow);
 
         holder.iv_avatar.setOnClickListener(new AvatarClickListener(mContext, dongTaiClass.mUserId, dongTaiClass.mPersonInfo.username));
+
+        holder.cmv_media.setOnClickListener(new DongTaiClickListener(mContext,
+                dongTaiClass.mId));
 
         holder.tv_follow.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -93,12 +105,13 @@ public class DongTaiListAdapter extends RecyclerView.Adapter<DongTaiListAdapter.
                                     dongTaiClass.mPersonInfo.is_follow = !dongTaiClass.mPersonInfo.is_follow;
                                 Toast.makeText(mContext, jsonObject.optString("msg", "操作失败"), Toast.LENGTH_SHORT).show();
 
-                                if (mParentAdapter != null) {
-                                    mParentAdapter.notifyDataSetChanged();
+                                if (realAdapter != null) {
+                                    //供RecyclerView调用，以实现联动
+                                    realAdapter.notifyDataSetChanged();
                                 } else {
-                                    notifyDataSetChanged();
+                                    //供动态详情页面调用，只需更新当前的View的按钮即可
+                                    updateFollowButton(holder.tv_follow, dongTaiClass.mPersonInfo.is_follow);
                                 }
-                                //updateFollowButton(holder.tv_follow, dongTaiClass.mPersonInfo.is_follow);
                             }
 
                             @Override
@@ -132,9 +145,16 @@ public class DongTaiListAdapter extends RecyclerView.Adapter<DongTaiListAdapter.
             }
         });
 
-        holder.cmv_media.picSingleImageView.setImageBitmap(null);
-        ImageLoader.getInstance().displayImage(dongTaiClass.mAvatarUrl, holder.iv_avatar, MyApplication.getCircleDisplayImageOptions());
-        ImageLoader.getInstance().displayImage(dongTaiClass.mCoverUrl, holder.cmv_media.picSingleImageView);
+        ImageLoader.getInstance().displayImage(dongTaiClass.mAvatarUrl, new ImageViewAware(holder.iv_avatar), MyApplication.getCircleDisplayImageOptions());
+        ImageLoader.getInstance().displayImage(dongTaiClass.mCoverUrl, new ImageViewAware(holder.cmv_media.picSingleImageView));
+    }
+
+    @Override
+    public void onBindViewHolder(final MyViewHolder holder, int position) {
+        final DongTaiBean dongTaiClass = mDongTaiList.get(position);
+
+        updateViewHolder(mContext, holder, dongTaiClass, mParentAdapter);
+
     }
 
     public void setParentAdapter(RecyclerView.Adapter adapter) {
@@ -150,24 +170,24 @@ public class DongTaiListAdapter extends RecyclerView.Adapter<DongTaiListAdapter.
 
     @Override
     public int getItemCount() {
-        return mDongTaiClassList.size();
+        return mDongTaiList.size();
     }
 
     /**
      * 清空所有原数据
      */
     public void clearData() {
-        mDongTaiClassList.clear();
+        mDongTaiList.clear();
     }
 
 
     public int addData(JSONArray jsonArray, RecyclerViewPullable recyclerViewPullable) {
         int count = 0;
-        int insert_position = mDongTaiClassList.size() - 1;
+        int insert_position = mDongTaiList.size() - 1;
         for (int i = 0; i < jsonArray.length(); i++) {
             try {
                 //notifyItemChanged(lastCount+i);
-                mDongTaiClassList.add(new DongTaiBean(jsonArray.getJSONObject(i)));
+                mDongTaiList.add(DongTaiBean.getInstance(jsonArray.getJSONObject(i)));
                 insert_position++;
                 if (recyclerViewPullable != null)
                     recyclerViewPullable.notifyItemChanged(insert_position);
@@ -192,7 +212,7 @@ public class DongTaiListAdapter extends RecyclerView.Adapter<DongTaiListAdapter.
         return addData(jsonArray, null);
     }
 
-    static class MyViewHolder extends RecyclerView.ViewHolder {
+    public static class MyViewHolder extends RecyclerView.ViewHolder {
         TextView tv_name;
         ImageView iv_avatar;
         ComplicatedMediaView cmv_media;

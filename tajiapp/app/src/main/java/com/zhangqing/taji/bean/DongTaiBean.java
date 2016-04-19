@@ -14,7 +14,31 @@ import java.util.WeakHashMap;
  * Created by zhangqing on 2016/4/2.
  * 动态bean
  */
-public class DongTaiBean{
+public class DongTaiBean {
+
+    /**
+     * 2016-04-19更新，采用静态内存块存储bean，所有对象不重复分配内存
+     */
+    private static final WeakHashMap<String, DongTaiBean> mDongTaiMap = new WeakHashMap<String, DongTaiBean>();
+
+    public static DongTaiBean getInstance(JSONObject jsonObject) throws JSONException {
+        String tid = jsonObject.getString("tid");
+        DongTaiBean dongtai = mDongTaiMap.get(tid);
+        if (dongtai == null) {
+            synchronized (PersonInfoBean.class) {
+                if (dongtai == null) {
+                    dongtai = new DongTaiBean(tid, jsonObject);
+                    mDongTaiMap.put(tid, dongtai);
+                }
+            }
+        }
+        return dongtai;
+    }
+
+    public static DongTaiBean getInstance(String tid) {
+        return mDongTaiMap.get(tid);
+    }
+
     //动态ID
     public String mId = "";
     //发布人ID
@@ -26,7 +50,7 @@ public class DongTaiBean{
     //@人的ID
     public String mAtId = "";
 
-    public static WeakHashMap<String, PersonInfoBean> mPersonInfoMap = new WeakHashMap<String, PersonInfoBean>();
+
     public PersonInfoBean mPersonInfo;
 
     //所属大类，如绘画
@@ -64,11 +88,10 @@ public class DongTaiBean{
      * @param jsonObject 传入json数据
      * @throws JSONException 仅当无动态id时才抛出异常
      */
-    public DongTaiBean(JSONObject jsonObject) throws JSONException {
-
+    public DongTaiBean(String tid, JSONObject jsonObject) throws JSONException {
 
         //动态ID
-        mId = jsonObject.getString("tid");
+        mId = tid;
         //发布人昵称
 //        mUserName = jsonObject.optString("username", "");
         //发布人ID
@@ -78,13 +101,7 @@ public class DongTaiBean{
         //@人的ID
         mAtId = jsonObject.optString("at", "");
 
-        synchronized (this) {
-            mPersonInfo = mPersonInfoMap.get(mUserId);
-            if (mPersonInfo == null) {
-                mPersonInfo = new PersonInfoBean(mUserId, jsonObject);
-                mPersonInfoMap.put(mUserId, mPersonInfo);
-            }
-        }
+        mPersonInfo = PersonInfoBean.getInstance(jsonObject);
 
         //类别
         mTag = jsonObject.optString("tag", "");

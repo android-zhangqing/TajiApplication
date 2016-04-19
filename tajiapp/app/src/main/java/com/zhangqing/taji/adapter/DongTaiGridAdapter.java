@@ -17,6 +17,8 @@ import com.nostra13.universalimageloader.core.imageaware.ImageViewAware;
 import com.zhangqing.taji.MyApplication;
 import com.zhangqing.taji.R;
 import com.zhangqing.taji.activities.DongTaiDetailActivity;
+import com.zhangqing.taji.adapter.listener.AvatarClickListener;
+import com.zhangqing.taji.adapter.listener.DongTaiClickListener;
 import com.zhangqing.taji.bean.DongTaiBean;
 import com.zhangqing.taji.view.pullable.RecyclerViewPullable;
 
@@ -55,7 +57,8 @@ public class DongTaiGridAdapter extends RecyclerView.Adapter<DongTaiGridAdapter.
             jsonArray = jsonObject.getJSONArray("data");
             for (int i = 0; i < jsonArray.length(); i++) {
                 try {
-                    DongTaiBean d = new DongTaiBean(jsonArray.getJSONObject(i));
+                    JSONObject jsonObject1 = jsonArray.getJSONObject(i);
+                    DongTaiBean d = DongTaiBean.getInstance(jsonObject1);
                     //Log.e("onAddData", d.toString());
                     mItemsList.add(d);
                     insert_position++;
@@ -101,26 +104,15 @@ public class DongTaiGridAdapter extends RecyclerView.Adapter<DongTaiGridAdapter.
         viewHolder.tv_title.setText(mItemsList.get(position).mContent);
         viewHolder.tv_like.setText("❤" + mItemsList.get(position).mCountLike);
 
-        viewHolder.iv_avatar.setImageBitmap(null);
         viewHolder.iv_avatar.setOnClickListener(new AvatarClickListener(mContext,
                 mItemsList.get(position).mUserId, mItemsList.get(position).mPersonInfo.username));
 
-        viewHolder.iv_cover.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(mContext, DongTaiDetailActivity.class);
-                Bundle bundle = new Bundle();
-                bundle.putString("dongtai", mItemsList.get(position).mId);
-                intent.putExtras(bundle);
-                mContext.startActivity(intent);
-            }
-        });
-        viewHolder.iv_cover.setImageBitmap(null);
+        viewHolder.iv_cover.setOnClickListener(new DongTaiClickListener(mContext,
+                mItemsList.get(position).mId));
 
         ImageLoader.getInstance().displayImage(mItemsList.get(position).mAvatarUrl,
                 new ImageViewAware(viewHolder.iv_avatar),
-                MyApplication.getCircleDisplayImageOptions(),
-                new ImageSize(100, 100), null, null);
+                MyApplication.getCircleDisplayImageOptions());
         ImageLoader.getInstance().displayImage(mItemsList.get(position).mCoverUrl,
                 new ImageViewAware(viewHolder.iv_cover),
                 MyApplication.getNormalDisplayImageOptions());

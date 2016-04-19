@@ -325,8 +325,10 @@ public class UserClass {
     }
 
 
-    public void getDongTaiComment(String tid, VolleyInterface vif) {
-        String url = URLHEAD + "/DongTai/commentList?tid=" + tid + "userid=" + userId + "&openid=" + openId;
+    public void getDongTaiComment(String tid, int page, VolleyInterface vif) {
+        String url = URLHEAD + "/DongTai/commentList?" +
+                "page=" + page + "&count=" + Page_Per_Count +
+                "&tid=" + tid + "&userid=" + userId + "&openid=" + openId;
         VolleyRequest.RequestGet(url, "getDongTaiComment", vif);
     }
 

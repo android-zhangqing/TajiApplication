@@ -13,6 +13,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.nostra13.universalimageloader.core.ImageLoader;
+import com.nostra13.universalimageloader.core.imageaware.ImageViewAware;
 import com.zhangqing.taji.MyApplication;
 import com.zhangqing.taji.R;
 import com.zhangqing.taji.bean.PersonInfoBean;
@@ -102,7 +103,7 @@ public class PersonInfoView extends LinearLayout {
         String avatar = mPersonInfo.avatar;
         if (!avatar.equals("")) {
             Log.e("loadingavatar", "" + avatar);
-            ImageLoader.getInstance().displayImage(avatar, mAvatarImageView, MyApplication.getCircleDisplayImageOptions());
+            ImageLoader.getInstance().displayImage(avatar,new ImageViewAware(mAvatarImageView), MyApplication.getCircleDisplayImageOptions());
         }
 
         mSignTextView.setText(mPersonInfo.signature);

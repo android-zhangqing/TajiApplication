@@ -3,8 +3,10 @@ package com.zhangqing.taji.view;
 import android.content.Context;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.LinearLayout;
 
@@ -44,6 +46,7 @@ public class FragmentHomeHotViewThen extends LinearLayout {
                 .findViewById(R.id.home_hot_then_recyclerview);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         mRecyclerView.setAdapter(mRecyclerViewAdapter = new DongTaiListAdapter(getContext()));
+        mRecyclerViewAdapter.setParentAdapter(mRecyclerView.getRecyclerView().getAdapter());
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
         mRecyclerView.setOnLoadListener(new RecyclerViewPullable.OnLoadListener() {
             @Override
