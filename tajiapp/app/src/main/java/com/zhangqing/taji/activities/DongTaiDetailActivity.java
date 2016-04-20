@@ -86,13 +86,14 @@ public class DongTaiDetailActivity extends BaseActivity {
     private void addHeaderView() {
         mHeaderView = (LinearLayout) LayoutInflater.from(this).inflate(R.layout.view_home_hot_then_listview_item, null);
         Log.e("mHead", mHeaderView instanceof LinearLayout ? "null" : "not");
-        mRecyclerView.setHeaderView(mHeaderView);
 
         if (mDongTai == null) return;
 
         DongTaiListAdapter.MyViewHolder myViewHolder = new DongTaiListAdapter.MyViewHolder(mHeaderView);
 
         DongTaiListAdapter.updateViewHolder(this, myViewHolder, mDongTai, null);
+
+        mRecyclerView.setHeaderView(mHeaderView);
 
     }
 

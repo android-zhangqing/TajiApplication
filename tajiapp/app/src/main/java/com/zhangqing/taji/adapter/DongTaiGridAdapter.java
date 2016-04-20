@@ -88,8 +88,11 @@ public class DongTaiGridAdapter extends RecyclerView.Adapter<DongTaiGridAdapter.
         return addData(jsonObject, null);
     }
 
-    public void clearData() {
+    public void clearData(RecyclerViewPullable recyclerViewPullable) {
         mItemsList.clear();
+        if (recyclerViewPullable != null) {
+            recyclerViewPullable.notifyDataSetChanged();
+        }
     }
 
 

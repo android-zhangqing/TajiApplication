@@ -9,13 +9,13 @@ import org.json.JSONObject;
  */
 public class CommentBean {
 
-    String cid = "";
-    String tid = "";
-    String userid = "";
-    String username = "";
-    String avatar = "";
-    String content = "";
-    String time = "";
+    public String cid = "";
+    public String tid = "";
+    public String userid = "";
+    public String username = "";
+    public String avatar = "";
+    public String content = "";
+    public String time = "";
 
     public CommentBean(JSONObject jsonObject) throws JSONException {
         cid = jsonObject.getString("cid");

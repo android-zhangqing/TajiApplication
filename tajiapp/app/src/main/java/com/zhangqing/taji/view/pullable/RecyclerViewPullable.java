@@ -140,6 +140,7 @@ public class RecyclerViewPullable extends LinearLayout {
 //        });
 
 
+        mRecyclerView.setHasFixedSize(true);
         mRecyclerView.addOnScrollListener(new OnScrollListener() {
             @Override
             public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
