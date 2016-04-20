@@ -10,12 +10,41 @@ import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.AccelerateInterpolator;
 import android.view.animation.Animation;
 import android.view.animation.BounceInterpolator;
+import android.view.animation.TranslateAnimation;
 import android.widget.ImageView;
 
 /**
  * Created by zhangqing on 2016/4/2.
  */
 public class AnimationUtil {
+
+    /**
+     * 从底部滑入动画
+     *
+     * @return
+     */
+    public static Animation getSlideInBottomAnimation() {
+        TranslateAnimation mShowAction = new TranslateAnimation(Animation.RELATIVE_TO_SELF, 0.0f,
+                Animation.RELATIVE_TO_SELF, 0.0f, Animation.RELATIVE_TO_SELF,
+                1.5f, Animation.RELATIVE_TO_SELF, 0.0f);
+        //mShowAction.setInterpolator(new BounceInterpolator());
+        mShowAction.setDuration(500);
+        return mShowAction;
+    }
+
+    /**
+     * 从底部滑出动画
+     *
+     * @return
+     */
+    public static Animation getSlideOutBottomAnimation() {
+        TranslateAnimation mHiddenAction = new TranslateAnimation(Animation.RELATIVE_TO_SELF,
+                0.0f, Animation.RELATIVE_TO_SELF, 0.0f,
+                Animation.RELATIVE_TO_SELF, 0.0f, Animation.RELATIVE_TO_SELF,
+                1.5f);
+        mHiddenAction.setDuration(500);
+        return mHiddenAction;
+    }
 
     /**
      * 要start 动画的那张图片的ImageView
@@ -73,7 +102,7 @@ public class AnimationUtil {
         float key = keyStep;
 
         for (int i = 0; i < count; ++i) {
-            keyframes[i] = Keyframe.ofFloat(key, i-10);
+            keyframes[i] = Keyframe.ofFloat(key, i - 10);
             key += keyStep;
         }
         PropertyValuesHolder pvhY = PropertyValuesHolder.ofKeyframe("translationY", keyframes);

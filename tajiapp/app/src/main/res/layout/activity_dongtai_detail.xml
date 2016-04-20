@@ -49,15 +49,51 @@
             android:orientation="vertical">
 
             <FrameLayout
-                android:id="@+id/publish_container_facegrid"
+                android:id="@+id/dongtai_detail_emoji_framelayout"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:layout_alignParentBottom="true" />
 
-            <com.rockerhieu.emojicon.EmojiconEditText
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:singleLine="true" />
+                android:background="#dd2A1E36"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:id="@+id/dongtai_detail_emoji_toggle_iv"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:clickable="true"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/icon_tab_publish_face" />
+
+                <com.rockerhieu.emojicon.EmojiconEditText
+                    android:id="@+id/dongtai_detail_emoji_edt"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/corners_bg_grey"
+                    android:hint="说点什么吧.."
+                    android:paddingBottom="4dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingTop="4dp"
+                    android:singleLine="true" />
+
+                <TextView
+                    android:id="@+id/dongtai_detail_emoji_send_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/press_bg"
+                    android:clickable="true"
+                    android:gravity="center"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:layout_marginLeft="5dp"
+                    android:text="发送" />
+            </LinearLayout>
+
 
         </LinearLayout>
 

@@ -1,6 +1,8 @@
 package com.zhangqing.taji.util;
 
 import android.content.Context;
+import android.view.ViewGroup;
+import android.view.ViewParent;
 
 /**
  * Created by zhangqing on 2016/4/2.
@@ -14,5 +16,15 @@ public class ScreenUtil {
             result = context.getResources().getDimensionPixelSize(resourceId);
         }
         return result;
+    }
+
+    public static int getRealViewTop(ViewParent viewParent1) {
+        ViewParent viewParent = viewParent1;
+        int height = 0;
+        while (viewParent != null && viewParent instanceof ViewGroup) {
+            height += ((ViewGroup) viewParent).getTop();
+            viewParent = viewParent.getParent();
+        }
+        return height;
     }
 }

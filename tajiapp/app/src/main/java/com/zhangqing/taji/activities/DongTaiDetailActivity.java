@@ -2,14 +2,26 @@ package com.zhangqing.taji.activities;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
+import android.view.ViewParent;
+import android.widget.Button;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.android.volley.VolleyError;
+import com.rockerhieu.emojicon.EmojiconEditText;
+import com.rockerhieu.emojicon.EmojiconGridFragment;
+import com.rockerhieu.emojicon.EmojiconsFragment;
+import com.rockerhieu.emojicon.emoji.Emojicon;
 import com.zhangqing.taji.BaseActivity;
 import com.zhangqing.taji.R;
 import com.zhangqing.taji.adapter.CommentAdapter;
@@ -17,6 +29,8 @@ import com.zhangqing.taji.adapter.DongTaiListAdapter;
 import com.zhangqing.taji.base.UserClass;
 import com.zhangqing.taji.base.VolleyInterface;
 import com.zhangqing.taji.bean.DongTaiBean;
+import com.zhangqing.taji.util.AnimationUtil;
+import com.zhangqing.taji.util.ScreenUtil;
 import com.zhangqing.taji.view.pullable.RecyclerViewPullable;
 
 import org.json.JSONObject;
@@ -29,21 +43,117 @@ import jp.wasabeef.recyclerview.animators.SlideInLeftAnimator;
  * Created by zhangqing on 2016/4/19.
  * 动态的详情页面
  */
-public class DongTaiDetailActivity extends BaseActivity {
+public class DongTaiDetailActivity extends BaseActivity implements EmojiconGridFragment.OnEmojiconClickedListener, EmojiconsFragment.OnEmojiconBackspaceClickedListener {
+
+    //基本数据
     private String mTid;
     private DongTaiBean mDongTai;
 
+    //主界面视图相关
     private RecyclerViewPullable mRecyclerView;
     private CommentAdapter mRecyclerViewAdapter;
-
     private LinearLayout mHeaderView;
+
+    //输入框相关视图
+    private EmojiconEditText mEmojiEditText;
+    private ImageView mEmojiImageView;
+    private FrameLayout mEmojiGridFragment;
+    private TextView mEmojiBtnSend;
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dongtai_detail);
 
+
+        //初始化成员变量 最先执行
+        initBasicView();
+
+        //初始化输入框相关视图
+        initInputView();
+
+        //主界面适配器初始化数据
+        initRecyclerView();
+
+        //主界面headerView初始化
+        addHeaderView();
+
+        //开始加载评论数据
+        mRecyclerView.setRefreshing(true);
+
+    }
+
+
+    /**
+     * 成员变量的初始化
+     */
+    private void initBasicView() {
+        mTid = getIntent().getExtras().getString("dongtai");
+        mDongTai = DongTaiBean.getInstance(mTid);
+
         mRecyclerView = (RecyclerViewPullable) findViewById(R.id.recycler_view);
+
+        mEmojiEditText = (EmojiconEditText) findViewById(R.id.dongtai_detail_emoji_edt);
+        mEmojiImageView = (ImageView) findViewById(R.id.dongtai_detail_emoji_toggle_iv);
+        mEmojiGridFragment = (FrameLayout) findViewById(R.id.dongtai_detail_emoji_framelayout);
+        mEmojiBtnSend = (TextView) findViewById(R.id.dongtai_detail_emoji_send_btn);
+
+    }
+
+    /**
+     * 初始化输入框相关视图
+     */
+    private void initInputView() {
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.dongtai_detail_emoji_framelayout, EmojiconsFragment.newInstance(false))
+                .commit();
+
+        mEmojiImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (mEmojiGridFragment.getVisibility() == View.VISIBLE) {
+                    mEmojiGridFragment.setAnimation(AnimationUtil.getSlideOutBottomAnimation());
+                    mEmojiGridFragment.setVisibility(View.INVISIBLE);
+                } else {
+                    mEmojiGridFragment.setAnimation(AnimationUtil.getSlideInBottomAnimation());
+                    mEmojiGridFragment.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+
+
+    }
+
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent ev) {
+        switch (ev.getAction()) {
+            case MotionEvent.ACTION_DOWN: {
+                log(ev.getX() + "|" + ev.getY() + "|" +
+                        mEmojiEditText.getY() + "|" + mEmojiEditText.getTop() + "|" + ScreenUtil.getRealViewTop(mEmojiGridFragment.getParent()) + "|" + ScreenUtil.getRealViewTop(mEmojiEditText.getParent()));
+
+                /**
+                 * 判断是否隐藏输入框
+                 */
+                int editHeight = ScreenUtil.getRealViewTop(mEmojiEditText.getParent());
+                int gridHeight = ScreenUtil.getRealViewTop(mEmojiGridFragment.getParent());
+                if ((ev.getY() < editHeight && mEmojiGridFragment.getVisibility() != View.VISIBLE) ||
+                        (ev.getY() < gridHeight && mEmojiGridFragment.getVisibility() == View.VISIBLE)) {
+
+                }
+
+
+                break;
+            }
+        }
+        return super.dispatchTouchEvent(ev);
+    }
+
+    /**
+     * 主界面数据加载
+     */
+    private void initRecyclerView() {
 
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
@@ -55,12 +165,6 @@ public class DongTaiDetailActivity extends BaseActivity {
 //        mRecyclerView.getRecyclerView().getItemAnimator().setChangeDuration(2000);
 
         mRecyclerView.setAdapter(mRecyclerViewAdapter = new CommentAdapter(this));
-
-        mTid = getIntent().getExtras().getString("dongtai");
-        mDongTai = DongTaiBean.getInstance(mTid);
-
-        addHeaderView();
-
 
         mRecyclerView.setOnLoadListener(new RecyclerViewPullable.OnLoadListener() {
             @Override
@@ -88,8 +192,6 @@ public class DongTaiDetailActivity extends BaseActivity {
                 });
             }
         });
-        mRecyclerView.setRefreshing(true);
-
     }
 
     /**
@@ -106,10 +208,19 @@ public class DongTaiDetailActivity extends BaseActivity {
         DongTaiListAdapter.updateViewHolder(this, myViewHolder, mDongTai, null);
 
         mRecyclerView.setHeaderView(mHeaderView);
-
     }
 
     public void finishThis(View v) {
         finish();
+    }
+
+    @Override
+    public void onEmojiconClicked(Emojicon emojicon) {
+
+    }
+
+    @Override
+    public void onEmojiconBackspaceClicked(View v) {
+
     }
 }
