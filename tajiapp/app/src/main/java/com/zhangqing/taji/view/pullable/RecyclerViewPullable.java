@@ -18,6 +18,8 @@ import android.widget.TextView;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.zhangqing.taji.R;
 
+import jp.wasabeef.recyclerview.adapters.SlideInLeftAnimationAdapter;
+
 /**
  * Created by zhangqing on 2016/4/15.
  * 咱们一般用这个组件就行
@@ -140,7 +142,7 @@ public class RecyclerViewPullable extends LinearLayout {
 //        });
 
 
-        mRecyclerView.setHasFixedSize(true);
+
         mRecyclerView.addOnScrollListener(new OnScrollListener() {
             @Override
             public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
@@ -280,7 +282,7 @@ public class RecyclerViewPullable extends LinearLayout {
     public void notifyItemChanged(int position) {
         final int real_position = mRecyclerView.getHeaderView() == null ? position : position + 1;
         Log.e("notifyItemChanged", "position=" + real_position);
-        mRecyclerView.getAdapter().notifyItemChanged(real_position);
+        mRecyclerView.getAdapter().notifyItemInserted(real_position);
     }
 
     public void setFooterView(View v) {

@@ -88,11 +88,8 @@ public class DongTaiGridAdapter extends RecyclerView.Adapter<DongTaiGridAdapter.
         return addData(jsonObject, null);
     }
 
-    public void clearData(RecyclerViewPullable recyclerViewPullable) {
+    public void clearData() {
         mItemsList.clear();
-        if (recyclerViewPullable != null) {
-            recyclerViewPullable.notifyDataSetChanged();
-        }
     }
 
 
@@ -112,6 +109,8 @@ public class DongTaiGridAdapter extends RecyclerView.Adapter<DongTaiGridAdapter.
 
         viewHolder.iv_cover.setOnClickListener(new DongTaiClickListener(mContext,
                 mItemsList.get(position).mId));
+
+        viewHolder.iv_cover.setImageBitmap(null);
 
         ImageLoader.getInstance().displayImage(mItemsList.get(position).mAvatarUrl,
                 new ImageViewAware(viewHolder.iv_avatar),

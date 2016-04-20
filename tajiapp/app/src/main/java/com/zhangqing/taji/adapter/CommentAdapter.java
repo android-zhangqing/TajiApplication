@@ -53,7 +53,7 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.MyHolder
                 count++;
 
                 insert_position++;
-                recyclerViewPullable.notifyItemChanged(insert_position);
+                notifyItemInserted(insert_position+1);
 
             } catch (JSONException e) {
                 e.printStackTrace();

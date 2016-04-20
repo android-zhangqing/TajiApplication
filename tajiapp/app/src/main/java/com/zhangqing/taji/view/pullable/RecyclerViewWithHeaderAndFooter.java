@@ -10,6 +10,8 @@ import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 
+import jp.wasabeef.recyclerview.adapters.SlideInLeftAnimationAdapter;
+
 /**
  * Created by zhangqing on 2016/4/15.
  * 带HeaderView和FooterView的RecyclerView，若需要分页加载，请使用RecyclerViewPullable
@@ -144,6 +146,24 @@ public class RecyclerViewWithHeaderAndFooter extends RecyclerView {
             if (type != TYPE_FOOTER && type != TYPE_HEADER) {
                 mInternalAdapter.onBindViewHolder(holder, mHeaderView == null ? position : position - 1);
             }
+        }
+
+        @Override
+        public void onViewRecycled(RecyclerView.ViewHolder holder) {
+            mInternalAdapter.onViewRecycled(holder);
+            super.onViewRecycled(holder);
+        }
+
+        @Override
+        public void registerAdapterDataObserver(RecyclerView.AdapterDataObserver observer) {
+            super.registerAdapterDataObserver(observer);
+            mInternalAdapter.registerAdapterDataObserver(observer);
+        }
+
+        @Override
+        public void unregisterAdapterDataObserver(RecyclerView.AdapterDataObserver observer) {
+            super.unregisterAdapterDataObserver(observer);
+            mInternalAdapter.unregisterAdapterDataObserver(observer);
         }
 
 

@@ -5,6 +5,7 @@ import android.graphics.Color;
 import android.os.Handler;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SimpleItemAnimator;
@@ -31,6 +32,10 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import jp.wasabeef.recyclerview.adapters.AlphaInAnimationAdapter;
+import jp.wasabeef.recyclerview.adapters.SlideInBottomAnimationAdapter;
+import jp.wasabeef.recyclerview.animators.SlideInDownAnimator;
 
 /**
  * 首页-热门-广场
@@ -120,6 +125,7 @@ public class FragmentHomeHotViewFirst extends LinearLayout {
         mGridView = (RecyclerViewPullable) containerView.findViewById(R.id.home_hot_first_gridview);
 
         mGridView.setLayoutManager(new GridLayoutManager(getContext(), 2));
+        mGridView.setItemAnimator(new DefaultItemAnimator());
         mGridView.setAdapter(mGridViewAdapter = new DongTaiGridAdapter(getContext()));
 
         mGridView.setOnLoadListener(new RecyclerViewPullable.OnLoadListener() {
@@ -130,7 +136,8 @@ public class FragmentHomeHotViewFirst extends LinearLayout {
                     public void onMySuccess(JSONObject jsonObject) {
                         if (current_page == 1) {
                             mGridView.setRefreshing(false);
-                            mGridViewAdapter.clearData(mGridView);
+                            mGridViewAdapter.clearData();
+                            mGridView.notifyDataSetChanged();
                         }
 
                         if (mGridViewAdapter.addData(jsonObject, mGridView) != UserClass.Page_Per_Count) {

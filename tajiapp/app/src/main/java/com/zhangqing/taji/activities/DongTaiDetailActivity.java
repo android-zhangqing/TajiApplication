@@ -2,6 +2,7 @@ package com.zhangqing.taji.activities;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -19,6 +20,10 @@ import com.zhangqing.taji.bean.DongTaiBean;
 import com.zhangqing.taji.view.pullable.RecyclerViewPullable;
 
 import org.json.JSONObject;
+
+import jp.wasabeef.recyclerview.adapters.SlideInBottomAnimationAdapter;
+import jp.wasabeef.recyclerview.adapters.SlideInLeftAnimationAdapter;
+import jp.wasabeef.recyclerview.animators.SlideInLeftAnimator;
 
 /**
  * Created by zhangqing on 2016/4/19.
@@ -41,6 +46,13 @@ public class DongTaiDetailActivity extends BaseActivity {
         mRecyclerView = (RecyclerViewPullable) findViewById(R.id.recycler_view);
 
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+//        mRecyclerView.getRecyclerView().setItemAnimator(new SlideInLeftAnimator());
+//
+//        mRecyclerView.getRecyclerView().getItemAnimator().setAddDuration(2000);
+//        mRecyclerView.getRecyclerView().getItemAnimator().setRemoveDuration(2000);
+//        mRecyclerView.getRecyclerView().getItemAnimator().setMoveDuration(2000);
+//        mRecyclerView.getRecyclerView().getItemAnimator().setChangeDuration(2000);
 
         mRecyclerView.setAdapter(mRecyclerViewAdapter = new CommentAdapter(this));
 
