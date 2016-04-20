@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/topbar_height"
@@ -29,11 +30,36 @@
 
     </RelativeLayout>
 
-    <com.zhangqing.taji.view.pullable.RecyclerViewPullable
-        android:id="@+id/recycler_view"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <com.zhangqing.taji.view.pullable.RecyclerViewPullable
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-    </com.zhangqing.taji.view.pullable.RecyclerViewPullable>
+
+        </com.zhangqing.taji.view.pullable.RecyclerViewPullable>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:id="@+id/publish_container_facegrid"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_alignParentBottom="true" />
+
+            <com.rockerhieu.emojicon.EmojiconEditText
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:singleLine="true" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
 </LinearLayout>
