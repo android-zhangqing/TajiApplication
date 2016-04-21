@@ -137,7 +137,6 @@ public class FragmentHomeHotViewFirst extends LinearLayout {
                         if (current_page == 1) {
                             mGridView.setRefreshing(false);
                             mGridViewAdapter.clearData();
-                            mGridView.notifyDataSetChanged();
                         }
 
                         if (mGridViewAdapter.addData(jsonObject, mGridView) != UserClass.Page_Per_Count) {

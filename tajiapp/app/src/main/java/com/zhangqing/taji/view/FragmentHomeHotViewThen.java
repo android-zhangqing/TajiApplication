@@ -46,7 +46,6 @@ public class FragmentHomeHotViewThen extends LinearLayout {
                 .findViewById(R.id.home_hot_then_recyclerview);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         mRecyclerView.setAdapter(mRecyclerViewAdapter = new DongTaiListAdapter(getContext()));
-        mRecyclerViewAdapter.setParentAdapter(mRecyclerView.getRecyclerView().getAdapter());
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
         mRecyclerView.setOnLoadListener(new RecyclerViewPullable.OnLoadListener() {
             @Override

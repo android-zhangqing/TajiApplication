@@ -159,7 +159,9 @@
         <activity android:name=".activities.SkillSettingActivity" />
         <activity android:name=".activities.SkillMatchingActivity" />
         <activity android:name=".activities.ChatRoomActivity" />
-        <activity android:name=".activities.DongTaiDetailActivity" />
+        <activity
+            android:name=".activities.DongTaiDetailActivity"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
         <activity android:name=".util.test.MainActivity" />
     </application>
 

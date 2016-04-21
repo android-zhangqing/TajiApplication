@@ -66,6 +66,7 @@ public class CircleAdapter extends RecyclerView.Adapter<CircleAdapter.MyHolder> 
 
     public void clearData() {
         mChatRoomList.clear();
+        notifyDataSetChanged();
     }
 
     @Override

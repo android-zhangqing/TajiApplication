@@ -44,7 +44,7 @@ import java.util.Map;
  * 所有网络获取操作都在这里面，采用单例模式，为当前用户对象。
  */
 public class UserClass {
-    public static final int Page_Per_Count = 4;
+    public static final int Page_Per_Count = 6;
 
     public static final int Request_Main = 101;
     public static final int Request_Register_First = 102;
@@ -481,19 +481,16 @@ public class UserClass {
         VolleyRequest.RequestGet(url, tag, vif);
     }
 
-    public void doLike(String uid, boolean isToLike, VolleyInterface vif) {
-        String url;
-        String tag;
-        if (isToLike) {
-            url = URLHEAD + "/Follow/follow?uid=" + uid
-                    + "&userid=" + userId + "&openid=" + openId;
-            tag = "like";
-        } else {
-            url = URLHEAD + "/Follow/unfollow?uid=" + uid
-                    + "&userid=" + userId + "&openid=" + openId;
-            tag = "dislike";
+    public void doComment(String tid, String content, VolleyInterface vif) {
+        String url = "";
+        try {
+            url = URLHEAD + "/DongTai/comment?userid=" + userId + "&openid=" + openId +
+                    "&tid=" + tid + "&content=" + URLEncoder.encode(content, "utf-8");
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
         }
-        VolleyRequest.RequestGet(url, tag, vif);
+        VolleyRequest.RequestGet(url, "doComment", vif);
+
     }
 
 

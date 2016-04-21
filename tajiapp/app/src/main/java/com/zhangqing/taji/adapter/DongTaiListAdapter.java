@@ -37,14 +37,11 @@ import java.util.List;
  * Created by zhangqing on 2016/4/8.
  */
 public class DongTaiListAdapter extends RecyclerView.Adapter<DongTaiListAdapter.MyViewHolder> {
+    public static final int MODE_Adapter = 1;
+    public static final int MODE_Inflate = 2;
 
     private OnItemClickListener mOnItemClickListener = null;
 
-    /**
-     * 由于自定义RecyclerView采用代理模式传入Adapter，该ParentAdapter为实际Adapter
-     * 目的是为了在点击订阅按钮时notifyDataSetChange以发生联动
-     */
-    private RecyclerView.Adapter mParentAdapter = null;
 
     public interface OnItemClickListener {
         public void onItemClick();
@@ -75,9 +72,9 @@ public class DongTaiListAdapter extends RecyclerView.Adapter<DongTaiListAdapter.
      * @param mContext
      * @param holder
      * @param dongTaiClass
-     * @param realAdapter  可以为null，为null时不需要实现联动
+     * @param adapter      不为null表示供bindView调用， 为null表示供外界复用
      */
-    public static void updateViewHolder(final Context mContext, final MyViewHolder holder, final DongTaiBean dongTaiClass, final RecyclerView.Adapter realAdapter) {
+    public static void updateViewHolder(final Context mContext, final MyViewHolder holder, final DongTaiBean dongTaiClass, final RecyclerView.Adapter adapter) {
         holder.tv_name.setText(dongTaiClass.mPersonInfo.username);
         holder.tv_content.setText(dongTaiClass.mContent);
         holder.tv_label_parent.setText(dongTaiClass.mTag);
@@ -90,8 +87,12 @@ public class DongTaiListAdapter extends RecyclerView.Adapter<DongTaiListAdapter.
 
         holder.iv_avatar.setOnClickListener(new AvatarClickListener(mContext, dongTaiClass.mUserId, dongTaiClass.mPersonInfo.username));
 
-        holder.cmv_media.setOnClickListener(new DongTaiClickListener(mContext,
-                dongTaiClass.mId));
+        if (adapter != null) {
+            View.OnClickListener onClickListener = new DongTaiClickListener(mContext,
+                    dongTaiClass.mId);
+            holder.cmv_media.setOnClickListener(onClickListener);
+            holder.ll_count_comment_container.setOnClickListener(onClickListener);
+        }
 
         holder.tv_follow.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -105,9 +106,9 @@ public class DongTaiListAdapter extends RecyclerView.Adapter<DongTaiListAdapter.
                                     dongTaiClass.mPersonInfo.is_follow = !dongTaiClass.mPersonInfo.is_follow;
                                 Toast.makeText(mContext, jsonObject.optString("msg", "操作失败"), Toast.LENGTH_SHORT).show();
 
-                                if (realAdapter != null) {
+                                if (adapter != null) {
                                     //供RecyclerView调用，以实现联动
-                                    realAdapter.notifyDataSetChanged();
+                                    adapter.notifyDataSetChanged();
                                 } else {
                                     //供动态详情页面调用，只需更新当前的View的按钮即可
                                     updateFollowButton(holder.tv_follow, dongTaiClass.mPersonInfo.is_follow);
@@ -153,12 +154,8 @@ public class DongTaiListAdapter extends RecyclerView.Adapter<DongTaiListAdapter.
     public void onBindViewHolder(final MyViewHolder holder, int position) {
         final DongTaiBean dongTaiClass = mDongTaiList.get(position);
 
-        updateViewHolder(mContext, holder, dongTaiClass, mParentAdapter);
+        updateViewHolder(mContext, holder, dongTaiClass, this);
 
-    }
-
-    public void setParentAdapter(RecyclerView.Adapter adapter) {
-        mParentAdapter = adapter;
     }
 
     private static void updateFollowButton(TextView tv_follow, boolean isToFollow) {
@@ -178,6 +175,7 @@ public class DongTaiListAdapter extends RecyclerView.Adapter<DongTaiListAdapter.
      */
     public void clearData() {
         mDongTaiList.clear();
+        notifyDataSetChanged();
     }
 
 

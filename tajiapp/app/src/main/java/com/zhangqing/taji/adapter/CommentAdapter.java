@@ -12,6 +12,7 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.imageaware.ImageViewAware;
 import com.zhangqing.taji.MyApplication;
 import com.zhangqing.taji.R;
+import com.zhangqing.taji.adapter.listener.AvatarClickListener;
 import com.zhangqing.taji.bean.CommentBean;
 import com.zhangqing.taji.view.pullable.RecyclerViewPullable;
 
@@ -53,7 +54,7 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.MyHolder
                 count++;
 
                 insert_position++;
-                notifyItemInserted(insert_position+1);
+                notifyItemInserted(insert_position + 1);
 
             } catch (JSONException e) {
                 e.printStackTrace();
@@ -67,6 +68,7 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.MyHolder
 
     public void clearData() {
         mCommentBeanList.clear();
+        notifyDataSetChanged();
     }
 
 
@@ -79,10 +81,12 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.MyHolder
     @Override
     public void onBindViewHolder(MyHolder holder, int position) {
         CommentBean commentBean = mCommentBeanList.get(position);
+
         holder.tv_name.setText(commentBean.username);
         holder.tv_content.setText(commentBean.content);
         String real_time = commentBean.time.substring(commentBean.time.indexOf("-") + 1, commentBean.time.length());
         holder.tv_time.setText(real_time);
+        holder.iv_avatar.setOnClickListener(new AvatarClickListener(mContext, commentBean.userid, commentBean.username));
         ImageLoader.getInstance().displayImage(commentBean.avatar,
                 new ImageViewAware(holder.iv_avatar), MyApplication.getCircleDisplayImageOptions());
 

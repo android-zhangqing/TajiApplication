@@ -2,20 +2,16 @@ package com.zhangqing.taji.activities;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
-import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.ViewGroup;
-import android.view.ViewParent;
-import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.VolleyError;
 import com.rockerhieu.emojicon.EmojiconEditText;
@@ -35,10 +31,6 @@ import com.zhangqing.taji.view.pullable.RecyclerViewPullable;
 
 import org.json.JSONObject;
 
-import jp.wasabeef.recyclerview.adapters.SlideInBottomAnimationAdapter;
-import jp.wasabeef.recyclerview.adapters.SlideInLeftAnimationAdapter;
-import jp.wasabeef.recyclerview.animators.SlideInLeftAnimator;
-
 /**
  * Created by zhangqing on 2016/4/19.
  * 动态的详情页面
@@ -54,11 +46,13 @@ public class DongTaiDetailActivity extends BaseActivity implements EmojiconGridF
     private CommentAdapter mRecyclerViewAdapter;
     private LinearLayout mHeaderView;
 
+
     //输入框相关视图
     private EmojiconEditText mEmojiEditText;
     private ImageView mEmojiImageView;
     private FrameLayout mEmojiGridFragment;
     private TextView mEmojiBtnSend;
+    private LinearLayout mEmojiContainer;
 
 
     @Override
@@ -99,6 +93,8 @@ public class DongTaiDetailActivity extends BaseActivity implements EmojiconGridF
         mEmojiGridFragment = (FrameLayout) findViewById(R.id.dongtai_detail_emoji_framelayout);
         mEmojiBtnSend = (TextView) findViewById(R.id.dongtai_detail_emoji_send_btn);
 
+        mEmojiContainer = (LinearLayout) findViewById(R.id.dongtai_detail_emoji_container);
+
     }
 
     /**
@@ -123,9 +119,38 @@ public class DongTaiDetailActivity extends BaseActivity implements EmojiconGridF
             }
         });
 
+        mEmojiBtnSend.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (mEmojiEditText.getText() == null || mEmojiEditText.getText().toString().equals("")) {
+                    Toast.makeText(getApplicationContext(), "说点什么吧~", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                UserClass.getInstance().doComment(mTid, mEmojiEditText.getText().toString(),
+                        new VolleyInterface(DongTaiDetailActivity.this) {
+                            @Override
+                            public void onMySuccess(JSONObject jsonObject) {
+                                Toast.makeText(getApplicationContext(), "发表成功", Toast.LENGTH_SHORT).show();
+                                mRecyclerView.setRefreshing(true);
+                            }
+
+                            @Override
+                            public void onMyError(VolleyError error) {
+
+                            }
+                        });
+            }
+        });
+
 
     }
 
+    /**
+     * 捕捉整屏的点击事件
+     *
+     * @param ev
+     * @return
+     */
     @Override
     public boolean dispatchTouchEvent(MotionEvent ev) {
         switch (ev.getAction()) {
@@ -134,13 +159,24 @@ public class DongTaiDetailActivity extends BaseActivity implements EmojiconGridF
                         mEmojiEditText.getY() + "|" + mEmojiEditText.getTop() + "|" + ScreenUtil.getRealViewTop(mEmojiGridFragment.getParent()) + "|" + ScreenUtil.getRealViewTop(mEmojiEditText.getParent()));
 
                 /**
-                 * 判断是否隐藏输入框
+                 * 判断是否隐藏输入框容器
                  */
-                int editHeight = ScreenUtil.getRealViewTop(mEmojiEditText.getParent());
-                int gridHeight = ScreenUtil.getRealViewTop(mEmojiGridFragment.getParent());
-                if ((ev.getY() < editHeight && mEmojiGridFragment.getVisibility() != View.VISIBLE) ||
-                        (ev.getY() < gridHeight && mEmojiGridFragment.getVisibility() == View.VISIBLE)) {
+                if (mEmojiContainer.getVisibility() == View.VISIBLE) {
 
+
+                    int editHeight = ScreenUtil.getRealViewTop(mEmojiEditText.getParent());
+                    int gridHeight = ScreenUtil.getRealViewTop(mEmojiGridFragment.getParent());
+                    if ((ev.getY() < editHeight && mEmojiGridFragment.getVisibility() != View.VISIBLE) ||
+                            (ev.getY() < gridHeight && mEmojiGridFragment.getVisibility() == View.VISIBLE)) {
+                        mEmojiContainer.setAnimation(AnimationUtil.getSlideOutBottomAnimation());
+                        mEmojiContainer.setVisibility(View.GONE);
+                        Log.e("dispatchTouchEvent", "return true");
+
+                        ScreenUtil.closeIMM(this);
+
+                        return super.dispatchTouchEvent(ev);
+
+                    }
                 }
 
 
@@ -201,6 +237,20 @@ public class DongTaiDetailActivity extends BaseActivity implements EmojiconGridF
         mHeaderView = (LinearLayout) LayoutInflater.from(this).inflate(R.layout.view_home_hot_then_listview_item, null);
         Log.e("mHead", mHeaderView instanceof LinearLayout ? "null" : "not");
 
+
+        mHeaderView.findViewById(R.id.home_hot_then_count_comment_container).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (mEmojiContainer.getVisibility() != View.VISIBLE) {
+                    mEmojiGridFragment.setVisibility(View.INVISIBLE);
+                    mEmojiContainer.setAnimation(AnimationUtil.getSlideInBottomAnimation());
+                    mEmojiContainer.setVisibility(View.VISIBLE);
+                    mEmojiEditText.requestFocus();
+                }
+            }
+        });
+
+
         if (mDongTai == null) return;
 
         DongTaiListAdapter.MyViewHolder myViewHolder = new DongTaiListAdapter.MyViewHolder(mHeaderView);
@@ -216,11 +266,11 @@ public class DongTaiDetailActivity extends BaseActivity implements EmojiconGridF
 
     @Override
     public void onEmojiconClicked(Emojicon emojicon) {
-
+        EmojiconsFragment.input(mEmojiEditText, emojicon);
     }
 
     @Override
     public void onEmojiconBackspaceClicked(View v) {
-
+        EmojiconsFragment.backspace(mEmojiEditText);
     }
 }

@@ -85,6 +85,7 @@ public class SkillMatchingAdapter extends RecyclerView.Adapter<SkillMatchingAdap
 
     public void clearData() {
         mPersonInfoList.clear();
+        notifyDataSetChanged();
     }
 
     static class MyViewHolder extends RecyclerView.ViewHolder {

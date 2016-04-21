@@ -90,6 +90,7 @@ public class DongTaiGridAdapter extends RecyclerView.Adapter<DongTaiGridAdapter.
 
     public void clearData() {
         mItemsList.clear();
+        notifyDataSetChanged();
     }
 
 
