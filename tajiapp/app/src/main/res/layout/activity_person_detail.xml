@@ -35,27 +35,34 @@
             android:textSize="@dimen/textsize_bar_first" />
     </RelativeLayout>
 
-    <com.zhangqing.taji.view.pullable.RecyclerViewPullable
-        android:id="@+id/recycler_view"
+    <RelativeLayout
         android:layout_width="match_parent"
-        app:footer_text_color="@android:color/white"
-        android:layout_height="0dp"
-        android:layout_weight="1">
+        android:layout_height="match_parent">
+
+        <com.zhangqing.taji.view.pullable.RecyclerViewPullable
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            app:footer_text_color="@android:color/white"
+            android:layout_height="match_parent">
 
 
-    </com.zhangqing.taji.view.pullable.RecyclerViewPullable>
+        </com.zhangqing.taji.view.pullable.RecyclerViewPullable>
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/person_detail_chat_btn"
-        android:gravity="center"
-        android:paddingBottom="5dp"
-        android:paddingTop="5dp"
-        android:text="聊天"
-        android:textColor="#918B97"
-        android:onClick="onClickBtnChat"
-        android:textSize="16sp" />
+        <Button
+            android:id="@+id/person_detail_chat_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/person_detail_chat_btn"
+            android:gravity="center"
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp"
+            android:layout_alignParentBottom="true"
+            android:text="聊天"
+            android:textColor="#918B97"
+            android:onClick="onClickBtnChat"
+            android:textSize="16sp" />
+    </RelativeLayout>
+
 
 
 </LinearLayout>

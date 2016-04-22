@@ -5,8 +5,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -108,8 +110,8 @@ public class OthersDetailActivity extends BaseActivity {
                             });
                         }
                     });
+                    initQuickReturnChatBtn();
                     mRecyclerView.setRefreshing(true);
-                    //mRecyclerViewAdapter.notifyItemRangeChanged(-1,3);
                 } catch (JSONException e) {
                     e.printStackTrace();
                     Log.e("JSONException", "getOthersInfo");
@@ -132,6 +134,84 @@ public class OthersDetailActivity extends BaseActivity {
 
     public void onClickBtnChat(View v) {
         RongIM.getInstance().startPrivateChat(this, mId, mName);
+    }
+
+
+    /**
+     * quickReturn聊天按钮动画显示与隐藏
+     */
+    private static final int STATE_ONSCREEN = 0;
+    private static final int STATE_OFFSCREEN = 1;
+    private static final int STATE_RETURNING = 2;
+    private int mMinRawY;
+    private int mState = STATE_ONSCREEN;
+    private int mQuickReturnHeight;
+    private Button mQuickReturnView;
+
+    private int y_total = 0;
+
+    private void initQuickReturnChatBtn() {
+        mQuickReturnView = (Button) findViewById(R.id.person_detail_chat_btn);
+        mQuickReturnHeight = mQuickReturnView.getMeasuredHeight();
+        Log.e("initQuickReturnChatBtn", "mQuickReturnHeight=" + mQuickReturnHeight);
+        mRecyclerView.getRecyclerView().addOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
+                super.onScrollStateChanged(recyclerView, newState);
+            }
+
+            @Override
+            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+                super.onScrolled(recyclerView, dx, dy);
+                y_total += dy;
+
+                int translationY = 0;
+
+                int rawY = y_total;
+                Log.e("onScrolled", y_total + "|");
+
+                switch (mState) {
+                    case STATE_OFFSCREEN:
+                        if (rawY >= mMinRawY) {
+                            mMinRawY = rawY;
+                        } else {
+                            mState = STATE_RETURNING;
+                        }
+                        translationY = rawY;
+                        break;
+
+                    case STATE_ONSCREEN:
+                        if (rawY > mQuickReturnHeight) {
+                            mState = STATE_OFFSCREEN;
+                            mMinRawY = rawY;
+                        }
+                        translationY = rawY;
+                        break;
+
+                    case STATE_RETURNING:
+
+                        translationY = (rawY - mMinRawY) + mQuickReturnHeight;
+
+                        System.out.println(translationY);
+                        if (translationY < 0) {
+                            translationY = 0;
+                            mMinRawY = rawY + mQuickReturnHeight;
+                        }
+
+                        if (rawY == 0) {
+                            mState = STATE_ONSCREEN;
+                            translationY = 0;
+                        }
+
+                        if (translationY > mQuickReturnHeight) {
+                            mState = STATE_OFFSCREEN;
+                            mMinRawY = rawY;
+                        }
+                        break;
+                }
+                mQuickReturnView.setTranslationY(translationY);
+            }
+        });
     }
 
 

@@ -132,6 +132,7 @@ public class DongTaiDetailActivity extends BaseActivity implements EmojiconGridF
                             public void onMySuccess(JSONObject jsonObject) {
                                 Toast.makeText(getApplicationContext(), "发表成功", Toast.LENGTH_SHORT).show();
                                 mRecyclerView.setRefreshing(true);
+
                             }
 
                             @Override
@@ -163,7 +164,6 @@ public class DongTaiDetailActivity extends BaseActivity implements EmojiconGridF
                  */
                 if (mEmojiContainer.getVisibility() == View.VISIBLE) {
 
-
                     int editHeight = ScreenUtil.getRealViewTop(mEmojiEditText.getParent());
                     int gridHeight = ScreenUtil.getRealViewTop(mEmojiGridFragment.getParent());
                     if ((ev.getY() < editHeight && mEmojiGridFragment.getVisibility() != View.VISIBLE) ||
@@ -175,16 +175,14 @@ public class DongTaiDetailActivity extends BaseActivity implements EmojiconGridF
                         ScreenUtil.closeIMM(this);
 
                         return super.dispatchTouchEvent(ev);
-
                     }
                 }
-
-
                 break;
             }
         }
         return super.dispatchTouchEvent(ev);
     }
+
 
     /**
      * 主界面数据加载
@@ -228,6 +226,8 @@ public class DongTaiDetailActivity extends BaseActivity implements EmojiconGridF
                 });
             }
         });
+
+
     }
 
     /**
