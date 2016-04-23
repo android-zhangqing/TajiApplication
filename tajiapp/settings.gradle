@@ -1,1 +1,1 @@
-include ':app', ':emoji', ':IMKit', ':animators'
+include ':app', ':emoji', ':IMKit', ':animators', ':OneSDK'

@@ -6,6 +6,8 @@ import android.content.Context;
 import android.util.Log;
 import android.view.ViewGroup;
 
+import com.alibaba.sdk.android.AlibabaSDK;
+import com.alibaba.sdk.android.media.MediaService;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.Volley;
 import com.nostra13.universalimageloader.cache.disc.impl.UnlimitedDiskCache;
@@ -22,6 +24,7 @@ import com.nostra13.universalimageloader.core.display.RoundedBitmapDisplayer;
 import com.nostra13.universalimageloader.core.display.SimpleBitmapDisplayer;
 import com.nostra13.universalimageloader.core.download.BaseImageDownloader;
 import com.nostra13.universalimageloader.utils.StorageUtils;
+import com.taobao.tae.sdk.callback.InitResultCallback;
 import com.umeng.analytics.AnalyticsConfig;
 import com.umeng.analytics.MobclickAgent;
 import com.zhangqing.taji.base.UserClass;
@@ -93,6 +96,21 @@ public class MyApplication extends Application {
         AnalyticsConfig.enableEncrypt(true);
 
 
+        //alibaba init
+        AlibabaSDK.asyncInit(getApplicationContext(), new InitResultCallback() {
+            @Override
+            public void onSuccess() {
+                Log.e("AlibabaSDK", "-----initTaeSDK----onSuccess()-------" );
+                MediaService mediaService = AlibabaSDK.getService(MediaService.class);
+                mediaService.enableHttpDNS(); //果用户为了避免域名劫持，可以启用HttpDNS
+                mediaService.enableLog(); //在调试时，可以打印日志。正式上线前可以关闭
+            }
+
+            @Override
+            public void onFailure(int code, String msg) {
+                Log.e("AlibabaSDK", "-------onFailure----msg:" + msg + "  code:" + code);
+            }
+        });
     }
 
 
