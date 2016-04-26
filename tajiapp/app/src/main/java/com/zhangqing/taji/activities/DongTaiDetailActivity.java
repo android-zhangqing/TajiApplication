@@ -26,6 +26,7 @@ import com.zhangqing.taji.base.UserClass;
 import com.zhangqing.taji.base.VolleyInterface;
 import com.zhangqing.taji.bean.DongTaiBean;
 import com.zhangqing.taji.util.AnimationUtil;
+import com.zhangqing.taji.util.ImmUtil;
 import com.zhangqing.taji.util.ScreenUtil;
 import com.zhangqing.taji.view.pullable.RecyclerViewPullable;
 
@@ -172,7 +173,7 @@ public class DongTaiDetailActivity extends BaseActivity implements EmojiconGridF
                         mEmojiContainer.setVisibility(View.GONE);
                         Log.e("dispatchTouchEvent", "return true");
 
-                        ScreenUtil.closeIMM(this);
+                        ImmUtil.closeIMM(this);
 
                         return super.dispatchTouchEvent(ev);
                     }

@@ -42,6 +42,8 @@ import io.rong.imlib.RongIMClient;
 public class MyApplication extends Application {
     private static RequestQueue requestQueue;
 
+    public static MediaService mediaService;
+
     public static boolean rcHasConnect = false;
     private static DisplayImageOptions circleOptions;
     private static DisplayImageOptions cornerOptions;
@@ -100,8 +102,8 @@ public class MyApplication extends Application {
         AlibabaSDK.asyncInit(getApplicationContext(), new InitResultCallback() {
             @Override
             public void onSuccess() {
-                Log.e("AlibabaSDK", "-----initTaeSDK----onSuccess()-------" );
-                MediaService mediaService = AlibabaSDK.getService(MediaService.class);
+                Log.e("AlibabaSDK", "-----initTaeSDK----onSuccess()-------");
+                mediaService = AlibabaSDK.getService(MediaService.class);
                 mediaService.enableHttpDNS(); //果用户为了避免域名劫持，可以启用HttpDNS
                 mediaService.enableLog(); //在调试时，可以打印日志。正式上线前可以关闭
             }
@@ -114,7 +116,7 @@ public class MyApplication extends Application {
     }
 
 
-    public static void initImageLoader(Context context) {
+    private static void initImageLoader(Context context) {
         File cacheDir = StorageUtils.getOwnCacheDirectory(context, "universalimageloader/Cache");
         ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(context)
                 .memoryCacheExtraOptions(480, 800) // max width, max height，即保存的每个缓存文件的最大长宽

@@ -1,32 +1,22 @@
 package com.zhangqing.taji.activities;
 
-import android.content.ContentValues;
-import android.content.Context;
 import android.content.Intent;
-import android.database.Cursor;
+import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.ClipDrawable;
+import android.media.ThumbnailUtils;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
-import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
-import android.os.Parcelable;
 import android.provider.MediaStore;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.content.CursorLoader;
-import android.support.v4.view.PagerAdapter;
-import android.text.InputType;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.TranslateAnimation;
 import android.view.inputmethod.InputMethodManager;
-import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -34,6 +24,9 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.alibaba.sdk.android.media.upload.UploadListener;
+import com.alibaba.sdk.android.media.upload.UploadTask;
+import com.alibaba.sdk.android.media.utils.FailReason;
 import com.android.volley.VolleyError;
 import com.rockerhieu.emojicon.EmojiconEditText;
 import com.rockerhieu.emojicon.EmojiconGridFragment;
@@ -45,32 +38,21 @@ import com.zhangqing.taji.base.UserClass;
 import com.zhangqing.taji.base.VolleyInterface;
 import com.zhangqing.taji.util.CameraUtil;
 import com.zhangqing.taji.util.ImageUtil;
+import com.zhangqing.taji.util.ImmUtil;
 import com.zhangqing.taji.util.LocationUtil;
-import com.zhangqing.taji.util.UploadUtil;
+import com.zhangqing.taji.util.OneSdkUtil;
 import com.zhangqing.taji.view.ResizeLayout;
 
-import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.File;
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
-import java.lang.reflect.Field;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-import java.net.NetworkInterface;
-import java.net.SocketException;
-import java.net.URLDecoder;
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * Created by Administrator on 2016/2/10.
  * 底部中间图标点进来的分享技能秀Activity
  */
-public class PublishActivity extends BaseActivity implements View.OnClickListener, EmojiconGridFragment.OnEmojiconClickedListener, EmojiconsFragment.OnEmojiconBackspaceClickedListener, UploadUtil.OnUploadProcessListener {
+public class PublishActivity extends BaseActivity implements View.OnClickListener, EmojiconGridFragment.OnEmojiconClickedListener, EmojiconsFragment.OnEmojiconBackspaceClickedListener {
     private static final int BIGGER = 1;
     private static final int SMALLER = 2;
 
@@ -79,12 +61,19 @@ public class PublishActivity extends BaseActivity implements View.OnClickListene
     private static final int MSG_UPLOAD_INIT = 3;
     private static final int MSG_UPLOAD_DONE = 4;
 
-    /***
-     * 使用照相机拍照获取图片
-     */
-    public static final int SELECT_PIC_BY_TACK_PHOTO = 1;
 
-    private static final int HEIGHT_THREADHOLD = 30;
+    public static final int TODO_SELECT_PIC = 1;
+    public static final int TODO_CAPTURE_PIC = 2;
+    public static final int TODO_SELECT_VIDEO = 3;
+    public static final int TODO_CAPTURE_VIDEO = 4;
+    public static final int TODO_SELECT_COVER = 5;
+
+    public static final int MODE_PICTURE = 1;
+    public static final int MODE_VIDEO = 2;
+    private int mActivityMode = MODE_VIDEO;
+
+    public String mPathVideo = "";
+    public String mPathCover = "";
 
     private ScrollView scrollView;
     private ImageView faceToggle;
@@ -142,14 +131,14 @@ public class PublishActivity extends BaseActivity implements View.OnClickListene
                     break;
                 }
                 case MSG_UPLOAD_ING: {
-                    clipDrawable.setLevel(10000 * msg.arg1 / MAX_UPLOAD_SIZE);
+                    clipDrawable.setLevel(msg.arg1);
+                    Log.e("arg1:", msg.arg1 + "|");
                     break;
                 }
                 case MSG_UPLOAD_INIT: {
-                    clipDrawable = new ClipDrawable(new BitmapDrawable(getResources(), BitmapFactory.decodeFile(real_path_scaled)), Gravity.LEFT, ClipDrawable.HORIZONTAL);
+                    clipDrawable = new ClipDrawable(new BitmapDrawable(getResources(), BitmapFactory.decodeFile(mPathCover)), Gravity.LEFT, ClipDrawable.HORIZONTAL);
                     mCoverView.setImageDrawable(clipDrawable);
-                    clipDrawable.setLevel(0);
-                    MAX_UPLOAD_SIZE = msg.arg1;
+                    clipDrawable.setLevel(1);
                     break;
                 }
                 case MSG_UPLOAD_DONE: {
@@ -167,70 +156,6 @@ public class PublishActivity extends BaseActivity implements View.OnClickListene
     private Uri photoUri;
     private String picPath;
 
-    public void disableSoftInputMethod(EditText ed) {
-        // getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
-
-        int currentVersion = android.os.Build.VERSION.SDK_INT;
-        String methodName = null;
-        if (currentVersion >= 16) {
-            // 4.2
-            methodName = "setShowSoftInputOnFocus";
-        } else if (currentVersion >= 14) {
-            // 4.0
-            methodName = "setSoftInputShownOnFocus";
-        }
-
-        if (methodName == null) {
-            ed.setInputType(InputType.TYPE_NULL);
-        } else {
-            Class<EditText> cls = EditText.class;
-            Method setShowSoftInputOnFocus;
-            try {
-                setShowSoftInputOnFocus = cls.getMethod(methodName, boolean.class);
-                setShowSoftInputOnFocus.setAccessible(true);
-                setShowSoftInputOnFocus.invoke(ed, false);
-            } catch (NoSuchMethodException e) {
-                ed.setInputType(InputType.TYPE_NULL);
-                e.printStackTrace();
-            } catch (IllegalAccessException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            } catch (IllegalArgumentException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            } catch (InvocationTargetException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            }
-        }
-    }
-
-    @Override
-    public void onUploadDone(int responseCode, String message) {
-        Log.e("onUploadDone", message);
-        try {
-            JSONObject jsonObject = new JSONObject(message);
-            mCoverUrl = jsonObject.getJSONObject("data").getString("url");
-        } catch (JSONException e) {
-            mCoverUrl = null;
-        }
-        sendMessage(MSG_UPLOAD_DONE, 0);
-        //Toast.makeText(PublishActivity.this,message,Toast.LENGTH_LONG).show();
-    }
-
-    @Override
-    public void onUploadProcess(int uploadSize) {
-
-        Log.e("onUploadProcess", uploadSize + "|");
-        sendMessage(MSG_UPLOAD_ING, uploadSize);
-    }
-
-    @Override
-    public void initUpload(int fileSize) {
-        Log.e("initUpload", fileSize + "|");
-        sendMessage(MSG_UPLOAD_INIT, fileSize);
-
-    }
 
     private void sendMessage(int what, int arg1) {
         Message msg = new Message();
@@ -243,40 +168,30 @@ public class PublishActivity extends BaseActivity implements View.OnClickListene
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         //super.onActivityResult(requestCode, resultCode, data);
         Log.e("onActivityResult", requestCode + "|" + resultCode + "|" + (data == null ? "null" : (data)));
-
-        if (data == null || data.getData() == null) return;
-        Uri uri = data.getData();
-        Log.e("uri", uri.getPath());
-
-        // UserClass.getInstance().doUploadPhoto(uri.getPath(), this);
-        doPhoto(uri);
-        //doPhoto(requestCode, data);
-    }
-
-    /**
-     * 选择图片后，获取图片的路径
-     *
-     * @param uri
-     */
-    private void doPhoto(Uri uri) {
-        File uploadFile = null;
-        String real_path = uri.getPath();
-        if (real_path == null || !((real_path.endsWith(".png") || real_path.endsWith(".PNG") || real_path.endsWith(".jpg") || real_path.endsWith(".JPG")))) {
-            String[] pojo = {MediaStore.Images.Media.DATA};
-            Cursor cursor = new CursorLoader(this, uri, pojo, null, null, null).loadInBackground();
-            //Cursor cursor = managedQuery(uri, pojo, null, null, null);
-            if (cursor != null) {
-                int columnIndex = cursor.getColumnIndexOrThrow(pojo[0]);
-                cursor.moveToFirst();
-                real_path = cursor.getString(columnIndex);
-                cursor.close();
+        if (data != null && data.getData() != null) {
+            Log.e("real_uri=", CameraUtil.uri2filePath(this, data.getData()));
+        }
+        if (resultCode != RESULT_OK) return;
+        switch (requestCode) {
+            case TODO_CAPTURE_VIDEO: {
+                if (data == null) return;
+                mPathVideo = CameraUtil.uri2filePath(getApplicationContext(), data.getData());
+                Bitmap bitmap = ThumbnailUtils.createVideoThumbnail(mPathVideo, MediaStore.Video.Thumbnails.MINI_KIND);
+                uploadFile(mPathVideo);
+                break;
+            }
+            case TODO_SELECT_VIDEO: {
+                break;
             }
         }
+    }
 
-        Log.e("doPhoto", "imagePath = " + real_path);
-        if (real_path != null && (real_path.endsWith(".png") || real_path.endsWith(".PNG") || real_path.endsWith(".jpg") || real_path.endsWith(".JPG"))) {
-            real_path_scaled = real_path.substring(0, real_path.lastIndexOf("/") + 1) + "DCIM" + System.currentTimeMillis() + real_path.substring(real_path.lastIndexOf("."), real_path.length());
-            Log.e("newname", real_path_scaled + "|");
+    private void uploadPicture(Uri uri) {
+        String real_path = CameraUtil.uri2filePath(this, uri);
+
+        Log.e("doPhoto", "real_path = " + real_path);
+        if (real_path != null && CameraUtil.isPictureFilePath(real_path)) {
+            real_path_scaled = CameraUtil.Picture.getAppendPath(real_path, "scaled");
             try {
                 ImageUtil.ratioAndGenThumb(real_path, real_path_scaled, 600, 800, false);
             } catch (IOException e) {
@@ -284,38 +199,60 @@ public class PublishActivity extends BaseActivity implements View.OnClickListene
                 Log.e("compressAndGenImage", "OnError");
                 real_path_scaled = real_path;
             }
-            UserClass.getInstance().doUploadPhoto(real_path_scaled, this);
+            Log.e("real_path_scaled", real_path_scaled + "|");
 
-
+            //UserClass.getInstance().doUploadPhoto(real_path_scaled, this);
+            uploadFile(real_path_scaled);
             // /storage/emulated/0/DCIM/Camera/IMG_20160303_140435.jpg
         } else {
             Toast.makeText(this, "选择图片文件不正确", Toast.LENGTH_LONG).show();
         }
     }
 
+    private void uploadFile(String real_path) {
+        sendMessage(MSG_UPLOAD_INIT, 0);
+        OneSdkUtil.upLoadFile(real_path, new UploadListener() {
+
+            @Override
+            public void onUploading(UploadTask uploadTask) {
+                Log.e("OneSdkUtil", "onUploading|" + uploadTask.getCurrent() + "|" + uploadTask.getTotal());
+
+                sendMessage(MSG_UPLOAD_ING, (int) (10000 * uploadTask.getCurrent() / uploadTask.getTotal()));
+
+            }
+
+            @Override
+            public void onUploadFailed(UploadTask uploadTask, FailReason failReason) {
+                Log.e("OneSdkUtil", "onUploadFailed|");
+                Toast.makeText(getApplicationContext(), "上传失败：" + failReason.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onUploadComplete(UploadTask uploadTask) {
+                Log.e("OneSdkUtil", "onUploadComplete|" + uploadTask.getResult().url);
+                Toast.makeText(getApplicationContext(), "上传成功", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onUploadCancelled(UploadTask uploadTask) {
+                Log.e("OneSdkUtil", "onUploadCancelled|");
+            }
+        });
+    }
+
+
+    private Uri mOutputUri = null;
 
     public void onClickUpload(View v) {
-//        new AsyncTask<Void, Void, String>() {
-//
-//            @Override
-//            protected String doInBackground(Void... params) {
-//                String result = UserClass.getInstance().uploadFile("/storage/emulated/0/DCIM/Camera/1.jpg");
-//                return result;
-//            }
-//
-//            @Override
-//            protected void onPostExecute(String s) {
-//                super.onPostExecute(s);
-//                Toast.makeText(PublishActivity.this, s, Toast.LENGTH_SHORT).show();
-//            }
-//        }.execute(new Void[]{});
 
-        Intent intent = CameraUtil.selectPhoto();
-        if (null != intent) {
-
-            startActivityForResult(intent, SELECT_PIC_BY_TACK_PHOTO);
+        switch (v.getId()) {
+            case R.id.publish_upload_video:
+                startActivityForResult(CameraUtil.Video.captureVideo(), TODO_CAPTURE_VIDEO);
+                break;
+            case R.id.publish_upload_cover:
+                startActivityForResult(CameraUtil.Picture.choosePicture(), TODO_SELECT_COVER);
+                break;
         }
-
     }
 
     @Override
@@ -347,7 +284,7 @@ public class PublishActivity extends BaseActivity implements View.OnClickListene
             }
         });
 
-        disableSoftInputMethod(editText);
+        ImmUtil.disableSoftInputMethod(editText);
 
         editText.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
@@ -364,6 +301,14 @@ public class PublishActivity extends BaseActivity implements View.OnClickListene
         PublishBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                if (mCoverUrl == null || mCoverUrl.equals("")) {
+                    Toast.makeText(getApplicationContext(), "请上传图片", Toast.LENGTH_SHORT).show();
+                    return;
+                } else if (editText.getText() == null || editText.getText().toString().equals("")) {
+                    Toast.makeText(getApplicationContext(), "说点什么吧", Toast.LENGTH_SHORT).show();
+                    return;
+                }
                 UserClass.getInstance().doUploadDongTai(mCoverUrl,
                         editText.getText().toString(),
                         mLocationTextView.getText().toString(),
@@ -407,6 +352,7 @@ public class PublishActivity extends BaseActivity implements View.OnClickListene
         parentViewFaceGrid.setVisibility(View.GONE);
         faceToggle.setTag(R.drawable.icon_tab_publish_face);
 
+        mLocationTextView.setText("");
         LocationUtil.getLocation(this, new LocationUtil.OnLocatedListener() {
             @Override
             public void onLocatedSuccess(String location) {
