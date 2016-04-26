@@ -34,6 +34,7 @@ public class DynamicMineActivity extends BaseActivity {
         mRecyclerView = (RecyclerViewPullable) findViewById(R.id.dynamic_recycler_view);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mRecyclerView.setAdapter(mRecyclerViewAdapter = new DongTaiListAdapter(this));
+        mRecyclerViewAdapter.setToEchoTime(true);
         mRecyclerView.setOnLoadListener(new RecyclerViewPullable.OnLoadListener() {
             @Override
             public void onLoadMore(final int loadingPage) {

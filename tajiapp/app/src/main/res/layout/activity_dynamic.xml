@@ -31,7 +31,10 @@
             android:textSize="@dimen/textsize_bar_first" />
 
     </RelativeLayout>
-
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#362239" />
     <com.zhangqing.taji.view.pullable.RecyclerViewPullable
         android:id="@+id/dynamic_recycler_view"
         android:layout_width="match_parent"

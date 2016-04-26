@@ -39,6 +39,7 @@ import java.util.List;
 public class DongTaiListAdapter extends RecyclerView.Adapter<DongTaiListAdapter.MyViewHolder> {
 
     private Context mContext;
+    private boolean isToEchoTime = false;
 
     private List<DongTaiBean> mDongTaiList = new ArrayList<DongTaiBean>();
 
@@ -148,6 +149,17 @@ public class DongTaiListAdapter extends RecyclerView.Adapter<DongTaiListAdapter.
 
         updateViewHolder(mContext, holder, dongTaiClass, this);
 
+        if (isToEchoTime) {
+            holder.tv_follow.setVisibility(View.VISIBLE);
+            holder.tv_follow.setText(dongTaiClass.mTime.substring(dongTaiClass.mTime.indexOf("-") + 1, dongTaiClass.mTime.lastIndexOf(":")));
+            holder.tv_follow.setTextColor(Color.parseColor("#A861B3"));
+            holder.tv_follow.setBackgroundResource(0);
+        }
+
+    }
+
+    public void setToEchoTime(boolean isToEchoTime) {
+        this.isToEchoTime = isToEchoTime;
     }
 
     private static void updateFollowButton(TextView tv_follow, boolean isToFollow) {
@@ -166,8 +178,11 @@ public class DongTaiListAdapter extends RecyclerView.Adapter<DongTaiListAdapter.
      * 清空所有原数据
      */
     public void clearData() {
+        boolean willNotifyData = false;
+        if (mDongTaiList.size() != 0) willNotifyData = true;
         mDongTaiList.clear();
-        notifyDataSetChanged();
+        if (willNotifyData)
+            notifyDataSetChanged();
     }
 
 
