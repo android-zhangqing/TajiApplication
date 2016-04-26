@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -21,6 +22,7 @@ import com.zhangqing.taji.R;
 import com.zhangqing.taji.activities.login.LoginActivity;
 import com.zhangqing.taji.base.UserClass;
 import com.zhangqing.taji.database.DatabaseManager;
+import com.zhangqing.taji.util.CameraUtil;
 import com.zhangqing.taji.view.BottomBar;
 import com.zhangqing.taji.view.BottomBar.OnTabClickListener;
 import com.zhangqing.taji.view.TopBar;
@@ -229,22 +231,9 @@ public class TajiappActivity extends BaseActivity implements OnTabClickListener,
         if (!isShowingPublish) {
             mPublishClickableBg.setVisibility(View.VISIBLE);
             isShowingPublish = true;
-
-            // mPublishBgBg.setAlpha(1f);
-            //AnimationUtil.startAnimationByMyself(mPublishLeft, -200, -100, null);
-//            AnimationUtil.startAnimationJumpIn(mPublishLeft, -200, -100, null);
-//            AnimationUtil.startAnimationJumpIn(mPublishRight, 200, -100, null);
-            // AnimationUtil.startAnimationJumpIn(mPublishBg, 200, -100, null);
-
             Animation a = AnimationUtils.loadAnimation(this, R.anim.publish_btn_left_show);
             Animation b = AnimationUtils.loadAnimation(this, R.anim.publish_btn_right_show);
             Animation c = AnimationUtils.loadAnimation(this, R.anim.publish_btn_bg_show2);
-//            Animation a = new TranslateAnimation(Animation.RELATIVE_TO_SELF, 0.0f,
-//                    Animation.RELATIVE_TO_SELF, 0.0f, Animation.RELATIVE_TO_SELF,
-//                    1.0f, Animation.RELATIVE_TO_SELF, 0.0f);
-
-//            a.setInterpolator(new BounceInterpolator());
-//            a.setDuration(1000);
             a.setFillAfter(false);
             b.setFillAfter(false);
             mPublishLeft.setAnimation(a);
@@ -253,66 +242,21 @@ public class TajiappActivity extends BaseActivity implements OnTabClickListener,
             mPublishLeft.setVisibility(View.VISIBLE);
             mPublishRight.setVisibility(View.VISIBLE);
             mPublishBg.setVisibility(View.VISIBLE);
-
-
-            //mPublishLeft.setVisibility(View.VISIBLE);
         } else {
             mPublishClickableBg.setVisibility(View.GONE);
             isShowingPublish = false;
-
-//            AnimationUtil.startAnimationFadeOut(mPublishLeft, null);
-//            AnimationUtil.startAnimationFadeOut(mPublishRight, null);
-
             Animation a = AnimationUtils.loadAnimation(this, R.anim.publish_btn_left_hide);
             Animation b = AnimationUtils.loadAnimation(this, R.anim.publish_btn_right_hide);
             Animation c = AnimationUtils.loadAnimation(this, R.anim.publish_btn_bg_hide2);
             a.setFillAfter(false);
             b.setFillAfter(false);
-
             mPublishLeft.setAnimation(a);
             mPublishRight.setAnimation(b);
             mPublishBg.setAnimation(c);
             mPublishLeft.setVisibility(View.GONE);
             mPublishRight.setVisibility(View.GONE);
             mPublishBg.setVisibility(View.GONE);
-//
-//            Animation a = new TranslateAnimation(Animation.RELATIVE_TO_SELF, 0.0f,
-//                    Animation.RELATIVE_TO_SELF, 0.0f, Animation.RELATIVE_TO_SELF,
-//                    0.0f, Animation.RELATIVE_TO_SELF, 1.0f);
-//            a.setInterpolator(new AccelerateInterpolator());
-//            a.setDuration(500);
-//            mPublishBg.setAnimation(a);
-//            mPublishBg.setVisibility(View.GONE);
-            // Animation a = new AlphaAnimation(1, 0);
-//            a.setDuration(400);
-//            a.setFillAfter(false);
-//            a.setAnimationListener(new Animation.AnimationListener() {
-//                @Override
-//                public void onAnimationStart(Animation animation) {
-//
-//                }
-//
-//                @Override
-//                public void onAnimationEnd(Animation animation) {
-//                    mPublishLeft.setAlpha(0);
-//                    mPublishRight.setAlpha(0);
-//                    mPublishBg.setVisibility(View.GONE);
-//                }
-//
-//                @Override
-//                public void onAnimationRepeat(Animation animation) {
-//
-//                }
-//            });
-//            mPublishBgBg.startAnimation(a);
-            //  AnimationUtil.startAnimationFadeOut(mPublishRight, null);
-            // mPublishBg.setVisibility(View.INVISIBLE);
-
         }
-
-//        Intent intent = new Intent(TajiappActivity.this, PublishActivity.class);
-//        startActivity(intent);
-//        overridePendingTransition(R.anim.activity_open_bottom_in, 0);
     }
 
 
@@ -393,8 +337,32 @@ public class TajiappActivity extends BaseActivity implements OnTabClickListener,
 
     public void onClickUpload(View v) {
         tabClickPublishBtn();
-        startActivity(new Intent(this, PublishActivity.class));
-        overridePendingTransition(R.anim.activity_open_bottom_in, 0);
+        switch (v.getId()) {
+            case R.id.main_publish_left: {
+                startActivityForResult(CameraUtil.Picture.choosePicture(), PublishActivity.TODO_SELECT_PIC);
+                break;
+            }
+            case R.id.main_publish_right: {
+                startActivity(new Intent(this, PublishActivity.class));
+                overridePendingTransition(R.anim.activity_open_bottom_in, 0);
+                break;
+            }
+        }
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        //super.onActivityResult(requestCode, resultCode, data);
+        Log.e("onActivityResult", requestCode + "|" + resultCode + "|" + (data == null ? "null" : (data)));
+        if (resultCode != RESULT_OK) return;
+        switch (requestCode) {
+            case PublishActivity.TODO_SELECT_PIC: {
+                if (data == null || data.getData() == null) return;
+                String path = CameraUtil.uri2filePath(this, data.getData());
+                Intent intent = new Intent(this, PublishActivity.class);
+                intent.putExtra("path", path);
+                startActivity(intent);
+            }
+        }
+    }
 }

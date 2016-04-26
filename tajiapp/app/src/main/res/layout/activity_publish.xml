@@ -129,6 +129,7 @@
                                 android:src="@drawable/icon_tab_publish_setcover_btn" />
 
                             <TextView
+                                android:id="@+id/publish_upload_text"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:gravity="center"

@@ -192,8 +192,10 @@ public class PublishActivity extends BaseActivity implements View.OnClickListene
         if (resultCode != RESULT_OK) return;
         switch (requestCode) {
 
+            /**
+             * 拍视频返回处理
+             */
             case TODO_CAPTURE_VIDEO: {
-                //拍视频返回处理
                 if (data == null) return;
 
                 //视频路径
@@ -235,8 +237,10 @@ public class PublishActivity extends BaseActivity implements View.OnClickListene
                 });
                 break;
             }
+            /**
+             * 自定义设置封面处理
+             */
             case TODO_SELECT_COVER: {
-                //自定义设置封面处理
                 if (data == null || data.getData() == null) return;
                 uploadPicture(data.getData());
                 break;
@@ -309,15 +313,13 @@ public class PublishActivity extends BaseActivity implements View.OnClickListene
     }
 
 
-    private Uri mOutputUri = null;
-
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
 
         setContentView(R.layout.activity_publish);
+
 
         scrollView = (ScrollView) findViewById(R.id.publish_scrollview);
         //   viewPagerFace = (ViewPager) findViewById(R.id.publish_viewpager);
@@ -416,6 +418,16 @@ public class PublishActivity extends BaseActivity implements View.OnClickListene
                 mLocationTextView.setText(location);
             }
         });
+
+
+        /**
+         * 如果是点击选择文件上传后进入该界面，则会传入intent
+         */
+        if (getIntent() != null && getIntent().getStringExtra("path") != null) {
+            uploadPicture(getIntent().getStringExtra("path"));
+            findViewById(R.id.publish_upload_video).setVisibility(View.INVISIBLE);
+            ((TextView) findViewById(R.id.publish_upload_text)).setText("我要重新上传");
+        }
     }
 
 
