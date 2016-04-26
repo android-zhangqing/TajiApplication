@@ -350,20 +350,10 @@ public class UserClass {
 
     }
 
-    public void doUploadDongTai(final String media, final String content, final String location, final boolean isMasterCircle, VolleyInterface vif) {
+    public void doUploadDongTai(final String media, final String video, final String content, final String location, final boolean isMasterCircle, VolleyInterface vif) {
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST, "http://taji.whutech.com/DongTai/publish",
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        Log.e("doUploadDongTai", "response -> " + response);
-                    }
-                }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                Log.e("doUploadDongTai", error.getMessage(), error);
-            }
-        }) {
+                vif.loadingListener(), vif.errorListener()) {
             @Override
             protected Map<String, String> getParams() {
                 //在这里设置需要post的参数
@@ -372,6 +362,8 @@ public class UserClass {
                 map.put("openid", openId);
                 try {
                     map.put("media", media);
+                    if (!(video == null || video.equals("")))
+                        map.put("video", video);
                     map.put("content", URLEncoder.encode(content, "utf-8"));
                     map.put("loc", URLEncoder.encode(location, "utf-8"));
                     map.put("mastercircle", (isMasterCircle ? "1" : "0"));
@@ -536,6 +528,12 @@ public class UserClass {
     public void getOthersAvatar(String userid, VolleyInterface vif) {
         String url = URLHEAD + "/User/getAvatar?uid=" + userid + "&userid=" + userId + "&openid=" + openId;
         VolleyRequest.RequestGet(url, "getOthersAvatar" + userid, vif);
+    }
+
+    public void getDynamicMine(int page, VolleyInterface vif) {
+        String url = URLHEAD + "/DongTai/myDynamic?userid=" + userId + "&openid=" + openId +
+                "&page=" + page + "&count=" + Page_Per_Count;
+        VolleyRequest.RequestGet(url, "getDynamicMine", vif);
     }
 
     public void getOthersDongTai(String uid, int page, VolleyInterface vif) {

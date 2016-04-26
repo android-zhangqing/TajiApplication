@@ -116,6 +116,7 @@ public class FragmentMy extends BaseFragment implements View.OnClickListener {
         ((LinearLayout) (v.findViewById(R.id.my_click_shifu))).setOnClickListener(this);
         ((LinearLayout) (v.findViewById(R.id.my_click_beidingyue))).setOnClickListener(this);
         ((LinearLayout) (v.findViewById(R.id.my_click_dingyue))).setOnClickListener(this);
+        ((LinearLayout) (v.findViewById(R.id.my_click_dynamic_mine))).setOnClickListener(this);
         ((LinearLayout) (v.findViewById(R.id.my_click_modify_intadskill))).setOnClickListener(this);
         (v.findViewById(R.id.my_click_modify_member_detail)).setOnClickListener(this);
 
@@ -271,14 +272,21 @@ public class FragmentMy extends BaseFragment implements View.OnClickListener {
             case R.id.my_click_shifu:
                 startListPersonsActivity(UserClass.Persons_Button_shifu, "我的师傅");
                 break;
-            case R.id.my_click_modify_intadskill:
+            case R.id.my_click_modify_intadskill: {
                 Intent intent = new Intent(getActivity(), SkillSettingActivity.class);
                 startActivityForResult(intent, UserClass.Request_Setting_Lable);
                 break;
-            case R.id.my_click_modify_member_detail:
-                Intent intent2 = new Intent(getActivity(), ModifyInterestSkillActivity.class);
-                startActivity(intent2);
+            }
+            case R.id.my_click_modify_member_detail: {
+                Intent intent = new Intent(getActivity(), ModifyInterestSkillActivity.class);
+                startActivity(intent);
                 break;
+            }
+            case R.id.my_click_dynamic_mine: {
+                Intent intent = new Intent(getActivity(), DynamicMineActivity.class);
+                startActivity(intent);
+                break;
+            }
 
         }
 

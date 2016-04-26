@@ -37,19 +37,6 @@ import java.util.List;
  * Created by zhangqing on 2016/4/8.
  */
 public class DongTaiListAdapter extends RecyclerView.Adapter<DongTaiListAdapter.MyViewHolder> {
-    public static final int MODE_Adapter = 1;
-    public static final int MODE_Inflate = 2;
-
-    private OnItemClickListener mOnItemClickListener = null;
-
-
-    public interface OnItemClickListener {
-        public void onItemClick();
-    }
-
-    public void setOnItemClickListener(OnItemClickListener l) {
-        this.mOnItemClickListener = l;
-    }
 
     private Context mContext;
 
@@ -83,7 +70,12 @@ public class DongTaiListAdapter extends RecyclerView.Adapter<DongTaiListAdapter.
         holder.tv_count_comment.setText(dongTaiClass.mCountComment);
         holder.tv_count_like.setText(dongTaiClass.mCountLike);
 
-        updateFollowButton(holder.tv_follow, dongTaiClass.mPersonInfo.is_follow);
+        if (dongTaiClass.mPersonInfo.userid.equals(UserClass.getInstance().userId)) {
+            holder.tv_follow.setVisibility(View.INVISIBLE);
+        } else {
+            holder.tv_follow.setVisibility(View.VISIBLE);
+            updateFollowButton(holder.tv_follow, dongTaiClass.mPersonInfo.is_follow);
+        }
 
         holder.iv_avatar.setOnClickListener(new AvatarClickListener(mContext, dongTaiClass.mUserId, dongTaiClass.mPersonInfo.username));
 

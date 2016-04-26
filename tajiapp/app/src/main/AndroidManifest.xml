@@ -8,7 +8,7 @@
 
     <!-- 用于进行网络定位 -->
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.CAMERA" />
     <!-- 这个权限用于获取wifi的获取权限，wifi信息会用来进行网络定位 -->
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
     <!-- <uses-permission android:name="android.permission.READ_CONTACTS" /> -->
@@ -164,6 +164,7 @@
             android:name=".activities.DongTaiDetailActivity"
             android:windowSoftInputMode="stateHidden|adjustPan" />
         <activity android:name=".util.test.MainActivity" />
+        <activity android:name=".activities.DynamicMineActivity" />
     </application>
 
 </manifest>

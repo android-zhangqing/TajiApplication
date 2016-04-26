@@ -33,9 +33,11 @@ import com.rockerhieu.emojicon.EmojiconGridFragment;
 import com.rockerhieu.emojicon.EmojiconsFragment;
 import com.rockerhieu.emojicon.emoji.Emojicon;
 import com.zhangqing.taji.BaseActivity;
+import com.zhangqing.taji.MyApplication;
 import com.zhangqing.taji.R;
 import com.zhangqing.taji.base.UserClass;
 import com.zhangqing.taji.base.VolleyInterface;
+import com.zhangqing.taji.util.AnimationUtil;
 import com.zhangqing.taji.util.CameraUtil;
 import com.zhangqing.taji.util.ImageUtil;
 import com.zhangqing.taji.util.ImmUtil;
@@ -45,6 +47,7 @@ import com.zhangqing.taji.view.ResizeLayout;
 
 import org.json.JSONObject;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.List;
 
@@ -61,19 +64,25 @@ public class PublishActivity extends BaseActivity implements View.OnClickListene
     private static final int MSG_UPLOAD_INIT = 3;
     private static final int MSG_UPLOAD_DONE = 4;
 
-
+    //RequestCode
     public static final int TODO_SELECT_PIC = 1;
     public static final int TODO_CAPTURE_PIC = 2;
     public static final int TODO_SELECT_VIDEO = 3;
     public static final int TODO_CAPTURE_VIDEO = 4;
     public static final int TODO_SELECT_COVER = 5;
 
-    public static final int MODE_PICTURE = 1;
-    public static final int MODE_VIDEO = 2;
-    private int mActivityMode = MODE_VIDEO;
+    //当前为 选择上传模式 还是 现场拍摄模式
+    public static final int MODE_SELECT = 1;
+    public static final int MODE_CAPTURE = 2;
+    private int mActivityMode = MODE_CAPTURE;
 
+    //视频路径
     public String mPathVideo = "";
+    //视频模式下为视频封面路径 图片模式下为图片路径
     public String mPathCover = "";
+
+    private String mUrlVideo = "";
+    private String mUrlCover = "http://taji.image.alimmdn.com/vid_20160426_103358_cover?t=1461638048986";
 
     private ScrollView scrollView;
     private ImageView faceToggle;
@@ -89,10 +98,8 @@ public class PublishActivity extends BaseActivity implements View.OnClickListene
 
     private List<ImageView> pointList;
 
-    private String real_path_scaled;
+    //private String real_path_scaled;
     private ImageView mCoverView;
-
-    private String mCoverUrl = null;
 
     private TextView mLocationTextView;
 
@@ -143,7 +150,7 @@ public class PublishActivity extends BaseActivity implements View.OnClickListene
                 }
                 case MSG_UPLOAD_DONE: {
                     clipDrawable.setLevel(10000);
-                    Toast.makeText(PublishActivity.this, "上传成功\r\n" + mCoverUrl, Toast.LENGTH_LONG).show();
+                    Toast.makeText(PublishActivity.this, "上传成功\r\n" + mUrlCover, Toast.LENGTH_LONG).show();
                 }
                 default:
                     break;
@@ -151,8 +158,7 @@ public class PublishActivity extends BaseActivity implements View.OnClickListene
             super.handleMessage(msg);
         }
     };
-    private TranslateAnimation mShowAction;
-    private TranslateAnimation mHiddenAction;
+
     private Uri photoUri;
     private String picPath;
 
@@ -164,6 +170,18 @@ public class PublishActivity extends BaseActivity implements View.OnClickListene
         mHandler.sendMessage(msg);
     }
 
+    public void onClickUpload(View v) {
+
+        switch (v.getId()) {
+            case R.id.publish_upload_video:
+                startActivityForResult(CameraUtil.Video.captureVideo(), TODO_CAPTURE_VIDEO);
+                break;
+            case R.id.publish_upload_cover:
+                startActivityForResult(CameraUtil.Picture.choosePicture(), TODO_SELECT_COVER);
+                break;
+        }
+    }
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         //super.onActivityResult(requestCode, resultCode, data);
@@ -173,36 +191,89 @@ public class PublishActivity extends BaseActivity implements View.OnClickListene
         }
         if (resultCode != RESULT_OK) return;
         switch (requestCode) {
+
             case TODO_CAPTURE_VIDEO: {
+                //拍视频返回处理
                 if (data == null) return;
+
+                //视频路径
                 mPathVideo = CameraUtil.uri2filePath(getApplicationContext(), data.getData());
+                //封面
+                mPathCover = CameraUtil.Picture.getAppendPath(mPathVideo, "cover");
+
+                //生成视频缩略图文件
                 Bitmap bitmap = ThumbnailUtils.createVideoThumbnail(mPathVideo, MediaStore.Video.Thumbnails.MINI_KIND);
-                uploadFile(mPathVideo);
+                try {
+                    ImageUtil.storeImage(bitmap, mPathCover);
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                }
+
+                //先上传封面，成功后开始上传视频
+                OneSdkUtil.upLoadFile(mPathCover, new UploadListener() {
+                    @Override
+                    public void onUploading(UploadTask uploadTask) {
+                    }
+
+                    @Override
+                    public void onUploadFailed(UploadTask uploadTask, FailReason failReason) {
+                        Toast.makeText(getApplicationContext(), "上传失败:" + failReason.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+
+                    @Override
+                    public void onUploadComplete(UploadTask uploadTask) {
+                        Toast.makeText(getApplicationContext(), "封面上传成功，正开始上传视频", Toast.LENGTH_LONG).show();
+                        mUrlCover = uploadTask.getResult().url;
+                        //开始上传视频啦
+                        uploadFile(mPathVideo);
+                    }
+
+                    @Override
+                    public void onUploadCancelled(UploadTask uploadTask) {
+
+                    }
+                });
                 break;
             }
-            case TODO_SELECT_VIDEO: {
+            case TODO_SELECT_COVER: {
+                //自定义设置封面处理
+                if (data == null || data.getData() == null) return;
+                uploadPicture(data.getData());
                 break;
             }
         }
     }
 
+    /**
+     * 先压缩再上传的函数，不是直接上传！
+     *
+     * @param uri
+     */
     private void uploadPicture(Uri uri) {
         String real_path = CameraUtil.uri2filePath(this, uri);
+        uploadPicture(real_path);
+    }
 
+    /**
+     * 先压缩再上传的函数，不是直接上传！
+     *
+     * @param real_path 压缩前的原图路径
+     */
+    private void uploadPicture(String real_path) {
         Log.e("doPhoto", "real_path = " + real_path);
         if (real_path != null && CameraUtil.isPictureFilePath(real_path)) {
-            real_path_scaled = CameraUtil.Picture.getAppendPath(real_path, "scaled");
+            mPathCover = CameraUtil.Picture.getAppendPath(real_path, "scaled");
             try {
-                ImageUtil.ratioAndGenThumb(real_path, real_path_scaled, 600, 800, false);
+                ImageUtil.ratioAndGenThumb(real_path, mPathCover, 600, 800, false);
             } catch (IOException e) {
                 e.printStackTrace();
                 Log.e("compressAndGenImage", "OnError");
-                real_path_scaled = real_path;
+                mPathCover = real_path;
             }
-            Log.e("real_path_scaled", real_path_scaled + "|");
+            Log.e("real_path_scaled", mPathCover + "|");
 
             //UserClass.getInstance().doUploadPhoto(real_path_scaled, this);
-            uploadFile(real_path_scaled);
+            uploadFile(mPathCover);
             // /storage/emulated/0/DCIM/Camera/IMG_20160303_140435.jpg
         } else {
             Toast.makeText(this, "选择图片文件不正确", Toast.LENGTH_LONG).show();
@@ -212,13 +283,10 @@ public class PublishActivity extends BaseActivity implements View.OnClickListene
     private void uploadFile(String real_path) {
         sendMessage(MSG_UPLOAD_INIT, 0);
         OneSdkUtil.upLoadFile(real_path, new UploadListener() {
-
             @Override
             public void onUploading(UploadTask uploadTask) {
                 Log.e("OneSdkUtil", "onUploading|" + uploadTask.getCurrent() + "|" + uploadTask.getTotal());
-
                 sendMessage(MSG_UPLOAD_ING, (int) (10000 * uploadTask.getCurrent() / uploadTask.getTotal()));
-
             }
 
             @Override
@@ -243,17 +311,6 @@ public class PublishActivity extends BaseActivity implements View.OnClickListene
 
     private Uri mOutputUri = null;
 
-    public void onClickUpload(View v) {
-
-        switch (v.getId()) {
-            case R.id.publish_upload_video:
-                startActivityForResult(CameraUtil.Video.captureVideo(), TODO_CAPTURE_VIDEO);
-                break;
-            case R.id.publish_upload_cover:
-                startActivityForResult(CameraUtil.Picture.choosePicture(), TODO_SELECT_COVER);
-                break;
-        }
-    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -302,14 +359,14 @@ public class PublishActivity extends BaseActivity implements View.OnClickListene
             @Override
             public void onClick(View v) {
 
-                if (mCoverUrl == null || mCoverUrl.equals("")) {
+                if (mUrlCover == null || mUrlCover.equals("")) {
                     Toast.makeText(getApplicationContext(), "请上传图片", Toast.LENGTH_SHORT).show();
                     return;
                 } else if (editText.getText() == null || editText.getText().toString().equals("")) {
                     Toast.makeText(getApplicationContext(), "说点什么吧", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                UserClass.getInstance().doUploadDongTai(mCoverUrl,
+                UserClass.getInstance().doUploadDongTai(mUrlCover, mUrlVideo,
                         editText.getText().toString(),
                         mLocationTextView.getText().toString(),
                         isMasterCircle,
@@ -403,13 +460,6 @@ public class PublishActivity extends BaseActivity implements View.OnClickListene
     private void toggleFaceImm(boolean isShowFaceGrid, boolean isShowImm) {
         boolean ifWait = false;
 
-//        if (isShowFaceGrid | isShowImm) {
-//            PublishBtn.setVisibility(View.GONE);
-//        } else {
-//            PublishBtn.setVisibility(View.VISIBLE);
-//        }
-
-
         if (!isShowFaceGrid) {
             ifWait = hideFaceGrid();
         }
@@ -465,22 +515,18 @@ public class PublishActivity extends BaseActivity implements View.OnClickListene
         faceToggle.setImageResource(R.drawable.icon_tab_publish_imm);
         faceToggle.setTag(R.drawable.icon_tab_publish_imm);
         if (parentViewFaceGrid.getVisibility() == View.GONE) {
-            mShowAction = new TranslateAnimation(Animation.RELATIVE_TO_SELF, 0.0f,
-                    Animation.RELATIVE_TO_SELF, 0.0f, Animation.RELATIVE_TO_SELF,
-                    1.0f, Animation.RELATIVE_TO_SELF, 0.0f);
-            //mShowAction.setInterpolator(new BounceInterpolator());
-            mShowAction.setDuration(500);
+
             if (postDelay) {
                 parentViewFaceGrid.postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        parentViewFaceGrid.setAnimation(mShowAction);
+                        parentViewFaceGrid.setAnimation(AnimationUtil.getSlideInBottomAnimation());
                         parentViewFaceGrid.setVisibility(View.VISIBLE);
                     }
                 }, 500);
 
             } else {
-                parentViewFaceGrid.setAnimation(mShowAction);
+                parentViewFaceGrid.setAnimation(AnimationUtil.getSlideInBottomAnimation());
                 parentViewFaceGrid.setVisibility(View.VISIBLE);
             }//return true;
         }
@@ -497,13 +543,8 @@ public class PublishActivity extends BaseActivity implements View.OnClickListene
 
         if (parentViewFaceGrid.getVisibility() == View.VISIBLE) {
 
-            mHiddenAction = new TranslateAnimation(Animation.RELATIVE_TO_SELF,
-                    0.0f, Animation.RELATIVE_TO_SELF, 0.0f,
-                    Animation.RELATIVE_TO_SELF, 0.0f, Animation.RELATIVE_TO_SELF,
-                    1.0f);
-            mHiddenAction.setDuration(500);
 
-            parentViewFaceGrid.setAnimation(mHiddenAction);
+            parentViewFaceGrid.setAnimation(AnimationUtil.getSlideOutBottomAnimation());
 
             parentViewFaceGrid.setVisibility(View.GONE);
             return true;
