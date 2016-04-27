@@ -54,7 +54,7 @@ public class ChatRoomBean {
         count_all = jsonObject.optString("total", "");
         count_online = jsonObject.optString("user", "");
 
-        is_mine = jsonObject.optBoolean("is_mine", false);
+        is_mine = jsonObject.optBoolean("is_mine", true);
 
     }
 

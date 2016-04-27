@@ -38,6 +38,7 @@
         android:background="@drawable/icon_tab_my_head_bg">
 
         <ImageView
+            android:id="@+id/modify_person_avatar"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_centerInParent="true"
@@ -74,6 +75,7 @@
             android:textSize="@dimen/textsize_bar_first" />
 
         <TextView
+            android:id="@+id/modify_person_name"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
@@ -83,7 +85,7 @@
             android:singleLine="true"
             android:text="呵呵"
             android:textColor="#A8A2AC"
-            android:textSize="@dimen/textsize_bar_first" />
+            android:textSize="@dimen/textsize_bar_second" />
 
 
         <ImageView
@@ -122,6 +124,7 @@
             android:textSize="@dimen/textsize_bar_first" />
 
         <TextView
+            android:id="@+id/modify_person_sex"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
@@ -131,7 +134,7 @@
             android:singleLine="true"
             android:text="男"
             android:textColor="#A8A2AC"
-            android:textSize="@dimen/textsize_bar_first" />
+            android:textSize="@dimen/textsize_bar_second" />
 
 
         <ImageView
@@ -170,6 +173,7 @@
             android:textSize="@dimen/textsize_bar_first" />
 
         <TextView
+            android:id="@+id/modify_person_school"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
@@ -179,7 +183,7 @@
             android:singleLine="true"
             android:text="武汉理工大学"
             android:textColor="#A8A2AC"
-            android:textSize="@dimen/textsize_bar_first" />
+            android:textSize="@dimen/textsize_bar_second" />
 
 
         <ImageView
@@ -224,6 +228,7 @@
             android:textSize="@dimen/textsize_bar_first" />
 
         <TextView
+            android:id="@+id/modify_person_sign"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
@@ -233,7 +238,7 @@
             android:singleLine="true"
             android:text="这个人很懒"
             android:textColor="#A8A2AC"
-            android:textSize="@dimen/textsize_bar_first" />
+            android:textSize="@dimen/textsize_bar_second" />
 
 
         <ImageView
