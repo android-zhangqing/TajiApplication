@@ -28,14 +28,15 @@
                 android:id="@+id/main_tab_iv_home"
                 android:layout_width="@dimen/main_bottom_bar_img_height"
                 android:layout_height="@dimen/main_bottom_bar_img_height"
-                android:scaleType="fitXY"
+                android:scaleType="centerInside"
                 android:src="@drawable/icon_tab_home_normal" />
 
             <TextView
                 android:id="@+id/main_tab_tv_home"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="首页" />
+                android:text="首页"
+                android:textSize="@dimen/main_bottom_bar_text_size" />
         </LinearLayout>
 
         <ImageView
@@ -71,14 +72,15 @@
                 android:layout_width="@dimen/main_bottom_bar_img_height"
                 android:layout_height="@dimen/main_bottom_bar_img_height"
 
-                android:scaleType="fitXY"
+                android:scaleType="centerInside"
                 android:src="@drawable/icon_tab_home_normal" />
 
             <TextView
                 android:id="@+id/main_tab_tv_circle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="圈子" />
+                android:text="圈子"
+                android:textSize="@dimen/main_bottom_bar_text_size" />
         </LinearLayout>
 
         <ImageView
@@ -132,14 +134,15 @@
                 android:id="@+id/main_tab_iv_message"
                 android:layout_width="@dimen/main_bottom_bar_img_height"
                 android:layout_height="@dimen/main_bottom_bar_img_height"
-                android:scaleType="fitXY"
+                android:scaleType="centerInside"
                 android:src="@drawable/icon_tab_home_normal" />
 
             <TextView
                 android:id="@+id/main_tab_tv_message"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="消息" />
+                android:text="消息"
+                android:textSize="@dimen/main_bottom_bar_text_size" />
         </LinearLayout>
 
         <ImageView
@@ -173,14 +176,15 @@
                 android:id="@+id/main_tab_iv_my"
                 android:layout_width="@dimen/main_bottom_bar_img_height"
                 android:layout_height="@dimen/main_bottom_bar_img_height"
-                android:scaleType="fitXY"
+                android:scaleType="centerInside"
                 android:src="@drawable/icon_tab_home_normal" />
 
             <TextView
                 android:id="@+id/main_tab_tv_my"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="我的" />
+                android:text="我的"
+                android:textSize="@dimen/main_bottom_bar_text_size" />
         </LinearLayout>
 
         <ImageView

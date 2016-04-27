@@ -9,9 +9,11 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.alibaba.sdk.android.session.model.User;
 import com.android.volley.VolleyError;
 import com.zhangqing.taji.BaseActivity;
 import com.zhangqing.taji.R;
@@ -110,7 +112,7 @@ public class OthersDetailActivity extends BaseActivity {
                             });
                         }
                     });
-                    initQuickReturnChatBtn();
+                    initNotHeaderView();
                     mRecyclerView.setRefreshing(true);
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -132,8 +134,36 @@ public class OthersDetailActivity extends BaseActivity {
         finish();
     }
 
-    public void onClickBtnChat(View v) {
-        RongIM.getInstance().startPrivateChat(this, mId, mName);
+    public void onClickBtnBottom(View v) {
+        switch (v.getId()) {
+            case R.id.person_detail_chat_btn: {
+                RongIM.getInstance().startPrivateChat(this, mId, mName);
+                break;
+            }
+            case R.id.person_detail_baishi_btn: {
+
+
+                break;
+            }
+        }
+    }
+
+    /**
+     * mPersonInfo获取成功后初始化非headerView
+     */
+    private void initNotHeaderView() {
+
+
+        //如果是自己，则不显示底部两按钮
+        if (mPersonInfo.userid.equals(UserClass.getInstance().userId)) {
+            findViewById(R.id.person_detail_bottom_container).setVisibility(View.INVISIBLE);
+        } else {
+            //查看的是他人个人主页则初始化底部按钮特效
+            initQuickReturnChatBtn();
+            //如果是师傅，则不显示拜师按钮
+            if (mPersonInfo.is_master)
+                findViewById(R.id.person_detail_baishi_btn).setVisibility(View.GONE);
+        }
     }
 
 
@@ -146,13 +176,14 @@ public class OthersDetailActivity extends BaseActivity {
     private int mMinRawY;
     private int mState = STATE_ONSCREEN;
     private int mQuickReturnHeight;
-    private Button mQuickReturnView;
+    private LinearLayout mQuickReturnView;
 
     private int y_total = 0;
 
     private void initQuickReturnChatBtn() {
-        mQuickReturnView = (Button) findViewById(R.id.person_detail_chat_btn);
-        mQuickReturnHeight = mQuickReturnView.getMeasuredHeight();
+        mQuickReturnView = (LinearLayout) findViewById(R.id.person_detail_bottom_container);
+        mQuickReturnHeight = mQuickReturnView != null ? mQuickReturnView.getMeasuredHeight() : 0;
+
         Log.e("initQuickReturnChatBtn", "mQuickReturnHeight=" + mQuickReturnHeight);
         mRecyclerView.getRecyclerView().addOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override

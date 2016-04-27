@@ -274,11 +274,11 @@ public class FragmentMy extends BaseFragment implements View.OnClickListener {
                 break;
             case R.id.my_click_modify_intadskill: {
                 Intent intent = new Intent(getActivity(), SkillSettingActivity.class);
-                startActivityForResult(intent, UserClass.Request_Setting_Lable);
+                startActivityForResult(intent, TajiappActivity.REQUEST_SKILL_SETTING);
                 break;
             }
             case R.id.my_click_modify_member_detail: {
-                Intent intent = new Intent(getActivity(), ModifyInterestSkillActivity.class);
+                Intent intent = new Intent(getActivity(), ModifyPersonInfoActivity.class);
                 startActivity(intent);
                 break;
             }
@@ -313,8 +313,9 @@ public class FragmentMy extends BaseFragment implements View.OnClickListener {
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        Log.e("onActivityResult", "fragmentMy");
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode != UserClass.Request_Setting_Lable) return;
+        if (requestCode != TajiappActivity.REQUEST_SKILL_SETTING) return;
         if (resultCode == Activity.RESULT_OK) {
             swipeRefreshLayout.setRefreshing(true);
             UserClass.getInstance().setStringByKey("is_to_insert", "1");

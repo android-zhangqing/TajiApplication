@@ -4,110 +4,120 @@
     android:layout_height="wrap_content"
     android:background="#ffffff"
     android:gravity="center_vertical"
-    android:orientation="horizontal">
+    android:orientation="vertical">
 
-    <RelativeLayout
-        android:layout_width="100dp"
-        android:layout_height="120dp"
-        android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
-        <ImageView
-            android:id="@+id/skill_matching_to_avatar"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_centerInParent="true"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
-            android:scaleType="centerInside" />
+        <RelativeLayout
+            android:layout_width="100dp"
+            android:layout_height="120dp"
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/skill_matching_to_name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_below="@id/skill_matching_to_avatar"
-            android:gravity="center"
-            android:text="夏天"
-            android:textColor="@android:color/black" />
-    </RelativeLayout>
-
-
-    <RelativeLayout
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="1">
-
-        <ImageView
-            android:id="@+id/skill_matching_label"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp"
-            android:scaleType="centerInside"
-            android:src="@drawable/icon_skill_matching_label_bg" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:gravity="center">
+            <ImageView
+                android:id="@+id/skill_matching_to_avatar"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:scaleType="centerInside" />
 
             <TextView
-                android:id="@+id/skill_matching_to_label"
-                android:layout_width="0dp"
+                android:id="@+id/skill_matching_to_name"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_alignParentBottom="true"
+                android:layout_below="@id/skill_matching_to_avatar"
                 android:gravity="center"
-                android:text="test"
-                android:textColor="#A865B1" />
+                android:text="夏天"
+                android:textColor="@android:color/black" />
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/skill_matching_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/icon_skill_matching_label_bg" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/skill_matching_to_label"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="test"
+                    android:textColor="#A865B1" />
+
+                <TextView
+                    android:id="@+id/skill_matching_my_label"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="test2"
+                    android:textColor="#A865B1" />
+
+            </LinearLayout>
 
             <TextView
-                android:id="@+id/skill_matching_my_label"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_below="@id/skill_matching_label"
                 android:gravity="center"
-                android:text="test2"
-                android:textColor="#A865B1" />
+                android:singleLine="true"
+                android:text="技能匹配可以相互交流呦！"
+                android:textColor="#C1C1C1"
+                android:textSize="12sp" />
 
-        </LinearLayout>
+        </RelativeLayout>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/skill_matching_label"
-            android:gravity="center"
-            android:singleLine="true"
-            android:text="技能匹配可以相互交流呦！"
-            android:textColor="#C1C1C1"
-            android:textSize="12sp" />
+        <RelativeLayout
+            android:layout_width="100dp"
+            android:layout_height="120dp"
+            android:orientation="vertical">
 
-    </RelativeLayout>
+            <ImageView
+                android:id="@+id/skill_matching_my_avatar"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:scaleType="centerInside" />
 
-    <RelativeLayout
-        android:layout_width="100dp"
-        android:layout_height="120dp"
-        android:orientation="vertical">
+            <TextView
+                android:id="@+id/skill_matching_my_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_below="@id/skill_matching_my_avatar"
+                android:gravity="center"
+                android:text="夏天"
+                android:textColor="@android:color/black" />
+        </RelativeLayout>
+    </LinearLayout>
 
-        <ImageView
-            android:id="@+id/skill_matching_my_avatar"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_centerInParent="true"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
-            android:scaleType="centerInside" />
-
-        <TextView
-            android:id="@+id/skill_matching_my_name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_below="@id/skill_matching_my_avatar"
-            android:gravity="center"
-            android:text="夏天"
-            android:textColor="@android:color/black" />
-    </RelativeLayout>
-
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2px"
+        android:background="@android:color/darker_gray" />
 </LinearLayout>

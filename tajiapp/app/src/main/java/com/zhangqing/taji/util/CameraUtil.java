@@ -91,8 +91,6 @@ public class CameraUtil {
             //intent.putExtra("return-data", true);
             return intent;
         }
-
-
     }
 
     public static class Video {
@@ -103,7 +101,6 @@ public class CameraUtil {
             intent2.putExtra(MediaStore.EXTRA_DURATION_LIMIT, 15);
             return intent2;
         }
-
     }
 
     /**

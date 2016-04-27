@@ -1,27 +1,26 @@
 package com.zhangqing.taji.activities;
 
-import android.content.Context;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v4.widget.SwipeRefreshLayout;
-import android.util.Log;
+import android.support.v7.widget.LinearLayoutManager;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.EditorInfo;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
-import android.widget.ListView;
 import android.widget.TextView;
 
 import com.android.volley.VolleyError;
-import com.zhangqing.taji.MyApplication;
+import com.zhangqing.taji.BaseFragment;
 import com.zhangqing.taji.R;
-import com.zhangqing.taji.adapter.PersonsListAdapter;
+import com.zhangqing.taji.adapter.PersonListAdapter;
 import com.zhangqing.taji.base.UserClass;
 import com.zhangqing.taji.base.VolleyInterface;
+import com.zhangqing.taji.util.ImmUtil;
+import com.zhangqing.taji.view.pullable.RecyclerViewPullable;
 
 import org.json.JSONObject;
 
@@ -29,7 +28,7 @@ import org.json.JSONObject;
  * Created by Administrator on 2016/2/23.
  * 右上角搜索图标点进去来这里
  */
-public class FragmentSearch extends Fragment implements TextView.OnEditorActionListener {
+public class FragmentSearch extends BaseFragment implements TextView.OnEditorActionListener {
     public static final int Pager_Person = 0;
     public static final int Pager_Circle = 1;
     public static final int Pager_Lable = 2;
@@ -42,11 +41,9 @@ public class FragmentSearch extends Fragment implements TextView.OnEditorActionL
 
     private EditText mEditText;
     private TextView mTempTextView;
-    private ListView mListView;
-    private SwipeRefreshLayout mSwipeRefreshLayout;
-    private PersonsListAdapter personsListAdapter;
 
-    SwipeRefreshLayout.OnRefreshListener mSwipeListener;
+    private RecyclerViewPullable mRecyclerView;
+    private PersonListAdapter mRecyclerViewAdapter;
 
     public static FragmentSearch getInstance(int Type) {
         switch (Type) {
@@ -92,28 +89,36 @@ public class FragmentSearch extends Fragment implements TextView.OnEditorActionL
         View v = inflater.inflate(R.layout.view_search, container, false);
 
         mEditText = (EditText) v.findViewById(R.id.search_edittext);
-        mListView = (ListView) v.findViewById(R.id.search_listview);
-        mSwipeRefreshLayout = (SwipeRefreshLayout) v.findViewById(R.id.search_swipe_refresh);
         mTempTextView = (TextView) v.findViewById(R.id.search_temptxt);
-        mSwipeRefreshLayout.setEnabled(false);
+        mRecyclerView = (RecyclerViewPullable) v.findViewById(R.id.search_recycler_view);
 
-        mSwipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        mRecyclerView.getRecyclerView().setBackgroundColor(Color.WHITE);
+        mRecyclerView.setAdapter(mRecyclerViewAdapter = new PersonListAdapter(getActivity()));
+        mRecyclerView.setOnLoadListener(new RecyclerViewPullable.OnLoadListener() {
             @Override
-            public void onRefresh() {
-                UserClass.getInstance().searchForPerson(mEditText.getText().toString(), new VolleyInterface(getActivity().getApplicationContext()) {
+            public void onLoadMore(final int loadingPage) {
+                UserClass.getInstance().searchForPerson(mEditText.getText().toString(), loadingPage, new VolleyInterface(getActivity().getApplicationContext()) {
                     @Override
                     public void onMySuccess(JSONObject jsonObject) {
-                        mSwipeRefreshLayout.setRefreshing(false);
-                        mSwipeRefreshLayout.setEnabled(false);
-                        Log.e("onMySuccess", jsonObject + "|");
-                        personsListAdapter.onClearData();
-                        personsListAdapter.onAddData(jsonObject);
+                        if (loadingPage == 1) {
+                            mRecyclerViewAdapter.clearData();
+                            mRecyclerView.setRefreshing(false);
+                        }
+                        if (mRecyclerViewAdapter.addData(jsonObject) != UserClass.Page_Per_Count) {
+                            mRecyclerView.setLoadingMoreStatus(RecyclerViewPullable.LoadingMoreStatus_End);
+                        } else {
+                            mRecyclerView.setLoadingMoreStatus(RecyclerViewPullable.LoadingMoreStatus_Normal);
+                        }
                     }
 
                     @Override
                     public void onMyError(VolleyError error) {
-                        mSwipeRefreshLayout.setRefreshing(false);
-                        mSwipeRefreshLayout.setEnabled(false);
+                        if (loadingPage == 1) {
+                            mRecyclerView.setRefreshing(false);
+                        }
+                        mRecyclerView.setLoadingMoreStatus(RecyclerViewPullable.LoadingMoreStatus_ERROR);
                     }
                 });
             }
@@ -123,8 +128,6 @@ public class FragmentSearch extends Fragment implements TextView.OnEditorActionL
         switch (mType) {
             case Pager_Person:
                 initEdit("Ta技用户昵称/手机号码", "找人", this);
-                personsListAdapter = new PersonsListAdapter(getActivity());
-                mListView.setAdapter(personsListAdapter);
                 break;
             case Pager_Circle:
                 initEdit("圈子名称/圈子号", "找圈子", this);
@@ -148,15 +151,27 @@ public class FragmentSearch extends Fragment implements TextView.OnEditorActionL
     @Override
     public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
         if (actionId <= 6 && actionId >= 2) {
-            mSwipeRefreshLayout.setEnabled(true);
-            mTempTextView.requestFocus();
-            InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
-            imm.toggleSoftInput(0, InputMethodManager.HIDE_NOT_ALWAYS);
+            mRecyclerView.getSwipeRefreshLayout().setEnabled(true);
 
-            mSwipeRefreshLayout.setRefreshing(true);
+            mTempTextView.requestFocus();
+            ImmUtil.closeIMM(getActivity());
+
+            mRecyclerView.getSwipeRefreshLayout().setRefreshing(true);
 
             return true;
         }
         return false;
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        log(mType + "|");
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        log(mType + "|");
     }
 }

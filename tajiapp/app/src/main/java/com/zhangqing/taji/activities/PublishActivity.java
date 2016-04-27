@@ -65,9 +65,6 @@ public class PublishActivity extends BaseActivity implements View.OnClickListene
     private static final int MSG_UPLOAD_DONE = 4;
 
     //RequestCode
-    public static final int TODO_SELECT_PIC = 1;
-    public static final int TODO_CAPTURE_PIC = 2;
-    public static final int TODO_SELECT_VIDEO = 3;
     public static final int TODO_CAPTURE_VIDEO = 4;
     public static final int TODO_SELECT_COVER = 5;
 

@@ -63,7 +63,7 @@ public class DongTaiGridAdapter extends RecyclerView.Adapter<DongTaiGridAdapter.
                     mItemsList.add(d);
                     insert_position++;
                     if (recyclerViewPullable != null) {
-                        recyclerViewPullable.notifyItemChanged(insert_position);
+                        notifyItemChanged(insert_position);
                     }
 
                     count++;

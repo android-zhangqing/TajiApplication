@@ -50,7 +50,7 @@ public class UserClass {
     public static final int Request_Register_First = 102;
     public static final int Request_Register_Second = 103;
     public static final int Request_Register_Third = 104;
-    public static final int Request_Setting_Lable = 105;
+
 
     public static final int Persons_Button_tudi = 1;
     public static final int Persons_Button_shifu = 2;
@@ -547,10 +547,11 @@ public class UserClass {
         VolleyRequest.RequestGet(url, "getSkillMatching", vif);
     }
 
-    public void searchForPerson(String word, VolleyInterface vif) {
+    public void searchForPerson(String word, int page, VolleyInterface vif) {
         String url = "http://www.baidu.com";
         try {
-            url = URLHEAD + "/User/search?wd=" + URLEncoder.encode(word, "utf-8") + "&userid=" + userId + "&openid=" + openId;
+            url = URLHEAD + "/User/search?wd=" + URLEncoder.encode(word, "utf-8") +
+                    "&userid=" + userId + "&openid=" + openId + "&page=" + page + "&count=" + Page_Per_Count;
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }

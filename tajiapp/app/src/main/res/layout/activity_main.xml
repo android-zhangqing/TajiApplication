@@ -93,7 +93,6 @@
                 android:layout_alignParentBottom="true"
                 android:orientation="horizontal">
 
-
                 <LinearLayout
                     android:id="@+id/main_publish_left"
                     android:layout_width="0dp"
@@ -129,6 +128,7 @@
                     android:background="@drawable/press_bg"
                     android:clickable="true"
                     android:gravity="center"
+                    android:onClick="onClickUpload"
                     android:orientation="vertical"
                     android:visibility="gone">
 

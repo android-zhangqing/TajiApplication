@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#EEEBF2"
@@ -55,27 +56,17 @@
             android:background="@null"
             android:gravity="center_vertical"
             android:hint="搜索提示"
-            android:singleLine="true"
             android:paddingLeft="3dp"
+            android:singleLine="true"
             android:textColorHint="#C6C6C6" />
 
     </LinearLayout>
 
-    <com.zhangqing.taji.view.MySwipeRefreshLayout
-        android:id="@+id/persons_swipe_refresh"
+    <com.zhangqing.taji.view.pullable.RecyclerViewPullable
+        android:id="@+id/list_persons_recycler_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <com.zhangqing.taji.view.PullableListView
-            android:id="@+id/persons_list_view"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:listSelector="@android:color/transparent"
-            android:background="@android:color/white">
-
-        </com.zhangqing.taji.view.PullableListView>
-
-    </com.zhangqing.taji.view.MySwipeRefreshLayout>
+        android:layout_height="match_parent"
+        app:footer_text_color="@android:color/black" />
 
 
 </LinearLayout>

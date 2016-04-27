@@ -53,7 +53,7 @@ public class ConversationActivity extends BaseActivity {
      * 展示如何从 Intent 中得到 融云会话页面传递的 Uri
      */
     private void getIntentDate(Intent intent) {
-        ((TextView) findViewById(R.id.title)).setText("正在与[" + intent.getData().getQueryParameter("title") + "]对话");
+        ((TextView) findViewById(R.id.title)).setText(intent.getData().getQueryParameter("title"));
 
         //Log.e("RM.getIntentDate", intent.getData().getQueryParameter("title") + "|||" + ((intent.getData() == null) ? "null" : intent.getData().toString() + "|"));
         mTargetId = intent.getData().getQueryParameter("targetId");

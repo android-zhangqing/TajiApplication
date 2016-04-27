@@ -113,8 +113,9 @@ public class RecyclerViewPullable extends LinearLayout {
     private void initView() {
         /**
          * 2016-04-18 默认设置惯性滑动时不加载图片
+         * 2016-04-26 默认设置滑动都加载图片
          */
-        setPauseLoaderWhenScroll(ImageLoader.getInstance(),false,true);
+        setPauseLoaderWhenScroll(ImageLoader.getInstance(), false, false);
         View v = LayoutInflater.from(getContext()).inflate(R.layout.view_recycler_pullable, this, false);
         addView(v);
 
@@ -140,7 +141,6 @@ public class RecyclerViewPullable extends LinearLayout {
 
 //            }
 //        });
-
 
 
         mRecyclerView.addOnScrollListener(new OnScrollListener() {

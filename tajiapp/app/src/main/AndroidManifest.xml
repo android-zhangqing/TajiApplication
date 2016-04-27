@@ -165,6 +165,7 @@
             android:windowSoftInputMode="stateHidden|adjustPan" />
         <activity android:name=".util.test.MainActivity" />
         <activity android:name=".activities.DynamicMineActivity" />
+        <activity android:name=".activities.ModifyPersonInfoActivity"/>
     </application>
 
 </manifest>

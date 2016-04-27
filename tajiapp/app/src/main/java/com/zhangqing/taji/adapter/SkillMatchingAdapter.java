@@ -12,6 +12,7 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.imageaware.ImageViewAware;
 import com.zhangqing.taji.MyApplication;
 import com.zhangqing.taji.R;
+import com.zhangqing.taji.adapter.listener.AvatarClickListener;
 import com.zhangqing.taji.bean.PersonInfoBean;
 import com.zhangqing.taji.base.UserClass;
 
@@ -50,14 +51,18 @@ public class SkillMatchingAdapter extends RecyclerView.Adapter<SkillMatchingAdap
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
+        PersonInfoBean personInfoBean = mPersonInfoList.get(position);
         holder.my_name.setText(MY_NAME);
-        holder.my_label.setText(mPersonInfoList.get(position).i_want);
+        holder.my_label.setText(personInfoBean.i_want);
         ImageLoader.getInstance().displayImage(MY_AVATAR, new ImageViewAware(holder.my_avatar),
                 MyApplication.getCircleDisplayImageOptions());
 
-        holder.to_name.setText(mPersonInfoList.get(position).username);
-        holder.to_label.setText(mPersonInfoList.get(position).ta_want);
-        ImageLoader.getInstance().displayImage(mPersonInfoList.get(position).avatar,
+        holder.to_name.setText(personInfoBean.username);
+        holder.to_label.setText(personInfoBean.ta_want);
+
+        holder.to_avatar.setOnClickListener(new AvatarClickListener(mContext, personInfoBean.userid, personInfoBean.username));
+
+        ImageLoader.getInstance().displayImage(personInfoBean.avatar,
                 new ImageViewAware(holder.to_avatar),
                 MyApplication.getCircleDisplayImageOptions());
     }

@@ -38,8 +38,8 @@ public class SkillMatchingActivity extends BaseActivity {
         mPullRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mPullRecyclerView.setAdapter(mAdapter = new SkillMatchingAdapter(this));
         mPullRecyclerView.getRecyclerView().setBackgroundColor(Color.parseColor("#FFFFFF"));
-        mPullRecyclerView.getRecyclerView().addItemDecoration(new DividerItemDecoration(this,
-                DividerItemDecoration.VERTICAL_LIST));
+//        mPullRecyclerView.getRecyclerView().addItemDecoration(new DividerItemDecoration(this,
+//                DividerItemDecoration.VERTICAL_LIST));
         mPullRecyclerView.setOnLoadListener(new RecyclerViewPullable.OnLoadListener() {
 
             @Override

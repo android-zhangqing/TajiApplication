@@ -5,11 +5,6 @@
     android:background="#F1EFF1"
     android:orientation="vertical">
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="2px"
-        android:background="#362239" />
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
