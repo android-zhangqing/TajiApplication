@@ -370,7 +370,7 @@ public class UserClass {
                     if (!(video == null || video.equals("")))
                         map.put("video", video);
                     //map.put("content", URLEncoder.encode(content, "utf-8"));
-                    map.put("content",content);
+                    map.put("content", content);
 
                     map.put("loc", URLEncoder.encode(location, "utf-8"));
                     map.put("mastercircle", (isMasterCircle ? "1" : "0"));
@@ -530,6 +530,20 @@ public class UserClass {
         String url = URLHEAD + "/Chatroom/getRoomList?userid=" + userId + "&openid=" + openId +
                 "&page=" + page + "&count=" + Page_Per_Count;
         VolleyRequest.RequestGet(url, "chatRoomGetRoomList", vif);
+    }
+
+    public void chatRoomGetMyRoomList(int page, VolleyInterface vif) {
+        String url = URLHEAD + "/Chatroom/getMyRoom?userid=" + userId + "&openid=" + openId +
+                "&page=" + page + "&count=" + Page_Per_Count;
+        VolleyRequest.RequestGet(url, "chatRoomGetMyRoomList", vif);
+    }
+
+    public void chatRoomAddDelMyRoom(String rid, boolean isToAdd, VolleyInterface vif) {
+
+        String url = URLHEAD + "/Chatroom/" + (isToAdd ? "add" : "del") + "MyRoom?userid=" + userId + "&openid=" + openId +
+                "&rid=" + rid;
+
+        VolleyRequest.RequestGet(url, "chatRoomAddDelMyRoom", vif);
     }
 
     public void getOthersAvatar(String userid, VolleyInterface vif) {

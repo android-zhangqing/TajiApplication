@@ -30,12 +30,17 @@ import io.rong.imlib.model.Conversation;
  * 圈子(聊天室)适配器
  */
 public class CircleAdapter extends RecyclerView.Adapter<CircleAdapter.MyHolder> {
+    public static final int CIRCLE_ALL = 1;
+    public static final int CIRCLE_MINE = 2;
+
+    private int mCircleType = CIRCLE_ALL;
 
     private List<ChatRoomBean> mChatRoomList = new ArrayList<ChatRoomBean>();
     private Context mContext;
 
-    public CircleAdapter(Context context) {
+    public CircleAdapter(Context context, int type) {
         mContext = context;
+        mCircleType = type;
     }
 
     public int addData(JSONObject jsonObject, RecyclerViewPullable recyclerViewPullable) {
@@ -51,7 +56,7 @@ public class CircleAdapter extends RecyclerView.Adapter<CircleAdapter.MyHolder> 
         }
         for (int i = 0; i < jsonArray.length(); i++) {
             try {
-                ChatRoomBean chatRoomBean = new ChatRoomBean(jsonArray.getJSONObject(i));
+                ChatRoomBean chatRoomBean = ChatRoomBean.getInstance(jsonArray.getJSONObject(i));
                 mChatRoomList.add(chatRoomBean);
                 count++;
                 insert_position++;
@@ -75,18 +80,26 @@ public class CircleAdapter extends RecyclerView.Adapter<CircleAdapter.MyHolder> 
     }
 
     @Override
-    public void onBindViewHolder(MyHolder holder, final int position) {
-        holder.textViewTitle.setText(mChatRoomList.get(position).name);
-        holder.textViewCountOnline.setText(mChatRoomList.get(position).count_online);
-        holder.textViewCountAll.setText("在线 /" + mChatRoomList.get(position).count_all + "人");
+    public void onBindViewHolder(MyHolder holder, int position) {
+        final ChatRoomBean chatRoomBean = mChatRoomList.get(position);
+
+        holder.textViewTitle.setText(chatRoomBean.name);
+//        holder.textViewCountOnline.setText(mChatRoomList.get(position).count_online);
+//        holder.textViewCountAll.setText("在线 /" + mChatRoomList.get(position).count_all + "人");
+
+        holder.textViewDesc.setText(chatRoomBean.description);
 
         holder.textViewStartConversation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                /**
+                 * 传入聊天室name为对话标题
+                 */
                 RongIM.getInstance().startConversation(mContext,
                         Conversation.ConversationType.CHATROOM,
-                        mChatRoomList.get(position).rid,
-                        mChatRoomList.get(position).name);
+                        chatRoomBean.rid,
+                        chatRoomBean.name);
             }
 
         });
@@ -102,8 +115,10 @@ public class CircleAdapter extends RecyclerView.Adapter<CircleAdapter.MyHolder> 
     static class MyHolder extends RecyclerView.ViewHolder {
         ImageView imgViewIcon;
         TextView textViewTitle;
-        TextView textViewCountOnline;
-        TextView textViewCountAll;
+//        TextView textViewCountOnline;
+//        TextView textViewCountAll;
+
+        TextView textViewDesc;
 
         TextView textViewStartConversation;
 
@@ -111,9 +126,10 @@ public class CircleAdapter extends RecyclerView.Adapter<CircleAdapter.MyHolder> 
             super(convertView);
 
             textViewTitle = (TextView) convertView.findViewById(R.id.circle_first_title);
-            textViewCountOnline = (TextView) convertView.findViewById(R.id.circle_first_count_online_tv);
-            textViewCountAll = (TextView) convertView.findViewById(R.id.circle_first_count_all_tv);
+//            textViewCountOnline = (TextView) convertView.findViewById(R.id.circle_first_count_online_tv);
+//            textViewCountAll = (TextView) convertView.findViewById(R.id.circle_first_count_all_tv);
             imgViewIcon = (ImageView) convertView.findViewById(R.id.circle_first_icon_iv);
+            textViewDesc = (TextView) convertView.findViewById(R.id.circle_first_describe);
 
             textViewStartConversation = (TextView) convertView.findViewById(R.id.circle_first_chat);
 

@@ -150,6 +150,8 @@ public class TajiappActivity extends BaseActivity implements OnTabClickListener,
 
     @Override
     public void tabSwitchTo(int whichParent) {
+        if (isShowingPublish)
+            tabClickPublishBtn();
         topBar.switchToParent(TajiappActivity.this, whichParent);
     }
 

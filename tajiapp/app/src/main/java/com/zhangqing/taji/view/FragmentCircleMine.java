@@ -16,23 +16,24 @@ import com.zhangqing.taji.view.pullable.RecyclerViewPullable;
 import org.json.JSONObject;
 
 /**
- * Created by zhangqing on 2016/4/17.
+ * Created by zhangqing on 2016/4/27.
+ * 我收藏的圈子界面
  */
-public class FragmentCircleAll extends LinearLayout {
+public class FragmentCircleMine extends LinearLayout {
     private RecyclerViewPullable mRecyclerView;
     private CircleAdapter mRecyclerViewAdapter;
 
-    public FragmentCircleAll(Context context) {
+    public FragmentCircleMine(Context context) {
         super(context);
         initView();
     }
 
-    public FragmentCircleAll(Context context, AttributeSet attrs) {
+    public FragmentCircleMine(Context context, AttributeSet attrs) {
         super(context, attrs);
         initView();
     }
 
-    public FragmentCircleAll(Context context, AttributeSet attrs, int defStyleAttr) {
+    public FragmentCircleMine(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         initView();
     }
@@ -43,11 +44,11 @@ public class FragmentCircleAll extends LinearLayout {
 
         mRecyclerView.getRecyclerView().setBackgroundColor(Color.parseColor("#E1DEE6"));
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        mRecyclerView.setAdapter(mRecyclerViewAdapter = new CircleAdapter(getContext(), CircleAdapter.CIRCLE_ALL));
+        mRecyclerView.setAdapter(mRecyclerViewAdapter = new CircleAdapter(getContext(),CircleAdapter.CIRCLE_MINE));
         mRecyclerView.setOnLoadListener(new RecyclerViewPullable.OnLoadListener() {
             @Override
             public void onLoadMore(final int loadingPage) {
-                UserClass.getInstance().chatRoomGetRoomList(loadingPage, new VolleyInterface(getContext().getApplicationContext()) {
+                UserClass.getInstance().chatRoomGetMyRoomList(loadingPage, new VolleyInterface(getContext().getApplicationContext()) {
                     @Override
                     public void onMySuccess(JSONObject jsonObject) {
                         if (loadingPage == 1) {
