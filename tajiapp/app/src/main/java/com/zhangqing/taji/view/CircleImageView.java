@@ -22,7 +22,7 @@ public class CircleImageView extends ImageView {
     public CircleImageView(Context context, AttributeSet attrs) {
         super(context, attrs);
         if (!isInEditMode()) {
-      //      Log.e("circleImageView", "context2 " + this.toString());
+            //      Log.e("circleImageView", "context2 " + this.toString());
         }
         this.context = context;
 
@@ -56,7 +56,7 @@ public class CircleImageView extends ImageView {
 //		if (allowedRedraw == false)
 //			return;
 //
-       // Log.e("circleImageView", "onDraw " + this.toString());
+        // Log.e("circleImageView", "onDraw " + this.toString());
         setScaleType(ScaleType.FIT_XY);
         Drawable drawable = getDrawable();
 
@@ -64,7 +64,7 @@ public class CircleImageView extends ImageView {
             Log.e("circleImageView", "drawable null " + this.toString());
             return;
         }
-      //  Log.e("circleImageView", "start " + this.toString());
+        //  Log.e("circleImageView", "start " + this.toString());
 
 
         Bitmap bitmap = Bitmap.createBitmap(getHeight(), getHeight(), drawable
@@ -102,7 +102,6 @@ public class CircleImageView extends ImageView {
             paint.setAntiAlias(true);
         }
         canvas.drawCircle(cx, cy, radius - 0, paint);
-
 
 
     }

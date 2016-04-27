@@ -1,4 +1,5 @@
 package com.zhangqing.taji.view;
+
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapShader;
@@ -18,7 +19,7 @@ import android.widget.ImageView;
 /**
  * Created by Administrator on 2016/2/22.
  */
-public class CircleImageView2 extends ImageView{
+public class CircleImageView2 extends ImageView {
     private static final ScaleType SCALE_TYPE = ScaleType.CENTER_CROP;
 
     private static final Bitmap.Config BITMAP_CONFIG = Bitmap.Config.ARGB_8888;
@@ -61,10 +62,10 @@ public class CircleImageView2 extends ImageView{
     public CircleImageView2(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
 
-      //  TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.CircleImageView, defStyle, 0);
+        //  TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.CircleImageView, defStyle, 0);
 
-       //mBorderWidth = a.getDimensionPixelSize(R.styleable.CircleImageView_border_width, DEFAULT_BORDER_WIDTH);
-       // mBorderColor = a.getColor(R.styleable.CircleImageView_border_color, DEFAULT_BORDER_COLOR);
+        //mBorderWidth = a.getDimensionPixelSize(R.styleable.CircleImageView_border_width, DEFAULT_BORDER_WIDTH);
+        // mBorderColor = a.getColor(R.styleable.CircleImageView_border_color, DEFAULT_BORDER_COLOR);
 
         //a.recycle();
 
@@ -263,7 +264,7 @@ public class CircleImageView2 extends ImageView{
             dy = (mDrawableRect.height() - mBitmapHeight * scale) * 0.5f;
         }
 
-        System.out.println("scale "+scale);
+        System.out.println("scale " + scale);
         mShaderMatrix.setScale(scale, scale);
         mShaderMatrix.postTranslate((int) (dx + 0.5f) + mBorderWidth, (int) (dy + 0.5f) + mBorderWidth);
 

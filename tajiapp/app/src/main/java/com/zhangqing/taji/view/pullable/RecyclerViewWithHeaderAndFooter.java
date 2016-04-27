@@ -10,8 +10,6 @@ import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 
-import jp.wasabeef.recyclerview.adapters.SlideInLeftAnimationAdapter;
-
 /**
  * Created by zhangqing on 2016/4/15.
  * 带HeaderView和FooterView的RecyclerView，若需要分页加载，请使用RecyclerViewPullable

@@ -1,11 +1,8 @@
 package com.zhangqing.taji.util;
 
-import android.app.Activity;
 import android.content.Context;
-import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewParent;
-import android.view.inputmethod.InputMethodManager;
 
 /**
  * Created by zhangqing on 2016/4/2.
@@ -31,7 +28,6 @@ public class ScreenUtil {
         }
         return height;
     }
-
 
 
 }

@@ -44,7 +44,7 @@ public class FragmentCircleMine extends LinearLayout {
 
         mRecyclerView.getRecyclerView().setBackgroundColor(Color.parseColor("#E1DEE6"));
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        mRecyclerView.setAdapter(mRecyclerViewAdapter = new CircleAdapter(getContext(),CircleAdapter.CIRCLE_MINE));
+        mRecyclerView.setAdapter(mRecyclerViewAdapter = new CircleAdapter(getContext(), CircleAdapter.CIRCLE_MINE));
         mRecyclerView.setOnLoadListener(new RecyclerViewPullable.OnLoadListener() {
             @Override
             public void onLoadMore(final int loadingPage) {

@@ -59,7 +59,7 @@ public class BaseFragment extends Fragment {
     }
 
     private void simpleLog(String s) {
-        Log.e( "|****" + this.getClass().getSimpleName() + "****|", START_WITH +"##" + s);
+        Log.e("|****" + this.getClass().getSimpleName() + "****|", START_WITH + "##" + s);
     }
 
     public void log(String... log) {

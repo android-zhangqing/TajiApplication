@@ -228,7 +228,7 @@ public class TopBar extends LinearLayout implements OnClickListener {
     }
 
     private LayoutParams getMyLayoutParams(int width, int height,
-                                                        int weight, int marginTop, int marginBottom) {
+                                           int weight, int marginTop, int marginBottom) {
         LayoutParams layoutParams = new LayoutParams(width,
                 height, weight);
         layoutParams.setMargins(0, marginTop, 0, marginBottom);
@@ -237,7 +237,7 @@ public class TopBar extends LinearLayout implements OnClickListener {
     }
 
     private LayoutParams getMyLayoutParams(int width, int height,
-                                                        int weight, int marginTop, int marginBottom, int marginLeft, int marginRight) {
+                                           int weight, int marginTop, int marginBottom, int marginLeft, int marginRight) {
         LayoutParams layoutParams = new LayoutParams(width,
                 height, weight);
         layoutParams.setMargins(marginLeft, marginTop, marginRight, marginBottom);

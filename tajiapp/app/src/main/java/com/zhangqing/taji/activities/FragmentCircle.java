@@ -1,44 +1,19 @@
 package com.zhangqing.taji.activities;
 
-import android.app.Fragment;
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.support.v7.widget.LinearLayoutManager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
-import android.widget.ImageView;
-import android.widget.ListView;
-import android.widget.TextView;
 
-import com.android.volley.VolleyError;
 import com.zhangqing.taji.BaseFragment;
 import com.zhangqing.taji.R;
-import com.zhangqing.taji.adapter.CircleAdapter;
-import com.zhangqing.taji.base.UserClass;
-import com.zhangqing.taji.base.VolleyInterface;
-import com.zhangqing.taji.view.FlexiListView;
 import com.zhangqing.taji.view.FragmentCircleAll;
 import com.zhangqing.taji.view.FragmentCircleMine;
 import com.zhangqing.taji.view.ViewPagerIndicator;
-import com.zhangqing.taji.view.pullable.RecyclerViewPullable;
-
-import org.json.JSONObject;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import io.rong.imkit.RongIM;
-import io.rong.imlib.model.Conversation;
 
 /**
  * Created by zhangqing on 2016/2/7.

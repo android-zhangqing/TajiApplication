@@ -12,7 +12,6 @@ import android.widget.Toast;
 import com.android.volley.Response.ErrorListener;
 import com.android.volley.Response.Listener;
 import com.android.volley.VolleyError;
-import com.zhangqing.taji.MyApplication;
 import com.zhangqing.taji.activities.login.LoginActivity;
 
 import org.json.JSONException;
@@ -39,7 +38,7 @@ public abstract class VolleyInterface {
 
     public abstract void onMyError(VolleyError error);
 
-    private void dismissDialog(){
+    private void dismissDialog() {
         if (mDialog != null) {
             if (mDialog.isShowing()) {
                 new Handler().postDelayed(new Runnable() {
@@ -47,7 +46,7 @@ public abstract class VolleyInterface {
                     public void run() {
                         mDialog.dismiss();
                     }
-                },200);
+                }, 200);
             }
         }
     }

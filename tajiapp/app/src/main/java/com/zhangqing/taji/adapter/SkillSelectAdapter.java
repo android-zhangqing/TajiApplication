@@ -1,9 +1,6 @@
 package com.zhangqing.taji.adapter;
 
-import android.app.ActionBar;
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.os.Handler;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,17 +8,13 @@ import android.view.ViewGroup;
 import android.widget.AbsListView;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.assist.ImageSize;
 import com.nostra13.universalimageloader.core.imageaware.ImageViewAware;
-import com.nostra13.universalimageloader.core.listener.SimpleImageLoadingListener;
 import com.zhangqing.taji.MyApplication;
 import com.zhangqing.taji.R;
-import com.zhangqing.taji.util.DensityUtils;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -93,11 +86,12 @@ public class SkillSelectAdapter extends BaseAdapter {
 
     /**
      * 设置当前选中
+     *
      * @param selector 点号分割
      * @return 选中条数
      */
     public int setSelector(String selector) {
-        int count=0;
+        int count = 0;
         if (selector == null || selector.equals("")) {
             notifyDataSetChanged();
             return count;

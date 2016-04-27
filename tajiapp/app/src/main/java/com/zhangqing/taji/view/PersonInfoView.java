@@ -16,8 +16,8 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.imageaware.ImageViewAware;
 import com.zhangqing.taji.MyApplication;
 import com.zhangqing.taji.R;
-import com.zhangqing.taji.bean.PersonInfoBean;
 import com.zhangqing.taji.base.UserClass;
+import com.zhangqing.taji.bean.PersonInfoBean;
 
 /**
  * Created by zhangqing on 2016/4/9.
@@ -103,7 +103,7 @@ public class PersonInfoView extends LinearLayout {
         String avatar = mPersonInfo.avatar;
         if (!avatar.equals("")) {
             Log.e("loadingavatar", "" + avatar);
-            ImageLoader.getInstance().displayImage(avatar,new ImageViewAware(mAvatarImageView), MyApplication.getCircleDisplayImageOptions());
+            ImageLoader.getInstance().displayImage(avatar, new ImageViewAware(mAvatarImageView), MyApplication.getCircleDisplayImageOptions());
         }
 
         mSignTextView.setText(mPersonInfo.signature);
@@ -147,7 +147,7 @@ public class PersonInfoView extends LinearLayout {
             mFollowButton.setTextColor(mPersonInfo.is_follow ? Color.parseColor("#9F61AA") : Color.parseColor("#16FBCC"));
             mFollowButton.setBackgroundResource(mPersonInfo.is_follow ? R.drawable.home_hot_btn_concern_bg_reverse : R.drawable.home_hot_btn_concern_bg);
         }
-        
+
     }
 
     private static final int MARGIN_LABLE = 10;

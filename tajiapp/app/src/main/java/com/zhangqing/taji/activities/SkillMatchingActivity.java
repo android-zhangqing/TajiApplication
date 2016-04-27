@@ -12,7 +12,6 @@ import com.zhangqing.taji.R;
 import com.zhangqing.taji.adapter.SkillMatchingAdapter;
 import com.zhangqing.taji.base.UserClass;
 import com.zhangqing.taji.base.VolleyInterface;
-import com.zhangqing.taji.view.pullable.DividerItemDecoration;
 import com.zhangqing.taji.view.pullable.RecyclerViewPullable;
 
 import org.json.JSONException;

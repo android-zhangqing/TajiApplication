@@ -13,8 +13,8 @@ import com.nostra13.universalimageloader.core.imageaware.ImageViewAware;
 import com.zhangqing.taji.MyApplication;
 import com.zhangqing.taji.R;
 import com.zhangqing.taji.adapter.listener.AvatarClickListener;
-import com.zhangqing.taji.bean.PersonInfoBean;
 import com.zhangqing.taji.base.UserClass;
+import com.zhangqing.taji.bean.PersonInfoBean;
 
 import org.json.JSONArray;
 import org.json.JSONException;

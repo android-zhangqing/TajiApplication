@@ -5,10 +5,8 @@ import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.view.View;
 
-import com.alibaba.sdk.android.session.model.User;
 import com.android.volley.VolleyError;
 import com.zhangqing.taji.BaseActivity;
-import com.zhangqing.taji.MyApplication;
 import com.zhangqing.taji.R;
 import com.zhangqing.taji.adapter.DongTaiListAdapter;
 import com.zhangqing.taji.base.UserClass;

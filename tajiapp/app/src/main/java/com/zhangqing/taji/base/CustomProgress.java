@@ -2,13 +2,10 @@ package com.zhangqing.taji.base;
 
 import android.app.Dialog;
 import android.content.Context;
-import android.graphics.drawable.AnimationDrawable;
 import android.view.Gravity;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.animation.AnimationUtils;
-import android.widget.ImageView;
-import android.widget.TextView;
 
 import com.zhangqing.taji.R;
 
@@ -25,8 +22,8 @@ public class CustomProgress extends Dialog {
      * 当窗口焦点改变时调用
      */
     public void onWindowFocusChanged(boolean hasFocus) {
-        View mascot=findViewById(R.id.spinnerImageView);
-        mascot.setAnimation(AnimationUtils.loadAnimation(getContext(),R.anim.progress_mascot));
+        View mascot = findViewById(R.id.spinnerImageView);
+        mascot.setAnimation(AnimationUtils.loadAnimation(getContext(), R.anim.progress_mascot));
         mascot.setVisibility(View.VISIBLE);
 
 //        ImageView imageView = (ImageView) findViewById(R.id.spinnerImageView);
@@ -88,7 +85,6 @@ public class CustomProgress extends Dialog {
         dialog.getWindow().setAttributes(lp);
         // dialog.getWindow().addFlags(WindowManager.LayoutParams.FLAG_BLUR_BEHIND);
         dialog.show();
-
 
 
         return dialog;

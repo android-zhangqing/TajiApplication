@@ -352,7 +352,7 @@ public class ViewPagerIndicator extends LinearLayout {
      * @param offset
      */
     public void scroll(int position, float offset) {
-       // Log.e("scroll", position + "|" + offset);
+        // Log.e("scroll", position + "|" + offset);
         /**
          * <pre>
          *  0-1:position=0 ;1-0:postion=0;

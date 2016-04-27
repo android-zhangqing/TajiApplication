@@ -2,7 +2,6 @@ package com.zhangqing.taji.activities;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
@@ -33,8 +32,8 @@ public class SearchActivity extends BaseActivity {
 
         ViewPager pager = (ViewPager) findViewById(R.id.search_viewpager);
         pager.setAdapter(adapter);
-        indicator= (ViewPagerIndicator) findViewById(R.id.search_indicator);
-        indicator.setViewPager(pager,0);
+        indicator = (ViewPagerIndicator) findViewById(R.id.search_indicator);
+        indicator.setViewPager(pager, 0);
 
 
     }

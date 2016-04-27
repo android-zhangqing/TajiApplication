@@ -66,7 +66,7 @@ public class FlexiListView extends ListView {
         Log.e("overScrollBy",
                 deltaY + "|" + scrollY + "|" + scrollRangeY + "|" + maxOverScrollY + "|" + isTouchEvent + "|" + mMaxYOverscrollDistance);
         //if(scrollY<0)return false;
-        return super.overScrollBy(deltaX, deltaY, scrollX, scrollY, scrollRangeX, scrollRangeY, maxOverScrollX, 0-scrollY+10, isTouchEvent);
+        return super.overScrollBy(deltaX, deltaY, scrollX, scrollY, scrollRangeX, scrollRangeY, maxOverScrollX, 0 - scrollY + 10, isTouchEvent);
     }
 
 }

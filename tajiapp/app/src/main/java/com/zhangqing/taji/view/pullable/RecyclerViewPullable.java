@@ -18,8 +18,6 @@ import android.widget.TextView;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.zhangqing.taji.R;
 
-import jp.wasabeef.recyclerview.adapters.SlideInLeftAnimationAdapter;
-
 /**
  * Created by zhangqing on 2016/4/15.
  * 咱们一般用这个组件就行

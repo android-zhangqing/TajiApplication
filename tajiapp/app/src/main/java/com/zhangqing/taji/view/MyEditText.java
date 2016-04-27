@@ -43,7 +43,7 @@ public class MyEditText extends EditText {
         //包括0但是不包括"easy".length()即：4。[0,4)。值得注意的是当我们复制这个图片的时候，实际是复制了"easy"这个字符串。
         ss.setSpan(span, 0, describe.length(), Spannable.SPAN_INCLUSIVE_EXCLUSIVE);
         Log.e("insertDrawable", getSelectionStart() + "|" + getSelectionEnd());
-        append(ss,getSelectionStart(),getSelectionStart()+1);
+        append(ss, getSelectionStart(), getSelectionStart() + 1);
         setSelection(0);
 
     }

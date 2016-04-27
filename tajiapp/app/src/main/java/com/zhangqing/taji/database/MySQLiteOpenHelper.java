@@ -22,7 +22,7 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
             ",[username] varchar(30)" +
             ",[avatar] varchar(100)" +
             ",[createtime] timestamp NOT NULL default CURRENT_TIMESTAMP" +
-            ",UNIQUE (userid)"+
+            ",UNIQUE (userid)" +
             ")";
 
     public MySQLiteOpenHelper(Context context) {

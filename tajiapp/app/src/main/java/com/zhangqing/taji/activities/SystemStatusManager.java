@@ -28,9 +28,8 @@ import java.lang.reflect.Method;
  * 可以使用KitKat设置状态栏和导航栏的背景效果
  * 注：支持Android4.4以上版本
  */
-@SuppressWarnings({ "unchecked", "rawtypes" })
-public class SystemStatusManager
-{
+@SuppressWarnings({"unchecked", "rawtypes"})
+public class SystemStatusManager {
     /**
      * 设置状态栏背景状态
      */
@@ -48,8 +47,7 @@ public class SystemStatusManager
     }
 
 
-    static
-    {
+    static {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             try {
                 Class c = Class.forName("android.os.SystemProperties");
@@ -129,7 +127,7 @@ public class SystemStatusManager
 
     /**
      * Enable tinting of the system status bar.
-     *
+     * <p/>
      * If the platform is running Jelly Bean or earlier, or translucent system
      * UI modes have not been enabled in either the theme or via window flags,
      * then this method does nothing.
@@ -145,7 +143,7 @@ public class SystemStatusManager
 
     /**
      * Enable tinting of the system navigation bar.
-     *
+     * <p/>
      * If the platform does not have soft navigation keys, is running Jelly Bean
      * or earlier, or translucent system UI modes have not been enabled in either
      * the theme or via window flags, then this method does nothing.
@@ -350,7 +348,6 @@ public class SystemStatusManager
     /**
      * Class which describes system bar sizing and other characteristics for the current
      * device configuration.
-     *
      */
     public static class SystemBarConfig {
 

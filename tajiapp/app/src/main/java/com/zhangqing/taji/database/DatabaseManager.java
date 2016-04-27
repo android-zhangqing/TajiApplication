@@ -7,9 +7,9 @@ import android.net.Uri;
 import android.util.Log;
 
 import com.android.volley.VolleyError;
-import com.zhangqing.taji.bean.PersonInfoBean;
 import com.zhangqing.taji.base.UserClass;
 import com.zhangqing.taji.base.VolleyInterface;
+import com.zhangqing.taji.bean.PersonInfoBean;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -91,7 +91,7 @@ public class DatabaseManager {
     }
 
     public int insert(String userid, String username, String avatar) {
-        int count=0;
+        int count = 0;
         Log.e("SQLite", "----insert----");
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         db.beginTransaction();

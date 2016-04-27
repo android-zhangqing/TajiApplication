@@ -2,7 +2,6 @@ package com.zhangqing.taji.activities;
 
 import android.animation.Animator;
 import android.app.Activity;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;

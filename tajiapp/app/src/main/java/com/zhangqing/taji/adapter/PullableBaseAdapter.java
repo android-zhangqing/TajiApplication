@@ -1,7 +1,6 @@
 package com.zhangqing.taji.adapter;
 
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 

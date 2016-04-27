@@ -24,9 +24,9 @@ public class NoScrollGridView extends GridView {
 
     public void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         Log.e("NoScrollGrid", MeasureSpec.getSize(heightMeasureSpec) + "|"
-                        + MeasureSpec.getMode(heightMeasureSpec) + "|" +
-                        MeasureSpec.getSize(widthMeasureSpec) + "|" +
-                        MeasureSpec.getMode(widthMeasureSpec)
+                + MeasureSpec.getMode(heightMeasureSpec) + "|" +
+                MeasureSpec.getSize(widthMeasureSpec) + "|" +
+                MeasureSpec.getMode(widthMeasureSpec)
         );
 
 

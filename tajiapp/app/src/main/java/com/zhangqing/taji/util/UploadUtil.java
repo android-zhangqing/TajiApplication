@@ -1,7 +1,6 @@
 package com.zhangqing.taji.util;
 
 
-import android.support.annotation.NonNull;
 import android.util.Log;
 
 import java.io.ByteArrayOutputStream;
@@ -13,8 +12,6 @@ import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.nio.Buffer;
-import java.nio.charset.Charset;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.UUID;
@@ -224,8 +221,7 @@ public class UploadUtil {
                 ByteArrayOutputStream baos = new ByteArrayOutputStream();
                 int length = 0;
                 byte[] buffer = new byte[1024];
-                while ((length = input.read(buffer)) != -1)
-                {
+                while ((length = input.read(buffer)) != -1) {
                     baos.write(buffer, 0, length);
                 }
                 input.close();
@@ -234,9 +230,9 @@ public class UploadUtil {
 //                while ((ss = input.read()) != -1) {
 //                    sb1.append((char) ss);
 //                }
-                result=new String(baos.toByteArray(),"utf-8");
+                result = new String(baos.toByteArray(), "utf-8");
                 //result = sb1.toString();
-                Log.e(TAG, "result : " +result);
+                Log.e(TAG, "result : " + result);
                 sendMessage(UPLOAD_SUCCESS_CODE, result);
                 return;
             } else {

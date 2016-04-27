@@ -3,13 +3,11 @@ package com.zhangqing.taji.activities;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.alibaba.sdk.android.session.model.User;
 import com.android.volley.VolleyError;
 import com.zhangqing.taji.BaseActivity;
 import com.zhangqing.taji.R;
@@ -21,9 +19,7 @@ import org.json.JSONObject;
 
 import java.util.Locale;
 
-import io.rong.imkit.RongIM;
 import io.rong.imkit.fragment.ConversationFragment;
-import io.rong.imlib.NativeObject;
 import io.rong.imlib.model.Conversation;
 
 /**
