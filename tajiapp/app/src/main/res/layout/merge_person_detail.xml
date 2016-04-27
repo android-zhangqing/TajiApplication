@@ -125,11 +125,11 @@
                         </LinearLayout>
                     </LinearLayout>
 
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:scaleType="fitXY"
-                        android:background="@drawable/icon_tab_home_divider" />
+                    <!--<ImageView-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="1dp"-->
+                    <!--android:scaleType="fitXY"-->
+                    <!--android:background="@drawable/icon_tab_home_divider" />-->
 
                     <LinearLayout
                         android:layout_width="match_parent"

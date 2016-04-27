@@ -36,8 +36,8 @@ import io.rong.imlib.model.UserInfo;
  */
 public class TajiappActivity extends BaseActivity implements OnTabClickListener,
         OnTopBarClickListener {
-    public static final int REQUEST_SELECT_PIC=1;
-    public static final int REQUEST_SKILL_SETTING=2;
+    public static final int REQUEST_SELECT_PIC = 1;
+    public static final int REQUEST_SKILL_SETTING = 2;
 
     private Fragment[] fragments = new Fragment[7];
     private TopBar topBar;
@@ -84,66 +84,14 @@ public class TajiappActivity extends BaseActivity implements OnTabClickListener,
                 }
                 DatabaseManager.getInstance().insert(s, TajiappActivity.this);
                 log("null" + s);
-                //Log.e("getMyUserInfo", s + "|");
-//                if (map.containsKey(s)) {
-//                    return map.get(s);
-//                } else {
-//                    UserClass.getInstance().getOthersAvatar(s, new VolleyInterface(TajiappActivity.this.getApplicationContext()) {
-//                        @Override
-//                        public void onMySuccess(JSONObject jsonObject) {
-//                            //Log.e("onMySuccess", jsonObject.toString());
-//                            try {
-//                                String name = jsonObject.getString("username");
-//                                String avatar = jsonObject.getString("avatar");
-//                                String uid = jsonObject.getString("uid");
-//
-//                                if (name.equals("") || name.equals("null"))
-//                                    name = "游客" + uid;
-//                                if (avatar.indexOf("http") == -1) return;
-//                                UserInfo userInfo = new UserInfo(uid, name, Uri.parse(avatar));
-//                                RongIM.getInstance().refreshUserInfoCache(userInfo);
-//                                map.put(uid, userInfo);
-//
-//                            } catch (JSONException e) {
-//                                e.printStackTrace();
-//                                return;
-//                            }
-//
-//                        }
-//
-//                        @Override
-//                        public void onMyError(VolleyError error) {
-//
-//                        }
-//                    });
-//
-//
-//                }
-//
                 return null;
-
             }
         }, true);
 
-        // if (MyApplication.rcHasConnect == false) {
-
-
-        //  }
-
-
-//        FragmentTransaction ft = getFragmentManager().beginTransaction();
-//        for (int i = 0; i < fragments.length; i++) {
-//            fragments[i] = initNewFragment(i);
-//            if (fragments[i] != null) {
-//                ft.add(R.id.contentframe, fragments[i]);
-//            }
-//        }
-//        ft.commit();
 
         bottomBar = (BottomBar) findViewById(R.id.bottom_bar);
         bottomBar.setOnTabClickListener(this);
         topBar = (TopBar)
-
                 findViewById(R.id.topbar);
 
         topBar.setOnTopBarClickListener(this);
@@ -180,33 +128,14 @@ public class TajiappActivity extends BaseActivity implements OnTabClickListener,
             ft.hide(fragments[lastFragment]);
         }
         ft.commit();
-
-//        for (int i = 0; i < fragments.length; i++) {
-//            if (i == currentFragment) {
-//                if (fragments[i] == null) {
-//                    fragments[i] = initNewFragment(whichFragment);
-//                    if (fragments[i] != null) {
-//                        ft.add(R.id.contentframe, fragments[i]);
-//                    }
-//                } else {
-//                    ft.show(fragments[i]);
-//                }
-//
-//            } else {
-//                if (fragments[i] != null) {
-//                    ft.hide(fragments[i]);
-//
-//                }
-//
-//            }
-//        }
-
     }
 
     private Fragment initNewFragment(int whichFragment) {
         switch (whichFragment) {
             case 0:
                 return new FragmentHomeHot();
+            case 1:
+                return new FragmentDongtaiFollow();
             case 3:
                 return new FragmentCircle();
             case 4:

@@ -324,6 +324,11 @@ public class UserClass {
 
     }
 
+    public void doGetDongTaiMyFollow(int page, VolleyInterface vif) {
+        String url = URLHEAD + "/DongTai/myFollow?" + "userid=" + userId + "&openid=" + openId +
+                "&page=" + page + "&count=" + Page_Per_Count;
+        VolleyRequest.RequestGet(url, "doGetDongTaiMyFollow", vif);
+    }
 
     public void getDongTaiComment(String tid, int page, VolleyInterface vif) {
         String url = URLHEAD + "/DongTai/commentList?" +
@@ -545,6 +550,11 @@ public class UserClass {
     public void getSkillMatching(int page, VolleyInterface vif) {
         String url = URLHEAD + "/Skill/match?" + "&userid=" + userId + "&openid=" + openId + "&page=" + page + "&count=" + Page_Per_Count;
         VolleyRequest.RequestGet(url, "getSkillMatching", vif);
+    }
+
+    public void doBaishi(String uid, VolleyInterface vif) {
+        String url = URLHEAD + "/Master/baishi?userid=" + userId + "&openid=" + openId + "&uid=" + uid;
+        VolleyRequest.RequestGet(url, "doBaishi", vif);
     }
 
     public void searchForPerson(String word, int page, VolleyInterface vif) {

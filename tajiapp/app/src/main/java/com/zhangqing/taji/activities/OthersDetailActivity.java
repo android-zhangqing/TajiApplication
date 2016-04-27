@@ -8,6 +8,8 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -21,6 +23,7 @@ import com.zhangqing.taji.adapter.DongTaiListAdapter;
 import com.zhangqing.taji.base.UserClass;
 import com.zhangqing.taji.base.VolleyInterface;
 import com.zhangqing.taji.bean.PersonInfoBean;
+import com.zhangqing.taji.util.AnimationUtil;
 import com.zhangqing.taji.view.PersonInfoView;
 import com.zhangqing.taji.view.pullable.RecyclerViewPullable;
 
@@ -125,9 +128,6 @@ public class OthersDetailActivity extends BaseActivity {
 
             }
         });
-//        actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
-//        actionBar.setDisplayShowCustomEnabled(true);
-//        RelativeLayout relativeLayout=new RelativeLayout(this);
     }
 
     public void onClickBtnFinish(View v) {
@@ -136,13 +136,27 @@ public class OthersDetailActivity extends BaseActivity {
 
     public void onClickBtnBottom(View v) {
         switch (v.getId()) {
+            //点击底部聊天按钮
             case R.id.person_detail_chat_btn: {
                 RongIM.getInstance().startPrivateChat(this, mId, mName);
                 break;
             }
+            //点击底部拜师按钮
             case R.id.person_detail_baishi_btn: {
 
+                findViewById(R.id.person_detail_baishi_btn).setEnabled(false);
+                UserClass.getInstance().doBaishi(mId, new VolleyInterface(OthersDetailActivity.this) {
+                    @Override
+                    public void onMySuccess(JSONObject jsonObject) {
+                        Toast.makeText(getApplicationContext(), jsonObject.optString("msg", "success"), Toast.LENGTH_LONG).show();
+                        findViewById(R.id.person_detail_baishi_btn).setEnabled(true);
+                    }
 
+                    @Override
+                    public void onMyError(VolleyError error) {
+                        findViewById(R.id.person_detail_baishi_btn).setEnabled(true);
+                    }
+                });
                 break;
             }
         }
@@ -153,16 +167,20 @@ public class OthersDetailActivity extends BaseActivity {
      */
     private void initNotHeaderView() {
 
-
         //如果是自己，则不显示底部两按钮
         if (mPersonInfo.userid.equals(UserClass.getInstance().userId)) {
-            findViewById(R.id.person_detail_bottom_container).setVisibility(View.INVISIBLE);
+            View v = findViewById(R.id.person_detail_bottom_container);
+            v.setAnimation(AnimationUtil.getSlideOutBottomAnimation());
+            v.setVisibility(View.INVISIBLE);
         } else {
             //查看的是他人个人主页则初始化底部按钮特效
             initQuickReturnChatBtn();
             //如果是师傅，则不显示拜师按钮
-            if (mPersonInfo.is_master)
-                findViewById(R.id.person_detail_baishi_btn).setVisibility(View.GONE);
+            if (mPersonInfo.is_master) {
+                View v = findViewById(R.id.person_detail_baishi_btn);
+                v.setAnimation(AnimationUtils.makeOutAnimation(this, true));
+                v.setVisibility(View.GONE);
+            }
         }
     }
 

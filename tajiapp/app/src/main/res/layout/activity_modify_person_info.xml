@@ -57,10 +57,10 @@
         android:clickable="true"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:paddingBottom="8dp"
+        android:paddingBottom="10dp"
         android:paddingLeft="@dimen/margin_left"
         android:paddingRight="10dp"
-        android:paddingTop="8dp">
+        android:paddingTop="10dp">
 
 
         <TextView
@@ -105,10 +105,10 @@
         android:clickable="true"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:paddingBottom="8dp"
+        android:paddingBottom="10dp"
         android:paddingLeft="@dimen/margin_left"
         android:paddingRight="10dp"
-        android:paddingTop="8dp">
+        android:paddingTop="10dp">
 
 
         <TextView
@@ -153,10 +153,10 @@
         android:clickable="true"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:paddingBottom="8dp"
+        android:paddingBottom="10dp"
         android:paddingLeft="@dimen/margin_left"
         android:paddingRight="10dp"
-        android:paddingTop="8dp">
+        android:paddingTop="10dp">
 
 
         <TextView
@@ -207,10 +207,10 @@
         android:clickable="true"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:paddingBottom="8dp"
+        android:paddingBottom="10dp"
         android:paddingLeft="@dimen/margin_left"
         android:paddingRight="10dp"
-        android:paddingTop="8dp">
+        android:paddingTop="10dp">
 
 
         <TextView

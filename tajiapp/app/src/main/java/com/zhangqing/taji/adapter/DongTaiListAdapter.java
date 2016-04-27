@@ -194,8 +194,7 @@ public class DongTaiListAdapter extends RecyclerView.Adapter<DongTaiListAdapter.
                 //notifyItemChanged(lastCount+i);
                 mDongTaiList.add(DongTaiBean.getInstance(jsonArray.getJSONObject(i)));
                 insert_position++;
-                if (recyclerViewPullable != null)
-                    recyclerViewPullable.notifyItemChanged(insert_position);
+                notifyItemChanged(insert_position);
                 //notifyItemChanged(lastCount+i);
                 //notifyItemRangeChanged(lastCount+i, getItemCount());
                 count++;
@@ -203,7 +202,6 @@ public class DongTaiListAdapter extends RecyclerView.Adapter<DongTaiListAdapter.
                 e.printStackTrace();
             }
         }
-        //notifyDataSetChanged();
         return count;
     }
 

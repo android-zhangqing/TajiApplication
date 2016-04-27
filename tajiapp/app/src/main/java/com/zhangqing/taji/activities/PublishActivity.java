@@ -79,7 +79,7 @@ public class PublishActivity extends BaseActivity implements View.OnClickListene
     public String mPathCover = "";
 
     private String mUrlVideo = "";
-    private String mUrlCover = "http://taji.image.alimmdn.com/vid_20160426_103358_cover?t=1461638048986";
+    private String mUrlCover = "";
 
     private ScrollView scrollView;
     private ImageView faceToggle;
