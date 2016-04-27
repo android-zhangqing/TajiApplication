@@ -369,7 +369,9 @@ public class UserClass {
                     map.put("media", media);
                     if (!(video == null || video.equals("")))
                         map.put("video", video);
-                    map.put("content", URLEncoder.encode(content, "utf-8"));
+                    //map.put("content", URLEncoder.encode(content, "utf-8"));
+                    map.put("content",content);
+
                     map.put("loc", URLEncoder.encode(location, "utf-8"));
                     map.put("mastercircle", (isMasterCircle ? "1" : "0"));
                 } catch (UnsupportedEncodingException e) {

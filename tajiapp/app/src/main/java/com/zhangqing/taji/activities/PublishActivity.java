@@ -281,7 +281,7 @@ public class PublishActivity extends BaseActivity implements View.OnClickListene
         }
     }
 
-    private void uploadFile(String real_path) {
+    private void uploadFile(final String real_path) {
         sendMessage(MSG_UPLOAD_INIT, 0);
         OneSdkUtil.upLoadFile(real_path, new UploadListener() {
             @Override
@@ -299,6 +299,11 @@ public class PublishActivity extends BaseActivity implements View.OnClickListene
             @Override
             public void onUploadComplete(UploadTask uploadTask) {
                 Log.e("OneSdkUtil", "onUploadComplete|" + uploadTask.getResult().url);
+                if (CameraUtil.isPictureFilePath(real_path)) {
+                    mUrlCover = uploadTask.getResult().url;
+                } else if (CameraUtil.isVideoFilePath(real_path)) {
+                    mUrlVideo = uploadTask.getResult().url;
+                }
                 Toast.makeText(getApplicationContext(), "上传成功", Toast.LENGTH_SHORT).show();
             }
 
