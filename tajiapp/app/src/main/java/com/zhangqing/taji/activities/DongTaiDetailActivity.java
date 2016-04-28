@@ -132,6 +132,11 @@ public class DongTaiDetailActivity extends BaseActivity implements EmojiconGridF
                             @Override
                             public void onMySuccess(JSONObject jsonObject) {
                                 Toast.makeText(getApplicationContext(), "发表成功", Toast.LENGTH_SHORT).show();
+                                mDongTai.mCountComment = (Integer.valueOf(mDongTai.mCountComment) + 1) + "";
+
+                                DongTaiListAdapter.MyViewHolder myViewHolder = new DongTaiListAdapter.MyViewHolder(mHeaderView);
+                                DongTaiListAdapter.updateViewHolder(DongTaiDetailActivity.this, myViewHolder, mDongTai, null);
+
                                 mRecyclerView.setRefreshing(true);
 
                             }
@@ -204,19 +209,20 @@ public class DongTaiDetailActivity extends BaseActivity implements EmojiconGridF
         mRecyclerView.setOnLoadListener(new RecyclerViewPullable.OnLoadListener() {
             @Override
             public void onLoadMore(final int loadingPage) {
+
                 UserClass.getInstance().getDongTaiComment(mTid, loadingPage, new VolleyInterface(getApplicationContext()) {
                     @Override
                     public void onMySuccess(JSONObject jsonObject) {
                         if (loadingPage == 1) {
+
                             mRecyclerView.setRefreshing(false);
                             mRecyclerViewAdapter.clearData();
                         }
-                        if (mRecyclerViewAdapter.addData(jsonObject, mRecyclerView) != UserClass.Page_Per_Count) {
+                        if (mRecyclerViewAdapter.addData(jsonObject) != UserClass.Page_Per_Count) {
                             mRecyclerView.setLoadingMoreStatus(RecyclerViewPullable.LoadingMoreStatus_End);
                         } else {
                             mRecyclerView.setLoadingMoreStatus(RecyclerViewPullable.LoadingMoreStatus_Normal);
                         }
-
                     }
 
                     @Override
@@ -236,8 +242,6 @@ public class DongTaiDetailActivity extends BaseActivity implements EmojiconGridF
      */
     private void addHeaderView() {
         mHeaderView = (LinearLayout) LayoutInflater.from(this).inflate(R.layout.view_home_hot_then_listview_item, null);
-        Log.e("mHead", mHeaderView instanceof LinearLayout ? "null" : "not");
-
 
         mHeaderView.findViewById(R.id.home_hot_then_count_comment_container).setOnClickListener(new View.OnClickListener() {
             @Override

@@ -28,6 +28,8 @@ public class DongTaiBean {
                     mDongTaiMap.put(tid, dongtai);
                 }
             }
+        } else {
+            dongtai.update(jsonObject);
         }
         return dongtai;
     }
@@ -85,49 +87,57 @@ public class DongTaiBean {
      * @param jsonObject 传入json数据
      * @throws JSONException 仅当无动态id时才抛出异常
      */
-    public DongTaiBean(String tid, JSONObject jsonObject) throws JSONException {
+    private DongTaiBean(String tid, JSONObject jsonObject) throws JSONException {
 
         //动态ID
         mId = tid;
         //发布人昵称
 //        mUserName = jsonObject.optString("username", "");
-        //发布人ID
-        mUserId = jsonObject.optString("userid", "");
-        //作者ID
-        mAutherId = jsonObject.optString("author", "");
-        //@人的ID
-        mAtId = jsonObject.optString("at", "");
-
         mPersonInfo = PersonInfoBean.getInstance(jsonObject);
+        update(jsonObject);
+
+        Log.e("DongTaiBean", "end|" + toString());
+    }
+
+    private void update(JSONObject jsonObject) {
+        if (jsonObject == null)
+            return;
+
+        //发布人ID
+        mUserId = jsonObject.optString("userid", mUserId);
+        //作者ID
+        mAutherId = jsonObject.optString("author", mAutherId);
+        //@人的ID
+        mAtId = jsonObject.optString("at", mAtId);
+
 
         //类别
-        mTag = jsonObject.optString("tag", "");
+        mTag = jsonObject.optString("tag", mTag);
         //类别
-        mType = jsonObject.optString("type", "");
+        mType = jsonObject.optString("type", mType);
         //标题
-        mContent = jsonObject.optString("content", "");
+        mContent = jsonObject.optString("content", mContent);
         //发布时间
-        mTime = jsonObject.optString("time", "");
+        mTime = jsonObject.optString("time", mTime);
 
         //封面URL
-        mCoverUrl = jsonObject.optString("media", "");
+        mCoverUrl = jsonObject.optString("media", mCoverUrl);
         //发布者头像URL
-        mAvatarUrl = jsonObject.optString("avatar", "");
+        mAvatarUrl = jsonObject.optString("avatar", mAvatarUrl);
 
         //赞
-        mCountLike = jsonObject.optString("likes", "");
+        mCountLike = jsonObject.optString("likes", mCountLike);
         //转发
-        mCountForward = jsonObject.optString("forward", "");
+        mCountForward = jsonObject.optString("forward", mCountForward);
         //浏览
-        mCountViews = jsonObject.optString("views", "");
+        mCountViews = jsonObject.optString("views", mCountViews);
         //评论
-        mCountComment = jsonObject.optString("comment", "");
+        mCountComment = jsonObject.optString("comment", mCountComment);
 
         //是否师徒圈
-        isMasterCircle = jsonObject.optString("mastercircle", "").equals("1");
+        isMasterCircle = jsonObject.optString("mastercircle", (isMasterCircle ? "1" : "0")).equals("1");
         //是否已订阅
-        isFollow = jsonObject.optBoolean("is_follow", false);
-        Log.e("DongTaiBean", "end|" + toString());
+        isFollow = jsonObject.optBoolean("is_follow", isFollow);
     }
 
     @Override

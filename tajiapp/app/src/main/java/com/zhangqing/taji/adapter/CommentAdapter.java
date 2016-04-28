@@ -27,7 +27,7 @@ import java.util.List;
  * Created by zhangqing on 2016/4/19.
  * 评论Adapter
  */
-public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.MyHolder> {
+public class CommentAdapter extends MyRecyclerViewAdapter<CommentAdapter.MyHolder> {
     public CommentAdapter(Context context) {
         this.mContext = context;
     }
@@ -36,7 +36,7 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.MyHolder
     private List<CommentBean> mCommentBeanList = new ArrayList<CommentBean>();
 
 
-    public int addData(JSONObject jsonObject, RecyclerViewPullable recyclerViewPullable) {
+    public int addData(JSONObject jsonObject) {
         int count = 0;
         JSONArray jsonArray;
         try {
