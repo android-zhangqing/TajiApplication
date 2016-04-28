@@ -39,8 +39,7 @@
                     android:layout_alignParentRight="true"
                     android:scaleType="centerInside"
                     android:src="@drawable/icon_my_ismaster"
-                    android:visibility="gone"
-                    />
+                    android:visibility="gone" />
 
             </RelativeLayout>
 
@@ -137,8 +136,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="10dp"
-                                android:paddingRight="10dp"
-                                android:orientation="horizontal">
+                                android:orientation="horizontal"
+                                android:paddingRight="10dp">
 
                             </LinearLayout>
 
@@ -171,8 +170,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="10dp"
-                                android:paddingRight="10dp"
-                                android:orientation="horizontal"></LinearLayout>
+                                android:orientation="horizontal"
+                                android:paddingRight="10dp"></LinearLayout>
 
                         </HorizontalScrollView>
 
@@ -368,13 +367,11 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:layout_marginBottom="5dp"
-        android:layout_marginTop="5dp"
         android:background="@android:color/black">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
             <HorizontalScrollView
@@ -382,8 +379,13 @@
                 android:layout_height="70dp">
 
                 <LinearLayout
+                    android:id="@+id/my_container_shitu_pic"
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
 
                 </LinearLayout>
 
@@ -391,16 +393,42 @@
 
             <HorizontalScrollView
                 android:layout_width="match_parent"
-                android:layout_height="30dp">
+                android:layout_height="wrap_content">
 
                 <LinearLayout
+                    android:id="@+id/my_container_shitu_txt"
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent">
+                    android:layout_height="30dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp">
 
 
                 </LinearLayout>
             </HorizontalScrollView>
         </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#99000000">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_centerInParent="true"
+                android:scaleType="centerInside"
+                android:src="@drawable/icon_my_container_shitu_lock" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/icon_my_container_shitu_arrow" />
+
+        </RelativeLayout>
 
 
     </RelativeLayout>

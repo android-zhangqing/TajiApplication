@@ -40,7 +40,7 @@
         android:layout_height="match_parent">
 
         <com.zhangqing.taji.view.pullable.RecyclerViewPullable
-            android:id="@+id/recycler_view"
+            android:id="@+id/person_detail_recycler_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:footer_text_color="@android:color/white">

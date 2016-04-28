@@ -87,7 +87,7 @@ public class DongTaiDetailActivity extends BaseActivity implements EmojiconGridF
         mTid = getIntent().getExtras().getString("dongtai");
         mDongTai = DongTaiBean.getInstance(mTid);
 
-        mRecyclerView = (RecyclerViewPullable) findViewById(R.id.recycler_view);
+        mRecyclerView = (RecyclerViewPullable) findViewById(R.id.dongtai_detail_recycler_view);
 
         mEmojiEditText = (EmojiconEditText) findViewById(R.id.dongtai_detail_emoji_edt);
         mEmojiImageView = (ImageView) findViewById(R.id.dongtai_detail_emoji_toggle_iv);

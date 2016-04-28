@@ -58,7 +58,7 @@ public class OthersDetailActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_person_detail);
 
-        mRecyclerView = (RecyclerViewPullable) findViewById(R.id.recycler_view);
+        mRecyclerView = (RecyclerViewPullable) findViewById(R.id.person_detail_recycler_view);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mRecyclerView.setAdapter(mRecyclerViewAdapter = new DongTaiListAdapter(this));
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());

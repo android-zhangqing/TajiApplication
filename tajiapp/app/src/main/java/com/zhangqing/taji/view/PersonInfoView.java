@@ -18,6 +18,7 @@ import com.zhangqing.taji.MyApplication;
 import com.zhangqing.taji.R;
 import com.zhangqing.taji.base.UserClass;
 import com.zhangqing.taji.bean.PersonInfoBean;
+import com.zhangqing.taji.util.DensityUtils;
 
 /**
  * Created by zhangqing on 2016/4/9.
@@ -39,6 +40,9 @@ public class PersonInfoView extends LinearLayout {
 
     private LinearLayout mContainerInterest;
     private LinearLayout mContainerSkill;
+
+    private LinearLayout mContainerShituPic;
+    private LinearLayout mContainerShituText;
 
     private TextView mFollowButton;
     private ImageView mIsMaster;
@@ -82,6 +86,9 @@ public class PersonInfoView extends LinearLayout {
 
         mContainerInterest = (LinearLayout) mMainContainer.findViewById(R.id.my_container_interest);
         mContainerSkill = (LinearLayout) mMainContainer.findViewById(R.id.my_container_skill);
+
+        mContainerShituPic = (LinearLayout) mMainContainer.findViewById(R.id.my_container_shitu_pic);
+        mContainerShituText = (LinearLayout) mMainContainer.findViewById(R.id.my_container_shitu_txt);
 
         mFollowButton = (TextView) mMainContainer.findViewById(R.id.my_follow_button);
         mIsMaster = (ImageView) mMainContainer.findViewById(R.id.my_head_ismaster);
@@ -146,6 +153,35 @@ public class PersonInfoView extends LinearLayout {
             mFollowButton.setText(mPersonInfo.is_follow ? "√ 已订阅" : "+ 订阅");
             mFollowButton.setTextColor(mPersonInfo.is_follow ? Color.parseColor("#9F61AA") : Color.parseColor("#16FBCC"));
             mFollowButton.setBackgroundResource(mPersonInfo.is_follow ? R.drawable.home_hot_btn_concern_bg_reverse : R.drawable.home_hot_btn_concern_bg);
+        }
+
+        /**
+         * 处理半透明师徒圈
+         */
+        LinearLayout.LayoutParams layoutParams = null;
+        for (int i = 0; i < mPersonInfo.shituPicList.size(); i++) {
+            if (layoutParams == null) {
+                int width = DensityUtils.dp2px(getContext(), 55);
+                layoutParams = new LinearLayout.LayoutParams(width, width);
+                layoutParams.setMargins(10, 0, 0, 10);
+            }
+            ImageView imageView = new ImageView(getContext());
+            imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
+            mContainerShituPic.addView(imageView, layoutParams);
+            ImageLoader.getInstance().displayImage(mPersonInfo.shituPicList.get(i),
+                    new ImageViewAware(imageView), MyApplication.getNormalDisplayImageOptions());
+        }
+
+        layoutParams = null;
+        for (int i = 0; i < mPersonInfo.shituTextList.size(); i++) {
+            if (layoutParams == null) {
+                layoutParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.MATCH_PARENT);
+            }
+            TextView textView = new TextView(getContext());
+            textView.setGravity(Gravity.CENTER_VERTICAL);
+            textView.setPadding(20, 0, 20, 0);
+            textView.setText("#" + mPersonInfo.shituTextList.get(i));
+            mContainerShituText.addView(textView, layoutParams);
         }
 
     }

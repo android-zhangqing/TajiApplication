@@ -1,8 +1,11 @@
 package com.zhangqing.taji.bean;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.WeakHashMap;
 
 /**
@@ -49,6 +52,9 @@ public class PersonInfoBean {
     public String interest = "";
     public String skill = "";
 
+    public List<String> shituPicList = new ArrayList<>();
+    public List<String> shituTextList = new ArrayList<>();
+
     public boolean is_master = false;
     public boolean is_follow = false;
 
@@ -85,6 +91,18 @@ public class PersonInfoBean {
 
         i_want = jsonObject.optString("i_want", "");
         ta_want = jsonObject.optString("ta_want", "");
+
+        JSONArray jsonArray = jsonObject.optJSONArray("circle");
+        if (jsonArray != null) {
+            for (int i = 0; i < jsonArray.length(); i++) {
+                if (jsonArray.getJSONObject(i).has("media")) {
+                    shituPicList.add(jsonArray.getJSONObject(i).optString("media", ""));
+                }
+                if (jsonArray.getJSONObject(i).has("tag")) {
+                    shituTextList.add(jsonArray.getJSONObject(i).optString("tag", ""));
+                }
+            }
+        }
 
     }
 

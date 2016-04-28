@@ -44,16 +44,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
-                android:layout_marginLeft="35dp">
+                android:layout_marginLeft="35dp"
+                android:layout_marginTop="5dp">
 
                 <EditText
                     android:id="@+id/login_username"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColorHighlight="@color/bgcolor_bar_first"
                     android:background="@null"
                     android:hint="手机号/邮箱"
                     android:textColor="@android:color/white"
+                    android:textColorHighlight="@color/bgcolor_bar_first"
                     android:textColorHint="@android:color/white" />
 
 
@@ -69,7 +70,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
-                android:layout_marginLeft="35dp">
+                android:layout_marginLeft="35dp"
+                android:layout_marginTop="5dp">
 
                 <EditText
                     android:id="@+id/login_userpass"
