@@ -29,7 +29,7 @@ import io.rong.imlib.model.Conversation;
  * Created by zhangqing on 2016/4/16.
  * 圈子(聊天室)适配器
  */
-public class CircleAdapter extends RecyclerView.Adapter<CircleAdapter.MyHolder> {
+public class CircleAdapter extends MyRecyclerViewAdapter<CircleAdapter.MyHolder> {
     public static final int CIRCLE_ALL = 1;
     public static final int CIRCLE_MINE = 2;
 
@@ -43,7 +43,7 @@ public class CircleAdapter extends RecyclerView.Adapter<CircleAdapter.MyHolder> 
         mCircleType = type;
     }
 
-    public int addData(JSONObject jsonObject, RecyclerViewPullable recyclerViewPullable) {
+    public int addData(JSONObject jsonObject) {
         int count = 0;
         int insert_position = mChatRoomList.size() - 1;
 
@@ -60,7 +60,7 @@ public class CircleAdapter extends RecyclerView.Adapter<CircleAdapter.MyHolder> 
                 mChatRoomList.add(chatRoomBean);
                 count++;
                 insert_position++;
-                recyclerViewPullable.notifyItemChanged(insert_position);
+                notifyItemChanged(insert_position);
             } catch (JSONException e) {
                 e.printStackTrace();
             }
@@ -69,6 +69,7 @@ public class CircleAdapter extends RecyclerView.Adapter<CircleAdapter.MyHolder> 
         return count;
     }
 
+    @Override
     public void clearData() {
         mChatRoomList.clear();
         notifyDataSetChanged();

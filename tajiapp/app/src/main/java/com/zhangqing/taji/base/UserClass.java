@@ -563,15 +563,21 @@ public class UserClass {
         VolleyRequest.RequestGet(url, "doBaishi", vif);
     }
 
-    public void searchForPerson(String word, int page, VolleyInterface vif) {
+    /**
+     * @param word
+     * @param searchForWhat "User" "chatroom"
+     * @param page
+     * @param vif
+     */
+    public void searchFor(String word, String searchForWhat, int page, VolleyInterface vif) {
         String url = "http://www.baidu.com";
         try {
-            url = URLHEAD + "/User/search?wd=" + URLEncoder.encode(word, "utf-8") +
+            url = URLHEAD + "/" + searchForWhat + "/search?wd=" + URLEncoder.encode(word, "utf-8") +
                     "&userid=" + userId + "&openid=" + openId + "&page=" + page + "&count=" + Page_Per_Count;
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }
-        VolleyRequest.RequestGet(url, "searchForPerson", vif);
+        VolleyRequest.RequestGet(url, "searchFor", vif);
     }
 
 

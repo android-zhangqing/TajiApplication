@@ -54,7 +54,7 @@ public class FragmentCircleAll extends LinearLayout {
                             mRecyclerView.setRefreshing(false);
                             mRecyclerViewAdapter.clearData();
                         }
-                        if (mRecyclerViewAdapter.addData(jsonObject, mRecyclerView) != UserClass.Page_Per_Count) {
+                        if (mRecyclerViewAdapter.addData(jsonObject) != UserClass.Page_Per_Count) {
                             mRecyclerView.setLoadingMoreStatus(RecyclerViewPullable.LoadingMoreStatus_End);
                         } else {
                             mRecyclerView.setLoadingMoreStatus(RecyclerViewPullable.LoadingMoreStatus_Normal);

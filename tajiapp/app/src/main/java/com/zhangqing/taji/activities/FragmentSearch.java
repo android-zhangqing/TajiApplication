@@ -15,6 +15,8 @@ import android.widget.TextView;
 import com.android.volley.VolleyError;
 import com.zhangqing.taji.BaseFragment;
 import com.zhangqing.taji.R;
+import com.zhangqing.taji.adapter.CircleAdapter;
+import com.zhangqing.taji.adapter.MyRecyclerViewAdapter;
 import com.zhangqing.taji.adapter.PersonListAdapter;
 import com.zhangqing.taji.base.UserClass;
 import com.zhangqing.taji.base.VolleyInterface;
@@ -42,7 +44,9 @@ public class FragmentSearch extends BaseFragment implements TextView.OnEditorAct
     private TextView mTempTextView;
 
     private RecyclerViewPullable mRecyclerView;
-    private PersonListAdapter mRecyclerViewAdapter;
+    private MyRecyclerViewAdapter mRecyclerViewAdapter;
+
+    private String[] searchForWhat = new String[]{"User", "Chatroom", ""};
 
     public static FragmentSearch getInstance(int Type) {
         switch (Type) {
@@ -94,11 +98,22 @@ public class FragmentSearch extends BaseFragment implements TextView.OnEditorAct
 
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         mRecyclerView.getRecyclerView().setBackgroundColor(Color.WHITE);
-        mRecyclerView.setAdapter(mRecyclerViewAdapter = new PersonListAdapter(getActivity()));
+        switch (mType) {
+            case 0:
+            case 2:
+                mRecyclerViewAdapter = new PersonListAdapter(getActivity());
+                break;
+
+            case 1: {
+                mRecyclerViewAdapter = new CircleAdapter(getActivity(), CircleAdapter.CIRCLE_ALL);
+                break;
+            }
+        }
+        mRecyclerView.setAdapter(mRecyclerViewAdapter);
         mRecyclerView.setOnLoadListener(new RecyclerViewPullable.OnLoadListener() {
             @Override
             public void onLoadMore(final int loadingPage) {
-                UserClass.getInstance().searchForPerson(mEditText.getText().toString(), loadingPage, new VolleyInterface(getActivity().getApplicationContext()) {
+                UserClass.getInstance().searchFor(mEditText.getText().toString(), searchForWhat[mType], loadingPage, new VolleyInterface(getActivity().getApplicationContext()) {
                     @Override
                     public void onMySuccess(JSONObject jsonObject) {
                         if (loadingPage == 1) {

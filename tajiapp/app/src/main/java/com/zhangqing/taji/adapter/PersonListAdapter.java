@@ -27,7 +27,7 @@ import java.util.List;
  * Created by zhangqing on 2016/4/26.
  * 新版的 列出人列表 Adapter
  */
-public class PersonListAdapter extends RecyclerView.Adapter<PersonListAdapter.MyHolder> {
+public class PersonListAdapter extends MyRecyclerViewAdapter<PersonListAdapter.MyHolder> {
 
     private Context mContext;
     private List<PersonInfoBean> mPersonInfoList = new ArrayList<PersonInfoBean>();
