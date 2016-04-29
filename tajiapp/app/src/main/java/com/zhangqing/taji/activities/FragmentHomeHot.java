@@ -35,8 +35,6 @@ public class FragmentHomeHot extends BaseFragment implements OnClickListener {
     int currenCategory = 0;
     List<Category> categoryList;
     List<TextView> textViewList;
-    private SwipeRefreshLayout swipeRefreshLayout;
-
 
     public FragmentHomeHot() {
         // Log.e("FragmentHomeHot","###构造 ");
@@ -191,6 +189,12 @@ public class FragmentHomeHot extends BaseFragment implements OnClickListener {
         // "q"+scrollView.getScrollX()+"a"+scrollView.getWidth()+"b"+textViewWidth,
         // 1000).show();
 
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        updateCategoryView();
     }
 
     @Override
