@@ -135,6 +135,8 @@ public class TajiappActivity extends BaseActivity implements OnTabClickListener,
                 return new FragmentHomeHot();
             case 1:
                 return new FragmentDongtaiFollow();
+            case 2:
+                return new FragmentHuoDongActivity();
             case 3:
                 return new FragmentCircle();
             case 4:

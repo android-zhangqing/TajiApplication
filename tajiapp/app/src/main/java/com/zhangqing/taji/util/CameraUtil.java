@@ -137,7 +137,7 @@ public class CameraUtil {
 
     public static boolean isVideoFilePath(String media_path) {
         media_path = media_path.toLowerCase();
-        return (media_path.endsWith(".3gp"));
+        return (media_path.endsWith(".3gp")|| media_path.endsWith(".mp4"));
     }
 
 
