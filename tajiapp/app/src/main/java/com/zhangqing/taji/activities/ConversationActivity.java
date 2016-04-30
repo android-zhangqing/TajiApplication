@@ -5,9 +5,11 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.alibaba.sdk.android.session.model.User;
 import com.android.volley.VolleyError;
 import com.zhangqing.taji.BaseActivity;
 import com.zhangqing.taji.R;
@@ -27,8 +29,6 @@ import io.rong.imlib.model.Conversation;
  * 融云私聊对话框Activity
  */
 public class ConversationActivity extends BaseActivity {
-    private static final String CIRCLE_ADD = "收藏圈子";
-    private static final String CIRCLE_DEL = "取消收藏";
 
     private String mTargetId;
 
@@ -43,48 +43,78 @@ public class ConversationActivity extends BaseActivity {
     /**
      * 圈子(聊天室)相关
      */
-    private TextView mAddMyRoomTextView;
+    private ImageView mChatRoomSetting;
     private ChatRoomBean mChatRoomBean;
+    //用于[在线人数]逻辑的心跳线程的终止控制
+    private boolean mLoopOnline = true;
+    private Thread mLoopOnlineThread;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.conversation);
 
-        mAddMyRoomTextView = (TextView) findViewById(R.id.conversation_add_myroom);
+        mChatRoomSetting = (ImageView) findViewById(R.id.conversation_chatroom_setting);
 
         getIntentDate(getIntent());
 
 
         if (mConversationType != Conversation.ConversationType.CHATROOM) {
-            mAddMyRoomTextView.setVisibility(View.GONE);
+            mChatRoomSetting.setVisibility(View.GONE);
         } else {
             mChatRoomBean = ChatRoomBean.getInstance(mTargetId);
-            mAddMyRoomTextView.setText(mChatRoomBean.is_mine ? CIRCLE_DEL : CIRCLE_ADD);
-            mAddMyRoomTextView.setOnClickListener(new View.OnClickListener() {
+            mChatRoomSetting.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    mAddMyRoomTextView.setEnabled(false);
-                    UserClass.getInstance().chatRoomAddDelMyRoom(mTargetId, !mChatRoomBean.is_mine, new VolleyInterface(getApplicationContext()) {
-                        @Override
-                        public void onMySuccess(JSONObject jsonObject) {
-                            mAddMyRoomTextView.setEnabled(true);
-                            mChatRoomBean.is_mine = !mChatRoomBean.is_mine;
-                            mAddMyRoomTextView.setText(mChatRoomBean.is_mine ? CIRCLE_DEL : CIRCLE_ADD);
-                            Toast.makeText(getApplicationContext(),
-                                    jsonObject.optString("msg", (mChatRoomBean.is_mine ? "收藏成功" : "取消成功")),
-                                    Toast.LENGTH_SHORT).show();
-                        }
-
-                        @Override
-                        public void onMyError(VolleyError error) {
-                            mAddMyRoomTextView.setEnabled(true);
-                        }
-                    });
+                    Intent intent = new Intent(ConversationActivity.this, ChatRoomDetailActivity.class);
+                    intent.putExtra("rid", mChatRoomBean.rid);
+                    startActivity(intent);
                 }
             });
+
         }
 
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        mLoopOnlineThread.interrupt();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        mLoopOnline = true;
+        mLoopOnlineThread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                while (mLoopOnline) {
+                    if (mChatRoomBean != null) {
+                        UserClass.getInstance().chatRoomUpdateTimeStamp(mChatRoomBean.rid, new VolleyInterface(getApplicationContext()) {
+                            @Override
+                            public void onMySuccess(JSONObject jsonObject) {
+
+                            }
+
+                            @Override
+                            public void onMyError(VolleyError error) {
+
+                            }
+                        });
+                    }
+
+                    try {
+                        Thread.sleep(1000 * 120);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                        mLoopOnline = false;
+                    }
+                }
+
+            }
+        });
+        mLoopOnlineThread.start();
     }
 
     /**

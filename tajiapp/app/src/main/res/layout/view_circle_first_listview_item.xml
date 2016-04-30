@@ -40,40 +40,40 @@
                 android:textColor="#362239"
                 android:textSize="20sp" />
 
+            <!--<TextView-->
+                <!--android:id="@+id/circle_first_describe"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="0dp"-->
+                <!--android:layout_weight="1"-->
+                <!--android:gravity="center_vertical"-->
+                <!--android:singleLine="true"-->
+                <!--android:textColor="@android:color/darker_gray" />-->
+
+            <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="bottom">
+
             <TextView
-                android:id="@+id/circle_first_describe"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:gravity="center_vertical"
-                android:singleLine="true"
-                android:textColor="@android:color/darker_gray" />
+            android:id="@+id/circle_first_count_online_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginRight="2dp"
+            android:gravity="bottom"
+            android:text="25"
+            android:textColor="#A767B1"
+            android:textSize="25sp" />
 
-            <!--<LinearLayout-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="0dp"-->
-            <!--android:layout_weight="1"-->
-            <!--android:gravity="bottom">-->
+            <TextView
+            android:id="@+id/circle_first_count_all_tv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="bottom"
+            android:text="在线 /256人"
+            android:textColor="@android:color/darker_gray" />
 
-            <!--<TextView-->
-            <!--android:id="@+id/circle_first_count_online_tv"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="match_parent"-->
-            <!--android:layout_marginRight="2dp"-->
-            <!--android:gravity="bottom"-->
-            <!--android:text="25"-->
-            <!--android:textColor="#A767B1"-->
-            <!--android:textSize="25sp" />-->
-
-            <!--<TextView-->
-            <!--android:id="@+id/circle_first_count_all_tv"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="match_parent"-->
-            <!--android:gravity="bottom"-->
-            <!--android:text="在线 /256人"-->
-            <!--android:textColor="@android:color/darker_gray" />-->
-
-            <!--</LinearLayout>-->
+            </LinearLayout>
 
         </LinearLayout>
 

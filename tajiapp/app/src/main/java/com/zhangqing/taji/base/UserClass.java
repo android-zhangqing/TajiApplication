@@ -532,6 +532,12 @@ public class UserClass {
         VolleyRequest.RequestGet(url, "getPersonsList", vif);
     }
 
+    public void chatRoomUpdateTimeStamp(String rid, VolleyInterface vif) {
+        String url = URLHEAD + "/chatroom/updateTimestamp?userid=" + userId + "&openid=" + openId +
+                "&rid=" + rid;
+        VolleyRequest.RequestGet(url, "chatRoomUpdateTimeStamp", vif);
+    }
+
     public void chatRoomGetRoomList(int page, VolleyInterface vif) {
         String url = URLHEAD + "/Chatroom/getRoomList?userid=" + userId + "&openid=" + openId +
                 "&page=" + page + "&count=" + Page_Per_Count;

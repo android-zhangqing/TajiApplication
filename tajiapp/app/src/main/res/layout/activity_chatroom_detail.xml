@@ -22,7 +22,7 @@
             android:src="@drawable/icon_tab_publish_backstep" />
 
         <TextView
-            android:id="@+id/persons_title_tv"
+            android:id="@+id/chatroom_detail_title"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_centerInParent="true"

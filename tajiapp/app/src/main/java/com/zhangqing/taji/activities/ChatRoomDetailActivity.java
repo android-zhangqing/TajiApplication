@@ -56,6 +56,8 @@ public class ChatRoomDetailActivity extends BaseActivity implements View.OnClick
         mRoomName = (TextView) findViewById(R.id.chatroom_detail_name_tv);
         mRoomDesc = (TextView) findViewById(R.id.chatroom_detail_desc_tv);
         mRoomIsMine = (SwitchCompat) findViewById(R.id.chatroom_detail_switch);
+        ((TextView) findViewById(R.id.chatroom_detail_title)).setText(
+                mChatRoom.number.equals("") ? "圈子" : "圈子(" + mChatRoom.number + ")");
         mRoomIsMine.setThumbResource(R.drawable.icon_point);
         mRoomIsMine.setTrackResource(
                 mChatRoom.is_mine ? R.drawable.icon_track_select : R.drawable.icon_track_unselect);

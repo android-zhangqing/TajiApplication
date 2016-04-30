@@ -26,6 +26,8 @@ public class ChatRoomBean {
                     mChatRoomMap.put(rid, chatRoomBean);
                 }
             }
+        } else {
+            chatRoomBean.updateData(jsonObject);
         }
         return chatRoomBean;
     }
@@ -33,29 +35,37 @@ public class ChatRoomBean {
     public static ChatRoomBean getInstance(String rid) {
         return mChatRoomMap.get(rid);
     }
+    
+    public String rid = "";
+    public String name = "";
+    public String description = "";
+    public String avatar = "";
+    public String count_all = "";
+    public String count_online = "";
 
+    public boolean is_mine = false;
 
-    public String rid;
-    public String name;
-    public String description;
-    public String avatar;
-    public String count_all;
-    public String count_online;
-
-    public boolean is_mine;
+    public String number = "";
 
     private ChatRoomBean(JSONObject jsonObject) throws JSONException {
-
         rid = jsonObject.getString("rid");
-        name = jsonObject.optString("name", "");
-        description = jsonObject.optString("description", "");
-        avatar = jsonObject.optString("avatar", "");
-        if (!avatar.contains("http")) avatar = "";
-        count_all = jsonObject.optString("total", "");
-        count_online = jsonObject.optString("user", "");
+        updateData(jsonObject);
+    }
 
-        is_mine = jsonObject.optBoolean("is_mine", true);
+    private void updateData(JSONObject jsonObject) {
 
+        name = jsonObject.optString("name", name);
+        description = jsonObject.optString("description", description);
+
+        String temp_avatar = jsonObject.optString("avatar", avatar);
+        if (temp_avatar.contains("http")) avatar = temp_avatar;
+
+        count_all = jsonObject.optString("total", count_all);
+        count_online = jsonObject.optString("user", count_online);
+
+        is_mine = jsonObject.optBoolean("is_mine", is_mine);
+
+        number = jsonObject.optString("number", number);
     }
 
 }

@@ -30,19 +30,15 @@
             android:textColor="@color/textcolor_bar_first_unselect"
             android:textSize="@dimen/textsize_bar_first" />
 
-        <TextView
-            android:id="@+id/conversation_add_myroom"
-            android:layout_width="wrap_content"
+        <ImageView
+            android:id="@+id/conversation_chatroom_setting"
+            android:layout_width="@dimen/topbar_height"
             android:layout_height="@dimen/topbar_height"
             android:layout_alignParentRight="true"
             android:background="@drawable/press_bg"
-            android:clickable="true"
-            android:gravity="center"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp"
-            android:text="收藏圈子"
-            android:textColor="@color/textcolor_bar_first_unselect"
-            android:textSize="13sp" />
+            android:scaleType="centerInside"
+            android:src="@drawable/icon_tab_my_titlebar_setting" />
+
     </RelativeLayout>
 
     <fragment

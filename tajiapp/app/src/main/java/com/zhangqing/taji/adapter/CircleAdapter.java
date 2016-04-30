@@ -86,10 +86,10 @@ public class CircleAdapter extends MyRecyclerViewAdapter<CircleAdapter.MyHolder>
         final ChatRoomBean chatRoomBean = mChatRoomList.get(position);
 
         holder.tv_name.setText(chatRoomBean.name);
-//        holder.textViewCountOnline.setText(mChatRoomList.get(position).count_online);
-//        holder.textViewCountAll.setText("在线 /" + mChatRoomList.get(position).count_all + "人");
+        holder.textViewCountOnline.setText(mChatRoomList.get(position).count_online);
+        holder.textViewCountAll.setText("在线 /" + mChatRoomList.get(position).count_all + "人");
 
-        holder.tv_desc.setText(chatRoomBean.description);
+      //  holder.tv_desc.setText(chatRoomBean.description);
 
         holder.btn_start_conversation.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -126,10 +126,10 @@ public class CircleAdapter extends MyRecyclerViewAdapter<CircleAdapter.MyHolder>
     static class MyHolder extends RecyclerView.ViewHolder {
         ImageView iv_avatar;
         TextView tv_name;
-//        TextView textViewCountOnline;
-//        TextView textViewCountAll;
+        TextView textViewCountOnline;
+        TextView textViewCountAll;
 
-        TextView tv_desc;
+   //     TextView tv_desc;
 
         TextView btn_start_conversation;
 
@@ -137,10 +137,10 @@ public class CircleAdapter extends MyRecyclerViewAdapter<CircleAdapter.MyHolder>
             super(convertView);
 
             tv_name = (TextView) convertView.findViewById(R.id.circle_first_title);
-//            textViewCountOnline = (TextView) convertView.findViewById(R.id.circle_first_count_online_tv);
-//            textViewCountAll = (TextView) convertView.findViewById(R.id.circle_first_count_all_tv);
+            textViewCountOnline = (TextView) convertView.findViewById(R.id.circle_first_count_online_tv);
+            textViewCountAll = (TextView) convertView.findViewById(R.id.circle_first_count_all_tv);
             iv_avatar = (ImageView) convertView.findViewById(R.id.circle_first_icon_iv);
-            tv_desc = (TextView) convertView.findViewById(R.id.circle_first_describe);
+        //    tv_desc = (TextView) convertView.findViewById(R.id.circle_first_describe);
 
             btn_start_conversation = (TextView) convertView.findViewById(R.id.circle_first_chat);
 
