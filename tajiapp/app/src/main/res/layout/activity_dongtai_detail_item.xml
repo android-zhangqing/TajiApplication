@@ -23,6 +23,7 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
+            android:gravity="top"
             android:orientation="horizontal">
 
             <TextView
@@ -42,16 +43,35 @@
                 android:text="03-18 12:00" />
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/dongtai_detail_content"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:gravity="center_vertical"
-            android:singleLine="true"
-            android:text="WOW!"
-            android:textColor="#898989" />
+            android:gravity="bottom"
+            android:orientation="horizontal">
 
+            <TextView
+                android:id="@+id/dongtai_detail_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:singleLine="true"
+                android:text="WOW!"
+                android:textColor="#898989" />
+
+            <TextView
+                android:id="@+id/dongtai_detail_item_delete"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:clickable="true"
+                android:gravity="bottom"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:text="删除"
+                android:textColor="@android:color/holo_purple"
+                android:visibility="gone" />
+        </LinearLayout>
 
     </LinearLayout>
 </LinearLayout>

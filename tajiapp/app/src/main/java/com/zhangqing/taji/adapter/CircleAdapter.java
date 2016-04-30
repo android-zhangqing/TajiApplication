@@ -72,8 +72,10 @@ public class CircleAdapter extends MyRecyclerViewAdapter<CircleAdapter.MyHolder>
 
     @Override
     public void clearData() {
+        boolean willNotify = mChatRoomList.size() != 0;
         mChatRoomList.clear();
-        notifyDataSetChanged();
+        if (willNotify)
+            notifyDataSetChanged();
     }
 
     @Override
@@ -89,7 +91,7 @@ public class CircleAdapter extends MyRecyclerViewAdapter<CircleAdapter.MyHolder>
         holder.textViewCountOnline.setText(mChatRoomList.get(position).count_online);
         holder.textViewCountAll.setText("在线 /" + mChatRoomList.get(position).count_all + "人");
 
-      //  holder.tv_desc.setText(chatRoomBean.description);
+        //  holder.tv_desc.setText(chatRoomBean.description);
 
         holder.btn_start_conversation.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -129,7 +131,7 @@ public class CircleAdapter extends MyRecyclerViewAdapter<CircleAdapter.MyHolder>
         TextView textViewCountOnline;
         TextView textViewCountAll;
 
-   //     TextView tv_desc;
+        //     TextView tv_desc;
 
         TextView btn_start_conversation;
 
@@ -140,7 +142,7 @@ public class CircleAdapter extends MyRecyclerViewAdapter<CircleAdapter.MyHolder>
             textViewCountOnline = (TextView) convertView.findViewById(R.id.circle_first_count_online_tv);
             textViewCountAll = (TextView) convertView.findViewById(R.id.circle_first_count_all_tv);
             iv_avatar = (ImageView) convertView.findViewById(R.id.circle_first_icon_iv);
-        //    tv_desc = (TextView) convertView.findViewById(R.id.circle_first_describe);
+            //    tv_desc = (TextView) convertView.findViewById(R.id.circle_first_describe);
 
             btn_start_conversation = (TextView) convertView.findViewById(R.id.circle_first_chat);
 

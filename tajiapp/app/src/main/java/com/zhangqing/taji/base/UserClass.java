@@ -460,6 +460,11 @@ public class UserClass {
                 "doLogin", vif);
     }
 
+    public void commentDoDelete(String cid, VolleyInterface vif) {
+        String url = URLHEAD + "/DongTai/delComment?userid=" + userId + "&openid=" + openId + "&cid=" + cid;
+        VolleyRequest.RequestGet(url, "commentDoDelete", vif);
+    }
+
     public void dongtaiDoLike(String tid, VolleyInterface vif) {
         String url = URLHEAD + "/DongTai/like?userid=" + userId + "&openid=" + openId + "&tid=" + tid;
         VolleyRequest.RequestGet(url, "dongtaiDoLike", vif);

@@ -153,15 +153,15 @@ public class FragmentHomeHotViewFirst extends LinearLayout {
 
         addView(containerView);
         addHeaderView();
-       // mGridView.setRefreshing(true);
+        mGridView.setRefreshing(true);
     }
 
     public void perfromOnPageSelected() {
         //scrollView.smoothScrollTo(0, 0);
-        if (mGridView.getCurrentPage() == 0)
-            mGridView.setRefreshing(true);
-        else
-            mGridView.notifyDataSetChanged();
+//        if (mGridView.getCurrentPage() == 0)
+//            mGridView.setRefreshing(true);
+//        else
+//            mGridView.notifyDataSetChanged();
     }
 
     /**
