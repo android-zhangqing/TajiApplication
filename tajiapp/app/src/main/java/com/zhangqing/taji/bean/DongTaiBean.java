@@ -79,6 +79,8 @@ public class DongTaiBean {
     public boolean isMasterCircle = false;
     //是否已订阅
     public boolean isFollow = false;
+    //是否已赞
+    public boolean isLike = false;
 
 
     /**
@@ -138,6 +140,8 @@ public class DongTaiBean {
         isMasterCircle = jsonObject.optString("mastercircle", (isMasterCircle ? "1" : "0")).equals("1");
         //是否已订阅
         isFollow = jsonObject.optBoolean("is_follow", isFollow);
+        //是否已赞
+        isLike = jsonObject.optBoolean("is_liked", isLike);
     }
 
     @Override

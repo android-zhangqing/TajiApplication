@@ -13,11 +13,13 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.alibaba.sdk.android.session.model.User;
 import com.android.volley.VolleyError;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.imageaware.ImageViewAware;
 import com.zhangqing.taji.MyApplication;
 import com.zhangqing.taji.R;
+import com.zhangqing.taji.activities.login.ResetPassBySmsActivity;
 import com.zhangqing.taji.adapter.listener.AvatarClickListener;
 import com.zhangqing.taji.adapter.listener.DongTaiClickListener;
 import com.zhangqing.taji.base.UserClass;
@@ -71,6 +73,9 @@ public class DongTaiListAdapter extends RecyclerView.Adapter<DongTaiListAdapter.
         holder.tv_count_comment.setText(dongTaiClass.mCountComment);
         holder.tv_count_like.setText(dongTaiClass.mCountLike);
 
+        holder.iv_count_like_icon.setImageResource(dongTaiClass.isLike ?
+                R.drawable.icon_tab_home_hot_favor_selelct : R.drawable.icon_tab_home_hot_favor);
+
         if (dongTaiClass.mPersonInfo.userid.equals(UserClass.getInstance().userId)) {
             holder.tv_follow.setVisibility(View.INVISIBLE);
         } else {
@@ -87,10 +92,13 @@ public class DongTaiListAdapter extends RecyclerView.Adapter<DongTaiListAdapter.
             holder.ll_count_comment_container.setOnClickListener(onClickListener);
         }
 
+        /**
+         * 订阅、关注 按钮
+         */
         holder.tv_follow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                UserClass.getInstance().doFollow(dongTaiClass.mUserId,
+                UserClass.getInstance().dongtaiDoFollow(dongTaiClass.mUserId,
                         !dongTaiClass.mPersonInfo.is_follow, new VolleyInterface(mContext.getApplicationContext()) {
                             @Override
                             public void onMySuccess(JSONObject jsonObject) {
@@ -117,25 +125,70 @@ public class DongTaiListAdapter extends RecyclerView.Adapter<DongTaiListAdapter.
             }
         });
 
+        /**
+         * 转发 按钮
+         */
         holder.ll_count_forward_container.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final int last_count = Integer.valueOf(dongTaiClass.mCountForward);
-                holder.tv_count_forward.setText(last_count + 1 + "");
-
-                new Handler().postDelayed(new Runnable() {
+                holder.ll_count_forward_container.setEnabled(false);
+                UserClass.getInstance().dongtaiDoForward(dongTaiClass.mId, new VolleyInterface(mContext.getApplicationContext()) {
                     @Override
-                    public void run() {
-                        Toast.makeText(mContext, "转发失败", Toast.LENGTH_SHORT).show();
-                        holder.tv_count_forward.setText(last_count + "");
+                    public void onMySuccess(JSONObject jsonObject) {
+                        holder.ll_count_forward_container.setEnabled(true);
+                        holder.tv_count_forward.setText("" + (Integer.valueOf(dongTaiClass.mCountForward) + 1));
+                        Toast.makeText(mContext.getApplicationContext(), "转发成功", Toast.LENGTH_SHORT).show();
                     }
-                }, 500);
+
+                    @Override
+                    public void onMyError(VolleyError error) {
+                        holder.ll_count_forward_container.setEnabled(true);
+                    }
+                });
             }
         });
+
+        /**
+         * 赞 按钮
+         */
         holder.ll_count_like_container.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                holder.ll_count_like_container.setEnabled(false);
+                UserClass.getInstance().dongtaiDoLike(dongTaiClass.mId, new VolleyInterface(mContext.getApplicationContext()) {
+                    @Override
+                    public void onMySuccess(JSONObject jsonObject) {
 
+                        holder.ll_count_like_container.setEnabled(true);
+                        try {
+                            String msg = jsonObject.getString("msg");
+                            if (msg.equals("点赞成功")) {
+                                if (!dongTaiClass.isLike) {
+                                    dongTaiClass.mCountLike = "" + (Integer.valueOf(dongTaiClass.mCountLike) + 1);
+                                }
+                                dongTaiClass.isLike = true;
+                            } else if (msg.equals("取消点赞成功")) {
+                                if (dongTaiClass.isLike) {
+                                    dongTaiClass.mCountLike = "" + (Integer.valueOf(dongTaiClass.mCountLike) - 1);
+                                }
+                                dongTaiClass.isLike = false;
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                            dongTaiClass.isLike = !dongTaiClass.isLike;
+                        }
+
+                        holder.iv_count_like_icon.setImageResource(dongTaiClass.isLike ?
+                                R.drawable.icon_tab_home_hot_favor_selelct : R.drawable.icon_tab_home_hot_favor);
+                        holder.tv_count_like.setText(dongTaiClass.mCountLike);
+
+                    }
+
+                    @Override
+                    public void onMyError(VolleyError error) {
+                        holder.ll_count_like_container.setEnabled(true);
+                    }
+                });
             }
         });
 
@@ -231,6 +284,7 @@ public class DongTaiListAdapter extends RecyclerView.Adapter<DongTaiListAdapter.
         LinearLayout ll_count_forward_container;
         LinearLayout ll_count_comment_container;
         LinearLayout ll_count_like_container;
+        ImageView iv_count_like_icon;
 
         TextView tv_follow;
 
@@ -253,6 +307,8 @@ public class DongTaiListAdapter extends RecyclerView.Adapter<DongTaiListAdapter.
             ll_count_forward_container = (LinearLayout) itemView.findViewById(R.id.home_hot_then_count_forward_container);
             ll_count_comment_container = (LinearLayout) itemView.findViewById(R.id.home_hot_then_count_comment_container);
             ll_count_like_container = (LinearLayout) itemView.findViewById(R.id.home_hot_then_count_like_container);
+
+            iv_count_like_icon = (ImageView) itemView.findViewById(R.id.home_hot_then_like_icon);
 
             tv_follow = (TextView) itemView.findViewById(R.id.home_hot_then_follow);
         }

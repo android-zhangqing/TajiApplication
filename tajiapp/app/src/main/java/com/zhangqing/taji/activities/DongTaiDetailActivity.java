@@ -127,7 +127,7 @@ public class DongTaiDetailActivity extends BaseActivity implements EmojiconGridF
                     Toast.makeText(getApplicationContext(), "说点什么吧~", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                UserClass.getInstance().doComment(mTid, mEmojiEditText.getText().toString(),
+                UserClass.getInstance().dongtaiDoComment(mTid, mEmojiEditText.getText().toString(),
                         new VolleyInterface(DongTaiDetailActivity.this) {
                             @Override
                             public void onMySuccess(JSONObject jsonObject) {

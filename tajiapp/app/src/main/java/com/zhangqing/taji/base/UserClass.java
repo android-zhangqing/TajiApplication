@@ -460,8 +460,17 @@ public class UserClass {
                 "doLogin", vif);
     }
 
+    public void dongtaiDoLike(String tid, VolleyInterface vif) {
+        String url = URLHEAD + "/DongTai/like?userid=" + userId + "&openid=" + openId + "&tid=" + tid;
+        VolleyRequest.RequestGet(url, "dongtaiDoLike", vif);
+    }
 
-    public void doFollow(String uid, boolean isToFollow, VolleyInterface vif) {
+    public void dongtaiDoForward(String tid, VolleyInterface vif) {
+        String url = URLHEAD + "/DongTai/forward?userid=" + userId + "&openid=" + openId + "&tid=" + tid;
+        VolleyRequest.RequestGet(url, "dongtaiDoForward", vif);
+    }
+
+    public void dongtaiDoFollow(String uid, boolean isToFollow, VolleyInterface vif) {
         String url;
         String tag;
         if (isToFollow) {
@@ -476,7 +485,7 @@ public class UserClass {
         VolleyRequest.RequestGet(url, tag, vif);
     }
 
-    public void doComment(String tid, String content, VolleyInterface vif) {
+    public void dongtaiDoComment(String tid, String content, VolleyInterface vif) {
         String url = "";
         try {
             url = URLHEAD + "/DongTai/comment?userid=" + userId + "&openid=" + openId +
@@ -484,7 +493,7 @@ public class UserClass {
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }
-        VolleyRequest.RequestGet(url, "doComment", vif);
+        VolleyRequest.RequestGet(url, "dongtaiDoComment", vif);
 
     }
 
