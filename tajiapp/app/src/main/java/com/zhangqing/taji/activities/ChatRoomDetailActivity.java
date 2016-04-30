@@ -4,13 +4,16 @@ import android.content.Intent;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.widget.SwitchCompat;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.alibaba.sdk.android.session.model.User;
 import com.android.volley.VolleyError;
@@ -41,6 +44,7 @@ public class ChatRoomDetailActivity extends BaseActivity implements View.OnClick
 
     private TextView mRoomName;
     private TextView mRoomDesc;
+    private SwitchCompat mRoomIsMine;
 
     private int mContainerWidth;
     private int mContainerHeight;
@@ -51,6 +55,34 @@ public class ChatRoomDetailActivity extends BaseActivity implements View.OnClick
         mPersonGridView = (LinearLayout) findViewById(R.id.chatroom_detail_label_container);
         mRoomName = (TextView) findViewById(R.id.chatroom_detail_name_tv);
         mRoomDesc = (TextView) findViewById(R.id.chatroom_detail_desc_tv);
+        mRoomIsMine = (SwitchCompat) findViewById(R.id.chatroom_detail_switch);
+        mRoomIsMine.setThumbResource(R.drawable.icon_point);
+        mRoomIsMine.setTrackResource(
+                mChatRoom.is_mine ? R.drawable.icon_track_select : R.drawable.icon_track_unselect);
+        mRoomIsMine.setChecked(mChatRoom.is_mine);
+        mRoomIsMine.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.e("mRoomIsMine", "onClick|" + mRoomIsMine.isChecked());
+
+                mRoomIsMine.setTrackResource(
+                        mRoomIsMine.isChecked() ? R.drawable.icon_track_select : R.drawable.icon_track_unselect);
+                UserClass.getInstance().chatRoomAddDelMyRoom(mChatRoom.rid, mRoomIsMine.isChecked(), new VolleyInterface(getApplicationContext()) {
+                    @Override
+                    public void onMySuccess(JSONObject jsonObject) {
+                        mChatRoom.is_mine = mRoomIsMine.isChecked();
+                        Toast.makeText(getApplicationContext(), jsonObject.optString(
+                                "msg", mChatRoom.is_mine ? "收藏成功" : "取消成功"), Toast.LENGTH_SHORT).show();
+                    }
+
+                    @Override
+                    public void onMyError(VolleyError error) {
+                        mRoomIsMine.setChecked(!mRoomIsMine.isChecked());
+                    }
+                });
+
+            }
+        });
 
         mRoomName.setText(mChatRoom.name);
         mRoomDesc.setText(mChatRoom.description);
@@ -141,7 +173,7 @@ public class ChatRoomDetailActivity extends BaseActivity implements View.OnClick
                 }
                 count_insert++;
 
-                //处理最后一个item
+                //处理最后一个item查看更多
                 if (count_insert == 15) {
                     LinearLayout itemView = (LinearLayout) LayoutInflater.from(this).inflate(R.layout.activity_chatroom_detail_item, null);
                     ImageView imageView = (ImageView) itemView.findViewById(R.id.chatroom_detail_item_avatar);
@@ -160,15 +192,11 @@ public class ChatRoomDetailActivity extends BaseActivity implements View.OnClick
                     ((TextView) itemView.findViewById(R.id.chatroom_detail_item_name)).setText("查看更多");
 
                     insideContainer.addView(itemView, lp_item);
-
                 }
                 Log.e("count_insert", count_insert + "|");
-
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-
-
         }
 
     }
