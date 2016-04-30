@@ -49,6 +49,9 @@ public class UserClass {
 
 
     private final String URLHEAD = "http://taji.whutech.com";
+
+    public static final String[] LABEL_PARENT_ARRAY = new String[]{"绘画", "摄影", "乐器", "运动", "美妆", "厨艺", "游戏", "学习"};
+
     public SharedPreferences sharedPreferences;
     public String userId = "";
     public String openId = "";

@@ -15,6 +15,7 @@ import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -96,6 +97,8 @@ public class PublishActivity extends BaseActivity implements View.OnClickListene
     private ImageView mCoverView;
 
     private TextView mLocationTextView;
+
+    private Button mAddLabelView;
 
     private ImageView mMasterCircleImageView;
     private boolean isMasterCircle = false;
@@ -328,6 +331,14 @@ public class PublishActivity extends BaseActivity implements View.OnClickListene
         mCoverView = (ImageView) findViewById(R.id.publish_cover);
         mLocationTextView = (TextView) findViewById(R.id.publish_location_text);
 
+        mAddLabelView = (Button) findViewById(R.id.publish_add_label);
+        mAddLabelView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(PublishActivity.this, LabelSelectActivity.class));
+            }
+        });
+
         mMasterCircleImageView = (ImageView) findViewById(R.id.publish_master_circle);
         mMasterCircleImageView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -385,23 +396,23 @@ public class PublishActivity extends BaseActivity implements View.OnClickListene
             }
         });
 
-        ResizeLayout resizeLayout = (ResizeLayout) findViewById(R.id.publish_rootview);
-        resizeLayout.setOnResizeListener(new ResizeLayout.OnResizeListener() {
-            @Override
-            public void OnResize(int w, int h, int oldw, int oldh) {
-                int change = BIGGER;
-                if (h < oldh) {
-                    change = SMALLER;
-                }
-
-                Log.e("setOnResizeListener", "" + change);
-
-//                Message msg = new Message();
-//                msg.what = 1;
-//                msg.arg1 = change;
-//                mHandler.sendMessage(msg);
-            }
-        });
+//        ResizeLayout resizeLayout = (ResizeLayout) findViewById(R.id.publish_rootview);
+//        resizeLayout.setOnResizeListener(new ResizeLayout.OnResizeListener() {
+//            @Override
+//            public void OnResize(int w, int h, int oldw, int oldh) {
+//                int change = BIGGER;
+//                if (h < oldh) {
+//                    change = SMALLER;
+//                }
+//
+//                Log.e("setOnResizeListener", "" + change);
+//
+////                Message msg = new Message();
+////                msg.what = 1;
+////                msg.arg1 = change;
+////                mHandler.sendMessage(msg);
+//            }
+//        });
         getSupportFragmentManager()
                 .beginTransaction()
                 .replace(R.id.publish_container_facegrid, EmojiconsFragment.newInstance(false))

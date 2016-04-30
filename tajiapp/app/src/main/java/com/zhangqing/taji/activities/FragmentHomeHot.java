@@ -17,6 +17,7 @@ import android.widget.TextView;
 
 import com.zhangqing.taji.BaseFragment;
 import com.zhangqing.taji.R;
+import com.zhangqing.taji.base.UserClass;
 import com.zhangqing.taji.view.FragmentHomeHotViewFirst;
 import com.zhangqing.taji.view.FragmentHomeHotViewThen;
 
@@ -137,14 +138,12 @@ public class FragmentHomeHot extends BaseFragment implements OnClickListener {
     }
 
     private List<Category> getCategoryList() {
-        String[] categoryArray = new String[]{"唱歌", "体育", "游戏", "美妆", "搭配", "美甲", "绘画", "艺术", "音乐", "健身", "搞笑", "舞蹈"};
         List<Category> categoryList = new ArrayList<Category>();
         categoryList.add(new Category(0, "0", "广场"));
-        for (int i = 0; i < categoryArray.length; i++) {
-            categoryList.add(new Category(i + 1, i + 1 + "", categoryArray[i]));
+        for (int i = 0; i < UserClass.LABEL_PARENT_ARRAY.length; i++) {
+            categoryList.add(new Category(i + 1, i + 1 + "", UserClass.LABEL_PARENT_ARRAY[i]));
         }
         return categoryList;
-
     }
 
     private void updateCategoryView() {
@@ -240,58 +239,6 @@ class MyPagerAdapter extends PagerAdapter {
     @Override
     public void destroyItem(ViewGroup container, int position, Object object) {
         container.removeView(views.get(position));
-    }
-
-}
-
-class AdsType {
-    private int adsNum;
-    private int adsId;
-    private String adsUrl;
-    private String adsClickUrl;
-
-    public int getAdsNum() {
-        return adsNum;
-    }
-
-    public void setAdsNum(int adsNum) {
-        this.adsNum = adsNum;
-    }
-
-    public int getAdsId() {
-        return adsId;
-    }
-
-    public void setAdsId(int adsId) {
-        this.adsId = adsId;
-    }
-
-    public String getAdsUrl() {
-        return adsUrl;
-    }
-
-    public void setAdsUrl(String adsUrl) {
-        this.adsUrl = adsUrl;
-    }
-
-    public String getAdsClickUrl() {
-        return adsClickUrl;
-    }
-
-    public void setAdsClickUrl(String adsClickUrl) {
-        this.adsClickUrl = adsClickUrl;
-    }
-
-    public AdsType(int adsNum, String adsUrl) {
-        this(adsNum, 0, adsUrl, "");
-    }
-
-    public AdsType(int adsNum, int adsId, String adsUrl, String adsClickUrl) {
-        super();
-        this.adsNum = adsNum;
-        this.adsId = adsId;
-        this.adsUrl = adsUrl;
-        this.adsClickUrl = adsClickUrl;
     }
 
 }

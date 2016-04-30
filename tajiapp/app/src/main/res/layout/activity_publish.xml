@@ -200,11 +200,12 @@
                                 android:src="@drawable/icon_tab_publish_face" />
 
                             <Button
+                                android:id="@+id/publish_add_label"
                                 android:layout_width="100dp"
                                 android:layout_height="25dp"
                                 android:background="@drawable/corners_button3"
                                 android:padding="4dp"
-                                android:text="添加#标签#"
+                                android:text="设置#标签#"
                                 android:textColor="@android:color/secondary_text_light"
                                 android:textSize="12sp" />
 
