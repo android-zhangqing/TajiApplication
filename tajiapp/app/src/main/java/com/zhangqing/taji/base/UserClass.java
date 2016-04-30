@@ -282,6 +282,8 @@ public class UserClass {
 
     public void doModifyInterestSkill(String interest, String skill,
                                       VolleyInterface vif) {
+        if (interest == null || interest.equals("")) interest = this.interest;
+        if (skill == null || skill.equals("")) skill = this.skill;
         String url = "http://www.baidu.com/?";
         try {
             url = URLHEAD + "/Skill/intadskill?" +

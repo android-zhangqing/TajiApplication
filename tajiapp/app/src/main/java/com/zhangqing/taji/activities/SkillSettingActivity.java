@@ -37,8 +37,8 @@ public class SkillSettingActivity extends BaseActivity implements View.OnClickLi
     public static final int ACTIVITY_SKILL = 1;
     public static final int ACTIVITY_INTEREST = 2;
 
-    private static final String TITLE_SKILL_STRING = "第二步 设置你拥有的技能";
-    private static final String TITLE_INTEREST_STRING = "第一步 设置你感兴趣的标签";
+    private static final String TITLE_SKILL_STRING = "设置你拥有的技能";
+    private static final String TITLE_INTEREST_STRING = "设置你感兴趣的标签";
 
     private int mActivityType = ACTIVITY_INTEREST;
 
@@ -61,6 +61,9 @@ public class SkillSettingActivity extends BaseActivity implements View.OnClickLi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_skill_setting);
 
+
+        mActivityType = getIntent().getIntExtra("type", ACTIVITY_SKILL);
+
         mGridView = (GridView) findViewById(R.id.skill_setting_gridview);
         mGridViewContainer = (RelativeLayout) findViewById(R.id.skill_setting_gridview_container);
         mButton = (Button) findViewById(R.id.skill_setting_button);
@@ -80,7 +83,6 @@ public class SkillSettingActivity extends BaseActivity implements View.OnClickLi
                 mGridView.setAdapter(mGridViewAdapter = new SkillSelectAdapter(SkillSettingActivity.this, mGridView.getMeasuredWidth(), mGridView.getMeasuredHeight()));
 
                 initData();
-
 
             }
         });
@@ -109,17 +111,6 @@ public class SkillSettingActivity extends BaseActivity implements View.OnClickLi
                         ImageView test_iv = mImageViewList.get(position);
                         test_iv.setVisibility(View.VISIBLE);
 
-//                        final ImageView test_iv = new ImageView(SkillSettingActivity.this);
-//                        test_iv.setImageResource(R.drawable.icon_intskill_table_unselect);
-//
-//                        int pxWidthHeight = DensityUtils.dp2px(SkillSettingActivity.this, 30);
-//                        mGridViewContainer.addView(test_iv, pxWidthHeight, pxWidthHeight);
-
-//                        int w = View.MeasureSpec.makeMeasureSpec(0,
-//                                View.MeasureSpec.UNSPECIFIED);
-//                        int h = View.MeasureSpec.makeMeasureSpec(0,
-//                                View.MeasureSpec.UNSPECIFIED);
-//                        test_iv.measure(w, h);
                         Log.e("test_iv", test_iv + "|" + test_iv.getMeasuredWidth() + "|" +
                                 test_iv.getMeasuredHeight() + "|" + real_left + "|" + real_top);
 
@@ -245,37 +236,39 @@ public class SkillSettingActivity extends BaseActivity implements View.OnClickLi
     public void onClick(View v) {
 
 
-        if (mActivityType == ACTIVITY_INTEREST) {
-            mInterestResult = mGridViewAdapter.getSelector();
-            //设置当前为设置技能
-            mActivityType = ACTIVITY_SKILL;
-            //选中数归零
-            current_selected_num = 0;
-            //初始化View
-            updateTitleView();
-            updateSelector();
-            updataButtonText();
-
-        } else {
-            UserClass.getInstance().doModifyInterestSkill(mInterestResult, mGridViewAdapter.getSelector(), new VolleyInterface(this) {
-                @Override
-                public void onMySuccess(JSONObject jsonObject) {
-                    try {
-                        Toast.makeText(SkillSettingActivity.this, jsonObject.getString("msg"), Toast.LENGTH_SHORT).show();
-                        setResult(Activity.RESULT_OK);
-                        finish();
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                        Toast.makeText(SkillSettingActivity.this, "设置失败", Toast.LENGTH_SHORT).show();
-                    }
-
+//        if (mActivityType == ACTIVITY_INTEREST) {
+//            mInterestResult = mGridViewAdapter.getSelector();
+//            //设置当前为设置技能
+//            mActivityType = ACTIVITY_SKILL;
+//            //选中数归零
+//            current_selected_num = 0;
+//            //初始化View
+//            updateTitleView();
+//            updateSelector();
+//            updataButtonText();
+//
+//        } else {
+        String interest = mActivityType == ACTIVITY_INTEREST ? mGridViewAdapter.getSelector() : null;
+        String skill = mActivityType == ACTIVITY_SKILL ? mGridViewAdapter.getSelector() : null;
+        UserClass.getInstance().doModifyInterestSkill(interest, skill, new VolleyInterface(this) {
+            @Override
+            public void onMySuccess(JSONObject jsonObject) {
+                try {
+                    Toast.makeText(SkillSettingActivity.this, jsonObject.getString("msg"), Toast.LENGTH_SHORT).show();
+                    setResult(Activity.RESULT_OK);
+                    finish();
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                    Toast.makeText(SkillSettingActivity.this, "设置失败", Toast.LENGTH_SHORT).show();
                 }
 
-                @Override
-                public void onMyError(VolleyError error) {
-                }
-            });
-        }
+            }
+
+            @Override
+            public void onMyError(VolleyError error) {
+            }
+        });
+//        }
 
 
     }

@@ -82,94 +82,95 @@
 
             >
 
+
             <LinearLayout
-                android:id="@+id/my_click_modify_intadskill"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/press_bg"
-                android:clickable="true"
-                android:orientation="horizontal"
-                android:paddingBottom="10dp"
-                android:paddingLeft="@dimen/margin_left"
-                android:paddingRight="10dp"
-                android:paddingTop="10dp">
+                android:orientation="vertical">
 
                 <LinearLayout
-                    android:layout_width="0dp"
+                    android:id="@+id/my_click_modify_interest"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
+                    android:background="@drawable/press_bg"
+                    android:clickable="true"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="@dimen/margin_left"
+                    android:paddingRight="10dp"
+                    android:paddingTop="5dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="想学技能"
+                        android:textColor="#915A99" />
 
                     <LinearLayout
-                        android:layout_width="match_parent"
+                        android:id="@+id/my_container_interest"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:gravity="center_vertical"
-                        android:orientation="horizontal"
-                        android:paddingBottom="5dp"
-                        android:paddingTop="5dp">
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="想学技能"
-                            android:textColor="#915A99" />
-
-                        <LinearLayout
-                            android:id="@+id/my_container_interest"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="10dp"
-                            android:layout_weight="1"
-                            android:orientation="vertical">
-
-                        </LinearLayout>
                     </LinearLayout>
 
-                    <!--<ImageView-->
-                    <!--android:layout_width="match_parent"-->
-                    <!--android:layout_height="1dp"-->
-                    <!--android:scaleType="fitXY"-->
-                    <!--android:background="@drawable/icon_tab_home_divider" />-->
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_vertical"
-                        android:orientation="horizontal"
-                        android:paddingBottom="5dp"
-                        android:paddingTop="5dp">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="拥有技能"
-                            android:textColor="#03A8A6" />
-
-                        <LinearLayout
-                            android:id="@+id/my_container_skill"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="10dp"
-                            android:layout_weight="1"
-                            android:orientation="vertical">
-
-                        </LinearLayout>
-                    </LinearLayout>
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/icon_tab_my_right_arrow" />
                 </LinearLayout>
 
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/icon_tab_my_right_arrow" />
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@drawable/icon_tab_home_divider"
+                    android:scaleType="fitXY" />
 
+                <LinearLayout
+                    android:id="@+id/my_click_modify_skill"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/press_bg"
+                    android:clickable="true"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="@dimen/margin_left"
+                    android:paddingRight="10dp"
+                    android:paddingTop="5dp">
 
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="拥有技能"
+                        android:textColor="#03A8A6" />
+
+                    <LinearLayout
+                        android:id="@+id/my_container_skill"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/icon_tab_my_right_arrow" />
+                </LinearLayout>
             </LinearLayout>
+
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-
                 android:scaleType="fitXY"
                 android:src="@drawable/icon_tab_home_divider" />
 

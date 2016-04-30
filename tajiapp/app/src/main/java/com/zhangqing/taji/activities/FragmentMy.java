@@ -111,7 +111,8 @@ public class FragmentMy extends BaseFragment implements View.OnClickListener {
         ((LinearLayout) (v.findViewById(R.id.my_click_beidingyue))).setOnClickListener(this);
         ((LinearLayout) (v.findViewById(R.id.my_click_dingyue))).setOnClickListener(this);
         ((LinearLayout) (v.findViewById(R.id.my_click_dynamic_mine))).setOnClickListener(this);
-        ((LinearLayout) (v.findViewById(R.id.my_click_modify_intadskill))).setOnClickListener(this);
+        ((LinearLayout) (v.findViewById(R.id.my_click_modify_interest))).setOnClickListener(this);
+        ((LinearLayout) (v.findViewById(R.id.my_click_modify_skill))).setOnClickListener(this);
         (v.findViewById(R.id.my_click_modify_member_detail)).setOnClickListener(this);
 
 
@@ -266,8 +267,15 @@ public class FragmentMy extends BaseFragment implements View.OnClickListener {
             case R.id.my_click_shifu:
                 startListPersonsActivity(UserClass.Persons_Button_shifu, "我的师傅");
                 break;
-            case R.id.my_click_modify_intadskill: {
+            case R.id.my_click_modify_interest: {
                 Intent intent = new Intent(getActivity(), SkillSettingActivity.class);
+                intent.putExtra("type", SkillSettingActivity.ACTIVITY_INTEREST);
+                startActivityForResult(intent, TajiappActivity.REQUEST_SKILL_SETTING);
+                break;
+            }
+            case R.id.my_click_modify_skill: {
+                Intent intent = new Intent(getActivity(), SkillSettingActivity.class);
+                intent.putExtra("type", SkillSettingActivity.ACTIVITY_SKILL);
                 startActivityForResult(intent, TajiappActivity.REQUEST_SKILL_SETTING);
                 break;
             }
