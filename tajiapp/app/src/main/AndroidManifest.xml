@@ -166,6 +166,7 @@
         <activity android:name=".activities.DynamicMineActivity" />
         <activity android:name=".activities.ModifyPersonInfoActivity" />
         <activity android:name=".activities.LabelSelectActivity" />
+        <activity android:name=".activities.ChatRoomDetailActivity" />
     </application>
 
 </manifest>

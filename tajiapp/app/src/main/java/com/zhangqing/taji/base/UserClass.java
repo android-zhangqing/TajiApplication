@@ -46,6 +46,7 @@ public class UserClass {
     public static final int Persons_Button_shifu = 2;
     public static final int Persons_Button_dingyue = 3;
     public static final int Persons_Button_beidingyue = 4;
+    public static final int Persons_Button_Chatroom = 5;
 
 
     private final String URLHEAD = "http://taji.whutech.com";
@@ -502,7 +503,13 @@ public class UserClass {
         VolleyRequest.RequestGet(URLHEAD + "/Skill/skill?userid=" + userId + "&openid=" + openId, "getSkillListAll", vif);
     }
 
-    public void getPersonsList(int whichPersonsButton, int page, VolleyInterface vif) {
+    /**
+     * @param whichPersonsButton
+     * @param targetId           仅当whichPersonsButton=Persons_Button_Chatroom时有效，为rid
+     * @param page
+     * @param vif
+     */
+    public void getPersonsList(int whichPersonsButton, String targetId, int page, VolleyInterface vif) {
         String url = "";
         switch (whichPersonsButton) {
             case Persons_Button_tudi:
@@ -517,8 +524,12 @@ public class UserClass {
             case Persons_Button_beidingyue:
                 url = URLHEAD + "/Follow/fansList?userid=" + userId + "&openid=" + openId + "&count=" + Page_Per_Count + "&page=" + page;
                 break;
+            case Persons_Button_Chatroom:
+                url = URLHEAD + "/Chatroom/getUserList?userid=" + userId + "&openid=" + openId +
+                        "&rid=" + targetId + "&page=" + (page == -1 ? 1 : page) + "&count=" + (page == -1 ? 15 : Page_Per_Count);
+                break;
         }
-        VolleyRequest.RequestGet(url, "getFollowList", vif);
+        VolleyRequest.RequestGet(url, "getPersonsList", vif);
     }
 
     public void chatRoomGetRoomList(int page, VolleyInterface vif) {
@@ -526,6 +537,7 @@ public class UserClass {
                 "&page=" + page + "&count=" + Page_Per_Count;
         VolleyRequest.RequestGet(url, "chatRoomGetRoomList", vif);
     }
+
 
     public void chatRoomGetMyRoomList(int page, VolleyInterface vif) {
         String url = URLHEAD + "/Chatroom/getMyRoom?userid=" + userId + "&openid=" + openId +

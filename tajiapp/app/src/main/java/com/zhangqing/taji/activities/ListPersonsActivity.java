@@ -25,6 +25,7 @@ public class ListPersonsActivity extends BaseActivity {
 
     //该成员变量指示该Activity为哪个界面：关注、被关注、师傅、徒弟
     private int mWhichType;
+    private String mTargetId = null;
 
     private String mTitleString;
 
@@ -47,6 +48,8 @@ public class ListPersonsActivity extends BaseActivity {
         Bundle bundleDatas = getIntent().getExtras();
         mWhichType = bundleDatas.getInt("which");
         mTitleString = bundleDatas.getString("title");
+        mTargetId = bundleDatas.getString("id");
+
         mTitleTextView.setText(mTitleString);
         mSearchEditText.setHint("搜索" + mTitleString);
 
@@ -58,7 +61,8 @@ public class ListPersonsActivity extends BaseActivity {
         mRecyclerView.setOnLoadListener(new RecyclerViewPullable.OnLoadListener() {
             @Override
             public void onLoadMore(final int loadingPage) {
-                UserClass.getInstance().getPersonsList(mWhichType, loadingPage, new VolleyInterface(ListPersonsActivity.this.getApplicationContext()) {
+
+                UserClass.getInstance().getPersonsList(mWhichType, mTargetId, loadingPage, new VolleyInterface(ListPersonsActivity.this.getApplicationContext()) {
                     @Override
                     public void onMySuccess(JSONObject jsonObject) {
                         if (loadingPage == 1) {
