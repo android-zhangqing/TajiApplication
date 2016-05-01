@@ -65,7 +65,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
         android:background="@drawable/corners_button"
-        android:text="选择你感兴趣的标签"
+        android:text=""
         android:textColor="@android:color/darker_gray"
         android:textSize="@dimen/textsize_bar_first" />
 

@@ -51,6 +51,8 @@ public class FragmentMy extends BaseFragment implements View.OnClickListener {
 
     private SwipeRefreshLayout swipeRefreshLayout;
 
+    private LinearLayout mMainContainer;
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -60,7 +62,7 @@ public class FragmentMy extends BaseFragment implements View.OnClickListener {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_my, container, false);
+        final View v = inflater.inflate(R.layout.fragment_my, container, false);
 
         mNameTextView = (TextView) v.findViewById(R.id.my_head_name);
         mSchoolTextView = (TextView) v.findViewById(R.id.my_head_school);
@@ -106,14 +108,15 @@ public class FragmentMy extends BaseFragment implements View.OnClickListener {
             }
         });
 
-        ((LinearLayout) (v.findViewById(R.id.my_click_tudi))).setOnClickListener(this);
-        ((LinearLayout) (v.findViewById(R.id.my_click_shifu))).setOnClickListener(this);
-        ((LinearLayout) (v.findViewById(R.id.my_click_beidingyue))).setOnClickListener(this);
-        ((LinearLayout) (v.findViewById(R.id.my_click_dingyue))).setOnClickListener(this);
-        ((LinearLayout) (v.findViewById(R.id.my_click_dynamic_mine))).setOnClickListener(this);
-        ((LinearLayout) (v.findViewById(R.id.my_click_modify_interest))).setOnClickListener(this);
-        ((LinearLayout) (v.findViewById(R.id.my_click_modify_skill))).setOnClickListener(this);
+        (v.findViewById(R.id.my_click_tudi)).setOnClickListener(this);
+        (v.findViewById(R.id.my_click_shifu)).setOnClickListener(this);
+        (v.findViewById(R.id.my_click_beidingyue)).setOnClickListener(this);
+        (v.findViewById(R.id.my_click_dingyue)).setOnClickListener(this);
+        (v.findViewById(R.id.my_click_dynamic_mine)).setOnClickListener(this);
+        (v.findViewById(R.id.my_click_modify_interest)).setOnClickListener(this);
+        (v.findViewById(R.id.my_click_modify_skill)).setOnClickListener(this);
         (v.findViewById(R.id.my_click_modify_member_detail)).setOnClickListener(this);
+        (v.findViewById(R.id.my_click_shitu_circle)).setOnClickListener(this);
 
 
         v.post(new Runnable() {
@@ -127,6 +130,7 @@ public class FragmentMy extends BaseFragment implements View.OnClickListener {
     }
 
     private void initView() {
+
         String name = UserClass.getInstance().getStringByKey("username");
         String signature = UserClass.getInstance().getStringByKey("signature");
 
@@ -177,6 +181,8 @@ public class FragmentMy extends BaseFragment implements View.OnClickListener {
         } else {
             mSchoolTextView.setText(school);
         }
+
+
     }
 
     private static final int MARGIN_LABLE = 15;
@@ -285,8 +291,11 @@ public class FragmentMy extends BaseFragment implements View.OnClickListener {
                 break;
             }
             case R.id.my_click_dynamic_mine: {
-                Intent intent = new Intent(getActivity(), DynamicMineActivity.class);
-                startActivity(intent);
+                DynamicListActivity.startDynamicActivity(getActivity(), DynamicListActivity.Dynamic_Mine);
+                break;
+            }
+            case R.id.my_click_shitu_circle: {
+                DynamicListActivity.startDynamicActivity(getActivity(), DynamicListActivity.Dynamic_Shitu);
                 break;
             }
 

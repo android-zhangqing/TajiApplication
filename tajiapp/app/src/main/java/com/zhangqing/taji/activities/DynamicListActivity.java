@@ -1,5 +1,7 @@
 package com.zhangqing.taji.activities;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
@@ -18,9 +20,23 @@ import org.json.JSONObject;
 
 /**
  * Created by zhangqing on 2016/4/26.
- * 我的技能秀界面
+ * 我的技能秀界面+我的师徒圈界面
  */
-public class DynamicMineActivity extends BaseActivity {
+public class DynamicListActivity extends BaseActivity {
+    //我的技能秀界面
+    public static final String Dynamic_Mine = "myDynamic";
+    //我的师徒圈动态界面
+    public static final String Dynamic_Shitu = "myCircle";
+
+    public static void startDynamicActivity(Context context, String type) {
+        Intent intent = new Intent(context, DynamicListActivity.class);
+        intent.putExtra("type", type);
+        context.startActivity(intent);
+    }
+
+
+    private String mDynamicType;
+
     private RecyclerViewPullable mRecyclerView;
     private DongTaiListAdapter mRecyclerViewAdapter;
 
@@ -29,6 +45,8 @@ public class DynamicMineActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dynamic);
 
+        mDynamicType = getIntent().getStringExtra("type");
+
         mRecyclerView = (RecyclerViewPullable) findViewById(R.id.dynamic_recycler_view);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mRecyclerView.setAdapter(mRecyclerViewAdapter = new DongTaiListAdapter(this));
@@ -36,7 +54,7 @@ public class DynamicMineActivity extends BaseActivity {
         mRecyclerView.setOnLoadListener(new RecyclerViewPullable.OnLoadListener() {
             @Override
             public void onLoadMore(final int loadingPage) {
-                UserClass.getInstance().getDynamicMine(loadingPage, new VolleyInterface(getApplicationContext()) {
+                UserClass.getInstance().getDynamicList(mDynamicType, loadingPage, new VolleyInterface(getApplicationContext()) {
                     @Override
                     public void onMySuccess(JSONObject jsonObject) {
 

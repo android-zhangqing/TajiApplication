@@ -196,7 +196,7 @@ public class SkillSettingActivity extends BaseActivity implements View.OnClickLi
     }
 
     public void initData() {
-        UserClass.getInstance().getSkillListAll(new VolleyInterface(this) {
+        UserClass.getInstance().getSkillListAll(new VolleyInterface(getApplicationContext()) {
             @Override
             public void onMySuccess(JSONObject jsonObject) {
                 mGridViewAdapter.initData(jsonObject);

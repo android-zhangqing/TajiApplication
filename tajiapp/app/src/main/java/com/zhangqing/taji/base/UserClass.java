@@ -579,10 +579,10 @@ public class UserClass {
         VolleyRequest.RequestGet(url, "getOthersAvatar" + userid, vif);
     }
 
-    public void getDynamicMine(int page, VolleyInterface vif) {
-        String url = URLHEAD + "/DongTai/myDynamic?userid=" + userId + "&openid=" + openId +
+    public void getDynamicList(String type, int page, VolleyInterface vif) {
+        String url = URLHEAD + "/DongTai/" + type + "?userid=" + userId + "&openid=" + openId +
                 "&page=" + page + "&count=" + Page_Per_Count;
-        VolleyRequest.RequestGet(url, "getDynamicMine", vif);
+        VolleyRequest.RequestGet(url, "getDynamicList", vif);
     }
 
     public void getOthersDongTai(String uid, int page, VolleyInterface vif) {

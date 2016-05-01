@@ -163,7 +163,7 @@
             android:name=".activities.DongTaiDetailActivity"
             android:windowSoftInputMode="stateHidden|adjustPan" />
         <activity android:name=".util.test.MainActivity" />
-        <activity android:name=".activities.DynamicMineActivity" />
+        <activity android:name=".activities.DynamicListActivity" />
         <activity android:name=".activities.ModifyPersonInfoActivity" />
         <activity android:name=".activities.LabelSelectActivity" />
         <activity android:name=".activities.ChatRoomDetailActivity" />
