@@ -117,6 +117,7 @@ public class FragmentMy extends BaseFragment implements View.OnClickListener {
         (v.findViewById(R.id.my_click_modify_skill)).setOnClickListener(this);
         (v.findViewById(R.id.my_click_modify_member_detail)).setOnClickListener(this);
         (v.findViewById(R.id.my_click_shitu_circle)).setOnClickListener(this);
+        (v.findViewById(R.id.my_click_draft)).setOnClickListener(this);
 
 
         v.post(new Runnable() {
@@ -291,11 +292,15 @@ public class FragmentMy extends BaseFragment implements View.OnClickListener {
                 break;
             }
             case R.id.my_click_dynamic_mine: {
-                DynamicListActivity.startDynamicActivity(getActivity(), DynamicListActivity.Dynamic_Mine);
+                DynamicListActivity.startDynamicActivity(getActivity(), DynamicListActivity.Dynamic_Mine, "我的技能秀");
                 break;
             }
             case R.id.my_click_shitu_circle: {
-                DynamicListActivity.startDynamicActivity(getActivity(), DynamicListActivity.Dynamic_Shitu);
+                DynamicListActivity.startDynamicActivity(getActivity(), DynamicListActivity.Dynamic_Shitu, "我的师徒圈");
+                break;
+            }
+            case R.id.my_click_draft: {
+                DynamicListActivity.startDynamicActivity(getActivity(), DynamicListActivity.Dynamic_Draft, "草稿箱");
                 break;
             }
 

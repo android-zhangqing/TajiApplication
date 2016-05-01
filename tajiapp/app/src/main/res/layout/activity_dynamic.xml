@@ -22,11 +22,12 @@
             android:src="@drawable/icon_tab_publish_backstep" />
 
         <TextView
+            android:id="@+id/dynamic_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:gravity="center"
-            android:text="技能"
+            android:text=""
             android:textColor="@color/textcolor_bar_first_unselect"
             android:textSize="@dimen/textsize_bar_first" />
 

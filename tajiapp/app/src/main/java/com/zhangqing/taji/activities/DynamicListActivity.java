@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.view.View;
+import android.widget.TextView;
 
 import com.android.volley.VolleyError;
 import com.zhangqing.taji.BaseActivity;
@@ -27,15 +28,19 @@ public class DynamicListActivity extends BaseActivity {
     public static final String Dynamic_Mine = "myDynamic";
     //我的师徒圈动态界面
     public static final String Dynamic_Shitu = "myCircle";
+    //我的动态草稿箱
+    public static final String Dynamic_Draft = "myDraft";
 
-    public static void startDynamicActivity(Context context, String type) {
+    public static void startDynamicActivity(Context context, String type, String title) {
         Intent intent = new Intent(context, DynamicListActivity.class);
         intent.putExtra("type", type);
+        intent.putExtra("title", title);
         context.startActivity(intent);
     }
 
 
     private String mDynamicType;
+    private String mTitle;
 
     private RecyclerViewPullable mRecyclerView;
     private DongTaiListAdapter mRecyclerViewAdapter;
@@ -46,6 +51,9 @@ public class DynamicListActivity extends BaseActivity {
         setContentView(R.layout.activity_dynamic);
 
         mDynamicType = getIntent().getStringExtra("type");
+        mTitle = getIntent().getStringExtra("title");
+
+        ((TextView) findViewById(R.id.dynamic_title)).setText(mTitle);
 
         mRecyclerView = (RecyclerViewPullable) findViewById(R.id.dynamic_recycler_view);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));

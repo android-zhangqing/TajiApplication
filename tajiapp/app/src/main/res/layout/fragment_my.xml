@@ -161,6 +161,7 @@
                     />
 
                 <LinearLayout
+                    android:id="@+id/my_click_draft"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/publish_four_block_bg"
