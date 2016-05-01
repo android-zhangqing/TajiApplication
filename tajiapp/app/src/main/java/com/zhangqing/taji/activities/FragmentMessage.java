@@ -28,11 +28,10 @@ import io.rong.message.TextMessage;
  * Created by Administrator on 2016/2/22.
  * 消息板块
  */
-public class FragmentMessage extends BaseFragment {
+public class FragmentMessage extends BaseFragment implements View.OnClickListener {
     ConversationListFragment fragment;
     Uri uri;
 
-    LinearLayout ll_at;
 
     @Override
     public void onResume() {
@@ -50,10 +49,9 @@ public class FragmentMessage extends BaseFragment {
         super.onCreateView(inflater, container, savedInstanceState);
         View v = inflater.inflate(R.layout.fragment_message, container, false);
 
-        ll_at = (LinearLayout) v.findViewById(R.id.message_btn_at);
 
         initFragment();
-        initListener();
+        initListener(v);
 
 
         if (UserClass.getInstance().getStringByKey("is_to_insert").equals("1")) {
@@ -68,7 +66,6 @@ public class FragmentMessage extends BaseFragment {
     @Override
     public void onStart() {
         super.onStart();
-
     }
 
     @Override
@@ -80,7 +77,13 @@ public class FragmentMessage extends BaseFragment {
         }
     }
 
-    private void initListener() {
+    private void initListener(View v) {
+
+        //监听三个按钮的点击
+        v.findViewById(R.id.message_btn_at).setOnClickListener(this);
+        v.findViewById(R.id.message_btn_comment).setOnClickListener(this);
+        v.findViewById(R.id.message_btn_favor).setOnClickListener(this);
+
 
         RongIM.getInstance().setSendMessageListener(new RongIM.OnSendMessageListener() {
             @Override
@@ -137,6 +140,10 @@ public class FragmentMessage extends BaseFragment {
 
             @Override
             public boolean onConversationPortraitClick(Context context, Conversation.ConversationType conversationType, String s) {
+                if (conversationType == Conversation.ConversationType.SYSTEM) {
+                    clickSystemMessage(s);
+                    return true;
+                }
                 OthersDetailActivity.start(getActivity(), s, DatabaseManager.getInstance().queryUserInfoById(s).getName());
                 return true;
             }
@@ -155,32 +162,22 @@ public class FragmentMessage extends BaseFragment {
             public boolean onConversationClick(Context context, View view, UIConversation uiConversation) {
                 log("ConversationListBeh", uiConversation.getConversationSenderId() + "|" + uiConversation.getConversationTargetId() + "|" + RongIM.getInstance().getRongIMClient().getTotalUnreadCount() + "");
                 if (uiConversation.getConversationType() == Conversation.ConversationType.SYSTEM) {
-                    switch (uiConversation.getConversationTargetId()) {
-                        case "1010":
-                            uiConversation.setUnReadMessageCount(0);
-                            startActivity(new Intent(getActivity(), SkillMatchingActivity.class));
-                            break;
-                        case "1011":
-                            break;
-                    }
+                    clickSystemMessage(uiConversation.getConversationTargetId());
                     return true;
                 }
                 return false;
             }
-
-
         });
+    }
 
-
-//        ll_at.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                log("ll_at");
-//                insertMessage("1010", "又有人跟你匹配了呦！");
-//            }
-//        });
-
-
+    private void clickSystemMessage(String targetId) {
+        switch (targetId) {
+            case "1010":
+                startActivity(new Intent(getActivity(), SkillMatchingActivity.class));
+                break;
+            case "1011":
+                break;
+        }
     }
 
 
@@ -244,4 +241,18 @@ public class FragmentMessage extends BaseFragment {
     }
 
 
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.message_btn_at: {
+                break;
+            }
+            case R.id.message_btn_comment: {
+                break;
+            }
+            case R.id.message_btn_favor: {
+                break;
+            }
+        }
+    }
 }

@@ -39,6 +39,7 @@
 
 
         <LinearLayout
+            android:id="@+id/message_btn_comment"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -64,6 +65,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/message_btn_favor"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"

@@ -47,6 +47,7 @@ public class UserClass {
     public static final int Persons_Button_dingyue = 3;
     public static final int Persons_Button_beidingyue = 4;
     public static final int Persons_Button_Chatroom = 5;
+    public static final int Persons_Button_favor = 6;
 
 
     private final String URLHEAD = "http://taji.whutech.com";
