@@ -591,6 +591,12 @@ public class UserClass {
         VolleyRequest.RequestGet(url, "getOthersDongTai" + uid, vif);
     }
 
+    public void skillGetChildSkill(int pid, VolleyInterface vif) {
+        String url = URLHEAD + "/skill/getchildskill?pid=" + (pid + 1) +
+                "&userid=" + userId + "&openid=" + openId;
+        VolleyRequest.RequestGet(url, "skillGetChildSkill" + pid, vif);
+    }
+
     public void getSkillMatching(int page, VolleyInterface vif) {
         String url = URLHEAD + "/Skill/match?" + "&userid=" + userId + "&openid=" + openId + "&page=" + page + "&count=" + Page_Per_Count;
         VolleyRequest.RequestGet(url, "getSkillMatching", vif);

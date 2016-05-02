@@ -66,6 +66,8 @@ public class PublishActivity extends BaseActivity implements View.OnClickListene
     public static final int TODO_CAPTURE_VIDEO = 4;
     public static final int TODO_SELECT_COVER = 5;
 
+    public static final int TODO_SELECT_LABEL = 6;
+
     //当前为 选择上传模式 还是 现场拍摄模式
     public static final int MODE_SELECT = 1;
     public static final int MODE_CAPTURE = 2;
@@ -335,7 +337,7 @@ public class PublishActivity extends BaseActivity implements View.OnClickListene
         mAddLabelView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(PublishActivity.this, LabelSelectActivity.class));
+                startActivityForResult(new Intent(PublishActivity.this, LabelSelectActivity.class), TODO_SELECT_LABEL);
             }
         });
 

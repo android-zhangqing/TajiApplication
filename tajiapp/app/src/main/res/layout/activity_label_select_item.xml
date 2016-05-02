@@ -2,17 +2,22 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:gravity="center"
+    android:gravity="center_horizontal"
     android:orientation="vertical">
 
     <TextView
         android:id="@+id/label_item_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="10px"
+        android:layout_marginTop="10px"
         android:background="@drawable/home_hot_btn_concern_bg"
-        android:paddingBottom="8dp"
-        android:paddingLeft="15dp"
-        android:paddingRight="15dp"
-        android:paddingTop="8dp"
-        android:text="111" />
+        android:clickable="true"
+        android:paddingBottom="8px"
+        android:paddingLeft="30px"
+        android:paddingRight="30px"
+        android:paddingTop="8px"
+        android:singleLine="true"
+        android:text="111"
+        android:textColor="#16FBCC" />
 </LinearLayout>

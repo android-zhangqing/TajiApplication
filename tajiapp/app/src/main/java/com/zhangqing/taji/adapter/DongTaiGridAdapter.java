@@ -117,6 +117,7 @@ public class DongTaiGridAdapter extends RecyclerView.Adapter<DongTaiGridAdapter.
         ImageLoader.getInstance().displayImage(mItemsList.get(position).mCoverUrl,
                 new ImageViewAware(viewHolder.iv_cover),
                 MyApplication.getNormalDisplayImageOptions());
+
     }
 
     @Override

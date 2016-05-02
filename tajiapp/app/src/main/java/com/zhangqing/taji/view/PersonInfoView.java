@@ -131,7 +131,7 @@ public class PersonInfoView extends LinearLayout {
 
         String sex = mPersonInfo.sex;
         if (sex.equals("女")) {
-            mSexImageView.setImageResource(R.drawable.ic_launcher);
+            mSexImageView.setImageResource(R.drawable.icon_tab_my_head_female);
         } else {
             mSexImageView.setImageResource(R.drawable.icon_tab_my_head_male);
         }

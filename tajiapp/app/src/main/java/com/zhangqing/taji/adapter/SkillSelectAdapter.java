@@ -206,23 +206,6 @@ public class SkillSelectAdapter extends BaseAdapter {
             viewHolder.iv_selector = (ImageView) convertView.findViewById(R.id.skill_setting_iv_selector);
             viewHolder.tv_lable = (TextView) convertView.findViewById(R.id.skill_setting_tv_lable);
 
-//            ViewGroup.LayoutParams l=viewHolder.iv_icon.getLayoutParams();
-//            l.height=l.width;
-
-            //动态设置图片为正方形
-//            int w = View.MeasureSpec.makeMeasureSpec(0,
-//                    View.MeasureSpec.UNSPECIFIED);
-//            int h = View.MeasureSpec.makeMeasureSpec(0,
-//                    View.MeasureSpec.UNSPECIFIED);
-//            viewHolder.iv_icon.measure(w, h);
-//            Log.e("SkillGetView", "convertView == null" +
-//                    viewHolder.iv_icon.getMeasuredWidth() +
-//                    "|" + DensityUtils.px2dp(mContext, viewHolder.iv_icon.getMeasuredWidth()));
-//            int realHeight = (int) DensityUtils.px2dp(mContext, viewHolder.iv_icon.getMeasuredWidth()) * 3 / 4;
-//
-//            viewHolder.iv_icon.getLayoutParams().height = realHeight;
-//            viewHolder.iv_icon.getLayoutParams().width = realHeight;
-
             convertView.setTag(viewHolder);
 
         } else {

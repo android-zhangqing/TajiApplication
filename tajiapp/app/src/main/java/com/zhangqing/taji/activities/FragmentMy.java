@@ -166,7 +166,7 @@ public class FragmentMy extends BaseFragment implements View.OnClickListener {
 
         String sex = UserClass.getInstance().getStringByKey("sex");
         if (sex.equals("女")) {
-            mSexImageView.setImageResource(R.drawable.ic_launcher);
+            mSexImageView.setImageResource(R.drawable.icon_tab_my_head_female);
         } else {
             mSexImageView.setImageResource(R.drawable.icon_tab_my_head_male);
         }

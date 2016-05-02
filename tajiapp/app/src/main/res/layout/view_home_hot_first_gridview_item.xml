@@ -44,11 +44,8 @@
         android:id="@+id/home_hot_page_gridview_circle_img"
         android:layout_width="@dimen/home_hot_gridview_text_height_twice"
         android:layout_height="@dimen/home_hot_gridview_text_height_twice"
-        android:layout_alignBottom="@id/home_hot_first_temp_layoutbottom"
-        android:layout_alignParentLeft="true"
         android:layout_alignTop="@id/temp_layouttop"
-        android:layout_margin="3dp"
-        android:scaleType="centerInside" />
+        android:scaleType="fitXY" />
 
     <TextView
         android:id="@+id/home_hot_page_gridview_title"

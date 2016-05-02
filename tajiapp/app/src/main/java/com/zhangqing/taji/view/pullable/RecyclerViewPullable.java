@@ -129,17 +129,6 @@ public class RecyclerViewPullable extends LinearLayout {
             }
         });
 
-//        /**
-//         * 加入FootView用于分页加载提示
-//         */
-
-//        new Handler().post(new Runnable() {
-//            @Override
-//            public void run() {
-
-//            }
-//        });
-
 
         mRecyclerView.addOnScrollListener(new OnScrollListener() {
             @Override
@@ -211,7 +200,10 @@ public class RecyclerViewPullable extends LinearLayout {
                 addFoot();
                 Log.e("加载结果：", "正在加载");
                 if (mFootView != null)
-                    mFootView.setText("正在加载");
+                    if (mFootColor == android.R.color.transparent) {
+                        mFootView.setVisibility(View.INVISIBLE);
+                    }
+                mFootView.setText("正在加载");
                 break;
             }
             case LoadingMoreStatus_End: {

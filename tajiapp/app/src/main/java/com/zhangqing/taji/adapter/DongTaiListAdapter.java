@@ -74,7 +74,7 @@ public class DongTaiListAdapter extends RecyclerView.Adapter<DongTaiListAdapter.
         holder.tv_count_like.setText(dongTaiClass.mCountLike);
 
         holder.iv_count_like_icon.setImageResource(dongTaiClass.isLike ?
-                R.drawable.icon_tab_home_hot_favor_selelct : R.drawable.icon_tab_home_hot_favor);
+                R.drawable.icon_tab_home_hot_favor_selelct2 : R.drawable.icon_tab_home_hot_favor);
 
         if (dongTaiClass.mPersonInfo.userid.equals(UserClass.getInstance().userId)) {
             holder.tv_follow.setVisibility(View.INVISIBLE);
@@ -179,7 +179,7 @@ public class DongTaiListAdapter extends RecyclerView.Adapter<DongTaiListAdapter.
                         }
 
                         holder.iv_count_like_icon.setImageResource(dongTaiClass.isLike ?
-                                R.drawable.icon_tab_home_hot_favor_selelct : R.drawable.icon_tab_home_hot_favor);
+                                R.drawable.icon_tab_home_hot_favor_selelct2 : R.drawable.icon_tab_home_hot_favor);
                         holder.tv_count_like.setText(dongTaiClass.mCountLike);
 
                     }

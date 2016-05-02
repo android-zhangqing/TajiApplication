@@ -27,7 +27,7 @@ public class RecyclerViewWithHeaderAndFooter extends RecyclerView {
     /**
      * 自定义实现了头部和底部加载更多的adapter
      */
-    private AutoLoadAdapter mAutoLoadAdapter;
+    private HeaderAndFooterAdapter mHeaderAndFooterAdapter;
 
 
     private View mHeaderView;
@@ -55,7 +55,7 @@ public class RecyclerViewWithHeaderAndFooter extends RecyclerView {
     /**
      *
      */
-    class AutoLoadAdapter extends Adapter<ViewHolder> {
+    class HeaderAndFooterAdapter extends Adapter<ViewHolder> {
 
         @Override
         public void onAttachedToRecyclerView(RecyclerView recyclerView) {
@@ -83,7 +83,7 @@ public class RecyclerViewWithHeaderAndFooter extends RecyclerView {
         private Adapter mInternalAdapter;
 
 
-        public AutoLoadAdapter(Adapter adapter) {
+        public HeaderAndFooterAdapter(Adapter adapter) {
             mInternalAdapter = adapter;
         }
 
@@ -206,9 +206,9 @@ public class RecyclerViewWithHeaderAndFooter extends RecyclerView {
     @Override
     public void setAdapter(Adapter adapter) {
         if (adapter != null) {
-            mAutoLoadAdapter = new AutoLoadAdapter(adapter);
+            mHeaderAndFooterAdapter = new HeaderAndFooterAdapter(adapter);
         }
-        super.swapAdapter(mAutoLoadAdapter, true);
+        super.swapAdapter(mHeaderAndFooterAdapter, true);
     }
 
     /**
@@ -224,7 +224,7 @@ public class RecyclerViewWithHeaderAndFooter extends RecyclerView {
         int firstVisiblePosition = getFirstVisiblePosition();
 //        getLayoutManager().removeAllViews();
         setLayoutManager(layoutManager);
-        //super.swapAdapter(mAutoLoadAdapter, true);
+        //super.swapAdapter(mHeaderAndFooterAdapter, true);
         getLayoutManager().scrollToPosition(firstVisiblePosition);
     }
 
@@ -306,7 +306,7 @@ public class RecyclerViewWithHeaderAndFooter extends RecyclerView {
      * @param view
      */
     public void setHeaderView(View view) {
-        mAutoLoadAdapter.setHeaderView(view);
+        mHeaderAndFooterAdapter.setHeaderView(view);
     }
 
 
@@ -316,11 +316,11 @@ public class RecyclerViewWithHeaderAndFooter extends RecyclerView {
      * @param view
      */
     public void setFooterView(View view) {
-        mAutoLoadAdapter.setFooterView(view);
+        mHeaderAndFooterAdapter.setFooterView(view);
     }
 
     public View getHeaderView() {
-        return mAutoLoadAdapter.getHeaderView();
+        return mHeaderAndFooterAdapter.getHeaderView();
     }
 
 //    /**

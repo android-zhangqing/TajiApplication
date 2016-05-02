@@ -61,7 +61,7 @@ public class MySwipeRefreshLayout extends SwipeRefreshLayout {
         }
 
 
-        //停止刷新，保存刷新状态在DELAY_MILLIS毫秒以上。
+        //停止刷新，保持刷新状态在DELAY_MILLIS毫秒以上。
         long currentTime = System.currentTimeMillis();
         if (currentTime - mStartTimeMillis >= DELAY_MILLIS) {
             post(new Runnable() {
