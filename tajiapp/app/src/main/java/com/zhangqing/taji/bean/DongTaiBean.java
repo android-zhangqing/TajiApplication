@@ -53,7 +53,10 @@ public class DongTaiBean {
     public PersonInfoBean mPersonInfo;
 
     //所属大类，如绘画
-    public String mTag = "";
+    public String mLabelParentSkill = "";
+    //子类
+    public String mLabelChildTag = "";
+
     //类别
     public String mType = "";
     //内容
@@ -114,7 +117,9 @@ public class DongTaiBean {
 
 
         //类别
-        mTag = jsonObject.optString("tag", mTag);
+        mLabelParentSkill = jsonObject.optString("skill", mLabelParentSkill);
+        mLabelChildTag = jsonObject.optString("tag", mLabelChildTag);
+
         //类别
         mType = jsonObject.optString("type", mType);
         //标题

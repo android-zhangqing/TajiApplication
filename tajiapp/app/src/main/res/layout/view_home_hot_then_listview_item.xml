@@ -88,7 +88,13 @@
             android:paddingRight="12dp"
             android:paddingTop="2dp"
             android:text=""
-            android:textColor="@color/textcolor_normal_white" />
+            android:textColor="#422E54" />
+        <TextView
+            android:id="@+id/home_hot_then_label_child"
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:textColor="#885195"
+            android:layout_height="wrap_content" />
 
         <LinearLayout
             android:id="@+id/home_hot_then_label_container"

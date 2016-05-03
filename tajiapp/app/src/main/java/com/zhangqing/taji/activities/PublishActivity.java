@@ -41,7 +41,6 @@ import com.zhangqing.taji.util.ImageUtil;
 import com.zhangqing.taji.util.ImmUtil;
 import com.zhangqing.taji.util.LocationUtil;
 import com.zhangqing.taji.util.OneSdkUtil;
-import com.zhangqing.taji.view.ResizeLayout;
 
 import org.json.JSONObject;
 
@@ -66,7 +65,7 @@ public class PublishActivity extends BaseActivity implements View.OnClickListene
     public static final int TODO_CAPTURE_VIDEO = 4;
     public static final int TODO_SELECT_COVER = 5;
 
-    public static final int TODO_SELECT_LABEL = 6;
+    public static final int TODO_SELECT_LABEL = 6;//添加标签，返回parent，child
 
     //当前为 选择上传模式 还是 现场拍摄模式
     public static final int MODE_SELECT = 1;
@@ -80,6 +79,8 @@ public class PublishActivity extends BaseActivity implements View.OnClickListene
 
     private String mUrlVideo = "";
     private String mUrlCover = "";
+    private String mLabelParent = "";
+    private String mLabelChild = "";
 
     private ScrollView scrollView;
     private ImageView faceToggle;
@@ -100,7 +101,8 @@ public class PublishActivity extends BaseActivity implements View.OnClickListene
 
     private TextView mLocationTextView;
 
-    private Button mAddLabelView;
+    private TextView mLabelViewParent;
+    private TextView mLabelViewChild;
 
     private ImageView mMasterCircleImageView;
     private boolean isMasterCircle = false;
@@ -157,10 +159,6 @@ public class PublishActivity extends BaseActivity implements View.OnClickListene
             super.handleMessage(msg);
         }
     };
-
-    private Uri photoUri;
-    private String picPath;
-
 
     private void sendMessage(int what, int arg1) {
         Message msg = new Message();
@@ -242,6 +240,21 @@ public class PublishActivity extends BaseActivity implements View.OnClickListene
             case TODO_SELECT_COVER: {
                 if (data == null || data.getData() == null) return;
                 uploadPicture(data.getData());
+                break;
+            }
+
+            /**
+             * 选择标签完毕
+             */
+            case TODO_SELECT_LABEL: {
+                if (data == null) return;
+                mLabelParent = UserClass.LABEL_PARENT_ARRAY[data.getIntExtra("parent", 0)];
+                mLabelChild = data.getStringExtra("child");
+                Log.e("TODO_SELECT_LABEL", mLabelParent + "|" + mLabelChild);
+
+                mLabelViewParent.setText(mLabelParent);
+                mLabelViewChild.setText(mLabelChild.replaceAll("\\.", " "));
+
                 break;
             }
         }
@@ -333,8 +346,10 @@ public class PublishActivity extends BaseActivity implements View.OnClickListene
         mCoverView = (ImageView) findViewById(R.id.publish_cover);
         mLocationTextView = (TextView) findViewById(R.id.publish_location_text);
 
-        mAddLabelView = (Button) findViewById(R.id.publish_add_label);
-        mAddLabelView.setOnClickListener(new View.OnClickListener() {
+        mLabelViewParent = (TextView) findViewById(R.id.publish_label_parent);
+        mLabelViewChild = (TextView) findViewById(R.id.publish_label_child);
+
+        mLabelViewParent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivityForResult(new Intent(PublishActivity.this, LabelSelectActivity.class), TODO_SELECT_LABEL);
@@ -379,8 +394,11 @@ public class PublishActivity extends BaseActivity implements View.OnClickListene
                 } else if (editText.getText() == null || editText.getText().toString().equals("")) {
                     Toast.makeText(getApplicationContext(), "说点什么吧", Toast.LENGTH_SHORT).show();
                     return;
+                } else if (mLabelChild.equals("")) {
+                    Toast.makeText(getApplicationContext(), "请先设置标签", Toast.LENGTH_SHORT).show();
+                    return;
                 }
-                UserClass.getInstance().doUploadDongTai(mUrlCover, mUrlVideo,
+                UserClass.getInstance().dongTaiDoUpload(mLabelParent, mLabelChild, mUrlCover, mUrlVideo,
                         editText.getText().toString(),
                         mLocationTextView.getText().toString(),
                         isMasterCircle,

@@ -199,20 +199,30 @@
                                 android:onClick="onClickBtnShowFaceGrid"
                                 android:src="@drawable/icon_tab_publish_face" />
 
-                            <Button
-                                android:id="@+id/publish_add_label"
-                                android:layout_width="100dp"
+                            <TextView
+                                android:id="@+id/publish_label_parent"
+                                android:layout_width="wrap_content"
                                 android:layout_height="25dp"
                                 android:background="@drawable/corners_button3"
-                                android:padding="4dp"
+                                android:paddingBottom="4dp"
+                                android:layout_marginRight="5dp"
+                                android:paddingLeft="8dp"
+                                android:paddingRight="8dp"
+                                android:paddingTop="4dp"
                                 android:text="设置#标签#"
                                 android:textColor="@android:color/secondary_text_light"
                                 android:textSize="12sp" />
 
+                            <TextView
+                                android:id="@+id/publish_label_child"
+                                android:layout_width="wrap_content"
+                                android:layout_height="30dp"
+                                android:gravity="center_vertical" />
+
                             <Button
                                 android:layout_width="50dp"
                                 android:layout_height="25dp"
-                                android:layout_marginLeft="10dp"
+                                android:layout_marginLeft="5dp"
                                 android:background="@drawable/corners_button3"
                                 android:gravity="center"
                                 android:padding="4dp"

@@ -58,7 +58,8 @@ public class LabelSelectActivity extends BaseActivity implements View.OnClickLis
             @Override
             public void onClick(View v) {
                 Intent intent = getIntent();
-                intent.putExtra("data", mRecyclerViewAdapter.getSelector());
+                intent.putExtra("child", mRecyclerViewAdapter.getSelector());
+                intent.putExtra("parent", mPid);
                 setResult(RESULT_OK, intent);
                 finish();
             }

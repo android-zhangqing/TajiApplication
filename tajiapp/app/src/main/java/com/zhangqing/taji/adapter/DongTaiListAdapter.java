@@ -2,7 +2,6 @@ package com.zhangqing.taji.adapter;
 
 import android.content.Context;
 import android.graphics.Color;
-import android.os.Handler;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -13,13 +12,11 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.alibaba.sdk.android.session.model.User;
 import com.android.volley.VolleyError;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.imageaware.ImageViewAware;
 import com.zhangqing.taji.MyApplication;
 import com.zhangqing.taji.R;
-import com.zhangqing.taji.activities.login.ResetPassBySmsActivity;
 import com.zhangqing.taji.adapter.listener.AvatarClickListener;
 import com.zhangqing.taji.adapter.listener.DongTaiClickListener;
 import com.zhangqing.taji.base.UserClass;
@@ -67,7 +64,8 @@ public class DongTaiListAdapter extends RecyclerView.Adapter<DongTaiListAdapter.
     public static void updateViewHolder(final Context mContext, final MyViewHolder holder, final DongTaiBean dongTaiClass, final RecyclerView.Adapter adapter) {
         holder.tv_name.setText(dongTaiClass.mPersonInfo.username);
         holder.tv_content.setText(dongTaiClass.mContent);
-        holder.tv_label_parent.setText(dongTaiClass.mTag);
+        holder.tv_label_parent.setText(dongTaiClass.mLabelParentSkill);
+        holder.tv_label_child.setText(dongTaiClass.mLabelChildTag.replaceAll("\\.","  "));
 
         holder.tv_count_forward.setText(dongTaiClass.mCountForward);
         holder.tv_count_comment.setText(dongTaiClass.mCountComment);
@@ -275,6 +273,7 @@ public class DongTaiListAdapter extends RecyclerView.Adapter<DongTaiListAdapter.
         TextView tv_content;
 
         TextView tv_label_parent;
+        TextView tv_label_child;
         LinearLayout ll_label_container;
 
         TextView tv_count_forward;
@@ -298,6 +297,7 @@ public class DongTaiListAdapter extends RecyclerView.Adapter<DongTaiListAdapter.
             tv_content = (TextView) itemView.findViewById(R.id.home_hot_then_content);
 
             tv_label_parent = (TextView) itemView.findViewById(R.id.home_hot_then_label_parent);
+            tv_label_child = (TextView) itemView.findViewById(R.id.home_hot_then_label_child);
             ll_label_container = (LinearLayout) itemView.findViewById(R.id.home_hot_then_label_container);
 
             tv_count_forward = (TextView) itemView.findViewById(R.id.home_hot_then_count_forward);
