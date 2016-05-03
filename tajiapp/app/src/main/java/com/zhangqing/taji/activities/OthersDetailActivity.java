@@ -8,6 +8,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -66,6 +67,7 @@ public class OthersDetailActivity extends BaseActivity {
         Bundle bundle = getIntent().getExtras();
         mId = bundle.getString("id");
         mName = bundle.getString("name");
+
 
         ((TextView) findViewById(R.id.title)).setText(mName);
 
@@ -165,19 +167,20 @@ public class OthersDetailActivity extends BaseActivity {
     private void initNotHeaderView() {
 
         //如果是自己，则不显示底部两按钮
-        if (mPersonInfo.userid.equals(UserClass.getInstance().userId)) {
-            View v = findViewById(R.id.person_detail_bottom_container);
-            v.setAnimation(AnimationUtil.getSlideOutBottomAnimation());
-            v.setVisibility(View.INVISIBLE);
-        } else {
+        if (!mPersonInfo.userid.equals(UserClass.getInstance().userId)) {
+
             //查看的是他人个人主页则初始化底部按钮特效
             initQuickReturnChatBtn();
             //如果是师傅，则不显示拜师按钮
             if (mPersonInfo.is_master) {
                 View v = findViewById(R.id.person_detail_baishi_btn);
-                v.setAnimation(AnimationUtils.makeOutAnimation(this, true));
                 v.setVisibility(View.GONE);
             }
+
+            View v = findViewById(R.id.person_detail_bottom_container);
+            v.setAnimation(AnimationUtil.getSlideInBottomAnimation());
+            v.setVisibility(View.VISIBLE);
+
         }
     }
 

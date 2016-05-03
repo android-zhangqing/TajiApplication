@@ -86,7 +86,7 @@ public class PersonInfoBean {
         interest = jsonObject.optString("interest", "");
         skill = jsonObject.optString("skill", "");
 
-        is_master = jsonObject.optBoolean("is_master", false);
+        is_master = jsonObject.optString("is_master", "0").equals("1");
         is_follow = jsonObject.optBoolean("is_follow", false);
 
         i_want = jsonObject.optString("i_want", "");

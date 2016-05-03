@@ -44,6 +44,7 @@
         android:id="@+id/home_hot_page_gridview_circle_img"
         android:layout_width="@dimen/home_hot_gridview_text_height_twice"
         android:layout_height="@dimen/home_hot_gridview_text_height_twice"
+        android:padding="3dp"
         android:layout_alignTop="@id/temp_layouttop"
         android:scaleType="fitXY" />
 
