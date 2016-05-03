@@ -76,8 +76,14 @@ public class OthersDetailActivity extends BaseActivity {
             public void onMySuccess(JSONObject jsonObject) {
 
                 try {
-                    mPersonInfo = new PersonInfoBean(mId, jsonObject);
+                    mPersonInfo = PersonInfoBean.getInstance(mId, jsonObject);
                     mPersonInfoView = new PersonInfoView(OthersDetailActivity.this, mPersonInfo);
+                    mPersonInfoView.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            mRecyclerViewAdapter.notifyDataSetChanged();
+                        }
+                    });
 
                     mRecyclerView.setHeaderView(mPersonInfoView);
 
@@ -85,6 +91,9 @@ public class OthersDetailActivity extends BaseActivity {
 
                         @Override
                         public void onLoadMore(final int loadingPage) {
+                            if (loadingPage == 1) {
+                                mPersonInfoView.updateView();
+                            }
                             UserClass.getInstance().getOthersDongTai(mId, loadingPage, new VolleyInterface(getApplicationContext()) {
                                 @Override
                                 public void onMySuccess(JSONObject jsonObject) {

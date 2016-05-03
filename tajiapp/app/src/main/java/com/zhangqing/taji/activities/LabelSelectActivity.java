@@ -160,10 +160,12 @@ public class LabelSelectActivity extends BaseActivity implements View.OnClickLis
                 View last_v = mParentLabelContainer.findViewWithTag(mPid);
                 if (last_v != null && last_v instanceof TextView) {
                     last_v.setBackgroundResource(R.drawable.home_hot_btn_concern_bg);
+                    //((TextView) last_v).setTextColor(Color.parseColor("#16FBCC"));
                 }
             }
             mPid = (int) v.getTag();
-            tv.setBackgroundResource(R.drawable.home_hot_btn_concern_bg_reverse);
+            tv.setBackgroundResource(R.drawable.home_hot_btn_concern_bg_reverse_with_stroke);
+            //tv.setTextColor(Color.WHITE);
             if (!hasInitChild) {
                 //初始化子标签
                 initChildLabelView();

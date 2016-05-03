@@ -11,14 +11,19 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.android.volley.VolleyError;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.imageaware.ImageViewAware;
 import com.zhangqing.taji.MyApplication;
 import com.zhangqing.taji.R;
 import com.zhangqing.taji.base.UserClass;
+import com.zhangqing.taji.base.VolleyInterface;
 import com.zhangqing.taji.bean.PersonInfoBean;
 import com.zhangqing.taji.util.DensityUtils;
+
+import org.json.JSONObject;
 
 /**
  * Created by zhangqing on 2016/4/9.
@@ -56,7 +61,7 @@ public class PersonInfoView extends LinearLayout {
         super(context);
         this.mPersonInfo = personInfo;
         initView();
-        updateView();
+        //updateView();
     }
 
 
@@ -93,11 +98,50 @@ public class PersonInfoView extends LinearLayout {
         mFollowButton = (TextView) mMainContainer.findViewById(R.id.my_follow_button);
         mIsMaster = (ImageView) mMainContainer.findViewById(R.id.my_head_ismaster);
 
+        mFollowButton.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                UserClass.getInstance().dongtaiDoFollow(mPersonInfo.userid,
+                        !mPersonInfo.is_follow, new VolleyInterface(getContext().getApplicationContext()) {
+                            @Override
+                            public void onMySuccess(JSONObject jsonObject) {
+                                Log.e("json", jsonObject.toString());
+
+                                mPersonInfo.is_follow = !mPersonInfo.is_follow;
+                                Toast.makeText(getContext(), jsonObject.optString("msg", "网络可能异常"), Toast.LENGTH_SHORT).show();
+
+                                if (mFollowListener != null) {
+                                    mFollowListener.onClick(mFollowButton);
+                                }
+
+                            }
+
+                            @Override
+                            public void onMyError(VolleyError error) {
+
+                            }
+                        });
+            }
+        });
 
         addView(mMainContainer);
     }
 
-    private void updateView() {
+    @Override
+    public void invalidate() {
+        updateView();
+        super.invalidate();
+    }
+
+    private OnClickListener mFollowListener = null;
+
+    @Override
+    public void setOnClickListener(OnClickListener l) {
+        //super.setOnClickListener(l);
+        mFollowListener = l;
+    }
+
+    public synchronized void updateView() {
         if (mPersonInfo == null) return;
 
         String name = mPersonInfo.username;
@@ -119,6 +163,7 @@ public class PersonInfoView extends LinearLayout {
         mCountTudi.setText(mPersonInfo.tudi);
         mCountFans.setText(mPersonInfo.fans);
         mCountFollow.setText(mPersonInfo.follow);
+
 
         String interest = mPersonInfo.interest;
 
@@ -152,13 +197,15 @@ public class PersonInfoView extends LinearLayout {
         } else {
             mFollowButton.setText(mPersonInfo.is_follow ? "√ 已订阅" : "+ 订阅");
             mFollowButton.setTextColor(mPersonInfo.is_follow ? Color.parseColor("#9F61AA") : Color.parseColor("#16FBCC"));
-            mFollowButton.setBackgroundResource(mPersonInfo.is_follow ? R.drawable.home_hot_btn_concern_bg_reverse : R.drawable.home_hot_btn_concern_bg);
+            mFollowButton.setBackgroundResource(mPersonInfo.is_follow ? R.drawable.home_hot_btn_concern_bg_reverse_with_stroke : R.drawable.home_hot_btn_concern_bg);
         }
 
         /**
          * 处理半透明师徒圈
          */
         LinearLayout.LayoutParams layoutParams = null;
+        mContainerShituPic.removeAllViews();
+        mContainerShituText.removeAllViews();
         for (int i = 0; i < mPersonInfo.shituPicList.size(); i++) {
             if (layoutParams == null) {
                 int width = DensityUtils.dp2px(getContext(), 55);

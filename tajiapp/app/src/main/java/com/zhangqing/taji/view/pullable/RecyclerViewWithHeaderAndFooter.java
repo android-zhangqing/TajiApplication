@@ -57,6 +57,7 @@ public class RecyclerViewWithHeaderAndFooter extends RecyclerView {
      */
     class HeaderAndFooterAdapter extends Adapter<ViewHolder> {
 
+
         @Override
         public void onAttachedToRecyclerView(RecyclerView recyclerView) {
             super.onAttachedToRecyclerView(recyclerView);
@@ -141,8 +142,11 @@ public class RecyclerViewWithHeaderAndFooter extends RecyclerView {
         @Override
         public void onBindViewHolder(ViewHolder holder, int position) {
             int type = getItemViewType(position);
+
             if (type != TYPE_FOOTER && type != TYPE_HEADER) {
                 mInternalAdapter.onBindViewHolder(holder, mHeaderView == null ? position : position - 1);
+            } else if (type == TYPE_HEADER) {
+                if (mHeaderView != null) mHeaderView.invalidate();
             }
         }
 
@@ -196,10 +200,10 @@ public class RecyclerViewWithHeaderAndFooter extends RecyclerView {
             notifyItemChanged(getItemCount() - 1);
         }
 
+
         public View getFooterView() {
             return mFooterView;
         }
-
 
     }
 
@@ -337,7 +341,4 @@ public class RecyclerViewWithHeaderAndFooter extends RecyclerView {
 //        mIsLoadingMore = false;
 //    }
 
-    public void notifyDateSetChange() {
-        getAdapter().notifyDataSetChanged();
-    }
 }

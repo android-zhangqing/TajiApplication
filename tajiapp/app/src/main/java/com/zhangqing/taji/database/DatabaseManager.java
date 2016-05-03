@@ -175,12 +175,18 @@ public class DatabaseManager {
 
         PersonInfoBean personInfo = null;
         if (cursor.moveToNext()) {
-            personInfo = new PersonInfoBean();
-            personInfo.userid = cursor.getString(cursor.getColumnIndex("userid"));
-            personInfo.username = cursor.getString(cursor.getColumnIndex("username"));
-            personInfo.avatar = cursor.getString(cursor.getColumnIndex("avatar"));
-            int matching = cursor.getInt(cursor.getColumnIndex("matching"));
-            personInfo.hasMatching = (matching == 1);
+            String id = cursor.getString(cursor.getColumnIndex("userid"));
+
+            try {
+                personInfo = PersonInfoBean.getInstance(id, null);
+                personInfo.username = cursor.getString(cursor.getColumnIndex("username"));
+                personInfo.avatar = cursor.getString(cursor.getColumnIndex("avatar"));
+                int matching = cursor.getInt(cursor.getColumnIndex("matching"));
+                personInfo.hasMatching = (matching == 1);
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
 
             Log.e("SQLite", personInfo.toString());
         } else {

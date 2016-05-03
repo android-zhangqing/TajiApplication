@@ -54,7 +54,7 @@ public class BaiShiInviteAdapter extends MyRecyclerViewAdapter<BaiShiInviteAdapt
         for (int i = 0; i < jsonArray.length(); i++) {
             try {
                 mPersonInfoList.add(
-                        new PersonInfoBean(jsonArray.getJSONObject(i).getString("userid"), jsonArray.getJSONObject(i))
+                        PersonInfoBean.getInstance(jsonArray.getJSONObject(i))
                 );
                 count++;
                 insert_position++;

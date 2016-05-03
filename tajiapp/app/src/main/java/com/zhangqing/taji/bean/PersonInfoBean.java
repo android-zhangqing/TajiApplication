@@ -21,6 +21,10 @@ public class PersonInfoBean {
 
     public static PersonInfoBean getInstance(JSONObject jsonObject) throws JSONException {
         String userid = jsonObject.getString("userid");
+        return getInstance(userid, jsonObject);
+    }
+
+    public static PersonInfoBean getInstance(String userid, JSONObject jsonObject) throws JSONException {
         PersonInfoBean personInfo = mPersonInfoMap.get(userid);
         if (personInfo == null) {
             synchronized (PersonInfoBean.class) {
@@ -29,6 +33,9 @@ public class PersonInfoBean {
                     mPersonInfoMap.put(userid, personInfo);
                 }
             }
+        } else {
+            if (jsonObject != null)
+                personInfo.updateData(jsonObject);
         }
         return personInfo;
     }
@@ -64,46 +71,59 @@ public class PersonInfoBean {
     public String i_want = "";
     public String ta_want = "";
 
-    public PersonInfoBean() {
+    private PersonInfoBean() {
 
     }
 
-    public PersonInfoBean(String userid, JSONObject jsonObject) throws JSONException {
+    private PersonInfoBean(String userid, JSONObject jsonObject) throws JSONException {
         this.userid = userid;
-
+        if (jsonObject == null) return;
         username = jsonObject.getString("username");
+        updateData(jsonObject);
+    }
 
-        sex = jsonObject.optString("sex", "");
-        school = jsonObject.optString("school", "");
-        avatar = jsonObject.optString("avatar", "");
-        signature = jsonObject.optString("signature", "");
+    private void updateData(JSONObject jsonObject) {
 
-        fans = jsonObject.optString("fans", "");
-        follow = jsonObject.optString("follow", "");
-        dongtai = jsonObject.optString("dongtai", "");
-        tudi = jsonObject.optString("tudi", "");
+        sex = jsonObject.optString("sex", sex);
+        school = jsonObject.optString("school", school);
+        avatar = jsonObject.optString("avatar", avatar);
+        signature = jsonObject.optString("signature", signature);
 
-        interest = jsonObject.optString("interest", "");
-        skill = jsonObject.optString("skill", "");
+        fans = jsonObject.optString("fans", fans);
+        follow = jsonObject.optString("follow", follow);
+        dongtai = jsonObject.optString("dongtai", dongtai);
+        tudi = jsonObject.optString("tudi", tudi);
 
-        is_master = jsonObject.optString("is_master", "0").equals("1");
-        is_follow = jsonObject.optBoolean("is_follow", false);
+        interest = jsonObject.optString("interest", interest);
+        skill = jsonObject.optString("skill", skill);
 
-        i_want = jsonObject.optString("i_want", "");
-        ta_want = jsonObject.optString("ta_want", "");
+        is_master = jsonObject.optString("is_master", is_master ? "1" : "0").equals("1");
+        is_follow = jsonObject.optBoolean("is_follow", is_follow);
+
+        i_want = jsonObject.optString("i_want", i_want);
+        ta_want = jsonObject.optString("ta_want", ta_want);
 
         JSONArray jsonArray = jsonObject.optJSONArray("circle");
         if (jsonArray != null) {
+            shituPicList.clear();
+            shituTextList.clear();
+
             for (int i = 0; i < jsonArray.length(); i++) {
-                if (jsonArray.getJSONObject(i).has("media")) {
-                    shituPicList.add(jsonArray.getJSONObject(i).optString("media", ""));
-                }
-                if (jsonArray.getJSONObject(i).has("tag")) {
-                    shituTextList.add(jsonArray.getJSONObject(i).optString("tag", ""));
+                try {
+                    if (jsonArray.getJSONObject(i).has("media")) {
+                        shituPicList.add(jsonArray.getJSONObject(i).optString("media", ""));
+                    }
+
+                    if (jsonArray.getJSONObject(i).has("tag")) {
+                        shituTextList.add(jsonArray.getJSONObject(i).optString("tag", ""));
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
                 }
             }
-        }
 
+
+        }
     }
 
 }

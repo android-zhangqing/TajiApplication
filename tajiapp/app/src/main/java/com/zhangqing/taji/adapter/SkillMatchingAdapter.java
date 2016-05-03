@@ -78,7 +78,7 @@ public class SkillMatchingAdapter extends RecyclerView.Adapter<SkillMatchingAdap
             JSONObject jsonObject = null;
             try {
                 jsonObject = jsonArray.getJSONObject(i);
-                PersonInfoBean personInfo = new PersonInfoBean(jsonObject.getString("userid"), jsonObject);
+                PersonInfoBean personInfo = PersonInfoBean.getInstance(jsonObject);
                 mPersonInfoList.add(personInfo);
                 count++;
             } catch (JSONException e) {
