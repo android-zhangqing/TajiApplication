@@ -189,7 +189,7 @@ public class FragmentMessage extends BaseFragment implements View.OnClickListene
                 startActivity(new Intent(getActivity(), SkillMatchingActivity.class));
                 break;
             case "1011":
-
+                startActivity(new Intent(getActivity(), BaiShiInviteListActivity.class));
                 break;
         }
     }

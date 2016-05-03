@@ -356,7 +356,7 @@ public class UserClass {
         String url = "";
         try {
             url = URLHEAD + "/Skill/addChildSkill?" +
-                    "&pid=" + pid + "&content=" + URLEncoder.encode(label_name, "utf-8") +
+                    "&pid=" + (pid + 1) + "&content=" + URLEncoder.encode(label_name, "utf-8") +
                     "&userid=" + userId + "&openid=" + openId;
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
@@ -625,6 +625,18 @@ public class UserClass {
         String url = URLHEAD + "/Master/confirmList?userid=" + userId + "&openid=" + openId +
                 "&page=" + page + "&count=" + Page_Per_Count;
         VolleyRequest.RequestGet(url, "shiTuGetBaiShiList", vif);
+    }
+
+    public void shiTuDoInviteAccept(String uid, VolleyInterface vif) {
+        String url = URLHEAD + "/Master/confirm?userid=" + userId + "&openid=" + openId +
+                "&uid=" + uid;
+        VolleyRequest.RequestGet(url, "shiTuDoInviteAccept", vif);
+    }
+
+    public void shiTuDoInviteRefuse(String uid, VolleyInterface vif) {
+        String url = URLHEAD + "/Master/reject?userid=" + userId + "&openid=" + openId +
+                "&uid=" + uid;
+        VolleyRequest.RequestGet(url, "shiTuDoInviteRefuse", vif);
     }
 
 

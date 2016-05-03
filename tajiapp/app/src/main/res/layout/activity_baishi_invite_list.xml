@@ -22,30 +22,22 @@
             android:src="@drawable/icon_tab_publish_backstep" />
 
         <TextView
-            android:id="@+id/edit_title"
+            android:id="@+id/persons_title_tv"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_centerInParent="true"
             android:gravity="center"
-            android:text=""
+            android:text="你收到的拜师邀请"
             android:textColor="@color/textcolor_bar_first_unselect"
             android:textSize="@dimen/textsize_bar_first" />
 
-        <ImageView
-            android:layout_width="@dimen/topbar_height"
-            android:layout_height="@dimen/topbar_height"
-            android:layout_alignParentRight="true"
-            android:padding="10dp"
-            android:background="@drawable/press_bg"
-            android:src="@drawable/icon_custom_label_ok"
-            android:scaleType="centerInside"
-            android:onClick="onClickCommit"
-            android:clickable="true" />
     </RelativeLayout>
 
-    <EditText
-        android:id="@+id/edit_edit"
+    <com.zhangqing.taji.view.pullable.RecyclerViewPullable
+        android:id="@+id/baishi_recycler_view"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:singleLine="true" />
+        android:layout_height="match_parent">
+
+
+    </com.zhangqing.taji.view.pullable.RecyclerViewPullable>
 </LinearLayout>
