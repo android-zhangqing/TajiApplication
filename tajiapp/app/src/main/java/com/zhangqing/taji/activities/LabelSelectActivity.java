@@ -59,11 +59,13 @@ public class LabelSelectActivity extends BaseActivity implements View.OnClickLis
             public void onClick(View v) {
                 Intent intent = getIntent();
                 intent.putExtra("child", mRecyclerViewAdapter.getSelector());
+                intent.putExtra("child_upload", mRecyclerViewAdapter.getUploadSelector());
                 intent.putExtra("parent", mPid);
                 setResult(RESULT_OK, intent);
                 finish();
             }
         });
+        mButton.setEnabled(false);
     }
 
     /**

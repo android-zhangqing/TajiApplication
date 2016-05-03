@@ -352,7 +352,19 @@ public class UserClass {
 
     }
 
-    public void dongTaiDoUpload(final String labelParent, final String labelChild, final String media, final String video, final String content, final String location, final boolean isMasterCircle, VolleyInterface vif) {
+    public void dongTaiDoUploadLabel(String label_name, int pid, VolleyInterface vif) {
+        String url = "";
+        try {
+            url = URLHEAD + "/Skill/addChildSkill?" +
+                    "&pid=" + pid + "&content=" + URLEncoder.encode(label_name, "utf-8") +
+                    "&userid=" + userId + "&openid=" + openId;
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+        VolleyRequest.RequestGet(url, "dongTaiDoUploadLabel", vif);
+    }
+
+    public void dongTaiDoUpload(final int labelParent, final String labelChild, final String media, final String video, final String content, final String location, final boolean isMasterCircle, VolleyInterface vif) {
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST, "http://taji.whutech.com/DongTai/publish",
                 vif.loadingListener(), vif.errorListener()) {
@@ -368,7 +380,7 @@ public class UserClass {
                         map.put("video", video);
                     //map.put("content", URLEncoder.encode(content, "utf-8"));
                     map.put("content", content);
-                    map.put("skill", labelParent);
+                    map.put("skill", LABEL_PARENT_ARRAY[labelParent]);
                     map.put("tag", labelChild);
 
                     map.put("loc", URLEncoder.encode(location, "utf-8"));

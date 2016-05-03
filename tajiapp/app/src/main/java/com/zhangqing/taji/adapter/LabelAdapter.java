@@ -58,6 +58,20 @@ public class LabelAdapter extends MyRecyclerViewAdapter<LabelAdapter.MyHolder> {
         return result;
     }
 
+    public String getUploadSelector() {
+        String result = "";
+        for (int i = 0; i < mLabelList.size(); i++) {
+            if (mLabelList.get(i).is_select && mLabelList.get(i).is_new_define) {
+                if (result.equals("")) {
+                    result = mLabelList.get(i).label_name;
+                } else {
+                    result = result + "." + mLabelList.get(i).label_name;
+                }
+            }
+        }
+        return result;
+    }
+
     @Override
     public int addData(JSONObject jsonObject) {
 

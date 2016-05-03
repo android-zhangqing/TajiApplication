@@ -15,7 +15,6 @@ import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
-import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -76,11 +75,13 @@ public class PublishActivity extends BaseActivity implements View.OnClickListene
     public String mPathVideo = "";
     //视频模式下为视频封面路径 图片模式下为图片路径
     public String mPathCover = "";
+    private boolean mIsUploading = false;
 
     private String mUrlVideo = "";
     private String mUrlCover = "";
-    private String mLabelParent = "";
+    private int mLabelParentPosition = 0;
     private String mLabelChild = "";
+    private String mLabelChildUpload = "";
 
     private ScrollView scrollView;
     private ImageView faceToggle;
@@ -248,11 +249,12 @@ public class PublishActivity extends BaseActivity implements View.OnClickListene
              */
             case TODO_SELECT_LABEL: {
                 if (data == null) return;
-                mLabelParent = UserClass.LABEL_PARENT_ARRAY[data.getIntExtra("parent", 0)];
+                mLabelParentPosition = data.getIntExtra("parent", 0);
                 mLabelChild = data.getStringExtra("child");
-                Log.e("TODO_SELECT_LABEL", mLabelParent + "|" + mLabelChild);
+                mLabelChildUpload = data.getStringExtra("child_upload");
+                Log.e("TODO_SELECT_LABEL", mLabelParentPosition + "|" + mLabelChild);
 
-                mLabelViewParent.setText(mLabelParent);
+                mLabelViewParent.setText(UserClass.LABEL_PARENT_ARRAY[mLabelParentPosition]);
                 mLabelViewChild.setText(mLabelChild.replaceAll("\\.", " "));
 
                 break;
@@ -297,6 +299,7 @@ public class PublishActivity extends BaseActivity implements View.OnClickListene
     }
 
     private void uploadFile(final String real_path) {
+        mIsUploading = true;
         sendMessage(MSG_UPLOAD_INIT, 0);
         OneSdkUtil.upLoadFile(real_path, new UploadListener() {
             @Override
@@ -308,6 +311,7 @@ public class PublishActivity extends BaseActivity implements View.OnClickListene
             @Override
             public void onUploadFailed(UploadTask uploadTask, FailReason failReason) {
                 Log.e("OneSdkUtil", "onUploadFailed|");
+                mIsUploading = false;
                 Toast.makeText(getApplicationContext(), "上传失败：" + failReason.getMessage(), Toast.LENGTH_SHORT).show();
             }
 
@@ -319,6 +323,7 @@ public class PublishActivity extends BaseActivity implements View.OnClickListene
                 } else if (CameraUtil.isVideoFilePath(real_path)) {
                     mUrlVideo = uploadTask.getResult().url;
                 }
+                mIsUploading = false;
                 Toast.makeText(getApplicationContext(), "上传成功", Toast.LENGTH_SHORT).show();
             }
 
@@ -397,8 +402,33 @@ public class PublishActivity extends BaseActivity implements View.OnClickListene
                 } else if (mLabelChild.equals("")) {
                     Toast.makeText(getApplicationContext(), "请先设置标签", Toast.LENGTH_SHORT).show();
                     return;
+                } else if (mIsUploading) {
+                    Toast.makeText(getApplicationContext(), "请等待上传完毕", Toast.LENGTH_SHORT).show();
+                    return;
                 }
-                UserClass.getInstance().dongTaiDoUpload(mLabelParent, mLabelChild, mUrlCover, mUrlVideo,
+                PublishBtn.setEnabled(false);
+
+                if (!mLabelChildUpload.equals("")) {
+                    UserClass.getInstance().dongTaiDoUploadLabel(mLabelChildUpload, mLabelParentPosition, new VolleyInterface(getApplicationContext()) {
+                        @Override
+                        public void onMySuccess(JSONObject jsonObject) {
+                            uploadDongtai();
+                        }
+
+                        @Override
+                        public void onMyError(VolleyError error) {
+                            Toast.makeText(getApplicationContext(), "设置自定义标签失败", Toast.LENGTH_SHORT).show();
+                            PublishBtn.setEnabled(true);
+                        }
+                    });
+                } else {
+                    uploadDongtai();
+                }
+
+            }
+
+            private void uploadDongtai() {
+                UserClass.getInstance().dongTaiDoUpload(mLabelParentPosition, mLabelChild, mUrlCover, mUrlVideo,
                         editText.getText().toString(),
                         mLocationTextView.getText().toString(),
                         isMasterCircle,
@@ -406,11 +436,14 @@ public class PublishActivity extends BaseActivity implements View.OnClickListene
                             @Override
                             public void onMySuccess(JSONObject jsonObject) {
                                 Toast.makeText(getApplicationContext(), jsonObject.toString(), Toast.LENGTH_LONG).show();
+                                Log.e("dongTaiDoUpload", jsonObject.toString());
+
+                                PublishBtn.setEnabled(true);
                             }
 
                             @Override
                             public void onMyError(VolleyError error) {
-
+                                PublishBtn.setEnabled(true);
                             }
                         });
             }
