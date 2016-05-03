@@ -142,7 +142,7 @@ public class OthersDetailActivity extends BaseActivity {
             case R.id.person_detail_baishi_btn: {
 
                 findViewById(R.id.person_detail_baishi_btn).setEnabled(false);
-                UserClass.getInstance().doBaishi(mId, new VolleyInterface(OthersDetailActivity.this) {
+                UserClass.getInstance().shiTuDoBaiShi(mId, new VolleyInterface(OthersDetailActivity.this) {
                     @Override
                     public void onMySuccess(JSONObject jsonObject) {
                         Toast.makeText(getApplicationContext(), jsonObject.optString("msg", "success"), Toast.LENGTH_LONG).show();

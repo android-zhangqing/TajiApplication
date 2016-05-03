@@ -8,12 +8,17 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
 
+import com.android.volley.VolleyError;
 import com.zhangqing.taji.BaseFragment;
 import com.zhangqing.taji.R;
 import com.zhangqing.taji.base.UserClass;
+import com.zhangqing.taji.base.VolleyInterface;
 import com.zhangqing.taji.database.DatabaseManager;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import io.rong.imkit.RongIM;
 import io.rong.imkit.fragment.ConversationListFragment;
@@ -54,13 +59,47 @@ public class FragmentMessage extends BaseFragment implements View.OnClickListene
         initListener(v);
 
 
+        onHiddenChanged(false);
+        return v;
+    }
+
+    private void checkMatching() {
         if (UserClass.getInstance().getStringByKey("is_to_insert").equals("1")) {
             UserClass.getInstance().setStringByKey("is_to_insert", "0");
             insertMessage("1010", "又有人跟你匹配了呦！");
         }
+    }
 
-        onHiddenChanged(false);
-        return v;
+    private void checkBaiShiInvite() {
+        UserClass.getInstance().shiTuGetBaiShiList(1, new VolleyInterface(getActivity().getApplicationContext()) {
+            @Override
+            public void onMySuccess(JSONObject jsonObject) {
+                try {
+                    JSONArray jsonArray = jsonObject.getJSONArray("data");
+
+                    String name_show = "";
+                    switch (jsonArray.length()) {
+                        case 0:
+                            return;
+                        case 1:
+                            name_show = jsonArray.getJSONObject(0).optString("username", "神秘人");
+                            break;
+                        default:
+                            name_show = jsonArray.getJSONObject(0).optString("username", "神秘人1") + "、" +
+                                    jsonArray.getJSONObject(1).optString("username", "神秘人2") + "等人";
+                    }
+                    insertMessage("1011", name_show + "对你发出拜师邀请");
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            @Override
+            public void onMyError(VolleyError error) {
+
+            }
+        });
     }
 
     @Override
@@ -73,7 +112,8 @@ public class FragmentMessage extends BaseFragment implements View.OnClickListene
         super.onHiddenChanged(hidden);
         log("onHiddenChanged", hidden + "");
         if (!hidden) {
-
+            checkMatching();
+            checkBaiShiInvite();
         }
     }
 
@@ -109,33 +149,6 @@ public class FragmentMessage extends BaseFragment implements View.OnClickListene
             }
         });
 
-//        RongIM.setConversationBehaviorListener(new RongIM.ConversationBehaviorListener() {
-//            @Override
-//            public boolean onUserPortraitClick(Context context, Conversation.ConversationType conversationType, UserInfo userInfo) {
-//                return false;
-//            }
-//
-//            @Override
-//            public boolean onUserPortraitLongClick(Context context, Conversation.ConversationType conversationType, UserInfo userInfo) {
-//                return false;
-//            }
-//
-//            @Override
-//            public boolean onMessageClick(Context context, View view, Message message) {
-//                return false;
-//            }
-//
-//            @Override
-//            public boolean onMessageLinkClick(Context context, String s) {
-//                return false;
-//            }
-//
-//            @Override
-//            public boolean onMessageLongClick(Context context, View view, Message message) {
-//                return false;
-//            }
-//        });
-//
         RongIM.setConversationListBehaviorListener(new RongIM.ConversationListBehaviorListener() {
 
             @Override
@@ -176,6 +189,7 @@ public class FragmentMessage extends BaseFragment implements View.OnClickListene
                 startActivity(new Intent(getActivity(), SkillMatchingActivity.class));
                 break;
             case "1011":
+
                 break;
         }
     }

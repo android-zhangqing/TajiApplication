@@ -616,10 +616,17 @@ public class UserClass {
         VolleyRequest.RequestGet(url, "getSkillMatching", vif);
     }
 
-    public void doBaishi(String uid, VolleyInterface vif) {
+    public void shiTuDoBaiShi(String uid, VolleyInterface vif) {
         String url = URLHEAD + "/Master/baishi?userid=" + userId + "&openid=" + openId + "&uid=" + uid;
-        VolleyRequest.RequestGet(url, "doBaishi", vif);
+        VolleyRequest.RequestGet(url, "shiTuDoBaiShi", vif);
     }
+
+    public void shiTuGetBaiShiList(int page, VolleyInterface vif) {
+        String url = URLHEAD + "/Master/confirmList?userid=" + userId + "&openid=" + openId +
+                "&page=" + page + "&count=" + Page_Per_Count;
+        VolleyRequest.RequestGet(url, "shiTuGetBaiShiList", vif);
+    }
+
 
     /**
      * @param word
