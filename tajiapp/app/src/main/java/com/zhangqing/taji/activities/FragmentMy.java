@@ -240,13 +240,12 @@ public class FragmentMy extends BaseFragment implements View.OnClickListener {
 
             if (restWidth <= 0) {
                 //改变前一个标签的宽度，使之两端对齐
-                TextView lastTv = (TextView) layoutSubContainer.getChildAt(layoutSubContainer.getChildCount() - 1);
-                int lastTvWidth = lastTv.getMeasuredWidth() + costWidth + restWidth - 2 * MARGIN_LABLE;
+//                TextView lastTv = (TextView) layoutSubContainer.getChildAt(layoutSubContainer.getChildCount() - 1);
                 //Log.e("lastTvWidth", lastTvWidth + "|");
-
-                LinearLayout.LayoutParams tempParams = new LinearLayout.LayoutParams(lastTvWidth, LinearLayout.LayoutParams.WRAP_CONTENT);
-                tempParams.setMargins(MARGIN_LABLE, MARGIN_LABLE_Top, MARGIN_LABLE, MARGIN_LABLE_Top);
-                lastTv.setLayoutParams(tempParams);
+//                int lastTvWidth = lastTv.getMeasuredWidth() + costWidth + restWidth - 2 * MARGIN_LABLE;
+//                LinearLayout.LayoutParams tempParams = new LinearLayout.LayoutParams(lastTvWidth, LinearLayout.LayoutParams.WRAP_CONTENT);
+//                tempParams.setMargins(MARGIN_LABLE, MARGIN_LABLE_Top, MARGIN_LABLE, MARGIN_LABLE_Top);
+//                lastTv.setLayoutParams(tempParams);
 
                 restWidth = layout.getWidth() - costWidth;
                 layoutSubContainer = new LinearLayout(getActivity());
