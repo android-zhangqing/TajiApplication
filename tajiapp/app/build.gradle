@@ -26,7 +26,6 @@ android {
 
     buildTypes {
 
-
         debug {
             signingConfig signingConfigs.release
         }
@@ -34,7 +33,7 @@ android {
             signingConfig signingConfigs.release
 //minifyEnabled false
 //shrinkResources false
-//proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt', 'proguard-umeng-social.txt'
         }
     }
 }
@@ -52,4 +51,10 @@ dependencies {
     compile 'com.umeng.analytics:analytics:latest.integration'
     compile project(':animators')
     compile project(':OneSDK')
+    compile files('libs/umeng_social_sdk.jar')
+    compile files('libs/SocialSDK_WeiXin_1.jar')
+    compile files('libs/SocialSDK_WeiXin_2.jar')
+    compile files('libs/mta-sdk-1.6.2.jar')
+    compile files('libs/open_sdk_r5509.jar')
+    compile files('libs/SocialSDK_QQZone_3.jar')
 }
