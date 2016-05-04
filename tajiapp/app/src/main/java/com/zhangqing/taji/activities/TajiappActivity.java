@@ -205,13 +205,12 @@ public class TajiappActivity extends BaseActivity implements OnTabClickListener,
 
     @Override
     public void topbarHomeSearchClick() {
-        Intent intent = new Intent(this, SearchActivity.class);
-        startActivity(intent);
+        SearchActivity.startSearch(this, 0);
     }
 
     @Override
     public void topbarCircleSearchClick() {
-        topbarHomeSearchClick();
+        SearchActivity.startSearch(this, 1);
     }
 
     @Override
@@ -221,7 +220,7 @@ public class TajiappActivity extends BaseActivity implements OnTabClickListener,
 
     @Override
     public void topbarMessageCreateClick() {
-        inputTitleDialog();
+        SearchActivity.startSearch(this, 0);
     }
 
 

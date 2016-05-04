@@ -587,7 +587,7 @@ public class PublishActivity extends BaseActivity implements View.OnClickListene
      */
     private void showFaceGrid(boolean postDelay) {
 
-        faceToggle.setImageResource(R.drawable.icon_tab_publish_imm);
+        faceToggle.setImageResource(R.drawable.icon_tab_publish_face);
         faceToggle.setTag(R.drawable.icon_tab_publish_imm);
         if (parentViewFaceGrid.getVisibility() == View.GONE) {
 

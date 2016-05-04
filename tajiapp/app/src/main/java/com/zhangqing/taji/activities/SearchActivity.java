@@ -1,5 +1,7 @@
 package com.zhangqing.taji.activities;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -20,21 +22,31 @@ import java.util.List;
  * 右上角搜索
  */
 public class SearchActivity extends BaseActivity {
+
+    public static void startSearch(Context context,int position){
+        Intent intent = new Intent(context, SearchActivity.class);
+        intent.putExtra("position", position);
+        context.startActivity(intent);
+    }
+
     ViewPager pager;
     ViewPagerIndicator indicator;
+
+    int init_position = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
 
+        init_position = getIntent().getIntExtra("position", 0);
+
         FragmentPagerAdapter adapter = new MyViewPagerAdapter(getSupportFragmentManager()).init();
 
         ViewPager pager = (ViewPager) findViewById(R.id.search_viewpager);
         pager.setAdapter(adapter);
         indicator = (ViewPagerIndicator) findViewById(R.id.search_indicator);
-        indicator.setViewPager(pager, 0);
-
+        indicator.setViewPager(pager, init_position);
 
     }
 
