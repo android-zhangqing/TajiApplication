@@ -35,8 +35,11 @@ import io.rong.imlib.model.UserInfo;
  */
 public class TajiappActivity extends BaseActivity implements OnTabClickListener,
         OnTopBarClickListener {
-    public static final int REQUEST_SELECT_PIC = 1;
-    public static final int REQUEST_SKILL_SETTING = 2;
+    public static final int REQUEST_CENTER_SELECT_PIC = 1;
+
+    public static final int REQUEST_MY_SKILL_SETTING = 2;
+    public static final int REQUEST_MY_MODIFY_PERSON_INFO = 3;
+
 
     private Fragment[] fragments = new Fragment[7];
     private TopBar topBar;
@@ -274,7 +277,7 @@ public class TajiappActivity extends BaseActivity implements OnTabClickListener,
         tabClickPublishBtn();
         switch (v.getId()) {
             case R.id.main_publish_left: {
-                startActivityForResult(CameraUtil.Picture.choosePicture(), REQUEST_SELECT_PIC);
+                startActivityForResult(CameraUtil.Picture.choosePicture(), REQUEST_CENTER_SELECT_PIC);
                 break;
             }
             case R.id.main_publish_right: {
@@ -292,7 +295,7 @@ public class TajiappActivity extends BaseActivity implements OnTabClickListener,
         Log.e("onActivityResult", requestCode + "|" + resultCode + "|" + (data == null ? "null" : (data)));
         if (resultCode != RESULT_OK) return;
         switch (requestCode) {
-            case REQUEST_SELECT_PIC: {
+            case REQUEST_CENTER_SELECT_PIC: {
                 if (data == null || data.getData() == null) return;
                 String path = CameraUtil.uri2filePath(this, data.getData());
                 Intent intent = new Intent(this, PublishActivity.class);

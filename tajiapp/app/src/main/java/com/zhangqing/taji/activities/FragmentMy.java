@@ -276,18 +276,18 @@ public class FragmentMy extends BaseFragment implements View.OnClickListener {
             case R.id.my_click_modify_interest: {
                 Intent intent = new Intent(getActivity(), SkillSettingActivity.class);
                 intent.putExtra("type", SkillSettingActivity.ACTIVITY_INTEREST);
-                startActivityForResult(intent, TajiappActivity.REQUEST_SKILL_SETTING);
+                startActivityForResult(intent, TajiappActivity.REQUEST_MY_SKILL_SETTING);
                 break;
             }
             case R.id.my_click_modify_skill: {
                 Intent intent = new Intent(getActivity(), SkillSettingActivity.class);
                 intent.putExtra("type", SkillSettingActivity.ACTIVITY_SKILL);
-                startActivityForResult(intent, TajiappActivity.REQUEST_SKILL_SETTING);
+                startActivityForResult(intent, TajiappActivity.REQUEST_MY_SKILL_SETTING);
                 break;
             }
             case R.id.my_click_modify_member_detail: {
                 Intent intent = new Intent(getActivity(), ModifyPersonInfoActivity.class);
-                startActivity(intent);
+                startActivityForResult(intent, TajiappActivity.REQUEST_MY_MODIFY_PERSON_INFO);
                 break;
             }
             case R.id.my_click_dynamic_mine: {
@@ -330,10 +330,17 @@ public class FragmentMy extends BaseFragment implements View.OnClickListener {
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         Log.e("onActivityResult", "fragmentMy");
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode != TajiappActivity.REQUEST_SKILL_SETTING) return;
-        if (resultCode == Activity.RESULT_OK) {
-            swipeRefreshLayout.setRefreshing(true);
-            UserClass.getInstance().setStringByKey("is_to_insert", "1");
+        if (resultCode != Activity.RESULT_OK) return;
+        switch (requestCode) {
+            case TajiappActivity.REQUEST_MY_SKILL_SETTING: {
+                swipeRefreshLayout.setRefreshing(true);
+                UserClass.getInstance().setStringByKey("is_to_insert", "1");
+                break;
+            }
+            case TajiappActivity.REQUEST_MY_MODIFY_PERSON_INFO: {
+                swipeRefreshLayout.setRefreshing(true);
+                break;
+            }
         }
     }
 }

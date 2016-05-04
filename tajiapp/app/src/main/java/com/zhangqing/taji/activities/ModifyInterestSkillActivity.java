@@ -120,7 +120,7 @@ public class ModifyInterestSkillActivity extends Activity {
                 mNameEditText.getText().toString(),
                 mSexEditText.getText().toString(),
                 mSchoolEditText.getText().toString(),
-                mSignEditText.getText().toString(),
+                mSignEditText.getText().toString(),"|",
                 new VolleyInterface(this) {
                     @Override
                     public void onMySuccess(JSONObject jsonObject) {

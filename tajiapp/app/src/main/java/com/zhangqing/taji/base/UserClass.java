@@ -410,7 +410,7 @@ public class UserClass {
 
     }
 
-    public void doModifyMemberDetail(String name, String sex, String school, String sign,
+    public void doModifyMemberDetail(String name, String sex, String school, String sign, String avatar,
                                      VolleyInterface vif) {
         String url = "http://www.baidu.com/?";
         try {
@@ -419,7 +419,8 @@ public class UserClass {
                     "&username=" + URLEncoder.encode(name, "utf-8") +
                     "&sex=" + URLEncoder.encode(sex, "utf-8") +
                     "&school=" + URLEncoder.encode(school, "utf-8") +
-                    "&signature=" + URLEncoder.encode(sign, "utf-8");
+                    "&signature=" + URLEncoder.encode(sign, "utf-8") +
+                    "&avatar=" + avatar;
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }

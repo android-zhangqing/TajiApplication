@@ -30,6 +30,20 @@
             android:textColor="@color/textcolor_bar_first_unselect"
             android:textSize="@dimen/textsize_bar_first" />
 
+        <TextView
+            android:id="@+id/modify_commit"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/press_bg"
+            android:clickable="true"
+            android:gravity="center"
+            android:onClick="onClick"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="提交"
+            android:textSize="@dimen/textsize_bar_first" />
+
     </RelativeLayout>
 
     <RelativeLayout
@@ -41,6 +55,8 @@
             android:id="@+id/modify_person_avatar"
             android:layout_width="80dp"
             android:layout_height="80dp"
+            android:clickable="true"
+            android:onClick="onClick"
             android:layout_centerInParent="true"
             android:scaleType="centerInside" />
 
@@ -52,11 +68,13 @@
         android:background="#362039" />
 
     <LinearLayout
+        android:id="@+id/modify_person_name_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/publish_four_block_bg"
         android:clickable="true"
         android:gravity="center_vertical"
+        android:onClick="onClick"
         android:orientation="horizontal"
         android:paddingBottom="10dp"
         android:paddingLeft="@dimen/margin_left"
@@ -101,11 +119,13 @@
         android:background="#362039" />
 
     <LinearLayout
+        android:id="@+id/modify_person_sex_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/publish_four_block_bg"
         android:clickable="true"
         android:gravity="center_vertical"
+        android:onClick="onClick"
         android:orientation="horizontal"
         android:paddingBottom="10dp"
         android:paddingLeft="@dimen/margin_left"
@@ -150,11 +170,13 @@
         android:background="#362039" />
 
     <LinearLayout
+        android:id="@+id/modify_person_school_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/publish_four_block_bg"
         android:clickable="true"
         android:gravity="center_vertical"
+        android:onClick="onClick"
         android:orientation="horizontal"
         android:paddingBottom="10dp"
         android:paddingLeft="@dimen/margin_left"
@@ -205,11 +227,13 @@
         android:background="#362039" />
 
     <LinearLayout
+        android:id="@+id/modify_person_sign_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/publish_four_block_bg"
         android:clickable="true"
         android:gravity="center_vertical"
+        android:onClick="onClick"
         android:orientation="horizontal"
         android:paddingBottom="10dp"
         android:paddingLeft="@dimen/margin_left"

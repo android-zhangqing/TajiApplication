@@ -25,7 +25,13 @@ public class EditActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit);
         mEditText = (EditText) findViewById(R.id.edit_edit);
+
         ((TextView) findViewById(R.id.edit_title)).setText(getIntent().getStringExtra("title"));
+        String text = getIntent().getStringExtra("default");
+        if (text != null) {
+            mEditText.setText(text);
+            mEditText.setSelection(mEditText.length());
+        }
 
     }
 
