@@ -32,6 +32,9 @@ public class PersonInfoView extends LinearLayout {
     PersonInfoBean mPersonInfo;
     ViewGroup mMainContainer;
 
+    private String current_interest = "";
+    private String current_skill = "";
+
     private TextView mNameTextView;
     private TextView mSignTextView;
     private TextView mSchoolTextView;
@@ -123,7 +126,6 @@ public class PersonInfoView extends LinearLayout {
                         });
             }
         });
-
         addView(mMainContainer);
     }
 
@@ -164,15 +166,15 @@ public class PersonInfoView extends LinearLayout {
         mCountFans.setText(mPersonInfo.fans);
         mCountFollow.setText(mPersonInfo.follow);
 
+        if (!current_interest.equals(mPersonInfo.interest)) {
+            current_interest = mPersonInfo.interest;
+            addViewToContainer(current_interest, mContainerInterest, R.drawable.my_interst_lable_bg);
+        }
 
-        String interest = mPersonInfo.interest;
-
-        addViewToContainer(interest, mContainerInterest, R.drawable.my_interst_lable_bg);
-
-
-        String skill = mPersonInfo.skill;
-
-        addViewToContainer(skill, mContainerSkill, R.drawable.my_skill_lable_bg);
+        if (!current_skill.equals(mPersonInfo.skill)) {
+            current_skill = mPersonInfo.skill;
+            addViewToContainer(current_skill, mContainerSkill, R.drawable.my_skill_lable_bg);
+        }
 
         String sex = mPersonInfo.sex;
         if (sex.equals("女")) {

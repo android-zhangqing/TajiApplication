@@ -117,8 +117,8 @@ public class DongTaiBean {
 
 
         //类别
-        mLabelParentSkill = jsonObject.optString("skill", mLabelParentSkill);
-        mLabelChildTag = jsonObject.optString("tag", mLabelChildTag);
+        mLabelParentSkill = jsonObject.optString("parent", mLabelParentSkill);
+        mLabelChildTag = jsonObject.optString("child", mLabelChildTag);
 
         //类别
         mType = jsonObject.optString("type", mType);

@@ -78,11 +78,11 @@ public class PersonInfoBean {
     private PersonInfoBean(String userid, JSONObject jsonObject) throws JSONException {
         this.userid = userid;
         if (jsonObject == null) return;
-        username = jsonObject.getString("username");
         updateData(jsonObject);
     }
 
     private void updateData(JSONObject jsonObject) {
+        username = jsonObject.optString("username", username);
 
         sex = jsonObject.optString("sex", sex);
         school = jsonObject.optString("school", school);
