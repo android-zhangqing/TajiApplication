@@ -58,7 +58,7 @@ public class FragmentHomeHotViewThen extends LinearLayout {
                         }
 
                         try {
-                            if (mRecyclerViewAdapter.addData(jsonObject.getJSONArray("data"), mRecyclerView) != UserClass.Page_Per_Count) {
+                            if (mRecyclerViewAdapter.addData(jsonObject.getJSONArray("data")) != UserClass.Page_Per_Count) {
                                 //mFootTextView.setText("没有了呢~~");
                                 mRecyclerView.setLoadingMoreStatus(RecyclerViewPullable.LoadingMoreStatus_End);
                                 //mRecyclerView.notifyMoreFinish(false);

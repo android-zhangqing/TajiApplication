@@ -289,7 +289,6 @@ public class PublishActivity extends BaseActivity implements View.OnClickListene
                 mPathCover = real_path;
             }
             Log.e("real_path_scaled", mPathCover + "|");
-
             //UserClass.getInstance().doUploadPhoto(real_path_scaled, this);
             uploadFile(mPathCover);
             // /storage/emulated/0/DCIM/Camera/IMG_20160303_140435.jpg

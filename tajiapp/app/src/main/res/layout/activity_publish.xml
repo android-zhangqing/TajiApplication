@@ -160,11 +160,11 @@
                                 android:layout_marginRight="4dp"
                                 android:background="@null"
                                 android:gravity="top"
-                                android:hint="hint"
+                                android:hint="说点什么吧~"
                                 android:onClick="onClickEditText"
                                 android:padding="10dp"
                                 android:singleLine="false"
-                                android:text="i_love_emojicon"
+                                android:text=""
                                 emojicon:emojiconSize="28sp" />
 
                             <!--com.zhangqing.taji.view.MyEditText

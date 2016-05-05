@@ -1,5 +1,6 @@
 package com.zhangqing.taji.adapter;
 
+import android.app.Activity;
 import android.content.Context;
 import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
@@ -15,6 +16,10 @@ import android.widget.Toast;
 import com.android.volley.VolleyError;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.imageaware.ImageViewAware;
+import com.umeng.socialize.ShareAction;
+import com.umeng.socialize.UMShareListener;
+import com.umeng.socialize.bean.SHARE_MEDIA;
+import com.umeng.socialize.media.UMImage;
 import com.zhangqing.taji.MyApplication;
 import com.zhangqing.taji.R;
 import com.zhangqing.taji.adapter.listener.AvatarClickListener;
@@ -65,7 +70,7 @@ public class DongTaiListAdapter extends RecyclerView.Adapter<DongTaiListAdapter.
         holder.tv_name.setText(dongTaiClass.mPersonInfo.username);
         holder.tv_content.setText(dongTaiClass.mContent);
         holder.tv_label_parent.setText(dongTaiClass.mLabelParentSkill);
-        holder.tv_label_child.setText(dongTaiClass.mLabelChildTag.replaceAll("\\.","  "));
+        holder.tv_label_child.setText(dongTaiClass.mLabelChildTag.replaceAll("\\.", "  "));
 
         holder.tv_count_forward.setText(dongTaiClass.mCountForward);
         holder.tv_count_comment.setText(dongTaiClass.mCountComment);
@@ -76,8 +81,27 @@ public class DongTaiListAdapter extends RecyclerView.Adapter<DongTaiListAdapter.
 
         if (dongTaiClass.mPersonInfo.userid.equals(UserClass.getInstance().userId)) {
             holder.tv_follow.setVisibility(View.INVISIBLE);
+            holder.tv_delete.setVisibility(View.VISIBLE);
+            holder.tv_delete.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    UserClass.getInstance().dongTaiDoDelete(dongTaiClass.mId, new VolleyInterface(mContext.getApplicationContext()) {
+                        @Override
+                        public void onMySuccess(JSONObject jsonObject) {
+                            Toast.makeText(mContext.getApplicationContext(),
+                                    jsonObject.optString("msg", "删除成功") + "，请自行刷新", Toast.LENGTH_SHORT).show();
+                        }
+
+                        @Override
+                        public void onMyError(VolleyError error) {
+
+                        }
+                    });
+                }
+            });
         } else {
             holder.tv_follow.setVisibility(View.VISIBLE);
+            holder.tv_delete.setVisibility(View.INVISIBLE);
             updateFollowButton(holder.tv_follow, dongTaiClass.mPersonInfo.is_follow);
         }
 
@@ -129,6 +153,37 @@ public class DongTaiListAdapter extends RecyclerView.Adapter<DongTaiListAdapter.
         holder.ll_count_forward_container.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                final SHARE_MEDIA[] displaylist = new SHARE_MEDIA[]
+                        {
+                                SHARE_MEDIA.WEIXIN, SHARE_MEDIA.WEIXIN_CIRCLE,
+                                SHARE_MEDIA.QQ, SHARE_MEDIA.SMS
+                        };
+                new ShareAction((Activity) mContext).setDisplayList(displaylist)
+                        .withText(dongTaiClass.mContent)
+                        .withTitle("复制链接打开[Ta技]客户端，你懂的")
+                        .withTargetUrl("http://doc.whutech.com/taji.html?tid=" + dongTaiClass.mId)
+                        .withMedia(new UMImage(mContext, dongTaiClass.mCoverUrl))
+                        .setListenerList(new UMShareListener() {
+                            @Override
+                            public void onResult(SHARE_MEDIA share_media) {
+
+                            }
+
+                            @Override
+                            public void onError(SHARE_MEDIA share_media, Throwable throwable) {
+
+                            }
+
+                            @Override
+                            public void onCancel(SHARE_MEDIA share_media) {
+
+                            }
+                        })
+                        .open();
+                if (true) return;
+
+
                 holder.ll_count_forward_container.setEnabled(false);
                 UserClass.getInstance().dongTaiDoForward(dongTaiClass.mId, new VolleyInterface(mContext.getApplicationContext()) {
                     @Override
@@ -196,6 +251,7 @@ public class DongTaiListAdapter extends RecyclerView.Adapter<DongTaiListAdapter.
 
     @Override
     public void onBindViewHolder(final MyViewHolder holder, int position) {
+
         final DongTaiBean dongTaiClass = mDongTaiList.get(position);
 
         updateViewHolder(mContext, holder, dongTaiClass, this);
@@ -237,7 +293,7 @@ public class DongTaiListAdapter extends RecyclerView.Adapter<DongTaiListAdapter.
     }
 
 
-    public int addData(JSONArray jsonArray, RecyclerViewPullable recyclerViewPullable) {
+    public int addData(JSONArray jsonArray) {
         int count = 0;
         int insert_position = mDongTaiList.size() - 1;
         for (int i = 0; i < jsonArray.length(); i++) {
@@ -256,15 +312,6 @@ public class DongTaiListAdapter extends RecyclerView.Adapter<DongTaiListAdapter.
         return count;
     }
 
-    /**
-     * 增加新数据
-     *
-     * @param jsonArray
-     * @return 增加条数
-     */
-    public int addData(JSONArray jsonArray) {
-        return addData(jsonArray, null);
-    }
 
     public static class MyViewHolder extends RecyclerView.ViewHolder {
         TextView tv_name;
@@ -274,7 +321,8 @@ public class DongTaiListAdapter extends RecyclerView.Adapter<DongTaiListAdapter.
 
         TextView tv_label_parent;
         TextView tv_label_child;
-        LinearLayout ll_label_container;
+
+        TextView tv_delete;
 
         TextView tv_count_forward;
         TextView tv_count_comment;
@@ -298,7 +346,8 @@ public class DongTaiListAdapter extends RecyclerView.Adapter<DongTaiListAdapter.
 
             tv_label_parent = (TextView) itemView.findViewById(R.id.home_hot_then_label_parent);
             tv_label_child = (TextView) itemView.findViewById(R.id.home_hot_then_label_child);
-            ll_label_container = (LinearLayout) itemView.findViewById(R.id.home_hot_then_label_container);
+
+            tv_delete = (TextView) itemView.findViewById(R.id.home_hot_then_delete);
 
             tv_count_forward = (TextView) itemView.findViewById(R.id.home_hot_then_count_forward);
             tv_count_comment = (TextView) itemView.findViewById(R.id.home_hot_then_count_comment);

@@ -334,6 +334,12 @@ public class UserClass {
         VolleyRequest.RequestGet(url, "dongTaiGetCommentList", vif);
     }
 
+    public void dongTaiDoDelete(String tid, VolleyInterface vif) {
+        String url = URLHEAD + "/DongTai/delete?" +
+                "tid=" + tid + "&userid=" + userId + "&openid=" + openId;
+        VolleyRequest.RequestGet(url, "dongTaiDoDelete", vif);
+    }
+
     /**
      * 上传图片
      *
@@ -363,6 +369,7 @@ public class UserClass {
         }
         VolleyRequest.RequestGet(url, "dongTaiDoUploadLabel", vif);
     }
+
 
     public void dongTaiDoUpload(final int labelParent, final String labelChild, final String media, final String video, final String content, final String location, final boolean isMasterCircle, VolleyInterface vif) {
 

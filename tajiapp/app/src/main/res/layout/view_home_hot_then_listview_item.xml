@@ -80,30 +80,37 @@
 
         <TextView
             android:id="@+id/home_hot_then_label_parent"
-            android:layout_width="wrap_content"
+            android:layout_width="55dp"
             android:layout_height="wrap_content"
             android:background="@drawable/lable_bg"
+            android:gravity="center"
             android:paddingBottom="2dp"
             android:paddingLeft="12dp"
             android:paddingRight="12dp"
             android:paddingTop="2dp"
+            android:singleLine="true"
             android:text=""
             android:textColor="#422E54" />
+
         <TextView
             android:id="@+id/home_hot_then_label_child"
-            android:layout_width="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:textColor="#885195"
-            android:layout_height="wrap_content" />
-
-        <LinearLayout
-            android:id="@+id/home_hot_then_label_container"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:singleLine="true"
+            android:textColor="#885195" />
 
-
-        </LinearLayout>
+        <TextView
+            android:id="@+id/home_hot_then_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:clickable="true"
+            android:gravity="center"
+            android:paddingLeft="6dp"
+            android:paddingRight="6dp"
+            android:text="删除"
+            android:textColor="@android:color/holo_purple" />
 
     </LinearLayout>
 
