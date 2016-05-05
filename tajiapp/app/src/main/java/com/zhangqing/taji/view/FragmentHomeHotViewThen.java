@@ -48,7 +48,7 @@ public class FragmentHomeHotViewThen extends LinearLayout {
         mRecyclerView.setOnLoadListener(new RecyclerViewPullable.OnLoadListener() {
             @Override
             public void onLoadMore(final int current_page) {
-                UserClass.getInstance().doGetDongTai(mCategoryName, current_page, new VolleyInterface(getContext().getApplicationContext()) {
+                UserClass.getInstance().dongTaiGetList(mCategoryName, current_page, new VolleyInterface(getContext().getApplicationContext()) {
                     @Override
                     public void onMySuccess(JSONObject jsonObject) {
                         if (current_page == 1) {

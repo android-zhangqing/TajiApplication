@@ -45,7 +45,7 @@ public class CoverActivity extends AppCompatActivity {
             }
         });
 
-//        UserClass.getInstance().doGetDongTai(1, new VolleyInterface(getApplicationContext()) {
+//        UserClass.getInstance().dongTaiGetList(1, new VolleyInterface(getApplicationContext()) {
 //            @Override
 //            public void onMySuccess(JSONObject jsonObject) {
 //                Log.e("sss", jsonObject.toString());

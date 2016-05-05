@@ -4,6 +4,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Environment;
 import android.provider.MediaStore;
@@ -66,6 +67,11 @@ public class CameraUtil {
         }
 
 
+        /**
+         * 这个方法可能比choosePicture1()好，在队友涂飞手机上该方法有效
+         *
+         * @return
+         */
         public static Intent choosePicture2() {
             Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
             return intent;
@@ -78,9 +84,9 @@ public class CameraUtil {
             return intent3;
         }
 
-        public static Intent cropPicture(Uri mOutputUri) {
+        public static Intent cropPicture(Uri sourceUri, Uri outputUri) {
             Intent intent = new Intent("com.android.camera.action.CROP");
-            intent.setDataAndType(mOutputUri, "image/*");
+            intent.setDataAndType(sourceUri, "image/*");
             intent.putExtra("crop", "true");
             // aspectX aspectY 是宽高的比例
             intent.putExtra("aspectX", 1);
@@ -88,7 +94,13 @@ public class CameraUtil {
             // outputX outputY 是裁剪图片宽高
             intent.putExtra("outputX", 250);
             intent.putExtra("outputY", 250);
-            //intent.putExtra("return-data", true);
+
+            intent.putExtra("scale", true);
+            intent.putExtra(MediaStore.EXTRA_OUTPUT, outputUri);
+            intent.putExtra("return-data", false);
+            intent.putExtra("outputFormat", Bitmap.CompressFormat.JPEG.toString());
+            intent.putExtra("noFaceDetection", true); // no face detection
+
             return intent;
         }
     }
@@ -137,7 +149,7 @@ public class CameraUtil {
 
     public static boolean isVideoFilePath(String media_path) {
         media_path = media_path.toLowerCase();
-        return (media_path.endsWith(".3gp")|| media_path.endsWith(".mp4"));
+        return (media_path.endsWith(".3gp") || media_path.endsWith(".mp4"));
     }
 
 

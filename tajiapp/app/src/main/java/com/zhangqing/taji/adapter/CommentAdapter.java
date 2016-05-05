@@ -7,7 +7,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.android.volley.VolleyError;
 import com.nostra13.universalimageloader.core.ImageLoader;
@@ -18,7 +17,6 @@ import com.zhangqing.taji.adapter.listener.AvatarClickListener;
 import com.zhangqing.taji.base.UserClass;
 import com.zhangqing.taji.base.VolleyInterface;
 import com.zhangqing.taji.bean.CommentBean;
-import com.zhangqing.taji.view.pullable.RecyclerViewPullable;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -100,7 +98,7 @@ public class CommentAdapter extends MyRecyclerViewAdapter<CommentAdapter.MyHolde
             holder.tv_delete.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    UserClass.getInstance().commentDoDelete(commentBean.cid, new VolleyInterface(mContext.getApplicationContext()) {
+                    UserClass.getInstance().dongTaiDoCommentDelete(commentBean.cid, new VolleyInterface(mContext.getApplicationContext()) {
                         @Override
                         public void onMySuccess(JSONObject jsonObject) {
                             int index = mCommentBeanList.indexOf(commentBean);

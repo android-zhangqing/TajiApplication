@@ -37,7 +37,7 @@ public class FragmentDongtaiFollow extends BaseFragment {
         mRecyclerView.setOnLoadListener(new RecyclerViewPullable.OnLoadListener() {
             @Override
             public void onLoadMore(final int loadingPage) {
-                UserClass.getInstance().doGetDongTaiMyFollow(loadingPage, new VolleyInterface(getActivity().getApplicationContext()) {
+                UserClass.getInstance().dongTaiGetMyFollowList(loadingPage, new VolleyInterface(getActivity().getApplicationContext()) {
                     @Override
                     public void onMySuccess(JSONObject jsonObject) {
                         if (loadingPage == 1) {

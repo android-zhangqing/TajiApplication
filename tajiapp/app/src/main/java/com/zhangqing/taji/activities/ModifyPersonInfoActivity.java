@@ -1,6 +1,7 @@
 package com.zhangqing.taji.activities;
 
 import android.content.Intent;
+import android.graphics.Camera;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -100,7 +101,7 @@ public class ModifyPersonInfoActivity extends BaseActivity {
                 break;
             }
             case R.id.modify_person_avatar: {
-                startActivityForResult(CameraUtil.Picture.choosePicture(), REQUEST_AVATAR_SELECT);
+                startActivityForResult(CameraUtil.Picture.choosePicture2(), REQUEST_AVATAR_SELECT);
                 break;
             }
             case R.id.modify_commit: {
@@ -130,6 +131,8 @@ public class ModifyPersonInfoActivity extends BaseActivity {
         }
     }
 
+    private Uri mOutputCropUri;
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -152,11 +155,12 @@ public class ModifyPersonInfoActivity extends BaseActivity {
                 break;
             }
             case REQUEST_AVATAR_SELECT: {
-                startActivityForResult(CameraUtil.Picture.cropPicture(data.getData()), REQUEST_AVATAR_CROP);
+                mOutputCropUri = CameraUtil.Picture.createOutputUri(this);
+                startActivityForResult(CameraUtil.Picture.cropPicture(data.getData(), mOutputCropUri), REQUEST_AVATAR_CROP);
                 break;
             }
             case REQUEST_AVATAR_CROP: {
-                String path = CameraUtil.uri2filePath(this, Uri.parse(data.getAction()));
+                String path = CameraUtil.uri2filePath(this, mOutputCropUri);
                 Log.e("REQUEST_AVATAR_CROP", path);
                 OneSdkUtil.upLoadFile(path, new UploadListener() {
                     @Override

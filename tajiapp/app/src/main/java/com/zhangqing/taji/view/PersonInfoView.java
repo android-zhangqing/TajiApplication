@@ -104,7 +104,7 @@ public class PersonInfoView extends LinearLayout {
         mFollowButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                UserClass.getInstance().dongtaiDoFollow(mPersonInfo.userid,
+                UserClass.getInstance().dongTaiDoFollow(mPersonInfo.userid,
                         !mPersonInfo.is_follow, new VolleyInterface(getContext().getApplicationContext()) {
                             @Override
                             public void onMySuccess(JSONObject jsonObject) {

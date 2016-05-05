@@ -50,7 +50,7 @@ public class UserClass {
     public static final int Persons_Button_favor = 6;
 
 
-    private final String URLHEAD = "http://taji.whutech.com";
+    private final String URLHEAD = "http://api.tajiapp.cn";
 
     public static final String[] LABEL_PARENT_ARRAY = new String[]{"绘画", "摄影", "乐器", "运动", "美妆", "厨艺", "游戏", "学习"};
 
@@ -302,7 +302,7 @@ public class UserClass {
 
     }
 
-    public void doGetDongTai(String tag, int page, VolleyInterface vif) {
+    public void dongTaiGetList(String tag, int page, VolleyInterface vif) {
         String _tag = "";
         try {
             _tag = URLEncoder.encode(tag, "utf-8");
@@ -310,28 +310,28 @@ public class UserClass {
             e.printStackTrace();
         }
         String url = URLHEAD + "/DongTai?" + "userid=" + userId + "&openid=" + openId + "&tag=" + _tag + "&page=" + page + "&count=" + Page_Per_Count;
-        VolleyRequest.RequestGet(url, "doGetDongTai", vif);
+        VolleyRequest.RequestGet(url, "dongTaiGetList", vif);
 
     }
 
-    public void doGetDongTaiBanner(VolleyInterface vif) {
+    public void dongTaiGetBanner(VolleyInterface vif) {
 
         String url = URLHEAD + "/DongTai/banner?" + "userid=" + userId + "&openid=" + openId;
-        VolleyRequest.RequestGet(url, "doGetDongTaiBanner", vif);
+        VolleyRequest.RequestGet(url, "dongTaiGetBanner", vif);
 
     }
 
-    public void doGetDongTaiMyFollow(int page, VolleyInterface vif) {
+    public void dongTaiGetMyFollowList(int page, VolleyInterface vif) {
         String url = URLHEAD + "/DongTai/myFollow?" + "userid=" + userId + "&openid=" + openId +
                 "&page=" + page + "&count=" + Page_Per_Count;
-        VolleyRequest.RequestGet(url, "doGetDongTaiMyFollow", vif);
+        VolleyRequest.RequestGet(url, "dongTaiGetMyFollowList", vif);
     }
 
-    public void getDongTaiComment(String tid, int page, VolleyInterface vif) {
+    public void dongTaiGetCommentList(String tid, int page, VolleyInterface vif) {
         String url = URLHEAD + "/DongTai/commentList?" +
                 "page=" + page + "&count=" + Page_Per_Count +
                 "&tid=" + tid + "&userid=" + userId + "&openid=" + openId;
-        VolleyRequest.RequestGet(url, "getDongTaiComment", vif);
+        VolleyRequest.RequestGet(url, "dongTaiGetCommentList", vif);
     }
 
     /**
@@ -366,7 +366,7 @@ public class UserClass {
 
     public void dongTaiDoUpload(final int labelParent, final String labelChild, final String media, final String video, final String content, final String location, final boolean isMasterCircle, VolleyInterface vif) {
 
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, "http://taji.whutech.com/DongTai/publish",
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, URLHEAD + "/DongTai/publish",
                 vif.loadingListener(), vif.errorListener()) {
             @Override
             protected Map<String, String> getParams() {
@@ -380,8 +380,8 @@ public class UserClass {
                         map.put("video", video);
                     //map.put("content", URLEncoder.encode(content, "utf-8"));
                     map.put("content", content);
-                    map.put("skill", LABEL_PARENT_ARRAY[labelParent]);
-                    map.put("tag", labelChild);
+                    map.put("parent", LABEL_PARENT_ARRAY[labelParent]);
+                    map.put("child", labelChild);
 
                     map.put("loc", URLEncoder.encode(location, "utf-8"));
                     map.put("mastercircle", (isMasterCircle ? "1" : "0"));
@@ -424,7 +424,7 @@ public class UserClass {
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }
-        VolleyRequest.RequestGet(url, "doRegisterSmsSend", vif);
+        VolleyRequest.RequestGet(url, "doModifyMemberDetail", vif);
     }
 
     public void doRegisterSmsSend(String mobile,
@@ -476,22 +476,22 @@ public class UserClass {
                 "doLogin", vif);
     }
 
-    public void commentDoDelete(String cid, VolleyInterface vif) {
+    public void dongTaiDoCommentDelete(String cid, VolleyInterface vif) {
         String url = URLHEAD + "/DongTai/delComment?userid=" + userId + "&openid=" + openId + "&cid=" + cid;
-        VolleyRequest.RequestGet(url, "commentDoDelete", vif);
+        VolleyRequest.RequestGet(url, "dongTaiDoCommentDelete", vif);
     }
 
-    public void dongtaiDoLike(String tid, VolleyInterface vif) {
+    public void dongTaiDoLike(String tid, VolleyInterface vif) {
         String url = URLHEAD + "/DongTai/like?userid=" + userId + "&openid=" + openId + "&tid=" + tid;
-        VolleyRequest.RequestGet(url, "dongtaiDoLike", vif);
+        VolleyRequest.RequestGet(url, "dongTaiDoLike", vif);
     }
 
-    public void dongtaiDoForward(String tid, VolleyInterface vif) {
+    public void dongTaiDoForward(String tid, VolleyInterface vif) {
         String url = URLHEAD + "/DongTai/forward?userid=" + userId + "&openid=" + openId + "&tid=" + tid;
-        VolleyRequest.RequestGet(url, "dongtaiDoForward", vif);
+        VolleyRequest.RequestGet(url, "dongTaiDoForward", vif);
     }
 
-    public void dongtaiDoFollow(String uid, boolean isToFollow, VolleyInterface vif) {
+    public void dongTaiDoFollow(String uid, boolean isToFollow, VolleyInterface vif) {
         String url;
         String tag;
         if (isToFollow) {
@@ -506,7 +506,7 @@ public class UserClass {
         VolleyRequest.RequestGet(url, tag, vif);
     }
 
-    public void dongtaiDoComment(String tid, String content, VolleyInterface vif) {
+    public void dongTaiDoComment(String tid, String content, VolleyInterface vif) {
         String url = "";
         try {
             url = URLHEAD + "/DongTai/comment?userid=" + userId + "&openid=" + openId +
@@ -514,7 +514,7 @@ public class UserClass {
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }
-        VolleyRequest.RequestGet(url, "dongtaiDoComment", vif);
+        VolleyRequest.RequestGet(url, "dongTaiDoComment", vif);
 
     }
 

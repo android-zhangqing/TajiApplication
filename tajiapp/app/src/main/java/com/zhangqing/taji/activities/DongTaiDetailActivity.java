@@ -127,7 +127,7 @@ public class DongTaiDetailActivity extends BaseActivity implements EmojiconGridF
                     Toast.makeText(getApplicationContext(), "说点什么吧~", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                UserClass.getInstance().dongtaiDoComment(mTid, mEmojiEditText.getText().toString(),
+                UserClass.getInstance().dongTaiDoComment(mTid, mEmojiEditText.getText().toString(),
                         new VolleyInterface(DongTaiDetailActivity.this) {
                             @Override
                             public void onMySuccess(JSONObject jsonObject) {
@@ -210,7 +210,7 @@ public class DongTaiDetailActivity extends BaseActivity implements EmojiconGridF
             @Override
             public void onLoadMore(final int loadingPage) {
 
-                UserClass.getInstance().getDongTaiComment(mTid, loadingPage, new VolleyInterface(getApplicationContext()) {
+                UserClass.getInstance().dongTaiGetCommentList(mTid, loadingPage, new VolleyInterface(getApplicationContext()) {
                     @Override
                     public void onMySuccess(JSONObject jsonObject) {
                         if (loadingPage == 1) {

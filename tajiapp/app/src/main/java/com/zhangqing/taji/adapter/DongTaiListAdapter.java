@@ -96,7 +96,7 @@ public class DongTaiListAdapter extends RecyclerView.Adapter<DongTaiListAdapter.
         holder.tv_follow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                UserClass.getInstance().dongtaiDoFollow(dongTaiClass.mUserId,
+                UserClass.getInstance().dongTaiDoFollow(dongTaiClass.mUserId,
                         !dongTaiClass.mPersonInfo.is_follow, new VolleyInterface(mContext.getApplicationContext()) {
                             @Override
                             public void onMySuccess(JSONObject jsonObject) {
@@ -130,7 +130,7 @@ public class DongTaiListAdapter extends RecyclerView.Adapter<DongTaiListAdapter.
             @Override
             public void onClick(View v) {
                 holder.ll_count_forward_container.setEnabled(false);
-                UserClass.getInstance().dongtaiDoForward(dongTaiClass.mId, new VolleyInterface(mContext.getApplicationContext()) {
+                UserClass.getInstance().dongTaiDoForward(dongTaiClass.mId, new VolleyInterface(mContext.getApplicationContext()) {
                     @Override
                     public void onMySuccess(JSONObject jsonObject) {
                         holder.ll_count_forward_container.setEnabled(true);
@@ -153,7 +153,7 @@ public class DongTaiListAdapter extends RecyclerView.Adapter<DongTaiListAdapter.
             @Override
             public void onClick(View v) {
                 holder.ll_count_like_container.setEnabled(false);
-                UserClass.getInstance().dongtaiDoLike(dongTaiClass.mId, new VolleyInterface(mContext.getApplicationContext()) {
+                UserClass.getInstance().dongTaiDoLike(dongTaiClass.mId, new VolleyInterface(mContext.getApplicationContext()) {
                     @Override
                     public void onMySuccess(JSONObject jsonObject) {
 

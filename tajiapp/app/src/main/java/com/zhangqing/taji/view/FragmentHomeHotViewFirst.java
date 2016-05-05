@@ -62,7 +62,7 @@ public class FragmentHomeHotViewFirst extends LinearLayout {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                UserClass.getInstance().doGetDongTaiBanner(new VolleyInterface(getContext().getApplicationContext()) {
+                UserClass.getInstance().dongTaiGetBanner(new VolleyInterface(getContext().getApplicationContext()) {
                     @Override
                     public void onMySuccess(JSONObject jsonObject) {
                         try {
@@ -125,7 +125,7 @@ public class FragmentHomeHotViewFirst extends LinearLayout {
         mGridView.setOnLoadListener(new RecyclerViewPullable.OnLoadListener() {
             @Override
             public void onLoadMore(final int current_page) {
-                UserClass.getInstance().doGetDongTai("", current_page, new VolleyInterface(getContext().getApplicationContext()) {
+                UserClass.getInstance().dongTaiGetList("", current_page, new VolleyInterface(getContext().getApplicationContext()) {
                     @Override
                     public void onMySuccess(JSONObject jsonObject) {
                         if (current_page == 1) {
