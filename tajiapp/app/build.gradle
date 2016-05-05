@@ -42,9 +42,9 @@ android {
 dependencies {
     compile files('libs/AMap_Location_v2.3.0_20160112.jar')
     compile files('libs/volly-1.0.11.jar')
+    compile files('libs/universal-image-loader-1.9.5.jar')
     compile 'com.android.support:support-v4:23.2.1'
     compile project(':emoji')
-    compile files('downloads/universal-image-loader-1.9.5.jar')
     compile project(':IMKit')
     compile 'com.android.support:design:23.2.1'
     compile 'com.android.support:appcompat-v7:23.2.1'

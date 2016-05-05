@@ -79,29 +79,32 @@ public class DongTaiListAdapter extends RecyclerView.Adapter<DongTaiListAdapter.
         holder.iv_count_like_icon.setImageResource(dongTaiClass.isLike ?
                 R.drawable.icon_tab_home_hot_favor_selelct2 : R.drawable.icon_tab_home_hot_favor);
 
+        holder.tv_delete.setVisibility(View.INVISIBLE);
         if (dongTaiClass.mPersonInfo.userid.equals(UserClass.getInstance().userId)) {
             holder.tv_follow.setVisibility(View.INVISIBLE);
-            holder.tv_delete.setVisibility(View.VISIBLE);
-            holder.tv_delete.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    UserClass.getInstance().dongTaiDoDelete(dongTaiClass.mId, new VolleyInterface(mContext.getApplicationContext()) {
-                        @Override
-                        public void onMySuccess(JSONObject jsonObject) {
-                            Toast.makeText(mContext.getApplicationContext(),
-                                    jsonObject.optString("msg", "删除成功") + "，请自行刷新", Toast.LENGTH_SHORT).show();
-                        }
 
-                        @Override
-                        public void onMyError(VolleyError error) {
+            if (adapter == null) {
+                holder.tv_delete.setVisibility(View.VISIBLE);
+                holder.tv_delete.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        UserClass.getInstance().dongTaiDoDelete(dongTaiClass.mId, new VolleyInterface(mContext.getApplicationContext()) {
+                            @Override
+                            public void onMySuccess(JSONObject jsonObject) {
+                                Toast.makeText(mContext.getApplicationContext(),
+                                        jsonObject.optString("msg", "删除成功") + "，请自行刷新", Toast.LENGTH_SHORT).show();
+                            }
 
-                        }
-                    });
-                }
-            });
+                            @Override
+                            public void onMyError(VolleyError error) {
+
+                            }
+                        });
+                    }
+                });
+            }
         } else {
             holder.tv_follow.setVisibility(View.VISIBLE);
-            holder.tv_delete.setVisibility(View.INVISIBLE);
             updateFollowButton(holder.tv_follow, dongTaiClass.mPersonInfo.is_follow);
         }
 
