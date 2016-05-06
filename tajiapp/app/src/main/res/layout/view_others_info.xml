@@ -410,16 +410,30 @@
         </LinearLayout>
 
         <RelativeLayout
+            android:id="@+id/my_click_shitu_circle_container"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#99000000">
+            android:background="@drawable/press_bg_darker">
 
-            <ImageView
+            <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:layout_centerInParent="true"
-                android:scaleType="centerInside"
-                android:src="@drawable/icon_my_container_shitu_lock" />
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true">
+
+                <ImageView
+                    android:id="@+id/my_shitu_lock_iv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/icon_my_container_shitu_lock" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/icon_my_container_shitu_text" />
+
+            </LinearLayout>
 
             <ImageView
                 android:layout_width="wrap_content"

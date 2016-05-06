@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,6 +19,7 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.imageaware.ImageViewAware;
 import com.zhangqing.taji.MyApplication;
 import com.zhangqing.taji.R;
+import com.zhangqing.taji.activities.DynamicListActivity;
 import com.zhangqing.taji.base.UserClass;
 import com.zhangqing.taji.base.VolleyInterface;
 import com.zhangqing.taji.bean.PersonInfoBean;
@@ -51,6 +53,9 @@ public class PersonInfoView extends LinearLayout {
 
     private LinearLayout mContainerShituPic;
     private LinearLayout mContainerShituText;
+
+    private RelativeLayout mShituCircleContainer;
+    private ImageView mShituCircleLockView;
 
     private TextView mFollowButton;
     private ImageView mIsMaster;
@@ -98,8 +103,12 @@ public class PersonInfoView extends LinearLayout {
         mContainerShituPic = (LinearLayout) mMainContainer.findViewById(R.id.my_container_shitu_pic);
         mContainerShituText = (LinearLayout) mMainContainer.findViewById(R.id.my_container_shitu_txt);
 
+        mShituCircleContainer = (RelativeLayout) mMainContainer.findViewById(R.id.my_click_shitu_circle_container);
+        mShituCircleLockView = (ImageView) mMainContainer.findViewById(R.id.my_shitu_lock_iv);
+
         mFollowButton = (TextView) mMainContainer.findViewById(R.id.my_follow_button);
         mIsMaster = (ImageView) mMainContainer.findViewById(R.id.my_head_ismaster);
+
 
         mFollowButton.setOnClickListener(new OnClickListener() {
             @Override
@@ -200,6 +209,23 @@ public class PersonInfoView extends LinearLayout {
             mFollowButton.setText(mPersonInfo.is_follow ? "√ 已订阅" : "+ 订阅");
             mFollowButton.setTextColor(mPersonInfo.is_follow ? Color.parseColor("#9F61AA") : Color.parseColor("#16FBCC"));
             mFollowButton.setBackgroundResource(mPersonInfo.is_follow ? R.drawable.home_hot_btn_concern_bg_reverse_with_stroke : R.drawable.home_hot_btn_concern_bg);
+        }
+
+
+        /**
+         * 处理师徒圈外层蒙板显示
+         */
+
+        if (mPersonInfo.userid.equals(UserClass.getInstance().userId) || mPersonInfo.is_master) {
+            mShituCircleLockView.setImageResource(R.drawable.icon_my_container_shitu_unlock);
+            mShituCircleContainer.setOnClickListener(new OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    DynamicListActivity.startDynamicActivity(getContext(), DynamicListActivity.Dynamic_Mine, "我的");
+                }
+            });
+        } else {
+            mShituCircleLockView.setImageResource(R.drawable.icon_my_container_shitu_lock);
         }
 
         /**
