@@ -221,7 +221,7 @@ public class PersonInfoView extends LinearLayout {
             mShituCircleContainer.setOnClickListener(new OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    DynamicListActivity.startDynamicActivity(getContext(), DynamicListActivity.Dynamic_Mine, "我的");
+                    DynamicListActivity.startDynamicActivity(getContext(), DynamicListActivity.Dynamic_ShiTu_Others, mPersonInfo.username + "的师徒圈",mPersonInfo.userid);
                 }
             });
         } else {

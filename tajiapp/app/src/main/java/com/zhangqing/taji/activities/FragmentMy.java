@@ -295,7 +295,7 @@ public class FragmentMy extends BaseFragment implements View.OnClickListener {
                 break;
             }
             case R.id.my_click_shitu_circle: {
-                DynamicListActivity.startDynamicActivity(getActivity(), DynamicListActivity.Dynamic_Shitu, "我的师徒圈");
+                DynamicListActivity.startDynamicActivity(getActivity(), DynamicListActivity.Dynamic_ShiTu_Mine, "我的师徒圈");
                 break;
             }
             case R.id.my_click_draft: {

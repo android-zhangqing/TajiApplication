@@ -601,9 +601,15 @@ public class UserClass {
         VolleyRequest.RequestGet(url, "getOthersAvatar" + userid, vif);
     }
 
-    public void getDynamicList(String type, int page, VolleyInterface vif) {
+    /**
+     * @param type      获取的列表类型
+     * @param extra_uid 只有在获取他人师徒圈列表时才用到
+     * @param page
+     * @param vif
+     */
+    public void getDynamicList(String type, String extra_uid, int page, VolleyInterface vif) {
         String url = URLHEAD + "/DongTai/" + type + "?userid=" + userId + "&openid=" + openId +
-                "&page=" + page + "&count=" + Page_Per_Count;
+                "&page=" + page + "&count=" + Page_Per_Count + "&uid=" + (extra_uid == null ? "" : extra_uid);
         VolleyRequest.RequestGet(url, "getDynamicList", vif);
     }
 

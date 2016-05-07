@@ -27,20 +27,29 @@ public class DynamicListActivity extends BaseActivity {
     //我的技能秀界面
     public static final String Dynamic_Mine = "myDynamic";
     //我的师徒圈动态界面
-    public static final String Dynamic_Shitu = "myCircle";
+    public static final String Dynamic_ShiTu_Mine = "myCircle";
     //我的动态草稿箱
     public static final String Dynamic_Draft = "myDraft";
+    //他人师徒圈界面
+    public static final String Dynamic_ShiTu_Others = "getUserCircle";
 
     public static void startDynamicActivity(Context context, String type, String title) {
+        startDynamicActivity(context, type, title, null);
+    }
+
+    public static void startDynamicActivity(Context context, String type, String title, String extra_uid) {
         Intent intent = new Intent(context, DynamicListActivity.class);
         intent.putExtra("type", type);
         intent.putExtra("title", title);
+        if (extra_uid != null)
+            intent.putExtra("extra", extra_uid);
         context.startActivity(intent);
     }
 
 
     private String mDynamicType;
     private String mTitle;
+    private String mExtra;
 
     private RecyclerViewPullable mRecyclerView;
     private DongTaiListAdapter mRecyclerViewAdapter;
@@ -52,6 +61,7 @@ public class DynamicListActivity extends BaseActivity {
 
         mDynamicType = getIntent().getStringExtra("type");
         mTitle = getIntent().getStringExtra("title");
+        mExtra = getIntent().getStringExtra("extra");
 
         ((TextView) findViewById(R.id.dynamic_title)).setText(mTitle);
 
@@ -62,7 +72,7 @@ public class DynamicListActivity extends BaseActivity {
         mRecyclerView.setOnLoadListener(new RecyclerViewPullable.OnLoadListener() {
             @Override
             public void onLoadMore(final int loadingPage) {
-                UserClass.getInstance().getDynamicList(mDynamicType, loadingPage, new VolleyInterface(getApplicationContext()) {
+                UserClass.getInstance().getDynamicList(mDynamicType, mExtra, loadingPage, new VolleyInterface(getApplicationContext()) {
                     @Override
                     public void onMySuccess(JSONObject jsonObject) {
 

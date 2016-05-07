@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.view.View;
+import android.widget.TextView;
 
 import com.android.volley.VolleyError;
 import com.zhangqing.taji.BaseActivity;
@@ -38,6 +39,8 @@ public class ZanListActivity extends BaseActivity {
     private RecyclerViewPullable mRecyclerView;
     private ZanListAdapter mRecyclerViewAdapter;
 
+    private TextView mTitleView;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,13 +49,29 @@ public class ZanListActivity extends BaseActivity {
         mListType = getIntent().getStringExtra("type");
         if (mListType == null) mListType = LIST_ZAN;
 
+        mTitleView = (TextView) findViewById(R.id.zan_list_title_tv);
+        switch (mListType) {
+            case LIST_AT: {
+                mTitleView.setText("提到我的人");
+                break;
+            }
+            case LIST_COMMENT: {
+                mTitleView.setText("评论我的人");
+                break;
+            }
+            case LIST_ZAN: {
+                mTitleView.setText("赞我的人");
+                break;
+            }
+        }
+
         mRecyclerView = (RecyclerViewPullable) findViewById(R.id.zan_list_recycler_view);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mRecyclerView.setAdapter(mRecyclerViewAdapter = new ZanListAdapter(this, mListType));
         mRecyclerView.setOnLoadListener(new RecyclerViewPullable.OnLoadListener() {
             @Override
             public void onLoadMore(final int loadingPage) {
-                UserClass.getInstance().getDynamicList(mListType, loadingPage, new VolleyInterface(getApplicationContext()) {
+                UserClass.getInstance().getDynamicList(mListType, null, loadingPage, new VolleyInterface(getApplicationContext()) {
                     @Override
                     public void onMySuccess(JSONObject jsonObject) {
                         if (loadingPage == 1) {
