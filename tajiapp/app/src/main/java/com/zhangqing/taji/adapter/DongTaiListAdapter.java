@@ -19,6 +19,7 @@ import com.nostra13.universalimageloader.core.imageaware.ImageViewAware;
 import com.zhangqing.taji.MyApplication;
 import com.zhangqing.taji.R;
 import com.zhangqing.taji.activities.PhotoViewerActivity;
+import com.zhangqing.taji.activities.VideoPlayerActivity;
 import com.zhangqing.taji.adapter.listener.AvatarClickListener;
 import com.zhangqing.taji.adapter.listener.DongTaiClickListener;
 import com.zhangqing.taji.base.UserClass;
@@ -119,7 +120,8 @@ public class DongTaiListAdapter extends RecyclerView.Adapter<DongTaiListAdapter.
                         Uri uri = Uri.parse(dongTaiClass.mCoverUrl);
                         PhotoViewerActivity.startPhotoView(mContext, uri, uri);
                     } else {
-
+                        Uri uri = Uri.parse(dongTaiClass.mVideoUrl);
+                        VideoPlayerActivity.startVideoPlayer(mContext, uri);
                     }
                 }
             });

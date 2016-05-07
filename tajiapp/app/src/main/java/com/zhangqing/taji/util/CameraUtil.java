@@ -110,7 +110,7 @@ public class CameraUtil {
             Intent intent2 = new Intent();
             intent2.setAction(MediaStore.ACTION_VIDEO_CAPTURE);
             intent2.putExtra(MediaStore.EXTRA_VIDEO_QUALITY, 1);
-            intent2.putExtra(MediaStore.EXTRA_DURATION_LIMIT, 15);
+            intent2.putExtra(MediaStore.EXTRA_DURATION_LIMIT, 10);
             return intent2;
         }
     }
