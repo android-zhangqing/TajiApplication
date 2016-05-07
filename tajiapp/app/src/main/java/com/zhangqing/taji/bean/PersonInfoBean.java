@@ -1,5 +1,7 @@
 package com.zhangqing.taji.bean;
 
+import android.util.Log;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -75,10 +77,12 @@ public class PersonInfoBean {
 
     }
 
-    private PersonInfoBean(String userid, JSONObject jsonObject) throws JSONException {
+    private PersonInfoBean(String userid, JSONObject jsonObject) {
         this.userid = userid;
         if (jsonObject == null) return;
         updateData(jsonObject);
+
+        Log.e("PersonInfoBean", toString());
     }
 
     private void updateData(JSONObject jsonObject) {
@@ -126,4 +130,8 @@ public class PersonInfoBean {
         }
     }
 
+    @Override
+    public String toString() {
+        return "人" + userid + "|" + username + "|" + interest + "|" + skill + "|" + avatar;
+    }
 }

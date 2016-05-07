@@ -107,7 +107,7 @@ public class DongTaiGridAdapter extends RecyclerView.Adapter<DongTaiGridAdapter.
                 mItemsList.get(position).mUserId, mItemsList.get(position).mPersonInfo.username));
 
         viewHolder.iv_cover.setOnClickListener(new DongTaiClickListener(mContext,
-                mItemsList.get(position).mId));
+                mItemsList.get(position).mTid));
 
         viewHolder.iv_cover.setImageBitmap(null);
 

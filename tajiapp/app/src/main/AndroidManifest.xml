@@ -181,6 +181,7 @@
         <activity android:name=".activities.ChatRoomDetailActivity" />
         <activity android:name=".activities.EditActivity" />
         <activity android:name=".activities.BaiShiInviteListActivity" />
+        <activity android:name=".activities.ZanListActivity" />
         <activity
             android:name="com.umeng.socialize.editorpage.ShareActivity"
             android:excludeFromRecents="true"

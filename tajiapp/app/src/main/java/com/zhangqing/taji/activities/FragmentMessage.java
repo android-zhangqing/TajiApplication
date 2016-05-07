@@ -122,7 +122,7 @@ public class FragmentMessage extends BaseFragment implements View.OnClickListene
         //监听三个按钮的点击
         v.findViewById(R.id.message_btn_at).setOnClickListener(this);
         v.findViewById(R.id.message_btn_comment).setOnClickListener(this);
-        v.findViewById(R.id.message_btn_favor).setOnClickListener(this);
+        v.findViewById(R.id.message_btn_zan).setOnClickListener(this);
 
 
         RongIM.getInstance().setSendMessageListener(new RongIM.OnSendMessageListener() {
@@ -259,12 +259,15 @@ public class FragmentMessage extends BaseFragment implements View.OnClickListene
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.message_btn_at: {
+                ZanListActivity.startZanActivity(getActivity(),ZanListActivity.LIST_AT);
                 break;
             }
             case R.id.message_btn_comment: {
+                ZanListActivity.startZanActivity(getActivity(),ZanListActivity.LIST_COMMENT);
                 break;
             }
-            case R.id.message_btn_favor: {
+            case R.id.message_btn_zan: {
+                ZanListActivity.startZanActivity(getActivity(),ZanListActivity.LIST_ZAN);
                 break;
             }
         }

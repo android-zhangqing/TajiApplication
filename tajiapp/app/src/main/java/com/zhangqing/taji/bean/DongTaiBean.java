@@ -39,13 +39,13 @@ public class DongTaiBean {
     }
 
     //动态ID
-    public String mId = "";
+    public String mTid = "";
     //发布人ID
     public String mUserId = "";
     //    //发布人昵称
 //    public String mUserName = "";
-    //作者ID
-    public String mAutherId = "";
+    //作者
+    public String mAuthor = "";
     //@人的ID
     public String mAtId = "";
 
@@ -80,7 +80,7 @@ public class DongTaiBean {
 
     //是否师徒圈
     public boolean isMasterCircle = false;
-//    //是否已订阅
+    //    //是否已订阅
 //    public boolean isFollow = false;
     //是否已赞
     public boolean isLike = false;
@@ -95,13 +95,13 @@ public class DongTaiBean {
     private DongTaiBean(String tid, JSONObject jsonObject) throws JSONException {
 
         //动态ID
-        mId = tid;
+        mTid = tid;
         //发布人昵称
 //        mUserName = jsonObject.optString("username", "");
         mPersonInfo = PersonInfoBean.getInstance(jsonObject);
         update(jsonObject);
 
-        Log.e("DongTaiBean", "end|" + toString());
+        Log.e("DongTaiBean", toString());
     }
 
     private void update(JSONObject jsonObject) {
@@ -111,7 +111,7 @@ public class DongTaiBean {
         //发布人ID
         mUserId = jsonObject.optString("userid", mUserId);
         //作者ID
-        mAutherId = jsonObject.optString("author", mAutherId);
+        mAuthor = jsonObject.optString("author", mAuthor);
         //@人的ID
         mAtId = jsonObject.optString("at", mAtId);
 
@@ -125,7 +125,7 @@ public class DongTaiBean {
         //标题
         mContent = jsonObject.optString("content", mContent);
         //发布时间
-        mTime = jsonObject.optString("time", mTime);
+        mTime = jsonObject.optString("time_pub", mTime);
 
         //封面URL
         mCoverUrl = jsonObject.optString("media", mCoverUrl);
@@ -144,13 +144,13 @@ public class DongTaiBean {
         //是否师徒圈
         isMasterCircle = jsonObject.optString("mastercircle", (isMasterCircle ? "1" : "0")).equals("1");
         //是否已订阅
-   //     isFollow = jsonObject.optBoolean("is_follow", isFollow);
+        //     isFollow = jsonObject.optBoolean("is_follow", isFollow);
         //是否已赞
         isLike = jsonObject.optBoolean("is_liked", isLike);
     }
 
     @Override
     public String toString() {
-        return mId + "|" + mContent + "|" + mTime + "|" + mUserId + "|" + mCoverUrl;
+        return "动态" + mTid + "|" + mContent + "|" + mTime + "|" + mUserId + "|" + mCoverUrl;
     }
 }

@@ -65,7 +65,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/message_btn_favor"
+            android:id="@+id/message_btn_zan"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"

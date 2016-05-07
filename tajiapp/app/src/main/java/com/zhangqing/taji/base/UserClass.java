@@ -607,6 +607,7 @@ public class UserClass {
         VolleyRequest.RequestGet(url, "getDynamicList", vif);
     }
 
+
     public void getOthersDongTai(String uid, int page, VolleyInterface vif) {
         String url = URLHEAD + "/DongTai/userDynamic?uid=" + uid +
                 "&userid=" + userId + "&openid=" + openId + "&page=" + page + "&count=" + Page_Per_Count;

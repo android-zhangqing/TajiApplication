@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#503866"
+    android:clipToPadding="false"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/topbar_height"
+        android:background="@drawable/home_hot_title_bar_bg">
+
+        <ImageView
+            android:layout_width="@dimen/topbar_height"
+            android:layout_height="@dimen/topbar_height"
+            android:layout_centerVertical="true"
+            android:background="@drawable/press_bg"
+            android:onClick="finishThis"
+            android:scaleType="center"
+            android:src="@drawable/icon_tab_publish_backstep" />
+
+        <TextView
+            android:id="@+id/zan_list_title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="赞我的人"
+            android:textColor="@color/textcolor_bar_first_unselect"
+            android:textSize="@dimen/textsize_bar_first" />
+
+    </RelativeLayout>
+
+    <com.zhangqing.taji.view.pullable.RecyclerViewPullable
+        android:id="@+id/zan_list_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+    </com.zhangqing.taji.view.pullable.RecyclerViewPullable>
+</LinearLayout>

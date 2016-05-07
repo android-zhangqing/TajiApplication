@@ -1,6 +1,5 @@
 package com.zhangqing.taji.adapter;
 
-import android.app.Activity;
 import android.content.Context;
 import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
@@ -16,10 +15,6 @@ import android.widget.Toast;
 import com.android.volley.VolleyError;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.imageaware.ImageViewAware;
-import com.umeng.socialize.ShareAction;
-import com.umeng.socialize.UMShareListener;
-import com.umeng.socialize.bean.SHARE_MEDIA;
-import com.umeng.socialize.media.UMImage;
 import com.zhangqing.taji.MyApplication;
 import com.zhangqing.taji.R;
 import com.zhangqing.taji.adapter.listener.AvatarClickListener;
@@ -28,7 +23,6 @@ import com.zhangqing.taji.base.UserClass;
 import com.zhangqing.taji.base.VolleyInterface;
 import com.zhangqing.taji.bean.DongTaiBean;
 import com.zhangqing.taji.view.ComplicatedMediaView;
-import com.zhangqing.taji.view.pullable.RecyclerViewPullable;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -88,7 +82,7 @@ public class DongTaiListAdapter extends RecyclerView.Adapter<DongTaiListAdapter.
                 holder.tv_delete.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        UserClass.getInstance().dongTaiDoDelete(dongTaiClass.mId, new VolleyInterface(mContext.getApplicationContext()) {
+                        UserClass.getInstance().dongTaiDoDelete(dongTaiClass.mTid, new VolleyInterface(mContext.getApplicationContext()) {
                             @Override
                             public void onMySuccess(JSONObject jsonObject) {
                                 Toast.makeText(mContext.getApplicationContext(),
@@ -112,7 +106,7 @@ public class DongTaiListAdapter extends RecyclerView.Adapter<DongTaiListAdapter.
 
         if (adapter != null) {
             View.OnClickListener onClickListener = new DongTaiClickListener(mContext,
-                    dongTaiClass.mId);
+                    dongTaiClass.mTid);
             holder.cmv_media.setOnClickListener(onClickListener);
             holder.ll_count_comment_container.setOnClickListener(onClickListener);
         }
@@ -157,38 +151,41 @@ public class DongTaiListAdapter extends RecyclerView.Adapter<DongTaiListAdapter.
             @Override
             public void onClick(View v) {
 
-                final SHARE_MEDIA[] displaylist = new SHARE_MEDIA[]
-                        {
-                                SHARE_MEDIA.WEIXIN, SHARE_MEDIA.WEIXIN_CIRCLE,
-                                SHARE_MEDIA.QQ, SHARE_MEDIA.SMS
-                        };
-                new ShareAction((Activity) mContext).setDisplayList(displaylist)
-                        .withText(dongTaiClass.mContent)
-                        .withTitle("复制链接打开[Ta技]客户端，你懂的")
-                        .withTargetUrl("http://doc.whutech.com/taji.html?tid=" + dongTaiClass.mId)
-                        .withMedia(new UMImage(mContext, dongTaiClass.mCoverUrl))
-                        .setListenerList(new UMShareListener() {
-                            @Override
-                            public void onResult(SHARE_MEDIA share_media) {
-
-                            }
-
-                            @Override
-                            public void onError(SHARE_MEDIA share_media, Throwable throwable) {
-
-                            }
-
-                            @Override
-                            public void onCancel(SHARE_MEDIA share_media) {
-
-                            }
-                        })
-                        .open();
-                if (true) return;
+                /**
+                 * 社会化分享，暂时先不用这个，先采用内部转发方式
+                 */
+//                final SHARE_MEDIA[] displaylist = new SHARE_MEDIA[]
+//                        {
+//                                SHARE_MEDIA.WEIXIN, SHARE_MEDIA.WEIXIN_CIRCLE,
+//                                SHARE_MEDIA.QQ, SHARE_MEDIA.SMS
+//                        };
+//                new ShareAction((Activity) mContext).setDisplayList(displaylist)
+//                        .withText(dongTaiClass.mContent)
+//                        .withTitle("复制链接打开[Ta技]客户端，你懂的")
+//                        .withTargetUrl("http://doc.whutech.com/taji.html?tid=" + dongTaiClass.mTid)
+//                        .withMedia(new UMImage(mContext, dongTaiClass.mCoverUrl))
+//                        .setListenerList(new UMShareListener() {
+//                            @Override
+//                            public void onResult(SHARE_MEDIA share_media) {
+//
+//                            }
+//
+//                            @Override
+//                            public void onError(SHARE_MEDIA share_media, Throwable throwable) {
+//
+//                            }
+//
+//                            @Override
+//                            public void onCancel(SHARE_MEDIA share_media) {
+//
+//                            }
+//                        })
+//                        .open();
+//                if (true) return;
 
 
                 holder.ll_count_forward_container.setEnabled(false);
-                UserClass.getInstance().dongTaiDoForward(dongTaiClass.mId, new VolleyInterface(mContext.getApplicationContext()) {
+                UserClass.getInstance().dongTaiDoForward(dongTaiClass.mTid, new VolleyInterface(mContext.getApplicationContext()) {
                     @Override
                     public void onMySuccess(JSONObject jsonObject) {
                         holder.ll_count_forward_container.setEnabled(true);
@@ -211,7 +208,7 @@ public class DongTaiListAdapter extends RecyclerView.Adapter<DongTaiListAdapter.
             @Override
             public void onClick(View v) {
                 holder.ll_count_like_container.setEnabled(false);
-                UserClass.getInstance().dongTaiDoLike(dongTaiClass.mId, new VolleyInterface(mContext.getApplicationContext()) {
+                UserClass.getInstance().dongTaiDoLike(dongTaiClass.mTid, new VolleyInterface(mContext.getApplicationContext()) {
                     @Override
                     public void onMySuccess(JSONObject jsonObject) {
 

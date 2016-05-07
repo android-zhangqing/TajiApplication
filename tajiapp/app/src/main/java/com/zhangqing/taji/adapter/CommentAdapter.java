@@ -51,7 +51,7 @@ public class CommentAdapter extends MyRecyclerViewAdapter<CommentAdapter.MyHolde
         int insert_position = mCommentBeanList.size() - 1;
         for (int i = 0; i < jsonArray.length(); i++) {
             try {
-                CommentBean commentBean = new CommentBean(jsonArray.getJSONObject(i));
+                CommentBean commentBean = CommentBean.getInstance(jsonArray.getJSONObject(i));
                 mCommentBeanList.add(commentBean);
                 count++;
 
