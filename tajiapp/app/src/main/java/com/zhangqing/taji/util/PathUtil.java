@@ -11,23 +11,13 @@ public class PathUtil {
     private static PathUtil util;
     public static int flag = 0;
 
-    private PathUtil() {
-
-    }
-
-    public static PathUtil getInstance() {
-        if (util == null) {
-            util = new PathUtil();
-        }
-        return util;
-    }
 
     /**
      * 判断是否有sdcard
      *
      * @return
      */
-    public boolean hasSDCard() {
+    public static boolean hasSDCard() {
         boolean b = false;
         if (Environment.MEDIA_MOUNTED.equals(Environment.getExternalStorageState())) {
             b = true;
@@ -40,7 +30,7 @@ public class PathUtil {
      *
      * @return
      */
-    public String getExtPath() {
+    public static String getExtPath() {
         String path = "";
         if (hasSDCard()) {
             path = Environment.getExternalStorageDirectory().getPath();
@@ -54,7 +44,7 @@ public class PathUtil {
      * @param mActivity
      * @return
      */
-    public String getPackagePath(Activity mActivity) {
+    public static String getPackagePath(Activity mActivity) {
         return mActivity.getFilesDir().toString();
     }
 
@@ -64,7 +54,7 @@ public class PathUtil {
      * @param url
      * @return
      */
-    public String getImageName(String url) {
+    public static String getImageName(String url) {
         String imageName = "";
         if (url != null) {
             imageName = url.substring(url.lastIndexOf("/") + 1);

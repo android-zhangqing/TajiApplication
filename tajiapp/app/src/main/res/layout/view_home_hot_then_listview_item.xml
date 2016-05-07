@@ -50,15 +50,13 @@
 
     </LinearLayout>
 
-    <com.zhangqing.taji.view.ComplicatedMediaView
+    <LinearLayout
         android:id="@+id/home_hot_then_media"
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:background="@android:color/darker_gray"
         android:orientation="vertical">
-
-
-    </com.zhangqing.taji.view.ComplicatedMediaView>
+    </LinearLayout>
 
     <TextView
         android:id="@+id/home_hot_then_content"

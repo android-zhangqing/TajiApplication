@@ -241,7 +241,7 @@ public class DongTaiDetailActivity extends BaseActivity implements EmojiconGridF
      * 构造动态详情HeaderView
      */
     private void addHeaderView() {
-        mHeaderView = (LinearLayout) LayoutInflater.from(this).inflate(R.layout.view_home_hot_then_listview_item, null);
+        mHeaderView = (LinearLayout) DongTaiListAdapter.createViewByType(this, null, DongTaiListAdapter.getViewTypeByDongTai(mDongTai));
 
         mHeaderView.findViewById(R.id.home_hot_then_count_comment_container).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -258,7 +258,7 @@ public class DongTaiDetailActivity extends BaseActivity implements EmojiconGridF
 
         if (mDongTai == null) return;
 
-        DongTaiListAdapter.MyViewHolder myViewHolder = new DongTaiListAdapter.MyViewHolder(mHeaderView);
+        DongTaiListAdapter.MyViewHolder myViewHolder = DongTaiListAdapter.createHolderByView(mHeaderView, DongTaiListAdapter.getViewTypeByDongTai(mDongTai));
 
         DongTaiListAdapter.updateViewHolder(this, myViewHolder, mDongTai, null);
 

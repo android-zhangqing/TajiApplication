@@ -85,10 +85,10 @@ public class DongTaiGridAdapter extends RecyclerView.Adapter<DongTaiGridAdapter.
     }
 
     public void clearData() {
-     //   boolean willNotify = mItemsList.size() != 0;
+        //   boolean willNotify = mItemsList.size() != 0;
         mItemsList.clear();
-      //  if (willNotify)
-            notifyDataSetChanged();
+        //  if (willNotify)
+        notifyDataSetChanged();
     }
 
 
@@ -100,21 +100,29 @@ public class DongTaiGridAdapter extends RecyclerView.Adapter<DongTaiGridAdapter.
 
     @Override
     public void onBindViewHolder(MyHolder viewHolder, final int position) {
-        viewHolder.tv_title.setText(mItemsList.get(position).mContent);
-        viewHolder.tv_like.setText("❤" + mItemsList.get(position).mCountLike);
+        DongTaiBean dongTaiBean = mItemsList.get(position);
+
+        viewHolder.tv_title.setText(dongTaiBean.mContent);
+        viewHolder.tv_like.setText("❤" + dongTaiBean.mCountLike);
 
         viewHolder.iv_avatar.setOnClickListener(new AvatarClickListener(mContext,
-                mItemsList.get(position).mUserId, mItemsList.get(position).mPersonInfo.username));
+                dongTaiBean.mUserId, dongTaiBean.mPersonInfo.username));
 
-        viewHolder.iv_cover.setOnClickListener(new DongTaiClickListener(mContext,
-                mItemsList.get(position).mTid));
+        viewHolder.iv_cover_press.setOnClickListener(new DongTaiClickListener(mContext,
+                dongTaiBean.mTid));
 
         viewHolder.iv_cover.setImageBitmap(null);
 
-        ImageLoader.getInstance().displayImage(mItemsList.get(position).mAvatarUrl,
+        if (!dongTaiBean.mVideoUrl.equals("")) {
+            viewHolder.iv_is_video.setVisibility(View.VISIBLE);
+        } else {
+            viewHolder.iv_is_video.setVisibility(View.INVISIBLE);
+        }
+
+        ImageLoader.getInstance().displayImage(dongTaiBean.mAvatarUrl,
                 new ImageViewAware(viewHolder.iv_avatar),
                 MyApplication.getCircleDisplayImageOptions());
-        ImageLoader.getInstance().displayImage(mItemsList.get(position).mCoverUrl,
+        ImageLoader.getInstance().displayImage(dongTaiBean.mCoverUrl,
                 new ImageViewAware(viewHolder.iv_cover),
                 MyApplication.getNormalDisplayImageOptions());
 
@@ -130,14 +138,19 @@ public class DongTaiGridAdapter extends RecyclerView.Adapter<DongTaiGridAdapter.
         TextView tv_like;
         ImageView iv_avatar;
         ImageView iv_cover;
+        View iv_cover_press;
+
+        ImageView iv_is_video;
 
         public MyHolder(View itemView) {
             super(itemView);
             tv_title = (TextView) itemView.findViewById(R.id.home_hot_page_gridview_title);
             tv_like = (TextView) itemView.findViewById(R.id.home_hot_page_gridview_favor);
             iv_cover = (ImageView) itemView.findViewById(R.id.home_hot_page_first_gridview_imgview);
+            iv_cover_press = itemView.findViewById(R.id.home_hot_page_first_gridview_imgview_press);
             iv_avatar = (ImageView) itemView.findViewById(R.id.home_hot_page_gridview_circle_img);
 
+            iv_is_video = (ImageView) itemView.findViewById(R.id.home_hot_first_is_video);
         }
     }
 }

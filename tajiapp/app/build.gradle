@@ -58,4 +58,5 @@ dependencies {
     compile files('libs/open_sdk_r5509.jar')
     compile files('libs/SocialSDK_QQZone_3.jar')
     compile files('libs/SocialSDK_sms.jar')
+    compile files('libs/Afinal-0.3.4.jar')
 }

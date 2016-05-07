@@ -43,6 +43,7 @@ public class MyApplication extends Application {
 
     public static MediaService mediaService;
 
+
     public static boolean rcHasConnect = false;
     private static DisplayImageOptions circleOptions;
     private static DisplayImageOptions cornerOptions;
@@ -105,6 +106,7 @@ public class MyApplication extends Application {
                 mediaService = AlibabaSDK.getService(MediaService.class);
                 mediaService.enableHttpDNS(); //果用户为了避免域名劫持，可以启用HttpDNS
                 mediaService.enableLog(); //在调试时，可以打印日志。正式上线前可以关闭
+
             }
 
             @Override

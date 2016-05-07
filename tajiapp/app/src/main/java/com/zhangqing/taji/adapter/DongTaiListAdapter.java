@@ -2,35 +2,45 @@ package com.zhangqing.taji.adapter;
 
 import android.content.Context;
 import android.graphics.Color;
+import android.graphics.drawable.ClipDrawable;
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.MediaController;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.VideoView;
 
+import com.android.util.MD5Util;
 import com.android.volley.VolleyError;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.imageaware.ImageViewAware;
 import com.zhangqing.taji.MyApplication;
 import com.zhangqing.taji.R;
 import com.zhangqing.taji.activities.PhotoViewerActivity;
-import com.zhangqing.taji.activities.VideoPlayerActivity;
 import com.zhangqing.taji.adapter.listener.AvatarClickListener;
 import com.zhangqing.taji.adapter.listener.DongTaiClickListener;
 import com.zhangqing.taji.base.UserClass;
 import com.zhangqing.taji.base.VolleyInterface;
 import com.zhangqing.taji.bean.DongTaiBean;
-import com.zhangqing.taji.view.ComplicatedMediaView;
+import com.zhangqing.taji.util.PathUtil;
+
+import net.tsz.afinal.FinalHttp;
+import net.tsz.afinal.http.AjaxCallBack;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -48,12 +58,6 @@ public class DongTaiListAdapter extends RecyclerView.Adapter<DongTaiListAdapter.
         mContext = context;
     }
 
-    @Override
-    public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        MyViewHolder myViewHolder = new MyViewHolder(LayoutInflater.from(mContext).
-                inflate(R.layout.view_home_hot_then_listview_item, parent, false));
-        return myViewHolder;
-    }
 
     /**
      * 该静态方法同时还供【动态详情】页面进行代码复用
@@ -107,24 +111,15 @@ public class DongTaiListAdapter extends RecyclerView.Adapter<DongTaiListAdapter.
 
         holder.iv_avatar.setOnClickListener(new AvatarClickListener(mContext, dongTaiClass.mUserId, dongTaiClass.mPersonInfo.username));
 
+
+        initPartViewUniversal(mContext, holder, dongTaiClass);
         if (adapter != null) {
             View.OnClickListener onClickListener = new DongTaiClickListener(mContext,
                     dongTaiClass.mTid);
             holder.cmv_media.setOnClickListener(onClickListener);
             holder.ll_count_comment_container.setOnClickListener(onClickListener);
         } else {
-            holder.cmv_media.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    if (dongTaiClass.mVideoUrl == null || dongTaiClass.mVideoUrl.equals("")) {
-                        Uri uri = Uri.parse(dongTaiClass.mCoverUrl);
-                        PhotoViewerActivity.startPhotoView(mContext, uri, uri);
-                    } else {
-                        Uri uri = Uri.parse(dongTaiClass.mVideoUrl);
-                        VideoPlayerActivity.startVideoPlayer(mContext, uri);
-                    }
-                }
-            });
+            initPartViewDetail(mContext, holder, dongTaiClass);
         }
 
         /**
@@ -262,7 +257,203 @@ public class DongTaiListAdapter extends RecyclerView.Adapter<DongTaiListAdapter.
         });
 
         ImageLoader.getInstance().displayImage(dongTaiClass.mAvatarUrl, new ImageViewAware(holder.iv_avatar), MyApplication.getCircleDisplayImageOptions());
-        ImageLoader.getInstance().displayImage(dongTaiClass.mCoverUrl, new ImageViewAware(holder.cmv_media.iv_cover));
+
+    }
+
+    private static void initPartViewUniversal(final Context mContext, final MyViewHolder holder, final DongTaiBean dongTaiClass) {
+        if (holder instanceof MyHolderSingle) {//动态详情页下的单图模式
+            MyHolderSingle myHolderSingle = (MyHolderSingle) holder;
+            ImageLoader.getInstance().displayImage(dongTaiClass.mCoverUrl, new ImageViewAware(myHolderSingle.extra_iv_cover), MyApplication.getNormalDisplayImageOptions());
+
+        } else if (holder instanceof MyHolderVideo) {
+            final MyHolderVideo myHolderVideo = (MyHolderVideo) holder;
+            //展示视频封面
+            ImageLoader.getInstance().displayImage(dongTaiClass.mCoverUrl, new ImageViewAware(myHolderVideo.extra_cover_iv), MyApplication.getNormalDisplayImageOptions());
+
+        }
+    }
+
+
+    private static void initPartViewDetail(final Context mContext, final MyViewHolder holder, final DongTaiBean dongTaiClass) {
+
+
+        if (holder instanceof MyHolderSingle) {//动态详情页下的单图模式
+            MyHolderSingle myHolderSingle = (MyHolderSingle) holder;
+            myHolderSingle.extra_iv_cover.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    PhotoViewerActivity.startPhotoView(mContext, Uri.parse(dongTaiClass.mCoverUrl), null);
+                }
+            });
+
+        } else if (holder instanceof MyHolderVideo) {//动态详情页下的视频模式
+            final MyHolderVideo myHolderVideo = (MyHolderVideo) holder;
+
+            //监听点击播放视频
+            myHolderVideo.extra_ll_play_container.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (!PathUtil.hasSDCard()) {
+                        Toast.makeText(mContext, "内存卡不存在", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+
+                    final String path = PathUtil.getExtPath() + "/taji_temp/" +
+                            MD5Util.str2MD5(dongTaiClass.mVideoUrl);
+
+                    if (new File(path).exists()) {
+                        Toast.makeText(mContext, "ok", Toast.LENGTH_SHORT).show();
+                        playVideo(mContext, myHolderVideo, path);
+                        return;
+                    }
+
+                    FinalHttp fh = new FinalHttp();
+                    myHolderVideo.extra_play_loading.setVisibility(View.VISIBLE);
+                    fh.download(dongTaiClass.mVideoUrl, path + "_download", new AjaxCallBack<File>() {
+                        ClipDrawable clipDrawable = new ClipDrawable(myHolderVideo.extra_play_loading.getDrawable(), Gravity.LEFT, ClipDrawable.HORIZONTAL);
+
+                        @Override
+                        public void onStart() {
+                            myHolderVideo.extra_play_loading.setImageDrawable(clipDrawable);
+                            clipDrawable.setLevel(0);
+                            super.onStart();
+                        }
+
+                        @Override
+                        public void onLoading(long count, long current) {
+                            clipDrawable.setLevel((int) (current * 10000 / count));
+                            //myHolderVideo.extra_play_loading.invalidate();
+                        }
+
+                        @Override
+                        public void onSuccess(File t) {
+                            t.renameTo(new File(path));
+                            clipDrawable.setLevel(10000);
+                            Log.e("onSuccess", t == null ? "null" : t.getAbsoluteFile().toString());
+
+                            playVideo(mContext, myHolderVideo, path);
+                        }
+
+                    });
+
+                }
+            });
+
+        } else {
+
+        }
+
+
+//        holder.cmv_media.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                if (dongTaiClass.mVideoUrl.equals("")) {
+//
+//                } else {
+//
+//                    VideoView videoView = holder.cmv_media.video_vv_video;
+//                    videoView.setVisibility(View.VISIBLE);
+//                    videoView.setMediaController(new MediaController(mContext));
+//                    videoView.setVideoURI(Uri.parse(dongTaiClass.mVideoUrl));
+//                    videoView.start();
+//                    videoView.requestFocus();
+////                        Uri uri = Uri.parse(dongTaiClass.mVideoUrl);
+////                        VideoPlayerActivity.startVideoPlayer(mContext, uri);
+//                }
+//            }
+//        });
+    }
+
+    private static void playVideo(Context context, final MyHolderVideo holderVideo, String path) {
+        holderVideo.extra_ll_play_container.setVisibility(View.INVISIBLE);
+        VideoView videoView = holderVideo.extra_vv_video;
+        videoView.setMediaController(new MediaController(context));
+        videoView.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                holderVideo.extra_ll_play_container.setVisibility(View.VISIBLE);
+            }
+
+        });
+        videoView.setVideoURI(Uri.parse(path));
+        videoView.start();
+        //videoView.requestFocus();
+    }
+
+    @Override
+    public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View main = createViewByType(mContext, parent, viewType);
+        return createHolderByView(main, viewType);
+    }
+
+    /**
+     * 这是createView的1/2步，通过type来inflate出view
+     *
+     * @param mContext
+     * @param parent
+     * @param viewType
+     * @return
+     */
+    public static ViewGroup createViewByType(Context mContext, ViewGroup parent, int viewType) {
+        ViewGroup main = (ViewGroup) LayoutInflater.from(mContext).
+                inflate(R.layout.view_home_hot_then_listview_item, parent, false);
+
+        //装载多形式展示区的容器
+        LinearLayout part = (LinearLayout) main.findViewById(R.id.home_hot_then_media);
+        part.removeAllViews();
+
+        switch (viewType) {
+            //单图模式
+            case TYPE_SINGLE: {
+                part.addView(LayoutInflater.from(mContext).
+                        inflate(R.layout.view_media_pic_single, part, false));
+            }
+            //视频模式
+            case TYPE_VIDEO: {
+                part.addView(LayoutInflater.from(mContext).
+                        inflate(R.layout.view_media_video, part, false));
+            }
+        }
+        return main;
+    }
+
+    /**
+     * 这是createView的2/2步，通过inflate出的view得到holder
+     *
+     * @param main
+     * @param viewType
+     * @return
+     */
+    public static MyViewHolder createHolderByView(View main, int viewType) {
+        switch (viewType) {
+            //单图模式
+            case TYPE_SINGLE: {
+                return new MyHolderSingle(main);
+            }
+            //视频模式
+            case TYPE_VIDEO: {
+                return new MyHolderVideo(main);
+            }
+        }
+        return null;
+    }
+
+    private static final int TYPE_SINGLE = 1;
+    private static final int TYPE_MULTI = 2;
+    private static final int TYPE_VIDEO = 3;
+
+    @Override
+    public int getItemViewType(int position) {
+        DongTaiBean dongTaiBean = mDongTaiList.get(position);
+        return getViewTypeByDongTai(dongTaiBean);
+    }
+
+    public static int getViewTypeByDongTai(DongTaiBean dongTaiBean) {
+        if (!dongTaiBean.mVideoUrl.equals("")) {
+            return TYPE_VIDEO;
+        } else {
+            return TYPE_SINGLE;
+        }
     }
 
     @Override
@@ -328,11 +519,38 @@ public class DongTaiListAdapter extends RecyclerView.Adapter<DongTaiListAdapter.
         return count;
     }
 
+    public static class MyHolderSingle extends MyViewHolder {
+        ImageView extra_iv_cover;
+
+        public MyHolderSingle(View itemView) {
+            super(itemView);
+            extra_iv_cover = (ImageView) itemView.findViewById(R.id.media_single_image_view);
+        }
+    }
+
+    public static class MyHolderVideo extends MyViewHolder {
+        VideoView extra_vv_video;
+        ImageView extra_cover_iv;
+        ImageView extra_play_btn;
+        ImageView extra_play_loading;
+        RelativeLayout extra_ll_play_container;
+
+        public MyHolderVideo(View layoutVideo) {
+            super(layoutVideo);
+
+            extra_vv_video = (VideoView) layoutVideo.findViewById(R.id.media_video_view);
+            extra_play_btn = (ImageView) layoutVideo.findViewById(R.id.media_video_play_iv);
+            extra_cover_iv = (ImageView) layoutVideo.findViewById(R.id.media_video_cover_view);
+            extra_play_loading = (ImageView) layoutVideo.findViewById(R.id.media_video_loading_tv);
+            extra_ll_play_container = (RelativeLayout) layoutVideo.findViewById(R.id.media_video_cover_container);
+
+        }
+    }
 
     public static class MyViewHolder extends RecyclerView.ViewHolder {
         TextView tv_name;
         ImageView iv_avatar;
-        ComplicatedMediaView cmv_media;
+        LinearLayout cmv_media;
         TextView tv_content;
 
         TextView tv_label_parent;
@@ -357,7 +575,7 @@ public class DongTaiListAdapter extends RecyclerView.Adapter<DongTaiListAdapter.
 
             tv_name = (TextView) itemView.findViewById(R.id.home_hot_then_name);
             iv_avatar = (ImageView) itemView.findViewById(R.id.home_hot_then_avatar);
-            cmv_media = (ComplicatedMediaView) itemView.findViewById(R.id.home_hot_then_media);
+            cmv_media = (LinearLayout) itemView.findViewById(R.id.home_hot_then_media);
             tv_content = (TextView) itemView.findViewById(R.id.home_hot_then_content);
 
             tv_label_parent = (TextView) itemView.findViewById(R.id.home_hot_then_label_parent);
