@@ -182,6 +182,7 @@
         <activity android:name=".activities.EditActivity" />
         <activity android:name=".activities.BaiShiInviteListActivity" />
         <activity android:name=".activities.ZanListActivity" />
+        <activity android:name=".activities.PhotoViewerActivity" />
         <activity
             android:name="com.umeng.socialize.editorpage.ShareActivity"
             android:excludeFromRecents="true"

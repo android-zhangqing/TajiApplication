@@ -1,5 +1,6 @@
 package com.zhangqing.taji.activities;
 
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -21,8 +22,13 @@ import org.json.JSONObject;
 
 import java.util.Locale;
 
+import io.rong.imkit.RongIM;
 import io.rong.imkit.fragment.ConversationFragment;
+import io.rong.imlib.RongIMClient;
 import io.rong.imlib.model.Conversation;
+import io.rong.imlib.model.Message;
+import io.rong.imlib.model.UserInfo;
+import io.rong.message.ImageMessage;
 
 /**
  * Created by Administrator on 2016/2/23.
@@ -58,7 +64,11 @@ public class ConversationActivity extends BaseActivity {
 
         getIntentDate(getIntent());
 
+        initListener();
 
+        /**
+         * 为聊天室时需要初始化右上角的设置图标
+         */
         if (mConversationType != Conversation.ConversationType.CHATROOM) {
             mChatRoomSetting.setVisibility(View.GONE);
         } else {
@@ -71,9 +81,49 @@ public class ConversationActivity extends BaseActivity {
                     startActivity(intent);
                 }
             });
-
         }
 
+    }
+
+    private void initListener() {
+
+        RongIM.setConversationBehaviorListener(new RongIM.ConversationBehaviorListener() {
+            @Override
+            public boolean onUserPortraitClick(Context context, Conversation.ConversationType conversationType, UserInfo userInfo) {
+                OthersDetailActivity.start(context, userInfo.getUserId(), userInfo.getName());
+                return true;
+            }
+
+            @Override
+            public boolean onUserPortraitLongClick(Context context, Conversation.ConversationType conversationType, UserInfo userInfo) {
+                return false;
+            }
+
+            @Override
+            public boolean onMessageClick(Context context, View view, Message message) {
+                if (message.getContent() instanceof ImageMessage) {
+                    ImageMessage imageMessage = (ImageMessage) message.getContent();
+
+                    Uri local_uri = imageMessage.getLocalUri();
+                    PhotoViewerActivity.startPhotoView(context,
+                            local_uri == null ? imageMessage.getRemoteUri() : local_uri
+                            , imageMessage.getThumUri()
+                    );
+                    return true;
+                }
+                return false;
+            }
+
+            @Override
+            public boolean onMessageLinkClick(Context context, String s) {
+                return false;
+            }
+
+            @Override
+            public boolean onMessageLongClick(Context context, View view, Message message) {
+                return false;
+            }
+        });
     }
 
     @Override
