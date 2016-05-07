@@ -2,9 +2,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_marginBottom="5dp"
     android:background="#402D52"
     android:orientation="vertical"
-    android:layout_marginBottom="5dp"
     android:padding="15dp">
 
     <LinearLayout
@@ -26,13 +26,14 @@
             android:layout_marginRight="10dp"
             android:layout_weight="1"
             android:singleLine="true"
-            android:textColor="@android:color/white"
-            android:text="name" />
+            android:text="name"
+            android:textColor="#C8C5CB" />
 
         <TextView
             android:id="@+id/zan_list_item_time"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:textColor="#C8C5CB" />
     </LinearLayout>
 
     <TextView
@@ -41,9 +42,9 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="5dp"
         android:layout_marginTop="5dp"
-        android:textSize="16sp"
+        android:text="赞了这条动态"
         android:textColor="#B5ADBB"
-        android:text="赞了这条动态" />
+        android:textSize="16sp" />
 
     <LinearLayout
         android:id="@+id/zan_list_item_container_dongtai"
@@ -56,14 +57,14 @@
         <ImageView
             android:id="@+id/zan_list_item_cover"
             android:layout_width="80dp"
-            android:scaleType="centerCrop"
-            android:layout_height="80dp" />
+            android:layout_height="80dp"
+            android:scaleType="centerCrop" />
 
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"
             android:layout_marginLeft="10dp"
+            android:layout_weight="1"
             android:gravity="center_vertical"
             android:orientation="vertical">
 
@@ -71,15 +72,15 @@
                 android:id="@+id/zan_list_item_author"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="@android:color/white"
                 android:singleLine="true"
-                android:text="图书" />
+                android:text="图书"
+                android:textColor="#C8C5CB" />
 
             <TextView
                 android:id="@+id/zan_list_item_content"
                 android:layout_width="match_parent"
-                android:textColor="#B5ADBB"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:textColor="#B5ADBB" />
 
         </LinearLayout>
     </LinearLayout>

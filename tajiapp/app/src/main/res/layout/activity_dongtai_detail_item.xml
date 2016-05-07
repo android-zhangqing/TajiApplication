@@ -33,14 +33,16 @@
                 android:layout_weight="1"
                 android:gravity="center_vertical"
                 android:singleLine="true"
-                android:text="zz" />
+                android:text="zz"
+                android:textColor="#C8C5CB" />
 
             <TextView
                 android:id="@+id/dongtai_detail_time"
                 android:layout_width="wrap_content"
                 android:layout_height="30dp"
                 android:gravity="right|center_vertical"
-                android:text="03-18 12:00" />
+                android:text="03-18 12:00"
+                android:textColor="#C8C5CB" />
         </LinearLayout>
 
         <LinearLayout
