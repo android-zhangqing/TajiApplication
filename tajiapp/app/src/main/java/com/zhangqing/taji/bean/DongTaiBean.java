@@ -66,6 +66,8 @@ public class DongTaiBean {
 
     //封面URL
     public String mCoverUrl = "";
+    //视频链接
+    public String mVideoUrl = "";
     //发布者头像URL
     public String mAvatarUrl = "";
 
@@ -129,6 +131,9 @@ public class DongTaiBean {
 
         //封面URL
         mCoverUrl = jsonObject.optString("media", mCoverUrl);
+        //视频URL
+        String temp_video = jsonObject.optString("video", mVideoUrl);
+        mVideoUrl = temp_video.equals("null") ? mVideoUrl : temp_video;
         //发布者头像URL
         mAvatarUrl = jsonObject.optString("avatar", mAvatarUrl);
 

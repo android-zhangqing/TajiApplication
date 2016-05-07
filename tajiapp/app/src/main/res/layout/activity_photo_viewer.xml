@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#402D52"
+    android:clipToPadding="false"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
     <fragment
         android:id="@+id/photo_fragment"
+        android:name="io.rong.imkit.tools.PhotoFragment"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:name="io.rong.imkit.tools.PhotoFragment" />
+        android:layout_height="match_parent" />
 </LinearLayout>

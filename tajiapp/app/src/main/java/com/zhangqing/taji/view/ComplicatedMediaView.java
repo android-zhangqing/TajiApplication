@@ -18,7 +18,7 @@ public class ComplicatedMediaView extends LinearLayout {
     public static final int MODE_PIC_MULTI = 2;
     public static final int MODE_PIC_MOVIE = 3;
 
-    public ImageView picSingleImageView = null;
+    public ImageView iv_cover = null;
 
     private int currentMode = MODE_PIC_SINGLE;
 
@@ -47,7 +47,7 @@ public class ComplicatedMediaView extends LinearLayout {
         setBackgroundColor(Color.parseColor("#F1F1F1"));
 
         layoutPicSingle = LayoutInflater.from(getContext()).inflate(R.layout.view_media_pic_single, this, false);
-        picSingleImageView = (ImageView) layoutPicSingle.findViewById(R.id.image);
+        iv_cover = (ImageView) layoutPicSingle.findViewById(R.id.image);
 
         setCurrentMode(currentMode);
     }

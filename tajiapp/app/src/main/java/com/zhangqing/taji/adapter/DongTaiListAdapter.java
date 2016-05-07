@@ -2,6 +2,7 @@ package com.zhangqing.taji.adapter;
 
 import android.content.Context;
 import android.graphics.Color;
+import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -17,6 +18,7 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.imageaware.ImageViewAware;
 import com.zhangqing.taji.MyApplication;
 import com.zhangqing.taji.R;
+import com.zhangqing.taji.activities.PhotoViewerActivity;
 import com.zhangqing.taji.adapter.listener.AvatarClickListener;
 import com.zhangqing.taji.adapter.listener.DongTaiClickListener;
 import com.zhangqing.taji.base.UserClass;
@@ -109,6 +111,18 @@ public class DongTaiListAdapter extends RecyclerView.Adapter<DongTaiListAdapter.
                     dongTaiClass.mTid);
             holder.cmv_media.setOnClickListener(onClickListener);
             holder.ll_count_comment_container.setOnClickListener(onClickListener);
+        } else {
+            holder.cmv_media.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (dongTaiClass.mVideoUrl == null || dongTaiClass.mVideoUrl.equals("")) {
+                        Uri uri = Uri.parse(dongTaiClass.mCoverUrl);
+                        PhotoViewerActivity.startPhotoView(mContext, uri, uri);
+                    } else {
+
+                    }
+                }
+            });
         }
 
         /**
@@ -246,7 +260,7 @@ public class DongTaiListAdapter extends RecyclerView.Adapter<DongTaiListAdapter.
         });
 
         ImageLoader.getInstance().displayImage(dongTaiClass.mAvatarUrl, new ImageViewAware(holder.iv_avatar), MyApplication.getCircleDisplayImageOptions());
-        ImageLoader.getInstance().displayImage(dongTaiClass.mCoverUrl, new ImageViewAware(holder.cmv_media.picSingleImageView));
+        ImageLoader.getInstance().displayImage(dongTaiClass.mCoverUrl, new ImageViewAware(holder.cmv_media.iv_cover));
     }
 
     @Override
