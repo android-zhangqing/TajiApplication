@@ -133,6 +133,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:gravity="center"
+                                android:textColor="#C1BEB9"
                                 android:text="我要自己设置封面" />
                         </LinearLayout>
 

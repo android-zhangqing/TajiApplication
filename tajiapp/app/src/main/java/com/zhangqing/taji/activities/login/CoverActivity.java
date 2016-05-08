@@ -28,6 +28,11 @@ public class CoverActivity extends AppCompatActivity {
         mStartTimeMillis = System.currentTimeMillis();
 
 
+        if (!UserClass.getInstance().reLoadSharedPreferences()) {
+            UserClass.getInstance().clear();
+            waitToStartActivity(true, null);
+            return;
+        }
         UserClass.getInstance().getMyUserInfo(new VolleyInterface(this.getApplicationContext()) {
             @Override
             public void onMySuccess(JSONObject jsonObject) {

@@ -302,7 +302,7 @@ public class DongTaiListAdapter extends RecyclerView.Adapter<DongTaiListAdapter.
                             MD5Util.str2MD5(dongTaiClass.mVideoUrl);
 
                     if (new File(path).exists()) {
-                        Toast.makeText(mContext, "ok", Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(mContext, "ok", Toast.LENGTH_SHORT).show();
                         playVideo(mContext, myHolderVideo, path);
                         return;
                     }
@@ -395,6 +395,7 @@ public class DongTaiListAdapter extends RecyclerView.Adapter<DongTaiListAdapter.
      * @return
      */
     public static ViewGroup createViewByType(Context mContext, ViewGroup parent, int viewType) {
+        Log.e("createViewByType", "start|" + viewType);
         ViewGroup main = (ViewGroup) LayoutInflater.from(mContext).
                 inflate(R.layout.view_home_hot_then_listview_item, parent, false);
 
@@ -438,14 +439,19 @@ public class DongTaiListAdapter extends RecyclerView.Adapter<DongTaiListAdapter.
         return null;
     }
 
-    private static final int TYPE_SINGLE = 1;
-    private static final int TYPE_MULTI = 2;
-    private static final int TYPE_VIDEO = 3;
+    private static final int TYPE_SINGLE = 4;
+    private static final int TYPE_MULTI = 5;
+    private static final int TYPE_VIDEO = 6;
 
     @Override
     public int getItemViewType(int position) {
         DongTaiBean dongTaiBean = mDongTaiList.get(position);
-        return getViewTypeByDongTai(dongTaiBean);
+        Log.e("getItemViewType", position + "|" + dongTaiBean.toString());
+        if (!dongTaiBean.mVideoUrl.equals("")) {
+            return TYPE_VIDEO;
+        } else {
+            return TYPE_SINGLE;
+        }
     }
 
     public static int getViewTypeByDongTai(DongTaiBean dongTaiBean) {

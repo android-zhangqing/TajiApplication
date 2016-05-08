@@ -156,6 +156,6 @@ public class DongTaiBean {
 
     @Override
     public String toString() {
-        return "动态" + mTid + "|" + mContent + "|" + mTime + "|" + mUserId + "|" + mCoverUrl;
+        return "动态" + mTid + "|" + mContent + "|" + mTime + "|" + mUserId + "|" + mCoverUrl + "|" + mVideoUrl;
     }
 }

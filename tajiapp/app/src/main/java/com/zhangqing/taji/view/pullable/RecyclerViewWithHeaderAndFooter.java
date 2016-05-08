@@ -103,7 +103,7 @@ public class RecyclerViewWithHeaderAndFooter extends RecyclerView {
              * 这么做保证layoutManager切换之后能及时的刷新上对的布局
              */
             if (getLayoutManager() instanceof LinearLayoutManager) {
-                return TYPE_LIST;
+                return mInternalAdapter.getItemViewType(mHeaderView == null ? position : position - 1);
             } else if (getLayoutManager() instanceof StaggeredGridLayoutManager) {
                 return TYPE_STAGGER;
             } else {
