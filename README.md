@@ -1,5 +1,5 @@
-# Ta技
-【Commit开头含义】
+
+#【Commit开头含义】
 
 最近有个想法，一大堆commit放在一起，里面有Bug修复、有原创部分、有新增功能、有结构优化，看着太乱了。所以从2016-04-14开始，commit标题的开头字母表明该commit的更改属性。
 
@@ -12,49 +12,38 @@
 【N】代表小细节优化(not important)
 
 
-【代码结构】
+#【代码结构】
 
-├─app
+├─activities //所有的Activity在这里，7个主Fragment也在这里
 
-│  ├─downloads
+│  └─login 
 
-│  ├─libs
+├─adapter //适配器
 
-│  └─src
+├─base //包含用户数据bean、Volloy封装、网络操作Model
 
-│      └─main
+├─database //用户表SQLite数据库
 
-│          ├─java
+├─dongtai //[动态]功能相关类
 
-│          │  └─com
+├─util //工具类
 
-│          │      └─zhangqing
+└─view //自定义组件
 
-│          │          └─taji
+#【用到的框架与库】
+module dependency:
 
-│          │              ├─activities //所有的Activity在这里，7个主Fragment也在这里
+emoji //emoji完美兼容开源框架，Android自带的内置emoji太难看了~
 
-│          │              │  └─login 
+IMKit //融云sdk，用于聊天功能。
 
-│          │              ├─adapter //适配器
+OneSDK//阿里百川sdk，用于图片视频文件上传到阿里百川云空间
 
-│          │              ├─base //包含用户数据bean、Volloy封装、网络操作Model
+lib dependency:
 
-│          │              ├─database //用户表SQLite数据库
+volley、universal-image-loader、各种社会化分享sdk...
 
-│          │              ├─dongtai //[动态]功能相关类
-
-│          │              ├─util //工具类
-
-│          │              └─view //自定义组件
-
-├─emoji //emoji完美兼容开源框架，Android自带的内置emoji太难看了~
-
-└─IMKit //融云sdk，用于聊天功能。
-
-
-
-【项目介绍】
+#【项目介绍】
 自人人网“出逃”后,让校园社交陷入了数年的低谷,微信、陌陌等通用社交平台的火爆又一度淹没了校园社交的声音。不过,校园社交平台还是在倔强地发展当中,特别是2014 年,大量新兴校园社交平台开始如雨后春笋般涌现。
 “TA技”校园技能社交app,用户定位于希望学习技能,分享技能以及希望通过技能交友的高校大学生群体。高校有着为数众多的潜在活跃用户群,同时高校天然的社交空间壁垒,在某种程度上也减少了陌生人社交软件从线上到线下涉及的安全问题，以弥补校园生活中除开专业学习后业余的兴趣领域的空白,让更多的大学生能够以兴趣为入口,结交朋友,实现自我成长。
 TA技是一款垂直高校的技能分享、交流的社交App,其拥有六大核心功能,分别是技能展示功能、技能发布功能、技能圈功能、师徒体系功能、即时聊天功能、技能交换功能。
