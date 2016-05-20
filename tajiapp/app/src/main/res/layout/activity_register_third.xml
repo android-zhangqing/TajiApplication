@@ -64,11 +64,13 @@
                     android:textCursorDrawable="@drawable/icon_register_cursor"
                     android:textSize="@dimen/textsize_bar_first" />
 
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
                     android:background="@drawable/icon_register_first_inputcha"
-                    android:onClick="onClickButtonClearPassword" />
+                    android:clickable="true"
+                    android:onClick="onClickButtonClearPassword"
+                    android:scaleType="centerInside" />
             </LinearLayout>
         </LinearLayout>
 

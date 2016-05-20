@@ -14,7 +14,7 @@
     <fraction name="publish_x_delta_reverse">-200%</fraction>
     <fraction name="publish_y_delta">400%</fraction>
 
-    <string name="app_name">Taji</string>
+    <string name="app_name">Ta技</string>
     <string name="hello">Hello World, TajiActivity!</string>
 
 

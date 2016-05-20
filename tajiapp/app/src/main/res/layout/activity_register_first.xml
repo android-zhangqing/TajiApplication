@@ -71,7 +71,7 @@
                     android:background="@android:color/white"
                     android:gravity="center_vertical"
                     android:numeric="integer"
-                    android:text="1520713125"
+                    android:text=""
                     android:textColor="#4D4250"
                     android:textCursorDrawable="@drawable/icon_register_cursor"
                     android:textSize="@dimen/textsize_bar_first" />

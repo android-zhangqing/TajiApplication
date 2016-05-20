@@ -3,6 +3,7 @@ package com.zhangqing.taji.adapter;
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.ClipDrawable;
+import android.media.ExifInterface;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
@@ -365,6 +366,7 @@ public class DongTaiListAdapter extends RecyclerView.Adapter<DongTaiListAdapter.
     }
 
     private static void playVideo(Context context, final MyHolderVideo holderVideo, String path) {
+
         holderVideo.extra_ll_play_container.setVisibility(View.INVISIBLE);
         VideoView videoView = holderVideo.extra_vv_video;
         videoView.setMediaController(new MediaController(context));

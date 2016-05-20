@@ -1,5 +1,6 @@
 package com.zhangqing.taji.activities;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.Gravity;
@@ -22,6 +23,7 @@ public class FragmentHuoDongActivity extends BaseFragment {
         TextView tv = new TextView(getActivity());
         tv.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
         tv.setText("暂无活动，敬请期待！");
+        tv.setTextColor(Color.WHITE);
         tv.setPadding(0, 20, 0, 0);
         tv.setGravity(Gravity.CENTER_HORIZONTAL);
         return tv;

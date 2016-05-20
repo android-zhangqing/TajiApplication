@@ -47,5 +47,6 @@
         android:id="@+id/edit_edit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="@color/textcolor_bar_first_unselect"
         android:singleLine="true" />
 </LinearLayout>

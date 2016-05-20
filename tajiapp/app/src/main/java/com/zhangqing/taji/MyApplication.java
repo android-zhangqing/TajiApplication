@@ -94,8 +94,8 @@ public class MyApplication extends Application {
         DatabaseManager.init(getApplicationContext());
 
 
-        /** 友盟 设置是否对日志信息进行加密, 默认false(不加密). */
-        AnalyticsConfig.enableEncrypt(true);
+//        /** 友盟 设置是否对日志信息进行加密, 默认false(不加密). */
+//        AnalyticsConfig.enableEncrypt(true);
 
 
         //alibaba init

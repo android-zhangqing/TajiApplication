@@ -62,6 +62,17 @@ public class LoginActivity extends BaseActivity {
         //_dialog=CustomProgress.show(this, "正在登录", true, null);
         mMobileString = mMobileEditText.getText().toString();
         mPasswordString = mPasswordEditText.getText().toString();
+
+        if (mMobileString.length() != 11) {
+            Toast.makeText(this, "请输入完整的手机号", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        if (mPasswordString.equals("")) {
+            Toast.makeText(this, "请输入密码", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+
         UserClass.getInstance().doLogin(mMobileString, mPasswordString, new VolleyInterface(this) {
             @Override
             public void onMySuccess(JSONObject jsonObject) {
