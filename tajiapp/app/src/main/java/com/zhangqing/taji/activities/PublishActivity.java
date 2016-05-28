@@ -434,9 +434,13 @@ public class PublishActivity extends BaseActivity implements View.OnClickListene
                         new VolleyInterface(getApplicationContext()) {
                             @Override
                             public void onMySuccess(JSONObject jsonObject) {
-                                Toast.makeText(getApplicationContext(), jsonObject.toString(), Toast.LENGTH_LONG).show();
                                 Log.e("dongTaiDoUpload", jsonObject.toString());
-
+                                if (jsonObject.has("media")) {
+                                    Toast.makeText(getApplicationContext(), "发布成功!", Toast.LENGTH_LONG).show();
+                                    finish();
+                                } else {
+                                    Toast.makeText(getApplicationContext(), "发布失败\r\n" + jsonObject.toString(), Toast.LENGTH_LONG).show();
+                                }
                                 PublishBtn.setEnabled(true);
                             }
 
