@@ -22,10 +22,6 @@ public class DongTaiClickListener implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-        Intent intent = new Intent(mContext, DongTaiDetailActivity.class);
-        Bundle bundle = new Bundle();
-        bundle.putString("dongtai", tid);
-        intent.putExtras(bundle);
-        mContext.startActivity(intent);
+        DongTaiDetailActivity.startActivity(mContext, tid);
     }
 }

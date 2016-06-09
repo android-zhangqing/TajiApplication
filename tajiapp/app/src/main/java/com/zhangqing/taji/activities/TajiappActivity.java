@@ -36,6 +36,7 @@ import io.rong.imlib.model.UserInfo;
 public class TajiappActivity extends BaseActivity implements OnTabClickListener,
         OnTopBarClickListener {
     public static final int REQUEST_CENTER_SELECT_PIC = 1;
+    public static final int REQUEST_CENTER_PUBLISH = 4;
 
     public static final int REQUEST_MY_SKILL_SETTING = 2;
     public static final int REQUEST_MY_MODIFY_PERSON_INFO = 3;
@@ -280,7 +281,7 @@ public class TajiappActivity extends BaseActivity implements OnTabClickListener,
                 break;
             }
             case R.id.main_publish_right: {
-                startActivity(new Intent(this, PublishActivity.class));
+                startActivityForResult(new Intent(this, PublishActivity.class), REQUEST_CENTER_PUBLISH);
                 overridePendingTransition(R.anim.activity_open_bottom_in, 0);
                 break;
             }
@@ -299,7 +300,12 @@ public class TajiappActivity extends BaseActivity implements OnTabClickListener,
                 String path = CameraUtil.uri2filePath(this, data.getData());
                 Intent intent = new Intent(this, PublishActivity.class);
                 intent.putExtra("path", path);
-                startActivity(intent);
+                startActivityForResult(intent, REQUEST_CENTER_PUBLISH);
+                break;
+            }
+            case REQUEST_CENTER_PUBLISH: {
+                DongTaiDetailActivity.startActivity(this, data.getStringExtra("tid"));
+                break;
             }
         }
     }

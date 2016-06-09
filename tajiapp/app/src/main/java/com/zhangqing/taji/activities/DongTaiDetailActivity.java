@@ -1,5 +1,7 @@
 package com.zhangqing.taji.activities;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
@@ -37,6 +39,14 @@ import org.json.JSONObject;
  * 动态的详情页面
  */
 public class DongTaiDetailActivity extends BaseActivity implements EmojiconGridFragment.OnEmojiconClickedListener, EmojiconsFragment.OnEmojiconBackspaceClickedListener {
+
+    public static void startActivity(Context context,String tid){
+        Intent intent = new Intent(context, DongTaiDetailActivity.class);
+        Bundle bundle = new Bundle();
+        bundle.putString("dongtai", tid);
+        intent.putExtras(bundle);
+        context.startActivity(intent);
+    }
 
     //基本数据
     private String mTid;

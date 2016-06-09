@@ -34,6 +34,7 @@ import com.zhangqing.taji.BaseActivity;
 import com.zhangqing.taji.R;
 import com.zhangqing.taji.base.UserClass;
 import com.zhangqing.taji.base.VolleyInterface;
+import com.zhangqing.taji.bean.DongTaiBean;
 import com.zhangqing.taji.util.AnimationUtil;
 import com.zhangqing.taji.util.CameraUtil;
 import com.zhangqing.taji.util.ImageUtil;
@@ -41,6 +42,7 @@ import com.zhangqing.taji.util.ImmUtil;
 import com.zhangqing.taji.util.LocationUtil;
 import com.zhangqing.taji.util.OneSdkUtil;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.FileNotFoundException;
@@ -436,11 +438,21 @@ public class PublishActivity extends BaseActivity implements View.OnClickListene
                             public void onMySuccess(JSONObject jsonObject) {
                                 Log.e("dongTaiDoUpload", jsonObject.toString());
                                 if (jsonObject.has("media")) {
-                                    Toast.makeText(getApplicationContext(), "发布成功!", Toast.LENGTH_LONG).show();
-                                    finish();
-                                } else {
-                                    Toast.makeText(getApplicationContext(), "发布失败\r\n" + jsonObject.toString(), Toast.LENGTH_LONG).show();
+                                    try {
+                                        if (DongTaiBean.getInstance(jsonObject) != null) {
+                                            Toast.makeText(getApplicationContext(), "发布成功!", Toast.LENGTH_LONG).show();
+                                            setResult(RESULT_OK, new Intent().putExtra("tid", jsonObject.optString("tid", "56")));
+                                            finish();
+                                            return;
+                                        }
+                                    } catch (JSONException e) {
+                                        e.printStackTrace();
+                                    }
                                 }
+
+
+                                Toast.makeText(getApplicationContext(), "发布失败\r\n" + jsonObject.toString(), Toast.LENGTH_LONG).show();
+
                                 PublishBtn.setEnabled(true);
                             }
 
